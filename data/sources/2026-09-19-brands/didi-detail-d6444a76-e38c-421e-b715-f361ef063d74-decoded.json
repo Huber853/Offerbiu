@@ -1,0 +1,135 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [],
+    "autoArchiveTalentPoolId": 425506,
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-05T14:50:06",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": "27秋-算法"
+      }
+    },
+    "department": {
+      "id": 94463,
+      "name": "CTO线"
+    },
+    "departmentId": 94463,
+    "departments": [
+      {
+        "id": 94463,
+        "name": "CTO线"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "本科",
+    "hireMode": 2,
+    "id": "d6444a76-e38c-421e-b715-f361ef063d74",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "岗位职责：\n1、参与交通场景下的场景理解、目标检测与识别；\n2、支持机器学习基础框架的优化和改进；\n3、将相关应用场景中的问题转化成数据模型或者科学问题，并尝试提出解决方案。\n\n任职要求：\n1、2027届毕业生，本科及以上学历，机器学习、计算机视觉、模式识别、图像识别等专业优先；\n2、具有图像理解(图像检索、图像识别、人脸识别、目标检测、视频分析)、机器学习(深度学习)、数据挖掘、自然语言理解等相关的项目开发经历；\n3、具有交通场景下的视觉场景理解项目开发经验者优先；\n4、熟悉Caffe、Tensorflow、Mxnet等深度学习框架并有使用经验者优先。",
+    "jobIntentions": [],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          94463
+        ],
+        "locationIds": [
+          92621
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 110000,
+        "cityName": "北京市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 92621,
+        "provinceName": "北京市"
+      }
+    ],
+    "number": 1,
+    "openedAt": "2026-08-13T08:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 0,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-08-13T10:19:54",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-视觉算法工程师",
+    "updatedAt": "2026-09-03T17:16:55",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 136661,
+      "name": "算法类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

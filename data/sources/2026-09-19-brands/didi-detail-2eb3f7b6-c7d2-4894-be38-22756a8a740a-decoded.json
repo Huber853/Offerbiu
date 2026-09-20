@@ -1,0 +1,134 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [],
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-14T21:16:41",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": "27秋-算法"
+      }
+    },
+    "department": {
+      "id": 3224890,
+      "name": "ABC"
+    },
+    "departmentId": 3224890,
+    "departments": [
+      {
+        "id": 3224890,
+        "name": "ABC"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "本科",
+    "hireMode": 2,
+    "id": "2eb3f7b6-c7d2-4894-be38-22756a8a740a",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "岗位职责：\n1、负责两轮车供需预测，为线上调度算法策略服务提供支持；\n2、基于两轮车平台数据，打造领先的需求预测模型，持续提升两轮车供需匹配基础能力；\n3、运用数据分析和机器学习技术，对业务数据进行挖掘和建模，提供有效的业务解决方案；\n4、协作团队成员，进行项目规划和进度管理，确保算法开发和优化工作的顺利进行。\n\n任职要求：\n1、2027届毕业生，本科及以上学历，计算机、统计学、数学等相关专业优先；\n2、在机器学习、深度学习、强化学习、数据挖掘、运筹学、智能数据产品等领域有较好的工业界经验或学术积累，有实际场景模型后训练及蒸馏经验的优先；\n3、具备机器学习和数据挖掘的高性能实现与服务端开发能力，能够独立负责项目，完成策略设计、模型开发、服务上线等全链路工作，能够和团队成员形成良好合作；\n4、具备较强的代码开发能力，精通Java/C++/Python/Scala至少1门语言，掌握Shell脚本，能够在大数据环境下完成分布式模型开发与部署，具备一定服务端开发能力；\n5、具备良好的逻辑思维能力，能够合理设定项目目标并根据目标制定解决方案，在项目过程中基于数据分析制定策略优化方向，能够与业务团队清晰沟通策略实现；\n6、具备良好的沟通能力、自我驱动力和团队合作精神。",
+    "jobIntentions": [],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          3224890
+        ],
+        "locationIds": [
+          314487
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 330100,
+        "cityName": "杭州市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 314487,
+        "provinceName": "浙江"
+      }
+    ],
+    "number": 1,
+    "openedAt": "2026-08-14T08:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 0,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-08-14T21:47:03",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-算法策略工程师",
+    "updatedAt": "2026-09-04T13:17:54",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 136661,
+      "name": "算法类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

@@ -1,0 +1,136 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [],
+    "autoArchiveTalentPoolId": 432698,
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-05T15:59:24",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": "27秋-SQL"
+      }
+    },
+    "department": {
+      "id": 199257,
+      "name": "网约车平台公司"
+    },
+    "departmentId": 199257,
+    "departments": [
+      {
+        "id": 199257,
+        "name": "网约车平台公司"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "本科",
+    "hireMode": 2,
+    "id": "27bd51cf-7e0a-4921-9a6b-84cddaa44792",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "<p>岗位职责：</p><p>1、基于对业务的理解，协助将经营数据的分析结果应用于实际业务中，实现资源优化分配，同时辅助系统化、体系化制定并落地执行长短期策略；</p><p>2、通过数据驱动和科学测试深入分析供需状况，协助推动精细化运营，不断沉淀运营框架体系，深化对业务经营理解，能够根据内外部变化做出快速的反应和调整，从而协助提升业务经营效率；</p><p>3、能够通过用户洞察和数据洞察，辅助推动产品力的建设，将工具和策略相结合，实现业务指标持续优化；</p><p>4、站在用户视角解决用户实际打车痛点，辅助设计完整解决方案，持续优化乘客体验，完善交易市场设计，并推动产研落地。</p><p><br></p><p>任职要求：</p><p>1、2027届毕业生，本科及以上学历，专业不限；</p><p>2、具备良好的沟通表达和跨部门协作能力，对商业逻辑有认知，能协助完成业务问题分析和定位；</p><p>3、成长意愿强，勇于挑战困难，具备较强的责任心和自驱力；</p><p>4、熟练使用AI相关工具，会SQL，有数据能力和相关互联网实习经历者优先；</p><p>5、有产品/运营实习经验优先。</p><p><br></p><p>滴滴网约车MPT团队， 加入我们，你将成为滴滴出行核心「供需大脑」的一员。</p><p>在这里，你将亲手参与：</p><p>用策略和算法，撮合每一次「乘客需求」与「司机供给」，让打车更快、更准、更顺；</p><p>通过精细化的运营与优化，在保障安全和司机生态稳定的前提下，为平台创造商业价值；</p><p>沉淀平台级的基础能力，持续构建良好的品类生态，促进快车、专车、拼车等多品类健康发展。</p><p><br></p><p>欢迎加入 MPT，一起让出行更美好。</p>",
+    "jobIntentions": [],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          199257
+        ],
+        "locationIds": [
+          92621
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 110000,
+        "cityName": "北京市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 92621,
+        "provinceName": "北京市"
+      }
+    ],
+    "multiLocale": "{\"mainLocale\":\"zh-CN\",\"secondLocale\":\"\"}",
+    "number": 2,
+    "openedAt": "2026-08-13T08:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 0,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-09-01T12:28:22",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-产品与用户运营顾问（交易策略）",
+    "updatedAt": "2026-09-08T10:35:15",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 20039,
+      "name": "运营类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

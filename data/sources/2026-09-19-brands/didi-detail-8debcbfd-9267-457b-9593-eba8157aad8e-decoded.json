@@ -1,0 +1,157 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [
+      1
+    ],
+    "autoArchiveTalentPoolId": 425506,
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-05T14:49:48",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": "27秋-算法"
+      }
+    },
+    "department": {
+      "id": 439007,
+      "name": "自动驾驶"
+    },
+    "departmentId": 439007,
+    "departments": [
+      {
+        "id": 439007,
+        "name": "自动驾驶"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "本科",
+    "hireMode": 2,
+    "id": "8debcbfd-9267-457b-9593-eba8157aad8e",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "岗位职责：\n自动驾驶中，规划相关团队的工作内容包括设计实现自动驾驶系统的交互建模，决策规划和轨迹生成，安全冗余系统，例如路径规划、决策交互、轨迹生成、安全兜底等，同时利用数据驱动，机器学习，人类驾驶数据，VLM等工具，为自动驾驶的决策规划能力赋能。同时也支持各类为全无人车辆设计的定制化产品功能。我们的目标是构建安全鲁邦的AI算法及软件架构，帮助无人车更加安全、舒适及高效的行驶。\n1、在智能驾驶应用场景中研发和部署车辆路径规划与控制系统 、路径规划、远程协助系统、部署冗余系统；\n2、研发机器人相关算法，包括行为预测，交互建模，轨迹搜索生成、路径规划、控制理论、轨迹安全评估、紧急躲避和车辆控制等；\n3、积极从事规划算法或技术探索创新，共同推动无人驾驶技术的发展与落地；\n4、与汽车厂商或其他研究机构合作研发智能控制车辆；\n5、利用数据驱动，机器学习或者VLM和AI 开发相关工具，为算法和研发效率赋能。\n\n任职要求：\n1、2027届毕业生，本科及以上学历，计算机或相关专业优先；\n2、编程基础扎实，熟悉基本算法和数据结构，至少熟悉以下一门语言：Python、C++；（即使可以熟练使用 AI编程工具，我们也希望候选人理解AI 代码为什么这么写，不同编程语言的特点和为什么选用某种设计）；\n3、熟悉深度学习框架，包括但不限于：PyTorch、TensorFlow等；\n4、善于思考，逻辑清晰，有优秀的问题分析和解决能力；\n5、有强烈的自我提升意愿，持续的自我驱动能力；关注业界前沿技术和国际会议研究动态，不断提升自己；\n6、良好的沟通和合作能力，责任心和团队意识强；\n加分项：\n1、有自动驾驶相关经验，包括但不限于：智能驾驶、机器人、等项目落地经验；\n2、在顶级国际会议/期刊上发表论文（CVPR、ICCV、ICML、NIPS、ICRA、IROS等）；\n3、有编程、数学等相关竞赛成绩。",
+    "jobIntentions": [
+      1
+    ],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          439007
+        ],
+        "locationIds": [
+          94657,
+          92621,
+          94656
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 110000,
+        "cityName": "北京市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 92621,
+        "provinceName": "北京市"
+      },
+      {
+        "cityId": 310000,
+        "cityName": "上海市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 94656,
+        "provinceName": "上海市"
+      },
+      {
+        "cityId": 440100,
+        "cityName": "广州市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 94657,
+        "provinceName": "广东"
+      }
+    ],
+    "number": 2,
+    "openedAt": "2026-08-13T08:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 0,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-08-13T10:19:54",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-自动驾驶-规划算法工程师",
+    "updatedAt": "2026-08-28T16:18:17",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 132608,
+      "name": "机器人类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

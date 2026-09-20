@@ -1,0 +1,1223 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "jobStats": {
+      "orgId": "didiglobal",
+      "total": 146
+    },
+    "jobs": [
+      {
+        "applicantLimitCheck": {
+          "isSetting": false
+        },
+        "campusSites": [],
+        "commitment": "全职",
+        "createdAt": "2026-08-14T21:31:45",
+        "department": {
+          "id": 2036637,
+          "name": "两轮车事业部"
+        },
+        "deptId": 2036637,
+        "hireMode": 2,
+        "id": "878e9da3-1d9f-469d-b7d5-3dec329a14ab",
+        "jobDescription": "岗位职责：\n1、经营分析：基于竞争&amp;毛利等多维度多视角挖掘业务问题，输出前瞻性或差异化的城市最优策略方案，通过资源调配与运营提效确保收益与市场份额领先；\n2、策略深耕：基于市场大盘与业务调研，提炼区域BC业务痛点及行业先进方法论，反哺总部并优化搭建标准化策略模型与工具，并通过系统化培训输出赋能一线团队，因地因时制宜解决城市问题&amp;落地总部策略；\n3、项目协同：横向协同总部、区域团队及外部资源，推进跨部门项目落地并优化端到端流程，拆解总部目标至执行层，通过数据监控与策略干预确保目标达成。\n\n任职要求：\n1、2027届在校生，本科及以上学历，经济学、管理学、社会学等专业优先；\n2、规划落地：擅长结构化思考与快速学习，具备复杂事情的问题拆解能力与路径规划能力，可通过共赢协作实现资源调配，拿到项目落地与结果；\n3、数据驱动：熟练掌握excel/ppt/SQL等工具，掌握可视化的数据工具，可独立进行数据分析和结论汇报产出工作；\n4、软性素质：目标导向，良好的自我驱动、沟通表达能力和团队合作协作能力。",
+        "locations": [
+          {
+            "cityId": 510100,
+            "cityName": "成都市",
+            "country": "中国",
+            "id": 91394,
+            "provinceId": 510000,
+            "provinceName": "四川"
+          },
+          {
+            "cityId": 330100,
+            "cityName": "杭州市",
+            "country": "中国",
+            "id": 314487,
+            "provinceId": 330000,
+            "provinceName": "浙江"
+          }
+        ],
+        "openedAt": "2026-08-14T08:00",
+        "orgId": "didiglobal",
+        "projectFolder": {
+          "id": 100126280,
+          "name": "2027届-秋招",
+          "settings": {
+            "deliveryLimit": {
+              "classType": 0,
+              "content": {
+                "channels": [
+                  "website",
+                  "campus",
+                  "recommend"
+                ],
+                "limit": 3,
+                "remainder": -1,
+                "type": 1
+              },
+              "creatorId": 2575085,
+              "hireMode": 2,
+              "name": "2027届-秋招",
+              "orgId": "didiglobal",
+              "projectFolderId": 100126280,
+              "status": 1,
+              "type": "deliveryLimit"
+            },
+            "graduateDateLimit": {
+              "classType": 0,
+              "content": {
+                "endDate": "2027-8",
+                "startDate": "2026-9"
+              },
+              "creatorId": 2575085,
+              "hireMode": 2,
+              "name": "2027届-秋招",
+              "orgId": "didiglobal",
+              "projectFolderId": 100126280,
+              "status": 1,
+              "type": "graduateDateLimit"
+            }
+          }
+        },
+        "publishedAt": "2026-08-14T21:43:47",
+        "salaryUnit": 0,
+        "showIsCampus": false,
+        "status": "open",
+        "title": "27届秋招-策略运营顾问-西南辖区",
+        "updatedAt": "2026-09-04T15:11:34",
+        "zhineng": {
+          "id": 20039,
+          "name": "运营类"
+        }
+      },
+      {
+        "applicantLimitCheck": {
+          "isSetting": false
+        },
+        "campusSites": [],
+        "commitment": "全职",
+        "createdAt": "2026-08-14T21:31:39",
+        "department": {
+          "id": 2036637,
+          "name": "两轮车事业部"
+        },
+        "deptId": 2036637,
+        "hireMode": 2,
+        "id": "3f928ccc-87bc-4b18-bd72-70bc0b5a062e",
+        "jobDescription": "<p>岗位职责：</p><p>1、单车AB端业务分析：监控AB端核心指标，对指标异动进行拆解、诊断和提出改进建议；</p><p>2、收集行业信息，形成相对完整的行业认知，并辅助核心决策；</p><p>3、进行策略参数配置，并复盘策略效果。</p><p><br></p><p>任职要求：</p><p>1、2027届毕业生，具备较强的数据分析能力，熟练SQL分析能力优先；</p><p>2、学习能力强，较高的工作投入度，对两轮出行行业有热情；</p><p>3、有较强的沟通、协同和推动能力，跨部门沟通能力强。</p>",
+        "locations": [
+          {
+            "cityId": 110000,
+            "cityName": "北京市",
+            "country": "中国",
+            "id": 92621,
+            "provinceId": 110000,
+            "provinceName": "北京市"
+          }
+        ],
+        "multiLocale": "{\"mainLocale\":\"zh-CN\",\"secondLocale\":\"\"}",
+        "openedAt": "2026-08-14T08:00",
+        "orgId": "didiglobal",
+        "projectFolder": {
+          "id": 100126280,
+          "name": "2027届-秋招",
+          "settings": {
+            "deliveryLimit": {
+              "classType": 0,
+              "content": {
+                "channels": [
+                  "website",
+                  "campus",
+                  "recommend"
+                ],
+                "limit": 3,
+                "remainder": -1,
+                "type": 1
+              },
+              "creatorId": 2575085,
+              "hireMode": 2,
+              "name": "2027届-秋招",
+              "orgId": "didiglobal",
+              "projectFolderId": 100126280,
+              "status": 1,
+              "type": "deliveryLimit"
+            },
+            "graduateDateLimit": {
+              "classType": 0,
+              "content": {
+                "endDate": "2027-8",
+                "startDate": "2026-9"
+              },
+              "creatorId": 2575085,
+              "hireMode": 2,
+              "name": "2027届-秋招",
+              "orgId": "didiglobal",
+              "projectFolderId": 100126280,
+              "status": 1,
+              "type": "graduateDateLimit"
+            }
+          }
+        },
+        "publishedAt": "2026-08-14T21:43:47",
+        "salaryUnit": 0,
+        "showIsCampus": false,
+        "status": "open",
+        "title": "27届秋招-策略运营顾问-单车",
+        "updatedAt": "2026-09-04T15:11:34",
+        "zhineng": {
+          "id": 20039,
+          "name": "运营类"
+        }
+      },
+      {
+        "applicantLimitCheck": {
+          "isSetting": false
+        },
+        "campusSites": [],
+        "commitment": "全职",
+        "createdAt": "2026-08-14T21:31:44",
+        "department": {
+          "id": 2036637,
+          "name": "两轮车事业部"
+        },
+        "deptId": 2036637,
+        "hireMode": 2,
+        "id": "fddf88de-26f4-44d1-940c-22d357141986",
+        "jobDescription": "岗位职责：\n1、负责日常的数据统计和处理及与业务端的沟通协作；\n2、完成业务目标制定沟通协调，确保目标对业务具备牵引力；\n3、完成数据分析项目过程中的深度理解业务，抽象并搭建数据模型，分析关键问题；\n4、对两轮车在区域的各项业务数据进行追踪和分析，提出经营改进建议，能够基于数据分析得到有价值的信息，具备良好的落地性，并为运营决策、人员管理等提供数据支持。\n\n任职要求：\n1、2027届本科及以上学历，熟练使用office办公软件，具备数据可视化能力；\n2、良好的系统化思维和结构化思维，能从业务全局分析问题、沟通解决问题并切实落地；\n3、对数据敏感，同时有良好的业务sense，能深入到业务中去发现问题解决问题；\n4、可接受后续组织轮岗的安排。",
+        "locations": [
+          {
+            "cityId": 110000,
+            "cityName": "北京市",
+            "country": "中国",
+            "id": 92621,
+            "provinceId": 110000,
+            "provinceName": "北京市"
+          }
+        ],
+        "openedAt": "2026-08-14T08:00",
+        "orgId": "didiglobal",
+        "projectFolder": {
+          "id": 100126280,
+          "name": "2027届-秋招",
+          "settings": {
+            "deliveryLimit": {
+              "classType": 0,
+              "content": {
+                "channels": [
+                  "website",
+                  "campus",
+                  "recommend"
+                ],
+                "limit": 3,
+                "remainder": -1,
+                "type": 1
+              },
+              "creatorId": 2575085,
+              "hireMode": 2,
+              "name": "2027届-秋招",
+              "orgId": "didiglobal",
+              "projectFolderId": 100126280,
+              "status": 1,
+              "type": "deliveryLimit"
+            },
+            "graduateDateLimit": {
+              "classType": 0,
+              "content": {
+                "endDate": "2027-8",
+                "startDate": "2026-9"
+              },
+              "creatorId": 2575085,
+              "hireMode": 2,
+              "name": "2027届-秋招",
+              "orgId": "didiglobal",
+              "projectFolderId": 100126280,
+              "status": 1,
+              "type": "graduateDateLimit"
+            }
+          }
+        },
+        "publishedAt": "2026-08-14T21:43:47",
+        "salaryUnit": 0,
+        "showIsCampus": false,
+        "status": "open",
+        "title": "27届秋招-策略运营顾问-北方辖区",
+        "updatedAt": "2026-09-04T15:11:34",
+        "zhineng": {
+          "id": 20039,
+          "name": "运营类"
+        }
+      },
+      {
+        "applicantLimitCheck": {
+          "isSetting": false
+        },
+        "campusSites": [],
+        "commitment": "全职",
+        "createdAt": "2026-08-14T21:31:43",
+        "department": {
+          "id": 2036637,
+          "name": "两轮车事业部"
+        },
+        "deptId": 2036637,
+        "hireMode": 2,
+        "id": "ca03871d-012c-4ae0-bb12-fff1d3bc3f64",
+        "jobDescription": "<p>岗位职责：</p><p>产品与用户运营方向校招同学，将根据业务需求与匹配度，在以下方向中的一个或多个轮岗：</p><p>1、用户运营：通过营销、触达等工具抓手与合理的活动策略，进行用户的拉新召回/促活提频，促进用户规模增长；</p><p>2、策略运营：通过量化分析与实验的方式，协同算法和区域，不断调优骑行卡等补贴策略，提升不同城市的运营效率与订单量；</p><p>3、产品与平台运营：协同产品、数据、集团内不同业务线，通过流量的合理分发与产品工具的搭配使用、迭代，实现两轮流量价值的最大化与用户的跨业务线跃迁；</p><p>4、体验运营：基于用户洞察、与不同方向运营、产品、客服、硬件、数据科学紧密协作，制定并落地提升用户体验的方案，降低投诉率，提升用户的满意度与长期留存。</p><p><br></p><p>任职要求：</p><p>1、2027届本科及以上学历，专业不限，熟练使用SQL；</p><p>2、逻辑清晰，思维活跃，善于结合数据分析和解决问题；</p><p>3、热爱新鲜事物，学习能力强，对商业、用户体验敏感；</p><p>4、较好的沟通协作、项目管理能力，有较好的自驱力。</p>",
+        "locations": [
+          {
+            "cityId": 110000,
+            "cityName": "北京市",
+            "country": "中国",
+            "id": 92621,
+            "provinceId": 110000,
+            "provinceName": "北京市"
+          }
+        ],
+        "multiLocale": "{\"mainLocale\":\"zh-CN\",\"secondLocale\":\"\"}",
+        "openedAt": "2026-08-14T08:00",
+        "orgId": "didiglobal",
+        "projectFolder": {
+          "id": 100126280,
+          "name": "2027届-秋招",
+          "settings": {
+            "deliveryLimit": {
+              "classType": 0,
+              "content": {
+                "channels": [
+                  "website",
+                  "campus",
+                  "recommend"
+                ],
+                "limit": 3,
+                "remainder": -1,
+                "type": 1
+              },
+              "creatorId": 2575085,
+              "hireMode": 2,
+              "name": "2027届-秋招",
+              "orgId": "didiglobal",
+              "projectFolderId": 100126280,
+              "status": 1,
+              "type": "deliveryLimit"
+            },
+            "graduateDateLimit": {
+              "classType": 0,
+              "content": {
+                "endDate": "2027-8",
+                "startDate": "2026-9"
+              },
+              "creatorId": 2575085,
+              "hireMode": 2,
+              "name": "2027届-秋招",
+              "orgId": "didiglobal",
+              "projectFolderId": 100126280,
+              "status": 1,
+              "type": "graduateDateLimit"
+            }
+          }
+        },
+        "publishedAt": "2026-08-14T21:43:47",
+        "salaryUnit": 0,
+        "showIsCampus": false,
+        "status": "open",
+        "title": "27届秋招-策略运营顾问-电单车",
+        "updatedAt": "2026-09-04T15:11:34",
+        "zhineng": {
+          "id": 20039,
+          "name": "运营类"
+        }
+      },
+      {
+        "applicantLimitCheck": {
+          "isSetting": false
+        },
+        "campusSites": [],
+        "commitment": "全职",
+        "createdAt": "2026-08-14T21:31:42",
+        "department": {
+          "id": 2036637,
+          "name": "两轮车事业部"
+        },
+        "deptId": 2036637,
+        "hireMode": 2,
+        "id": "f9dcac51-caf0-4c10-9243-f4f44cfead88",
+        "jobDescription": "<p>岗位职责：</p><p>1、负责业务核心指标的监控、分析，能从数据中发现问题，并定期输出分析报告；</p><p>2、负责运营策略的结果复盘，挖掘经营中提升的机会点；</p><p>3、基于不同城市的地域特性和两轮车业务的特点，分析挖掘城市问题，找到提升效率的方式，并推动落地；</p><p>4、对市场竞争、行业动态保持敏感性。</p><p><br></p><p>任职要求：</p><p>1、2027届毕业生，统计学、商科本科及以上学历，熟练使用SQL;</p><p>2、优秀的逻辑思考力、数据分析能力以及快速学习能力;</p><p>3、逻辑清晰，沟通能力强，有一定的抗压和决策能力。</p>",
+        "locations": [
+          {
+            "cityId": 110000,
+            "cityName": "北京市",
+            "country": "中国",
+            "id": 92621,
+            "provinceId": 110000,
+            "provinceName": "北京市"
+          }
+        ],
+        "multiLocale": "{\"mainLocale\":\"zh-CN\",\"secondLocale\":\"\"}",
+        "openedAt": "2026-08-14T08:00",
+        "orgId": "didiglobal",
+        "projectFolder": {
+          "id": 100126280,
+          "name": "2027届-秋招",
+          "settings": {
+            "deliveryLimit": {
+              "classType": 0,
+              "content": {
+                "channels": [
+                  "website",
+                  "campus",
+                  "recommend"
+                ],
+                "limit": 3,
+                "remainder": -1,
+                "type": 1
+              },
+              "creatorId": 2575085,
+              "hireMode": 2,
+              "name": "2027届-秋招",
+              "orgId": "didiglobal",
+              "projectFolderId": 100126280,
+              "status": 1,
+              "type": "deliveryLimit"
+            },
+            "graduateDateLimit": {
+              "classType": 0,
+              "content": {
+                "endDate": "2027-8",
+                "startDate": "2026-9"
+              },
+              "creatorId": 2575085,
+              "hireMode": 2,
+              "name": "2027届-秋招",
+              "orgId": "didiglobal",
+              "projectFolderId": 100126280,
+              "status": 1,
+              "type": "graduateDateLimit"
+            }
+          }
+        },
+        "publishedAt": "2026-08-14T21:43:47",
+        "salaryUnit": 0,
+        "showIsCampus": false,
+        "status": "open",
+        "title": "27届秋招-策略运营顾问-资产管理",
+        "updatedAt": "2026-09-04T15:11:34",
+        "zhineng": {
+          "id": 20039,
+          "name": "运营类"
+        }
+      },
+      {
+        "applicantLimitCheck": {
+          "isSetting": false
+        },
+        "campusSites": [],
+        "commitment": "全职",
+        "createdAt": "2026-08-10T19:29:36",
+        "department": {
+          "id": 203019,
+          "name": "国际化事业部"
+        },
+        "deptId": 203019,
+        "hireMode": 2,
+        "id": "0068bc02-c105-41e9-9974-9532c7778bdd",
+        "jobDescription": "<p>岗位职责：</p><p>1、运营沟通与需求支持</p><p>与各区域运营团队保持日常沟通，收集并整理一线业务反馈和需求，识别痛点需求；</p><p>同步产品功能更新与运营策略调整信息至各区域，跟进区域侧问题反馈并协调内部资源推动解决。</p><p>2、产品落地与迭代协同</p><p>撰写BRD/PRD文档，协助组织功能评审会议，整理会议纪要；</p><p>在Mentor指导下，将碎片化、本地化的运营需求梳理为结构化的产品需求，逐步培养从业务需求中提炼标准化方案的能力；</p><p>参与功能验收测试（UAT），跟踪产品上线后的使用情况，收集用户反馈并进行初步整理与分析；</p><p>将司机生命周期中的初步用户洞察整理为产品需求建议，协同产研团队跟进。</p><p>3、数据分析与增长支持</p><p>协助分析租车司机用户行为数据，参与识别影响转化与留存的关键因子；</p><p>协助搭建和维护核心监控指标看板，追踪供给侧健康度；</p><p>产出基础数据分析报告，为增长策略和产品迭代提供数据支撑。</p><p>4、运营执行与文档支持</p><p><br></p><p>任职要求：</p><p>1、2027届毕业生，经济学、计算机、统计学或相关专业优先；</p><p>2、对出行、租车或互联网行业有浓厚兴趣，有相关实习或项目经验者优先；</p><p>3、具备一定的逻辑思维和数据分析能力，能够从信息中提炼关键要点；</p><p>4、良好的沟通协调能力和团队协作意识，能够适应跨团队协作；</p><p>5、结果导向，具备良好的学习能力和自驱力，能够在指导下独立推进任务；</p><p>6、中英文流利，可作为工作语言，西语加分。</p>",
+        "locations": [
+          {
+            "cityId": 330100,
+            "cityName": "杭州市",
+            "country": "中国",
+            "id": 314487,
+            "provinceId": 330000,
+            "provinceName": "浙江"
+          },
+          {
+            "cityId": 110000,
+            "cityName": "北京市",
+            "country": "中国",
+            "id": 92621,
+            "provinceId": 110000,
+            "provinceName": "北京市"
+          }
+        ],
+        "multiLocale": "{\"mainLocale\":\"zh-CN\",\"secondLocale\":\"\"}",
+        "openedAt": "2026-08-13T00:00",
+        "orgId": "didiglobal",
+        "projectFolder": {
+          "id": 100126280,
+          "name": "2027届-秋招",
+          "settings": {
+            "deliveryLimit": {
+              "classType": 0,
+              "content": {
+                "channels": [
+                  "website",
+                  "campus",
+                  "recommend"
+                ],
+                "limit": 3,
+                "remainder": -1,
+                "type": 1
+              },
+              "creatorId": 2575085,
+              "hireMode": 2,
+              "name": "2027届-秋招",
+              "orgId": "didiglobal",
+              "projectFolderId": 100126280,
+              "status": 1,
+              "type": "deliveryLimit"
+            },
+            "graduateDateLimit": {
+              "classType": 0,
+              "content": {
+                "endDate": "2027-8",
+                "startDate": "2026-9"
+              },
+              "creatorId": 2575085,
+              "hireMode": 2,
+              "name": "2027届-秋招",
+              "orgId": "didiglobal",
+              "projectFolderId": 100126280,
+              "status": 1,
+              "type": "graduateDateLimit"
+            }
+          }
+        },
+        "publishedAt": "2026-08-13T10:19:54",
+        "salaryUnit": 0,
+        "showIsCampus": false,
+        "status": "open",
+        "title": "27届秋招-产品用户运营分析师（国际化出行-西语/英语）",
+        "updatedAt": "2026-08-28T16:18:17",
+        "zhineng": {
+          "id": 20039,
+          "name": "运营类"
+        }
+      },
+      {
+        "applicantLimitCheck": {
+          "isSetting": false
+        },
+        "campusSites": [],
+        "commitment": "全职",
+        "createdAt": "2026-08-10T19:20:19",
+        "department": {
+          "id": 203019,
+          "name": "国际化事业部"
+        },
+        "deptId": 203019,
+        "hireMode": 2,
+        "id": "9c676981-0237-4fca-9241-1701b6697d67",
+        "jobDescription": "<p>岗位职责：</p><p>1、运营沟通与需求支持</p><p>与各区域运营团队保持日常沟通，收集并整理一线业务反馈和需求，识别痛点需求；</p><p>同步产品功能更新与运营策略调整信息至各区域，跟进区域侧问题反馈并协调内部资源推动解决。</p><p>2、产品落地与迭代协同</p><p>撰写BRD/PRD文档，协助组织功能评审会议，整理会议纪要；</p><p>在Mentor指导下，将碎片化、本地化的运营需求梳理为结构化的产品需求，逐步培养从业务需求中提炼标准化方案的能力；</p><p>参与功能验收测试（UAT），跟踪产品上线后的使用情况，收集用户反馈并进行初步整理与分析；</p><p>将司机生命周期中的初步用户洞察整理为产品需求建议，协同产研团队跟进。</p><p>3、数据分析与增长支持</p><p>协助分析租车司机用户行为数据，参与识别影响转化与留存的关键因子；</p><p>协助搭建和维护核心监控指标看板，追踪供给侧健康度；</p><p>产出基础数据分析报告，为增长策略和产品迭代提供数据支撑。</p><p>4、运营执行与文档支持</p><p><br></p><p>任职要求：</p><p>1、2027届毕业生，经济学、计算机、统计学或相关专业优先；</p><p>2、对出行、租车或互联网行业有浓厚兴趣，有相关实习或项目经验者优先；</p><p>3、具备一定的逻辑思维和数据分析能力，能够从信息中提炼关键要点；</p><p>4、良好的沟通协调能力和团队协作意识，能够适应跨团队协作；</p><p>5、结果导向，具备良好的学习能力和自驱力，能够在指导下独立推进任务；</p><p>6、中英文流利，可作为工作语言，葡语加分。</p>",
+        "locations": [
+          {
+            "cityId": 330100,
+            "cityName": "杭州市",
+            "country": "中国",
+            "id": 314487,
+            "provinceId": 330000,
+            "provinceName": "浙江"
+          },
+          {
+            "cityId": 110000,
+            "cityName": "北京市",
+            "country": "中国",
+            "id": 92621,
+            "provinceId": 110000,
+            "provinceName": "北京市"
+          }
+        ],
+        "multiLocale": "{\"mainLocale\":\"zh-CN\",\"secondLocale\":\"\"}",
+        "openedAt": "2026-08-13T00:00",
+        "orgId": "didiglobal",
+        "projectFolder": {
+          "id": 100126280,
+          "name": "2027届-秋招",
+          "settings": {
+            "deliveryLimit": {
+              "classType": 0,
+              "content": {
+                "channels": [
+                  "website",
+                  "campus",
+                  "recommend"
+                ],
+                "limit": 3,
+                "remainder": -1,
+                "type": 1
+              },
+              "creatorId": 2575085,
+              "hireMode": 2,
+              "name": "2027届-秋招",
+              "orgId": "didiglobal",
+              "projectFolderId": 100126280,
+              "status": 1,
+              "type": "deliveryLimit"
+            },
+            "graduateDateLimit": {
+              "classType": 0,
+              "content": {
+                "endDate": "2027-8",
+                "startDate": "2026-9"
+              },
+              "creatorId": 2575085,
+              "hireMode": 2,
+              "name": "2027届-秋招",
+              "orgId": "didiglobal",
+              "projectFolderId": 100126280,
+              "status": 1,
+              "type": "graduateDateLimit"
+            }
+          }
+        },
+        "publishedAt": "2026-08-13T10:19:54",
+        "salaryUnit": 0,
+        "showIsCampus": false,
+        "status": "open",
+        "title": "27届秋招-产品用户运营分析师（国际化出行-葡语/英语）",
+        "updatedAt": "2026-08-28T16:18:17",
+        "zhineng": {
+          "id": 20039,
+          "name": "运营类"
+        }
+      },
+      {
+        "applicantLimitCheck": {
+          "isSetting": false
+        },
+        "campusSites": [],
+        "commitment": "全职",
+        "createdAt": "2026-08-06T19:17:16",
+        "department": {
+          "id": 203019,
+          "name": "国际化事业部"
+        },
+        "deptId": 203019,
+        "hireMode": 2,
+        "id": "a34b6788-98d9-434b-bc63-67b1dbd4d889",
+        "jobDescription": "<p>岗位职责：</p><p>1、风险指标体系建设： 协助健全覆盖贷前、贷中、贷后全流程的关键风险指标体系，定期对指标口径和适用性进行评估与更新，确保指标体系与业务发展阶段相匹配。</p><p>2、资产质量监测与分析： 参与关键风险指标的日常监测与追踪，定期完成各逾期阶段的迁移分析、NPL 变动归因、资产结构变化分析等工作，真实、全面、动态地反映资产质量变化情况。</p><p>3、策略效果追踪： 在多策略并行运行的环境中，协助监测不同策略版本的指标表现，参与策略效果对比分析，支持策略调整的数据论证和效果评估。</p><p>4、核心风险模型支持： 参与风险预测模型、资产损益模型、LTV 模型等核心风险资产评估模型的维护与迭代，协助数据处理、变量分析和模型效果跟踪。</p><p><br></p><p>任职要求：</p><p>1、2027届毕业生，本科及以上学历，数学或计算机专业，掌握机器学习、深度学习、因果推断等方向理论和应用。</p><p>2、熟练掌握Python/Java/Scala等建模语言.熟练使用SQL/Hive/Spark等数据统计工具。</p><p>3、优秀的分析和解决问题的能力.对挑战性问题充满激情。</p><p>4、有AI相关研究及实践更佳。</p><p>5、英语流利，可以作为工作语言使用者优先。</p>",
+        "locations": [
+          {
+            "cityId": 310000,
+            "cityName": "上海市",
+            "country": "中国",
+            "id": 94656,
+            "provinceId": 310000,
+            "provinceName": "上海市"
+          }
+        ],
+        "multiLocale": "{\"mainLocale\":\"zh-CN\",\"secondLocale\":\"\"}",
+        "openedAt": "2026-08-13T00:00",
+        "orgId": "didiglobal",
+        "projectFolder": {
+          "id": 100126280,
+          "name": "2027届-秋招",
+          "settings": {
+            "deliveryLimit": {
+              "classType": 0,
+              "content": {
+                "channels": [
+                  "website",
+                  "campus",
+                  "recommend"
+                ],
+                "limit": 3,
+                "remainder": -1,
+                "type": 1
+              },
+              "creatorId": 2575085,
+              "hireMode": 2,
+              "name": "2027届-秋招",
+              "orgId": "didiglobal",
+              "projectFolderId": 100126280,
+              "status": 1,
+              "type": "deliveryLimit"
+            },
+            "graduateDateLimit": {
+              "classType": 0,
+              "content": {
+                "endDate": "2027-8",
+                "startDate": "2026-9"
+              },
+              "creatorId": 2575085,
+              "hireMode": 2,
+              "name": "2027届-秋招",
+              "orgId": "didiglobal",
+              "projectFolderId": 100126280,
+              "status": 1,
+              "type": "graduateDateLimit"
+            }
+          }
+        },
+        "publishedAt": "2026-08-13T10:19:54",
+        "salaryUnit": 0,
+        "showIsCampus": false,
+        "status": "open",
+        "title": "27届秋招-资产分析师（国际化金融-信贷）",
+        "updatedAt": "2026-08-28T16:18:17",
+        "zhineng": {
+          "id": 203524,
+          "name": "金融业务"
+        }
+      },
+      {
+        "applicantLimitCheck": {
+          "isSetting": false
+        },
+        "campusSites": [],
+        "commitment": "全职",
+        "createdAt": "2026-08-05T17:16:45",
+        "department": {
+          "id": 203019,
+          "name": "国际化事业部"
+        },
+        "deptId": 203019,
+        "hireMode": 2,
+        "id": "522b0cc6-89f3-487f-9212-d0534f63918f",
+        "jobDescription": "<p>岗位职责：</p><p>1、参与国际化外卖的产品设计工作；</p><p>2、调研用户、商家需求，市场研究与分析，收集并整理行业信息、目标市场用户体验过程中的相关数据，进行深度分析；</p><p>3、参与后台产品功能的设计工作，产出完善的产品需求文档；</p><p>4、参与产品日常数据分析、运营数据分析以及效果复盘等；</p><p>5、协助产品经理进行产品国际化工作，协调组织设计、开发、测试资源，合理把控项目进度，推动产品完成发布和交付。</p><p><br></p><p>任职要求：</p><p>1、2027届毕业生，本科及以上学历，专业不限；</p><p>2、逻辑思维能力强，英语水平优秀者优先；</p><p>3、有产品实习经验、数据处理能力佳的优先 。</p>",
+        "locations": [
+          {
+            "cityId": 110000,
+            "cityName": "北京市",
+            "country": "中国",
+            "id": 92621,
+            "provinceId": 110000,
+            "provinceName": "北京市"
+          }
+        ],
+        "openedAt": "2026-08-13T00:00",
+        "orgId": "didiglobal",
+        "projectFolder": {
+          "id": 100126280,
+          "name": "2027届-秋招",
+          "settings": {
+            "deliveryLimit": {
+              "classType": 0,
+              "content": {
+                "channels": [
+                  "website",
+                  "campus",
+                  "recommend"
+                ],
+                "limit": 3,
+                "remainder": -1,
+                "type": 1
+              },
+              "creatorId": 2575085,
+              "hireMode": 2,
+              "name": "2027届-秋招",
+              "orgId": "didiglobal",
+              "projectFolderId": 100126280,
+              "status": 1,
+              "type": "deliveryLimit"
+            },
+            "graduateDateLimit": {
+              "classType": 0,
+              "content": {
+                "endDate": "2027-8",
+                "startDate": "2026-9"
+              },
+              "creatorId": 2575085,
+              "hireMode": 2,
+              "name": "2027届-秋招",
+              "orgId": "didiglobal",
+              "projectFolderId": 100126280,
+              "status": 1,
+              "type": "graduateDateLimit"
+            }
+          }
+        },
+        "publishedAt": "2026-08-13T10:19:54",
+        "salaryUnit": 0,
+        "showIsCampus": false,
+        "status": "open",
+        "title": "27届秋招-产品助理（国际化外卖-平台）",
+        "updatedAt": "2026-08-28T16:18:17",
+        "zhineng": {
+          "id": 20037,
+          "name": "产品类"
+        }
+      },
+      {
+        "applicantLimitCheck": {
+          "isSetting": false
+        },
+        "campusSites": [],
+        "commitment": "全职",
+        "createdAt": "2026-08-05T16:08:42",
+        "department": {
+          "id": 682867,
+          "name": "用户平台部"
+        },
+        "deptId": 682867,
+        "hireMode": 2,
+        "id": "397e97cd-a9e6-4067-97fb-560f62cffd7c",
+        "jobDescription": "岗位职责：\n1、协助负责业务线的核心指标进行及时的异常波动识别与波动原因分析；\n2、对数据看板无法满足的、需要做出常规分析与探索性分析的方向上，以分析建议和结论为目标完成专题分析的交付；\n3、立足于业务逻辑，设计看板结构、层级，整合出一个适合多角色、多应用场景的数据门户，让运营看数更高效。\n\n任职要求：\n1、2027届毕业生，本科及以上学历，计算机科学、统计学等相关专业优先；\n2、有良好的逻辑思维能力及数字敏感度，具备一定的建模能力；\n3、熟练使用SQL、Python或者R语言，至少熟悉一种Tableau、PowerBI等主流数据分析工具；\n4、具有较强的学习和总结能力，良好的沟通技能、团队合作能力；\n5、有过互联网行业数据相关岗位实习经验。",
+        "locations": [
+          {
+            "cityId": 110000,
+            "cityName": "北京市",
+            "country": "中国",
+            "id": 92621,
+            "provinceId": 110000,
+            "provinceName": "北京市"
+          }
+        ],
+        "openedAt": "2026-08-13T08:00",
+        "orgId": "didiglobal",
+        "projectFolder": {
+          "id": 100126280,
+          "name": "2027届-秋招",
+          "settings": {
+            "deliveryLimit": {
+              "classType": 0,
+              "content": {
+                "channels": [
+                  "website",
+                  "campus",
+                  "recommend"
+                ],
+                "limit": 3,
+                "remainder": -1,
+                "type": 1
+              },
+              "creatorId": 2575085,
+              "hireMode": 2,
+              "name": "2027届-秋招",
+              "orgId": "didiglobal",
+              "projectFolderId": 100126280,
+              "status": 1,
+              "type": "deliveryLimit"
+            },
+            "graduateDateLimit": {
+              "classType": 0,
+              "content": {
+                "endDate": "2027-8",
+                "startDate": "2026-9"
+              },
+              "creatorId": 2575085,
+              "hireMode": 2,
+              "name": "2027届-秋招",
+              "orgId": "didiglobal",
+              "projectFolderId": 100126280,
+              "status": 1,
+              "type": "graduateDateLimit"
+            }
+          }
+        },
+        "publishedAt": "2026-08-13T10:19:54",
+        "salaryUnit": 0,
+        "showIsCampus": false,
+        "status": "open",
+        "title": "27届秋招-效率运营专员（数据分析方向）",
+        "updatedAt": "2026-09-03T17:16:55",
+        "zhineng": {
+          "id": 20039,
+          "name": "运营类"
+        }
+      },
+      {
+        "applicantLimitCheck": {
+          "isSetting": false
+        },
+        "campusSites": [],
+        "commitment": "全职",
+        "createdAt": "2026-08-05T16:08:42",
+        "department": {
+          "id": 682867,
+          "name": "用户平台部"
+        },
+        "deptId": 682867,
+        "hireMode": 2,
+        "id": "4471ffdc-f548-4894-8c09-e9d208f67093",
+        "jobDescription": "岗位职责：\n1、协助对服务旅程中某一场景下的服务体验、效率、风险等指标负责，通过不断优化服务解决方案，提升指标表现；\n2、对接业务部门，针对业务侧产品、策略、治理等项目，设计服务方案、话术及工具，保证业务平稳落地；\n3、负责知识库维护工作，及时准确更新知识点，并同步至各服务交付团队；\n4、针对服务交付、质检、培训等团队提出的流程、知识改善需求，进行甄别与迭代，关注改善效果。\n\n任职要求：\n1、2027届毕业生，本科及以上学历，专业不限；\n2、逻辑思维能力强，较强的结构化总结及表达能力，能很好地进行团队内部协作以及跨团队协作沟通；\n3、积极向上、有较强的推动能力、学习能力以及自驱力。",
+        "locations": [
+          {
+            "cityId": 110000,
+            "cityName": "北京市",
+            "country": "中国",
+            "id": 92621,
+            "provinceId": 110000,
+            "provinceName": "北京市"
+          }
+        ],
+        "openedAt": "2026-08-13T08:00",
+        "orgId": "didiglobal",
+        "projectFolder": {
+          "id": 100126280,
+          "name": "2027届-秋招",
+          "settings": {
+            "deliveryLimit": {
+              "classType": 0,
+              "content": {
+                "channels": [
+                  "website",
+                  "campus",
+                  "recommend"
+                ],
+                "limit": 3,
+                "remainder": -1,
+                "type": 1
+              },
+              "creatorId": 2575085,
+              "hireMode": 2,
+              "name": "2027届-秋招",
+              "orgId": "didiglobal",
+              "projectFolderId": 100126280,
+              "status": 1,
+              "type": "deliveryLimit"
+            },
+            "graduateDateLimit": {
+              "classType": 0,
+              "content": {
+                "endDate": "2027-8",
+                "startDate": "2026-9"
+              },
+              "creatorId": 2575085,
+              "hireMode": 2,
+              "name": "2027届-秋招",
+              "orgId": "didiglobal",
+              "projectFolderId": 100126280,
+              "status": 1,
+              "type": "graduateDateLimit"
+            }
+          }
+        },
+        "publishedAt": "2026-08-13T10:19:54",
+        "salaryUnit": 0,
+        "showIsCampus": false,
+        "status": "open",
+        "title": "27届秋招-服务设计专员",
+        "updatedAt": "2026-09-03T17:16:55",
+        "zhineng": {
+          "id": 20039,
+          "name": "运营类"
+        }
+      },
+      {
+        "applicantLimitCheck": {
+          "isSetting": false
+        },
+        "campusSites": [],
+        "commitment": "全职",
+        "createdAt": "2026-08-05T15:59:22",
+        "department": {
+          "id": 203019,
+          "name": "国际化事业部"
+        },
+        "deptId": 203019,
+        "hireMode": 2,
+        "id": "ab4a1333-a550-401d-a8e8-f45a5bb089bc",
+        "jobDescription": "<p>岗位职责：</p><p>1、支持国际化业务增长策略，设计用户全生命周期运营方案；</p><p>2、参与C端/B端增长项目落地，通过数据驱动提升核心指标；</p><p>3、基于用户洞察，协助设计并执行A/B测试，持续迭代优化运营策略，建立增长闭环；</p><p>4、协调跨国团队资源，推进重点项目实施。</p><p><br></p><p>任职要求：</p><p>1、2027届毕业生，本科及以上学历，有互联网运营/策略相关实习经验者优先；</p><p>2、具备优秀的跨团队沟通能力，葡语可作为工作语言；</p><p>3、具备良好的产品思维，用户同理心和业务洞察力；</p><p>4、具备 AI 工具应用意识，乐于用新工具提升效率；有 AI 实践经验者优先。</p>",
+        "locations": [
+          {
+            "cityId": 110000,
+            "cityName": "北京市",
+            "country": "中国",
+            "id": 92621,
+            "provinceId": 110000,
+            "provinceName": "北京市"
+          },
+          {
+            "cityId": 310000,
+            "cityName": "上海市",
+            "country": "中国",
+            "id": 94656,
+            "provinceId": 310000,
+            "provinceName": "上海市"
+          }
+        ],
+        "multiLocale": "{\"mainLocale\":\"zh-CN\",\"secondLocale\":\"\"}",
+        "openedAt": "2026-08-13T08:00",
+        "orgId": "didiglobal",
+        "projectFolder": {
+          "id": 100126280,
+          "name": "2027届-秋招",
+          "settings": {
+            "deliveryLimit": {
+              "classType": 0,
+              "content": {
+                "channels": [
+                  "website",
+                  "campus",
+                  "recommend"
+                ],
+                "limit": 3,
+                "remainder": -1,
+                "type": 1
+              },
+              "creatorId": 2575085,
+              "hireMode": 2,
+              "name": "2027届-秋招",
+              "orgId": "didiglobal",
+              "projectFolderId": 100126280,
+              "status": 1,
+              "type": "deliveryLimit"
+            },
+            "graduateDateLimit": {
+              "classType": 0,
+              "content": {
+                "endDate": "2027-8",
+                "startDate": "2026-9"
+              },
+              "creatorId": 2575085,
+              "hireMode": 2,
+              "name": "2027届-秋招",
+              "orgId": "didiglobal",
+              "projectFolderId": 100126280,
+              "status": 1,
+              "type": "graduateDateLimit"
+            }
+          }
+        },
+        "publishedAt": "2026-08-13T10:19:54",
+        "salaryUnit": 0,
+        "showIsCampus": false,
+        "status": "open",
+        "title": "27届秋招-用户增长运营分析师（国际化外卖）",
+        "updatedAt": "2026-08-28T16:18:17",
+        "zhineng": {
+          "id": 20039,
+          "name": "运营类"
+        }
+      },
+      {
+        "applicantLimitCheck": {
+          "isSetting": false
+        },
+        "campusSites": [],
+        "commitment": "全职",
+        "createdAt": "2026-08-05T15:59:21",
+        "department": {
+          "id": 203019,
+          "name": "国际化事业部"
+        },
+        "deptId": 203019,
+        "hireMode": 2,
+        "id": "3972818a-f7bb-442c-9bd9-fa2dfbe76aef",
+        "jobDescription": "岗位职责：\n1、流量数据分析与诊断：支持滴滴国际化拉美地区平台业务日常流量数据的收集、整理与分析，通过AI能力辅助识别资源位投放效率、用户需求等问题，形成结构化洞察并输出可落地的优化建议；\n2、流量策略优化探索：参与流量分配、资源位调优等策略设计探索，借助AI工具提效策略效果评估与迭代验证，推动业务指标的持续增长；\n3、市场研究：围绕本地生活服务平台（如出行、外卖、零售等）开展定向市场研究、行业趋势追踪，运用AI能力辅助信息收集与归纳分析，辅助策略方向判断；\n4、跨部门协同与项目推进：与产品、技术、算法等团队紧密协作，推动策略从分析到落地的全流程，确保项目高效交付。\n\n任职要求：\n1、2027届毕业生，本科及以上学历，西语相关专业优先；\n2、英文读写能力良好，可作为工作语言，掌握西班牙语者优先；\n3、对数据敏感，具备扎实的数据分析能力，熟练使用Excel等办公软件进行数据处理和可视化，有SQL/Python基础者优先；\n4、对平台生态、流量运营有浓厚兴趣，思维逻辑清晰，具备良好的结构化思考能力与问题拆解能力；\n5、学习能力强，对AI有持续好奇心，能够在快速变化的环境中不断探索和迭代；\n6、有行业研究、策略运营、产品运营等实习经历者优先。",
+        "locations": [
+          {
+            "cityId": 110000,
+            "cityName": "北京市",
+            "country": "中国",
+            "id": 92621,
+            "provinceId": 110000,
+            "provinceName": "北京市"
+          }
+        ],
+        "openedAt": "2026-08-13T08:00",
+        "orgId": "didiglobal",
+        "projectFolder": {
+          "id": 100126280,
+          "name": "2027届-秋招",
+          "settings": {
+            "deliveryLimit": {
+              "classType": 0,
+              "content": {
+                "channels": [
+                  "website",
+                  "campus",
+                  "recommend"
+                ],
+                "limit": 3,
+                "remainder": -1,
+                "type": 1
+              },
+              "creatorId": 2575085,
+              "hireMode": 2,
+              "name": "2027届-秋招",
+              "orgId": "didiglobal",
+              "projectFolderId": 100126280,
+              "status": 1,
+              "type": "deliveryLimit"
+            },
+            "graduateDateLimit": {
+              "classType": 0,
+              "content": {
+                "endDate": "2027-8",
+                "startDate": "2026-9"
+              },
+              "creatorId": 2575085,
+              "hireMode": 2,
+              "name": "2027届-秋招",
+              "orgId": "didiglobal",
+              "projectFolderId": 100126280,
+              "status": 1,
+              "type": "graduateDateLimit"
+            }
+          }
+        },
+        "publishedAt": "2026-08-13T10:19:54",
+        "salaryUnit": 0,
+        "showIsCampus": false,
+        "status": "open",
+        "title": "27届秋招-AI Operation Analyst（国际化外卖）",
+        "updatedAt": "2026-08-28T16:18:17",
+        "zhineng": {
+          "id": 20039,
+          "name": "运营类"
+        }
+      },
+      {
+        "applicantLimitCheck": {
+          "isSetting": false
+        },
+        "campusSites": [],
+        "commitment": "全职",
+        "createdAt": "2026-08-05T15:59:17",
+        "department": {
+          "id": 682867,
+          "name": "用户平台部"
+        },
+        "deptId": 682867,
+        "hireMode": 2,
+        "id": "24b7aabb-5714-4d34-8cb5-b1f48c10f545",
+        "jobDescription": "岗位职责：\n1、按场景参与网约车数据分析、策略输出工作，承接业务部相关数据需求，落地为可视化数据方案；\n2、了解公司现有的业务流程和数据体系，编写SQL，制作可视化看板，并能进行相关系统的维护操作；\n3、通过数据、用户需求分析，不断完善所参与模块的数据洞察工作，可探索创新型的数据分析思路。\n\n任职要求：\n1、2027届毕业生，硕士及以上学历，计算机、统计学、信息管理相关专业优先；\n2、逻辑思维能力强，较强的结构化总结及表达能力，能很好地进行团队内部协作以及跨团队协作沟通；\n3、积极向上、有较强的推动能力、学习能力以及自驱力。",
+        "locations": [
+          {
+            "cityId": 110000,
+            "cityName": "北京市",
+            "country": "中国",
+            "id": 92621,
+            "provinceId": 110000,
+            "provinceName": "北京市"
+          }
+        ],
+        "openedAt": "2026-08-13T08:00",
+        "orgId": "didiglobal",
+        "projectFolder": {
+          "id": 100126280,
+          "name": "2027届-秋招",
+          "settings": {
+            "deliveryLimit": {
+              "classType": 0,
+              "content": {
+                "channels": [
+                  "website",
+                  "campus",
+                  "recommend"
+                ],
+                "limit": 3,
+                "remainder": -1,
+                "type": 1
+              },
+              "creatorId": 2575085,
+              "hireMode": 2,
+              "name": "2027届-秋招",
+              "orgId": "didiglobal",
+              "projectFolderId": 100126280,
+              "status": 1,
+              "type": "deliveryLimit"
+            },
+            "graduateDateLimit": {
+              "classType": 0,
+              "content": {
+                "endDate": "2027-8",
+                "startDate": "2026-9"
+              },
+              "creatorId": 2575085,
+              "hireMode": 2,
+              "name": "2027届-秋招",
+              "orgId": "didiglobal",
+              "projectFolderId": 100126280,
+              "status": 1,
+              "type": "graduateDateLimit"
+            }
+          }
+        },
+        "publishedAt": "2026-08-13T10:19:54",
+        "salaryUnit": 0,
+        "showIsCampus": false,
+        "status": "open",
+        "title": "27届秋招-策略运营专员",
+        "updatedAt": "2026-09-03T17:16:55",
+        "zhineng": {
+          "id": 20039,
+          "name": "运营类"
+        }
+      },
+      {
+        "applicantLimitCheck": {
+          "isSetting": false
+        },
+        "campusSites": [],
+        "commitment": "全职",
+        "createdAt": "2026-08-05T14:50:33",
+        "department": {
+          "id": 203019,
+          "name": "国际化事业部"
+        },
+        "deptId": 203019,
+        "hireMode": 2,
+        "id": "9b95dfe5-9ffc-471d-aee2-654216736356",
+        "jobDescription": "岗位职责：\n1、参与国际化出行交易市场核心产品的需求挖掘、方案设计与迭代落地，覆盖从需求分析到上线复盘的全流程；\n2、参与拉美、亚太、非洲等市场的产品工作，拆解用户真实痛点，在全球化标准与本地化适配之间寻找平衡；\n3、参与动态定价、供需匹配、智能补贴、司乘推荐、司乘体验优化等方向的AI应用探索；\n4、与运营、设计、技术、算法、数据分析团队协作，推动产品从想法到上线并拿到业务结果。\n\n任职要求：\n1、2027届毕业生，本科及以上学历，专业不限；\n2、习惯站在用户视角思考，能敏锐捕捉需求与痛点，对产品体验敏感度高；\n3、逻辑清晰，能从目标倒推出可行方案，推演科学、严谨、经得起追问；\n4、对AI技术有热情，关注大模型与AI技术进展，愿意探索AI在出行与交易中的应用；\n5、自驱力强，能主动推进、主动复盘，成长速度快；\n6、有产品相关实习经历，英语口语能用于日常交流。",
+        "locations": [
+          {
+            "cityId": 110000,
+            "cityName": "北京市",
+            "country": "中国",
+            "id": 92621,
+            "provinceId": 110000,
+            "provinceName": "北京市"
+          }
+        ],
+        "openedAt": "2026-08-13T08:00",
+        "orgId": "didiglobal",
+        "projectFolder": {
+          "id": 100126280,
+          "name": "2027届-秋招",
+          "settings": {
+            "deliveryLimit": {
+              "classType": 0,
+              "content": {
+                "channels": [
+                  "website",
+                  "campus",
+                  "recommend"
+                ],
+                "limit": 3,
+                "remainder": -1,
+                "type": 1
+              },
+              "creatorId": 2575085,
+              "hireMode": 2,
+              "name": "2027届-秋招",
+              "orgId": "didiglobal",
+              "projectFolderId": 100126280,
+              "status": 1,
+              "type": "deliveryLimit"
+            },
+            "graduateDateLimit": {
+              "classType": 0,
+              "content": {
+                "endDate": "2027-8",
+                "startDate": "2026-9"
+              },
+              "creatorId": 2575085,
+              "hireMode": 2,
+              "name": "2027届-秋招",
+              "orgId": "didiglobal",
+              "projectFolderId": 100126280,
+              "status": 1,
+              "type": "graduateDateLimit"
+            }
+          }
+        },
+        "publishedAt": "2026-08-13T10:19:54",
+        "salaryUnit": 0,
+        "showIsCampus": false,
+        "status": "open",
+        "title": "27届秋招-产品助理（国际化出行-策略-英语）",
+        "updatedAt": "2026-08-28T16:18:17",
+        "zhineng": {
+          "id": 20037,
+          "name": "产品类"
+        }
+      }
+    ]
+  },
+  "msg": "成功",
+  "success": true
+}

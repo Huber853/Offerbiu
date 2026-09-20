@@ -1,0 +1,149 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [
+      1
+    ],
+    "autoArchiveTalentPoolId": 425506,
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-05T14:50:23",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": "27秋-算法"
+      }
+    },
+    "department": {
+      "id": 203019,
+      "name": "国际化事业部"
+    },
+    "departmentId": 203019,
+    "departments": [
+      {
+        "id": 203019,
+        "name": "国际化事业部"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "硕士",
+    "hireMode": 2,
+    "id": "0638a456-d052-46a3-b762-4ea16f374f54",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "<p>岗位职责：</p><p>1、信贷相关模型开发，理解业务场景，设计研发具有良好区分度的风险模型或经营模型；</p><p>2、开展用户行为序列分析，异常检测，因果推断，图谱关系等方向研究及技术产能落地。</p><p><br></p><p>任职要求：</p><p>1、2027届毕业生，硕士及其以上学历，数学或计算机专业优先；</p><p>2、掌握机器学习、深度学习、因果推断等方向理论和应用；</p><p>3、熟练掌握Python/Java/Scala等编程语言，熟练使用SQL/Hive/Spark等数据统计工具；</p><p>4、优秀的分析和解决问题的能力，对挑战性问题充满激情；</p><p>5、有竞赛获奖，顶会论文发表，实习经历者优先。</p>",
+    "jobIntentions": [
+      1
+    ],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          203019
+        ],
+        "locationIds": [
+          92621,
+          94656
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 110000,
+        "cityName": "北京市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 92621,
+        "provinceName": "北京市"
+      },
+      {
+        "cityId": 310000,
+        "cityName": "上海市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 94656,
+        "provinceName": "上海市"
+      }
+    ],
+    "multiLocale": "{\"mainLocale\":\"zh-CN\",\"secondLocale\":\"\"}",
+    "number": 6,
+    "openedAt": "2026-08-13T08:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 0,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-08-13T10:19:54",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-算法工程师（国际化金融-信贷AI）",
+    "updatedAt": "2026-08-28T16:18:17",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 136661,
+      "name": "算法类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

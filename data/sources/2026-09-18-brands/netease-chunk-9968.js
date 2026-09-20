@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcampus=self.webpackChunkcampus||[]).push([[9391,9968],{79968(e,u,a){a.r(u),a.d(u,{default:()=>n});var t=a(30169),c=a(59385);const n=function(){return t.createElement("div",{className:"p-huyu-agreement"},t.createElement(c.default,null))}}}]);

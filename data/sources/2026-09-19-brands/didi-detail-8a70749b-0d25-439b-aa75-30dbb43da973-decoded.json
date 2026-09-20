@@ -1,0 +1,135 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [],
+    "autoArchiveTalentPoolId": 432698,
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-05T16:08:47",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": "27秋-行测"
+      }
+    },
+    "department": {
+      "id": 199257,
+      "name": "网约车平台公司"
+    },
+    "departmentId": 199257,
+    "departments": [
+      {
+        "id": 199257,
+        "name": "网约车平台公司"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "本科",
+    "hireMode": 2,
+    "id": "8a70749b-0d25-439b-aa75-30dbb43da973",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "岗位职责：\n1、通过数据洞察寻找B/C端增长机会，对画像和用户行为进行深度分析洞察；\n2、参与市场营销线上渠道生态建设工作，包括数据监控、内容策划等，提升品牌认知和用户粘性；\n3、协助负责本地商务拓展合作，拓展并维护关键场景，通过资源整合撰写营销方案，落地线下营销活动；\n4、监控并分析各类市场活动的核心数据，基于数据持续优化动作，确保营销动作的高效和精准转化。\n\n任职要求：\n1、2027届毕业生，硕士及以上学历，市场营销类、商业类专业优先；\n2、具有严谨的逻辑思维能力，能正确提问，善于思考，并能通过数据分析洞察问题并推进解决；\n3、有较好的沟通协作能力，能够跨部门沟通，推动全国性项目的落地执行；\n4、有较强的学习能力，皮实踏实，能够承担有强度的工作压力；\n5、可接受大区内半年-1年可能的轮岗安排。",
+    "jobIntentions": [],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          199257
+        ],
+        "locationIds": [
+          137810
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 500000,
+        "cityName": "重庆市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 137810,
+        "provinceName": "重庆市"
+      }
+    ],
+    "number": 1,
+    "openedAt": "2026-08-13T08:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 0,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-09-01T12:28:22",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-市场营销顾问（重庆）",
+    "updatedAt": "2026-09-01T12:28:22",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 20040,
+      "name": "市场类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

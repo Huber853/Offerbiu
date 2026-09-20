@@ -1,0 +1,139 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [
+      1
+    ],
+    "autoArchiveTalentPoolId": 419557,
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-09-08T19:10:26",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": ""
+      }
+    },
+    "department": {
+      "id": 203019,
+      "name": "国际化事业部"
+    },
+    "departmentId": 203019,
+    "departments": [
+      {
+        "id": 203019,
+        "name": "国际化事业部"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "本科",
+    "hireMode": 2,
+    "id": "efe360e1-a1f2-4a98-a10c-626ab8826c5b",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "<p>岗位职责：</p><p>1、负责国际化商超业务的商业分析工作，重点深入竞争、用户、商家、交易等策略细节，为业务提供充足的洞察； 2、专题分析：独立开展深度专题分析，基于业务理解，结合内外部洞察，挖掘业务问题或机会，并给与相应的策略建议并推动落地； </p><p>3、经营分析：支持业务日常周会、月会的经营分析及专题支持工作；</p><p>4、行业研究：围绕业务方向关键发展需求，开展竞品及行业研究，明确策略及打法，提供充足输入；</p><p>5、数据建设：定义业务核心指标体系，协同运营、产品、数科、数仓、算法等团队，完善数据基建，推动策略落地。</p><p><br></p><p>任职要求：</p><p>1、2027 届毕业生，本科及以上学历，商业分析/经济学/数学/统计学/金融学等相关专业；</p><p>2、有互联网数分/商分实习经验加分；</p><p>3、具备良好的商业感知和沟通力，能与业务团队建立良好的合作关系，实现高效沟通并应对复杂协作问题； </p><p>4、具备良好的业务素养，能够深入参与业务日常决策，利用多维度分析，提供有价值的业务洞察，及具体改进建议； </p><p>5、问题解决能力：具备出色的逻辑思维和问题解决能力，能够快速识别和解决数据分析过程中遇到的问题； </p><p>6、英文可作为工作语言，可接受一定频次的出差； </p><p>7、具备较强数据分析能力、能够使用SQL、Python、R等工具进行数据处理和分析。</p>",
+    "jobIntentions": [
+      1
+    ],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          203019
+        ],
+        "locationIds": [
+          94656
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 310000,
+        "cityName": "上海市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 94656,
+        "provinceName": "上海市"
+      }
+    ],
+    "number": 1,
+    "openedAt": "2026-09-08T00:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 0,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-09-08T19:10:36",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-商业分析师（国际化外卖-Grocery）",
+    "updatedAt": "2026-09-09T00:21:53",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 204024,
+      "name": "商分-商业分析"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

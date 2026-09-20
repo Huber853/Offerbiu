@@ -1,0 +1,105 @@
+{
+  "repository": "https://github.com/mmmlllnnn/ResumeCollection",
+  "source_tree_sha": "56a18c26dd8d6ecd60df80b7dd8261b78dd70998",
+  "retrieved_date": "2026-09-19",
+  "license_declaration": "仓库根目录声明MIT；收集内容来自网络，原作者信息按原文件保留。",
+  "adaptation": "结构化HTML/CSS网页适配，不是Word文件直接运行；不把示例人物、个人信息或技能比例写入用户简历。",
+  "templates": [
+    {
+      "id": "collection-coral",
+      "name": "珊瑚红 · 人物名片",
+      "number": "004",
+      "source_path": "1.中文简历/004",
+      "files": [
+        {
+          "file": "document.xml",
+          "sha256": "49c07dabf67b385c4b0ceb1cb2f1a2ac6e099c67168c1de0dcec08a2fc639feb"
+        },
+        {
+          "file": "reference.jpg",
+          "sha256": "15e482b56281452b24a6926166521d939c911569562f767476d17ec1d519b943"
+        },
+        {
+          "file": "砖红色通用免费简历模板.docx",
+          "sha256": "e9740cf6620cfacfba5c0ae8e3e847698aadb7df805731a58e7725c824ab1b0a"
+        }
+      ]
+    },
+    {
+      "id": "collection-navy",
+      "name": "海军蓝 · 专业双栏",
+      "number": "005",
+      "source_path": "1.中文简历/005",
+      "files": [
+        {
+          "file": "document.xml",
+          "sha256": "3f3eafb3a7bb9088dbafa1ee15077b56d646a245aa4c7c275085522d0aee6a85"
+        },
+        {
+          "file": "reference.jpg",
+          "sha256": "645408e67f050b01c3a2f58f4f7432a5529e670af477319c68b2b60f1c932eca"
+        },
+        {
+          "file": "左右双栏风免费简历模板.docx",
+          "sha256": "c1b334bc88646753a7a7b487d3a624b00507661c6e3e8f23fdcfa9015eb223ea"
+        }
+      ]
+    },
+    {
+      "id": "collection-slate",
+      "name": "石墨灰 · 产品档案",
+      "number": "018",
+      "source_path": "1.中文简历/018",
+      "files": [
+        {
+          "file": "document.xml",
+          "sha256": "1b13a8c22ae8217063ae1a883bdff42aab6066393c8bf36a7f903c79415b510e"
+        },
+        {
+          "file": "reference.jpg",
+          "sha256": "62a3bdba3ba6e1fccee907aa1bc56d0e2c35e4cd5e8ad455c1a70c5dda42df1b"
+        },
+        {
+          "file": "产品经理免费个人简历模板.docx",
+          "sha256": "42a3e1dda6284f46bb3892ca072559563b110037f5df557c921cd9a84d46d81c"
+        }
+      ]
+    },
+    {
+      "id": "collection-jade",
+      "name": "宝石绿 · 清爽双栏",
+      "number": "022",
+      "source_path": "1.中文简历/022",
+      "files": [
+        {
+          "file": "document.xml",
+          "sha256": "bce14260fb47a1cca7c4f163edd5b3f8371c40622eb4b42007dd94f3fcf85741"
+        },
+        {
+          "file": "reference.jpg",
+          "sha256": "e4e6d3cdd6ed0dc23c4c3e0077cd2c9167bf30f4ecb7a1e5d95f5ae7734b6e16"
+        },
+        {
+          "file": "宝石绿风格免费简历模板.docx",
+          "sha256": "e3bcd5a93508642947da30d0dfa308d323ce5ab46af82553b84120dd9993a7b3"
+        }
+      ]
+    },
+    {
+      "id": "collection-mist",
+      "name": "雾蓝 · 细线履历",
+      "number": "023",
+      "source_path": "1.中文简历/023",
+      "files": [
+        {
+          "file": "reference.jpg",
+          "sha256": "96e7c05208a3eeddd15fc72d429848c320426da1cccf0f16b0237fe2630f8d6f"
+        },
+        {
+          "file": "专为工程师设计的技术简历模板.docx",
+          "sha256": "109a871226c5582862f3a374c623a5c1a840ca11e045f2f0e35aede399e4a967"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [],
+    "autoArchiveTalentPoolId": 425506,
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-05T14:50:05",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": "27秋-算法"
+      }
+    },
+    "department": {
+      "id": 94463,
+      "name": "CTO线"
+    },
+    "departmentId": 94463,
+    "departments": [
+      {
+        "id": 94463,
+        "name": "CTO线"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "本科",
+    "hireMode": 2,
+    "id": "103f1743-357b-448e-af03-eeeb982b396c",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "岗位职责：\n1、基于滴滴国际化海量的出行数据（四轮、摩托、外卖），利用数据挖掘、机器学习等技术，优化上下车点推荐、地址解析、路况预测、路径规划、ETA（到达时间预估）、EDA（预估到达距离）等引擎；\n2、上下车点推荐引擎：基于滴滴出行的大数据，深入理解不同国家的业务特点，推动上下车点推荐引擎效果提升。理解世界不同国家的地理领域知识，还原物理世界，并结合出行领域的用户（司机+乘客）行为特点，构建完善的特征工程；借助时序建模、MTMS(Multi-Task and Multi-Scene)的深度学习算法，综合提升各类场景的推荐效果；提升出行体验和平台效率，保障司乘安全；\n3、路线规划引擎：不同国家有不同的地理特性，不同的业务对路线规划也有差异化的需求。深入理解不同地区和业务的特点，借助序列建模、排序、多任务等手段，优化路线的召回、排序、重排等链路；\n4、时间/里程/价格/路况等预估引擎：深入研究不同国家、不同业务（四轮车、摩托）、不同打车链路（预估、分单、接驾、送驾等）中的时间/距离/价格/路况预估任务，构建不同场景下独有及共享的底层数据体系，建设地理特征、用户画像、历史行为及偏好等特征工程，借助因果推断、GNN、MTMS、online-learning等技术，提升预估准确性，提升司机和乘客的体验及打车效率；\n5、探索学术前沿技术，参与LLM、GNN、Online Learning、Reinforcement Learning等在交通领域的应用落地。\n\n任职要求：\n1、2027届毕业生，本科及以上学历，计算机、电子工程、自动化及数学等相关专业优先；\n2、编程基础扎实，熟悉常用算法与数据结构，至少熟悉一门编程语言并有开发经验，如C++、Java、Scala、Python等；\n3、有机器学习、数据挖掘、 计算机视觉与图像处理、语音识别与合成、自然语言处理、统计学、最优化理论、分布式计算、自动控制等至少一个方向相关基础，有相关项目经验者优先；\n4、了解海量数据处理技术，有使用Hadoop、Hive、Spark等大数据平台分析海量数据的能力和经验者优先；\n5、踏实勤奋，自我驱动，善于沟通，动手能力强，视野开阔，具有创造性思维。",
+    "jobIntentions": [],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          94463
+        ],
+        "locationIds": [
+          92621
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 110000,
+        "cityName": "北京市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 92621,
+        "provinceName": "北京市"
+      }
+    ],
+    "number": 2,
+    "openedAt": "2026-08-13T08:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 0,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-08-13T10:19:54",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-算法工程师-国际化地图",
+    "updatedAt": "2026-09-03T17:16:55",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 136661,
+      "name": "算法类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

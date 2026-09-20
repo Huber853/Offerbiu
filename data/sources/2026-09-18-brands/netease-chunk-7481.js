@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcampus=self.webpackChunkcampus||[]).push([[7481],{37481(e,t,a){a.r(t),a.d(t,{default:()=>r});var c=a(30169);const r=function(e){var t=e.mobileRecruitFlowChartUrl;return c.createElement("div",{className:"mb-net-process"},c.createElement("img",{src:t,alt:""}))}}}]);

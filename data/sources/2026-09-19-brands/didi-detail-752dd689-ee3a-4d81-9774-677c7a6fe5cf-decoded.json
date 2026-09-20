@@ -1,0 +1,134 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [],
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-14T21:16:51",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": "27秋-后端"
+      }
+    },
+    "department": {
+      "id": 3224890,
+      "name": "ABC"
+    },
+    "departmentId": 3224890,
+    "departments": [
+      {
+        "id": 3224890,
+        "name": "ABC"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "本科",
+    "hireMode": 2,
+    "id": "752dd689-ee3a-4d81-9774-677c7a6fe5cf",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "岗位职责：\n1、负责滴滴租车业务系统的架构设计及系统开发，覆盖服务端与前端全链路；\n2、充分理解并深入挖掘业务需求，制定前瞻性的系统规划；\n3、具备较强的技术攻关能力，持续优化系统架构、性能和稳定性；\n4、探索面向AI 原生的研发工作流，提升团队效率；\n5、运用AI 工具，构建各类场景智能agent，创造业务价值。\n\n任职要求：\n学历和专业：\n1、2027届毕业生，本科及以上学历，计算机、软件工程或相关专业优先。\n\n传统工艺：\n1、技术栈：至少熟悉GO/JAVA/Python一门服务端语言， 熟练运用 JavaScript/TypeScript 与 Vue/React 任一主流前端框架并理解其设计原理；\n2、深入理解Linux系统及其原理，熟悉网络编程，掌握TCP/IP协议，以及常见数据结构和算法；\n3、熟悉常用设计模式，具备较强的系统架构设计与领域建模能力；\n4、熟悉分布式系统、RPC 框架及 MySQL、Redis、MQ 等中间件；\n5、具备复杂系统高可用保障经验，且具备体系化的认知。\n\nAI 新工艺：\n1、AI 编程工具重度用户：熟练使用 Claude Code/Codex/Cursor 等至少一种工具， 项目中 AI coding 占比 90%+；\n2、深入理解 prompt、context、harness、loop工程，拥抱 AI 但不迷信 AI， 清楚 AI 代码风险与边界，建设高效实用的 harness 工程；\n3、深入理解 AI Agent 基础架构与工程化落地方式（Function Call/MCP/Skill 等），具备多 Agent 协作与任务编排能力，能基于业务场景设计高效的人机协同开发流程。\n\n软素质：\n1、好奇心、自驱力、owner 意识强；\n2、 业务/产品 sense 好，问题定义&amp;分析&amp;拆解能力强，推动协作能力强。\n\n加分项：\n1、具备大型复杂项目端到端交付经验；\n2、具备高并发系统的高可用性架构设计和稳定性保障经验。",
+    "jobIntentions": [],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          3224890
+        ],
+        "locationIds": [
+          92621
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 110000,
+        "cityName": "北京市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 92621,
+        "provinceName": "北京市"
+      }
+    ],
+    "number": 1,
+    "openedAt": "2026-08-14T08:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 0,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-08-14T21:47:03",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-软件开发工程师-租车",
+    "updatedAt": "2026-09-04T13:17:54",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 136659,
+      "name": "工程-后端类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

@@ -1,0 +1,938 @@
+[
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/jobs/v2",
+    "file": "data/sources/2026-09-19-brands/didi-page-0.json",
+    "sha256": "90669c8f808151f332b7dfe5bfaa8c0051b9b98af9c3405da15de9b1f4109723",
+    "collected_at": "2026-09-19T12:07:24+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/jobs/v2",
+    "file": "data/sources/2026-09-19-brands/didi-page-1.json",
+    "sha256": "dc16ef646ab34ba4ad92467b5ac2cd5b9a0664a4655d340d12ddb5c33c1e943d",
+    "collected_at": "2026-09-19T12:07:25+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/jobs/v2",
+    "file": "data/sources/2026-09-19-brands/didi-page-2.json",
+    "sha256": "1fd21e7e245157f2cf41576b86fdcd2c7416f23851fce001d9754220096b48e1",
+    "collected_at": "2026-09-19T12:07:25+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/jobs/v2",
+    "file": "data/sources/2026-09-19-brands/didi-page-3.json",
+    "sha256": "73bb36a208c2cae1e30c16f20482f9e8e412f8a87313cd0dafe44e52218b99ec",
+    "collected_at": "2026-09-19T12:07:26+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/jobs/v2",
+    "file": "data/sources/2026-09-19-brands/didi-page-4.json",
+    "sha256": "39c4a2e3454133eaa39ecf34971957a0dfebb3999e34172bcb4f71bbcaefe158",
+    "collected_at": "2026-09-19T12:07:27+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/jobs/v2",
+    "file": "data/sources/2026-09-19-brands/didi-page-5.json",
+    "sha256": "5e2042b0d44b4cb83daaca94f49e110d1452037bd218357cd689ad7e26753028",
+    "collected_at": "2026-09-19T12:07:28+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/jobs/v2",
+    "file": "data/sources/2026-09-19-brands/didi-page-6.json",
+    "sha256": "7a99d7862b40aa5cecddf05d73adf9b1f674fd844fb97c18bc108dd21e2edc75",
+    "collected_at": "2026-09-19T12:07:28+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/jobs/v2",
+    "file": "data/sources/2026-09-19-brands/didi-page-7.json",
+    "sha256": "ab4b020a0534709d8c647792478fd82a6fdb78f10ebfb793f4beefe6156ad311",
+    "collected_at": "2026-09-19T12:07:29+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/jobs/v2",
+    "file": "data/sources/2026-09-19-brands/didi-page-8.json",
+    "sha256": "e48740dedd5ea9c22d3c74923791f04a99cee9306a52e289e611d8311dc3b3db",
+    "collected_at": "2026-09-19T12:07:30+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/jobs/v2",
+    "file": "data/sources/2026-09-19-brands/didi-page-9.json",
+    "sha256": "4b3ecef01a2a6e50fff5eff75a6fdd0aefd3f64ff7badf91fbf7c3cb8609d6d5",
+    "collected_at": "2026-09-19T12:07:30+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-880f264c-bfd5-4b6d-ae4b-fa9054c92e5f.json",
+    "sha256": "c8565e3c63745d11ede56e792b1ae86519f57cbb46b1a8244813e70e951df728",
+    "collected_at": "2026-09-19T12:07:31+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-5b938011-04a2-44b9-b83b-5b609d821658.json",
+    "sha256": "d5834a10b8c863e67942707c23ff18ee6ecff1dc3dca510bb4f4fe6334510e43",
+    "collected_at": "2026-09-19T12:07:31+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-ae200d70-dd22-4d9b-9652-1df8bd7d5e33.json",
+    "sha256": "eabaa828a77731d7f37ed57765365d439d60ebbe7dc6ba0a1f5f49aa9ecb7bdc",
+    "collected_at": "2026-09-19T12:07:31+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-dc53db79-3cb8-43a5-9961-a0373f04c2eb.json",
+    "sha256": "c958d63fa86c1b84a0e7443a06754b638a9b9d2a5e4f3491363626c36595065b",
+    "collected_at": "2026-09-19T12:07:32+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-1fa00e85-02c5-4b30-ada3-a0d40e9ea33d.json",
+    "sha256": "5e75806f42ffddcf04c2471b98cc4df4ea978caa3305eafe4e7db704a98a6033",
+    "collected_at": "2026-09-19T12:07:32+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-18bac3cc-14c4-4887-b648-4ca98727c625.json",
+    "sha256": "360999e149be32f135723778005d0f68459cc02953f93c9f99e6ae57c9c5681b",
+    "collected_at": "2026-09-19T12:07:32+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-bdcd6c2e-e4d1-4e92-a311-1e218a2dc26e.json",
+    "sha256": "c71c7166f10a9bfe103e72afe143b5cae3684faf748a76af2f90135bafab23bc",
+    "collected_at": "2026-09-19T12:07:32+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-c205a3d3-f450-47a1-8118-2a5406b2c9b5.json",
+    "sha256": "7f21b0a37b8a8ed930d90c114f9f0c9785f1108ab3807a1e4b47c48b9264db03",
+    "collected_at": "2026-09-19T12:07:32+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-23c98487-4692-4226-83a2-42682f746ac1.json",
+    "sha256": "fcf7d73530af64491617f0bb60e3a24845c7c048ef03ed781799f8676de5f929",
+    "collected_at": "2026-09-19T12:07:33+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-e9b38ef8-3a9a-4932-89a8-47513ae7f0a5.json",
+    "sha256": "e7cc6cba708a6dbb3abbe351097bd2ff855d369a9472eab4b1279d3ca0cb6975",
+    "collected_at": "2026-09-19T12:07:33+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-d021f19a-5992-4aba-9a3a-fb9cf18708d2.json",
+    "sha256": "29cca7f3c39969fe4b24e1665330c71d9a0ca42c068e681cec6c63d5d9642079",
+    "collected_at": "2026-09-19T12:07:33+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-82c21db8-e267-4334-846d-12c0de44633f.json",
+    "sha256": "4d9e8b6e8aa6823c49f679e264c45517166075ccc6f52b8b10c6c04deb555341",
+    "collected_at": "2026-09-19T12:07:33+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-4e3859db-c146-4de3-ae55-ea1561c97dff.json",
+    "sha256": "8b5e246718ba11e97aa50e580df72e5a002e599d0e29a116d753816d4eb278b9",
+    "collected_at": "2026-09-19T12:07:33+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-b48c8a47-5e19-4fc2-8f26-e99031a3937b.json",
+    "sha256": "3e03b376cf9b37eb1a490777f4b350b39ea53f4e72552515078c3ba3cf3ba54f",
+    "collected_at": "2026-09-19T12:07:34+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-4ef51a8f-3c01-475f-822a-2fa3d95b122a.json",
+    "sha256": "37f36a0ab4ecbc2a3f6e7b7fc37f7b4872dfde132592de9716a2fe0320628c3f",
+    "collected_at": "2026-09-19T12:07:34+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-fb5712fd-505b-46b0-85e9-46073f9675cc.json",
+    "sha256": "81d984197da62c066501fe23730c8c40d3bceacd3f205bd144be01440de26195",
+    "collected_at": "2026-09-19T12:07:34+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-455430d3-e959-4685-a79b-20d5da0c7110.json",
+    "sha256": "23a0530ad60ffd8edb25ffa4d2bf283d722c6edcbb6bb24521be04c140e51da3",
+    "collected_at": "2026-09-19T12:07:35+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-a53cc592-6b3f-4afa-a504-4f1ef3bbcc61.json",
+    "sha256": "63e0bae0d60b70a2da71ce17cc50081138e44e3eb894511f9068769f30e1a515",
+    "collected_at": "2026-09-19T12:07:35+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-b156e1dc-79d2-459c-8369-02615d1f4784.json",
+    "sha256": "c012c1ff4ac3bee8f03ed0b6ebd060d34e196c31885995a053a786ca55e39119",
+    "collected_at": "2026-09-19T12:07:35+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-d38617b6-e860-47b9-ae58-0c8c5b91566e.json",
+    "sha256": "1b7ee9c910ac97d536cba1aea48e977ba5970960e5d3839ce57556946bdee29b",
+    "collected_at": "2026-09-19T12:07:36+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-1a6bbcd0-cb68-4fe3-bf85-1ad1ad162bbe.json",
+    "sha256": "8bb33e99a40351dde31b4c81beea907e66dce8ab670fed4f1ea2dff323399664",
+    "collected_at": "2026-09-19T12:07:36+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-b0407471-9dfa-4f66-939c-5025587e71e2.json",
+    "sha256": "228a9429318054c7619582a3697c07bf18b8a2eaf1d1bbc1a0066479ba162db5",
+    "collected_at": "2026-09-19T12:07:36+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-aaa2328e-b32c-4152-884e-ddd9097add4f.json",
+    "sha256": "1ec122fcef0d32536fb62eb3a707f0ef71df88592e97813240ed6a08995fed1d",
+    "collected_at": "2026-09-19T12:07:36+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-b1122e51-227a-429e-a54d-6acd2f337e3e.json",
+    "sha256": "0400ef4a461d1d139d2e42e3786248b9f6e52b870ac5f9ab0697a71b4f91d011",
+    "collected_at": "2026-09-19T12:07:36+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-efe360e1-a1f2-4a98-a10c-626ab8826c5b.json",
+    "sha256": "90b3adc3ac108406b041791e50e2e8eca64804c41667d465529066e238949d4d",
+    "collected_at": "2026-09-19T12:07:36+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-57c820bb-6086-4a95-bfda-24b249123914.json",
+    "sha256": "bbafd21b4ad4acef03390b46c7600541b9e2700288725d3f0353fc278ae5f610",
+    "collected_at": "2026-09-19T12:07:37+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-8c753e1f-1f17-48b8-aa02-767f05ac220f.json",
+    "sha256": "292fbb09f60c86c8e53e85d27a5c370edec13bbb9f5b2891ee1a6ed1cd0d844c",
+    "collected_at": "2026-09-19T12:07:37+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-bb1b71a6-9efb-4418-ac95-7b3feeb4ce46.json",
+    "sha256": "be609a59860891ea5d6241b040cacdfbc70b1c48b64ab8b5c0256f85c29a2742",
+    "collected_at": "2026-09-19T12:07:37+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-4e14c6ad-e1e9-4d94-a71e-0d6cd015d1f1.json",
+    "sha256": "001c79f463b18641afc7863b2fd42c74175a3ed13636cfabd104fefb9bfc9c88",
+    "collected_at": "2026-09-19T12:07:38+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-ee497565-2822-4bb5-8d5a-760d55f303ad.json",
+    "sha256": "5a2d77a128a94d3a1fc5d91cb072889031f2098676017555950613e65af9937f",
+    "collected_at": "2026-09-19T12:07:38+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-1307004d-9457-4c8d-889c-71141577f727.json",
+    "sha256": "6aaebaceb9f013cd079991a6cd1b74fb5462ca350640ff09c7132147027f1fd0",
+    "collected_at": "2026-09-19T12:07:38+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-0a0b3694-26f9-4a0b-9bd2-d8d0f88b7554.json",
+    "sha256": "c9e66623f8f5add323a26a72f547c15b680e1e8d6302e017bfa6a8f6a22249ae",
+    "collected_at": "2026-09-19T12:07:39+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-be01f703-eb77-4757-86e8-cb9114e11b60.json",
+    "sha256": "fc691e83526aed79e7cb7a6836fa86d89fd02de9d69a9835f653d3656e6d7043",
+    "collected_at": "2026-09-19T12:07:39+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-a5b5ace2-a65d-4544-b32e-3e6e9b06e2ed.json",
+    "sha256": "f80747235ff5aa9c15949965fcc3e0897cb0fb6b56a09b60d8c2aa7529e3a867",
+    "collected_at": "2026-09-19T12:07:39+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-27bd51cf-7e0a-4921-9a6b-84cddaa44792.json",
+    "sha256": "627cdcf1692e9204d4f06fad0512e3b2d83c08f9f54b85cf69646e1025f26e24",
+    "collected_at": "2026-09-19T12:07:39+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-752e6fbd-529a-462e-aefc-427c78643cc7.json",
+    "sha256": "45e43c9c38eda494248b0c21ebb0bb851c2d56cd026128fa011840f9e1807996",
+    "collected_at": "2026-09-19T12:07:39+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-2cdcecd3-1262-4d0d-bf72-816b8792ae3f.json",
+    "sha256": "747b7c19660774bcb9e9688c4798e448accdefd2ca6f46e38b56570396019226",
+    "collected_at": "2026-09-19T12:07:39+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-8f317aee-a6a3-4d10-b3e1-71d5e8c0c84e.json",
+    "sha256": "5e0ae2716cf6d678080986731ee16377b63bd396da763a9ac588158f1b321263",
+    "collected_at": "2026-09-19T12:07:40+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-bf5c0fa8-443d-4311-9283-2b73c218c7ef.json",
+    "sha256": "49b99e419045ae0d7b096d8a7e9e24d63d45f0b6f9dd71e25b9c2f6c8fe4a08e",
+    "collected_at": "2026-09-19T12:07:40+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-8a70749b-0d25-439b-aa75-30dbb43da973.json",
+    "sha256": "d531bd20690e91350a58efc1954214d2d7f12ace99d9287b5cb07438d73df6c9",
+    "collected_at": "2026-09-19T12:07:40+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-695633e1-355f-4d70-b7a4-fb8a7d2819f8.json",
+    "sha256": "e573c0aef86ed8afbefbf07d2ece0b3fc172412389c836b93fe2f321c291bf9b",
+    "collected_at": "2026-09-19T12:07:41+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-d479d146-06b3-439d-bd72-a93880c57f85.json",
+    "sha256": "27009b968e25961d1b4199fd60100f52122ba648502855a40734cd9fe1acd226",
+    "collected_at": "2026-09-19T12:07:41+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-17c1445c-a217-47b6-89b3-6bb364682876.json",
+    "sha256": "7dc48955fdec2d54b637ba124cbfc1d2354aecdd866d5ff2c4e8adb41031b7f3",
+    "collected_at": "2026-09-19T12:07:41+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-7a754c6b-393e-4c3d-88ee-30274c0554cb.json",
+    "sha256": "8e0e0f8c63c67f1139454531ceb6178926a2022dd52e74beec68f6f7ea1c93de",
+    "collected_at": "2026-09-19T12:07:41+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-78d9a2f6-95cc-4294-8a1e-404e021d955f.json",
+    "sha256": "59a896f9d098702bb9c1d7483fe76b670689bb70f4ad48a7b255e3a61bb40605",
+    "collected_at": "2026-09-19T12:07:41+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-f1a25cfd-5893-461c-a5fb-441a45b16010.json",
+    "sha256": "252ead4beeb99892641f792db2d898ada1dfdefd1b8920a1e766a70b213d4340",
+    "collected_at": "2026-09-19T12:07:42+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-46f7a554-3a95-4b34-8f4c-8bd8423c3a74.json",
+    "sha256": "ccc3977c5f8b9fd564d4b3d315a16767be594e1e3c585e3439d3f7f626af2535",
+    "collected_at": "2026-09-19T12:07:42+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-5b09ff17-cb3a-41cd-9d5b-dc5064abdf2d.json",
+    "sha256": "80586e44ca25d11b01849381c67de6ed3eac135057a49069076025029c2c3711",
+    "collected_at": "2026-09-19T12:07:42+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-6d3bbbbb-145b-47dd-9bec-e859a1536e35.json",
+    "sha256": "a6c13c4f9d88918bf9b55a33e786db10f6af0fc09d137a63bb75f31b2409d756",
+    "collected_at": "2026-09-19T12:07:42+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-2eb3f7b6-c7d2-4894-be38-22756a8a740a.json",
+    "sha256": "ea507acb071523ce400cbd14f48db7aa97c008dad9fd79696dcf88d6bcdab736",
+    "collected_at": "2026-09-19T12:07:43+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-d07f19fb-d24d-4b59-bb1a-57ec3368db65.json",
+    "sha256": "451e6007847160e59b05a6a1b96fc6dadc06b04e05655e89b18541838b51addc",
+    "collected_at": "2026-09-19T12:07:43+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-21829660-1aae-4941-8b03-7e47f66a0ea0.json",
+    "sha256": "7b32bcab286b8c039548fb88096f4fbae92f7b8b39c18e411f77b9504ef91848",
+    "collected_at": "2026-09-19T12:07:43+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-5f41b512-ec7f-41dc-ac0b-f3a25ec6d213.json",
+    "sha256": "0eb07c374adb241db4edc0ddf793684726f79ab5004e6f8fbcfe6aa75456ecfc",
+    "collected_at": "2026-09-19T12:07:44+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-aee223cd-008c-497e-8350-f6deea989ba9.json",
+    "sha256": "2d02caa935d677caf52377eae638eca0f7333e42dec4591582dd879eb913d96a",
+    "collected_at": "2026-09-19T12:07:44+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-3630cf81-eaa2-442e-b429-664b97611904.json",
+    "sha256": "753d5cff30f2ca3beaadc1564480f24e28a4cda519b36e9ea342bfb849700539",
+    "collected_at": "2026-09-19T12:07:44+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-6a1b860e-3ab4-466e-8afc-d3598fb4d44f.json",
+    "sha256": "c6b605b001cb56da7b759602c0896684c584487e5f8f15bb3893f02268b1d17d",
+    "collected_at": "2026-09-19T12:07:44+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-1be1ce66-e290-47bd-95da-8883484ac768.json",
+    "sha256": "15fe629ceb01bf8e89f931b80533d633c6d3ce79490b8146cd146f1182807d61",
+    "collected_at": "2026-09-19T12:07:44+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-752dd689-ee3a-4d81-9774-677c7a6fe5cf.json",
+    "sha256": "67ef18f7e7adc144880fe3e6b4d12d7490cae345dfcd71b554366e0e63d5ac8b",
+    "collected_at": "2026-09-19T12:07:44+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-abac6fe9-e007-4025-a2f0-af65fd9523ab.json",
+    "sha256": "805694cd7b2ad2e8cf4a85264a33d91d291017bc3526c25dc800754011b59680",
+    "collected_at": "2026-09-19T12:07:45+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-6d3519d9-dc52-49d4-9a1e-13643baf658b.json",
+    "sha256": "beb12da692f34a76d2c6b28ab22eb76e39401589ca30668f625e45eeb9fd8145",
+    "collected_at": "2026-09-19T12:07:45+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-878e9da3-1d9f-469d-b7d5-3dec329a14ab.json",
+    "sha256": "451d41b6d66c05c796b603bebfffa2a2a968d8675d07868a11ce3c9ae1d3057e",
+    "collected_at": "2026-09-19T12:07:45+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-fddf88de-26f4-44d1-940c-22d357141986.json",
+    "sha256": "c4e6d95cd0d338364892d901b46751233fa13ef3c1e96601b4f90ff1a44dc08c",
+    "collected_at": "2026-09-19T12:07:46+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-3f928ccc-87bc-4b18-bd72-70bc0b5a062e.json",
+    "sha256": "480e1bd39caf02b5bd2224bb5eb516c17c3f46b96844d6a33fb80c43981494f0",
+    "collected_at": "2026-09-19T12:07:46+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-ca03871d-012c-4ae0-bb12-fff1d3bc3f64.json",
+    "sha256": "7c88440d6817027cd8f03442369f6714292184eaf704b07ea18f93cad7edc316",
+    "collected_at": "2026-09-19T12:07:46+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-0068bc02-c105-41e9-9974-9532c7778bdd.json",
+    "sha256": "42aae4fee38818773c9fbaa749c9e0ddfd81ae737004b1d5897684db032b4c10",
+    "collected_at": "2026-09-19T12:07:46+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-f9dcac51-caf0-4c10-9243-f4f44cfead88.json",
+    "sha256": "7936dd8e7695012a060e7f8948b2ec010149df53e491efaab1fcc7f86ce2712b",
+    "collected_at": "2026-09-19T12:07:46+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-9c676981-0237-4fca-9241-1701b6697d67.json",
+    "sha256": "8267f95817fc1a78125a0f5bb5531bdbd51c80cf4eb109782d7e5cb576141e78",
+    "collected_at": "2026-09-19T12:07:47+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-a34b6788-98d9-434b-bc63-67b1dbd4d889.json",
+    "sha256": "98cfb17652baa0c8fcb06a1d7769123e30f7d3ea776da7262cb8ef9d2c9e51d6",
+    "collected_at": "2026-09-19T12:07:47+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-522b0cc6-89f3-487f-9212-d0534f63918f.json",
+    "sha256": "06b623f959aa09461c0cf1496fc8a0211876373dac12e3665ffbf27e9b8b6482",
+    "collected_at": "2026-09-19T12:07:47+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-397e97cd-a9e6-4067-97fb-560f62cffd7c.json",
+    "sha256": "b8a138a06a2f3e5e9d0c6acd0e86edf1bf5fabb8edcf9ae7028e5c2341686cc1",
+    "collected_at": "2026-09-19T12:07:47+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-4471ffdc-f548-4894-8c09-e9d208f67093.json",
+    "sha256": "10fcb4629efc1dbf3558b1ff8bcbf5a8f61007b7a6b00f96f33ca325bc4dd0b9",
+    "collected_at": "2026-09-19T12:07:48+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-ab4a1333-a550-401d-a8e8-f45a5bb089bc.json",
+    "sha256": "6b66e067cd1bbd5a890a4fc9e59e0030ffc0f57cae46a39bdc1a6099a19df996",
+    "collected_at": "2026-09-19T12:07:48+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-3972818a-f7bb-442c-9bd9-fa2dfbe76aef.json",
+    "sha256": "30de3fe3fd94a9f20384458202404bcf766ad4255ff1eb5202141614c9c92526",
+    "collected_at": "2026-09-19T12:07:48+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-24b7aabb-5714-4d34-8cb5-b1f48c10f545.json",
+    "sha256": "79a266722493bfd7a9ee424828c0803ab12bcd21c4616a3e081c1f5908c720b1",
+    "collected_at": "2026-09-19T12:07:49+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-9b95dfe5-9ffc-471d-aee2-654216736356.json",
+    "sha256": "ab9cd221f768e91f2c4dff32be1cd897a55d8ca824950fb89bd50a1091b9fdc3",
+    "collected_at": "2026-09-19T12:07:49+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-46740682-1e1f-4bba-96ca-ad23affec1d0.json",
+    "sha256": "f5e41dfc335bfce7630e9c7e8ad733bce09a9dd831e2353d1a5e65ede3a654ba",
+    "collected_at": "2026-09-19T12:07:49+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-eff3b792-6d3f-46cf-b554-9458c5657453.json",
+    "sha256": "f4cefae51a3b64be81e916257f5d052da19a0f231ab4c8c697626ac39a3d9ce1",
+    "collected_at": "2026-09-19T12:07:49+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-5889dce0-0494-442b-9776-8b885ec0c2d6.json",
+    "sha256": "78876f74f5280d45c0aea97682e5f55ced7fe85e1d40e14d21c577641457f0f4",
+    "collected_at": "2026-09-19T12:07:49+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-b6102ba2-7a1c-43ff-85f5-2c48ade1a336.json",
+    "sha256": "33a92e1955b2042d37332893975f1faebdc2fddd659953fc3c3e626865f8b717",
+    "collected_at": "2026-09-19T12:07:49+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-03392b70-c266-4353-b64a-03cddc92539b.json",
+    "sha256": "b302cb5682637bd9a12b640b6a80f5ed57c4dfe47fac2013398466ddf3c2be48",
+    "collected_at": "2026-09-19T12:07:50+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-dc766fd9-25b6-4ee2-a342-5caca5a8ae50.json",
+    "sha256": "0f81c49c866fe2aeb54fdd95ba37a12c3e64d1455d61e240f1beabe7ec03f6a2",
+    "collected_at": "2026-09-19T12:07:50+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-3cb98125-4a0a-4824-989d-0403b7de8f81.json",
+    "sha256": "400e63cdc2ffb1ed147b852f332d616d84766169c7d2dfc6336b68c9c1899d7b",
+    "collected_at": "2026-09-19T12:07:50+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-cca1f363-5167-4f24-b539-892526af8213.json",
+    "sha256": "984b90d6e651a47d4b6dc40b621a9879661910f042dfd13938d71e0deb2845f7",
+    "collected_at": "2026-09-19T12:07:51+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-bc7d94f8-e0ff-4966-9262-e564c3f3ce23.json",
+    "sha256": "1f536f59ab798330f67b4b822a1ef6219f4365ece0332b6bc8812deb923cf39a",
+    "collected_at": "2026-09-19T12:07:51+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-915b3cc5-d18f-451e-913c-6301067b2117.json",
+    "sha256": "72ca7ff0266791578f9da41220581420a59d971ec6dd764b88140ab94af51330",
+    "collected_at": "2026-09-19T12:07:51+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-82dab1ab-6bad-4395-96f2-5b9a2a754c81.json",
+    "sha256": "0138a19fcb261d10f5d6f630b02d1d5d2bf292115ef54853e5e41bd51466cc53",
+    "collected_at": "2026-09-19T12:07:51+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-90602693-e98e-4c15-84f6-9e96a93044d3.json",
+    "sha256": "0accce2d7b3c0da7e24e0803d31d781b34e7e0ef8176679ea25d1e8a1deb333b",
+    "collected_at": "2026-09-19T12:07:51+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-cb946450-8dc5-45b2-bbb5-ab95e25d397f.json",
+    "sha256": "92d9687d3803655d25e8d4594e66c5c1ad898fae995f0afff3b5c1dd36eadc2d",
+    "collected_at": "2026-09-19T12:07:51+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-e57a7827-f120-4e2f-b77d-1c1f541b960a.json",
+    "sha256": "516cb9f35b76f7fe50e8197d13e43ed642db3e96d870e251151eb96f39c79b00",
+    "collected_at": "2026-09-19T12:07:52+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-4c5f8c57-f8be-44c5-809f-f5684e29b351.json",
+    "sha256": "478e04ebd5fec83675eacfbc85184faf2e2968fb99b9328b2f143dc06947db6a",
+    "collected_at": "2026-09-19T12:07:52+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-2a746387-3d31-4502-8a7a-bfb9c689db73.json",
+    "sha256": "549fa39a40d9a1dc0ce5270ec4c3ec0de2dddb20450f078ed1b8df3938623560",
+    "collected_at": "2026-09-19T12:07:52+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-dbf520f3-a2a8-4421-96cf-ba4bfb60031a.json",
+    "sha256": "0457f8972a5d60d02f9762b0b0450b5f87eb16ddd17bf021441aae7a244f7190",
+    "collected_at": "2026-09-19T12:07:53+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-c8f0d53b-3694-437e-8632-efb42f258524.json",
+    "sha256": "6e52c26636d224a460c6f144237a9c37925671ae963ff6b07a6bc88bb043dcb3",
+    "collected_at": "2026-09-19T12:07:53+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-d501baff-8aaf-4970-b7fd-ca48367e0caf.json",
+    "sha256": "01caba275742ce917760c04eebdd34f869e77af175f5a8ad9b3da92a3d4cc62a",
+    "collected_at": "2026-09-19T12:07:53+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-84bf465f-191e-4bb5-9861-d7904dfae232.json",
+    "sha256": "06bdec6ff2e37431477af96dedc70c9b74250dca5a5b845c813a44110c8a98e0",
+    "collected_at": "2026-09-19T12:07:53+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-9627d985-ee75-48cf-a361-b456a9031177.json",
+    "sha256": "f9bb7d313bf8a0943157131d5fd0daf7d6a176eff386a91acb0c968411f43482",
+    "collected_at": "2026-09-19T12:07:54+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-88aa5d14-8f5b-4da4-ad7c-b51095659549.json",
+    "sha256": "e6c279163ad557e2c303f57466c4dffce260b5b142cd2f021b5c9a6f91fad3e9",
+    "collected_at": "2026-09-19T12:07:54+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-dc4f3886-527d-4a41-948a-4a1dbbaa31f3.json",
+    "sha256": "10b25b9ece60f6fdd8b1c6da08460ba0da65914362491b2b9b9c8e731e91fd22",
+    "collected_at": "2026-09-19T12:07:54+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-f43635df-7485-4f4b-89d1-04d69186feae.json",
+    "sha256": "4e5a62408068c373361909049361aa91c9f7595180e5bef48679e6df34641f4d",
+    "collected_at": "2026-09-19T12:07:54+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-45612d99-91b6-4b2c-b5b8-3cdf18b2a089.json",
+    "sha256": "710a6cccf6d8f7ad4f4592169529b0084ce0b658a3a1402097f3af0c53d7645d",
+    "collected_at": "2026-09-19T12:07:54+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-3380e19b-e31d-47f1-b5aa-e9b24a249dc8.json",
+    "sha256": "feb8ec58ea72b76b424e64a7ecdefcfd1cf48c6dec524580c2916693804f2890",
+    "collected_at": "2026-09-19T12:07:55+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-facc0563-303c-4443-be14-6f2f52f4de76.json",
+    "sha256": "5ff2418a6243029682da54514a4c0a1e6a9288c1f964eb5758cf793c48aac364",
+    "collected_at": "2026-09-19T12:07:55+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-9bc41307-f8ff-4f48-9c07-f070a31943b6.json",
+    "sha256": "87525539bb9f34e54ad22ca3412968155b7fad7f199d6cc9519ff490f38d84ba",
+    "collected_at": "2026-09-19T12:07:55+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-24497b84-fcbf-4a81-b9ef-5e8c3a7bdc6d.json",
+    "sha256": "5f113b18725cf8d2702b594f5a6aa02f049f860f89b7d6c4f836a6a6cee7960d",
+    "collected_at": "2026-09-19T12:07:56+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-44bc1691-281f-465a-823f-6e8c8bd7a5b3.json",
+    "sha256": "33137bc129074c71ca4811ffb8ead8782e5c77b6f77245c555719fd50cac33d0",
+    "collected_at": "2026-09-19T12:07:56+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-cd2b09cc-1e06-4bb8-9c5b-7ce58bb9e8ed.json",
+    "sha256": "9259ae7ba2c969b0ddc7b26013fe40b9df177409cd054acef9106203f3841a65",
+    "collected_at": "2026-09-19T12:07:56+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-ad999e41-1233-4f58-b7ed-174c9b93b6f7.json",
+    "sha256": "e80e31cdcbf4e3dc8800e34d22700cb451172358a7f0eb7f79d5f2d4c67f8e77",
+    "collected_at": "2026-09-19T12:07:56+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-e7caa9d5-9e1d-41b4-8975-2a4b978e03a8.json",
+    "sha256": "25fb30dfb081b7164f6c60e8e694768c984226056598344e71dc35a8d3ce8425",
+    "collected_at": "2026-09-19T12:07:56+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-2266f5f7-bb73-4e6b-a0f1-38ba44f36e4f.json",
+    "sha256": "1aff225c4b0bb5a34a2d00affdfa4c13008824da8745776d848db410847f284a",
+    "collected_at": "2026-09-19T12:07:57+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-e3b37531-f9ca-4ae7-af1a-adbc79166ca1.json",
+    "sha256": "985d0eced91551c512aa165f3c8176279c1983bd288c87d44b9a6a913ff55885",
+    "collected_at": "2026-09-19T12:07:57+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-0b680b25-c1c5-47da-82ce-9d1bd639f7a1.json",
+    "sha256": "41a8d44ef3e3a0d2947abde12733bef2eb8b33631ee900e4a39be43d9aa6bcc1",
+    "collected_at": "2026-09-19T12:07:57+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-d11962b6-a340-46b1-96dc-549bea93ab39.json",
+    "sha256": "e25277d869a4a04d3e5aa75c9090fcbd00209bd96d392da783abc3d09253c1f3",
+    "collected_at": "2026-09-19T12:07:57+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-695d7695-4567-41dc-8a30-ad2c433913fa.json",
+    "sha256": "8f082a0fab378db8409404275d38625328f15bf48880b552336ddd68d63acefa",
+    "collected_at": "2026-09-19T12:07:58+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-0638a456-d052-46a3-b762-4ea16f374f54.json",
+    "sha256": "e8950c6d4ea2638d7a3ba08dfbbad6905692a5051dd61bee75685d06ce2f774a",
+    "collected_at": "2026-09-19T12:07:58+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-3748a918-9a43-436e-a98d-e79774df47c6.json",
+    "sha256": "354c5a09ee95b9a0b376c367a59da11026fd66d82c273da5cb869dd91f70ba51",
+    "collected_at": "2026-09-19T12:07:58+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-ed2646ef-d4db-44b2-8ccd-278dd1466b3c.json",
+    "sha256": "655894a5818785a9b89463ac77f2279286a5b9d4cf7c7cb2412323e51e139c5e",
+    "collected_at": "2026-09-19T12:07:58+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-103f1743-357b-448e-af03-eeeb982b396c.json",
+    "sha256": "b363dc0599c9a12196ed347f72157c95b4c545bae92e7fc3b3a7e37f3c633369",
+    "collected_at": "2026-09-19T12:07:58+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-bc9d3cab-4aa8-4958-aa39-4e49f7dd663d.json",
+    "sha256": "37aed212996d900fdd17874675b2b22d03a0d1fdc6883b6bba10fbb211dab061",
+    "collected_at": "2026-09-19T12:07:59+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-22cdc3de-fbfe-4201-9fc7-01a18ef7e5ac.json",
+    "sha256": "4be05c74621f8abda8436cb19d1c1d779373f2adc4c8cbc31126d44ab14b312f",
+    "collected_at": "2026-09-19T12:07:59+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-7c0e842d-251b-45dd-bd3d-53366fc37541.json",
+    "sha256": "f569c694b721da27d44c82c13587fe3d3bf242e51c0a207d06a94ed45ea1c258",
+    "collected_at": "2026-09-19T12:07:59+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-4c3fc35f-49e8-4486-be2f-073600adb182.json",
+    "sha256": "23155aa0f355c71efce6f884bcb7ffc3211330e7a92aeff4c7328f77b2d3db1c",
+    "collected_at": "2026-09-19T12:07:59+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-a57ec81a-5bd9-4283-833c-463b1407118b.json",
+    "sha256": "fff34a66ef1adb0133b4c38b1e99ddbdf47677e761acc6cce987566420f909fb",
+    "collected_at": "2026-09-19T12:08:00+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-11422bef-5006-4659-a5dd-7f41c9efde8a.json",
+    "sha256": "a593e066f86f1328a770f7221b90187bc2e32c05fb5fba72bd899e53eeb1cb7a",
+    "collected_at": "2026-09-19T12:08:00+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-0e33ad72-e31c-4dae-8291-cf89609e9613.json",
+    "sha256": "16d1aab667e7c4370af15805f927a0a3227b59fd2efb7e1a87d423cb0d134f69",
+    "collected_at": "2026-09-19T12:08:00+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-a0e29044-eb0d-4ae8-aa60-0e754a8de68c.json",
+    "sha256": "d1e42b40063876c60f0331d7d4ea971b4b38d976693e6689819b7bcc2c56c422",
+    "collected_at": "2026-09-19T12:08:00+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-cf86fb85-dd09-4b27-a61e-97f009db41de.json",
+    "sha256": "1c92bff0e61376aaf7119992077a57780376d887e6ccc9411857d00b6ab047cd",
+    "collected_at": "2026-09-19T12:08:01+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-84a3b703-c978-4dce-bd9f-6c93764c8468.json",
+    "sha256": "cb451b424f4ce6a60c77f0bffc6d47e5abf7fb5ce7fa95d22145f71943fade8e",
+    "collected_at": "2026-09-19T12:08:01+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-4e0e36c2-8b88-45be-8ad5-0b6efe7f79e5.json",
+    "sha256": "28741794dd29bfd1eeac190a2dd647d9038e896445827e26ae6cd6480395a22f",
+    "collected_at": "2026-09-19T12:08:01+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-11543e1b-6d89-4bfb-8fe9-1843063fe328.json",
+    "sha256": "80671d63e9ac228eda079d008b308c9b5260282468aaa32d3d543ab18fb2ac72",
+    "collected_at": "2026-09-19T12:08:01+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-d553b0d5-3921-49e7-ae38-9d5a50d70dde.json",
+    "sha256": "9b9ea2f5ae02c1313e3f443366f6ed5e3e5c86d60c9b9f6378338b9175834a7b",
+    "collected_at": "2026-09-19T12:08:01+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-7e1539c3-e46d-46d5-b05e-0a712f095a89.json",
+    "sha256": "b9e2d2aebc7bd72b9afe509cb494d3d3fd3b089436f1baaa433c573963099636",
+    "collected_at": "2026-09-19T12:08:02+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-b9da45b7-0f74-4d01-9558-9ab767d120f5.json",
+    "sha256": "3efb0bef2deb292f324d948673aee921d0843dae12b57be0a860ef74835bb3d7",
+    "collected_at": "2026-09-19T12:08:02+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-e6cfd8f7-a54e-4409-80d4-07d6f9854fc2.json",
+    "sha256": "20dad3f7cfe581a21f064eac3e982d421e96412d5ec4be69494ca5140b6748bc",
+    "collected_at": "2026-09-19T12:08:02+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-71622097-1420-4d7e-baef-ccfcfae4f723.json",
+    "sha256": "0525ad5f97d4bde7858268b34a62b65a0ec0f9309dad37db413bea3d55587c88",
+    "collected_at": "2026-09-19T12:08:03+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-6c64c2e5-b4ab-44a8-9b5c-78177acb45eb.json",
+    "sha256": "a77fbd432cdb93fa722dab1173a3a13a8200ba4e904108158db0c01d7ffe320a",
+    "collected_at": "2026-09-19T12:08:03+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-8debcbfd-9267-457b-9593-eba8157aad8e.json",
+    "sha256": "405cf23efdf93edc733c5f1b042ad9515bd6eab5fed26692b9b4167334866341",
+    "collected_at": "2026-09-19T12:08:03+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-60cb1018-984b-43de-9eb7-b7a57182f36d.json",
+    "sha256": "e456eec55b493d68841a1a260a60884a988263c7c69b867bcd48273abad60075",
+    "collected_at": "2026-09-19T12:08:03+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-7be22dfb-30a0-4812-a958-f1163f1102dc.json",
+    "sha256": "d6c02af5c177c4fcfb4d4596a716fbe5bc8342b03a7a9bd563fcaad336b7a3c3",
+    "collected_at": "2026-09-19T12:08:03+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-3b22e452-54e2-4c84-b304-69ab8b58ddf1.json",
+    "sha256": "63842f9d53bd1fc16733f8b2b97232eb3928fd82ff54ca12f772693eae0de902",
+    "collected_at": "2026-09-19T12:08:04+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-0e95494f-1eff-41d0-b6d8-6607fc6c014f.json",
+    "sha256": "2a98e1b49bae4e82b3d9545e7c55c485fb476f30ee5cae47c4168000b77803ba",
+    "collected_at": "2026-09-19T12:08:04+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-d6444a76-e38c-421e-b715-f361ef063d74.json",
+    "sha256": "1cab4aa54c01793e08775e340eec6723e942a10cd8dd6bfdfdeaf4a6caa5e612",
+    "collected_at": "2026-09-19T12:08:04+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-f2e8e2e1-5761-41f2-abeb-8cd8e1b77e83.json",
+    "sha256": "d94601a011af6cf35598883231e1fca037a48c442b4645b03ade4f94a7a20def",
+    "collected_at": "2026-09-19T12:08:04+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-f767bffa-912e-47f3-9625-000cd6b61178.json",
+    "sha256": "9ed93104f5ca6d537772d167f39f86da0275b555bb2657a8d2d2d5c09a543203",
+    "collected_at": "2026-09-19T12:08:05+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-c2ff03dd-dbc4-483e-bedb-7d2f15c847b5.json",
+    "sha256": "3030eacfacf866c5654dab210500c69d95f666c4022644d554759830688177f0",
+    "collected_at": "2026-09-19T12:08:05+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-a4f34656-c6c4-426e-a0fe-4fc83aea8f65.json",
+    "sha256": "9e71f4dd37370c7aa360ddd7cdb550610efd58983b9018b9cc079900a3f255b6",
+    "collected_at": "2026-09-19T12:08:05+08:00"
+  },
+  {
+    "url": "https://campus.didiglobal.com/api/outer/ats-apply/website/job",
+    "file": "data/sources/2026-09-19-brands/didi-detail-542e01dc-746f-4140-8639-7b06fe7c64e6.json",
+    "sha256": "3d63f94cf1ed053fdceac92bbdbbd17b482fb14bf0d7844b3ed6db079725d9d9",
+    "collected_at": "2026-09-19T12:08:06+08:00"
+  }
+]

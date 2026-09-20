@@ -1,0 +1,135 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [],
+    "attributeId": 2544,
+    "autoArchiveTalentPoolId": 419557,
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-31T14:11:23",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": "27秋-SQL"
+      }
+    },
+    "department": {
+      "id": 682867,
+      "name": "用户平台部"
+    },
+    "departmentId": 682867,
+    "departments": [
+      {
+        "id": 682867,
+        "name": "用户平台部"
+      }
+    ],
+    "deptParentId": 0,
+    "hireMode": 2,
+    "id": "4e3859db-c146-4de3-ae55-ea1561c97dff",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "<p>岗位职责：</p><p>1、基于对平台用户和场景的洞察、发掘增长机会，制定用户产品运营策略，对用户拉新、转化、留存等结果负责；</p><p>2、通过精细化运营，制定平台用户增长策略，实现平台流量和用户价值最大化；</p><p>3、熟练运用SQL进行数据查询与分析，完成平台用户的数据梳理；</p><p>4、站在全局视角，与多业务部门协调合作，负责核心业务端内关键指标增长；</p><p>5、通过用户调研、画像分析等方式，挖掘行业新玩法和机会点。</p><p><br></p><p>任职要求：</p><p>1、2027届毕业生，本科及以上学历，专业不限；</p><p>2、具有积极主动的工作态度，成长驱动型，具备较强的学习能力；</p><p>3、具有强大的责任心和沟通协调能力及抗压能力；</p><p>4、具有良好的系统化和结构化思维，熟练掌握SQL，能独立完成多表关联、分组聚合、条件筛选等常用查询，具备较强的数据敏感度与数据驱动意识。</p>",
+    "jobIntentions": [],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          682867
+        ],
+        "locationIds": [
+          92621
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 110000,
+        "cityName": "北京市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 92621,
+        "provinceName": "北京市"
+      }
+    ],
+    "number": 1,
+    "openedAt": "2026-08-31T00:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 1,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-08-31T14:11:35",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-产品与用户运营专员-活跃用户运营",
+    "updatedAt": "2026-09-03T17:16:55",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 20039,
+      "name": "运营类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

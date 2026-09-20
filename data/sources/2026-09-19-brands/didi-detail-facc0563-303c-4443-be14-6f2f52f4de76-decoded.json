@@ -1,0 +1,136 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [],
+    "autoArchiveTalentPoolId": 425506,
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-05T14:50:01",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": ""
+      }
+    },
+    "department": {
+      "id": 94463,
+      "name": "CTO线"
+    },
+    "departmentId": 94463,
+    "departments": [
+      {
+        "id": 94463,
+        "name": "CTO线"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "本科",
+    "hireMode": 2,
+    "id": "facc0563-303c-4443-be14-6f2f52f4de76",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "<p>岗位职责：</p><p>1、参与滴滴基础安全产品（HIDS、NIDS、WAF、容器安全、接口安全等）安全能力建设；</p><p>2、参与滴滴高级威胁检测、数据分析、算法模型建设；</p><p>3、参与滴滴防数据泄露安全能力建设；</p><p>4、参与AI驱动的接口安全检测与防护能力建设，探索大模型在接口异常行为识别、自动化漏洞挖掘、智能规则生成及威胁研判中的应用与落地。</p><p><br></p><p>任职要求：</p><p>1、2027届毕业生，本科及以上学历，计算机相关专业优先；</p><p>了解常见的网络攻击方法、常见漏洞基本原理、爬虫相关原理；</p><p>2、了解大数据相关技术，包括flink、spark、hive、es等；</p><p>3、了解linux系统的使用；</p><p>4、至少熟悉一种编程语言Python、Go、Java等。</p><p>加分项：</p><p>1、了解机器学习/大语言模型等AI基础技术，有AI安全、智能威胁检测、安全数据分析或大模型应用相关实践经历者优先；</p><p>2、擅长沟通，乐于学习和分享，有主人翁意识，具有良好的团队合作精神；</p><p>3、有安全攻防背景，对情报溯源感兴趣；</p>",
+    "jobIntentions": [],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          94463
+        ],
+        "locationIds": [
+          92621
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 110000,
+        "cityName": "北京市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 92621,
+        "provinceName": "北京市"
+      }
+    ],
+    "multiLocale": "{\"mainLocale\":\"zh-CN\",\"secondLocale\":\"\"}",
+    "number": 1,
+    "openedAt": "2026-08-13T08:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 0,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-08-13T10:19:54",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-安全策略工程师",
+    "updatedAt": "2026-09-03T17:16:55",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 64491,
+      "name": "安全技术类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

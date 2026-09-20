@@ -1,0 +1,137 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [],
+    "attributeId": 2544,
+    "autoArchiveTalentPoolId": 425506,
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-05T14:49:56",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": ""
+      }
+    },
+    "department": {
+      "id": 94463,
+      "name": "CTO线"
+    },
+    "departmentId": 94463,
+    "departments": [
+      {
+        "id": 94463,
+        "name": "CTO线"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "本科",
+    "hireMode": 2,
+    "id": "fb5712fd-505b-46b0-85e9-46073f9675cc",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "<p>岗位职责：</p><p>1、参与内部KMS/PKI/隐私计算等系统需求到实现过程中的设计与研发工作；</p><p>2、参与终端安全密码模块的开发设计与开发，兼容性处理等；</p><p>3、参与产品的需求讨论，系统分析，核心模块的实现，安全性评估，承担对应模块代码编写测试；</p><p>4、参与 AI 场景下密码安全、身份认证、隐私保护相关能力研发，支撑大模型应用的数据加密、隐私计算、密钥管理相关工程落地。</p><p><br></p><p>任职要求：</p><p>1、2027届毕业生，本科及以上学历，计算机科学与技术/网络安全等相关专业优先；</p><p>2、Java/Python等语言熟练使用两种及以上，并熟悉常用数据结构与算法；</p><p>3、具备安全开发意识，具备良好的编码规范，熟悉对应的设计模式；</p><p>4、熟悉AES、SM4等对称算法原理与使用，熟悉RSA、ECC、SM2等算法的原理与使用；</p><p>5、较强的学习能力和技术钻研能力，良好的沟通能力，善于团队合作；</p><p>6、有数字证书，隐私计算，区块链相关研究优先；</p><p>7、了解 AI 大模型基础概念，对 AI 安全、AI 数据隐私保护有兴趣，能够结合密码技术解决 AI 场景安全问题优先；</p><p>8、有 AI 相关项目、竞赛、开源实践经历者优先；有互联网企业实习经验优先。</p>",
+    "jobIntentions": [],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          94463
+        ],
+        "locationIds": [
+          92621
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 110000,
+        "cityName": "北京市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 92621,
+        "provinceName": "北京市"
+      }
+    ],
+    "multiLocale": "{\"mainLocale\":\"zh-CN\",\"secondLocale\":\"\"}",
+    "number": 1,
+    "openedAt": "2026-08-13T08:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 1,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-08-28T18:14:20",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-密码技术工程师",
+    "updatedAt": "2026-09-03T17:16:55",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 64491,
+      "name": "安全技术类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

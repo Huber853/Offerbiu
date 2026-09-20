@@ -1,0 +1,425 @@
+[
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/116681.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-116681.html",
+    "sha256": "6190d795a1871722730b8d62eccbe665928c50bc9868d68bb9c51380f533ccfb",
+    "collected_at": "2026-09-16T14:33:55+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/116728.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-116728.html",
+    "sha256": "5be190dde0947fb43b6500a380576e11b458d97df76ea1a2459283a3800add4a",
+    "collected_at": "2026-09-16T14:33:55+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/116814.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-116814.html",
+    "sha256": "241cd909eb2ba2c4039754e431306b4ea8186f2789e7e3f592fca7a86e0d4f3a",
+    "collected_at": "2026-09-16T14:33:56+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/117947.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-117947.html",
+    "sha256": "13442de8b64b6276a771e571859ab998bb15594d050518de01e7dfeb803c90ab",
+    "collected_at": "2026-09-16T14:33:55+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/117199.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-117199.html",
+    "sha256": "3413c1c3a011a6473a82aa0d43a1f83a6413ad85e8fb80344d53ccd327fef96e",
+    "collected_at": "2026-09-16T14:33:56+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/117681.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-117681.html",
+    "sha256": "4fddfdf3548fb169bb44e3782cbbe6dd821ea2163da3eda9ea520071fa97249e",
+    "collected_at": "2026-09-16T14:33:56+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/118157.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-118157.html",
+    "sha256": "c1cfe78198c23af47eb23b77609355c33a85d6aaa2076be8c2c2657746112612",
+    "collected_at": "2026-09-16T14:33:56+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/118230.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-118230.html",
+    "sha256": "bdc5c4727aaab36e617afc6d5ac3487fad6ed46bb39be975e71eb0d2d714d17f",
+    "collected_at": "2026-09-16T14:33:56+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/117401.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-117401.html",
+    "sha256": "d908609a65123c7580c753ddccff9a34f85ee1b5d5e9a369ba613eb25f31da56",
+    "collected_at": "2026-09-16T14:33:56+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/118841.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-118841.html",
+    "sha256": "779b16e21b8256c2b3c12f2f75440571e983be81bd5d9d00274d72c7459e52fd",
+    "collected_at": "2026-09-16T14:33:56+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/118663.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-118663.html",
+    "sha256": "9a9c0f61497d16634489eac072bf4e6ca6620b95305a9ab4f6fa901964a2de28",
+    "collected_at": "2026-09-16T14:33:56+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/118659.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-118659.html",
+    "sha256": "76923c11ac8c81163fa324335ee79d05e9baac6afc76aef00a8e2334ef3d5ace",
+    "collected_at": "2026-09-16T14:33:56+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/118652.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-118652.html",
+    "sha256": "b7ddaed7889d8d9a76df93fb9457f4cebb952fb313aa70c4070497d786370bde",
+    "collected_at": "2026-09-16T14:33:56+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/118650.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-118650.html",
+    "sha256": "9bb56ee10b20416a1eb65d8f31ff2040baa5f35c2d8822f3a959a2f72aba4930",
+    "collected_at": "2026-09-16T14:33:56+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/118589.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-118589.html",
+    "sha256": "d4ee29aa8bca0638833042b7753d8ba79c88267e8bfb968b222ff3a26e37cdcc",
+    "collected_at": "2026-09-16T14:33:56+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/118639.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-118639.html",
+    "sha256": "1c16b715adc410d770afebdaac2d3e264ff3ec574da7f9374c36a2cee06a4018",
+    "collected_at": "2026-09-16T14:33:56+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/118795.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-118795.html",
+    "sha256": "389b93284bc176fe3cf96bc25fdd5c6898a6805e3dfd4196f2d5773589fda1ac",
+    "collected_at": "2026-09-16T14:33:56+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/118852.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-118852.html",
+    "sha256": "46be35f1b706f3cf59d484a766f35407942d7af9dced5df8e59f6ea366fe96d5",
+    "collected_at": "2026-09-16T14:33:56+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/118870.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-118870.html",
+    "sha256": "aa9dbb4e1c04108086071f458e44fe5bd986a21263b09bcb4b3520e87875513a",
+    "collected_at": "2026-09-16T14:33:56+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/118866.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-118866.html",
+    "sha256": "1604ae965b432937d664c939cc4abc509d98b42eae0cdc7acc3c4ea5b63146f4",
+    "collected_at": "2026-09-16T14:33:56+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/118776.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-118776.html",
+    "sha256": "52d76031e686dccffa6ce370b595ba7eb8f091715c3114f74fa0ecf13a47a78f",
+    "collected_at": "2026-09-16T14:33:57+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/118790.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-118790.html",
+    "sha256": "3b92541bf96cd095b4b4e88f485af915ac2a9b0f3a2e3e25b29d62b56f2eeb13",
+    "collected_at": "2026-09-16T14:33:57+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/118670.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-118670.html",
+    "sha256": "85b26cb2970b12b2252e245fb4137f2c6f6847992717e5abe2b6846b06d50cc1",
+    "collected_at": "2026-09-16T14:33:57+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/118669.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-118669.html",
+    "sha256": "77840ea8d01c2f6c8681a31fd4983161796d677f30817890ccf41473df83023a",
+    "collected_at": "2026-09-16T14:33:57+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/118595.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-118595.html",
+    "sha256": "52ebc469149fd882518c303e0d034582730ea3ab7ec2d8e2183e3964dfe72f1e",
+    "collected_at": "2026-09-16T14:33:57+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/118646.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-118646.html",
+    "sha256": "bb6635b6ef7c510cea4d2b8eed7129048e3932b3e63ce2b46ac9ed2df8065f29",
+    "collected_at": "2026-09-16T14:33:57+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/118364.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-118364.html",
+    "sha256": "378bb8b4c4bc3575012cde907580e791101f2e4007058986dd13bf0841551065",
+    "collected_at": "2026-09-16T14:33:57+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/118235.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-118235.html",
+    "sha256": "a02b142e91d9b0b0c7ebc992bc4ff781bf463ea02ac4f2a8e183ed19abc437d3",
+    "collected_at": "2026-09-16T14:33:57+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/118113.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-118113.html",
+    "sha256": "8f2502e7e6696481afe0c3551a7af337f755621a445e58e340122fa5836dabfc",
+    "collected_at": "2026-09-16T14:33:57+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/118013.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-118013.html",
+    "sha256": "8b933c7dc58b07c7ca4cda004fbba4bcb075f5e1c6984688a9842ae78eca8852",
+    "collected_at": "2026-09-16T14:33:57+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/117954.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-117954.html",
+    "sha256": "74d83b9bacd3f9d05b3c9be3584549e97f7ec6d7859715605aca821c76961eec",
+    "collected_at": "2026-09-16T14:33:57+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/117951.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-117951.html",
+    "sha256": "75e4c38127252e4357aa3fc76b22e84c6e7354d7a355cef2e94d677517e9a9d0",
+    "collected_at": "2026-09-16T14:33:57+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/117950.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-117950.html",
+    "sha256": "eeb15f72098c28ad3fc3d36b21d8396783201b14588e1a4093560e09b5bab6ae",
+    "collected_at": "2026-09-16T14:33:57+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/117945.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-117945.html",
+    "sha256": "22e82ae3f21d7e10218a295377fa0de18900947faaada1946bf2d9efc4e10a26",
+    "collected_at": "2026-09-16T14:33:57+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/117935.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-117935.html",
+    "sha256": "d27dfcfcdd77768e64f572e601cac2e156d16e65302210b5608070a022644b3c",
+    "collected_at": "2026-09-16T14:33:57+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/117931.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-117931.html",
+    "sha256": "579f52832719d8e722939360a5a16e71d48d513936f2a3af3ab8678403526bd9",
+    "collected_at": "2026-09-16T14:33:57+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/117930.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-117930.html",
+    "sha256": "898d8a37f164c32c50dc1c8869766b7a8f8f7003f0d5a08be8e3668fd09be598",
+    "collected_at": "2026-09-16T14:33:57+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/117928.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-117928.html",
+    "sha256": "20bc575dfc76db573341a562bfb6f855d9f13ce066711369e52fde11c9635278",
+    "collected_at": "2026-09-16T14:33:57+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/117923.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-117923.html",
+    "sha256": "8d68736393847c4bb82d9fcf6b5b98dd1bae85f896bd946ada1b9430b18bc07e",
+    "collected_at": "2026-09-16T14:33:58+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/117922.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-117922.html",
+    "sha256": "ddfb49e70980a49cdfbdd832006fffff52411923bfbe0903a5a4c056ca87d550",
+    "collected_at": "2026-09-16T14:33:57+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/117917.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-117917.html",
+    "sha256": "8f422b218a8c25a9583c6d046c1393348350c1d11e58fabb15fae42dc294efcc",
+    "collected_at": "2026-09-16T14:33:58+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/117915.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-117915.html",
+    "sha256": "509aa6298fd5462b5bfe85e9b4b9ce8c5a23cf54869cb326bd24f01424ce94d1",
+    "collected_at": "2026-09-16T14:33:58+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/117767.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-117767.html",
+    "sha256": "2f129c18410de477b4916dfb329d219b9bf568e667f5247bc2060c448d67e6a3",
+    "collected_at": "2026-09-16T14:33:58+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/117519.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-117519.html",
+    "sha256": "60a34ec9dd219c39bff53016b0ab47d214b922284b2b41a451d630600ae3e8a9",
+    "collected_at": "2026-09-16T14:33:58+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/117244.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-117244.html",
+    "sha256": "a086afa434be58dfb7584fbd5fa0d2987f0fb30a1112af190a77e9a2d6ff85da",
+    "collected_at": "2026-09-16T14:33:58+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/116988.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-116988.html",
+    "sha256": "b54fbb8500e961f2d13f87e0a1863b7f6ca8c909a8c94794132eb5fd71b0c76b",
+    "collected_at": "2026-09-16T14:33:58+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/116978.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-116978.html",
+    "sha256": "cd9a1726fc5be26f3638a8fa60f2e4cca1d38882e2bfc30281b7aace7864784d",
+    "collected_at": "2026-09-16T14:33:58+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/116636.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-116636.html",
+    "sha256": "153e789aeb37a04836a3b1350dda4e0224d4ce1667b2aa5eedbc44a76a00fe88",
+    "collected_at": "2026-09-16T14:33:58+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/116635.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-116635.html",
+    "sha256": "6a32e784a2582e903382f7a29f4743a1b146688971cad07cd71f7fbdfa9b3af2",
+    "collected_at": "2026-09-16T14:33:58+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/116545.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-116545.html",
+    "sha256": "1ca764f6e799db37636df8d2c2e962563eceeaac60efb812337b1ecfcb9e9543",
+    "collected_at": "2026-09-16T14:33:58+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/116369.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-116369.html",
+    "sha256": "ec5860d545b3d6e8a778a5dac9b7a38d1e7c0bebddfc6ed36ab415acd2e15803",
+    "collected_at": "2026-09-16T14:33:58+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/116177.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-116177.html",
+    "sha256": "841994b6647a8efc4e3778acbdafba7ef65add6fcf5dc8cdb90a7069fdd90209",
+    "collected_at": "2026-09-16T14:33:58+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/correcruit/content/id/118470.html",
+    "file": "data/sources/2026-09-16-expansion/nankai-118470.html",
+    "sha256": "94eac500cab12ddf6f71dfc6fef272f9f3419d01054663a205c786ebfab60026",
+    "collected_at": "2026-09-16T14:33:58+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/recruitment/content/type/2/id/6040.html",
+    "method": "web_read",
+    "file": "data/sources/2026-09-16-expansion/web-0.json",
+    "sha256": "83f70d7e936a3535d76c27a10c00b71435d82cab5733abd7b5573cd9671473f3",
+    "collected_at": "2026-09-16T14:35:44+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/recruitment/content/type/2/id/6038.html",
+    "method": "web_read",
+    "file": "data/sources/2026-09-16-expansion/web-1.json",
+    "sha256": "bfbfba53b6cd7e44a89c1f1f2f0f22946e6f7cd26a96324223446da8a432e73b",
+    "collected_at": "2026-09-16T14:35:44+00:00"
+  },
+  {
+    "url": "https://www.career.zju.edu.cn/jyxt/sczp/zpztgl/ckZpgwXq.zf?zpxxbh=5A57DBACE0D84D04E0653A68DD0E9B18",
+    "method": "web_read",
+    "file": "data/sources/2026-09-16-expansion/web-2.json",
+    "sha256": "915d0fafec53786089bbdd9f914415a959b0c91483c60e7b3e8bfb6c7a6bc14a",
+    "collected_at": "2026-09-16T14:35:44+00:00"
+  },
+  {
+    "url": "https://www.career.zju.edu.cn/jyxt/sczp/zpztgl/ckZpgwXq.zf?zpxxbh=5A03D470E12EAD6FE0653A68DD0E9B18",
+    "method": "web_read",
+    "file": "data/sources/2026-09-16-expansion/web-3.json",
+    "sha256": "dee3ab51732cda036dd25ee069463beb3ab123dc2c011cb688dcfa840edd1648",
+    "collected_at": "2026-09-16T14:35:44+00:00"
+  },
+  {
+    "url": "https://job.hust.edu.cn/zpinfo1/2407088.htm",
+    "method": "web_read",
+    "file": "data/sources/2026-09-16-expansion/web-4.json",
+    "sha256": "e399cc98857c9afec4e3d183d4e4423597539bd30956abc3639d309e61b5b6b3",
+    "collected_at": "2026-09-16T14:35:44+00:00"
+  },
+  {
+    "url": "https://job.hust.edu.cn/zpinfo1/2407511.htm",
+    "method": "web_read",
+    "file": "data/sources/2026-09-16-expansion/web-5.json",
+    "sha256": "01811c0c72339f43de488cfa8821458dfee66e790b8ef6217c38ea69aa26bec8",
+    "collected_at": "2026-09-16T14:35:44+00:00"
+  },
+  {
+    "url": "https://job.hust.edu.cn/zpinfo1/2432382.htm",
+    "method": "web_read",
+    "file": "data/sources/2026-09-16-expansion/web-6.json",
+    "sha256": "7ee3cabdfebd2ff88a8c34f26f30462cb039e5035f50f3d47fd16deaecd88c94",
+    "collected_at": "2026-09-16T14:35:44+00:00"
+  },
+  {
+    "url": "https://job.hust.edu.cn/zpinfo1/2409291.htm",
+    "method": "web_read",
+    "file": "data/sources/2026-09-16-expansion/web-7.json",
+    "sha256": "38c897c07fdc944cc1acb9ce96924570d0c96ea9185bbb6941ac1b2dfefb6e94",
+    "collected_at": "2026-09-16T14:35:44+00:00"
+  },
+  {
+    "url": "https://career.nankai.edu.cn/recruitment/content/type/2/id/6108.html",
+    "method": "web_read",
+    "file": "data/sources/2026-09-16-expansion/web-9.json",
+    "sha256": "7a7ae8a1a62fdd200251db27d8abd451e55521a747a99bad20cabff661bafb83",
+    "collected_at": "2026-09-16T14:36:20+00:00"
+  },
+  {
+    "url": "https://job.zte.com.cn/cn/campus-recruitment/Recruitment_positions/freshstudent.html",
+    "method": "web_read",
+    "file": "data/sources/2026-09-16-expansion/web-10.json",
+    "sha256": "e57a8e88e1b5e53d1f77d23b341088a2d33685389d3f21b12ef18c57639c9098",
+    "collected_at": "2026-09-16T14:36:20+00:00"
+  },
+  {
+    "url": "https://jiuye.szpu.edu.cn/info/1007/1969.htm",
+    "method": "web_read",
+    "file": "data/sources/2026-09-16-expansion/web-11.json",
+    "sha256": "2c89d72f62661720cbb39182b196f4b33d4069d72fa1b08829093a83105dd91c",
+    "collected_at": "2026-09-16T14:36:20+00:00"
+  },
+  {
+    "url": "https://seed.bytedance.com/zh/seedearlycareer",
+    "method": "web_read",
+    "file": "data/sources/2026-09-16-expansion/web-12.json",
+    "sha256": "240c24dd2fb2c070326b0dc4105789055afb56b5114a870f4393ede1f7fd6170",
+    "collected_at": "2026-09-16T14:36:20+00:00"
+  },
+  {
+    "url": "https://www.boc.cn/big5/aboutboc/bi4/202609/t20260903_25689311.html",
+    "method": "web_read",
+    "file": "data/sources/2026-09-16-expansion/web-13.json",
+    "sha256": "6f0b959658aba649d596227a82f402c260d1c24183d3497837d8feeee8fa534e",
+    "collected_at": "2026-09-16T14:36:20+00:00"
+  },
+  {
+    "url": "https://www.adbc.com.cn/n354735/n355043/c722284/content.html",
+    "method": "web_read",
+    "file": "data/sources/2026-09-16-expansion/web-14.json",
+    "sha256": "180eb09ff3c56977eb9b02e2410d13efdc2469a77e8ef7b1ca7e49fe81183030",
+    "collected_at": "2026-09-16T14:36:20+00:00"
+  },
+  {
+    "url": "https://www.career.zju.edu.cn/jyxt/sczp/xjhgl/ckXjhgwXq.zf?dwxxid=761C0E15685524AFE055000000000001&xjhbh=b9bd3f5ab95ed7dc5b62ccb8561c732e",
+    "method": "web_read",
+    "file": "data/sources/2026-09-16-expansion/web-15.json",
+    "sha256": "6dc024fcfa47de3e214869bbec33b109141024262245ecd940af9daf9f15cc73",
+    "collected_at": "2026-09-16T14:36:20+00:00"
+  }
+]

@@ -1,0 +1,128 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [],
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-14T21:31:44",
+    "department": {
+      "id": 2036637,
+      "name": "两轮车事业部"
+    },
+    "departmentId": 2036637,
+    "departments": [
+      {
+        "id": 2036637,
+        "name": "两轮车事业部"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "本科",
+    "hireMode": 2,
+    "id": "fddf88de-26f4-44d1-940c-22d357141986",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "岗位职责：\n1、负责日常的数据统计和处理及与业务端的沟通协作；\n2、完成业务目标制定沟通协调，确保目标对业务具备牵引力；\n3、完成数据分析项目过程中的深度理解业务，抽象并搭建数据模型，分析关键问题；\n4、对两轮车在区域的各项业务数据进行追踪和分析，提出经营改进建议，能够基于数据分析得到有价值的信息，具备良好的落地性，并为运营决策、人员管理等提供数据支持。\n\n任职要求：\n1、2027届本科及以上学历，熟练使用office办公软件，具备数据可视化能力；\n2、良好的系统化思维和结构化思维，能从业务全局分析问题、沟通解决问题并切实落地；\n3、对数据敏感，同时有良好的业务sense，能深入到业务中去发现问题解决问题；\n4、可接受后续组织轮岗的安排。",
+    "jobIntentions": [],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          2036637
+        ],
+        "locationIds": [
+          92621
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 110000,
+        "cityName": "北京市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 92621,
+        "provinceName": "北京市"
+      }
+    ],
+    "number": 1,
+    "openedAt": "2026-08-14T08:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 0,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-08-14T21:43:47",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-策略运营顾问-北方辖区",
+    "updatedAt": "2026-09-04T15:11:34",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 20039,
+      "name": "运营类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

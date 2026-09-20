@@ -1,0 +1,139 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [
+      1
+    ],
+    "attributeId": 2544,
+    "autoArchiveTalentPoolId": 423678,
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-09-04T13:20:31",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": ""
+      }
+    },
+    "department": {
+      "id": 94463,
+      "name": "CTO线"
+    },
+    "departmentId": 94463,
+    "departments": [
+      {
+        "id": 94463,
+        "name": "CTO线"
+      }
+    ],
+    "deptParentId": 0,
+    "hireMode": 2,
+    "id": "e9b38ef8-3a9a-4932-89a8-47513ae7f0a5",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "<p>岗位职责：</p><p>参与公司数据中心网络建设维护以及平台化工具化能力建设：</p><p>1、数据中心网络建设运维（基础网络环境、骨干网、网络服务等）；</p><p>2、网络Devnet/监控平台建设；</p><p>3、数据中心cmdb平台开发建设。</p><p><br></p><p>﻿任职要求：</p><p>1、2027届毕业生，本科及以上学历，计算机或通信相关专业优先；</p><p>2、掌握Python和Golang中的至少一门语言，具备一定编码和程序设计能力；</p><p>3、熟悉常用数据库（MySQL、InfluxDB等）和消息队列（Kafka等）；</p><p>4、具备较强的工作责任心和良好的团队协作能力；</p><p>5、有数据中心网络相关实习或项目经历者优先；</p><p>6、有数通、传输等网络专业CCNA及以上级别证书者优先。</p>",
+    "jobIntentions": [
+      1
+    ],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          94463
+        ],
+        "locationIds": [
+          92621
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 110000,
+        "cityName": "北京市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 92621,
+        "provinceName": "北京市"
+      }
+    ],
+    "number": 2,
+    "openedAt": "2026-09-04T00:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 1,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-09-04T13:20:39",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-网络工程师-系统部",
+    "updatedAt": "2026-09-05T00:21:43",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 189672,
+      "name": "工程-系统类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

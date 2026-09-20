@@ -1,0 +1,135 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [],
+    "autoArchiveTalentPoolId": 432698,
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-05T15:59:26",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": "27秋-SQL"
+      }
+    },
+    "department": {
+      "id": 199257,
+      "name": "网约车平台公司"
+    },
+    "departmentId": 199257,
+    "departments": [
+      {
+        "id": 199257,
+        "name": "网约车平台公司"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "本科",
+    "hireMode": 2,
+    "id": "752e6fbd-529a-462e-aefc-427c78643cc7",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "岗位职责：\n1、为快送司机增长及运营策略负责，协助完成相关策略以及运营方案的落地；\n2、观测或分析司机运营相关数据指标，通过数据能够发现问题并分析原因，及时沟通反馈；\n3、协助解读相关指标定义及目标，持续追踪并激励整体及多维度的目标达成；\n4、通过调研访谈及线下跑单体验等方式搜集司机反馈，协助持续优化相关产品和线上能力；\n5、协助对接或协调平台资源。\n\n任职要求：\n1、2027届毕业生，本科及以上学历，经济学、统计学、计算机等相关专业优先；\n2、有较强的好奇心和洞察力；责任心强，主人翁意识突出；\n3、有数据敏感度，具备基本的数据分析能力，熟练使用sql；\n4、良好的沟通协调能力，良好的学习能力和较强的学习意愿，渴望获得成长和认可；\n5、有出行领域相关运营实习经历优先。",
+    "jobIntentions": [],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          199257
+        ],
+        "locationIds": [
+          92621
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 110000,
+        "cityName": "北京市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 92621,
+        "provinceName": "北京市"
+      }
+    ],
+    "number": 3,
+    "openedAt": "2026-08-13T08:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 0,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-09-01T12:28:22",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-产品与用户运营顾问（快送）",
+    "updatedAt": "2026-09-01T12:28:22",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 20039,
+      "name": "运营类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

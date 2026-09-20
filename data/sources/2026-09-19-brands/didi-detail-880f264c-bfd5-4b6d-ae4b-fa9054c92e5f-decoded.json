@@ -1,0 +1,137 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [],
+    "attributeId": 2544,
+    "autoArchiveTalentPoolId": 432698,
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-05T15:59:19",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": ""
+      }
+    },
+    "department": {
+      "id": 203019,
+      "name": "国际化事业部"
+    },
+    "departmentId": 203019,
+    "departments": [
+      {
+        "id": 203019,
+        "name": "国际化事业部"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "硕士",
+    "hireMode": 2,
+    "id": "880f264c-bfd5-4b6d-ae4b-fa9054c92e5f",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "<p>岗位职责：</p><p>Team Overview</p><p><br></p><p>The International Data Science (DS) team of DiDi's International Business Group (IBG) serves as the global analytical engine that powers data-driven decision-making across international mobility markets. As a cross-regional and cross-functional team, we collaborate closely with Product, Algorithm, Engineering, and Operations teams to transform complex marketplace signals into actionable insights, scalable strategies, and intelligent systems that continuously optimize both rider and driver experiences.</p><p><br></p><p>Our work focuses on understanding and optimizing fundamental marketplace mechanisms—such as dynamic pricing, intelligent dispatching, and incentive design—to maintain balanced supply-demand dynamics and drive sustainable business growth.</p><p><br></p><p>Within the team, we focus on decision-making support, strategy evaluation, and business impact analysis, ensuring that every strategy is grounded in rigorous data analysis and operationally effective. By bridging quantitative rigor with business intuition, we strive to drive marketplace excellence and innovation across diverse international markets.</p><p><br></p><p>Role Overview</p><p><br></p><p>As a Business Analyst within DS, you will bridge data science, business strategy, and execution operations. Your mission is to ensure that strategic initiatives are data-grounded, operationally executable, and continuously optimized through analytics, experimentation, and structured monitoring.</p><p><br></p><p>You will:</p><p>● Conduct in-depth marketplace dynamics analysis to identify opportunities for optimization;</p><p>● Drive end-to-end project execution for high-priority initiatives;</p><p>● Build strategy monitoring frameworks and conduct post-implementation evaluations to guide continuous improvement.</p><p><br></p><p>This role is ideal for candidates who enjoy combining analytical rigor with strategic problem solving and cross-functional execution.</p><p><br></p><p>Responsibilities</p><p><br></p><p>Strategy Monitoring and Insights</p><p>● Build and continuously optimize monitoring metrics to enable data-informed decision making and ongoing strategic iteration;</p><p>● Design structured data visualization frameworks that deliver clear, actionable insights across diverse strategic scenarios and levels of granularity;</p><p>● Identify optimization opportunities through rigorous analysis of strategic metrics and data trends, driving continuous and focused strategy refinement;</p><p>● Lead the development of automated anomaly detection mechanisms for key indicators to strengthen real-time risk awareness and operational responsiveness.</p><p><br></p><p>Competitive Intelligence</p><p>● Continuously track competitor strategy updates across key dimensions and interpret shifts using public signals and user-side behavioral data;</p><p>● Analyze the structural design of competitor strategies to extract key differentiators and referenceable practices;</p><p>● Compare external strategies with internal approaches to identify actionable gaps and inform targeted optimizations.</p><p><br></p><p>Strategic Direction Planning &amp; Management</p><p>● Maintain the work breakdown structure (WBS) to support execution planning;</p><p>● Support quarterly and long-term roadmap development;</p><p>● Track strategy versions and maintain traceability across milestones and decision points;</p><p>● Lead structured reviews and distill transferable learnings for future initiatives;</p><p>● Facilitate alignment on objectives, collaboration models, and execution workflows;</p><p>● Ensure consistent understanding and interpretation of strategy across stakeholders.</p><p><br></p><p>Cross-functional Execution</p><p>● Ensure strategy logic and execution details are clearly communicated across Product, Operations, and Engineering teams to support aligned implementation;</p><p>● Define and communicate key dependencies, timelines, and critical updates to enable smooth and coordinated cross-functional collaboration;</p><p>● Monitor the quality of strategy execution and proactively identify operational barriers;</p><p>● Consolidate and analyze frontline feedback to inform timely parameter adjustments;</p><p>● Oversee rollout planning to ensure structured and traceable implementation.</p><p><br></p><p>Integration with High-priority Business Initiatives</p><p>● Partner with city operations to support the execution of high-priority business initiatives;</p><p>● Ensure strategies are localized and effectively integrated into project implementations;</p><p>● Align strategy team deliverables with overarching project timelines and execution plans;</p><p>● Coordinate cross-functional updates and maintain joint visibility into adjustments;</p><p>● Synthesize frontline insights into scalable recommendations.</p><p><br></p><p>Foundational Data Infrastructure Support</p><p>● Collaborate with data engineering teams to design, develop, and continuously improve dashboards and monitoring tools that support strategy analysis;</p><p>● Document key data dependencies and enhance data accessibility and efficiency;</p><p>● Maintain calibers for core metrics and facilitate cross-team alignment;</p><p>● Support the definition, implementation, and validation of tagging requirements.</p><p><br></p><p>任职要求：</p><p>Qualifications</p><p><br></p><p>● Master's degree in a quantitative or analytical discipline (e.g., Mathematics, Statistics, Computer Science, Data Science, Economics, Operations Research, or Business Analytics);</p><p>● Prior internship experience in data analysis, strategy operations, or consulting;</p><p>● Strong proficiency in SQL and Python; experience with data visualization (e.g., Tableau, PowerBI) is a plus;</p><p>● Familiarity with machine learning, causal inference, and optimization concepts; hands-on experimentation experience preferred;</p><p>● Strong business acumen and ability to translate analytical findings into actionable strategic recommendations;</p><p>● Proven project coordination skills, including risk management and stakeholder communication;</p><p>● Excellent verbal and written communication skills in Mandarin and English;</p><p>● Proactive, detail-oriented, and comfortable navigating fast-paced, cross-functional environments.</p><p><br></p><p>What You'll Gain</p><p>● Exposure to core marketplace mechanisms that shape global ride-hailing dynamics;</p><p>● End-to-end experience in strategy design, analysis, implementation, and evaluation;</p><p>● Opportunities to influence data-driven decision-making across multiple international markets;</p><p>● Collaboration with diverse teams—blending data, business, and technology into impactful marketplace strategies.</p>",
+    "jobIntentions": [],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          203019
+        ],
+        "locationIds": [
+          94656
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 310000,
+        "cityName": "上海市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 94656,
+        "provinceName": "上海市"
+      }
+    ],
+    "multiLocale": "{\"mainLocale\":\"zh-CN\",\"secondLocale\":\"\"}",
+    "number": 2,
+    "openedAt": "2026-08-13T08:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 1,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-09-15T19:04:09",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-Business Analyst（国际化Intl DS）",
+    "updatedAt": "2026-09-15T19:24:54",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 204024,
+      "name": "商分-商业分析"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

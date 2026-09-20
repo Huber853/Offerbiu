@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcampus=self.webpackChunkcampus||[]).push([[4747],{14747(e,a,t){t.r(a),t.d(a,{default:()=>s});var c=t(30169),n=t(16147);const s=function(e){return c.createElement("div",{className:"container m-personal-page-h5"},c.createElement("div",{className:"m-content"},c.createElement(n.Ay,e)))}}}]);

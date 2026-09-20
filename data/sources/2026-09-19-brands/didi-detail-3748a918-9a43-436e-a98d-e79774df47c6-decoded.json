@@ -1,0 +1,136 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [],
+    "autoArchiveTalentPoolId": 425506,
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-05T14:50:08",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": "27秋-数据研发"
+      }
+    },
+    "department": {
+      "id": 94463,
+      "name": "CTO线"
+    },
+    "departmentId": 94463,
+    "departments": [
+      {
+        "id": 94463,
+        "name": "CTO线"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "本科",
+    "hireMode": 2,
+    "id": "3748a918-9a43-436e-a98d-e79774df47c6",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "<p>岗位职责：</p><p>1、参与滴滴数据中台的智能化升级与数仓建设工作，对多源数据进行整合、清洗、存储，构建面向BI分析与AI应用的高质量数据资产，满足实时、离线、湖仓一体等多样化场景需求；</p><p>2、参与面向AI的数据基础设施建设，包括资产标准化、数据湖（Iceberg/Hudi）的探索与应用，驱动业务智能决策等提供高质量数据支持；</p><p>3、与产品、商分、业务团队紧密协作，深入理解业务需求与智能化产品目标，提供高效、可靠的数据支持，推动数据驱动的产品改进及AI功能落地（如智能归因、个性化推荐）；</p><p>4、制定和优化数据开发规范与流程，引入AI开发工具（如大模型辅助SQL生成、代码Review、自动化质检），提升团队研发效率与代码质量，建立智能化数据开发心智；</p><p>5、跟踪业界最新技术动态，重点关注AI与数据技术融合趋势（如Data+AI、数据湖仓的AI增强），将成熟技术引入实际项目，持续提升数据团队的技术先进性与业务竞争力。</p><p><br></p><p>任职要求：</p><p>1、2027届毕业生，本科及以上学历，计算机、数学、统计等相关专业；</p><p>2、有互联网公司数据开发或数据平台相关实习经验者优先;</p><p>3、具备扎实的编程基础，至少熟练掌握 Java/Python 中的一门语言，熟悉 Python 数据处理库（如 Pandas、NumPy）者加分；</p><p>4、大数据技术栈：了解 Hadoop、Hive、Spark、Flink 等常用组件，有实际使用经验者优先；</p><p>5、对数据湖技术（如 Iceberg、Hudi） 或 实时计算 感兴趣者加分；</p><p>6、AI 数据能力：了解 AI 应用对数据的需求（如AI Coding、搭建AI工作流），对Claude Code、ChatGPT等大模型有深度使用经验并理解其底层原理；</p><p>7、愿意参与构建 AI-ready 数据基础设施；</p><p>8、学习能力强，善于沟通协作，有责任心，乐于挑战新技术，对数据与 AI 的结合有强烈好奇心。</p>",
+    "jobIntentions": [],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          94463
+        ],
+        "locationIds": [
+          92621
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 110000,
+        "cityName": "北京市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 92621,
+        "provinceName": "北京市"
+      }
+    ],
+    "multiLocale": "{\"mainLocale\":\"zh-CN\",\"secondLocale\":\"\"}",
+    "number": 7,
+    "openedAt": "2026-08-13T08:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 0,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-08-13T10:19:54",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-数据研发工程师-数据开发与应用部",
+    "updatedAt": "2026-09-03T17:16:55",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 134766,
+      "name": "数据类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

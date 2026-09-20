@@ -1,0 +1,149 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [
+      1
+    ],
+    "autoArchiveTalentPoolId": 425506,
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-05T14:49:39",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": "27秋-算法"
+      }
+    },
+    "department": {
+      "id": 439007,
+      "name": "自动驾驶"
+    },
+    "departmentId": 439007,
+    "departments": [
+      {
+        "id": 439007,
+        "name": "自动驾驶"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "硕士",
+    "hireMode": 2,
+    "id": "d501baff-8aaf-4970-b7fd-ca48367e0caf",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "<p>岗位职责：</p><p>1、数据采集：设计车端数据trigger，召回有价值数据并进行数据重要性评估；</p><p>2、数据挖掘：参与端到端/感知/预测/Planner等模型数据闭环算法研发，从海量路采数据中挖掘特定场景数据，设计开发自动数据清洗链路，过滤脏数据提升数据质量；</p><p>3、数据标注与校验：学习场景与行为理解，使用VLM等自动标注工具产出场景、交通参与者属性、行为等标签，并保证准召；</p><p>4、数据画像分析：进行多维度数据画像的辅助分析，参与量化数据缺陷，为模型迭代和数据采集提供数据层面的依据；</p><p>5、数据增强：针对模型表现短板，通过数据增强与合成数据等手段提升模型效果。</p><p><br></p><p>任职要求：</p><p>1、2027届毕业生，硕士及以上学历，国内外知名院校计算机、人工智能、自动化、电子信息、数学等相关专业优先；</p><p>2、对自动驾驶与数据闭环有浓厚兴趣，具备快速学习新技术、新工具的能力，能主动关注行业前沿，将新知识转化为实践；</p><p>3、熟练使用Python，熟悉Numpy、Pandas、Pyspark等数据处理库，了解C++基本语法，对PyTorch或TensorFlow有一定使用经验；</p><p>4、了解Transformer基本原理（注意力机制、Encoder-Decoder结构），对自动驾驶感知、预测、规控模块间关系有基本认识，具备从问题现象反推数据原因的初步能力；</p><p>5、性格细致严谨，注重细节，自驱力强，能主动跟进问题，对从数据角度提升模型效果有热情，具备跨团队高效沟通能力。</p><p>加分项：</p><p>1、有实际数据处理、数据分析类项目经验；</p><p>2、参与过数据标注流程设计；</p><p>3、有竞赛获奖或高质量论文发表；</p><p>4、熟练使用AI辅助编程工具（如Copilot、Cursor等）。</p>",
+    "jobIntentions": [
+      1
+    ],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          439007
+        ],
+        "locationIds": [
+          92621,
+          94656
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 110000,
+        "cityName": "北京市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 92621,
+        "provinceName": "北京市"
+      },
+      {
+        "cityId": 310000,
+        "cityName": "上海市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 94656,
+        "provinceName": "上海市"
+      }
+    ],
+    "multiLocale": "{\"mainLocale\":\"zh-CN\",\"secondLocale\":\"\"}",
+    "number": 2,
+    "openedAt": "2026-08-13T08:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 0,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-08-13T10:19:54",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-自动驾驶-数据闭环算法工程师",
+    "updatedAt": "2026-08-28T16:18:17",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 132608,
+      "name": "机器人类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

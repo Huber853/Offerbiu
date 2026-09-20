@@ -1,0 +1,141 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [
+      1
+    ],
+    "autoArchiveTalentPoolId": 423678,
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-09-17T17:20:45",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": "27秋-数据产品"
+      }
+    },
+    "department": {
+      "id": 203019,
+      "name": "国际化事业部"
+    },
+    "departmentId": 203019,
+    "departments": [
+      {
+        "id": 203019,
+        "name": "国际化事业部"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "本科",
+    "finishedAt": "2027-09-01T00:00",
+    "hireMode": 2,
+    "id": "aaa2328e-b32c-4152-884e-ddd9097add4f",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "<p>岗位职责</p><p>1、负责推进数据产品或数据应用项目的规划设计、项目管理、效果验收、线上故障跟进、用户反馈与产品运营等全过程；</p><p>2、支持业务侧关于数据的需求，通过的数据产品的能力扩充，提升业务数据获取和分析的效率</p><p>3、负责日常运营及维护数据基建，包含日志、埋点、数据专辑、模版、看板等</p><p><br></p><p>任职要求</p><p>1、2027届毕业生，本科及以上学历，统计、计算机、数学等相关专业优先；</p><p>2、有O2O、电商方向的数据产品工作经验者优先；</p><p>3、英语佳，沟通能力强，善于团队协作</p><p>4、数据敏感性强，有丰富的数据分析背景，善于全面考虑产品逻辑，保证产品的全面性和通用性。</p>",
+    "jobIntentions": [
+      1
+    ],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          203019
+        ],
+        "locationIds": [
+          92621
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 110000,
+        "cityName": "北京市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 92621,
+        "provinceName": "北京市"
+      }
+    ],
+    "multiLocale": "{\"mainLocale\":\"zh-CN\",\"secondLocale\":\"\"}",
+    "number": 2,
+    "openedAt": "2026-09-17T00:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 0,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-09-17T17:28:38",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-数据产品助理（国际化外卖）",
+    "updatedAt": "2026-09-18T00:21:15",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 134766,
+      "name": "数据类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

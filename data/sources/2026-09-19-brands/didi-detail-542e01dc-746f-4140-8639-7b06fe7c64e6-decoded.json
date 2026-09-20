@@ -1,0 +1,157 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [
+      1
+    ],
+    "autoArchiveTalentPoolId": 425506,
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-05T14:49:39",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": "27秋-算法"
+      }
+    },
+    "department": {
+      "id": 439007,
+      "name": "自动驾驶"
+    },
+    "departmentId": 439007,
+    "departments": [
+      {
+        "id": 439007,
+        "name": "自动驾驶"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "硕士",
+    "hireMode": 2,
+    "id": "542e01dc-746f-4140-8639-7b06fe7c64e6",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "岗位职责：\n端到端自动驾驶大模型是当前工业界与学术界的研究热点，它通过数据驱动与科学建模，从原始传感器数据出发，直接预测自车未来行为，是AI与自动驾驶融合的综合应用。\n\n1、以海量真实数据为基础，依托计算机视觉、深度学习与大模型技术，构建面向真实世界的一体化决策规划模型；\n2、在端到端自动驾驶模型的设计与优化中，研究方向包括但不限于：端到端自动驾驶大模型优化、多模态融合与感知场景理解、大语言模型(VLM)驱动的复杂场景理解、基于扩散模型的预测与规划行为生成、三维空间表征与自监督预训练、 强化学习与人类行为偏好对齐等。\n\n任职要求：\n1、2027届毕业生，硕士及以上学历，研究方向为人工智能相关，包括但不限于计算机视觉、深度学习和自动驾驶等方向优先；\n2、编程基础扎实，熟悉基本算法和数据结构，熟练掌握Python和深度学习框架PyTorch；\n3、善于思考，逻辑清晰，有优秀的问题分析和解决能力；\n4、有强烈的自我提升意愿，持续的自我驱动能力；关注人工智能和计算机视觉业界前沿技术和国际会议研究动态，不断提升自己；\n5、良好的沟通和合作能力，责任心和团队意识强；\n6、需至少满足以下任意一项：(1) 在顶级国际会议/期刊上发表过论文（CVPR，ICCV，ECCV，NeurIPS，ICLR等），有丰富的深度学习研究经验；（2）主导或作为核心参与过有影响力的开源项目的构建；（2）有自动驾驶相关经验，包括但不限于：智能驾驶、机器人、等项目落地经验；（3）有编程、数学等相关竞赛成绩。",
+    "jobIntentions": [
+      1
+    ],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          439007
+        ],
+        "locationIds": [
+          92621,
+          94656,
+          94657
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 110000,
+        "cityName": "北京市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 92621,
+        "provinceName": "北京市"
+      },
+      {
+        "cityId": 310000,
+        "cityName": "上海市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 94656,
+        "provinceName": "上海市"
+      },
+      {
+        "cityId": 440100,
+        "cityName": "广州市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 94657,
+        "provinceName": "广东"
+      }
+    ],
+    "number": 3,
+    "openedAt": "2026-08-13T08:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 0,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-08-13T10:19:54",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-端到端基座模型算法工程师",
+    "updatedAt": "2026-08-28T16:18:17",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 132608,
+      "name": "机器人类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

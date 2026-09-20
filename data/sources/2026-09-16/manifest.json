@@ -1,0 +1,665 @@
+[
+  {
+    "url": "https://talent.baidu.com/jobs/list?recruitType=GRADUATE",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/baidu-cohort.html",
+    "sha256": "a888d3125c58c6ff3fb6ff71c73a5db9f54fd7613a6d3d49c9e5d7d6d9ade4ef",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/httservice/getPostListNew",
+    "method": "POST",
+    "request_form": {
+      "recruitType": "GRADUATE",
+      "pageSize": 10,
+      "curPage": 1,
+      "keyWord": "",
+      "projectType": ""
+    },
+    "file": "data/sources/2026-09-16/baidu-page-01.json",
+    "sha256": "2f81ba1a7ff21ba1c2a0a9ac0103a1a037e9453df6c8a0a9dc242d0b481a9419",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/httservice/getPostListNew",
+    "method": "POST",
+    "request_form": {
+      "recruitType": "GRADUATE",
+      "pageSize": 10,
+      "curPage": 2,
+      "keyWord": "",
+      "projectType": ""
+    },
+    "file": "data/sources/2026-09-16/baidu-page-02.json",
+    "sha256": "b7361c1532aa4207cf3248bd51f1ce18d93302689b58e96d379879f9be2e7b62",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/httservice/getPostListNew",
+    "method": "POST",
+    "request_form": {
+      "recruitType": "GRADUATE",
+      "pageSize": 10,
+      "curPage": 3,
+      "keyWord": "",
+      "projectType": ""
+    },
+    "file": "data/sources/2026-09-16/baidu-page-03.json",
+    "sha256": "a9f84ceaa264046a6466657d848ec260688a508b05dc6d8bea8067fcc6138975",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/httservice/getPostListNew",
+    "method": "POST",
+    "request_form": {
+      "recruitType": "GRADUATE",
+      "pageSize": 10,
+      "curPage": 4,
+      "keyWord": "",
+      "projectType": ""
+    },
+    "file": "data/sources/2026-09-16/baidu-page-04.json",
+    "sha256": "a0c02c419519990a987affe7dee527f61f04ef4ad48a665398eacf489d5d9e12",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/httservice/getPostListNew",
+    "method": "POST",
+    "request_form": {
+      "recruitType": "GRADUATE",
+      "pageSize": 10,
+      "curPage": 5,
+      "keyWord": "",
+      "projectType": ""
+    },
+    "file": "data/sources/2026-09-16/baidu-page-05.json",
+    "sha256": "d43690c1e6758dd2ff8ce15a6f998f67b84526c0d7a4727de5be8b0e7e1b11f8",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/httservice/getPostListNew",
+    "method": "POST",
+    "request_form": {
+      "recruitType": "GRADUATE",
+      "pageSize": 10,
+      "curPage": 6,
+      "keyWord": "",
+      "projectType": ""
+    },
+    "file": "data/sources/2026-09-16/baidu-page-06.json",
+    "sha256": "02ae31555239dd667ee282ca4d1c843046207f55fc99ab3bb7adcf3de3ae6139",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/httservice/getPostListNew",
+    "method": "POST",
+    "request_form": {
+      "recruitType": "GRADUATE",
+      "pageSize": 10,
+      "curPage": 7,
+      "keyWord": "",
+      "projectType": ""
+    },
+    "file": "data/sources/2026-09-16/baidu-page-07.json",
+    "sha256": "68a90a813b5728e44dee31b6b0ee451cda13a78470be3a400c1ce521e1711f45",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/httservice/getPostListNew",
+    "method": "POST",
+    "request_form": {
+      "recruitType": "GRADUATE",
+      "pageSize": 10,
+      "curPage": 8,
+      "keyWord": "",
+      "projectType": ""
+    },
+    "file": "data/sources/2026-09-16/baidu-page-08.json",
+    "sha256": "72eb3f4098dc811b47b7eee0178a03b756b81f5d9755fe8d2eda3ef0b0c048ba",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/httservice/getPostListNew",
+    "method": "POST",
+    "request_form": {
+      "recruitType": "GRADUATE",
+      "pageSize": 10,
+      "curPage": 9,
+      "keyWord": "",
+      "projectType": ""
+    },
+    "file": "data/sources/2026-09-16/baidu-page-09.json",
+    "sha256": "d34f4f1b3b07b2529205b69da980992886b48e935540e580a863e33870ea883d",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/httservice/getPostListNew",
+    "method": "POST",
+    "request_form": {
+      "recruitType": "GRADUATE",
+      "pageSize": 10,
+      "curPage": 10,
+      "keyWord": "",
+      "projectType": ""
+    },
+    "file": "data/sources/2026-09-16/baidu-page-10.json",
+    "sha256": "167b0b3a0b61b09e5662395f1ab73d1b5abe4f634461abd38c37e2769a85bebb",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/httservice/getPostListNew",
+    "method": "POST",
+    "request_form": {
+      "recruitType": "GRADUATE",
+      "pageSize": 10,
+      "curPage": 11,
+      "keyWord": "",
+      "projectType": ""
+    },
+    "file": "data/sources/2026-09-16/baidu-page-11.json",
+    "sha256": "afab009234cbfdaa078b0aeb5e4d9931499957c0436416a372c935c63a6aebeb",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/httservice/getPostListNew",
+    "method": "POST",
+    "request_form": {
+      "recruitType": "GRADUATE",
+      "pageSize": 10,
+      "curPage": 12,
+      "keyWord": "",
+      "projectType": ""
+    },
+    "file": "data/sources/2026-09-16/baidu-page-12.json",
+    "sha256": "28930f8335658ecbd0a517e096d7e808e22991f80df5ee19470b5a5401530a07",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/httservice/getPostListNew",
+    "method": "POST",
+    "request_form": {
+      "recruitType": "GRADUATE",
+      "pageSize": 10,
+      "curPage": 13,
+      "keyWord": "",
+      "projectType": ""
+    },
+    "file": "data/sources/2026-09-16/baidu-page-13.json",
+    "sha256": "60d6b2aa59b2307650c267651dfa3ce636c08f16eff6f64568c50ed04c802383",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/httservice/getPostListNew",
+    "method": "POST",
+    "request_form": {
+      "recruitType": "GRADUATE",
+      "pageSize": 10,
+      "curPage": 14,
+      "keyWord": "",
+      "projectType": ""
+    },
+    "file": "data/sources/2026-09-16/baidu-page-14.json",
+    "sha256": "bf1a7bbd2d00d6ed02ca509092a7c82006ce2a71beda4dfa27c36c843995b749",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/httservice/getPostListNew",
+    "method": "POST",
+    "request_form": {
+      "recruitType": "GRADUATE",
+      "pageSize": 10,
+      "curPage": 15,
+      "keyWord": "",
+      "projectType": ""
+    },
+    "file": "data/sources/2026-09-16/baidu-page-15.json",
+    "sha256": "2f4a801fae16f1ae746ad6bd41bb5bb71ef520042d66cbabdb4475673a187b52",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/httservice/getPostListNew",
+    "method": "POST",
+    "request_form": {
+      "recruitType": "GRADUATE",
+      "pageSize": 10,
+      "curPage": 16,
+      "keyWord": "",
+      "projectType": ""
+    },
+    "file": "data/sources/2026-09-16/baidu-page-16.json",
+    "sha256": "4aeed7e2c6cf7fac1d30431dbba2936045d076ee81297cb521ddc1170fa920c6",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/campus/faq/",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-cohort.html",
+    "sha256": "11da070fd3181ef48c80b98234829d1393ae3b614d4e8d4251d8312f2174e2fd",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/master/",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-master-cohort.html",
+    "sha256": "0a8dc7c3458d05968d0632be9baf5a97e22365a07d62d10dc653796c85319213",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/list",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-page-01.json",
+    "sha256": "3bdacc582174d36c2bf216f2739d5c7ee45c9aab0cc00e51db28d52d7ca69d41",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/list?page=2",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-page-02.json",
+    "sha256": "ee1e519daaa9dfcb9ded66be11d54bc81d369dad34aa4bf3ba122a3819bd6bd0",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/list?page=3",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-page-03.json",
+    "sha256": "f1164912a235c0c84f3af17424ba4f075e59bce2727ea39457103ea85a5366ae",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/list?page=4",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-page-04.json",
+    "sha256": "6513154e379fae46d5fb72163137d6c25ebcb1b1d0978f6f0298dcf1ca7a8b56",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/list?page=5",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-page-05.json",
+    "sha256": "ff92ddfcc711fedf57854dfb014356b8576779dce8034c3f08f313eba080706e",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/list?page=6",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-page-06.json",
+    "sha256": "ddb27fa95e78e635f15965b8675844d54a3ac99435863a2ec1b84d841ad1930a",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/list?page=7",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-page-07.json",
+    "sha256": "1489ce3b17ca03a8109c11208ba8eea7d637be6069b7e55d0fd6aac18a4030ca",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=14983",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-detail-14983.json",
+    "sha256": "acb28811940f1354eaf638f9ff8f0a1b92aac282d84ea618c650a2f209f73b1f",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=14982",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-detail-14982.json",
+    "sha256": "0d4cc072b45f4d139cef377713e4682fcde5ab862b218245d885ea34efbe1883",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=14989",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-detail-14989.json",
+    "sha256": "8a93f03ada9b3acd74f73e300912e303b14a91b1f052c3cbf16701e0de01a3e7",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=14984",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-detail-14984.json",
+    "sha256": "7dc58b5463dad558f05ade7b29c6ccdb532b383ad8f958cb04b4e68a60f9b19e",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=13092",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-detail-13092.json",
+    "sha256": "6915f74caf170d38f2b8efacfac822d40e1bdea4760cf3e075782e89d7abcb96",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=13097",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-detail-13097.json",
+    "sha256": "d943f42b08f05139f8bfeca17ef1e37d88f09d729ec6e5d6e024a39b94d09143",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=13093",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-detail-13093.json",
+    "sha256": "f7dc73fb1e887e80fad2825af72eff9214e286f8035869b0e9717823663ee1f3",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=15068",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-detail-15068.json",
+    "sha256": "714bfce09049a5873705835c1061295774c1684cd61271c0d7e71c0750ef122f",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=15041",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-detail-15041.json",
+    "sha256": "4e862a78253bc848a6168167d976d6e577d2c96dce6226eeb7d7ea1485939e8a",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=14951",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-detail-14951.json",
+    "sha256": "5abf62774b32b5d2b08a038298ffb8e94b2e083b7c62632521e5fb34cd53a6a5",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=15043",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-detail-15043.json",
+    "sha256": "648c1e212950f1d34dd27b37899139c54419434ad2d700f9b99f194b90bd2e9f",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=15042",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-detail-15042.json",
+    "sha256": "6c48a5724c3fd17d0e76c33513046349fc543701fe0c353c8e2d0cd3048befc3",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=15038",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-detail-15038.json",
+    "sha256": "2960defd675dc6dae9f5bc2ba8fe1c53821fe9b565be71babc6fd0336c7f6717",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=15039",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-detail-15039.json",
+    "sha256": "65d679d0d5e999e1b6a8ba9a48f8883f6ab891699ebce6afb207af7ffcf37539",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=15036",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-detail-15036.json",
+    "sha256": "28cb9aaad3a4432be77877c865d1d1dc518777bd7c12ec871f7556507eb16cf6",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=15040",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-detail-15040.json",
+    "sha256": "eba77f12f808b7dabfa6334e57fdcfb884e028030c88d96b38d4d57d9bb0dcd9",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=15037",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-detail-15037.json",
+    "sha256": "d7e9d3e441a7a2e5080e410bbec97e15d0b6e45498fc93ae2ba9cda75182b135",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=11734",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-detail-11734.json",
+    "sha256": "370ff86ed9853dad24f22b060b0500528ff72a10e0ea0186a1dc8538d0870500",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=13098",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-detail-13098.json",
+    "sha256": "db03080e86f9f15ea113f0acb2f50788b2ac7c1297df7a1900ca3bf6d62f754d",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=14785",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-detail-14785.json",
+    "sha256": "5587c16d763f909b028ca7a7914ca980394b0e8792551dd7399d4eb58805b8f2",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=12505",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-detail-12505.json",
+    "sha256": "4ee9562115c131d91c98d45d19fc459162090d81f06e2e025d90f1fc51e1b8f9",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=13086",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-detail-13086.json",
+    "sha256": "c43b7d6144c0a119450216428d1dd4b06a5970fa786aece2daa7686141630d3e",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=11729",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-detail-11729.json",
+    "sha256": "3004c2920fcfa4347c224bb58e6983fa7a7eb4dc3dd3b051aff19d4fce030d1a",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=11723",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-detail-11723.json",
+    "sha256": "237791842538c479a37b92d2467e1d93f76537a8655cf53c9b3bbcbc2e48af18",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=11722",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-detail-11722.json",
+    "sha256": "c7a8a167c930576dee469428618f22c4c8aa0d3d1c29d532a8556a92e1ecaaa3",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=13099",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-detail-13099.json",
+    "sha256": "e3ec073b60ba28b899e5308d8d34534627c9f1eebbb488bf60fd461ab91c1b93",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=13087",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-detail-13087.json",
+    "sha256": "e02cffd531b9982d22a8821b710784e071977c6595b1b0228ba4f21d8a31be24",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=11724",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-detail-11724.json",
+    "sha256": "4c74961453e4e29271a6f4819c5c00bf957dcc62f66e00f9f889fdabf003cb8c",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=14659",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-detail-14659.json",
+    "sha256": "183f69a4c5f02ce9cbb831f22c58d5b6dd99220dbb92f7a73bb90b7be258e82c",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=13091",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-detail-13091.json",
+    "sha256": "54c13dbbf44b8503d2a9f0731fe376242467982ceead80796bd9797a4fe7bf8b",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=11718",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-detail-11718.json",
+    "sha256": "ffe40712cb1cf9b0b623c7be7cf0b3c52cf1e6a5377cce75643a8ecf2cb8eab8",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=11721",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-detail-11721.json",
+    "sha256": "0b5ae8fb759a3d83066e2318865d0b4da29ce35b87fcb93d80207980568b3efd",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=13095",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-detail-13095.json",
+    "sha256": "8f6a7807bf95d90ba6f36cb80c59969e20b6fe72978c6220ca980e92f0b59d57",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=11730",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-detail-11730.json",
+    "sha256": "3f819181a740742e6d2f489c15b25d03e2387da57c1058b1ce0ff5590483fec5",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=13602",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-detail-13602.json",
+    "sha256": "436612c1b82afbb71246ec19ca0cd345dfead6a3c5ed5bc343e7a7ff37a94275",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=11728",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-detail-11728.json",
+    "sha256": "7348cffe380e5fdefa21c62bb6dfcada9d60a76669675fed31f1721e3c24c8e4",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=11726",
+    "method": "GET",
+    "request_form": null,
+    "file": "data/sources/2026-09-16/tme-detail-11726.json",
+    "sha256": "308093d43f971ffb1b61021a7eecda383005150581f06523db58e131f45fee79",
+    "http_status": 200,
+    "collected_at": "2026-09-16T16:53:43+08:00"
+  }
+]

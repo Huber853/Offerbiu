@@ -1,0 +1,136 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [],
+    "autoArchiveTalentPoolId": 432698,
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-05T15:59:16",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": "27秋-SQL"
+      }
+    },
+    "department": {
+      "id": 682867,
+      "name": "用户平台部"
+    },
+    "departmentId": 682867,
+    "departments": [
+      {
+        "id": 682867,
+        "name": "用户平台部"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "本科",
+    "hireMode": 2,
+    "id": "e3b37531-f9ca-4ae7-af1a-adbc79166ca1",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "<p>岗位职责：</p><p>1、协助负责公域/私域流量渠道的运营策略制定与执行，验证运营策略有效性；</p><p>2、优化落地页、活动页等关键节点的转化效率；</p><p>3、熟练运用SQL进行数据查询与分析，监控各项核心指标，为运营策略制定与效果复盘提供数据支撑，洞察提效机会；</p><p>4、赋能业务线，帮助业务线达成流量目标。</p><p><br></p><p>任职要求：</p><p>1、2027届毕业生，本科及以上学历，专业不限；</p><p>2、具有积极主动的工作态度，成长驱动型，具备较强的学习能力；</p><p>3、具有强大的责任心和沟通协调能力及抗压能力；</p><p>4、具有良好的系统化和结构化思维，熟练掌握SQL，能独立完成多表关联、分组聚合、条件筛选等常用查询，具备较强的数据敏感度与数据驱动意识。</p>",
+    "jobIntentions": [],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          682867
+        ],
+        "locationIds": [
+          92621
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 110000,
+        "cityName": "北京市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 92621,
+        "provinceName": "北京市"
+      }
+    ],
+    "multiLocale": "{\"mainLocale\":\"zh-CN\",\"secondLocale\":\"\"}",
+    "number": 1,
+    "openedAt": "2026-08-13T08:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 0,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-08-13T10:19:54",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-产品与用户运营专员-增长产品运营",
+    "updatedAt": "2026-09-03T17:16:55",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 20039,
+      "name": "运营类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

@@ -1,0 +1,135 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [],
+    "autoArchiveTalentPoolId": 425506,
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-05T14:49:50",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": "27秋-测试"
+      }
+    },
+    "department": {
+      "id": 439007,
+      "name": "自动驾驶"
+    },
+    "departmentId": 439007,
+    "departments": [
+      {
+        "id": 439007,
+        "name": "自动驾驶"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "硕士",
+    "hireMode": 2,
+    "id": "4c5f8c57-f8be-44c5-809f-f5684e29b351",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "岗位职责：\n1、负责自动驾驶与智能座舱、车联网、底盘、车身、三电等多域集成的系统测试方案设计与执行，主导制定测试策略，覆盖全场景测试需求；\n2、设计并落地高覆盖率的AD系统级集成测试用例，重点验证AD及整车功能完整性、性能达标情况及复杂场景下的可靠性；\n3、运用 CANoe、诊断工具等测试链，深入分析测试数据，精准定位缺陷根因，推动跨团队问题解决与测试流程优化；\n4、参与HIL/VIL 核心测试环境的搭建与维护，优化自动化测试工具链，提升测试效率与环境稳定性。\n\n任职要求：\n1、2027届毕业生，硕士及以上学历，嵌入式、操作系统、汽车工程等相关专业优先；\n2、深入理解自动驾驶系统运行机制、Linux内核核心原理（调度/内存/文件系统）及主流自动驾驶中间件（ROS2/DDS或CyberRT）；\n3、了解硬件在环（HIL）和车辆在环（VIL）测试方法，并能运用GDB、eBPF、ftrace等工具进行内核级调试与性能剖析；\n4、熟悉C/C++和Python编程，具备开发和维护自动化测试框架与工具的能力；\n5、具备优秀的系统性问题和逻辑分析能力，强烈的责任心和跨团队推动力；\n6、拥有智驾量产项目集成测试经验者优先。",
+    "jobIntentions": [],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          439007
+        ],
+        "locationIds": [
+          92621
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 110000,
+        "cityName": "北京市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 92621,
+        "provinceName": "北京市"
+      }
+    ],
+    "number": 1,
+    "openedAt": "2026-08-13T08:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 0,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-08-13T10:19:54",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-自动驾驶-系统测试工程师",
+    "updatedAt": "2026-08-28T16:18:17",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 136660,
+      "name": "工程-质量类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

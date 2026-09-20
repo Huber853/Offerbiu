@@ -1,0 +1,598 @@
+
+<link rel="stylesheet" href="../css/font-awesome.min.css">
+<link rel="stylesheet" href="../css/login.css">
+<link rel="stylesheet" href="../css/index.css">
+<link rel="stylesheet" href="../css/some.css">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="//at.alicdn.com/t/font_555113_tc89ayo2our.css">
+<link rel="stylesheet" href="../css/icons.css">
+<script src="../js/jquery.idcode.js"></script>
+<script type="text/javascript" src="../js/qrcode.min.js"></script>
+<script src="/js/jquery-placeholder.js"></script>
+<script type="text/javascript" src="../js/jquery.bay-window.js"></script>
+<script src="../js/index.js"></script>
+<script src="../js/some.js"></script>
+ <style>
+    .phonecode{
+        border-left:none!important;
+        width:100px!important;
+        cursor: pointer;
+        position: absolute;
+        right:0;
+    }
+    .modal-header .lineleft, .modal-header .lineright {  
+        border-bottom: 1px solid #0d4589!important;
+    }   
+    .modal-header .lineleft, .modal-header .lineleft {
+        border-bottom: 1px solid #0d4589!important;
+    }   
+    .slogan .register{
+        margin: 0!important;
+    }
+    #stuBindModal .modal-content{
+        width: 390px!important;
+        margin: 0 auto!important;
+    }
+ </style>
+<div id="naver-header">
+<div style="display:none">renyuefkjasj sajdh askj </div>
+<!-- 头部导航 -->
+    <nav class="navbar navbar-fixed-top" role="navigation" data-0="height: 108px;" data-200="height: 90px;" style="background:white;">
+        <div class="container"> 
+            <div class="nav_left" style="float: left;">
+                <a href="/" class="navbar-brand fcolor" data-0="margin-top: 25px;" data-200="margin-top: 18px;">
+                    <img src="/image/toplogo.png" alt="">
+                    <!-- <div class="baishou">
+                        <p>学生就业创业指导服务中心</p>
+                        <h6>Employment and Entrepreneurship Service Center</h6>
+                    </div> -->
+                </a>
+            </div>
+            <ul class="nav navbar-nav" style="float: right;margin-right:30px;">
+                <li class="log right" data-0="margin-top: 34px;" data-200="margin-top: 25px;">
+                    <div class="home" style="border-radius: 5px 0 0 5px;">
+                        <a href="/" class="fcolor">
+                            <!-- <i class="fa fa-home fcolor" style="vertical-align: -6px;"></i> -->
+                            <i class="iconfont">&#xe61d;</i>
+                        </a>
+                    </div>
+                    <div class="san">
+                        <img src="/image/sans.png" alt="">
+                    </div>
+                    <div class="stu">
+                        <a href="javascript:;" class="fcolor head-click">
+                            <!-- <i class="fa fa-mortar-board" style="color:#68EC96;"></i> -->
+                            <i class="iconfont" style="color:#68EC96;">&#xe61e;</i>
+                            学生
+                        </a>
+                        <div class="stu_01 stulogbox" style="display: none;width:440px;padding:0 20px;border-top:1px solid #ccc;box-shadow:0px 15px 20px 0px rgba(196,196,196,0.5);">
+                            <span></span>
+                            <div>
+                                <span style="font-size:16px;">求职信息</span>
+                                <div>
+                                    <a href="/Zhaopin/zhiweiList.html?jobtype=1">就业岗位</a>
+                                    <a :href="'/News/zdylist.html?parent_id='+zdy29">就业超市</a>
+                                    <a href="/Zhaopin/talk.html">招聘日历</a>
+                                    <a href="/Chuangye/sxlb.html?status=0">双选会</a>
+                                </div>
+                            </div>
+                            <div>
+                                <span style="font-size:16px;">就创指导</span>
+                                <div>
+                                    <a :href="'/News/zdylist.html?cateid='+item.id+'&parent_id='+zdy31" v-for="item in jczd_lists">{{item.cate_name}}</a>
+                                </div>
+                            </div>
+                            <div>
+                                <span style="font-size:16px;">风采展示</span>
+                                <div>
+                                    <a :href="'/News/zdylist.html?cateid='+item.id+'&parent_id='+zdy30" v-for="item in fczs_lists">{{item.cate_name}}</a>
+                                </div>
+                            </div>
+                            <div>
+                                <span style="font-size:16px;">毕业手续</span>
+                                <div>
+                                    <a :href="'/News/zdylist.html?cateid='+item.id+'&parent_id='+zdy32" v-for="item in bysx_lists">{{item.cate_name}}</a>
+                                    <a href="http://authserver.nwu.edu.cn/authserver/login?service=http%3A%2F%2Fmy.nwu.edu.cn%2Findex.portal">离校系统</a>
+                                </div>
+                            </div>
+                            <div>
+                                <span style="font-size:16px;">空中招聘</span>
+                                <div>
+                                    <a href="/kz/xjlist.html?kongtype=1">空中宣讲</a>
+                                    <a href="/kz/sxlist.html?kongtype=2">空中双选</a>
+                                    <a href="javascript:;" onclick="yanz(this)" class="kzms head-click">空中面试</a>
+                                </div>
+                            </div>
+
+                            <div style="border:none;line-height:30px;float: right;">
+                                <!-- <a href="http://teacher.career.fudan.edu.cn/index/oauth?oauth_type=10001" class="dltz" target="_blank"></a> -->
+                                <!-- <span class="bgcolor fcolor1 denglu denglu_" data-toggle="modal" data-target="#stuModal" style="margin-left:10px;font-size:14px;">学生登录</span> -->
+                                <!-- <a href="http://xbdx.zrzsjy.com/Pro_Student/Login.aspx"><span class="bgcolor fcolor1 denglu denglu_" style="font-size:14px;">就业管理系统登录</span></a> -->
+                                <a href="https://jygl.nwu.edu.cn/Pro_Student/Login.aspx"><span class="bgcolor fcolor1 denglu denglu_" style="font-size:14px;">就业管理系统登录</span></a>
+                                <a href="javascript:;" data-toggle="modal" data-target="#stuModal"><span class="bgcolor fcolor1 denglu denglu_" style="font-size:14px;margin-right: 10px;">就创平台登录</span></a>
+                                <!-- <span class="bgcolor fcolor1 denglu denglu_" style="font-size:14px;">学生登录</span> -->
+                                <span class="bgcolor fcolor1 tuichu tuichu_" style="font-size:14px;display:none;">退出</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="san">
+                        <img src="/image/sans.png" alt="">
+                    </div>
+                    <div class="stu">
+                        <a href="javascript:;" class="fcolor head-click">
+                            <!-- <i class="fa iconfont icon-zititubiao-yongrendanwei" style="vertical-align: -4px;color:#EE7070;"></i> -->
+                            <i class="iconfont" style="color:#EE7070;">&#xe61a;</i>
+                            用人单位
+                        </a>
+                        <div class="stu_01" style="width:105px;display:none;box-shadow:0px 15px 20px 0px rgba(196,196,196,0.5);">
+                            <a :href="'/News/zdylist.html?parent_id='+zdy26">院校简介</a>
+                            <a :href="'/News/zdylist.html?parent_id='+zdy27">中心简介</a>
+                            <a :href="'/News/zdylist.html?parent_id='+zdy28">生源信息</a>
+                            <a :href="'/News/zdylist.html?parent_id='+zdy33">预约流程</a>
+                            <a href="https://xibeie.jiuyeb.cn">单位登录</a>
+                        </div>
+                    </div>
+                    <div class="san">
+                        <img src="/image/sans.png" alt="">
+                    </div>
+                    <div class="stu" style="border-radius: 0 4px 4px 0;">
+                        <a href="javascript:;"  class="fcolor head-click">
+                            <!-- <img src="/image/teacherlog.png" alt=""> -->
+                            <i class="iconfont">&#xe61b;</i>
+                            管理员登录
+                        </a>
+                        <div class="stu_01" style="width:126px;display:none;box-shadow:0px 15px 20px 0px rgba(196,196,196,0.5);">
+                            <a href="https://xibeit.jiuyeb.cn">就创中心</a>
+                            <a href="https://jygl.nwu.edu.cn/Frame/LoginAdmin.aspx">校级管理员登入</a>
+                            <a href="https://jygl.nwu.edu.cn/Frame/LoginAdmin.aspx">院系管理员登入</a>
+                        </div>
+                    </div>
+<!--
+                    <div class="san">
+                        <img src="/image/sans.png" alt="">
+                    </div>
+                    <div class="home fcolor" style="width: 48px;border-radius:0 5px 5px 0;line-height: 20px;">
+                        <p> <a href="http://jiuye.nwu.edu.cn" style="height: 31px;line-height: 18px;color:#3C84E8;display: inline-block;margin-top:4px;">旧版<br>入口</a></p>
+                        <div>
+                            <div class="login_student">
+                                <a data-toggle="modal" data-target="#stuModal"><span></span>学生</a>
+                            </div> 
+                            <div class="silde"></div>
+                            <div class="login_qiye">
+                                <a href="https://xibeie.jiuyeb.cn" ><span></span>用人单位</a>
+                            </div>
+                            <div class="silde"></div>
+                            <div class="login_teacher">
+                                <a href="https://xibeit.jiuyeb.cn" >
+                                <span></span>老师</a>
+                            </div>
+                            <span></span>
+                        </div>
+                    </div> -->
+                    <div class="san sanhide">
+                        <img src="/image/sans.png" alt="">
+                    </div>
+                    <div class="home login fcolor login_end" style="width: 125px;display: none;">
+                        <p class="yidenglu">
+                            <span class="login_name"></span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                            <span class="tuichu">退出</span>
+                        </p>
+                    </div>
+                </li>
+                <li class="search left" data-0="margin-top: 39px;" data-200="margin-top: 33px;" style="margin-right:20px;">
+                    <a href="/News/search.html" style="padding: 0;">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- 学生登录 -->
+    <div class="modal fade" id="stuModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content"  style="z-index:1000">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">学生登录</h4>
+                    <i></i>
+                </div>
+                <div class="modal-body">
+                    <form action="" style="background-color: #fff;">
+                        <p>
+                            <label for="user_stu">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </label>
+                            <input type="text" id="user_stu" placeholder="请输入账号">
+                        </p>
+                        <p>
+                            <label for="pwd_stu">
+                                <span class="glyphicon glyphicon-lock"></span>
+                            </label>
+                            <input type="password" id="pwd_stu" placeholder="初始密码为身份证后六位">
+                        </p>
+                        <p>
+                            <label for="yanzheng1" class="fcolor">
+                                <span class="glyphicon glyphicon-list-alt"></span>
+                            </label>
+                            <input type="text" id="Txtidcode" class="txtVerification"/>
+                            <span id="idcode" style="position: absolute;right:0;width: 150px;"></span>
+                        </p>
+                        <a href="/Zhuce/sturegister.html" class="register">注册</a>
+                        <a href="/Zhuce/stuforget.html" class="mima">忘记密码</a>
+                        <button id="studenglu" type="button">登录</button>
+                    </form>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+    <!-- 手机绑定 -->
+    <div class="modal fade in" id="phoneBind" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="z-index:1000">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">
+                            手机绑定
+                        </h4>
+                    <i></i>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="#" style="background:none;">
+                        <p>
+                            <label for="phoneVal">
+                                <span class="">手机号</span>
+                            </label>
+                            <input type="text" name="text" id="phoneVal" style="width:58%">
+                            <input class="phonecode" onclick="getCode()" value="获取验证码" readonly/>
+                        </p>
+                        <p>
+                            <label for="yzNum">
+                                <span class="">验证码</span>
+                            </label>
+                            <input type="text" id="yzNum" style="width:58%">
+                        </p>
+                        <b style="color:red;margin-top:30px;display:inline-block;">提示：手机号用于找回密码时使用</b>
+                        <button id="" type="button" class="bgcolor sureBtn" style="margin:40px 0 30px">确定</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/jquery.color-2.1.0.js"></script>
+<script src="/js/canvas-nest.js"></script>
+<script>
+    var stu_id=sessionStorage.getItem("userid");
+    var school_id=sessionStorage.getItem("school_id");
+    var name=sessionStorage.getItem("stu_name");
+    var phoneBinds = sessionStorage.getItem("phones");
+    //新闻
+    var news1= sessionStorage.getItem('news1')//重要通知 全局变量
+    var news2= sessionStorage.getItem('news2')//新闻动态 全局变量
+    var news3= sessionStorage.getItem('news3')//公示公告 全局变量
+
+    // 企业
+    var zdy26 = sessionStorage.getItem('zdy26')// 院校简介
+    var zdy26er = sessionStorage.getItem('zdy26er')// 院校简介二级
+    var zdy27 = sessionStorage.getItem('zdy27')// 中心简介
+    var zdy27er = sessionStorage.getItem('zdy27er')// 中心简介二级
+    var zdy28 = sessionStorage.getItem('zdy28')// 生源信息
+    var zdy28er = sessionStorage.getItem('zdy28er')// 生源信息二级
+    var zdy33 = sessionStorage.getItem('zdy33')// 预约流程
+    var zdy33er = sessionStorage.getItem('zdy33er')// 预约流程二级
+    var zdy29 = sessionStorage.getItem('zdy29'); //就业超市 全局变量
+    var zdy30 = sessionStorage.getItem('zdy30'); //风采展示 全局变量
+    var zdy31 = sessionStorage.getItem('zdy31'); //就创指导 全局变量
+    var zdy32 = sessionStorage.getItem('zdy32'); //毕业手续 全局变量
+    var vmheader = new Vue({
+        el: "#naver-header",
+        data:{
+			infor:"",
+			news1:news1,
+			news2:news2,
+			news3:news3,
+            zdy26:zdy26,
+            zdy27:zdy27,
+            zdy28:zdy28,
+            zdy29:zdy29,
+            zdy30:zdy30,
+            zdy31:zdy31,
+            zdy32:zdy32,
+            zdy33:zdy33,
+            zdy26er:zdy26er,
+            zdy27er:zdy27er,
+            zdy28er:zdy28er,
+            zdy33er:zdy33er,
+            school_id:school_id,
+            quxiang:[],
+            jczd_lists:[],
+            bysx_lists:[],
+            fczs_lists:[],
+            aa:''
+        },
+        methods: {
+
+        },
+        updated: function () {
+            
+        },
+        filters: {
+
+        }
+    })
+
+
+    //就创指导二级栏目列表
+    http('POST', '/Articlecategory/getlist', {
+            "school_id": school_id,
+            "cate_type": "zidingyi",
+            "parent_id":zdy31,
+        }, function (e) {
+            console.log(e,99)
+            vmheader.jczd_lists = e.data.list;
+    });
+
+
+    //毕业手续二级栏目列表
+    http('POST', '/Articlecategory/getlist', {
+            "school_id": school_id,
+            "cate_type": "zidingyi",
+            "parent_id":zdy32,
+        }, function (e) {
+            vmheader.bysx_lists = e.data.list;
+
+    });
+    //风采展示二级栏目列表
+    http('POST', '/Articlecategory/getlist', {
+            "school_id": school_id,
+            "cate_type": "zidingyi",
+            "parent_id":zdy30,
+        }, function (e) {
+            vmheader.fczs_lists = e.data.list;
+    });
+
+
+    if(!is_wxempty(stu_id)){
+        $(".login_home").hide();
+        $(".login_end").show();
+        $(".yidenglu .login_name").html(name);
+        $(".student a:last-child").show();
+        $(".denglu").hide();
+        $(".tuichu").show();
+    }else{
+        $(".login_home").show();
+        $(".login_end").hide();
+        $(".student a:last-child").hide();
+        $(".tuichu").hide();
+        $(".sanhide").hide();
+    }
+
+
+    //$.idcode.setCode();
+    
+    $.idcode.setCode({
+        e           : 'idcode',
+        codeType    : { name : 'follow', len: 4},//len是修改验证码长度的
+        codeTip     : '换个验证码?',
+        inputID     : 'Txtidcode'//验证元素的ID
+    });
+
+    function yanz(e){
+        $(e).removeAttr('target');
+        var userid = sessionStorage.getItem('userid');
+        if(is_wxempty(userid)){
+            $('#stuModal').modal('show');
+            $.idcode.setCode({
+                e	 		: 'idcode',
+                codeType 	: { name : 'follow', len: 4},//len是修改验证码长度的
+                codeTip		: '换个验证码?',
+                inputID		: 'Txtidcode'//验证元素的ID
+            });
+        }else{
+            window.location.href='/Geren/airInterview.html'
+        }
+    }
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    $(".denglu").click(function(){
+  //       $.idcode.setCode({
+		// 	e	 		: 'idcode',
+		// 	codeType 	: { name : 'follow', len: 4},//len是修改验证码长度的
+		// 	codeTip		: '换个验证码?',
+		// 	inputID		: 'Txtidcode'//验证元素的ID
+		// });
+    })
+    function getCode() {
+        var phoneVal=$("#phoneVal").val();
+        var phonezz = /^(13[0-9]{9})|(15[0-9]{9})|(18[0-9]{9})|(17[0-9]{9})$/;
+        if(phonezz.test(phoneVal)){
+            http('post','/Smslog/sendforgetCode',{"phone":phoneVal},phonebind);
+            function phonebind(e){
+                if(e.code=="1"){
+                    LEE.alert(e.msg);
+                }
+                if(e.code=="0"){
+                    var miao=60;
+                    var timer=setInterval(function(){
+                        miao=miao-1;
+                        $(".phonecode").val(miao+"秒 重发");
+                        $(".phonecode").attr("disabled","disabled");
+                        if(miao==0){
+                            clearInterval(timer);
+                            $(".phonecode").val("获取验证码");
+                            $(".phonecode").removeAttr("disabled");
+                            return miao=60;
+                        }
+                    },1000)
+                }
+            }
+        }else{
+            LEE.alert("手机格式输入不正确");
+            return false;
+        }
+    }
+    // 学生登录
+    $("#studenglu").click(function(e){
+        e.stopPropagation();
+        var xuename=$("#user_stu").val();
+        var pwd=$("#pwd_stu").val();
+        if(xuename==""){
+            LEE.alert("学号不能为空！");
+            return false;
+        }
+        if(pwd==""){
+            LEE.alert("密码不能为空！");
+            return false;
+        }
+        var IsBy = $.idcode.validateCode();
+        if(IsBy==false){
+            LEE.alert("验证码输入不正确！");
+            return false;
+        }
+        $('#stuModal .close').click()
+        http('POST', '/Wx/user_login', {"school_id":school_id,"studentid":xuename,"password":pwd}, function (e) {
+            console.log(e);
+            if(e.code=="1"){
+                LEE.alert(e.msg);
+            }else{
+                sessionStorage.setItem("userid", e.data.userinfo.id);
+                sessionStorage.setItem("stu_name", e.data.userinfo.realname);
+                sessionStorage.setItem("user_base_id", e.data.userinfo.user_base.id);
+                sessionStorage.setItem("phones", e.data.userinfo.phone);
+                sessionStorage.setItem("token",e.data.userinfo.token)
+                sessionStorage.setItem("isbind","");
+                if(window.location.pathname=="/Zhuce/sturegister.html"){
+                    window.location.href="../index.html";
+                }else{
+                    window.location.reload();
+                    // var status=e.data.userinfo.user_base.status;
+                    // var status2=e.data.userinfo.user_base_extend.byqx_status;
+                    // var qux_=e.data.userinfo.user_base_extend.byqx_type;
+                    // var quxiang=e.data.userinfo.user_base.id;
+
+                    // if(status==3||status==6||status==9||status==12){
+                    //     LEE.confirm("信息核实被驳回");
+                    //     $(".bsok").click(function(){
+                    //         window.location.href="../Geren/infor.html";
+                    //     })
+                    //     $(".bscancel").click(function(){
+                    //         window.location.reload();
+                    //     })
+                    //     $(".close").click(function(){
+                    //         window.location.reload();
+                    //     })
+                    // }else if(status2==3||status2==6||status2==9||status2==12){
+                    //     LEE.confirm("毕业去向被驳回");
+                    //     $(".bsok").click(function(){
+                    //         if(qux_ == quxiang1){
+                    //             window.location.href="../Geren/agreement.html?user_base_id="+quxiang;
+                    //         }else if(qux_ == quxiang2){
+                    //             window.location.href="../Geren/contract.html?user_base_id="+quxiang;
+                    //         }else if(qux_ == quxiang3){
+                    //             window.location.href="../Geren/other.html?user_base_id="+quxiang;
+                    //         }else if(qux_ == quxiang4){
+                    //             window.location.href="../Geren/biye.html?user_base_id="+quxiang;
+                    //         }else if(qux_ == quxiang5){
+                    //             window.location.href="../Geren/biye.html?user_base_id="+quxiang;
+                    //         }else if(qux_ == quxiang6){
+                    //             window.location.href="../Geren/country.html?user_base_id="+quxiang;
+                    //         }else if(qux_ == quxiang7){
+                    //             window.location.href="../Geren/provience.html?user_base_id="+quxiang;
+                    //         }else if(qux_ == quxiang8){
+                    //             window.location.href="../Geren/waitjy.html?user_base_id="+quxiang;
+                    //         }else if(qux_ == quxiang9){
+                    //             window.location.href="../Geren/quit.html?user_base_id="+quxiang;
+                    //         }else if(qux_ == quxiang10){
+                    //             window.location.href="../Geren/noother.html?user_base_id="+quxiang;
+                    //         }else if(qux_ == quxiang11){
+                    //             window.location.href="../Geren/entrepren.html?user_base_id="+quxiang;
+                    //         }else if(qux_ == quxiang12){
+                    //             window.location.href="../Geren/freedom.html?user_base_id="+quxiang;
+                    //         }else if(qux_ == quxiang13){
+                    //             window.location.href="../Geren/school.html?user_base_id="+quxiang;
+                    //         }else if(qux_ == quxiang14){
+                    //             window.location.href="../Geren/aborad.html?user_base_id="+quxiang;
+                    //         }
+                    //     })
+                    //     $(".bscancel").click(function(){
+                    //         window.location.reload();
+                    //     })
+                    //     $(".close").click(function(){
+                    //         window.location.reload();
+                    //     })
+                    // }else{
+                    //     window.location.reload();
+                    // }
+                }
+            }
+        })
+    })
+    //绑定手机号
+    if(window.location.pathname=="/Geren/mima.html"){
+        if(stu_id ==''){
+
+        }else if(phoneBinds == ''){
+            $('#phoneBind').modal('show')
+            $(".close").click(function(){
+                window.location.href='/Geren/jianli.html';
+            })
+            $(".sureBtn").click(function(){
+                var phoneParam=$("#phoneVal").val();
+                var yzNum = $("#yzNum").val();
+                if(phoneParam == ''){
+                    LEE.alert("手机号不能为空");
+                    return false;
+                }
+                if(yzNum == ''){
+                    LEE.alert("验证码不能为空");
+                    return false;
+                }
+                http('POST', '/Wx/user_bangdingphone', {"id":stu_id,"phone":phoneParam,"code":yzNum}, function (e) {
+                    sessionStorage.setItem("phones", phoneParam);
+                    if(e.code=="1"){
+                        LEE.alert(e.msg);
+                        return false;
+                    }else{
+                        LEE.alert("绑定成功！");
+                    }
+                    $(".bsok").on("click",function(){
+                        window.location.reload()
+                    })
+
+                    
+                })
+            })
+        }
+    }
+    // 退出登录
+    $(".tuichu").click(function(){
+        LEE.confirm("您确定要退出登录？");
+        $(".bsok").click(function(){
+            sessionStorage.setItem("userid","");
+            sessionStorage.setItem("stu_name","");
+            sessionStorage.setItem("phones", "");
+            sessionStorage.setItem("isbind", "");
+            window.location.href="../index.html";
+        })
+    })
+    // 跳转个人中心
+    $(".login_name").click(function(){
+        $(this).css("background","transparent");
+        window.location.href="../Geren/jianli.html";
+    })
+</script>
+<script src="/js/some.js"></script>

@@ -1,0 +1,140 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [
+      1
+    ],
+    "attributeId": 2544,
+    "autoArchiveTalentPoolId": 423678,
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-09-15T18:35:04",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": "27秋-后端"
+      }
+    },
+    "department": {
+      "id": 94463,
+      "name": "CTO线"
+    },
+    "departmentId": 94463,
+    "departments": [
+      {
+        "id": 94463,
+        "name": "CTO线"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "本科",
+    "hireMode": 2,
+    "id": "ae200d70-dd22-4d9b-9652-1df8bd7d5e33",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "<p>岗位职责：</p><p>1、负责 AI Coding Agent、Agent 知识平台等方向的研发与落地，探索 Agent 在真实研发场景中的应用；</p><p>2、负责AI研发工具的建设，推动 Agent 与研发工具链的协同与集成；</p><p>3、负责业务服务、平台基础能力、数据处理链路、开放接口等核心模块的开发与质量保障；</p><p>4、与产品及业务研发团队紧密协作，深入真实研发场景挖掘痛点，持续打磨工具的易用性、稳定性与性能；</p><p>5、快速学习与验证前沿 AI 技术，跟踪业界最新进展，开展技术调研与原型验证。</p><p><br></p><p>﻿任职要求：</p><p>1、2027届毕业生，本科及以上学历，计算机、软件工程或相关专业优先；</p><p>2、掌握至少一门后端开发语言，如 Java、Go、Python、C++ 等，具备良好的编码习惯；</p><p>3、熟悉常见数据结构、算法、操作系统、网络、数据库等计算机基础知识；</p><p>4、对后端服务、工程效率工具、AI 辅助研发等方向有兴趣，愿意学习新技术并解决实际问题；</p><p>5、学习能力强、自驱有好奇心，沟通协作清晰顺畅，能高效配合团队推进项目落地；</p><p>6、有相关项目、竞赛、开源或技术分享经历者优先。</p>",
+    "jobIntentions": [
+      1
+    ],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          94463
+        ],
+        "locationIds": [
+          92621
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 110000,
+        "cityName": "北京市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 92621,
+        "provinceName": "北京市"
+      }
+    ],
+    "number": 1,
+    "openedAt": "2026-09-15T00:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 1,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-09-15T18:35:11",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-研发工程师-AI Dev",
+    "updatedAt": "2026-09-16T00:22:06",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 136659,
+      "name": "工程-后端类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

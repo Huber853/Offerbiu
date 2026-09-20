@@ -1,0 +1,150 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [
+      1
+    ],
+    "autoArchiveTalentPoolId": 425506,
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "closedAt": "2026-08-07T18:59:16",
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-05T14:50:26",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": ""
+      }
+    },
+    "department": {
+      "id": 203019,
+      "name": "国际化事业部"
+    },
+    "departmentId": 203019,
+    "departments": [
+      {
+        "id": 203019,
+        "name": "国际化事业部"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "本科",
+    "hireMode": 2,
+    "id": "b1122e51-227a-429e-a54d-6acd2f337e3e",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "<p>岗位职责：</p><p>1、负责业务数据的梳理和报表搭建，监控核心指标异动并定位问题；</p><p>2、参与AB测试设计，量化活动/策略效果，提出迭代优化建议；</p><p>3、协助团队挖掘数据insights，洞察业务机会点，输出可落地的商业分析报告。</p><p><br></p><p>任职要求：</p><p>1、2027届毕业生，本科及以上学历，数学/统计/计算机/金融背景优先；</p><p>2、良好的数据分析工具应用经验，熟练使用SQL/Excel，对数据可视化有一定认识和经验；</p><p>3、良好的建模实操经验，熟练使用Python/R等工具，对模型的原理和实现有一定理解；</p><p>4、具有良好的沟通协调能力和逻辑思维能力，有责任感、认真细心。</p><p>5、具备 AI 工具应用意识，乐于用新工具提升效率；有 AI 工具使用习惯或提效案例者优先。</p>",
+    "jobIntentions": [
+      1
+    ],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          203019
+        ],
+        "locationIds": [
+          314487,
+          94656
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 310000,
+        "cityName": "上海市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 94656,
+        "provinceName": "上海市"
+      },
+      {
+        "cityId": 330100,
+        "cityName": "杭州市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 314487,
+        "provinceName": "浙江"
+      }
+    ],
+    "multiLocale": "{\"mainLocale\":\"zh-CN\",\"secondLocale\":\"\"}",
+    "number": 1,
+    "openedAt": "2026-09-17T00:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 0,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-09-17T16:03:58",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-数据分析师（国际化金融）",
+    "updatedAt": "2026-09-17T16:03:57",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 200093,
+      "name": "商分-数据科学"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

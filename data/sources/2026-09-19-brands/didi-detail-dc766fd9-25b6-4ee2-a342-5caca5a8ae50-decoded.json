@@ -1,0 +1,136 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [],
+    "autoArchiveTalentPoolId": 425506,
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-05T14:50:10",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": "27秋-后端"
+      }
+    },
+    "department": {
+      "id": 200146,
+      "name": "代驾事业部"
+    },
+    "departmentId": 200146,
+    "departments": [
+      {
+        "id": 200146,
+        "name": "代驾事业部"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "本科",
+    "hireMode": 2,
+    "id": "dc766fd9-25b6-4ee2-a342-5caca5a8ae50",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "<p>岗位职责：</p><p>1、负责滴滴代驾业务服务端开发工作；</p><p>2、参与产品业务需求讨论，可以给出个人的建议和意见；</p><p>3、参与服务端系统架构方案设计, 模块划分和开发，按时保质交付；</p><p>4、跟进线上问题的解决，故障的定位和修复。</p><p><br></p><p>任职要求：</p><p>1、2027届毕业生，本科及以上学历、计算机/自动化/电子信息/通信等相关专业优先；</p><p>2、具备扎实的计算机理论基础，对数据结构及算法有较强的功底；</p><p>3、具备优秀的系统开发/调试/优化能力，熟练掌握Java编程语言；</p><p>4、具备良好的学习能力、独立解决问题的能力，有责任心肯钻研、乐于挑战，善于沟通合作、总结分享。</p><p>【加分项】</p><p>1、有互联网公司实习经验，参与过互联网软件等相关产品；</p><p>2、热衷于ACM，在校期间参与过大学生数学建模竞赛，“挑战杯”等；</p><p>3、在相关领域国际顶级会议、期刊发表论文，或相关学术会议组织的权威比赛中获奖。</p>",
+    "jobIntentions": [],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          200146
+        ],
+        "locationIds": [
+          314487
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 330100,
+        "cityName": "杭州市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 314487,
+        "provinceName": "浙江"
+      }
+    ],
+    "multiLocale": "{\"mainLocale\":\"zh-CN\",\"secondLocale\":\"\"}",
+    "number": 2,
+    "openedAt": "2026-08-13T08:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 0,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-08-13T10:19:54",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-Java开发工程师-代驾事业部",
+    "updatedAt": "2026-09-03T17:16:55",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 136659,
+      "name": "工程-后端类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

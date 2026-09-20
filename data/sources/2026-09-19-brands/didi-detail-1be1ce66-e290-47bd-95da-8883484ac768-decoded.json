@@ -1,0 +1,134 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [],
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-14T21:31:48",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": "27秋-SQL"
+      }
+    },
+    "department": {
+      "id": 2036637,
+      "name": "两轮车事业部"
+    },
+    "departmentId": 2036637,
+    "departments": [
+      {
+        "id": 2036637,
+        "name": "两轮车事业部"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "本科",
+    "hireMode": 2,
+    "id": "1be1ce66-e290-47bd-95da-8883484ac768",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "岗位职责：\n1、协助城市及区域的运营数据分析，发现问题；\n2、城市内部运维团队指标沟通跟踪，跟策略进执行和落地效果；\n3、不定时收集整理行业信息，整理数据等，配合城市进行市场分析和竞争分析，制定有效的业务落地方案；\n4、结合区域市场特征，推动创新项目试点与复制推广；参与城市层面策略制定，输出区域洞察与业务机会判断。\n\n任职要求：\n1、2027届毕业生，积极主动，责任心强，执行力强，具备业务好奇心，善于沟通，有足够的要性；\n2、具备基础数据敏感度，熟练使用SQL、Excel等工具；\n3、有过策略/数据实习经历；\n4、具备良好的团队合作精神，自驱动的工作责任感，能够承受较大工作压力，接受团队城市调动。",
+    "jobIntentions": [],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          2036637
+        ],
+        "locationIds": [
+          135987
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 450100,
+        "cityName": "南宁市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 135987,
+        "provinceName": "广西"
+      }
+    ],
+    "number": 1,
+    "openedAt": "2026-08-14T08:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 0,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-08-14T21:43:47",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-城市运营主管-南宁",
+    "updatedAt": "2026-09-04T15:11:34",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 20039,
+      "name": "运营类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

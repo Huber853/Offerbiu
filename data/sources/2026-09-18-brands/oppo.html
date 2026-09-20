@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" class="notranslate" translate="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="google" content="notranslate" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover, user-scalable=no"
+    />
+    <meta name="keywords" content="OPPO招聘" />
+    <meta
+      name="description"
+      content="OPPO致力成为以打造伟大产品为基石的生态型科技公司，为全球用户提供更好的智慧生活，与时代同频发展，我们秉持本分基因，坚持互利共赢，助力你登上价值发挥的舞台。"
+    />
+    <title>OPPO招聘 - 加入我们 join us</title>
+    <!-- A4: 预连接静态资源 CDN，减少首个请求的 TCP/TLS 握手耗时 -->
+    <link rel="preconnect" href="https://career-origin-2a3867.oppo.com" crossorigin />
+    <link rel="dns-prefetch" href="https://career-origin-2a3867.oppo.com" />
+    <link rel="dns-prefetch" href="https://ocs-south3-cn.heytapcs.com" />
+    <link rel="preconnect" href="https://ocs-south3-cn.heytapcs.com" crossorigin />
+    <script type="module" crossorigin src="/assets/js/campus_oppo-Bj41Y6Cj.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/js/vendor-Ayb2sVye.js">
+    <link rel="modulepreload" crossorigin href="/assets/js/ui-libs-D0O-j-jH.js">
+    <link rel="modulepreload" crossorigin href="/assets/js/third-party-sdk-D7hZV1Z-.js">
+    <link rel="modulepreload" crossorigin href="/assets/js/util-commons-CkFgh149.js">
+    <link rel="stylesheet" crossorigin href="/assets/vendor-DA5zDy8H.css">
+    <link rel="stylesheet" crossorigin href="/assets/ui-libs-BF7E9Evk.css">
+    <link rel="stylesheet" crossorigin href="/assets/util-commons-DLMwEMQM.css">
+    <link rel="stylesheet" crossorigin href="/assets/campus_oppo-qxW1g99D.css">
+  </head>
+  <body>
+    <!-- 仅首页 / 校招首页展示全屏 LCP 占位；岗位列表等子路由单独处理 -->
+    <div id="lcp-splash" aria-hidden="true" hidden>
+      <img id="lcp-splash-img" alt="" width="1190" height="699" fetchpriority="high" decoding="async" />
+    </div>
+    <script>
+      ;(function () {
+        var OCS = 'https://career-origin-2a3867.oppo.com/test/ats/oppo/images/jpg/'
+        var POSTER_HOME = OCS + 'src_assets_img_poster.jpg'
+        var POSTER_CAMPUS =
+          'https://career-origin-2a3867.oppo.com/test/ats/oppo/20260902/src_assets_img_poster_for_stu.jpg'
+        var path = location.pathname.replace(/\/$/, '')
+        var base = '/university/oppo'
+        var isHome = path === base
+        var isCampusHome = path === base + '/campus'
+        var isCampusPost = path === base + '/campus/post'
+
+        function preloadImage(href) {
+          var link = document.createElement('link')
+          link.rel = 'preload'
+          link.as = 'image'
+          link.href = href
+          link.fetchPriority = 'high'
+          document.head.appendChild(link)
+        }
+
+        var splash = document.getElementById('lcp-splash')
+        var splashImg = document.getElementById('lcp-splash-img')
+
+        if (isCampusPost) {
+          if (splash) splash.remove()
+          return
+        }
+
+        if (!isHome && !isCampusHome) {
+          if (splash) splash.remove()
+          return
+        }
+
+        var href = isCampusHome ? POSTER_CAMPUS : POSTER_HOME
+        if (splash) splash.hidden = false
+        if (splashImg) splashImg.src = href
+        preloadImage(href)
+      })()
+    </script>
+    <style>
+      /* 与 Banner 同比例；仅移动端预留导航高度（PC 导航透明叠在 Banner 上，top:0） */
+      #lcp-splash {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 0;
+        width: 100%;
+        aspect-ratio: 1190 / 699;
+        max-height: 100vh;
+        overflow: hidden;
+        background: #000;
+        pointer-events: none;
+      }
+      #lcp-splash[hidden] {
+        display: none;
+      }
+      #lcp-splash img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      /* 移动端：对齐 NavBar.vue，预留白底导航占位 */
+      @media screen and (max-width: 1023px) {
+        #lcp-splash {
+          top: 66px;
+          max-height: calc(100vh - 66px);
+        }
+        #lcp-splash::before {
+          content: '';
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 66px;
+          background: #fff;
+          pointer-events: none;
+        }
+      }
+      @media screen and (max-width: 376px) {
+        #lcp-splash {
+          top: 48px;
+          max-height: calc(100vh - 48px);
+        }
+        #lcp-splash::before {
+          height: 48px;
+        }
+      }
+    </style>
+    <div id="app"></div>
+    <script src="/icon_font__ats.js" defer></script>
+    <!--PROP_BAN_DEBUGGER-->
+  </body>
+</html>

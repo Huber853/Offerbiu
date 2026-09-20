@@ -1,0 +1,30 @@
+[
+  {
+    "item": "{'id': 22298, 'position': 200, 'positionTitle': '投资运营分析师', 'positionFamily': 5, 'projectId': 1, 'bgs': 'CDG ', 'workCities': '北京 ', 'positionUrl': Non",
+    "reason": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>"
+  },
+  {
+    "item": "{'id': '7669699231234279733', 'title': '内容理解算法工程师 - Data AML', 'sub_title': None, 'description': '团队介绍：Data AML是字节跳动的机器学习中台，为抖音/今日头条/西瓜视频等业务提供推荐/广告/CV",
+    "reason": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>"
+  },
+  {
+    "item": "{'id': '7667817420166318389', 'title': '营销算法工程师 - TikTok Shop', 'sub_title': None, 'description': '团队介绍：TikTok Shop 是 TikTok 旗下的内容电商业务，致力于成为用户发现并获取优价好",
+    "reason": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>"
+  },
+  {
+    "item": "{'id': '7667054527414634757', 'title': '后端开发工程师（资金业务） - TikTok Shop', 'sub_title': None, 'description': '团队介绍：TikTok Shop是以TikTok为载体的内容电商业务，致力于成为用户发现并",
+    "reason": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>"
+  },
+  {
+    "item": "{'id': '7667045712349726981', 'title': 'AI Agent开发工程师（平台方向） - TikTok Shop', 'sub_title': None, 'description': '团队介绍：TikTok Shop是以TikTok为载体的内容电商业务，致力于成",
+    "reason": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>"
+  },
+  {
+    "item": "{'id': '7670377973409483051', 'title': '【27届校招】女装运营', 'sub_title': None, 'description': '1. 商家运营：建立商家分层管理体系，针对不同层级商家匹配业务场景，完成商家日常运营动作跟进并探索成熟商家运营经验，打造商",
+    "reason": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>"
+  },
+  {
+    "item": "{'id': '7670919155688425737', 'title': '项目质量工程师-汽车', 'sub_title': None, 'description': '参与新项目质量目标及质量保证方案，有序推进各项活动开展，确保项目风险的有效识别和控制，保证新项目上市质量，包括以下内容：\\n",
+    "reason": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>"
+  }
+]

@@ -1,0 +1,134 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [],
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-14T21:16:45",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": "27秋-后端"
+      }
+    },
+    "department": {
+      "id": 3224890,
+      "name": "ABC"
+    },
+    "departmentId": 3224890,
+    "departments": [
+      {
+        "id": 3224890,
+        "name": "ABC"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "本科",
+    "hireMode": 2,
+    "id": "6a1b860e-3ab4-466e-8afc-d3598fb4d44f",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "岗位职责：\n1、参与共享两轮车业务运维管理、商家管理、SAAS 等核心方向的系统设计与开发；\n2、理解业务场景，与上下游团队协作，做合理系统设计，按期按质保障需求及项目落地；\n3、负责技术攻关，持续优化系统稳定性与性能；\n4、运用 AI 工具提升研发效能，探索 AI 在业务场景的创新应用；\n5、沉淀 AI 工作流与实践经验，推动团队 AI 能力建设。\n\n任职要求：\n1、2027 届毕业生，本科及以上学历，计算机或相关专业优先；\n2、熟练掌握一种或多种编程语言，如 Java/Go/Python 等；\n3、熟悉分布式系统、RPC 框架及 MySQL、Redis、MQ 等中间件；\n4、深度使用 AI 编程工具，如 Claude Code、Codex、Cursor 等；深入理解 Prompt、Harness 工程、Loop 工程；有一定的 AI 方向沉淀；\n5、具备良好的逻辑思维能力，具有很强的问题分析及解决能力，对解决具有挑战性问题充满激情；\n6、喜欢钻研、能折腾，具有良好的学习能力，具备良好的需求理解、沟通能力、协作能力；\n7、有大型复杂项目实践经验及深入的 AI 实践经验优先。",
+    "jobIntentions": [],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          3224890
+        ],
+        "locationIds": [
+          314487
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 330100,
+        "cityName": "杭州市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 314487,
+        "provinceName": "浙江"
+      }
+    ],
+    "number": 2,
+    "openedAt": "2026-08-14T08:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 0,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-08-14T21:47:03",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-软件研发工程师-两轮车",
+    "updatedAt": "2026-09-04T13:17:54",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 136659,
+      "name": "工程-后端类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

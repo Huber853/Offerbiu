@@ -1,0 +1,136 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [],
+    "autoArchiveTalentPoolId": 425506,
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-05T14:50:03",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": ""
+      }
+    },
+    "department": {
+      "id": 94463,
+      "name": "CTO线"
+    },
+    "departmentId": 94463,
+    "departments": [
+      {
+        "id": 94463,
+        "name": "CTO线"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "本科",
+    "hireMode": 2,
+    "id": "f2e8e2e1-5761-41f2-abeb-8cd8e1b77e83",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "<p>岗位职责：</p><p>1、熟悉LBS产品市场需求，通过与客户沟通、行业和竞品分析来定义地图要素的当前和未来的需求；</p><p>2、制定令人信服的产品目标或愿景，向相关方清晰传达产品的战略和规划；</p><p>3、推动某项产品从需求调研、到发布上线，领导各功能团队来定义和实现，如模型规格、工具平台、生产运营、应用引擎等；</p><p>4、管理整个产品线的生命周期，从产品规划一直到应用效果；</p><p>5、主导制定某项产品的用途（usage）、范围（scenario）、模型（model）、规格（specifications）、手册（SOP）、用法（rules）等文档；</p><p>6、参与定义和设计某项产品的工作流程（workflow &amp; pipeline）、合格质量标准（access quality）、交付内容（content、format、release note、etc.）；</p><p>7、熟悉并能够使用前沿的技术来提高产品的质量，加快产品迭代的速度，降低产品的成本（TOC）。</p><p><br></p><p>任职要求：</p><p>1、2027届毕业生，本科及以上学历，GIS、测绘、计算机等相关专业优先；</p><p>2、有互联网地图相关工作经验优先；</p><p>3、强烈的目标导向和自我驱动能力，具备敏锐的洞察能力；</p><p>4、良好的人际沟通能力，包括表达，书面和口头；</p><p>5、强大的分析和解决问题的能力，善于拆解、归纳和复盘；</p><p>6、良好的人员培训、辅导和管理能力；</p><p>7、能够与内部/外部团体合作，有效地解决问题；</p><p>8、熟悉专业软件，如Mapinfo/QGIS/ArcGis、SQL、Python。</p>",
+    "jobIntentions": [],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          94463
+        ],
+        "locationIds": [
+          92621
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 110000,
+        "cityName": "北京市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 92621,
+        "provinceName": "北京市"
+      }
+    ],
+    "multiLocale": "{\"mainLocale\":\"zh-CN\",\"secondLocale\":\"\"}",
+    "number": 2,
+    "openedAt": "2026-08-13T08:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 0,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-08-13T10:19:54",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-数据产品助理",
+    "updatedAt": "2026-09-03T17:16:55",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 20037,
+      "name": "产品类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

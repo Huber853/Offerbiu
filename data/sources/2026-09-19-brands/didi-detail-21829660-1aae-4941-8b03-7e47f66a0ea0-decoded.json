@@ -1,0 +1,134 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [],
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-14T21:16:43",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": "27秋-后端"
+      }
+    },
+    "department": {
+      "id": 3224890,
+      "name": "ABC"
+    },
+    "departmentId": 3224890,
+    "departments": [
+      {
+        "id": 3224890,
+        "name": "ABC"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "本科",
+    "hireMode": 2,
+    "id": "21829660-1aae-4941-8b03-7e47f66a0ea0",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "岗位职责：\n1、参与共享两轮车业务的资产管理/供应链等方向的系统设计与开发；\n2、负责服务器端业务架构设计，模块开发以及稳定性建设；\n3、主导和执行服务器端核心功能开发和性能优化；\n4、应用AI工作流，提升团队效率。\n\n任职要求：\n1、2027届毕业生，本科及以上学历，计算机或相关专业优先；\n2、熟悉分布式后端服务开发流程和规范，熟练掌握Spring、Mybatis等框架，熟悉Dubbo, SpringBoot等开发框架；\n3、精通Java语言，熟悉JVM分析定位问题，熟练使用多线程，熟练掌握分布式系统、缓存、消息队列MQ、搜索等技术体系；\n4、掌握Redis、Elasticsearch和MongoDB等NoSQL技术，精通MySQL的开发设计和调优；\n5、熟悉Linux环境，熟悉web容器性能调优，能独立部署，定位跟踪日志；\n6、了解 LLM 基本概念，熟练使用Cursor / Copilot / Claude Code 等至少一种开发工具，有实际AI编码经验；\n7、对技术有激情，喜欢钻研，主动性高，具有较强的解决问题和沟通协调的能力。",
+    "jobIntentions": [],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          3224890
+        ],
+        "locationIds": [
+          314487
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 330100,
+        "cityName": "杭州市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 314487,
+        "provinceName": "浙江"
+      }
+    ],
+    "number": 1,
+    "openedAt": "2026-08-14T08:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 0,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-08-14T21:47:03",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-软件研发工程师-ABC",
+    "updatedAt": "2026-09-04T13:17:54",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 136659,
+      "name": "工程-后端类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

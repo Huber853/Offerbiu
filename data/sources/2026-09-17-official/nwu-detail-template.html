@@ -1,0 +1,969 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>西北大学学生就业创业指导服务中心</title>
+    <meta name="viewport" content="width=device-width,user-scalable=yes">
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+    <script>/*@cc_on window.location.href="http://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); @*/</script>    
+    
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/zhaopin.css">
+    <!-- <link rel="stylesheet" href="../css/share.css" type="text/css"> -->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="../js/polyfill.min.js"></script>
+    <script src="../js/jquery-newest.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/skrollr.min.js"></script>
+    <link rel="stylesheet" href="../css/jquery.idcode.css">
+    <script src="../js/jquery.idcode.js"></script>
+    <script src="/js/jquery-placeholder.js"></script>
+   <!--  <script src="../js/share.js"></script> -->
+    <script type="text/javascript" src="../js/qrcode.min.js"></script>
+    <script src="../js/lee.min.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/wx_get_openid.js"></script>
+    <style>
+    #qrcode{width: 130px;height: 130px;margin: 20px auto 0;}
+    .main-pop{width: 100%;text-align: center;}
+</style>
+</head>
+<style>
+    .redian>li>a .redi_did span:first-child{
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .nr_bottom>div>div>p{float: initial;}
+    /* 投诉模态框 */
+    #toudiModal .modal-body p#toudi{width: 240px;height: 68px;line-height: 68px;background: #3C84E8;margin: 0 auto 30px;border-radius: 4px;cursor: pointer;}
+    #toudiModal .modal-body p#toudi img{width: 40px;height: 40px;margin-right: 12px;}
+    #toudiModal .modal-body p#toudi span{color: #fff;}
+    #toudiModal .modal-body p#outtoudi{width: 120px;height: 34px;border: 1px solid #EDEDED;border-radius: 16px 0px 4px 0px;text-align: center;line-height: 34px;position: absolute;right: 0;bottom: 0;cursor: pointer;}
+</style>
+<body style="background:#f3f3f3;">
+<div class="header"></div>
+<div style="width:100%;height:91px;"></div>
+<!-- banner -->
+<div class="banner">
+    <img src="../image/newbanner.png" alt="">
+</div>
+<div id="details">
+<template>
+    <!-- 职位详情-->
+    <div class="xz-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-3 col-md-3">
+                    <div class="n_left">
+                        <ul>
+                            <div class="bgcolor">就业实习<span></span></div>
+                            <template v-if="jobtype == 1">
+                            <li class="quan_" style="background:#eee;">
+                                <a :href="'zhiweiList.html?jobtype=1'" class="fcolor">
+                                    <span class="bgcolor"></span>
+                                    全职
+                                </a>
+                                <span class="hover"></span>
+                            </li>
+                            </template>
+                            <template v-else>
+                            <li class="quan_">
+                                <a :href="'zhiweiList.html?jobtype=1'">
+                                    <span class="bgcolor3"></span>
+                                    全职
+                                </a>
+                                <span class="hover"></span>
+                            </li>
+                            </template>
+
+                            <template v-if="jobtype == 2">
+                            <li class="shi_" style="background:#eee;">
+                                <a :href="'zhiweiList.html?jobtype=2'" class="fcolor">
+                                    <span class="bgcolor"></span>
+                                    实习
+                                </a>
+                                <span class="hover"></span>
+                            </li>
+                            </template>
+                            <template v-else>
+                            <li class="shi_">
+                                <a :href="'zhiweiList.html?jobtype=2'">
+                                    <span class="bgcolor3"></span>
+                                    实习
+                                </a>
+                                <span class="hover"></span>
+                            </li>
+                            </template>
+
+                            <li class="">
+                                 <a :href="'/Zhaopin/zhaopinList.html?cateid='+news1+'&type='+1">
+                                    <span class="bgcolor3"></span>
+                                    校招
+                                </a>
+                                <span class="hover"></span>
+                            </li>
+
+                            <!-- <li>
+                                <a href="../Chuangye/sxlb.html?status=0">
+                                    <span class="bgcolor3"></span>
+                                    双选会
+                                </a>
+                                <span class="hover"></span>
+                            </li> -->
+                        </ul>
+                        <div style="height:15px;background: #f3f3f3;"></div>
+                        <!-- 热门职位 -->
+                        <ol class="redian" v-if="redian.length > 0">
+                            <div class="rd_top">
+                                <span class="bgcolor fcolor1">H</span>
+                                <p class="fcolor">热门职位</p>
+                            </div>
+                            <li v-for="redian_ in redian">
+                                <a :href="'zhiweiDetail.html?jobtype='+jobtype+'&id='+redian_.id" :title="redian_.work_name">
+                                    <template v-if="redian_.istop == '1'">
+                                        <div class="redi_did">
+                                            <span v-html="'<i class='+'istop'+'>【Top】</i>'+redian_.work_name" :title="redian_.work_name" class="left" style="width: 66%;"></span>
+                                            <template v-if='redian_.jobtype=="1"'>
+                                                <span style="float: right;font-size: 12px;"> {{redian_.xinzi}}</span>
+                                            </template>
+                                            <template v-if='redian_.jobtype=="2"'>
+                                                <template v-if='redian_.xinzi=="面议"'>
+                                                    <span style="float: right;font-size: 12px;"> {{redian_.xinzi}}</span>
+                                                </template>
+                                                <template v-else>
+                                                    <span style="float: right;font-size: 12px;"> {{redian_.xinzi}} / 天</span>
+                                                </template>
+                                            </template>
+                                        </div>
+                                    </template>
+                                    <template v-else>
+                                        <div class="redi_did">
+                                            <span v-html="redian_.work_name" :title="redian_.work_name" class="left" style="width: 66%;"></span>
+                                            <template v-if='redian_.jobtype=="1"'>
+                                                <span style="float: right;font-size: 12px;"> {{redian_.xinzi}}</span>
+                                            </template>
+                                            <template v-if='redian_.jobtype=="2"'>
+                                                <template v-if='redian_.xinzi=="面议"'>
+                                                    <span style="float: right;font-size: 12px;"> {{redian_.xinzi}}</span>
+                                                </template>
+                                                <template v-else>
+                                                    <span style="float: right;font-size: 12px;"> {{redian_.xinzi}} / 天</span>
+                                                </template>
+                                            </template>
+                                        </div>
+                                    </template>
+                                    <p style="overflow: auto;">
+                                        <span class="left"><img src="../image/png/shi_.png" alt="">&nbsp;&nbsp;{{redian_.addtime3}}</span>
+                                        <span class="right"><i class="fa fa-eye"></i> {{redian_.viewcount}}</span>
+                                    </p>
+                                    <!-- <div v-html="redian_.work_name" :title="redian_.work_name"></div> -->
+                                </a>
+                            </li>
+                        </ol>
+                        <div style="height:15px;background: #f3f3f3;"></div>
+                        <!-- 猜你喜欢 -->
+                        <ol class="redian like" v-if="like.length > 0">
+                            <div class="rd_top">
+                                <span class="fcolor1" style="background:#3C84E8;">L</span>
+                                <p style="color:#3C84E8;border-bottom:1px solid #3C84E8;">猜你喜欢</p>
+                            </div>
+                            <li v-for="like_ in like">
+                                <a :href="'zhiweiDetail.html?jobtype='+jobtype+'&id='+like_.id" :title="like_.work_name">
+                                    <template v-if="like_.istop == '1'">
+                                        <div class="redi_did">
+                                            <span v-html="'<i class='+'istop'+'>【Top】</i>'+like_.work_name" :title="like_.work_name" class="left" style="width: 66%;"></span>
+                                            <template v-if='like_.jobtype=="1"'>
+                                                <span style="float: right;font-size:12px;"> {{like_.xinzi}}</span>
+                                            </template>
+                                            <template v-if='like_.jobtype=="2"'>
+                                                <template v-if='like_.xinzi=="面议"'>
+                                                    <span style="float: right;font-size:12px;"> {{like_.xinzi}}</span>
+                                                </template>
+                                                <template v-else>
+                                                    <span style="float: right;font-size:12px;"> {{like_.xinzi}} / 天</span>
+                                                </template>
+                                            </template>
+                                        </div>
+                                    </template>
+                                    <template v-else>
+                                        <div class="redi_did">
+                                            <span v-html="like_.work_name" :title="like_.work_name" class="left" style="width: 66%;"></span>
+                                            <template v-if='like_.jobtype=="1"'>
+                                                <span style="float: right;font-size:12px;"> {{like_.xinzi}}</span>
+                                            </template>
+                                            <template v-if='like_.jobtype=="2"'>
+                                                <template v-if='like_.xinzi=="面议"'>
+                                                    <span style="float: right;font-size:12px;"> {{like_.xinzi}}</span>
+                                                </template>
+                                                <template v-else>
+                                                    <span style="float: right;font-size:12px;"> {{like_.xinzi}} / 天</span>
+                                                </template>
+                                            </template>
+                                        </div>
+                                    </template>
+                                    <p>
+                                        <img src="../image/png/shi_.png" alt="">&nbsp;&nbsp;{{like_.addtime3}}
+                                         <span class="right"><i class="fa fa-eye"></i> {{like_.viewcount}}</span>
+                                    </p>
+                                </a>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="col-xs-9 col-md-9">
+                    <div class="n_right">
+                        <a href="../index.html" class="fcolor">首页</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;
+                        <template v-if="jobtype == 1"><a href="zhiweiList.html?jobtype=1">全职</a></template>
+                        <template v-else-if="jobtype == 2"><a href="zhiweiList.html?jobtype=2">实习</a></template>
+                        &nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;
+                        <template v-if="jobtype == 1">职位详情</template>
+                        <template v-if="jobtype == 2">实习详情</template>
+                        <div class="fen">
+                            <!-- <p><i class="fa fa-commenting-o"></i> 互动</p> -->
+                            <p data-toggle="modal" id="tousu"><i class="fa fa-exclamation-circle"></i> 投诉</p>
+                           <!--  <p class="share"><i class="fa fa-share-square-o"></i> 分享</p> -->
+                            <p class="share" data-toggle="modal" data-target="#fxModal">
+                                        <i class="fa fa-share-square-o"></i> 分享</p>
+                        </div>
+                        <span style="width:100%;font-size:18px;font-weight:bold;text-align: center;line-height: 30px;display:block;padding:15px 30px;">{{jobInfo.work_name}}</span>
+                        <p class="fcolor">
+                            <span class="jigou"> 发布机构：{{jobInfo | is_jigou}}</span>
+                            <span class="time">发布时间：{{jobInfo.addtime | is_wxempty}}</span>
+                            <span class="num">浏览量：{{jobInfo.viewcount | is_wxempty}}</span>
+                        </p>
+                        <div class="nr_top">
+                            <h5 class="bgcolor">职位信息</h5>
+                            <p v-if="jobInfo.dalei_id_name !=undefined ">职位类别：<span>{{jobInfo.dalei_id_name}}</span></p>
+                            <p v-if="jobInfo.xueli_id_name !=undefined ">学历要求：<span>{{jobInfo.xueli_id_name}}</span></p>
+                            <p v-if="jobInfo.person_count !=undefined ">招聘人数：<span>{{jobInfo.person_count}}</span></p>
+                            <template v-if="jobtype == 2">
+                                <p v-if="jobInfo.xinzi !=undefined ">工资待遇：<span><template v-if="jobInfo.xinzi == '面议'">{{jobInfo.xinzi}}</template>
+                                    <template v-else>{{jobInfo.xinzi}} / 天</template>
+                                </span></p>
+                            </template>
+                            <template v-else>
+                                <p v-if="jobInfo.xinzi !=undefined ">工资待遇：<span>{{jobInfo.xinzi}}</span></p>
+                            </template>
+                            <!-- <p>招聘截止：<span class="time fcolor">{{jobInfo.expire_time | is_wxempty}}</span></p> -->
+                            <template v-if="jobtype == 2">
+                            <p v-if="jobInfo.work_days_name !=undefined ">实习天数：<span>{{jobInfo.work_days_name}}</span></p>
+                            <p v-if="jobInfo.practice_month_name !=undefined ">实习月数：<span>{{jobInfo.practice_month_name}}</span></p>
+                            <p v-if="jobInfo.chance_name !=undefined ">转正机会：<span>{{jobInfo.chance_name}}</span></p>
+                            </template>
+                            <p>招聘类型：<span><template v-if="jobtype == '1'">全职</template><template v-else-if="jobtype == '2'">实习</template></span></p>
+
+                            <p v-if="jobInfo.deliver_email !=undefined && jobInfo.deliver_email !=''&& jobInfo.deliver_email !=null ">投递邮箱：<span>{{jobInfo.deliver_email}}</span></p>
+                            <div><p v-if="jobInfo.address !=undefined && jobInfo.address !='' ">工作地点：<span>{{jobInfo.province_id_name}}{{jobInfo.city_id_name}}{{jobInfo.address}}</span></p></div>
+                        </div>
+                        <div class="nr_bottom">
+                            <ul>
+                                <li class="bgcolor fcolor1 border">
+                                    <h5>职位描述</h5>
+                                </li>
+                                <li class="bgcolor1 fcolor border">
+                                    <h5><a :href="'/News/comdetail.html?comid='+comdetail.id+'&id='+hyid+'&act=jobfair'">用人单位介绍</a></h5>
+                                </li>
+                            </ul>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <p v-html="jobInfo.remarks"></p>
+                                    <div class="schoolwar" style="margin-top: 20px;">
+                                        <h3 class="fcolor" style="font-size: 16px;margin: 0 0 15px;">本校提示</h3>
+                                        <p v-html="deat_e.schoolwarn" style="line-height: 22px;margin-bottom: 10px;"></p>
+                                    </div>
+                                </div>
+                                <template v-if="comdetail != ''">
+                                    <div class="col-xs-12 zhiweimiaoshu">
+                                        <h4 style="width:100%;line-height:40px;display:block;text-align:center;font-size:18px;font-weight:bold;">{{jobInfo.com_id_name}}
+                                            <p class="bgcolor gongshang">
+                                                <i class="fa fa-search"></i><a  style="color:#fff;" :href="'https://www.tianyancha.com/search?key='+jobInfo.com_id_name">工商查询</a>
+                                            </p>
+                                        </h4>
+                                        <p style="padding:0px;float: initial;">用人单位规模：<span>{{comdetail.guimo_id_name | is_wxempty}}</span></p>
+                                        <p style="padding:0px;float: initial;">用人单位性质：<span>{{comdetail.xingzhi_id_name | is_wxempty}}</span></p>
+                                        <p style="padding:0px;float: initial;">所属行业：<span>{{comdetail.business_name | is_wxempty}}</span></p>
+                                        <p style="padding:0px;float: initial;">用人单位地址：<span>{{comdetail.province_name}}{{comdetail.city_name}}{{comdetail.address}}</span></p>
+                                        <p style="padding:0px;float: initial;">用人单位主页：<span v-if="comdetail.weburl== ''">{{comdetail.weburl | is_wxempty}}</span><a :href="comdetail.weburl" v-else  class="fcolor yrdwzy" style="text-decoration: underline;">{{comdetail.weburl}}</a></p>
+                                        <p style="padding:0px;float: initial;">用人单位介绍：{{comdetail.content | is_wxempty}}
+                                        </p>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                        <button class="toudi bgcolor" :disabled="isEnd" :style="isEnd?'background:#999':''" data-toggle="modal" data-target="#toudiModal">投递简历</button>
+                        <button id="yitd" style="display:none;background:#999;">已投递</button>
+                        <!-- <template v-if='jobInfo.laiyuan == 1'>
+                            <template v-if='deat_e.isdeliver == 1'>
+                                    <template v-if="isDeliver">
+                                        <button id="yitd" style="display:none;background:#999;">已投递</button>
+                                    </template>
+                                    <template v-else>
+                                        <button class="toudi bgcolor" data-toggle="modal">投递简历</button>
+                                    </template>
+                            </template>
+                            <template v-else>
+                                    <button style="display:none;background:#999;">无法投递</button>
+                            </template>
+                        </template>
+                        <template v-else-if='jobInfo.laiyuan == 2 '>
+                            <template v-if="isDeliver">
+                                <button id="yitd" style="display:none;background:#999;">已投递</button>
+                            </template>
+                            <template v-else>
+                                    <button class="toudi bgcolor" data-toggle="modal">投递简历</button>
+                            </template>
+                        </template> -->
+
+                       
+
+                        <template v-if="otherJobList.length > 0">
+                            <div class="nr_top">
+                                <h5 class="bgcolor" style="margin-bottom:0;">其他招聘职位</h5>
+                            </div>
+                            <ol class="ollist">
+                                <template v-for="place in otherJobList">
+                                <a :href="'zhiweiDetail.html?jobtype='+place.jobtype+'&id='+place.id" class="animated fadeInUp">
+                                    <div class="ol_left">
+                                        <p class="fcolor">{{place.addtime2}}</p>
+                                        <span>{{place.addtime1}}</span>
+                                    </div>
+                                    <div class="ol_right">
+                                        <p class="ol_title">
+                                            <template v-if='place.jobtype=="1"'>
+                                                <span :title="place.work_name">【全】{{place.work_name}}</span>
+                                                <template v-if='place.xinzi=="面议"'>
+                                                    <i> 面议</i>
+                                                </template>
+                                                <template v-else>
+                                                <i> {{place.xinzi}}</i>
+                                                </template>
+                                            </template>
+                                            <template v-if='place.jobtype=="2"'>
+                                                <span :title="place.work_name">【实】{{place.work_name}}</span>
+                                                <template v-if='place.xinzi=="面议"'>
+                                                    <i> 面议</i>
+                                                </template>
+                                                <template v-else>
+                                                    <i> {{place.xinzi}} / 天</i>
+                                                </template>
+                                            </template>
+                                        </p>
+                                        <p class="ol_detial">
+                                            <span :title="place.province_id_name">工作地址：<i>{{place.province_id_name}}</i></span>
+                                            <i>|</i>
+                                            <span :title="place.dalei_id_name">职位类别：<i>{{place.dalei_id_name}}</i></span>
+                                            <i>|</i>
+                                            <span :title="place.person_count">招聘人数：<i>{{place.person_count}}</i></span>
+                                            <!-- <i>|</i>
+                                            <span :title="place.com_id_name">用人单位名称：<i>{{place.com_id_name}}</i></span> -->
+                                        </p>
+                                    </div>
+                                </a>
+                                </template>
+                            </ol>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 投诉模态框 -->
+    <div class="modal fade" id="tousuModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bgcolor fcolor1">
+                    <button type="button" class="close fcolor1" data-dismiss="modal" aria-hidden="true" style="opacity: 1;">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">投诉用人单位</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="opt" id="opt1">
+                        <input class="magic-checkbox" type="checkbox" name="t" id="c1" value="1">
+                        <label for="c1" name="t1">存在就业歧视</label>
+                    </div>
+                    <div class="opt" id="opt2">
+                        <input class="magic-checkbox" type="checkbox" name="t" id="c2" value="2">
+                        <label for="c2" name="t2">招聘信息夸大</label>
+                    </div>
+                    <div class="opt" id="opt3">
+                        <input class="magic-checkbox" type="checkbox" name="t" id="c3" value="3">
+                        <label for="c3" name="t3">有招聘诈骗行为</label>
+                    </div>
+                    <div class="opt" id="opt4">
+                        <input class="magic-checkbox" type="checkbox" name="t" id="c4" value="4">
+                        <label for="c4" name="t4">不是真实信息</label>
+                    </div>
+                    <div class="opt" id="opt5">
+                        <input class="magic-checkbox" type="checkbox" name="t" id="c5" value="99">
+                        <label for="c5" name="t5">其他</label>
+                    </div>
+                    <span style="color:#f00">投诉原因</span>
+                    <br>
+                    <textarea name="reasons" id="reasons" rows="5" style="width:100%"></textarea>
+                    <button class="bgcolor" id="dotousu">提交</button>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 投诉模态框 -->
+    <div class="modal fade" id="toudiModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="width: 340px;margin: 247px auto;">
+            <div class="modal-content">
+                <div class="modal-header" style="padding: 15px 15px 30px 15px;">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="opacity: 1;">&times;</button>
+                </div>
+                <div class="modal-body" style="padding-bottom: 35px;text-align: center;">
+                    <p id="toudi" data-toggle="modal">
+                        <img src="../image/xuesheng-copy.png" alt="">
+                        <span>登录投递</span>
+                    </p>
+                    <p id="outtoudi" data-toggle="modal">外校生投递入口</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="outsideModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="width: 550px;margin: 247px auto;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="opacity: 1;">&times;</button>
+                    <h4>外校生投递方式</h4>
+                </div>
+                <div class="modal-body" style="padding-bottom: 35px;">
+                    <img src="../image/jyb_1.jpg" alt="" style="width: 135px;height: 135px;display: block;margin: 10px auto;">
+                    <p style="margin-left: 104px;margin-bottom: 7px;">1.手机扫描图中二维码投递简历</p>
+                    <p style="margin-left: 104px;margin-bottom: 7px;">2.点击‘校园招聘’，进入个人中心完善基本信息和简历</p>
+                    <p style="margin-left: 104px;margin-bottom: 7px;">3.完善信息后，搜索该招聘信息进行简历投递</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="fixed_01">
+        <!-- <div class="close_">×</div> -->
+        <div class="fixed_top bgcolor">
+			<template v-if="comdetail.video != '' && jobInfo.com_id !='' ">
+                <a :href="comdetail.video"  class="video_a">
+                    <img src="../image/video_w.png" alt="">
+                </a>
+                </template>
+                <template v-else>
+                <a href="javascript:void(0);" class="video_a bgcolor" style="background: #aaa;cursor: not-allowed;">
+                    <img src="../image/video_w.png" alt="">
+                    <span class="sub_span">暂无数据</span>
+                </a>
+                </template>
+                <template v-if="comdetail.envirement1_src|| comdetail.envirement2_src|| comdetail.envirement3_src|| comdetail.envirement4_src">
+                    <a href="javascript:void(0);" class="picture_a bgcolor">
+                        <img src="../image/picture_w.png" alt="">
+                    </a>
+                    </template>
+                    <template v-else>
+                    <a href="javascript:void(0);" style="background: #aaa;cursor: not-allowed;">
+                        <img src="../image/picture_w.png" alt="">
+                        <span class="sub_span">暂无数据</span>
+                    </a>
+                    </template>
+            <template v-if="comdetail.id != '' && jobInfo.com_id !=''">
+			<a href="javascript:void(0);" :data-url="'http://e.jiuyeb.net/General/map?cid='+comdetail.id" class="navigate_a">
+                <img src="../image/navigate_w.png" id="ditu_img" data-value="ditu" alt="">
+            </a>
+			</template>
+			<template v-else>
+            <a href="javascript:void(0);">
+                <img src="../image/navigate_w.png" alt="">
+                <span class="sub_span">暂无数据</span>
+            </a>
+			</template>
+        </div>
+        <div class="fixed_bottom bgcolor">
+            <div>
+                <img src="../image/jyb_hbjt.png" />
+                <div class="big_01">
+                    <img src="../image/jyb_hbjt.png" />
+                    <i></i>
+                </div>
+            </div>
+            <p>扫一扫</p>
+        </div>
+    </div>
+    <!-- 图片 -->
+    <div class="pop-up">
+        <div class="big_picture">
+            <div class="big_mypic">
+                <img v-if="comdetail.envirement1_src" :src="comdetail.envirement1_src|logo_src" class="active" alt="">
+                <img v-if="comdetail.envirement2_src" :src="comdetail.envirement2_src|logo_src" alt="">
+                <img v-if="comdetail.envirement3_src" :src="comdetail.envirement3_src|logo_src" alt="">
+                <img v-if="comdetail.envirement4_src" :src="comdetail.envirement4_src|logo_src" alt="">
+            </div>
+            <div class="smallpic">
+                <span class="pic_close">×</span>
+                <img v-if="comdetail.envirement1_src" :src="comdetail.envirement1_src|logo_src" class="active" alt="">
+                <img v-if="comdetail.envirement2_src"v-if="comdetail.envirement1_src" :src="comdetail.envirement2_src|logo_src" alt="">
+                <img v-if="comdetail.envirement3_src" :src="comdetail.envirement3_src|logo_src" alt="">
+                <img v-if="comdetail.envirement4_src" :src="comdetail.envirement4_src|logo_src" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- 地图 -->
+    <div class="mymap"></div>
+    <div class="mynavigate shinpin_shadow">
+        <iframe src="" id="dituFrame" frameborder="0" style="width:800px;height:500px;"></iframe>
+    </div>
+    <!-- 投递 -->
+    <div class="deliver_tan" style="display: none;"></div>
+    <div class="deliver_inner" style="display: none;">
+        <div class="close_01" style="right:11px;font-size: 21px;font-weight: 100;line-height: 1;text-shadow: 0 1px 0 #fff;">×</div>
+        <p class="title">投递简历</p>
+        <div class="jianli_title">
+            <input type="text" id="emtitle" name="emtitle" :value="'应聘__'+jobInfo.work_name" />
+		</div>
+        <div class="fujian">
+            <p class="add_fj" style=" padding: 0px; "></p>
+            <button class="btn" id="submits">投递简历</button>
+        </div>
+    </div>
+    <!-- 分享 -->
+    <div class="modal fade in" id="fxModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" style="width: 350px;">
+            <div class="modal-content" style="z-index:1000;top: 100px;padding-bottom: 20px;height: 310px;">
+                <div class="modal-header" style="padding: 0;">
+                    <button type="button" class="close cha" data-dismiss="modal" aria-hidden="true" style="margin: 15px;">×</button>
+                    <h3 style="display: inline-block;margin: 15px;"> <i style="color:#3C84E8" class="fa fa-wechat"></i> </h3>
+                </div>
+                <div class="modal-bodys">
+                    <div class="main-pop">
+                        <input type="hidden" id="murl" value="" />
+                        <p id="qrcode" style="margin: 20px auto 15px;"></p>
+                        <p style="color: #3C84E8;">微信扫一扫，分享给更多的人</p>
+                    </div>
+                </div>
+                <div class="modal-footer" style="text-align: center;">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true" style="background-color: #3C84E8;border-color: #3C84E8;">知道了</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+</div>
+<div class="toTop bgcolor4">
+    <span class="glyphicon glyphicon-hand-up"></span> TOP </div>
+<!-- <div class="footer"></div> -->
+</body>
+</html>
+<script>
+    $(function(){
+        $(".header").load("../Public/header.html");
+        $(".footer").load("../Public/footer.html");
+    })
+
+    var userid = sessionStorage.getItem('userid');
+    var school_id = sessionStorage.getItem('school_id');
+    var news1 = sessionStorage.getItem("news1");//重要通知 全局变量
+	var jobtype = $.getUrlParam('jobtype');
+    var id = $.getUrlParam('id');
+    var hyid=$.getUrlParam('hyid');
+	var vm = new Vue({
+        el: "#details",
+        data: {
+            jobInfo: {},
+            comInfo: {},
+            comdetail: {},
+            jobtype: jobtype,
+            redian:[],
+            tousu:"",
+            kq_gk:"",//开启简历公开
+            like:[],
+            deat_e:{},
+            otherJobList:[],
+            isDeliver: false,
+            isEnd:false,//双选会是否过期
+        },
+        methods: {
+
+        },
+        updated: function () {
+			// 图片
+			$(".picture_a").click(function () {
+				$(".pop-up").fadeIn();
+				$(".big_picture").fadeIn();
+			})
+			// 切换图片
+			$(".smallpic img").click(function () {
+				var index = $(this).index();
+				$(this).addClass("active").siblings().removeClass("active");
+				$(".big_mypic img").eq(index - 1).addClass("active").siblings().removeClass("active");
+			})
+			// 关闭
+			$(".pic_close").click(function () {
+				$(".pop-up").fadeOut();
+				$(".big_picture").fadeOut();
+			})
+			// 地图
+			$(".navigate_a").click(function () {
+				$(".mymap").fadeIn();
+				$(".mynavigate").fadeIn();
+				var data = $(this).find("img").attr("data-value");
+				if (data == 'ditu') {
+					var url = $(this).attr("data-url");
+					$("#dituFrame").attr("src", url);
+				}
+			})
+			$(".mymap").click(function () {
+				$(".mymap").fadeOut();
+				$(".mynavigate").fadeOut();
+            })
+            $(".fixed_top a").hover(function () {
+                $(this).find(".sub_span").css("display","block");
+            }, function () {
+                $(this).find(".sub_span").css("display","none");
+            })
+            $(".fixed_top a img").hover(function () {
+                $(this).addClass("animated pulse");
+            }, function () {
+                $(this).removeClass("animated pulse");
+            })
+            $(".yrdwzy").hover(function(){
+                $(this).css("color","#5988ff");
+            },function(){
+                $(this).css("color","");
+            })
+            $(".n_right ol a").hover(function () {
+                $(this).stop().animate({"margin-left":"-10px"},400);
+				$(this).find(".ol_left p").attr("class", "bgcolor fcolor1");
+				$(this).find(".ol_left span").attr("class", "fcolor").css("background", "#d2d2d2");
+				$(this).find(".ol_title").attr("class", "ol_title fcolor");
+				$(this).find(".ol_detial").css("color", "#000");
+			}, function () {
+                $(this).stop().animate({"margin-left":"0px"},400);
+				$(this).find(".ol_left p").attr("class", "bgcolor1 fcolor");
+				$(this).find(".ol_left span").attr("class", "").css("background", "#fff");
+				$(this).find(".ol_title").attr("class", "ol_title");
+				$(this).find(".ol_detial").css("color", "#7d7d7d");
+			});
+        },
+        filters: {
+			logo_src: function (obj) {
+				if(obj == null || obj=="" || obj == undefined || obj == "0"){
+					return "../image/moren.PNG";
+				}
+				return obj+'!y';
+            },
+            is_wxempty:function(obj){
+                if(obj == null || obj=="" || obj == undefined || obj == "0"){
+                    return "暂无数据";
+                }else{
+                    return obj;
+                }
+            },
+            is_jigou:function(obj){
+                if(is_wxempty(obj.create_name)){
+                    return obj.com_id_name;
+                }else{
+                    return obj.create_name;
+                }
+            }
+        }
+    })
+    //判读双选会是否过期
+    if(hyid){
+    http('POST', '/jobfair/detail', {"id":hyid}, function (e) {
+        console.log(timestampToTime(e.data.end_time,0))//双选会过期日期
+        var now=Date.parse(new Date())/1000;
+        if(e.data.end_time>now){
+           vm.isEnd=false
+       }else{
+           vm.isEnd=true
+        }
+     });
+    }
+	//获取职位详情
+    http('POST', '/job/detail', {"id":id}, function (e) {
+        console.log(e,111101);
+
+		e.data.jobInfo.addtime = timestampToTime(e.data.jobInfo.addtime,1);
+		e.data.jobInfo.expire_time = timestampToTime(e.data.jobInfo.expire_time,1);
+		e.data.jobInfo['xinzi'] = xinziExec(e.data.jobInfo.salary_floor,e.data.jobInfo.salay_ceil);
+        wj_id = e.data.wj_id;
+        vm.deat_e = e.data;        
+        vm.jobInfo = e.data.jobInfo;
+        vm.comInfo = e.data.comInfo;
+        vm.isDeliver = e.data.isDeliver;
+        vm.tousu = e.data.jobInfo.com_id;
+        if(is_wxempty(e.data.schoolwarn)){
+            $(".schoolwar").hide();
+        }else{
+            $(".schoolwar").show();
+        }
+        // console.log(e.data.otherJobList)
+        if(is_wxempty(e.data.otherJobList)){
+            $(".qtzw_").hide();
+        }else{
+            for (var i = 0; i < e.data.otherJobList.length; i++) {
+                e.data.otherJobList[i]['addtime1'] = timestampToTime(e.data.otherJobList[i].addtime,2);
+                e.data.otherJobList[i]['addtime2'] = timestampToTime(e.data.otherJobList[i].addtime,3);
+                e.data.otherJobList[i]['xinzi'] = xinziExec(e.data.otherJobList[i].salary_floor,e.data.otherJobList[i].salay_ceil);
+                vm.otherJobList.push(e.data.otherJobList[i]);
+            }
+            $(".qtzw_").show();
+        }
+
+
+        if(e.data.jobInfo.laiyuan == 1){
+            if(e.data.isdeliver == 1){
+                if(e.data.isDeliver == true){
+                    $(".toudi").hide();
+                    $("#yitd").show();
+                }else{
+                    $(".toudi").show();
+                    $("#yitd").hide();
+                }
+            }else{
+                $(".toudi").hide();
+                $("#yitd").hide();
+            }
+        }else if(e.data.jobInfo.laiyuan == 2){
+            if(e.data.isDeliver == true){
+                $(".toudi").hide();
+                $("#yitd").show();
+            }else{
+                $(".toudi").show();
+                $("#yitd").hide();
+            }
+        }
+
+
+		if(is_wxempty(e.data.jobInfo.com_id)){
+            $(".nr_bottom>ul>li").eq(1).hide();
+            $("#tousu").hide();
+		}else{
+            $("#tousu").show();
+			//获取用人单位详情
+			http('POST', '/com/detail', {"id":e.data.jobInfo.com_id}, function (e) {
+                // console.log(e);
+                vm.comdetail = e.data;
+			});
+		}
+    });
+    //获取列表
+    http('POST', '/job/getlist', {"jobtype":jobtype,"school_id":school_id,"isunion":"2","page":"1","size":"5"}, function (e) {
+        // console.log(e)
+        for (var i = 0; i < e.data.list.length; i++) {
+            e.data.list[i]['addtime3'] = timestampToTime(e.data.list[i].addtime,1);
+            e.data.list[i]['xinzi'] = xinziExec(e.data.list[i].salary_floor,e.data.list[i].salay_ceil);
+            vm.redian.push(e.data.list[i]);
+        }
+    })
+    //猜你喜欢列表
+    http('POST', '/job/mylikejob', {"id":id,"school_id":school_id}, function (e) {
+        // console.log(e)
+        for (var i = 0; i < e.data.length; i++) {
+            e.data[i]['addtime3'] = timestampToTime(e.data[i].addtime,1);
+            e.data[i]['xinzi'] = xinziExec(e.data[i].salary_floor,e.data[i].salay_ceil);
+            vm.like.push(e.data[i]);
+        }
+    })
+
+	//投诉弹窗
+	$("#tousu").click(function () {
+		if(!is_wxempty(userid)){
+			$("#tousu").attr("data-target","#tousuModal");
+		}else{
+            $('.login_student a').trigger('click');
+            // $("#tousu").attr("data-target","#stuModal");
+            // $.idcode.setCode({
+            //     e	 		: 'idcode',
+            //     codeType 	: { name : 'follow', len: 4},//len是修改验证码长度的
+            //     codeTip		: '换个验证码?',
+            //     inputID		: 'Txtidcode'//验证元素的ID
+            // });
+            
+		}
+    });
+	//提交投诉
+	$("#dotousu").click(function () {
+        var res=[];
+        for(var i=0;i<$(".opt").length;i++){
+            if($(".opt").eq(i).find("input").prop("checked")==true){
+                res.push($(".opt").eq(i).find("input").val());
+            }
+        }
+        var res_=res.toString(",");
+		if(res_ == '' || res_ == null || res_ == 'undefined'){
+			LEE.alert('请选择投诉原因！');
+			return false;
+        }
+        var reson = $("#reasons").val();
+		http('POST', '/com/complaint', {"login_user_id":userid,"id":vm.tousu,"reason":reson,"cateid":res_}, function(e){
+			if(e.code=="1"){
+				LEE.alert(e.msg);
+			}
+			if(e.code=="0"){
+                LEE.alert("投诉成功！");
+				$(".bsok").click(function(){
+                    window.location.reload();
+                })
+			}
+		});
+	})
+	//投递简历弹窗
+	$("#toudi").click(function () {
+		if(!is_wxempty(userid)){
+            // 获取简历完成度
+            http('POST', '/Userresume/detail', {"id":userid}, function (e) {
+                // console.log(e)
+                vm.kq_gk=e.data.resumeinfo.is_show;
+                if(e.data.resumeinfo.completion_degree>="60"){
+                    $(".deliver_tan").fadeIn();
+		            $(".deliver_inner").fadeIn();
+                }else{
+                    LEE.confirm("请先完善简历再投递！");
+                    $(".bsok").click(function(){
+                        window.location.href="../Geren/jianli.html";
+                    })
+                }
+            });
+		}else{
+            $("#toudiModal").modal("hide");
+            $("#toudi").attr("data-target","#stuModal");
+            $.idcode.setCode({
+                e	 		: 'idcode',
+                codeType 	: { name : 'follow', len: 4},//len是修改验证码长度的
+                codeTip		: '换个验证码?',
+                inputID		: 'Txtidcode'//验证元素的ID
+            });
+            // function run(){
+            //     sessionStorage.setItem("uisurl",window.location.href);
+            //     document.getElementsByClassName("dltz")[0].click();
+            // }
+            // run();
+		}
+    });
+    $("#outtoudi").click(function(){
+        $("#toudiModal").modal("hide");
+        $("#outtoudi").attr("data-target","#outsideModal");
+    })
+	//关闭投递
+	$(".close_01").click(function () {
+		$(".deliver_tan").fadeOut();
+		$(".deliver_inner").fadeOut();
+	})
+	//简历投递
+	$('#submits').click(function () {
+		var titlenew = encodeURIComponent( $("input[name='emailtitle']").val());
+		com_id = vm.jobInfo.com_id;
+		http('POST', '/deliver/zhiwei', {"id":id,"com_id":com_id}, function(e){
+			if(e.code=="1"){
+				LEE.alert(e.msg);
+			}
+			if(e.code=="0"){
+				if(vm.kq_gk=="1"){
+                    LEE.alert("简历投递成功");
+                }else if(vm.kq_gk == "0"){
+                    LEE.alert("简历投递成功<p class='kq_gk'><input type='checkbox' id='is_gk' checked style='width:18px;height:18px;vertical-align: middle;margin-right:10px;margin-top:0;'><label for='is_gk' style='font-weight: 100;line-height: 30px;font-size: 16px;margin-bottom:0px;'>开启简历对外显示</label> </p>");
+                }
+                $(".bsok").click(function(){
+                    if(vm.kq_gk == '0'){
+                        var is_show="";
+                        if($("#is_gk").prop("checked")==true){
+                            is_show="1";
+                        }else{
+                            is_show="0";
+                        }
+                        httpPost('/Userresume/modify', {"id":userid,"is_show":is_show}, gongkai);
+                        function gongkai(e){
+                            if(e.code == "1"){
+                                LEE.alert(e.msg);
+                            }else{
+                                window.location.reload();
+                            }
+                        }
+                    }else{
+                        window.location.reload();
+                    }
+                })
+			}
+		});
+	});
+
+	$(function () {
+		//工商查询
+		$(".gongshang").hover(function () {
+			$(this).attr("class", "bgcolor2 gongshang");
+		}, function () {
+			$(this).attr("class", "bgcolor gongshang");
+		})
+		//投递
+		$(".n_right button").hover(function () {
+			$(this).attr("class", "bgcolor2 toudi");
+		}, function () {
+			$(this).attr("class", "bgcolor toudi");
+		})
+		//分享
+		$(".fen>p").hover(function () {
+			$(this).attr("class", "fcolor");
+		}, function () {
+			$(this).attr("class", "");
+		})
+
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+            width : 130,
+            height : 130
+        });
+
+        $('.share').click(function(){
+            var url = window.location.href;
+            $("#murl").val(url);
+            makeCode();
+            $(".count_pop").fadeIn();
+        })
+
+        function makeCode () {
+            var murl = $("#murl").val();
+            qrcode.makeCode(murl);
+        }
+
+		// $('.share').shareConfig({
+		// 	Shade: true, //是否显示遮罩层
+		// 	Event: 'click', //触发事件
+		// 	Content: 'Share', //内容DIV ID
+		// 	Title: '分享' //显示标题
+		// });
+
+		$(".n_right>ul>li").hover(function () {
+			$(this).find("span").attr("class", "bgcolor");
+			$(this).find("a").attr("class", "fcolor");
+		}, function () {
+			$(this).find("span").attr("class", "bgcolor3");
+			$(this).find("a").attr("class", "fcolor3");
+		})
+		for (var i = 0; i < $(".nr_bottom>ul>li").length; i++) {
+			$(".nr_bottom>ul>li").eq(0).click(function () {
+				$(this).attr("class", "bgcolor fcolor1 border").siblings().attr("class", "bgcolor1 fcolor border");
+				$(".nr_bottom>div>div").eq(0).fadeIn().siblings().css("display", "none");
+			})
+			$(".nr_bottom>ul>li").eq(1).click(function () {
+				$(this).attr("class", "bgcolor fcolor1 border").siblings().attr("class", "bgcolor1 fcolor border");
+				$(".nr_bottom>div>div").eq(1).fadeIn().siblings().css("display", "none");
+			})
+		}
+		//二维码滑动效果
+		$(".fixed_bottom>div").hover(function () {
+			$(".fixed_bottom>div>.big_01").css("display", "block").stop().animate({ "left": "-185px" }, 600);
+		}, function () {
+			$(".fixed_bottom>div>.big_01").css("display", "none").stop().animate({ "left": "-300px" }, 0);;
+		})
+	})
+</script>

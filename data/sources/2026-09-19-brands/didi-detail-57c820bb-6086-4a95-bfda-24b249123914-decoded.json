@@ -1,0 +1,140 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [
+      1
+    ],
+    "autoArchiveTalentPoolId": 425506,
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-09-07T17:52:11",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": ""
+      }
+    },
+    "department": {
+      "id": 203019,
+      "name": "国际化事业部"
+    },
+    "departmentId": 203019,
+    "departments": [
+      {
+        "id": 203019,
+        "name": "国际化事业部"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "本科",
+    "hireMode": 2,
+    "id": "57c820bb-6086-4a95-bfda-24b249123914",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "<p>岗位职责：</p><p>1、参与滴滴国际化本地生活 AI 产品的需求调研、方案设计、功能迭代及上线落地，跟进产品反馈并持续推动产品优化；</p><p>2、开展 AI 产品、Agent 等方向的行业调研与行业分析，持续关注大模型及 AI 产品发展趋势，并结合业务场景形成产品洞察；</p><p>3、参与用户行为及业务数据分析，通过 SQL 等工具进行数据提取、问题定位和效果验证，为产品决策和迭代提供数据支持；</p><p>4、深度参与 AI 产品质量与基础能力建设，围绕知识库、Prompt、数据集、评测与巡检等核心能力，开展效果分析、问题归因及持续优化，并推动相关能力的平台化建设。</p><p><br></p><p>任职要求：</p><p>1、2027 届应届毕业生，本科/硕士及以上学历，计算机、人工智能、数据科学等相关专业优先；</p><p>2、对 AI 产品有浓厚兴趣，了解大模型、Agent、RAG、知识库、Prompt Engineering 等基础概念；</p><p>3、认真细致，具备较强的问题发现、结构化分析及数据分析能力，熟悉 SQL，能够完成基础数据提取、效果分析和问题定位；</p><p>4、学习能力、沟通协作能力和执行力强，能够快速理解业务逻辑与技术原理；</p><p><br></p><p>加分项：</p><p>1、有本地生活、外卖、电商等业务场景下的 AI 产品实践经验；</p><p>2、有 AI Agent、智能客服、智能运营等 AI 产品设计或落地经验；</p><p>有知识库 / RAG、Prompt Engineering、评测平台、巡检平台、标注平台、数据集管理等 AI 基建建设经验，或有大模型应用项目、AI 比赛、科研及相关实习经历。</p>",
+    "jobIntentions": [
+      1
+    ],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          203019
+        ],
+        "locationIds": [
+          92621
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 110000,
+        "cityName": "北京市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 92621,
+        "provinceName": "北京市"
+      }
+    ],
+    "multiLocale": "{\"mainLocale\":\"zh-CN\",\"secondLocale\":\"\"}",
+    "number": 1,
+    "openedAt": "2026-09-07T00:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 0,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-09-07T17:52:19",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-AI产品助理（国际化外卖本地生活方向）",
+    "updatedAt": "2026-09-08T17:55:51",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 20037,
+      "name": "产品类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

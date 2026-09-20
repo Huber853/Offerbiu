@@ -1,0 +1,136 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [],
+    "autoArchiveTalentPoolId": 425506,
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-05T14:49:34",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": "27秋-测试"
+      }
+    },
+    "department": {
+      "id": 199257,
+      "name": "网约车平台公司"
+    },
+    "departmentId": 199257,
+    "departments": [
+      {
+        "id": 199257,
+        "name": "网约车平台公司"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "本科",
+    "hireMode": 2,
+    "id": "695633e1-355f-4d70-b7a4-fb8a7d2819f8",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "<p>岗位职责：</p><p>1.负责滴滴网约车的质量保障和测试效能提升，参与从产品需求到上线，全流程保障滴滴出行app/web/小程序/后端系统等的质量；</p><p>2.收集、分析、跟踪测试交付过程中的质量问题、并参与提高测试发现问题的精准度和深度；</p><p>3.对测试进行深入研究，积极采用新的技术和方法，提高团队的测试效率；</p><p>4.参与团队AI 测试赋能体系建设，探索大模型、AI 工具在全流程测试场景落地，包含智能用例生成、自动化脚本辅助编写、测试数据批量生成、缺陷智能分析等方向；</p><p>5.参与AI类产品评测体系建设，包括但不限于评测平台开发，评测方案设计及落地等事项；</p><p>6.跟进业界 AI 测试前沿方案，调研开源评测框架、模型评估指标，输出技术调研方案。</p><p><br></p><p>任职要求：</p><p>1.2027届毕业生，本科及以上学历；</p><p>2.计算机相关专业，热爱软件测试工作；</p><p>3.积极主动，有较好的逻辑思维能力，较强的学习能力，对AI输出内容有较好的思考和判断力；</p><p>4.沟通能力好，能够推动开发解决问题，推动项目的完成。</p>",
+    "jobIntentions": [],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          199257
+        ],
+        "locationIds": [
+          92621
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 110000,
+        "cityName": "北京市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 92621,
+        "provinceName": "北京市"
+      }
+    ],
+    "multiLocale": "{\"mainLocale\":\"zh-CN\",\"secondLocale\":\"\"}",
+    "number": 4,
+    "openedAt": "2026-08-13T08:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 0,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-09-01T12:28:22",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-测试开发工程师（平台技术）",
+    "updatedAt": "2026-09-01T12:28:22",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 136660,
+      "name": "工程-质量类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

@@ -1,0 +1,134 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [],
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-14T21:16:47",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": "27秋-测试"
+      }
+    },
+    "department": {
+      "id": 3224890,
+      "name": "ABC"
+    },
+    "departmentId": 3224890,
+    "departments": [
+      {
+        "id": 3224890,
+        "name": "ABC"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "本科",
+    "hireMode": 2,
+    "id": "d07f19fb-d24d-4b59-bb1a-57ec3368db65",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "岗位职责：\n1、参与出行业务的质量保障工作，深入理解出行场景下的业务链路，从用户视角把控质量；\n2、参与需求评审/技术评审，能对需求和技术方案提出合理质疑与改进建议；\n3、根据需求和技术文档制定测试计划和方案，不满足于\"跑通用例\"，注重沉淀可复用的测试基建能力，保障需求按时交付；\n4、根据业务做差异化测试设计，灵活运用AI工具、自动化、流量回放、日志监控等手段，保障业务质量，提升测试效率；\n5、参与AI基建测试能力建设，方向包括但不限于：用例生成/自动化生成、缺陷分析、测试自愈、Agent评测、大模型产品效果评估；\n6、与团队成员、项目组成员密切沟通，及时反馈项目进度与风险。\n\n任职要求：\n1、2027届毕业生，本科及以上学历，计算机相关专业优先；\n2、很强的学习能力、分析能力和解决问题的能力，有上进心、抗压性强——AI工具迭代极快，需要持续跟进并将新能力融入工作流；\n3、良好的沟通和协作能力，责任心强，具备质量Owner意识；\n4、了解测试理论与方法（白盒/黑盒、等价类、边界值、场景法等），对互联网质量保障领域有强烈兴趣；\n5、对AI有实质认知和实践：日常使用AI工具辅助学习或开发，了解LLM基本原理，有AI相关项目经验（RAG应用/Agent开发/Prompt工程/大模型评测等 任一方向均可）；\n6、具备工程化思维：不满足于手工测试，追求用工具解决质量问题，有实际项目经验（开源/实习均可）；\n7、有AI Coding实践经验：使用AI工具独立完成过项目开发，搭建过Agent Workflow或Harness，对AI驱动的开发及质量保障有实际理解和体会。",
+    "jobIntentions": [],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          3224890
+        ],
+        "locationIds": [
+          92621
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 110000,
+        "cityName": "北京市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 92621,
+        "provinceName": "北京市"
+      }
+    ],
+    "number": 1,
+    "openedAt": "2026-08-14T08:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 0,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-08-14T21:47:03",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-测试开发工程师",
+    "updatedAt": "2026-09-04T13:17:54",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 136660,
+      "name": "工程-质量类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

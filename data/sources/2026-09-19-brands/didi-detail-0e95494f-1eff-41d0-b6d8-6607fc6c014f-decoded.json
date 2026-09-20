@@ -1,0 +1,135 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [],
+    "autoArchiveTalentPoolId": 425506,
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-05T14:50:11",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": "27秋-测试"
+      }
+    },
+    "department": {
+      "id": 200146,
+      "name": "代驾事业部"
+    },
+    "departmentId": 200146,
+    "departments": [
+      {
+        "id": 200146,
+        "name": "代驾事业部"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "本科",
+    "hireMode": 2,
+    "id": "0e95494f-1eff-41d0-b6d8-6607fc6c014f",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "岗位职责：\n1、负责滴滴代驾业务服务端/客户端的质量保障工作；\n2、参与需求评审/技术评审，能对需求和技术方案提问并给出个人建议，制定测试方案，保障需求交付；\n3、通过制定测试相关流程、策略、方法和工具等，努力提升测试的质量和效率；\n4、工作中沉淀通用测试资产，包括测试方案、工具、自动化用例等。\n\n任职要求：\n1、2027届毕业生，本科及以上学历，计算机相关专业优先；\n2、熟悉测试理论和流程，有良好的测试思路及case设计能力；\n3、熟悉Java/C++/Python等编程语言中至少一种，有编码能力；\n4、有很强的发现问题、分析问题、解决问题的能力，很强的学习能力；\n5、有某一测试领域（如：性能、自动化）测试经验者优先。\n加分项：有互联网企业实习经验优先。",
+    "jobIntentions": [],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          200146
+        ],
+        "locationIds": [
+          314487
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 330100,
+        "cityName": "杭州市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 314487,
+        "provinceName": "浙江"
+      }
+    ],
+    "number": 1,
+    "openedAt": "2026-08-13T08:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 0,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-08-13T10:19:54",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-测试开发工程师-代驾事业部",
+    "updatedAt": "2026-09-03T17:16:55",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 136660,
+      "name": "工程-质量类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

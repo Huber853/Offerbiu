@@ -1,0 +1,135 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [],
+    "autoArchiveTalentPoolId": 423678,
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-20T18:59:41",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": "27秋-后端"
+      }
+    },
+    "department": {
+      "id": 199257,
+      "name": "网约车平台公司"
+    },
+    "departmentId": 199257,
+    "departments": [
+      {
+        "id": 199257,
+        "name": "网约车平台公司"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "本科",
+    "hireMode": 2,
+    "id": "17c1445c-a217-47b6-89b3-6bb364682876",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "<p>岗位职责：</p><p>方向一 · Agent 运行环境与平台</p><p> 1、参与 Agent 运行环境的设计与研发，为 Agent 执行代码、调用工具提供安全、稳定、高效的沙箱环境；</p><p> 2、参与 Agent 平台的研发，包括任务规划与编排、会话与记忆管理、上下文工程等能力建设，支撑 Agent 稳定完成复杂任务；</p><p> 3、参与大模型接入与评测体系的研发，统一管理多模型调用的效果、成本与稳定性，让 Agent 应用可度量、可优化；</p><p> 4、参与企业知识库与工具生态的研发，通过检索增强（RAG）、工具调用（MCP）等方式，让 Agent能安全地使用企业数据与内部系统。</p><p>方向二 · 策略平台与在线引擎</p><p> 1、参与一站式策略平台的设计与研发，深度集成 A/B实验、模型训练与推理、特征工程等能力，支撑定价、补贴、派单等核心业务策略从开发、验证到上线运行的全流程快速迭代；</p><p> 2、参与在线策略引擎的研发，支撑核心业务策略的配置、发布与稳定运行，保障大流量下策略执行的高性能与高可用；</p><p> 3、参与模型训练推理服务与实时特征链路的研发，处理在线亿级实时事件，参与乘客、司机、订单多维度业务特征的存取与计算，为策略和算法迭代提供一体化的算力与数据支撑；</p><p> 4、参与策略仿真与风险防控体系的研发，帮助策略在上线前预判效果、上线后及时发现和处理异常。</p><p>任职要求：</p><p>1、2027 届毕业生，本科及以上学历，计算机等相关专业优先；</p><p>2、编程基础扎实，熟练掌握至少一门开发语言（Golang / Python / Java / C++ 等），熟悉常用数据结构与算法，了解 MySQL等数据库、操作系统、计算机网络等基础知识；</p><p>3、沟通协作能力强，求知欲与自驱力强，积极主动、不怕困难。</p><p>方向一 · Agent 平台</p><p>  - 对大模型与 Agent 技术有强烈兴趣，理解 LLM 应用基本概念（上下文工程、Function Calling、RAG 等），有调用大模型 API或使用 AI 编程工具的经验；</p><p>  - 加分：有 Agent / RAG / 大模型应用方向的项目或互联网实习经历；熟悉 Docker、K8s 等云原生技术；有开源贡献或技术博客。</p><p>方向二 · 策略平台</p><p>  - 了解分布式系统、负载均衡、容灾与高可用，对大流量在线系统的稳定性与性能优化有兴趣；</p><p>  - 具备算法工程基础素质：了解机器学习；</p><p>  - 基本原理与模型训练 / 推理流程，有概率统计基础，理解数据驱动的策略迭代方式；</p><p>  - 加分：有机器学习平台 / 策略系统 / 大数据（Flink、Spark）方向的项目或互联网实习经历，熟悉 PyTorch等训练推理框架或有模型部署经验；有 ACM/ICPC 等算法竞赛获奖经历。</p>",
+    "jobIntentions": [],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          199257
+        ],
+        "locationIds": [
+          92621
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 110000,
+        "cityName": "北京市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 92621,
+        "provinceName": "北京市"
+      }
+    ],
+    "number": 2,
+    "openedAt": "2026-08-20T00:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 0,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-09-01T12:28:22",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-后端研发工程师（平台技术）",
+    "updatedAt": "2026-09-01T12:28:22",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 136659,
+      "name": "工程-后端类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

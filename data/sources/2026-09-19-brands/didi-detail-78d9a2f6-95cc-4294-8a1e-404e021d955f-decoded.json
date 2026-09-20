@@ -1,0 +1,150 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [
+      1
+    ],
+    "autoArchiveTalentPoolId": 425506,
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "closedAt": "2026-08-07T18:59:33",
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-05T14:50:26",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": ""
+      }
+    },
+    "department": {
+      "id": 203019,
+      "name": "国际化事业部"
+    },
+    "departmentId": 203019,
+    "departments": [
+      {
+        "id": 203019,
+        "name": "国际化事业部"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "本科",
+    "hireMode": 2,
+    "id": "78d9a2f6-95cc-4294-8a1e-404e021d955f",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "<p>岗位职责：</p><p>1、协助日常资金核对及差异处理协助，完成国际支付场景下（渠道/商户）的日常对账工作，对产生的对账差异（如长款、短款、手续费差异）进行基础的排查、数据标记和初步归类，并汇总形成简单的差错报告；</p><p>2、配合新支付渠道或新商户的上线进度，根据测试用例执行UAT（用户验收测试），重点验证对账文件格式的解析是否正常、交易状态流转是否正确；</p><p>3、流程文档与SOP梳理, 协助梳理现有对账和异常处理的流程，记录常见问题（FAQ）的处理步骤。针对重复出现的基础问题，尝试撰写或优化简易的操作指引（SOP草稿），使其更加清晰易懂。</p><p><br></p><p>任职要求：</p><p>1、2027届毕业生/在校生，本科及以上学历，金融财务相关专业优先，认真、踏实、细致，有较强的学习能力，具有良好合作、沟通能力；</p><p>2、做事有逻辑、有较强的执行力、善于思考总结；</p><p>3、能够熟练应用Excel，能够阅读英文版的银行对账单；</p><p>4、英语口语能力（加分项）： 能够参与简短的英文电话会议或语音沟通，在会议中记录关键信息（如对账截止时间、异常处理节点等），口语流利者优先。</p><p>5、具备 AI 工具应用意识，乐于用新工具提升效率；有 AI 工具使用习惯或提效案例者优先。</p>",
+    "jobIntentions": [
+      1
+    ],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          203019
+        ],
+        "locationIds": [
+          92621,
+          94656
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 110000,
+        "cityName": "北京市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 92621,
+        "provinceName": "北京市"
+      },
+      {
+        "cityId": 310000,
+        "cityName": "上海市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 94656,
+        "provinceName": "上海市"
+      }
+    ],
+    "multiLocale": "{\"mainLocale\":\"zh-CN\",\"secondLocale\":\"\"}",
+    "number": 2,
+    "openedAt": "2026-08-27T00:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 0,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-08-27T14:22:38",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-国际客资运营专员（国际化金融）",
+    "updatedAt": "2026-08-28T16:18:17",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 203524,
+      "name": "金融业务"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

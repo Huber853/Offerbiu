@@ -1,0 +1,147 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [
+      1
+    ],
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-14T21:31:45",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": "27秋-SQL"
+      }
+    },
+    "department": {
+      "id": 2036637,
+      "name": "两轮车事业部"
+    },
+    "departmentId": 2036637,
+    "departments": [
+      {
+        "id": 2036637,
+        "name": "两轮车事业部"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "本科",
+    "hireMode": 2,
+    "id": "878e9da3-1d9f-469d-b7d5-3dec329a14ab",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "岗位职责：\n1、经营分析：基于竞争&amp;毛利等多维度多视角挖掘业务问题，输出前瞻性或差异化的城市最优策略方案，通过资源调配与运营提效确保收益与市场份额领先；\n2、策略深耕：基于市场大盘与业务调研，提炼区域BC业务痛点及行业先进方法论，反哺总部并优化搭建标准化策略模型与工具，并通过系统化培训输出赋能一线团队，因地因时制宜解决城市问题&amp;落地总部策略；\n3、项目协同：横向协同总部、区域团队及外部资源，推进跨部门项目落地并优化端到端流程，拆解总部目标至执行层，通过数据监控与策略干预确保目标达成。\n\n任职要求：\n1、2027届在校生，本科及以上学历，经济学、管理学、社会学等专业优先；\n2、规划落地：擅长结构化思考与快速学习，具备复杂事情的问题拆解能力与路径规划能力，可通过共赢协作实现资源调配，拿到项目落地与结果；\n3、数据驱动：熟练掌握excel/ppt/SQL等工具，掌握可视化的数据工具，可独立进行数据分析和结论汇报产出工作；\n4、软性素质：目标导向，良好的自我驱动、沟通表达能力和团队合作协作能力。",
+    "jobIntentions": [
+      1
+    ],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          2036637
+        ],
+        "locationIds": [
+          91394,
+          314487
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 510100,
+        "cityName": "成都市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 91394,
+        "provinceName": "四川"
+      },
+      {
+        "cityId": 330100,
+        "cityName": "杭州市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 314487,
+        "provinceName": "浙江"
+      }
+    ],
+    "number": 1,
+    "openedAt": "2026-08-14T08:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 0,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-08-14T21:43:47",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-策略运营顾问-西南辖区",
+    "updatedAt": "2026-09-04T15:11:34",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 20039,
+      "name": "运营类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

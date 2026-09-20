@@ -1,0 +1,136 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [],
+    "attributeId": 2544,
+    "autoArchiveTalentPoolId": 423678,
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-25T15:11:37",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": "27秋-后端"
+      }
+    },
+    "department": {
+      "id": 94463,
+      "name": "CTO线"
+    },
+    "departmentId": 94463,
+    "departments": [
+      {
+        "id": 94463,
+        "name": "CTO线"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "本科",
+    "hireMode": 2,
+    "id": "b0407471-9dfa-4f66-939c-5025587e71e2",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "<p>岗位职责：</p><p>1、负责开发和维护业界领先的PB级别批计算引擎，支持滴滴大规模数据湖仓建设、业务数据挖掘、特征工程等复杂场景需求；</p><p>2、负责对接平台方和业务方相关计算任务需求，对开源Spark引擎进行二次开发，并在SQL优化器、执行引擎（Shuffle、内存管理、调度）、存储对接等方面持续挖掘性能瓶颈、进行专项优化；</p><p>3、参与分析和解决用户在作业运行效率、资源使用、稳定性等场景下的痛点，提供SQL调优、资源配置、参数诊断等综合解决方案；</p><p>4、开发计算引擎侧自动化运维、诊断与资源管控工具（如作业画像、资源治理、动态资源分配），配合监控告警系统，保障Spark集群日常稳定运行与资源高效利用。</p><p><br></p><p>任职要求：</p><p>1、2027届毕业生，本科以上学历，计算机及其相关专业优先；</p><p>2、至少掌握Java/Scala/C++编程语言的其中一种；</p><p>3、计算机基础扎实，熟悉常见的算法和数据结构，对操作系统、分布式系统、数据库系统（如SQL执行原理、存储引擎、查询优化）等知识有一定了解；</p><p>4、熟悉开源大数据生态，例如Spark、Flink、Hadoop、Hive等，了解Spark内核（DAG调度、Shuffle机制、内存管理、Catalyst优化器）者优先；</p><p>5、有以下经历（一种或多种）优先考虑：曾在ACM/ICPC等竞赛获奖；有大数据计算引擎、分布式系统内核开发经验；有参加实习、暑研等实践经历；</p><p>6、具备快速学习能力、沟通协调能力及团队精神，有较强的责任心和学习积极性。</p>",
+    "jobIntentions": [],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          94463
+        ],
+        "locationIds": [
+          92621
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 110000,
+        "cityName": "北京市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 92621,
+        "provinceName": "北京市"
+      }
+    ],
+    "number": 1,
+    "openedAt": "2026-08-25T00:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 1,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-08-28T18:11:52",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-引擎研发工程师（Spark）",
+    "updatedAt": "2026-09-03T17:16:55",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 136659,
+      "name": "工程-后端类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

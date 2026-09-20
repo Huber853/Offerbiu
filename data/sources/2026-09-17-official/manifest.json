@@ -1,0 +1,1730 @@
+[
+  {
+    "url": "https://szkingdom.zhiye.com/campus/jobs",
+    "file": "data/sources/2026-09-17-official/kingdom.html",
+    "sha256": "e68d5bf1b5eb854b2c8779c582c0e0e59d4c0a8eefad75651c267a043e7f7e33",
+    "collected_at": "2026-09-17T18:00:39+08:00"
+  },
+  {
+    "url": "https://szkingdom.zhiye.com/api/Jobad/GetJobAdPageList",
+    "file": "data/sources/2026-09-17-official/kingdom-list-0.json",
+    "sha256": "bc8163563cd9ddd47276a2b7bc68fcbe1bca82f0d340be461b85e8b6a70b7246",
+    "collected_at": "2026-09-17T18:00:40+08:00"
+  },
+  {
+    "url": "https://szkingdom.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=da7cb700-c052-476e-bbde-6e36b896c04c&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-official/kingdom-detail-da7cb700-c052-476e-bbde-6e36b896c04c.json",
+    "sha256": "c9f8c318741935aad4da3e31e2951e289e4116b2d762629447ca75cd793875b3",
+    "collected_at": "2026-09-17T18:00:40+08:00"
+  },
+  {
+    "url": "https://szkingdom.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=3b52f903-8934-44c2-a976-d6bf71cfda1c&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-official/kingdom-detail-3b52f903-8934-44c2-a976-d6bf71cfda1c.json",
+    "sha256": "039d67d4113d20f94a3b0a26974924a68bdaedb4fecfaf5474a2f1128b2259a5",
+    "collected_at": "2026-09-17T18:00:40+08:00"
+  },
+  {
+    "url": "https://szkingdom.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=ed0ea4c2-dc9c-4bbe-adc6-08df1122a574&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-official/kingdom-detail-ed0ea4c2-dc9c-4bbe-adc6-08df1122a574.json",
+    "sha256": "5d00447d02bc0e329561cd3d2e2dca9435a99267be55221b31036d1564cbe1ab",
+    "collected_at": "2026-09-17T18:00:40+08:00"
+  },
+  {
+    "url": "https://szkingdom.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=5e77ec20-e535-4230-af28-7c3d2c6345d0&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-official/kingdom-detail-5e77ec20-e535-4230-af28-7c3d2c6345d0.json",
+    "sha256": "e100dab86b0f3a7d6c239daba31eaec0b4d10776a58a0c779b5516179facbbcc",
+    "collected_at": "2026-09-17T18:00:41+08:00"
+  },
+  {
+    "url": "https://szkingdom.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=f81a38a8-348f-4711-b074-cd3ccf67f982&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-official/kingdom-detail-f81a38a8-348f-4711-b074-cd3ccf67f982.json",
+    "sha256": "d5925b8b77119577739b96c6ee9b45d0df819a46b77a93b20a1e6dc6ede16313",
+    "collected_at": "2026-09-17T18:00:41+08:00"
+  },
+  {
+    "url": "https://szkingdom.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=911afb6e-d9f3-4405-9c29-445837bc1fe6&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-official/kingdom-detail-911afb6e-d9f3-4405-9c29-445837bc1fe6.json",
+    "sha256": "278127885e0a293b8be50799ad1743a647f69625af5850202ce1a23dbee9057a",
+    "collected_at": "2026-09-17T18:00:43+08:00"
+  },
+  {
+    "url": "https://szkingdom.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=3b9c708b-5ccc-473b-9895-d52eed3b193f&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-official/kingdom-detail-3b9c708b-5ccc-473b-9895-d52eed3b193f.json",
+    "sha256": "816b42d5734b284641f7dca5faa8fe015342109bed9f187f5234e8e437b923fb",
+    "collected_at": "2026-09-17T18:00:43+08:00"
+  },
+  {
+    "url": "https://szkingdom.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=ec865552-a0e6-44e4-b0f0-8fb0105853c2&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-official/kingdom-detail-ec865552-a0e6-44e4-b0f0-8fb0105853c2.json",
+    "sha256": "c4249a09b9cfb031f892c33bc4437da8334c513cb4de34d44520f0890d3bd3e4",
+    "collected_at": "2026-09-17T18:00:43+08:00"
+  },
+  {
+    "url": "https://szkingdom.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=96e94f11-519c-4270-aa4c-f352758c1ae8&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-official/kingdom-detail-96e94f11-519c-4270-aa4c-f352758c1ae8.json",
+    "sha256": "94f3373cb1634bbe8d1a95f7064b491e9a46629f48eab90c6fc5ae4364c50ad0",
+    "collected_at": "2026-09-17T18:00:43+08:00"
+  },
+  {
+    "url": "https://szkingdom.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=4fbf3228-c52c-428f-9c31-175ad56b9c82&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-official/kingdom-detail-4fbf3228-c52c-428f-9c31-175ad56b9c82.json",
+    "sha256": "f2cedb1751b671ac36af8853f5cc473b851c0937abd0c57657ecf97930a5c51c",
+    "collected_at": "2026-09-17T18:00:43+08:00"
+  },
+  {
+    "url": "https://szkingdom.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=c87958af-3a13-4513-8434-c07f0c83640c&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-official/kingdom-detail-c87958af-3a13-4513-8434-c07f0c83640c.json",
+    "sha256": "06e49c464fd69a665773ab171d4880d6dc42f28a61b7b0a243a6a20e6c5fad1a",
+    "collected_at": "2026-09-17T18:00:44+08:00"
+  },
+  {
+    "url": "https://jczx.nwu.edu.cn/js/config.js",
+    "file": "data/sources/2026-09-17-official/nwu-config.txt",
+    "sha256": "3ab2d1e237730e0c6c2ebb4901c41f77eb9068eb998754b49c41f6ccddac5564",
+    "collected_at": "2026-09-17T18:00:44+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/getlist",
+    "file": "data/sources/2026-09-17-official/nwu-list-1.json",
+    "sha256": "135409d5d2e93c12a68df3862842fa7d485dfaab44e86dffe225a012b7a5fa69",
+    "collected_at": "2026-09-17T18:00:44+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/getlist",
+    "file": "data/sources/2026-09-17-official/nwu-list-3.json",
+    "sha256": "d2ae1858f05fa33726776d28d8518fa13e931ede3d100636806624a1dcfeea2a",
+    "collected_at": "2026-09-17T18:00:47+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/getlist",
+    "file": "data/sources/2026-09-17-official/nwu-list-2.json",
+    "sha256": "7bdc04c561021b5cfd8994741751178cf01ca399359be1837e7872b9de5aa78a",
+    "collected_at": "2026-09-17T18:00:44+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/getlist",
+    "file": "data/sources/2026-09-17-official/nwu-list-4.json",
+    "sha256": "5a309ebfb715dbcb831cac6049dc0a7b12da8d72243a3900970da614c2c0dc6f",
+    "collected_at": "2026-09-17T18:00:47+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/getlist",
+    "file": "data/sources/2026-09-17-official/nwu-list-5.json",
+    "sha256": "58f25da5da9a1d1d540aedd060a631f7fbcbeb290ee4a7f90dc0d8d7223928ea",
+    "collected_at": "2026-09-17T18:00:47+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/getlist",
+    "file": "data/sources/2026-09-17-official/nwu-list-6.json",
+    "sha256": "15890a4b574be1084c34569d019dfba33d3a65b3a3ee7c0847b30b5f21ddcbd2",
+    "collected_at": "2026-09-17T18:00:47+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/getlist",
+    "file": "data/sources/2026-09-17-official/nwu-list-8.json",
+    "sha256": "f78d9a53ee7e39976c90cabbdbd4c6ca3b31422f5fa1c084434b94843280b144",
+    "collected_at": "2026-09-17T18:00:47+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/getlist",
+    "file": "data/sources/2026-09-17-official/nwu-list-7.json",
+    "sha256": "a3347e8e56ae3e05953d22257137d426a9f95f9f9d35ef8886f770459b875fd8",
+    "collected_at": "2026-09-17T18:00:47+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/getlist",
+    "file": "data/sources/2026-09-17-official/nwu-list-10.json",
+    "sha256": "9137e246ecfde2870afa419120173f68d85615b49f5222af8ed8d0dfef546da9",
+    "collected_at": "2026-09-17T18:00:48+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/getlist",
+    "file": "data/sources/2026-09-17-official/nwu-list-11.json",
+    "sha256": "0dbfcda290b4c5775c25adb8f19ed18619b7a65f2673aa8bd0ae52d18b6cd7b4",
+    "collected_at": "2026-09-17T18:00:48+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/getlist",
+    "file": "data/sources/2026-09-17-official/nwu-list-12.json",
+    "sha256": "b8f2bb14eb8ac0667fef9978b9ee8886367443a81022866a6dbc408a8dee2008",
+    "collected_at": "2026-09-17T18:00:48+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/getlist",
+    "file": "data/sources/2026-09-17-official/nwu-list-13.json",
+    "sha256": "7ea718fb348b03f9c09ec0a4b1022fe050ce03c065e4a620a69cdec3ca822fd7",
+    "collected_at": "2026-09-17T18:00:48+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/getlist",
+    "file": "data/sources/2026-09-17-official/nwu-list-14.json",
+    "sha256": "96dbb4548a099cc96520a7ae77291ceeef866e3810032f7f2c524fed0c09dea4",
+    "collected_at": "2026-09-17T18:00:48+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/getlist",
+    "file": "data/sources/2026-09-17-official/nwu-list-15.json",
+    "sha256": "9ed1209dba04de7fa3d42da3ce48294f1e6d991b3bf8a230d44c017d82f8b762",
+    "collected_at": "2026-09-17T18:00:49+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/getlist",
+    "file": "data/sources/2026-09-17-official/nwu-list-9.json",
+    "sha256": "1733fe2d40ea19a791d3547211055300d43f6760f4f380a6ab04eacc1c276abf",
+    "collected_at": "2026-09-17T18:02:23+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-f234da26-787a-f33a-9a96-a28ebe8833f1.json",
+    "sha256": "f0eed507e9dce042439c58c034cdc2ad9aa0a165819454307bbbff078e22269e",
+    "collected_at": "2026-09-17T17:57:31+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-f0f4c183-5f11-e76a-3779-a34bc8775496.json",
+    "sha256": "55da33f8d768f65c1dda7445d74a6778ea2143ace9fd938b844d8d74d65668f7",
+    "collected_at": "2026-09-17T17:57:31+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-5e088232-cbd9-ec15-a1db-0d63dae70a17.json",
+    "sha256": "a4bdc5b947fa9c20b111010c40927069899e555b04941853a50c49854bea9776",
+    "collected_at": "2026-09-17T18:02:23+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-3817a8d8-8c08-33b5-7b17-ce069a843f5a.json",
+    "sha256": "a070a31257cf5f5eaf105d3e2baa645b11932e1b05f9a1fed7a1e363430297ee",
+    "collected_at": "2026-09-17T18:02:23+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-0c6558e7-4d97-a3b4-c3f7-8026956d1a73.json",
+    "sha256": "856619b187e000f37b76d19212a28d81b2103e13f7edf7f4bc3bc84b4ca3bfad",
+    "collected_at": "2026-09-17T18:02:23+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-58cf5f77-cc82-3a3a-5e1d-1cd89678bd59.json",
+    "sha256": "4c4e7fe296dbaffad2cc82e4a6abd8f06418b7a4013921cf319025f431bad563",
+    "collected_at": "2026-09-17T18:02:23+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-150c310e-77d5-d3da-0dd9-9bfa6c555507.json",
+    "sha256": "39dc1135d12f39f012974766621ba011bf1eb1f3d10e7b2dc34aa743751cbeb9",
+    "collected_at": "2026-09-17T18:02:23+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-3217a36a-3e2a-c339-8ae2-df0e6ddf3923.json",
+    "sha256": "23197e2263cdc55443e28793fd4b6a5cd0e6b47f1d503f44992b647d7aecd988",
+    "collected_at": "2026-09-17T18:02:24+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-2e5ab86b-06d5-9b43-ef52-c3b4c1055a40.json",
+    "sha256": "ee7ec271aaca9a3c17eb91f165cd9abd3d43670e8e15da259b75a5085bab7774",
+    "collected_at": "2026-09-17T17:57:31+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-f824ef7b-6a53-9627-c226-97925dfa5e0d.json",
+    "sha256": "2efed960435e941802d06a8722b82c1f98ad33fd05f82da579f6e45ef49aac15",
+    "collected_at": "2026-09-17T18:02:24+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-cafa43a8-e2b6-2ebc-381a-9d972e68c9bd.json",
+    "sha256": "e2cb7e5e4109537d10f637f73951e12a07af7bec6303edc45afe14d73a33cb91",
+    "collected_at": "2026-09-17T18:02:24+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-b211d79f-4321-c150-e939-a9c350525c2c.json",
+    "sha256": "81b3970f295c0467fb9244b55b0e19703e8e8ecb58582d67c90e55f928601744",
+    "collected_at": "2026-09-17T18:02:24+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-bce2c1cb-1543-1a00-4d71-972047f3872d.json",
+    "sha256": "731ce1cd9c2f6e2c9c5c7b1b9041656b8791fc3eeca91904f35f9de627490e2c",
+    "collected_at": "2026-09-17T18:02:24+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-50a55c16-03af-fdca-207e-3fd5d343f08e.json",
+    "sha256": "84e8a19cd738b88771ec91c2a845424fbcda98d5da99116a5a76cfe2a5a104a0",
+    "collected_at": "2026-09-17T18:02:24+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-1d4ce5fa-aecd-e778-5f20-a003eed2027e.json",
+    "sha256": "34c5dcdbe70717f302bcf8807575154f66b33f059c29399e7c31de7c7b4efc84",
+    "collected_at": "2026-09-17T18:02:24+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-26468594-4037-4283-4984-48d3ef6b3730.json",
+    "sha256": "49bbd950a2e3a4ce4abb60ae8019a8802efeb667fd8ae1587236e8ee16b557c8",
+    "collected_at": "2026-09-17T18:02:24+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-cec5a2a0-fdb2-516b-f821-09867ab27985.json",
+    "sha256": "7b3e54cc852940317eba7f8cbe22a772a66e40b2e8d368cfb308a68c3b66597c",
+    "collected_at": "2026-09-17T18:02:24+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-5585bea6-8a3d-4bb9-9bb6-286b91d08cfd.json",
+    "sha256": "c8571c64de630f1df54a23aa65c02ffa44b4243af49ac3d9c0c3170b85143a75",
+    "collected_at": "2026-09-17T18:02:25+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-5f3b3ef6-2266-81b5-6738-11e5dd34a23d.json",
+    "sha256": "f81448ac1585f342e00207beaaa5ac6127da64102b4804cd6857e3b77a58e032",
+    "collected_at": "2026-09-17T18:02:25+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-eeedb59a-a313-a240-7002-086601acd546.json",
+    "sha256": "d6cb4e2b67bd21a81ec73855d927dbfb85e5ef5f1766ee58380e313414ab57ba",
+    "collected_at": "2026-09-17T18:02:25+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-3da19f6b-6043-3e3a-bb03-210bb28f88d1.json",
+    "sha256": "f8b472b51fd9a864512f199096552fac6272e51860163a286a1a55193b5d0b4e",
+    "collected_at": "2026-09-17T18:02:25+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-56b6e4b0-2abd-702b-3fc5-9d80d1aff316.json",
+    "sha256": "75dac2dee49cfbebac6606f8ef6154cfd03cca216bc32ae0e8162eb7bdea0b5d",
+    "collected_at": "2026-09-17T18:02:25+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-90429e0c-8c8a-41d3-2181-4289b3707a62.json",
+    "sha256": "a0557dc610d28cdd783b7c069c102ef4312ddc1e6c6d3a83a41651e65621f627",
+    "collected_at": "2026-09-17T18:02:25+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-41e0dfea-1d98-b93f-11f6-6868445baa03.json",
+    "sha256": "d3087c3e40edc73a545235e17a76c5b7d225b7eab91a68e81d18fe38f84122f5",
+    "collected_at": "2026-09-17T18:02:26+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-1c7afb38-ddef-a1fa-e238-39e1aa1a18eb.json",
+    "sha256": "ed0eefeff2c97522c3161328cb87870e50f94a3ba2b397b41b42b84775a8b3ca",
+    "collected_at": "2026-09-17T18:02:26+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-a9547315-0c2a-2178-30f2-ebb07836363a.json",
+    "sha256": "461dfe9af6db032f6a4c537b755a64c722b6dfd1850346fa20bab10ccb58757a",
+    "collected_at": "2026-09-17T18:02:26+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-120748e4-9189-3c84-cfb1-e7b366ef9129.json",
+    "sha256": "b4841f67e3b5b28fdffa964b67b6961dd76dfddc9f1b71aee6703d15b9c507f7",
+    "collected_at": "2026-09-17T18:02:26+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-de14a63e-6de5-8c67-074c-58f7bdf24c10.json",
+    "sha256": "1aa3a0578efcc1035aa8133075c64ec846b865f06993f7b7de9480f24c143a4e",
+    "collected_at": "2026-09-17T18:02:26+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-52685a9c-2845-b509-6209-42e026bfa642.json",
+    "sha256": "14034f536bf0d79a97106ece522c978d77504b3fa17c61c47afe6619e7e55250",
+    "collected_at": "2026-09-17T18:02:26+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-5ef5c7b9-64ed-2a10-098f-995eed590880.json",
+    "sha256": "6c46e3f0649fd85406b780be8943f323e4dabc9e6f597fbc39617ca411d48b00",
+    "collected_at": "2026-09-17T18:02:26+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-f63f90b2-1a16-80a2-e99a-41dd1f956e48.json",
+    "sha256": "e5d5e13f4fdddfc9a753fca7e7b27bf904b2cd114e774a298af15aac5c6d2211",
+    "collected_at": "2026-09-17T18:02:27+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-d617cbdc-56b9-a02f-a8b9-b2540901cc6e.json",
+    "sha256": "a64413b6c8bd66dde12f5b387a9a6e6b79b7a06d28865e47042960a01a80b3de",
+    "collected_at": "2026-09-17T18:02:27+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-a993a1fd-294c-ddd0-0b7a-e6a7180d0b3f.json",
+    "sha256": "0dac3c47cffc6229504e1054b93dfaab81345a2943f00753080165574cda32c8",
+    "collected_at": "2026-09-17T18:02:27+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-1f2bf19c-0208-37c0-d6dc-06b1f71785e9.json",
+    "sha256": "f710a8a83e5a7beb0ac68276efbb16e22110ca838e4dd2b4c31ddf780d55f465",
+    "collected_at": "2026-09-17T18:02:27+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-e9a7f1e4-5fed-c98d-1612-850048e7bae5.json",
+    "sha256": "14b1bfa9c1fd30adc30ee1604388b730dab5fa1027dbcde22ac65db4ba74967d",
+    "collected_at": "2026-09-17T18:02:27+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-327dd027-348f-bcea-bca5-ba07c24850c1.json",
+    "sha256": "cb0c1cf4db689467cf9ab1598b7d33cad5a95ae7bc0ed89ddb8e48a42877e7db",
+    "collected_at": "2026-09-17T18:02:27+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-b342cc49-3fe0-0fef-8aac-f58f82f208d0.json",
+    "sha256": "e8ba7511c070baa10fdd78a0e50749cfddd7507290f5ea933a126187d6bd32b9",
+    "collected_at": "2026-09-17T18:02:27+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-d552f4e3-dcf0-07f1-a261-d7d77c7b5cf9.json",
+    "sha256": "9ce3a24fc1d41c54e75413b5390d0d2fc651c01f4c39e72e64dec5b830d2bf8a",
+    "collected_at": "2026-09-17T18:02:27+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-d82508fe-3acc-2528-e47a-36f716c21ab5.json",
+    "sha256": "255b24aa4c0c69594cfbbf640836729d096c5326fa8fdab0b8a928385fa3b979",
+    "collected_at": "2026-09-17T18:02:27+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-07378ac1-2559-d747-3a1e-4e6f40f810b2.json",
+    "sha256": "bef5298ed99af8f195f740972369932592e5c640f76321b040e10731f59005d4",
+    "collected_at": "2026-09-17T18:02:27+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-6638f94a-dc59-ffb7-47c5-2e46447665c0.json",
+    "sha256": "25c31f799cfb72e4c8f36811875b81fe775ef7562ba914835bfaaa0847d0d393",
+    "collected_at": "2026-09-17T18:02:28+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-0c7eff34-a89d-2977-71b5-ce5fae958190.json",
+    "sha256": "63858cb7324dde0aca21cd280dec8150e7a9174ce2b63d7e20ae52057cc00a78",
+    "collected_at": "2026-09-17T18:02:28+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-9fe58e23-94ae-279a-83d5-d2076f0eebfc.json",
+    "sha256": "b1ce52c3d4c4c7e29e38a2498cd71d1c2a040bff58968bf5eedb3ebe19dc90aa",
+    "collected_at": "2026-09-17T18:02:28+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-6a623655-901f-cac4-80f6-718f9aec006b.json",
+    "sha256": "ad04fdea7f21f88a26a1c790f1c03bea4fb52a50dce7f5813206a18a80175e98",
+    "collected_at": "2026-09-17T18:02:28+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-4d29a9ce-5388-c829-7819-f858aafd2da6.json",
+    "sha256": "0e52921ab8c846cf03d3481d821d991b1d6d6215e5dd28dfa650f6297c2e10b2",
+    "collected_at": "2026-09-17T18:02:28+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-608b97ba-217f-78a8-ec6b-5514c0d59fb7.json",
+    "sha256": "97bf122f805af4afb9814d5b2c35b91b680064c71746c82b99a6aa22289ce95b",
+    "collected_at": "2026-09-17T18:02:28+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-3c637339-0a45-bab1-7024-316e9176b5fd.json",
+    "sha256": "a6741479d344b9c70b4001edd59f14eea0f4fe9cee7ef466e84ea37398225797",
+    "collected_at": "2026-09-17T18:02:28+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-b2477bd6-8f61-76b6-1744-33055c75d97e.json",
+    "sha256": "b3a71dab4bafc4631a6d6f10d0678b8a2c3f0267fa8b3cc6ac6a2a6df828515d",
+    "collected_at": "2026-09-17T18:02:28+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-ee4160d0-fb21-ac1a-ed9c-13bf4d9acd1e.json",
+    "sha256": "23e479a3c5af2a8c9360182d2c3ab0c547568c1a9ac6ca5001ece0ec6e8dc6e6",
+    "collected_at": "2026-09-17T18:02:29+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-0c721394-b1e6-ff1d-dccd-89745fe1c582.json",
+    "sha256": "21938f123185e67136b5eec60bf2932bb2ad2c8e293cb522a4ecf24e749b3c94",
+    "collected_at": "2026-09-17T18:02:29+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-081cbd3c-bcf7-fccb-1d2e-105be747a26a.json",
+    "sha256": "1bcf4c5fb64ae2424fca8f9281be8ec73b4a218a5261eba28a57d2ab6f16c70d",
+    "collected_at": "2026-09-17T18:02:29+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-8e24a8f1-98ca-c4cc-6233-2892527b08a9.json",
+    "sha256": "358eb3d4ba2fed393c25bee2b90e582baa1940bbf3e9dccd0680cc762a50ca8e",
+    "collected_at": "2026-09-17T18:02:29+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-b7bcc123-d6c2-8c25-6d66-51b5872d8dd3.json",
+    "sha256": "c16ab8db90ff2d5f17bddd16204cb99a4d419583e496bd497c757aadd762c64e",
+    "collected_at": "2026-09-17T18:02:29+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-b8e7a1a6-3cdd-1691-d161-0be5a1ae03ff.json",
+    "sha256": "661bda402057b3d40e4b3bdef497c9629d1e553a726064fdbea31f17de9e9072",
+    "collected_at": "2026-09-17T18:02:29+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-082afc0d-9df6-2d1c-ad9d-f787b755d577.json",
+    "sha256": "ed9954a2a5fbddfb50dd328b5593007d38c0ce185e4d0e9fc91d8abfd8e8edcd",
+    "collected_at": "2026-09-17T18:02:29+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-a106ab90-0af2-4aaa-87df-8aac36006296.json",
+    "sha256": "63f3e85f2e315a397db38c60391ecd585099f54e999aed3994cef2479c892cf0",
+    "collected_at": "2026-09-17T18:02:29+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-300eb505-105a-6d42-2b65-d3766dae04f9.json",
+    "sha256": "7c8179f8e48f7de60ebdb7ed1a457f4401c4a3b54aef23709cfdb0bf90cae4d7",
+    "collected_at": "2026-09-17T18:02:29+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-3fbe14d8-9683-d6f1-b563-85ee97ed4806.json",
+    "sha256": "34e8417acb54667384d9b255da146d4c7088ed4a14f8cd0ec05b737c775e590a",
+    "collected_at": "2026-09-17T18:02:29+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-9fc99f41-2f7b-0854-00ea-00f0b93681a4.json",
+    "sha256": "1e2af66b03adc3b96c92eee55c76bbbcd3427a2d81cdb504dcc3947da3b2e8a4",
+    "collected_at": "2026-09-17T18:02:29+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-cb7649e2-e837-da26-28bc-58e0a1fc6a14.json",
+    "sha256": "ec45b71912bd3ccba11a3db5d0c238277e6b0ad102a7a43d03dec3a89e6d06fc",
+    "collected_at": "2026-09-17T18:02:30+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-c0a1defe-e61d-0798-d5f6-e88751ef7c2b.json",
+    "sha256": "36d74806bbb338c328f83ad20a32583097494adbfbe6cfabaf8b758b49a8710e",
+    "collected_at": "2026-09-17T18:02:30+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-f7d5a9b2-bbb9-2a89-b631-40563cf2bbf5.json",
+    "sha256": "bd88f2a9813838f96c1af3ee4f4b3780d02ac1ebb80764093a9f54eed24efe04",
+    "collected_at": "2026-09-17T18:02:30+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-348acbc7-91d5-0e05-2291-8c6d2c0f8dd6.json",
+    "sha256": "04a7acf59f52d136b35faad3880977a9038def3fdba53c1d5f8bd5dd2d170070",
+    "collected_at": "2026-09-17T18:02:30+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-e444f1f2-b284-3e9b-3a4e-eb3b349c27bc.json",
+    "sha256": "74ee4e0b9cebdaddcb0e667abf9537e9acb52944fd39f2e21f57e07fbfbb0cb6",
+    "collected_at": "2026-09-17T18:02:30+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-a70f6a06-bb8c-af82-c843-b8ebad27c1ff.json",
+    "sha256": "2b92b89d0da55b60e85c591b79dd3b0caa0605faf085fa811701715d65223885",
+    "collected_at": "2026-09-17T18:02:30+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-d2a284d8-5100-72a6-e76b-af45ddcd7487.json",
+    "sha256": "d9d8b700a916a2e038369fa26778416b51eca0f6650ac9a0c97bc8a17bf374f4",
+    "collected_at": "2026-09-17T18:02:30+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-0a50e3a6-1a29-09a1-e6f1-8da73ece6be6.json",
+    "sha256": "d327448bdc8287c0ed41ac7ed4b04b7b3cdb62c0dce21805492cef0e53a61332",
+    "collected_at": "2026-09-17T18:02:30+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-df5020ab-98e4-51cc-4d17-71e58f6de23f.json",
+    "sha256": "f1a3cd59a1baca9851adc80c8a17d587abb9fbaf531c2ec2d3eceef5aad220d2",
+    "collected_at": "2026-09-17T18:02:30+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-4389d57e-f108-44e5-6c70-828b5594f9c0.json",
+    "sha256": "83dd704299f9ef0f128e8634d3ea7855eac951af02cacb925a0b7f24e6c82376",
+    "collected_at": "2026-09-17T18:02:30+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-7385a6b8-0f07-bd03-78c0-c78a7545a283.json",
+    "sha256": "d68c9e40ee1f302c5e97ec9bdd8880ef0a8dfca826bbeeed7ad9be750c05f05f",
+    "collected_at": "2026-09-17T18:02:31+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-b1400a4e-5a89-fd33-af42-c12e764b377c.json",
+    "sha256": "678f496b5cca89ecdfb01ecef64d091770afea26c5ed2cb592eb3b1e36fb0c3c",
+    "collected_at": "2026-09-17T18:02:31+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-fc273c84-87c3-a0b3-3662-d9f56d74b8c3.json",
+    "sha256": "c6ce8ab7d7a74655173bd0814e7add6f4783001086e1eb4b10e8ae8c850e1f4b",
+    "collected_at": "2026-09-17T18:02:31+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-e555a57e-8f59-384e-970f-e94d37d5f2c3.json",
+    "sha256": "b6db564476a5d5ee96b03c9a2475e1e9e8125d919208e0b41cb643b212336338",
+    "collected_at": "2026-09-17T18:02:31+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-1f2e71a6-891d-45fa-1d7a-6b3439e6c324.json",
+    "sha256": "5d6dbef5a30295bc48198258681d30311cd99d7c50762feace2d14ba6096e490",
+    "collected_at": "2026-09-17T18:02:31+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-89ddf65a-7985-ea9e-8e70-f20ad354d36b.json",
+    "sha256": "2920ead744adc7f06bf5e73afc37b7720a99e1595cfd3fe52d401c109fe8e849",
+    "collected_at": "2026-09-17T18:02:31+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-84f5d9f8-6f0c-2064-19fe-d63a7fbc7c75.json",
+    "sha256": "9aa294e0e871ba7d92fbafb1390af27635012a9f4f839dda43a6d8f7c9e7fa22",
+    "collected_at": "2026-09-17T18:02:31+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-fedd4369-241d-b186-68bd-173c09d987dc.json",
+    "sha256": "4b4225a6df2df81b31937570238208a57cdaf77a225c656f0577c64b630793ea",
+    "collected_at": "2026-09-17T18:02:31+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-89a1933c-1e03-18c4-38fa-55685af7b294.json",
+    "sha256": "c3e790f7c00ab37ab979aba6f647623754dbda1a64b4503708e0ec406445e906",
+    "collected_at": "2026-09-17T18:02:31+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-98953c42-abd4-f139-f8c6-4c0b91fec285.json",
+    "sha256": "b9cbffbc5f6d31185ddf9a4f53fc4936048de895b6b562e6bd38caca0fa175da",
+    "collected_at": "2026-09-17T18:02:31+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-42d59213-13fa-2f63-9515-ed2d3adc9cf0.json",
+    "sha256": "d739c7e8e06d298d4cdd104ae69fc23f1e591558655d2b6c204b077c7d48c1d9",
+    "collected_at": "2026-09-17T18:02:31+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-c8fcaea6-68d1-dc93-81ba-60c21517309e.json",
+    "sha256": "90315c84e435f8dd41e7092d2ff25e18a46227b9a4e93cd70b205c9e24a4d021",
+    "collected_at": "2026-09-17T18:02:32+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-905f00aa-ff0b-78d9-2a70-bb28f7a9b8c7.json",
+    "sha256": "171186bd9f32d40f81ca3dc8070b7984136648e3d6b021f952c3c47c0cb263ed",
+    "collected_at": "2026-09-17T18:02:32+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-606e08a8-a438-08d7-1cfd-a44d7770e0e2.json",
+    "sha256": "c92e8db67e906788c08ff86897f6cd9259ea948e88fb2157297fd15bf142d491",
+    "collected_at": "2026-09-17T18:02:32+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-ea2923e8-0abc-9b2e-520d-53d789bb9d49.json",
+    "sha256": "809a4c8a235d086464df75f33e7c7586e177d15c8eb165ce7d803e1b91321bbb",
+    "collected_at": "2026-09-17T18:02:32+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-b96c3acd-c717-6280-b99c-54bad8f25530.json",
+    "sha256": "b21a7467338e56717c8c285a7880e8888232411fb328e8dc170f6d932dc7b54f",
+    "collected_at": "2026-09-17T18:02:32+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-8966bd43-3857-3c25-b226-2a46e464f032.json",
+    "sha256": "5705b3693f57b039dd8f7e13d57df2ed3c1b38d85cb8835ae179172790b254f1",
+    "collected_at": "2026-09-17T18:02:32+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-649c6fc7-f7ef-3f76-4245-18a04b7c9f0b.json",
+    "sha256": "edcc1b56eff02fbbd21e3eba20d18eb30f95272718392fbab4ff13d76fd2a54c",
+    "collected_at": "2026-09-17T18:02:32+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-342f2d1e-427d-ca86-bfd3-990089e9e655.json",
+    "sha256": "b9b08fe1566a5fc39f792706528f889589d3d92963d73e88927fc526c11e026f",
+    "collected_at": "2026-09-17T18:02:32+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-86d57969-1d59-08fd-a45b-9584f10b820e.json",
+    "sha256": "00219e17e956117d5589a820556dcb1be17578f40ba9270096186927dc7287f8",
+    "collected_at": "2026-09-17T18:02:32+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-2e5bf0d9-d781-77a4-3872-2523c999e5bf.json",
+    "sha256": "cb052d5530f3f4f7bef1fe49bdd247852b0b36f28b9d848cf5177c1ba9235629",
+    "collected_at": "2026-09-17T18:02:32+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-040bf192-dc87-01a9-8727-7721ca386594.json",
+    "sha256": "e6201d9fcc17a33d42a688dce3232711ac63abf75663c2e6a44bb9797714ae6e",
+    "collected_at": "2026-09-17T18:02:32+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-cedb72c4-3641-8c54-17ae-ac7c9b4d893b.json",
+    "sha256": "16e6999afd581183350e400245486d1d93e65b58af07bda9053cc3684fee38c5",
+    "collected_at": "2026-09-17T18:02:33+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-eb59bf74-2b66-60ce-7536-6c7b3a20b346.json",
+    "sha256": "72821dbb93cd132641297be9215945e40b83338362d06dd95e654705090938f0",
+    "collected_at": "2026-09-17T18:02:33+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-53e18b95-0eef-19b1-3d1d-e88d2d338443.json",
+    "sha256": "107a791e94f02010dfb3d45eea1634b292cc3c8e52012065169472bc515da535",
+    "collected_at": "2026-09-17T18:02:33+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-8d1a68ce-4518-0593-6839-7f424ca06f6f.json",
+    "sha256": "4130a5c3ae4976854782bcd99060aa54db88999b53f7494294498a54faedfd3d",
+    "collected_at": "2026-09-17T18:02:33+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-6f90e4ec-f718-adf7-eea4-e466312551b2.json",
+    "sha256": "c5287f5330e35ba5008f171c739df23517bd25861e57ed41affda263f761de37",
+    "collected_at": "2026-09-17T18:02:33+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-d9b855f7-54cb-0a2c-8945-fd80c06fa82c.json",
+    "sha256": "8fc9d996f8cfc95be3d8f8dde756f9ea690d1118bf11d4fa9f7cc2f09693fa49",
+    "collected_at": "2026-09-17T18:02:33+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-1b33bdb2-11eb-fbbc-4396-534cf75add28.json",
+    "sha256": "5817551e79f76be4464a6ed41b2369807ed5d28a52146b6c3bc0f8f570fd0b6d",
+    "collected_at": "2026-09-17T18:02:33+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-727fc199-1c9c-f433-dfb4-6cb9d8478420.json",
+    "sha256": "486aebff65812539505d3e226571d43242d48e9edf1c822efa3ae4f23856888c",
+    "collected_at": "2026-09-17T18:02:33+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-b5cb4b67-5aeb-2a25-0a4c-9cb14f5d84b7.json",
+    "sha256": "2112228571a05523e31c1e57618c77911331c8e38688f17fb4c8ba97eb208546",
+    "collected_at": "2026-09-17T18:02:33+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-31fa558c-0db6-ea1e-e967-f01678a56228.json",
+    "sha256": "d935f3934f0e0cc9ce1da4d5ab4b52a545c137fddb0b57a2c8559543d475a493",
+    "collected_at": "2026-09-17T18:02:33+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-4993aefc-aa28-8fbb-b5a6-0dd8a14d1c2e.json",
+    "sha256": "0075e3b5e86e432f1196cc0f451c9ca8248ce2c1231367d37adff48bddcc4529",
+    "collected_at": "2026-09-17T18:02:33+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-6e1f4253-d848-44bb-6da5-e35c59dd6fe8.json",
+    "sha256": "4c33d81dde1bbf2a9cd7167850ed489a4eb3ab13e0dcf35d17818058179f1ce6",
+    "collected_at": "2026-09-17T18:02:34+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-efc5939a-2c8f-ef07-90c4-bbfb78365177.json",
+    "sha256": "ec001795199ed68b558fc130b948311047c75664c29e6969cf224c8c633ed34b",
+    "collected_at": "2026-09-17T18:02:34+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-f4701625-ea96-b779-1801-571a48a43099.json",
+    "sha256": "0edd6c5d1e85513d0a478a0797b47a67504564e5dec8e94e0bb03c1c9e63a958",
+    "collected_at": "2026-09-17T18:02:34+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-a460d539-4cf9-83ce-c1da-10d8d9479162.json",
+    "sha256": "efe07f0c77d0e4cd85d9fb09adcb468b62846dca535eccf7f7cfcbe1a69fdc5d",
+    "collected_at": "2026-09-17T18:02:34+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-bd06d79f-ce1a-fe82-8ea9-f92025a75c76.json",
+    "sha256": "250fc9fef225015ab3ece38eeb0cb576f401e68e3120a92cff567778e36ce6db",
+    "collected_at": "2026-09-17T18:02:34+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-66e22c5f-7ec6-b795-67c0-0b5a899ad52a.json",
+    "sha256": "59c04f394af678f0b7b73a0fc8c33fba5ec8d53d16adb440a2834c93776e2f03",
+    "collected_at": "2026-09-17T18:02:34+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-c410a262-0393-0fc1-f80e-8cb73b085d70.json",
+    "sha256": "0e794212d56db10b34ea88dc9ee3cf8730a684dbd97c7bca41ecf54dccd71fe6",
+    "collected_at": "2026-09-17T18:02:34+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-714d9c23-f478-d562-edf2-f3700ffe0749.json",
+    "sha256": "183ed4c5d34cd6690c498436ba1b30d98d481a26f5512133900b1ac249291cf1",
+    "collected_at": "2026-09-17T18:02:34+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-0f690998-b619-a706-ba4d-a4e7472c8d40.json",
+    "sha256": "ec1d0fb4553b2996ad78c24eab6044108dafbdf165f17ab0fca58a4883475056",
+    "collected_at": "2026-09-17T18:02:34+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-d7b68bbe-e288-bb67-3a3a-112f821720ae.json",
+    "sha256": "1b073b7ae4ba20abce19e6e9ae601531fe220c9c77deb7cb19fa71b3b92965db",
+    "collected_at": "2026-09-17T18:02:34+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-bf290760-0c4f-e7d8-d2b3-5ee72ba9a54e.json",
+    "sha256": "3e233b6dd1792cf18925595b5de522dca57a0c6316a3c04c399ef4f98733d478",
+    "collected_at": "2026-09-17T18:02:34+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-3b9adc97-1af7-123c-2fa0-3adca075f1da.json",
+    "sha256": "a30a7755af504501f150e025b9086baf067850b7facbe63b94bb347ec12d4d75",
+    "collected_at": "2026-09-17T18:02:35+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-b1cf8439-24cb-0afc-f4e1-902a41958e13.json",
+    "sha256": "2a17bee5f38d880df202065114a964550f01c858e02c117097dd152410f35da6",
+    "collected_at": "2026-09-17T18:02:35+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-f446b6c6-6556-5f0e-fb64-5bf6ee6bba3f.json",
+    "sha256": "1dd14b286747f97cbe85b555719b79aad3e1658e5d7fcb038ab21e56388a81a8",
+    "collected_at": "2026-09-17T18:02:35+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-72d3c058-182c-4c3c-da82-ba2cac8ec804.json",
+    "sha256": "2f36c96bb05d0981684d16a41be14c9553d2b1845588045811eae23d234947d4",
+    "collected_at": "2026-09-17T18:02:35+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-30e8b673-9581-f472-6a2b-0d94b5135303.json",
+    "sha256": "bfced653003e784a0ac8f05e1a12a440d9291ba36e1fbc1c7761d2b6aeeb3ef3",
+    "collected_at": "2026-09-17T18:02:35+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-8be1817a-ca40-8d26-7158-ae6c2aa1e9dc.json",
+    "sha256": "4987e63ba3d82a469a80de1a95595a15ee5013126599bf60628766d5d00a296e",
+    "collected_at": "2026-09-17T18:02:35+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-9e8d3d68-0527-7807-e818-5e57ffba5dda.json",
+    "sha256": "7b1daa5a4472bf7339a4e3a46028e2a473a81ea1eb7ce5920b1471ab2ef8ecf8",
+    "collected_at": "2026-09-17T18:02:35+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-c081a04a-19a6-40ed-6077-b4a0e2b22274.json",
+    "sha256": "4edee56e64d0a39c4c28cb5ba01437e2f74603df01fca6bcda1f389a9a6c37b5",
+    "collected_at": "2026-09-17T18:02:35+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-bc09e6ec-4b2f-8c13-4cbc-08727e32f794.json",
+    "sha256": "1fe422a2ad59177f06e542e6bfe38a70d867ad50b2a18e56a4bdd583fdd20d1c",
+    "collected_at": "2026-09-17T18:02:35+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-4ad9e1c4-54b5-e66c-4754-bdf9086cacdf.json",
+    "sha256": "a3660d9b69268d5096d623837c0986f8e31ecdc17aeb68550b3875ebcc9fbdd1",
+    "collected_at": "2026-09-17T18:02:35+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-29ce4944-f573-9101-c838-da2fd0c43ddf.json",
+    "sha256": "1d1830433b4ac1ef49dac47acf3d42ad92078716e57bc29f5a9168a42351f00f",
+    "collected_at": "2026-09-17T18:02:35+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-fc36af27-f4a4-eff5-016d-7e8932fb7797.json",
+    "sha256": "d1afcb65bc4ea47fb924fcad1a71104a3579fd3c1df6ae42b3adfcacf758516d",
+    "collected_at": "2026-09-17T18:02:36+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-1e325b8d-4262-8118-0e60-8466bd53943e.json",
+    "sha256": "77e0ce835cb85629a623b76cb7421cf4a445a55ae9749fa61becc77b3ccbe499",
+    "collected_at": "2026-09-17T18:02:36+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-191fa222-8756-3e78-bcb6-6fc4a1d2d2ea.json",
+    "sha256": "8591833847463062d55182fe35e0e22efb54c1703f839995d815f06f957e0a2e",
+    "collected_at": "2026-09-17T18:02:36+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-eeef2144-44e5-2b5b-e8a7-be2cc4eaab7c.json",
+    "sha256": "a22e620157f7687ffd1b496aa7b1a1cd13d4a3fd8870d0c75376e1b5fd45cf0b",
+    "collected_at": "2026-09-17T18:02:36+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-249cf36e-dfd9-9f80-1cef-6f4c924d33b0.json",
+    "sha256": "a6a1d70ef3bff2492b27bd49212c4fcf79ee9b745b50d82a3142a6b6220679df",
+    "collected_at": "2026-09-17T18:02:36+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-8abfbd4d-722b-013b-756d-eceece717424.json",
+    "sha256": "3abc0194339542e06f88bb46cda574b851dbaedf3c02b9bde5b0e3ae130d0146",
+    "collected_at": "2026-09-17T18:02:36+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-c31b4629-e540-2c01-7661-87954411b49c.json",
+    "sha256": "f7f5bc171532d2acb08f814172a90158ee06b94ae9d849acc646bfb70c441b18",
+    "collected_at": "2026-09-17T18:02:36+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-724eb791-e737-058e-4429-c5cb44f14815.json",
+    "sha256": "2df3ebe6787824818531da4f02feb18a83b74b9b749efe809c131427c81055d9",
+    "collected_at": "2026-09-17T18:02:36+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-f2b3391e-be91-b40a-5795-808acc91c3f1.json",
+    "sha256": "cd0c4058f22ef7ce4fb2de9d4cfd8b232cf4d372cd85ee99d4c7cba471706749",
+    "collected_at": "2026-09-17T18:02:36+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-f63b1e50-3600-4516-c8c0-e7d346c79668.json",
+    "sha256": "1f42c0712f612a1430c981c72797c342faf1c6f3b99d715b513cda37b94d1846",
+    "collected_at": "2026-09-17T18:02:36+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-474b1f59-5e80-6e3d-4cde-76b6aa0b34bd.json",
+    "sha256": "e8a5a38d2bd35a4997d023d9739b1490639ff08ab6faca282a3b42fca506b55b",
+    "collected_at": "2026-09-17T18:02:36+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-61acf50b-a36b-4b40-c11f-446a26df328c.json",
+    "sha256": "2d43344fc353bb0e8b9b194818e2a867123c5e1116dcdc82c90411d9227230c2",
+    "collected_at": "2026-09-17T18:02:36+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-449d67af-5da6-170e-0b02-7632be36fe40.json",
+    "sha256": "35520e1f45dedd0a0898d35ee31dc9c007ba0ffa15674d72a2b31d2db1dcce8e",
+    "collected_at": "2026-09-17T18:02:37+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-b674fd46-668c-c600-f11b-00998a341bcc.json",
+    "sha256": "086b0f386ee9a04ec54b3402ce5492dc0148da682da9cde0728f4b7f93f3f6a1",
+    "collected_at": "2026-09-17T18:02:37+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-13790227-33ed-efb3-b71b-581a23b70691.json",
+    "sha256": "ba573239f40958900033e0cd8f09b0acbb9addb4c09677f6526c6af3b5d8aa3b",
+    "collected_at": "2026-09-17T18:02:37+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-06f9f0ef-3523-509e-a49c-ace4f8711855.json",
+    "sha256": "cfc14d4c75386159f9dea64bfed89a4191c655d59a41d7c10bdd2c244dd1ac08",
+    "collected_at": "2026-09-17T18:02:37+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-659d523c-0151-9e73-56cc-b830cea6612a.json",
+    "sha256": "d5b6ca2ddd45c8eaae6c2d1a3c62d4490deedc7796622c2b6259c3ccbe369595",
+    "collected_at": "2026-09-17T18:02:37+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-581c70ce-7a9b-7cb8-afd1-3f603991fe64.json",
+    "sha256": "81a50377220d9bfd87e6c56980c9a08e8c68a98b26e99b0e05c86bd4ad28de27",
+    "collected_at": "2026-09-17T18:02:37+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-146bbc98-5da5-0288-73fd-1c3e963d292b.json",
+    "sha256": "af5fba2c910622214580301f5a636ba559701e18adeb82cabeffeac3a8c4d1a7",
+    "collected_at": "2026-09-17T18:02:37+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-0d08e3ff-c62d-d681-d77c-be076d96bdd4.json",
+    "sha256": "3e8e71295df793276788a1aaa732bc877090825409285c4bcb5736cb17e7369e",
+    "collected_at": "2026-09-17T18:02:37+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-35874753-d50d-3258-4601-5abf1f5de57b.json",
+    "sha256": "db1ba580dee283db1a463646b2af87ffa7cdce4e244f895c8abb085958c560ca",
+    "collected_at": "2026-09-17T18:02:37+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-1b1d82ae-cba5-9df8-9572-ba9ce65bb913.json",
+    "sha256": "8bf306c199129cb04883708aa71f53b21c923884512a50338ccd963444da8235",
+    "collected_at": "2026-09-17T18:02:37+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-c1d59955-2975-6f5e-2ba3-121198b7b720.json",
+    "sha256": "367cfd0f9bf5558c27997a934f1afd195c0adeaff050f0693bc17fe70a1cbe3a",
+    "collected_at": "2026-09-17T18:02:38+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-cb4d3584-29e9-2bf7-2444-fc7b8e587b24.json",
+    "sha256": "13f05e27c61b85a649d1b373367857e35f02a3530158b7b320e98afc5c97fc25",
+    "collected_at": "2026-09-17T18:02:38+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-f0d4c5c9-52da-29dc-e254-3a04572598b1.json",
+    "sha256": "f47cea936cb10b6ce19a590b95b18752cee22b6bf2a38e6f859abb99b91930a0",
+    "collected_at": "2026-09-17T18:02:38+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-b2020c49-1ffb-84e1-8a93-ba488d5ab643.json",
+    "sha256": "2f55e2b63399e3b322018d81991f5a2abfba87bb9142c31b35a6524b74214938",
+    "collected_at": "2026-09-17T18:02:38+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-6a3c1673-f966-e5da-72f2-89363f987821.json",
+    "sha256": "0815dc5a0e3f29b56af264ff0d656fc73491f5e81fc71ea547ec7eba89f9eac8",
+    "collected_at": "2026-09-17T18:02:38+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-58954c96-f923-6691-8ae9-54da1d5ef1d5.json",
+    "sha256": "5cdf76c7a6660aa79b7c6505375686df7df6571acbd543743144d7468d205267",
+    "collected_at": "2026-09-17T18:02:38+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-769013e3-9e4a-b104-6823-a85f83cf457b.json",
+    "sha256": "f9844d0f1778cb90010148911ecbabea5ec7624955758b4249bb7a4a9e0cd5ae",
+    "collected_at": "2026-09-17T18:02:38+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-47bc5e9b-c16b-38d3-b930-622b4c9a75a4.json",
+    "sha256": "07da70447e03b9c76a4aeb50333827520570ee410eb6de54a49db0d2cd495a37",
+    "collected_at": "2026-09-17T18:02:38+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-d0801c6e-bd50-6210-61a1-b62f5d5809cd.json",
+    "sha256": "b91a3acf786799d5d08c3cc886eb1cb8dd5bacecce8b605d265b3f46936c6207",
+    "collected_at": "2026-09-17T18:02:39+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-4886861e-3c6e-734c-838a-f1a87f976cbe.json",
+    "sha256": "0c55fdeb96d07d34cd15d36ae8fcd348198f55e978e01d12a6a68efc0b3ccb5f",
+    "collected_at": "2026-09-17T18:02:39+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-978860cf-fb80-a235-d398-af962e20cdb9.json",
+    "sha256": "061081d1caf95c27f364f52cb2570739ac5ea34e117df2098c28def562dfe90f",
+    "collected_at": "2026-09-17T18:02:39+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-957bb89a-34ad-7293-9c55-85c82928c973.json",
+    "sha256": "be93cdd0f65d355b31e4fc7e485fee60d4e0bb221f6747427ee770f5f9fa5dbb",
+    "collected_at": "2026-09-17T18:02:39+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-9ee416ac-a1ed-a9f0-78a1-b28ff3e80efe.json",
+    "sha256": "c684ea4344ee0eadc76c9f1cf02a5140b56bf2173f41109061416ab09107515a",
+    "collected_at": "2026-09-17T18:02:39+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-c5f3d07e-849a-a4cc-17ef-14e932a84de3.json",
+    "sha256": "f45263a298d16fc3f12381b6a783f4ae6754fe7573d06561cedbe5579a02ee4a",
+    "collected_at": "2026-09-17T18:02:39+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-38ec948b-a7fd-b492-a08b-4b753df26da1.json",
+    "sha256": "b1cb8e43f2ff3394254d1a22ee3845794c4e1eaa492ea762c6ae83bb2f2f6b27",
+    "collected_at": "2026-09-17T18:02:39+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-fb4164e7-d927-422f-aee2-d5ec2bdf886d.json",
+    "sha256": "687d5ac69112158b4ee9b16d904b5979ef6273fcd8f834f9afb00567dc6fbf4e",
+    "collected_at": "2026-09-17T18:02:39+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-df0fbb23-643b-65c7-d3bd-9b41c7c640a8.json",
+    "sha256": "12178075ffb3901600cb9838e82a0f31dcd730e54d78ebb234116c2ab48a784c",
+    "collected_at": "2026-09-17T18:02:39+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-57d92886-6c6b-ba1d-e8fd-2ec15f3f8cfb.json",
+    "sha256": "03a3a883aa8a0f816ce35087a6867682ca6ddf925fa616006d4474112abee2ad",
+    "collected_at": "2026-09-17T18:02:40+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-791ad14c-aa36-8133-4cb6-5f82a0f8f006.json",
+    "sha256": "98355425bd45abe28f06403743a3bb9704ab7c299617162a3aee51c44dec7d82",
+    "collected_at": "2026-09-17T18:02:40+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-37f1f4a5-13a2-3dd9-6d85-6cde25bd4e90.json",
+    "sha256": "63d241f5e8c0301ef15a77634341590232242a028ff6663b8b4dfb109c3db3ae",
+    "collected_at": "2026-09-17T18:02:40+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-e711e81e-caa8-986d-dcfa-ce26b2559f83.json",
+    "sha256": "c4e05ba015cec335f99b045981e20b370ae78bf40da00a1a8b0a5c41cadbbf8a",
+    "collected_at": "2026-09-17T18:02:40+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-d3a8038b-dcdf-250a-65bc-26524093f50e.json",
+    "sha256": "7ebf0f6c3420a880c8a1c235949723a931cb126debe691a747ebf7db1a54e732",
+    "collected_at": "2026-09-17T18:02:40+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-ba540467-e3d7-fda5-e7b1-2c16af354ebd.json",
+    "sha256": "d967a040af5a5220555de6336af1a9794fe60c35bf5d43d136902ff09ae1da5f",
+    "collected_at": "2026-09-17T18:02:40+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-29b549ce-2b63-e9d0-ef51-8077db192c5b.json",
+    "sha256": "b1459ee87bb9214cb09513e49dd09195cae7bc7f796ea5fa3f700bb82f66e95b",
+    "collected_at": "2026-09-17T18:02:41+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-7ab8c1ff-dee9-d5fe-77c9-d8330690b527.json",
+    "sha256": "01d72121a044ce8bfa6ca169c96f3943febb343ef6166e141933d06590783c8d",
+    "collected_at": "2026-09-17T18:02:41+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-c6e419ce-6c8d-85c3-84da-1c40fa042b9f.json",
+    "sha256": "70341c63ff8406266fa93cd011708b8b813b1a37326c5d8d2d1896f90b6b6d16",
+    "collected_at": "2026-09-17T18:02:41+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-64eaf591-c6d5-f1bb-500c-85e2b93f11c3.json",
+    "sha256": "9e89f8f50bc2a5faae393a3564ede8ca33de0ac0c86adc488da512b2102dddcc",
+    "collected_at": "2026-09-17T18:02:41+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-3014457c-94f0-7e8f-b4a8-99e2e0ea0840.json",
+    "sha256": "d98951a565603eade7387a8fc1c2fd0b937092e735840ace6e26159a661bccd6",
+    "collected_at": "2026-09-17T18:02:41+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-1ab13300-db6e-62ea-854b-8cb40dc1e8eb.json",
+    "sha256": "1237de22cb9d37ae54905539a5e0b6349b75b3daec85f82055d4d7e967ac51a2",
+    "collected_at": "2026-09-17T18:02:41+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-883807da-aedb-6f82-f41a-8458b90b56d8.json",
+    "sha256": "b6bdd2a3dfcbffd0289ccdf23a5e6bf3275f4b97d80da8f502d00656642e7acb",
+    "collected_at": "2026-09-17T18:02:41+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-8254729e-a97d-ab6e-889d-9cda41b47a46.json",
+    "sha256": "5a52e129e201e871076a81bb8209c7fb56135cdcdf6670c39740d0f9f0c369d6",
+    "collected_at": "2026-09-17T18:02:42+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-d485b9af-8bb0-12a5-35f5-3b55501ee6bf.json",
+    "sha256": "a4fc5ea3e71c7c6fd00ed3747cef36c24babcbc428da67c906c8ddd0153d2a64",
+    "collected_at": "2026-09-17T18:02:42+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-40d4d254-7df5-1121-7826-e1d0bc077cdc.json",
+    "sha256": "feadb59f9c67e58db1bcfedd687a509a410df5646c35abf85fd391fdfe570690",
+    "collected_at": "2026-09-17T18:02:42+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-e1214f62-bc8c-851e-1f9e-ced07c4388f1.json",
+    "sha256": "16a61faf057622a8a8aae5bc4dbe71173b936edd09424938bc30d7e06b0fdbaf",
+    "collected_at": "2026-09-17T18:02:42+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-5e26ed67-d3af-3ef5-ac31-450005e2da43.json",
+    "sha256": "c6d6bccea3840a51c6920baba91a5bd1b3793bbac47e49b42fb220b5c43244b4",
+    "collected_at": "2026-09-17T18:02:42+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-44c6b17f-f6a5-734a-83a5-eacd41406596.json",
+    "sha256": "9c2fa0aed647f9e5a4b4387e6a0efb016485d8a632adc4cb44aebeed6ca1e769",
+    "collected_at": "2026-09-17T18:02:42+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-cb0002af-e01c-4fd8-c33f-ce95c92d1438.json",
+    "sha256": "92afb9e58ac001b96612d122ac5a8504545bec2be00d1b2ea8a57529a95d4373",
+    "collected_at": "2026-09-17T18:02:42+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-6d45e5e0-16a6-94d1-c2de-59bb4701321f.json",
+    "sha256": "e77d897b290ce62f3fafe7cdd4d2d00bf365acbfb74d434c4bf17e6a53b9df83",
+    "collected_at": "2026-09-17T18:02:42+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-7d461f6c-6025-f6f7-6196-df49f12dda9e.json",
+    "sha256": "0ea232ec17895c73650090436ba36c2eec86a4579d8c555ce7aefcd68e43f1e0",
+    "collected_at": "2026-09-17T18:02:42+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-d7ae7d20-28ca-296c-1b46-c300288ddde3.json",
+    "sha256": "82a388dfb7094d9cfe808bf77bafe5f3a252fa150e9aaacb9ceb61a7696b7563",
+    "collected_at": "2026-09-17T18:02:43+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-07f31522-6d19-8f25-780d-0a794c43e4d2.json",
+    "sha256": "a6f59f9b7280035d62a9351f650575b9bcbcbb5bdd86a3dad850b981effdcc51",
+    "collected_at": "2026-09-17T18:02:43+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-9878fd6f-b68d-53ea-c796-3bb1bd6c5d9c.json",
+    "sha256": "f1e8555fde7c9af9bf21e712cae17a0b40030bad5482296ad758227e9bf01ecb",
+    "collected_at": "2026-09-17T18:02:43+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-cd2e9a24-3145-f279-477d-c5389a5dc11c.json",
+    "sha256": "1dc299c23e0a7aaff4f5364dafa4396d8d5e55bb70c56e8ba7b22f5c6b3e2396",
+    "collected_at": "2026-09-17T18:02:43+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-9b2b5000-7a03-572e-9ef9-f7035f948018.json",
+    "sha256": "fc9e8ac29b70fc856f6ec7d026c9b153c9a82111a615ca40935ee0eb0c0c5783",
+    "collected_at": "2026-09-17T18:02:43+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-683cfba3-1b83-7209-8ddd-a57762993389.json",
+    "sha256": "6c089fc582f0fcfde20e7f1be60594451765cce03e95f8fe5192d2402c8185c6",
+    "collected_at": "2026-09-17T18:02:43+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-19aadab7-c960-f280-accf-8d3b2619102a.json",
+    "sha256": "d9a779ab28eead71eb6657c0e55fd7600e7f1ef765a23b8a28b26796352b1c67",
+    "collected_at": "2026-09-17T18:02:43+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-e4b15858-70db-0fef-e29c-66176f5cf840.json",
+    "sha256": "dead0e4280a8055c5184dd1ba47187f56704d3a4095269ef67585e5331d33167",
+    "collected_at": "2026-09-17T18:02:43+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-2c7b7591-76b5-450d-830a-f0e85f5ad2b0.json",
+    "sha256": "f270e4b7db8a52ddfb121db3360ba3a2b154d7bcf13ac3ae03c2cf9d04316167",
+    "collected_at": "2026-09-17T18:02:43+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-97bbcaa9-8f0a-bb5e-e447-72a828a6c298.json",
+    "sha256": "8337a03ff8d8f2ca100cace52d2bcc4c78030a08af827e10cfdcf26209856abc",
+    "collected_at": "2026-09-17T18:02:44+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-827afc22-3f8c-5407-13d2-24dbce117ad4.json",
+    "sha256": "7f5882773faf9f1231123190044c8c3eb51a87e07cde7b651223084368e4bcae",
+    "collected_at": "2026-09-17T18:02:44+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-29938cde-5f8d-aa1c-1bab-77ceccceb2ba.json",
+    "sha256": "159832a890e1f4936f131730a4f8155c50909a999ac4359b17419f9c809c92cc",
+    "collected_at": "2026-09-17T18:02:44+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-90daf739-7da4-b60d-2a2e-1a4e08c7e7f6.json",
+    "sha256": "01d637b922c916884dcb4b2a0f7f1ce194fca410799f17976085f2d07d8b0e75",
+    "collected_at": "2026-09-17T18:02:44+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-26b0d429-01db-d34f-e581-c7e9aa1ed366.json",
+    "sha256": "f9a819633473b8f2fd96e8ec07026dadcb7f0993fc2a32a4511ec7e542b343b0",
+    "collected_at": "2026-09-17T18:02:44+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-95b22f6e-620d-5e12-64f6-05124ed7e086.json",
+    "sha256": "1ca916ae37b81d9cec464a264ac168326c196607bb3916510261e471075efec4",
+    "collected_at": "2026-09-17T18:02:44+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-ebdc171e-7b1e-dd3b-f92e-1647c400f17a.json",
+    "sha256": "c67c60f659ab2a8187464b384cdbdd5bcf8fe164f47ee4b6a71f67019c27113a",
+    "collected_at": "2026-09-17T18:02:44+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-e7f3706a-16dc-1463-d36d-3df9c34fa67e.json",
+    "sha256": "89d774e2b54886f5ea33b374d63d5dc6c689d998057103a98d5198e2a12fa1c6",
+    "collected_at": "2026-09-17T18:02:44+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-2df442cf-8036-bb65-64cf-52583b0527a5.json",
+    "sha256": "cae98ec99c1e15269ffbbaf2a6e6580f2f23d6bfe6f0d6cbd1051cfdc24feaf2",
+    "collected_at": "2026-09-17T18:02:45+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-70408c1f-13d9-b7bb-d3df-0fb4c7d629ac.json",
+    "sha256": "b0b3884e81a02461ea165f6627d2b4cb9fe0bd3c2ca2e28b68bce70bf980d6df",
+    "collected_at": "2026-09-17T18:02:45+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-885037d3-881f-f40d-82e2-31b3dac593bc.json",
+    "sha256": "4e222435b78a69329dc136f585b463e3aad139fe23d9d577508e923e33213d17",
+    "collected_at": "2026-09-17T18:02:45+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-a8a2b01e-abb4-a843-ffd8-d4aba8d1db6c.json",
+    "sha256": "438907a22d2e054c19af3dd548b153dc8042eea9b4ccb78a4a95c12aa9b719bb",
+    "collected_at": "2026-09-17T18:02:45+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-79ae17b9-a81a-d76a-bbbc-3bc320d48510.json",
+    "sha256": "b0a575b0fb5f11d4e7f674e691f5549025cde6adcaa16351c6fa4a29425eae33",
+    "collected_at": "2026-09-17T18:02:45+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-8dfd2dd4-2290-aebc-a56d-b41472368f32.json",
+    "sha256": "4596c168b048979b4168864cc7626deaac68f9fb3e14d0142684f57b13cc218e",
+    "collected_at": "2026-09-17T18:02:45+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-bb045292-4cac-2919-2fdc-585e4c62aab4.json",
+    "sha256": "c6a21292afbecb485727c18017a1f91351035b17a08dead531703d7b67506959",
+    "collected_at": "2026-09-17T18:02:45+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-19594d1a-a8c2-ed52-a99d-0384fab95683.json",
+    "sha256": "5a504cccddbed67e52212e0e7fa955f845b7705406c15d2a0c1ed1ab4617dcd5",
+    "collected_at": "2026-09-17T18:02:45+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-90eff199-d25c-5c69-eef4-8e9266328c14.json",
+    "sha256": "c0f62e1fa8933b4a431e93cd4c9adc37d620a526b446758710c0dc6bf74c6b5e",
+    "collected_at": "2026-09-17T18:02:45+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-af1deed3-0754-0f21-2cff-8a386f45b7c8.json",
+    "sha256": "be1369edc716077aa8299d4d4f0214dd8a278a7e8375be750d94d900fd47e118",
+    "collected_at": "2026-09-17T18:02:45+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-5598cf6c-3b3b-1d2c-e70d-c050fe238998.json",
+    "sha256": "29ccdefe32487b2e42eefbad69fe30ecafbee401153743ac7c0eac117d902d5e",
+    "collected_at": "2026-09-17T18:02:45+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-a061acf2-6330-5768-57b9-688ec4c5f8b6.json",
+    "sha256": "c74a0ed1d4dfc4edeb3132370e52cc25e9c199ba314b606fe457fd6ac14d8bba",
+    "collected_at": "2026-09-17T18:02:46+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-95207a51-7078-5dee-fd22-f8a607707d98.json",
+    "sha256": "9783b359b72bb0a0b9b1733545b3204f044c33d7820a978492502ab4cdd447ef",
+    "collected_at": "2026-09-17T18:02:46+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-b48eba4c-0aad-13dd-2b92-f9b441f0cd8a.json",
+    "sha256": "7faf0836a5ed7467115ee79ffe574c37d6a2894371157c4921fbf527b0aa4415",
+    "collected_at": "2026-09-17T18:02:46+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-67872a8c-3fa0-f0a4-44c5-4471d9a03fe2.json",
+    "sha256": "3a23b9909672ae45005117af89a5f23591680e22b67583f8d674994aaebaf042",
+    "collected_at": "2026-09-17T18:02:46+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-d1d77442-0729-5da8-469b-ca8d49f975ac.json",
+    "sha256": "74143f94c147a1b422d18d60050c9fef186c99acb7180618cd8053642dc193df",
+    "collected_at": "2026-09-17T18:02:46+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-8b7d6990-d1af-e336-7045-cd198148dd43.json",
+    "sha256": "f7352b0a4b318dd4ce3049d231339775073041e37dd651f4a1e5a4f577535a8c",
+    "collected_at": "2026-09-17T18:02:46+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-2fe6833f-5cba-4745-1c67-5f328e79b274.json",
+    "sha256": "1727de58ba632bdf5b5bd5c42d9b00ce1b6fe309889bea6bcd785a142ac7f7e3",
+    "collected_at": "2026-09-17T18:02:46+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-663c4279-64e2-ea4b-90e9-d60df8ecc745.json",
+    "sha256": "3cd55acb28787efe093e4f4e21f7e1e4c72517bcd4894bca422c548e047b7b7e",
+    "collected_at": "2026-09-17T18:02:46+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-6cce70a4-ff44-5032-de32-3b0b76acec46.json",
+    "sha256": "6ebcb59f238117feef27ddb2e8330a92c54b5b1b734f29a2d5f35fd6b5de48b9",
+    "collected_at": "2026-09-17T18:02:46+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-d2ced860-c221-19f4-9266-9b45ead24b78.json",
+    "sha256": "e373fb0d5585ef6ff2e36a60f2a5ca2525725c68535d94de5a05ea6fe5244381",
+    "collected_at": "2026-09-17T18:02:46+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-d2ff3527-93b3-af82-d1cc-9aff2f293bda.json",
+    "sha256": "62b2d4713a3b5ce4938c1d06109c8394fcbb4a65a572545061d053970cb56dab",
+    "collected_at": "2026-09-17T18:02:47+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-ced36a7c-7855-a3dc-3c6b-ba74f704f3a2.json",
+    "sha256": "36374244fea8c3803b19e192a62742e3ee74bb1e936321d1e4154a7a4d39c31e",
+    "collected_at": "2026-09-17T18:02:47+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-e6f6cbd9-f5cb-2fbd-bb80-7d1983fa9760.json",
+    "sha256": "ac3199c2a60187e86ce45ab3247158e77499efed9b74d4df054389cc63588c79",
+    "collected_at": "2026-09-17T18:02:47+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-150fa726-8b41-47be-9438-b3a388d79e5d.json",
+    "sha256": "943494b0300710a5912f5a5f7002422f1744f95a5602339476f2cab3658fe568",
+    "collected_at": "2026-09-17T18:02:47+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-d45b1ff3-4f65-29dc-0592-1a4c1e051ad4.json",
+    "sha256": "4c22abe5e11ee820f1c0fd940cfa63fc79e59f0bdf0ba8d26e24c0cf612ea089",
+    "collected_at": "2026-09-17T18:02:47+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-6679482a-a053-b440-4a5b-2098abc462bf.json",
+    "sha256": "a788b35a9973f60db2e678c0323e576bf353f0b1376016bcbc1211458797f250",
+    "collected_at": "2026-09-17T18:02:47+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-0e5a5fe3-fcf3-7931-cc6a-9532c458d14e.json",
+    "sha256": "feb301f850d94bf60a72d26e92188647d58c4b476542c1ccb180c10b4610bc91",
+    "collected_at": "2026-09-17T18:02:47+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-cb6d1bd8-6914-9341-0327-7f6c724f808d.json",
+    "sha256": "b7b2530a050b504fc55ce04bbbd2e6a667f38e0caacd750bc3f99759cabda56e",
+    "collected_at": "2026-09-17T18:02:47+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-8275eb98-0fa9-fe19-09de-debcf606e68d.json",
+    "sha256": "f8cb2ba7e3588e80751ab5e5cc6cd1e7ea012b4ea477cce1a404727d6db628f2",
+    "collected_at": "2026-09-17T18:02:47+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-788330e8-cdc0-44c3-e3ac-73551cde87fc.json",
+    "sha256": "b2229f89ed3b942fe2282993a1322090bc0ef2536d89d357d32496f67396ae86",
+    "collected_at": "2026-09-17T18:02:47+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-d1da82da-2ae7-e335-9c0f-af6c0e1895e7.json",
+    "sha256": "0c4e9e877da35b0c27b6113352c0055ce38fb00fa0f22bc979376fb446a4e26c",
+    "collected_at": "2026-09-17T18:02:47+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-d59e476d-a646-d7a0-74c7-18cde8f7a0e8.json",
+    "sha256": "040b8420cb8fd9c76988e9e3e90da8e750f73a06194c6ebb55b45b45a0871687",
+    "collected_at": "2026-09-17T18:02:48+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-37331f2a-6fa7-7a96-06eb-732ea95be8af.json",
+    "sha256": "03321791cda76e5c9ba834c0af8fbf543a51ad1a17fbda78e4dfd90aa73c1acb",
+    "collected_at": "2026-09-17T18:02:48+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-147c9dbd-a5b6-44f3-f7df-6ef5e3aa6e69.json",
+    "sha256": "40553394438eafa26229f1fab782a58d64d26169be576aef4e796904ee8a384f",
+    "collected_at": "2026-09-17T18:02:48+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-c0efab20-f598-626c-2951-5c1e9c7369ba.json",
+    "sha256": "b8cad04ccd082dce0abd468d78ee07603c587cbfefa527919dc5e3e3f65acba1",
+    "collected_at": "2026-09-17T18:02:48+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-547f9421-b4e6-2c1a-9b8c-1b479df4724c.json",
+    "sha256": "b4df5c8951d1c420d6aac81ea6ccb34de6e81c68349e67d8640b2851b9d70f6d",
+    "collected_at": "2026-09-17T18:02:48+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-e2259543-5940-7add-6dfc-dd488818f197.json",
+    "sha256": "e19dcbaefd4ac37b761ff29a88df025294dfbc665e50852986d2db52b7eae91b",
+    "collected_at": "2026-09-17T18:02:48+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-00ad27d4-e8ee-9778-07be-1fa311e8bd27.json",
+    "sha256": "bc875c2748d02d3079672847c258fca9037539ee61256c5abee23e63cba103ac",
+    "collected_at": "2026-09-17T18:02:48+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-edc17582-aa06-fcad-ece8-b01c42dc73a4.json",
+    "sha256": "7bb20fda693fccd6bddf8db909a42196df19aef78daa8d0abde9c7aa3dd17f1a",
+    "collected_at": "2026-09-17T18:02:48+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-f039e376-b7e3-ff8d-3f2e-704c391da703.json",
+    "sha256": "8aa4235355822d77e09e4a66f572e742d5f80318e4be7172b46e69b6c2459b22",
+    "collected_at": "2026-09-17T18:02:48+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-648dfda6-4d1a-6b82-1f36-f911c4bbe586.json",
+    "sha256": "85bb2777d215eceda7c553b7dcad83b70350f2756ecd7c3f3558614fd749ba4c",
+    "collected_at": "2026-09-17T18:02:48+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-1973af8a-4a1d-5e93-2859-0cf9678121b9.json",
+    "sha256": "33377d3f53e1a301f81b1e08eeea69721df4c2a7ea1d596929badf7b1cce164a",
+    "collected_at": "2026-09-17T18:02:49+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-2c6f85ac-5eb6-a3d2-6646-0242ade6f450.json",
+    "sha256": "6b9b623d5a8a34c8cf0a11b9270f5e5262b0636515dec8d4f77b90cee28fd596",
+    "collected_at": "2026-09-17T18:02:49+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-e8ab576d-062b-2164-1a36-4d296fd375b3.json",
+    "sha256": "68a32f89608f8c56f8f655c2279a682289d42d4178f25a71342514134476581d",
+    "collected_at": "2026-09-17T18:02:49+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-1b1d3ea4-c000-525e-21ff-fad9d9a52d04.json",
+    "sha256": "e0e2153a2876e18af5a8837fe6350309fb0cd3d47b4f999b0a8f8254308d9f74",
+    "collected_at": "2026-09-17T18:02:49+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-4175a748-1edf-2487-3add-c5f71aeeade0.json",
+    "sha256": "57444c3f0177b0f1ae99ca3d148cf1d43d17e6b6eaff84d9aa05d3a9f59aa0b8",
+    "collected_at": "2026-09-17T18:02:49+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-e3b1d7a5-0816-72ed-86d2-5e584c8a373e.json",
+    "sha256": "382623489e9ab9d2aed3403370269305f735464b75f10296b41bf1061dbc29a0",
+    "collected_at": "2026-09-17T18:02:49+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-e59a3dca-1d40-e680-8eb1-2d2dc608d994.json",
+    "sha256": "4e9d48ab981e5c33b3c160f53640930ef13fa26bb104a2560f5f3cb7862ed584",
+    "collected_at": "2026-09-17T18:02:49+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-4f4c3d5a-e566-1118-96e6-92a362d44542.json",
+    "sha256": "2574246d2adf26afb887fb0b84c4e0bfba8e275375db36cece9dc678e9797271",
+    "collected_at": "2026-09-17T18:02:49+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-f518f6db-3807-be2d-289c-e27fa283c3d5.json",
+    "sha256": "0f7029f3f2a02edb08f8a3c5c88618c874dbf3d6ca8008ff266407a235a193e9",
+    "collected_at": "2026-09-17T18:02:49+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-d90f038f-efde-cc37-f9bc-e0843d87f508.json",
+    "sha256": "c58825600fdca51b6a7417f379e03c1847da3600be367dda74f79588e1a36c55",
+    "collected_at": "2026-09-17T18:02:49+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-68b98854-d2ce-9fef-95bc-ec6d26db6eb9.json",
+    "sha256": "1bdb0efedcb4cf2714808471730e897326d28935f7a174a6356ad7c87b2cdf42",
+    "collected_at": "2026-09-17T18:02:49+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-0d8d830e-e100-6770-dd88-74dabad1db9e.json",
+    "sha256": "eed4aee43433465795af08c3b19a94d901e6333443beaac78c6d9ec4aa48232a",
+    "collected_at": "2026-09-17T18:02:50+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-e6575b49-edcb-9418-fe06-1ec8cd046194.json",
+    "sha256": "920eb36d48c334d1df24fd4b34dc8e906dfd411d0cde5b6f72d32ed57c2c3422",
+    "collected_at": "2026-09-17T18:02:50+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-bb24abb2-164d-7e26-48af-24a768c45c0a.json",
+    "sha256": "da26b4576bbe9646d546f09a7dd89edf7990c42b528f9ef603c65462886cafca",
+    "collected_at": "2026-09-17T18:02:50+08:00"
+  },
+  {
+    "url": "https://a.jiuyeb.cn/mobile.php/job/detail",
+    "file": "data/sources/2026-09-17-official/nwu-detail-ad7cdc19-247e-9c82-b6f4-cff842edf9b1.json",
+    "sha256": "7ecfbdb30f7c55557ec3c4cf3b11da90c066981aa6d99d0c063c35076034920a",
+    "collected_at": "2026-09-17T18:02:50+08:00"
+  }
+]

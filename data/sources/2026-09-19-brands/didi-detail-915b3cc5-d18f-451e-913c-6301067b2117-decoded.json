@@ -1,0 +1,136 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [],
+    "autoArchiveTalentPoolId": 432698,
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-05T16:08:40",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": "27秋-SQL"
+      }
+    },
+    "department": {
+      "id": 439007,
+      "name": "自动驾驶"
+    },
+    "departmentId": 439007,
+    "departments": [
+      {
+        "id": 439007,
+        "name": "自动驾驶"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "本科",
+    "hireMode": 2,
+    "id": "915b3cc5-d18f-451e-913c-6301067b2117",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "岗位职责：\n1、用户增长与策略运营：基于业务诉求，目标用户特征、核心业务场景和用户生命周期管理，参与运营策略设计，促进业务增长，以及提升效率；\n2、数据策略与经营分析：参与业务指标体系建设、核心路径拆解、经营看板和分析模型建设，洞察用户增长、运营效率与商业化质量的关键机会点；\n3、目标管理与跨团队协同：协助业务目标制定与拆解，参与过程指标追踪、进度监控和偏差预警，并与产品、算法、研发、城市运营等团队协作，推动策略落地和问题闭环。\n\n任职要求：\n1、2027届毕业生，本科及以上学历，统计学、经济学、运筹学、数学、计算机、交通运输等相关专业优先；\n2、对 Robotaxi、自动驾驶、AI 大模型及出行商业化有热情；\n3、具备较强的逻辑拆解能力，能围绕用户增长、经营分析、目标管理等复杂问题，快速识别关键变量，形成清晰的分析框架和解决思路；\n4、具备扎实的数据分析能力和数据敏感度，熟练使用 SQL、Excel 等工具，能通过数据发现问题、验证假设，并辅助业务决策；\n5、具备用户视角和商业好奇心，对互联网平台、出行交易、用户运营策略感兴趣，会主动思考；\n6、具备良好的自我驱动、沟通协作和项目推进能力，愿意深入业务一线。",
+    "jobIntentions": [],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          439007
+        ],
+        "locationIds": [
+          92621
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 110000,
+        "cityName": "北京市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 92621,
+        "provinceName": "北京市"
+      }
+    ],
+    "multiLocale": "{\"mainLocale\":\"zh-CN\",\"secondLocale\":\"\"}",
+    "number": 1,
+    "openedAt": "2026-08-13T08:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 0,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-08-13T10:19:54",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-自动驾驶-策略运营",
+    "updatedAt": "2026-08-28T16:18:17",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 20039,
+      "name": "运营类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://tcdn.bstatics.com/ux/beisen-common/upaas-static/recruitment-portal/jquery-3.6.0.min.js"></script>
+    <style>
+      
+:root {
+  --skin-css-var-S6: 240, 245, 255;
+  --skin-css-var-S5: 173, 198, 255;
+  --skin-css-var-S4: 89, 126, 247;
+  --skin-css-var-S3: 47, 84, 235;
+  --skin-css-var-S2: 34, 65, 224;
+  --skin-css-var-S1: 16, 35, 158;
+  --skin-css-var-M1: 20, 20, 20;
+  --skin-css-var-M2: 66, 66, 66;
+  --skin-css-var-M3: 89, 89, 89;
+  --skin-css-var-M4: 140, 140, 140;
+  --skin-css-var-M5: 191, 191, 191;
+  --skin-css-var-M6: 235, 235, 235;
+  --skin-css-var-M7: 245, 245, 245;
+  --skin-css-var-M8: 250, 250, 250;
+  --skin-css-var-M9: 255, 255, 255;
+  --skin-css-var-M10: 0, 0, 0
+}
+    </style>
+    <style id="webpart_style">
+      @keyframes ti3O475vT_JTRXS69NKF{0%{transform:translateX(0)}50%{transform:translateY(5px)}100%{transform:translateX()}}@media screen and (-ms-high-contrast: active),(-ms-high-contrast: none){.iJlxPVg1t63htVD74Mzd{opacity:50%}}.NAYTjWqN_FK9Ev4mEvP9{overflow:hidden;position:relative}.fbNkMiPQzTD0DdaaxUFN{font-size:18px;font-weight:400}.fbNkMiPQzTD0DdaaxUFN.SQNlqFZAS8XxlLRoBTx0::placeholder{color:rgba(255,255,255,.3)}.fbNkMiPQzTD0DdaaxUFN.VdK1k9jVDZ4GstM51aUA::placeholder{color:rgba(0,0,0,.3)}.vBedGxsA9ncwahhmVH7z{position:absolute;top:0;bottom:0;left:0;right:0;background-color:#ebebeb;background-color:rgb(var(--skin-css-var-M6))}.iJlxPVg1t63htVD74Mzd{position:absolute;top:0;right:0;bottom:0;left:0;backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);border:1px solid rgba(191,191,191,.3);border:1px solid rgba(var(--skin-css-var-M5), 0.3);box-sizing:border-box;border-radius:30px;z-index:-1}.PfXMHH8_Xy7BeLqShLDg:hover .iJlxPVg1t63htVD74Mzd{border:1px solid #adc6ff;border:1px solid rgb(var(--skin-css-var-S5))}.PfXMHH8_Xy7BeLqShLDg[full] .iJlxPVg1t63htVD74Mzd{border:1px solid rgba(255,255,255,.1);border:1px solid rgba(var(--skin-css-var-M9), 0.1);box-shadow:0px 2px 20px 0px rgba(0,0,0,.03)}.PfXMHH8_Xy7BeLqShLDg[full] :hover .HGhC_uLGobqcg9_xMZTJ{display:block !important}.PfXMHH8_Xy7BeLqShLDg[active] .iJlxPVg1t63htVD74Mzd{border:1px solid #1d86f0;border:1px solid rgba(var(--skin-css-var-S4), 1)}.wrlbkRjX3dyjE4IyFnlU{height:100%}.obUNRZzZnh96bOk1y0GR{overflow:hidden;align-content:center;justify-content:center;position:absolute;left:0;top:0;bottom:0;right:0;background-size:cover;background-repeat:no-repeat;background-position:center}.dpeDQooLLNPTI_IKC9bm{pointer-events:none;position:absolute;left:0;top:0;bottom:0;right:0;display:flex;justify-content:center;align-content:center;align-items:center;z-index:2}.dpeDQooLLNPTI_IKC9bm .kDcuLEkKkpxTewQ9iirg{width:1200px;display:flex;flex-direction:column}.dpeDQooLLNPTI_IKC9bm .RBXDX8I2WAHuGHuwk7hJ{color:#fff;font-weight:600;pointer-events:initial;word-wrap:break-word;width:100%}.dpeDQooLLNPTI_IKC9bm .vgRhUt4zy_Tmco73TTLW{color:#fff;margin-top:20px;pointer-events:initial;word-wrap:break-word;width:100%}.dpeDQooLLNPTI_IKC9bm .PfXMHH8_Xy7BeLqShLDg{height:60px;width:800px;border-radius:30px;position:relative;box-sizing:border-box;margin-top:60px;pointer-events:initial;overflow:hidden}.dpeDQooLLNPTI_IKC9bm .PfXMHH8_Xy7BeLqShLDg .vobaFK5wUGoMYhl6TgIq{position:absolute;top:0;right:0;bottom:0;left:0;border-radius:30px;z-index:1;display:flex;align-items:center}.dpeDQooLLNPTI_IKC9bm .PfXMHH8_Xy7BeLqShLDg .vobaFK5wUGoMYhl6TgIq .OYTrllPzVV7RL6FyLOwr{width:48px;display:flex;justify-content:flex-end}.dpeDQooLLNPTI_IKC9bm .PfXMHH8_Xy7BeLqShLDg .vobaFK5wUGoMYhl6TgIq .yzoqJzHDyjGBoLSS8RUT{flex-grow:1;display:flex;margin-left:8px;margin-right:16px}.dpeDQooLLNPTI_IKC9bm .PfXMHH8_Xy7BeLqShLDg .vobaFK5wUGoMYhl6TgIq .yzoqJzHDyjGBoLSS8RUT input{border:none;background:none;outline:none;width:100%;height:58px;font-size:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:0}.dpeDQooLLNPTI_IKC9bm .PfXMHH8_Xy7BeLqShLDg .vobaFK5wUGoMYhl6TgIq .yzoqJzHDyjGBoLSS8RUT[active]{margin-right:8px}.dpeDQooLLNPTI_IKC9bm .PfXMHH8_Xy7BeLqShLDg .vobaFK5wUGoMYhl6TgIq .HGhC_uLGobqcg9_xMZTJ{width:18px;margin-right:16px;font-size:18px;color:#bfbfbf;display:none;z-index:1;cursor:pointer}.dpeDQooLLNPTI_IKC9bm .PfXMHH8_Xy7BeLqShLDg .vobaFK5wUGoMYhl6TgIq .n8VHymGlu9pkyDPO5xhQ{width:180px;height:60px;color:#fff;text-align:center;line-height:60px;font-size:18px;border-radius:30px;background-color:#1d86f0;background-color:rgb(var(--skin-css-var-S3));transition:background-color .2s;cursor:pointer}.dpeDQooLLNPTI_IKC9bm .PfXMHH8_Xy7BeLqShLDg .vobaFK5wUGoMYhl6TgIq .n8VHymGlu9pkyDPO5xhQ:hover{background-color:#5cadff;background-color:RGB(var(--skin-css-var-S4))}.dpeDQooLLNPTI_IKC9bm .PfXMHH8_Xy7BeLqShLDg .vobaFK5wUGoMYhl6TgIq .n8VHymGlu9pkyDPO5xhQ:active{background-color:#1d39c4;background-color:RGB(var(--skin-css-var-S2))}.Cesug9NzhkXW5OYDH3ya{position:absolute;height:6px;bottom:20px;left:0;right:0;display:flex;justify-content:center;z-index:2}.CainAxtqFAl9LxOhoTRh{height:6px;width:20px;background:rgba(255,255,255,.2);border-radius:3px;transition:all .3s ease-out;cursor:pointer}.CainAxtqFAl9LxOhoTRh[active]{width:40px;color:#fff;background-color:#fff;background-color:RGB(var(--skin-css-var-M9))}.CainAxtqFAl9LxOhoTRh+.CainAxtqFAl9LxOhoTRh{margin-left:10px}.Os8XEAGXNb30YJ99scFv{position:absolute;height:24px;left:0;right:0;display:none;justify-content:center;z-index:2;color:#fff;font-size:30px;animation:ti3O475vT_JTRXS69NKF .6s infinite}.vGHNSl3_6NpXO6Fnk4Kv{margin-top:60px;color:#fff}.vGHNSl3_6NpXO6Fnk4Kv .lcZV4anNRaZaT7vYfmfW{pointer-events:initial;position:relative;padding:17px 45px;font-size:18px;line-height:26px;border-radius:30px;cursor:pointer;text-decoration:none;color:#fff;overflow:hidden;display:inline-block;max-width:198px;overflow:hidden;box-sizing:border-box}.vGHNSl3_6NpXO6Fnk4Kv .lcZV4anNRaZaT7vYfmfW .NV18kKIcJLvq2_9r_yG5{display:none;border-radius:30px}.vGHNSl3_6NpXO6Fnk4Kv .lcZV4anNRaZaT7vYfmfW:hover .NV18kKIcJLvq2_9r_yG5{display:block;position:absolute;top:0;right:0;bottom:0;left:0;background-color:rgba(255,255,255,.15)}.vGHNSl3_6NpXO6Fnk4Kv .lcZV4anNRaZaT7vYfmfW span{display:block;max-width:108px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.vGHNSl3_6NpXO6Fnk4Kv .lcZV4anNRaZaT7vYfmfW+.lcZV4anNRaZaT7vYfmfW{margin-left:24px}.NpiyNA77eTYGtkEPOaUA{width:100%;height:100%;min-height:710px;max-height:1440px;object-fit:cover}.tudyFfR3wP6nVo4llEjw{object-fit:contain;-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px)}.XCCNRb_yUQED_YwNKmR7{height:100%;position:absolute;left:0;top:0;bottom:0;right:0;width:100%;object-fit:cover}.Jy57CiUidzwODSvOtIv1{position:absolute;top:50%;left:20px;z-index:2;transform:translateY(-50%);display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background-color:rgba(0,0,0,.3);background-color:rgba(var(--skin-css-var-M10), 0.3);cursor:pointer;font-size:20px;color:#fff}.Jy57CiUidzwODSvOtIv1:hover{background-color:rgba(0,0,0,.4);background-color:rgba(var(--skin-css-var-M10), 0.4)}.BLD4b3tLmMBK6SadRmQv {
+  margin-right: 24px;
+  height: 193px;
+  margin-bottom: 24px;
+  border-radius: 12px;
+  position: relative;
+  box-sizing: border-box;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.06);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 37px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+}
+.BLD4b3tLmMBK6SadRmQv:hover {
+  box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.M90n1PEh9yHcU3ppR3VL:nth-child(2n) {
+  margin-right: 0;
+}
+.Hq3wY0ebOTFmj0Kkgk4G:nth-child(3n) {
+  margin-right: 0;
+}
+
+.C0K_3VuKCSPFq4CcP3nD {
+  font-size: 28px;
+  max-width: 340px;
+  /* height: 36px;
+  line-height: 36px; */
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: relative;
+  z-index: 1;
+}
+.mBm9_eskdk0qFIp0KIps {
+  font-size: 18px;
+  font-weight: 400;
+}
+.DDhfd0Z2YMARnpz_gfuL {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(2);
+}
+
+.Gyu23SLC5fU0QLb0Mfe8 {
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.ZpJAFOXRvDp0SKJRx7Fj {
+  position: relative;
+  top: 2px;
+  margin-left: 4px;
+}
+.biOzdlWlnyhyYuVxZ1ze {
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+.Qf6_qv55aAjfB5n8Xnn3 {
+  min-height: 26px; /*占位用*/
+  /* width: max-content; */
+  font-family: PingFangSC-Semibold;
+  text-align: center;
+  width: 1000px;
+  /* font-size: 40px; */
+  /* margin-bottom: 20px; */
+  text-align: center;
+  font-weight: 600;
+  position: relative;
+  color:rgb(20, 20, 20);
+}
+.fv63roT5XapR7DIYRIyn .Fo3y99QLoiY3oYA5ZxlV>:first-child::before {
+  display: inline-block;
+  font-family: portal-mobile-font-name;
+  content: "\e777";
+  color: rgb(var(--skin-css-var-S3));
+  /* font-size: 40px; */
+  max-width: 100px;
+}
+.mgbgsb42qJIp9MIJcjSb .Fo3y99QLoiY3oYA5ZxlV>:first-child:before {
+  display: inline-block;
+  font-family: portal-mobile-font-name;
+  content: "\e778";
+  color: rgb(var(--skin-css-var-S3));
+  /* font-size: 40px; */
+  max-width: 100px;
+}
+.f3IGKOzMiyutgbvdVmSt .Fo3y99QLoiY3oYA5ZxlV>:first-child:after {
+  display: inline-block;
+  font-family: portal-mobile-font-name;
+  content: "\e776";
+  color: rgb(var(--skin-css-var-S3));
+  /* font-size: 10px; */
+  position: absolute;
+  bottom: 0px;
+  overflow: hidden;
+  /* height: 10px;
+  width: 70px;
+  margin-left: -70px; */
+}
+
+
+.Qf6_qv55aAjfB5n8Xnn3 .rmT2HLwJkVoRBu65wSzV{
+  width: fit-content;
+}
+.Qf6_qv55aAjfB5n8Xnn3 .rmT2HLwJkVoRBu65wSzV .BdKhmsraMetc9g0D4CfQ{
+  color: aqua !important;
+}
+.LODnQ16LG8pmMOBUqh7Q {
+  /* position: absolute; */
+  font-size: 40px;
+  top: 6px;
+  /* left: -60px; */
+  color: rgb(var(--skin-css-var-S3));
+}
+.LODnQ16LG8pmMOBUqh7Q svg {
+  vertical-align: top;
+}
+.N6OaewG517fFRJlXbE4o {
+  color: rgb(var(--skin-css-var-S3));
+  left: -28px;
+  top: 14px;
+  /* position: absolute; */
+}
+.UeFYHwKimUvN5KSZ2zjZ {
+  /* position: absolute; */
+  width: 90px;
+  height: 14px;
+  bottom: -60px;
+  left: -75px;
+  color: rgb(var(--skin-css-var-S3));
+  z-index: 0;
+}
+.zNNgfkTSnJ2deYoVuagu {
+  /* height: 26px; */
+  color: "grey";
+  min-height: 26px; /*占位用*/
+  /* width: max-content; */
+  font-family: PingFangSC-Semibold;
+  /* font-size: 18px; */
+  text-align: center;
+  font-weight: 600;
+  /* line-height: 26px; */
+  width: 1000px;
+  max-width: 1000px;
+}
+.UaCuwcUmbwUqbxlX3F2j{display:flex;flex-direction:column;align-items:center;background-repeat:no-repeat;background-size:cover;min-width:1200px;width:100%;background-position:center top}.jQkOX5c3XzAbjey0ZF7R{width:1200px;display:flex;flex-wrap:wrap;justify-content:flex-start}.vZgqZ670GYG7qD8CrUcm{font-size:30px}.biOzdlWlnyhyYuVxZ1ze {
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+.Qf6_qv55aAjfB5n8Xnn3 {
+  min-height: 26px; /*占位用*/
+  /* width: max-content; */
+  font-family: PingFangSC-Semibold;
+  text-align: center;
+  width: 1000px;
+  /* font-size: 40px; */
+  /* margin-bottom: 20px; */
+  text-align: center;
+  font-weight: 600;
+  position: relative;
+  color:rgb(20, 20, 20);
+}
+.fv63roT5XapR7DIYRIyn .Fo3y99QLoiY3oYA5ZxlV>:first-child::before {
+  display: inline-block;
+  font-family: portal-mobile-font-name;
+  content: "\e777";
+  color: rgb(var(--skin-css-var-S3));
+  /* font-size: 40px; */
+  max-width: 100px;
+}
+.mgbgsb42qJIp9MIJcjSb .Fo3y99QLoiY3oYA5ZxlV>:first-child:before {
+  display: inline-block;
+  font-family: portal-mobile-font-name;
+  content: "\e778";
+  color: rgb(var(--skin-css-var-S3));
+  /* font-size: 40px; */
+  max-width: 100px;
+}
+.f3IGKOzMiyutgbvdVmSt .Fo3y99QLoiY3oYA5ZxlV>:first-child:after {
+  display: inline-block;
+  font-family: portal-mobile-font-name;
+  content: "\e776";
+  color: rgb(var(--skin-css-var-S3));
+  /* font-size: 10px; */
+  position: absolute;
+  bottom: 0px;
+  overflow: hidden;
+  /* height: 10px;
+  width: 70px;
+  margin-left: -70px; */
+}
+
+
+.Qf6_qv55aAjfB5n8Xnn3 .rmT2HLwJkVoRBu65wSzV{
+  width: fit-content;
+}
+.Qf6_qv55aAjfB5n8Xnn3 .rmT2HLwJkVoRBu65wSzV .BdKhmsraMetc9g0D4CfQ{
+  color: aqua !important;
+}
+.LODnQ16LG8pmMOBUqh7Q {
+  /* position: absolute; */
+  font-size: 40px;
+  top: 6px;
+  /* left: -60px; */
+  color: rgb(var(--skin-css-var-S3));
+}
+.LODnQ16LG8pmMOBUqh7Q svg {
+  vertical-align: top;
+}
+.N6OaewG517fFRJlXbE4o {
+  color: rgb(var(--skin-css-var-S3));
+  left: -28px;
+  top: 14px;
+  /* position: absolute; */
+}
+.UeFYHwKimUvN5KSZ2zjZ {
+  /* position: absolute; */
+  width: 90px;
+  height: 14px;
+  bottom: -60px;
+  left: -75px;
+  color: rgb(var(--skin-css-var-S3));
+  z-index: 0;
+}
+.zNNgfkTSnJ2deYoVuagu {
+  /* height: 26px; */
+  color: "grey";
+  min-height: 26px; /*占位用*/
+  /* width: max-content; */
+  font-family: PingFangSC-Semibold;
+  /* font-size: 18px; */
+  text-align: center;
+  font-weight: 600;
+  /* line-height: 26px; */
+  width: 1000px;
+  max-width: 1000px;
+}
+.tHlmyJoPJtEdseaCeLu1{background-size:cover;background-position:center top}.UTDyc8AS_gCDbuuooI_C{width:100%;word-wrap:break-word;text-align:center;font-weight:600;margin-top:16px}.VgfIlr4p9G0qJdTTSUwF{font-weight:400;margin-top:16px;height:100%;width:100%;font-family:PingFangSC-Semibold;color:#8c8c8c;text-align:center;word-break:break-all}.Aom0gBLnyx_VVUzCs50K{width:1200px;margin:0 auto 0;display:flex;flex-wrap:wrap}.Aom0gBLnyx_VVUzCs50K svg{height:100px}.Aom0gBLnyx_VVUzCs50K .UHoPuNZLPMgFKgprfzbR{display:flex;flex-direction:column;align-items:center;padding-bottom:40px}.Aom0gBLnyx_VVUzCs50K .UHoPuNZLPMgFKgprfzbR:nth-last-child(-n+9){margin-bottom:0px}.Aom0gBLnyx_VVUzCs50K .UHoPuNZLPMgFKgprfzbR .iDE3J5fSGMiz4valZzc1{width:100px;height:100px;border-radius:12px;display:flex;justify-content:center;align-items:center;overflow:hidden}.Aom0gBLnyx_VVUzCs50K .UHoPuNZLPMgFKgprfzbR .FKjXBCvIA6lpgFzK4A7x{width:100%;height:100%;display:flex;justify-content:center;align-items:center;background:#ebebeb;border-radius:12px}.Aom0gBLnyx_VVUzCs50K .UHoPuNZLPMgFKgprfzbR .FKjXBCvIA6lpgFzK4A7x svg{height:40px}.Aom0gBLnyx_VVUzCs50K .UHoPuNZLPMgFKgprfzbR img{width:100px;height:100px}.Aom0gBLnyx_VVUzCs50K .PHssBLsvMhLc4YSko6AP{width:70%;display:flex;flex-direction:column;align-items:center}.biOzdlWlnyhyYuVxZ1ze {
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+.Qf6_qv55aAjfB5n8Xnn3 {
+  min-height: 26px; /*占位用*/
+  /* width: max-content; */
+  font-family: PingFangSC-Semibold;
+  text-align: center;
+  width: 1000px;
+  /* font-size: 40px; */
+  /* margin-bottom: 20px; */
+  text-align: center;
+  font-weight: 600;
+  position: relative;
+  color:rgb(20, 20, 20);
+}
+.fv63roT5XapR7DIYRIyn .Fo3y99QLoiY3oYA5ZxlV>:first-child::before {
+  display: inline-block;
+  font-family: portal-mobile-font-name;
+  content: "\e777";
+  color: rgb(var(--skin-css-var-S3));
+  /* font-size: 40px; */
+  max-width: 100px;
+}
+.mgbgsb42qJIp9MIJcjSb .Fo3y99QLoiY3oYA5ZxlV>:first-child:before {
+  display: inline-block;
+  font-family: portal-mobile-font-name;
+  content: "\e778";
+  color: rgb(var(--skin-css-var-S3));
+  /* font-size: 40px; */
+  max-width: 100px;
+}
+.f3IGKOzMiyutgbvdVmSt .Fo3y99QLoiY3oYA5ZxlV>:first-child:after {
+  display: inline-block;
+  font-family: portal-mobile-font-name;
+  content: "\e776";
+  color: rgb(var(--skin-css-var-S3));
+  /* font-size: 10px; */
+  position: absolute;
+  bottom: 0px;
+  overflow: hidden;
+  /* height: 10px;
+  width: 70px;
+  margin-left: -70px; */
+}
+
+
+.Qf6_qv55aAjfB5n8Xnn3 .rmT2HLwJkVoRBu65wSzV{
+  width: fit-content;
+}
+.Qf6_qv55aAjfB5n8Xnn3 .rmT2HLwJkVoRBu65wSzV .BdKhmsraMetc9g0D4CfQ{
+  color: aqua !important;
+}
+.LODnQ16LG8pmMOBUqh7Q {
+  /* position: absolute; */
+  font-size: 40px;
+  top: 6px;
+  /* left: -60px; */
+  color: rgb(var(--skin-css-var-S3));
+}
+.LODnQ16LG8pmMOBUqh7Q svg {
+  vertical-align: top;
+}
+.N6OaewG517fFRJlXbE4o {
+  color: rgb(var(--skin-css-var-S3));
+  left: -28px;
+  top: 14px;
+  /* position: absolute; */
+}
+.UeFYHwKimUvN5KSZ2zjZ {
+  /* position: absolute; */
+  width: 90px;
+  height: 14px;
+  bottom: -60px;
+  left: -75px;
+  color: rgb(var(--skin-css-var-S3));
+  z-index: 0;
+}
+.zNNgfkTSnJ2deYoVuagu {
+  /* height: 26px; */
+  color: "grey";
+  min-height: 26px; /*占位用*/
+  /* width: max-content; */
+  font-family: PingFangSC-Semibold;
+  /* font-size: 18px; */
+  text-align: center;
+  font-weight: 600;
+  /* line-height: 26px; */
+  width: 1000px;
+  max-width: 1000px;
+}
+.uXHJp3wN9MJKud5gXFS6{background-size:cover;background-repeat:no-repeat;background-position:center top;display:flex;align-items:center;flex-direction:column}.ugIrUBwdlMpBkcli67uo{width:100%}.mWjW0bgqXwLA1O6daEtg {
+  /* height: 404px; */
+  display: inline-block;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.03);
+}
+.mWjW0bgqXwLA1O6daEtg:hover {
+  box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.1);
+}
+.SzCKBUcCUI2SH9ErVmLB {
+  width: 792px;
+}
+.vsdf73VZUieByHNs99qk {
+  width: 384px;
+}
+.VvycbVqY3dY7innr0BBE {
+  margin-right: 24px;
+}
+.GmoCgMZSZwwj8TfSSxhN {
+  width: 100%;
+  height: 220px;
+  border-radius: 12px 12px 0 0;
+  object-fit: cover;
+  vertical-align: top;
+}
+.rzyTIpwSMpLFvsvwNeCQ {
+  width: 100%;
+  font-family: PingFangSC-Semibold;
+  /* font-size: 24px; */
+  color: #141414;
+  /* line-height: 32px; */
+  font-weight: 600;
+  word-wrap: break-word;
+}
+.NjD5Msbn9sRDJUyjCfQJ {
+  width: 100%;
+  font-family: PingFangSC-Regular;
+  /* font-size: 14px; */
+  color: #141414;
+  /* line-height: 22px; */
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.rzyTIpwSMpLFvsvwNeCQ + .NjD5Msbn9sRDJUyjCfQJ {
+  margin-top: 16px;
+}
+
+.L8lMx79O_mNTTkx27z0S {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(2);
+}
+._U7IrNGjAgaVLF6BZXoI {
+  margin-top: 23px;
+  padding: 0 24px;
+  padding-top: 1px;
+  box-sizing: content-box;
+  /* height: 136px; */
+  max-height: 136px;
+  overflow: auto;
+  padding-bottom: 1px;
+}
+
+.qDRDhznUXme92lvsgzgx ._U7IrNGjAgaVLF6BZXoI{
+  overflow: hidden;
+}
+
+.qDRDhznUXme92lvsgzgx ._U7IrNGjAgaVLF6BZXoI:hover{
+  overflow-y: auto;
+  padding-right: 10px;
+}
+._U7IrNGjAgaVLF6BZXoI::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+._U7IrNGjAgaVLF6BZXoI::-webkit-scrollbar-track {
+  border-radius: 100px;
+  background-color: transparent;
+}
+._U7IrNGjAgaVLF6BZXoI::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 100px;
+  background-color: rgba(0, 0, 0, 0.1);
+  background-clip: content-box;
+}
+._U7IrNGjAgaVLF6BZXoI::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(14, 17, 20, 0.3);
+}
+.biOzdlWlnyhyYuVxZ1ze {
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+.Qf6_qv55aAjfB5n8Xnn3 {
+  min-height: 26px; /*占位用*/
+  /* width: max-content; */
+  font-family: PingFangSC-Semibold;
+  text-align: center;
+  width: 1000px;
+  /* font-size: 40px; */
+  /* margin-bottom: 20px; */
+  text-align: center;
+  font-weight: 600;
+  position: relative;
+  color:rgb(20, 20, 20);
+}
+.fv63roT5XapR7DIYRIyn .Fo3y99QLoiY3oYA5ZxlV>:first-child::before {
+  display: inline-block;
+  font-family: portal-mobile-font-name;
+  content: "\e777";
+  color: rgb(var(--skin-css-var-S3));
+  /* font-size: 40px; */
+  max-width: 100px;
+}
+.mgbgsb42qJIp9MIJcjSb .Fo3y99QLoiY3oYA5ZxlV>:first-child:before {
+  display: inline-block;
+  font-family: portal-mobile-font-name;
+  content: "\e778";
+  color: rgb(var(--skin-css-var-S3));
+  /* font-size: 40px; */
+  max-width: 100px;
+}
+.f3IGKOzMiyutgbvdVmSt .Fo3y99QLoiY3oYA5ZxlV>:first-child:after {
+  display: inline-block;
+  font-family: portal-mobile-font-name;
+  content: "\e776";
+  color: rgb(var(--skin-css-var-S3));
+  /* font-size: 10px; */
+  position: absolute;
+  bottom: 0px;
+  overflow: hidden;
+  /* height: 10px;
+  width: 70px;
+  margin-left: -70px; */
+}
+
+
+.Qf6_qv55aAjfB5n8Xnn3 .rmT2HLwJkVoRBu65wSzV{
+  width: fit-content;
+}
+.Qf6_qv55aAjfB5n8Xnn3 .rmT2HLwJkVoRBu65wSzV .BdKhmsraMetc9g0D4CfQ{
+  color: aqua !important;
+}
+.LODnQ16LG8pmMOBUqh7Q {
+  /* position: absolute; */
+  font-size: 40px;
+  top: 6px;
+  /* left: -60px; */
+  color: rgb(var(--skin-css-var-S3));
+}
+.LODnQ16LG8pmMOBUqh7Q svg {
+  vertical-align: top;
+}
+.N6OaewG517fFRJlXbE4o {
+  color: rgb(var(--skin-css-var-S3));
+  left: -28px;
+  top: 14px;
+  /* position: absolute; */
+}
+.UeFYHwKimUvN5KSZ2zjZ {
+  /* position: absolute; */
+  width: 90px;
+  height: 14px;
+  bottom: -60px;
+  left: -75px;
+  color: rgb(var(--skin-css-var-S3));
+  z-index: 0;
+}
+.zNNgfkTSnJ2deYoVuagu {
+  /* height: 26px; */
+  color: "grey";
+  min-height: 26px; /*占位用*/
+  /* width: max-content; */
+  font-family: PingFangSC-Semibold;
+  /* font-size: 18px; */
+  text-align: center;
+  font-weight: 600;
+  /* line-height: 26px; */
+  width: 1000px;
+  max-width: 1000px;
+}
+.LRyrZrUcXtXcdv6QX8Ey{display:flex;flex-direction:column;align-items:center;padding:30px 0px;width:100%;margin:auto;background-position:top center}.wF62hThNvrG7ZaAepAQe{font-size:40px;line-height:40px;text-align:center;margin:0 0 20px 0}.yPPToNXbRsR6p9tNAGVk{display:flex;height:400px;margin:30px 0 20px 0}.b3FF9pPBnmaqL8P2ROxs{flex-grow:1;transition:all ease-in-out .2s;width:200px}.b3FF9pPBnmaqL8P2ROxs:hover{width:400px}.skZOgTXympfvZdccGbVV{width:100%;height:100%;flex-shrink:1;cursor:pointer;object-fit:cover;transition:width ease-in-out .2s}@keyframes initShowWbFadeinUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+.webpart-animation-fadein-up {
+  transition: all ease-in-out 0.8s;
+  animation: initShowWbFadeinUp 0.8s ease-in-out 1;
+}
+.webpart-animation-fadein-up.wb-ani-disable {
+  transform: translateY(20px);
+  opacity: 0;
+}
+.webpart-animation-fadein-up.wb-ani-active {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+    </style>
+  </head>
+  <body style="position: relative">
+    <div id=xP0HJcv6iZ><div class="NAYTjWqN_FK9Ev4mEvP9 root" style="height:1210px"><div class="wrlbkRjX3dyjE4IyFnlU"><div class="obUNRZzZnh96bOk1y0GR media-box" style="height:100%;transform:translate3d(0%, 0, 0);background-image:url(https://portal-oss.zhiye.com/10000/image/0a4affbb-865d-458d-9190-5a309a2b27af.png)"><img src="https://portal-oss.zhiye.com/10000/image/0a4affbb-865d-458d-9190-5a309a2b27af.png" style="height:100%" class="media NpiyNA77eTYGtkEPOaUA "/></div><div class="Cesug9NzhkXW5OYDH3ya"></div></div><div class="dpeDQooLLNPTI_IKC9bm"><div class="kDcuLEkKkpxTewQ9iirg" style="align-items:center"></div></div><div class="Os8XEAGXNb30YJ99scFv sp-scroll" style="bottom:30px"><svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="m512 594.261 272.486-285.013a52.838 52.838 0 0 1 77.278.205c21.402 22.391 21.095 58.982.17 80.828L551.732 714.718c-10.922 11.469-25.36 17.067-39.731 16.725-14.336.342-28.774-5.256-39.731-16.725L162.065 390.28c-20.924-21.846-21.23-58.437.17-80.828a52.838 52.838 0 0 1 77.279-.17L512 594.26z" fill="#fff"></path></svg></div></div></div><div id=y1c-9uVbKo><div class="UaCuwcUmbwUqbxlX3F2j root" style="padding-top:120px;padding-bottom:120px;background-image:;background-color:;background-size:cover;background-repeat:no-repeat"><div class="biOzdlWlnyhyYuVxZ1ze webpart-animation-fadein-up title-root"><div style="display:flex"><div class="Qf6_qv55aAjfB5n8Xnn3 "><span class="edui-body-container"><p style=color:#141414;font-size:40px;text-align:center;font-family:默认字体;max-width:1000px;min-height:20px;font-weight:Regular class="html_container_flag"><span class="iconfont recruit_iconfont_flag icon-rpcyinhao" style=font-family:portal-common-font-name;font-size:40px;></span>招聘职位</p></span></div></div><div class="zNNgfkTSnJ2deYoVuagu" style="color:#424242;margin-top:20px"><span class="edui-body-container"><p style="font-size: 18px; text-align: center; font-family: 默认字体; max-width: 1000px; min-height: 20px;" class="html_container_flag"><span style="color:#8c8c8c">Recruitment Position</span></p></span></div></div><div class="webpart-animation-fadein-up"><div class="jQkOX5c3XzAbjey0ZF7R card_content"><a class="BLD4b3tLmMBK6SadRmQv Hq3wY0ebOTFmj0Kkgk4G cardToList " href="/campus/jobs?LocId=%5B%7B%22id%22%3A%221100%22%2C%22label%22%3A%22%E5%8C%97%E4%BA%AC%E5%B8%82%22%7D%5D" target="_self" style="width:384px;text-decoration:none;background-image:url(https://portal-oss.zhiye.com/10000/image/692f5510-c5a7-468c-850f-9e598c824d05.png)"><div class="C0K_3VuKCSPFq4CcP3nD" style="color:#141414;font-family:PingFang SC,Hiragino Sans GB,STHeitiSC,Helvetica,Helvetica Neue,Microsoft YaHei,Tahoma;font-weight:600;font-size:undefinedpx">北京市</div><div class="Gyu23SLC5fU0QLb0Mfe8"><div class="mBm9_eskdk0qFIp0KIps job_cnt" style="color:#141414;font-family:PingFang SC,Hiragino Sans GB,STHeitiSC,Helvetica,Helvetica Neue,Microsoft YaHei,Tahoma" data-type="1100">共0个职位</div><div class="ZpJAFOXRvDp0SKJRx7Fj"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7262" width="24" height="24"><path d="M384.32 797.512a30.088 30.088 0 0 1-21.288-51.392L597.144 512 363.032 277.816a30.088 30.088 0 0 1 0-42.568 30.088 30.088 0 0 1 42.568 0l255.392 255.464a30.088 30.088 0 0 1 0 42.568L405.6 788.696a30.04 30.04 0 0 1-21.28 8.816z" fill="#141414" p-id="7263"></path></svg></div></div></a><a class="BLD4b3tLmMBK6SadRmQv Hq3wY0ebOTFmj0Kkgk4G cardToList " href="/campus/jobs?LocId=%5B%7B%22id%22%3A%221200%22%2C%22label%22%3A%22%E5%A4%A9%E6%B4%A5%E5%B8%82%22%7D%5D" target="_self" style="width:384px;text-decoration:none;background-image:url(https://portal-oss.zhiye.com/10000/image/60281ca2-8ec4-4e75-85e8-365ee9781b26.png)"><div class="C0K_3VuKCSPFq4CcP3nD" style="color:#141414;font-family:PingFang SC,Hiragino Sans GB,STHeitiSC,Helvetica,Helvetica Neue,Microsoft YaHei,Tahoma;font-weight:600;font-size:undefinedpx">天津市</div><div class="Gyu23SLC5fU0QLb0Mfe8"><div class="mBm9_eskdk0qFIp0KIps job_cnt" style="color:#141414;font-family:PingFang SC,Hiragino Sans GB,STHeitiSC,Helvetica,Helvetica Neue,Microsoft YaHei,Tahoma" data-type="1200">共0个职位</div><div class="ZpJAFOXRvDp0SKJRx7Fj"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7262" width="24" height="24"><path d="M384.32 797.512a30.088 30.088 0 0 1-21.288-51.392L597.144 512 363.032 277.816a30.088 30.088 0 0 1 0-42.568 30.088 30.088 0 0 1 42.568 0l255.392 255.464a30.088 30.088 0 0 1 0 42.568L405.6 788.696a30.04 30.04 0 0 1-21.28 8.816z" fill="#141414" p-id="7263"></path></svg></div></div></a><a class="BLD4b3tLmMBK6SadRmQv Hq3wY0ebOTFmj0Kkgk4G cardToList " href="/campus/jobs?LocId=%5B%7B%22id%22%3A%223100%22%2C%22label%22%3A%22%E4%B8%8A%E6%B5%B7%E5%B8%82%22%7D%5D" target="_self" style="width:384px;text-decoration:none;background-image:url(https://portal-oss.zhiye.com/10000/image/bd549eea-854e-4ec5-ba7c-e87d7d45e87a.png)"><div class="C0K_3VuKCSPFq4CcP3nD" style="color:#141414;font-family:PingFang SC,Hiragino Sans GB,STHeitiSC,Helvetica,Helvetica Neue,Microsoft YaHei,Tahoma;font-weight:600;font-size:undefinedpx">上海市</div><div class="Gyu23SLC5fU0QLb0Mfe8"><div class="mBm9_eskdk0qFIp0KIps job_cnt" style="color:#141414;font-family:PingFang SC,Hiragino Sans GB,STHeitiSC,Helvetica,Helvetica Neue,Microsoft YaHei,Tahoma" data-type="3100">共0个职位</div><div class="ZpJAFOXRvDp0SKJRx7Fj"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7262" width="24" height="24"><path d="M384.32 797.512a30.088 30.088 0 0 1-21.288-51.392L597.144 512 363.032 277.816a30.088 30.088 0 0 1 0-42.568 30.088 30.088 0 0 1 42.568 0l255.392 255.464a30.088 30.088 0 0 1 0 42.568L405.6 788.696a30.04 30.04 0 0 1-21.28 8.816z" fill="#141414" p-id="7263"></path></svg></div></div></a><a class="BLD4b3tLmMBK6SadRmQv Hq3wY0ebOTFmj0Kkgk4G cardToList " href="/campus/jobs?LocId=%5B%7B%22id%22%3A%223301%22%2C%22label%22%3A%22%E6%9D%AD%E5%B7%9E%E5%B8%82%22%7D%5D" target="_self" style="width:384px;text-decoration:none;background-image:url(https://portal-oss.zhiye.com/10000/image/c29a25b1-18f0-4cd2-a58f-4378e7862f4f.png)"><div class="C0K_3VuKCSPFq4CcP3nD" style="color:#141414;font-family:PingFang SC,Hiragino Sans GB,STHeitiSC,Helvetica,Helvetica Neue,Microsoft YaHei,Tahoma;font-weight:600;font-size:undefinedpx">杭州市</div><div class="Gyu23SLC5fU0QLb0Mfe8"><div class="mBm9_eskdk0qFIp0KIps job_cnt" style="color:#141414;font-family:PingFang SC,Hiragino Sans GB,STHeitiSC,Helvetica,Helvetica Neue,Microsoft YaHei,Tahoma" data-type="3301">共0个职位</div><div class="ZpJAFOXRvDp0SKJRx7Fj"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7262" width="24" height="24"><path d="M384.32 797.512a30.088 30.088 0 0 1-21.288-51.392L597.144 512 363.032 277.816a30.088 30.088 0 0 1 0-42.568 30.088 30.088 0 0 1 42.568 0l255.392 255.464a30.088 30.088 0 0 1 0 42.568L405.6 788.696a30.04 30.04 0 0 1-21.28 8.816z" fill="#141414" p-id="7263"></path></svg></div></div></a><a class="BLD4b3tLmMBK6SadRmQv Hq3wY0ebOTFmj0Kkgk4G cardToList " href="/campus/jobs?LocId=%5B%7B%22id%22%3A%224401%22%2C%22label%22%3A%22%E5%B9%BF%E5%B7%9E%E5%B8%82%22%7D%5D" target="_self" style="width:384px;text-decoration:none;background-image:url(https://portal-oss.zhiye.com/10000/image/5bac4b00-578d-447b-8e64-74727275a495.png)"><div class="C0K_3VuKCSPFq4CcP3nD" style="color:#141414;font-family:PingFang SC,Hiragino Sans GB,STHeitiSC,Helvetica,Helvetica Neue,Microsoft YaHei,Tahoma;font-weight:600;font-size:undefinedpx">广州市</div><div class="Gyu23SLC5fU0QLb0Mfe8"><div class="mBm9_eskdk0qFIp0KIps job_cnt" style="color:#141414;font-family:PingFang SC,Hiragino Sans GB,STHeitiSC,Helvetica,Helvetica Neue,Microsoft YaHei,Tahoma" data-type="4401">共0个职位</div><div class="ZpJAFOXRvDp0SKJRx7Fj"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7262" width="24" height="24"><path d="M384.32 797.512a30.088 30.088 0 0 1-21.288-51.392L597.144 512 363.032 277.816a30.088 30.088 0 0 1 0-42.568 30.088 30.088 0 0 1 42.568 0l255.392 255.464a30.088 30.088 0 0 1 0 42.568L405.6 788.696a30.04 30.04 0 0 1-21.28 8.816z" fill="#141414" p-id="7263"></path></svg></div></div></a><a class="BLD4b3tLmMBK6SadRmQv Hq3wY0ebOTFmj0Kkgk4G cardToList " href="/campus/jobs?LocId=%5B%7B%22id%22%3A%224403%22%2C%22label%22%3A%22%E6%B7%B1%E5%9C%B3%E5%B8%82%22%7D%5D" target="_self" style="width:384px;text-decoration:none;background-image:url(https://portal-oss.zhiye.com/10000/image/f7fffdc6-8027-4546-91e6-0d46038f0038.png)"><div class="C0K_3VuKCSPFq4CcP3nD" style="color:#141414;font-family:PingFang SC,Hiragino Sans GB,STHeitiSC,Helvetica,Helvetica Neue,Microsoft YaHei,Tahoma;font-weight:600;font-size:undefinedpx">深圳市</div><div class="Gyu23SLC5fU0QLb0Mfe8"><div class="mBm9_eskdk0qFIp0KIps job_cnt" style="color:#141414;font-family:PingFang SC,Hiragino Sans GB,STHeitiSC,Helvetica,Helvetica Neue,Microsoft YaHei,Tahoma" data-type="4403">共0个职位</div><div class="ZpJAFOXRvDp0SKJRx7Fj"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7262" width="24" height="24"><path d="M384.32 797.512a30.088 30.088 0 0 1-21.288-51.392L597.144 512 363.032 277.816a30.088 30.088 0 0 1 0-42.568 30.088 30.088 0 0 1 42.568 0l255.392 255.464a30.088 30.088 0 0 1 0 42.568L405.6 788.696a30.04 30.04 0 0 1-21.28 8.816z" fill="#141414" p-id="7263"></path></svg></div></div></a></div></div></div></div><div id=Mhok02awSh><div class="tHlmyJoPJtEdseaCeLu1" style="padding-top:120px;padding-bottom:120px;background-image:;background-color:"><div class="biOzdlWlnyhyYuVxZ1ze webpart-animation-fadein-up title-root"><div style="display:flex"><div class="Qf6_qv55aAjfB5n8Xnn3 "><span class="edui-body-container"><p style=color:#141414;font-size:40px;text-align:center;font-family:默认字体;max-width:1000px;min-height:20px;font-weight:Regular class="html_container_flag"><span class="iconfont recruit_iconfont_flag icon-rpcyinhao" style=font-family:portal-common-font-name;font-size:40px;></span>校招流程</p></span></div></div><div class="zNNgfkTSnJ2deYoVuagu" style="color:#8C8C8C;margin-top:20px"><span class="edui-body-container"><p style="color:#8C8C8C;font-size:18px;text-align:center;font-family:默认字体;max-width:1000px;min-height:20px;" class="html_container_flag">Recruitment Process</p></span></div></div><div class="Aom0gBLnyx_VVUzCs50K webpart-animation-fadein-up" style="margin-top:60px"><div class="UHoPuNZLPMgFKgprfzbR" style="width:222px"><div class="iDE3J5fSGMiz4valZzc1"><img loading="lazy" src="https://portal-oss.zhiye.com/10000/image/cac6a7f3-c3a2-4f92-9958-192a140a15fd.png" alt="空中宣讲会"/></div><div class="PHssBLsvMhLc4YSko6AP"><div class="UTDyc8AS_gCDbuuooI_C" style="color:black"><span class="edui-body-container"><p style=color:black;font-size:24px;text-align:unset;font-family:PingFangSC-Semibold;max-width:1000px;min-height:20px;font-weight:Regular class="html_container_flag">空中宣讲会</p></span></div><div class="VgfIlr4p9G0qJdTTSUwF" style="color:#8C8C8C"><span class="edui-body-container"><p style=color:#8C8C8C;font-size:14px;text-align:unset;font-family:PingFangSC-Regular;max-width:1000px;min-height:20px;font-weight:Regular class="html_container_flag">6月1日-6月15日</p></span></div></div></div><svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 18 18" version="1.1" color="#BFBFBF"><title>icon/dire/caret-down</title><g id="icon/dire/caret-down" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="dire/caret-down" transform="translate(9.000000, 9.000000) scale(1, -1) translate(-9.000000, -9.000000) "><rect id="Rectangle" x="0" y="0" width="18" height="18"></rect><path d="M15.0561569,5 C16.0878555,5 16.5227263,5.29699376 15.0561569,7.01397938 L9.92649127,12.5831946 C9.41423989,13.1393396 8.5829711,13.1385305 8.07146494,12.5831946 L2.94179932,7.01397938 C1.34705946,5.3167744 2.07706678,5 2.94179932,5 L15.0561569,5 Z" id="下拉按钮" fill="#BFBFBF" transform="translate(9.000000, 9.000000) rotate(-90.000000) translate(-9.000000, -9.000000) "></path></g></g></svg><div class="UHoPuNZLPMgFKgprfzbR" style="width:222px"><div class="iDE3J5fSGMiz4valZzc1"><img loading="lazy" src="https://portal-oss.zhiye.com/10000/image/5ae3f1d9-c9dd-4aad-81e4-425621126858.png" alt="网申/内推"/></div><div class="PHssBLsvMhLc4YSko6AP"><div class="UTDyc8AS_gCDbuuooI_C" style="color:black"><span class="edui-body-container"><p style=color:black;font-size:24px;text-align:unset;font-family:PingFangSC-Semibold;max-width:1000px;min-height:20px;font-weight:Regular class="html_container_flag">网申/内推</p></span></div><div class="VgfIlr4p9G0qJdTTSUwF" style="color:#8C8C8C"><span class="edui-body-container"><p style=color:#8C8C8C;font-size:14px;text-align:unset;font-family:PingFangSC-Regular;max-width:1000px;min-height:20px;font-weight:Regular class="html_container_flag">6月15日-9月30日</p></span></div></div></div><svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 18 18" version="1.1" color="#BFBFBF"><title>icon/dire/caret-down</title><g id="icon/dire/caret-down" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="dire/caret-down" transform="translate(9.000000, 9.000000) scale(1, -1) translate(-9.000000, -9.000000) "><rect id="Rectangle" x="0" y="0" width="18" height="18"></rect><path d="M15.0561569,5 C16.0878555,5 16.5227263,5.29699376 15.0561569,7.01397938 L9.92649127,12.5831946 C9.41423989,13.1393396 8.5829711,13.1385305 8.07146494,12.5831946 L2.94179932,7.01397938 C1.34705946,5.3167744 2.07706678,5 2.94179932,5 L15.0561569,5 Z" id="下拉按钮" fill="#BFBFBF" transform="translate(9.000000, 9.000000) rotate(-90.000000) translate(-9.000000, -9.000000) "></path></g></g></svg><div class="UHoPuNZLPMgFKgprfzbR" style="width:222px"><div class="iDE3J5fSGMiz4valZzc1"><img loading="lazy" src="https://portal-oss.zhiye.com/10000/image/0c132954-9f67-444e-b59e-55f1c6286faa.png" alt="在线笔试"/></div><div class="PHssBLsvMhLc4YSko6AP"><div class="UTDyc8AS_gCDbuuooI_C" style="color:black"><span class="edui-body-container"><p style=color:black;font-size:24px;text-align:unset;font-family:PingFangSC-Semibold;max-width:1000px;min-height:20px;font-weight:Regular class="html_container_flag">在线笔试</p></span></div><div class="VgfIlr4p9G0qJdTTSUwF" style="color:#8C8C8C"><span class="edui-body-container"><p style=color:#8C8C8C;font-size:14px;text-align:unset;font-family:PingFangSC-Regular;max-width:1000px;min-height:20px;font-weight:Regular class="html_container_flag">7月10日陆续开始</p></span></div></div></div><svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 18 18" version="1.1" color="#BFBFBF"><title>icon/dire/caret-down</title><g id="icon/dire/caret-down" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="dire/caret-down" transform="translate(9.000000, 9.000000) scale(1, -1) translate(-9.000000, -9.000000) "><rect id="Rectangle" x="0" y="0" width="18" height="18"></rect><path d="M15.0561569,5 C16.0878555,5 16.5227263,5.29699376 15.0561569,7.01397938 L9.92649127,12.5831946 C9.41423989,13.1393396 8.5829711,13.1385305 8.07146494,12.5831946 L2.94179932,7.01397938 C1.34705946,5.3167744 2.07706678,5 2.94179932,5 L15.0561569,5 Z" id="下拉按钮" fill="#BFBFBF" transform="translate(9.000000, 9.000000) rotate(-90.000000) translate(-9.000000, -9.000000) "></path></g></g></svg><div class="UHoPuNZLPMgFKgprfzbR" style="width:222px"><div class="iDE3J5fSGMiz4valZzc1"><img loading="lazy" src="https://portal-oss.zhiye.com/10000/image/a72934ca-8ec1-47e0-b180-91ab4063c5b0.png" alt="面试"/></div><div class="PHssBLsvMhLc4YSko6AP"><div class="UTDyc8AS_gCDbuuooI_C" style="color:black"><span class="edui-body-container"><p style=color:black;font-size:24px;text-align:unset;font-family:PingFangSC-Semibold;max-width:1000px;min-height:20px;font-weight:Regular class="html_container_flag">面试</p></span></div><div class="VgfIlr4p9G0qJdTTSUwF" style="color:#8C8C8C"><span class="edui-body-container"><p style=color:#8C8C8C;font-size:14px;text-align:unset;font-family:PingFangSC-Regular;max-width:1000px;min-height:20px;font-weight:Regular class="html_container_flag">7月20日陆续开始</p></span></div></div></div><svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 18 18" version="1.1" color="#BFBFBF"><title>icon/dire/caret-down</title><g id="icon/dire/caret-down" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="dire/caret-down" transform="translate(9.000000, 9.000000) scale(1, -1) translate(-9.000000, -9.000000) "><rect id="Rectangle" x="0" y="0" width="18" height="18"></rect><path d="M15.0561569,5 C16.0878555,5 16.5227263,5.29699376 15.0561569,7.01397938 L9.92649127,12.5831946 C9.41423989,13.1393396 8.5829711,13.1385305 8.07146494,12.5831946 L2.94179932,7.01397938 C1.34705946,5.3167744 2.07706678,5 2.94179932,5 L15.0561569,5 Z" id="下拉按钮" fill="#BFBFBF" transform="translate(9.000000, 9.000000) rotate(-90.000000) translate(-9.000000, -9.000000) "></path></g></g></svg><div class="UHoPuNZLPMgFKgprfzbR" style="width:222px"><div class="iDE3J5fSGMiz4valZzc1"><img loading="lazy" src="https://portal-oss.zhiye.com/10000/image/8d1ca964-fa8d-4394-a3fd-6c45d54139fa.png" alt="Offer"/></div><div class="PHssBLsvMhLc4YSko6AP"><div class="UTDyc8AS_gCDbuuooI_C" style="color:#141414"><span class="edui-body-container"><p style=color:#141414;font-size:24px;text-align:unset;font-family:PingFangSC-Semibold;max-width:1000px;min-height:20px;font-weight:Regular class="html_container_flag">Offer</p></span></div><div class="VgfIlr4p9G0qJdTTSUwF" style="color:#8C8C8C"><span class="edui-body-container"><p style=color:#8C8C8C;font-size:14px;text-align:unset;font-family:PingFangSC-Regular;max-width:1000px;min-height:20px;font-weight:Regular class="html_container_flag">7月20日陆续开始</p></span></div></div></div></div></div></div><div id=e2JinY7NLW><div class="webpart-animation-fadein-up"><div class="uXHJp3wN9MJKud5gXFS6 root" style="background-color:;background-image:url(https://portal-oss.zhiye.com/10000/image/098e4805-1728-4cf1-b394-70cca8429419.png);padding-top:120px;padding-bottom:120px"><div style="width:1200px;margin:0 auto"><div class="biOzdlWlnyhyYuVxZ1ze webpart-animation-fadein-up title-root"><div style="display:flex"><div class="Qf6_qv55aAjfB5n8Xnn3 "><span class="edui-body-container"><p style="color:#141414;font-size:40px;text-align:center;font-family:默认字体;max-width:1000px;min-height:20px;" class="html_container_flag"><span class="iconfont recruit_iconfont_flag icon-rpcyinhao" style=font-family:portal-common-font-name;font-size:40px;></span>校招问答</p></span></div></div><div class="zNNgfkTSnJ2deYoVuagu" style="color:#424242;margin-top:20px"><span class="edui-body-container"><p><span style="background-color: transparent;;color:#8c8c8c;font-size: 18px;">School recruitment Q &amp; A</span><span></span></p></span></div></div></div><div class="ugIrUBwdlMpBkcli67uo" data-id="data-pc-tab" data-node-id="e2JinY7NLW">{&quot;title&quot;:{&quot;mainTitle&quot;:{&quot;showMainTitle&quot;:true,&quot;mainTitleText&quot;:&quot;&amp;amp;lt;p style=&amp;amp;quot;color:#141414;font-size:40px;text-align:center;font-family:默认字体;max-width:1000px;min-height:20px;&amp;amp;quot; class=&amp;amp;quot;html_container_flag&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;span class=&amp;amp;quot;iconfont recruit_iconfont_flag icon-rpcyinhao&amp;amp;quot; style=&amp;amp;quot;font-family:portal-common-font-name;font-size:40px;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;/span&amp;amp;gt;校招问答&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;style&quot;:1,&quot;color&quot;:&quot;#141414&quot;,&quot;fontFamliy&quot;:&quot;默认字体&quot;},&quot;secondTitle&quot;:{&quot;showSecondTitle&quot;:true,&quot;secondTitleText&quot;:&quot;&amp;amp;lt;p&amp;amp;gt;&amp;amp;lt;span style=&amp;amp;quot;background-color: transparent;;color:#8c8c8c;font-size: 18px;&amp;amp;quot;&amp;amp;gt;School recruitment Q &amp;amp;amp;amp; A&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;span&amp;amp;gt;&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;color&quot;:&quot;#424242&quot;}},&quot;layout&quot;:{&quot;paddingTop&quot;:&quot;120px&quot;,&quot;paddingBottom&quot;:&quot;120px&quot;,&quot;background&quot;:{&quot;type&quot;:&quot;image&quot;,&quot;value&quot;:&quot;https://portal-oss.zhiye.com/10000/image/098e4805-1728-4cf1-b394-70cca8429419.png&quot;},&quot;cardPosition&quot;:&quot;top&quot;,&quot;iconPositon&quot;:&quot;noIcon&quot;,&quot;numberPerLine&quot;:6},&quot;cardList&quot;:[{&quot;TabIcon&quot;:&quot;https://tcdn.bstatics.com/ux/ux-recruitment-portal-2022/release/dist/images/fc6399a445fd22680b90.png&quot;,&quot;TabTitle&quot;:&quot;投递相关&quot;,&quot;CmpType&quot;:&quot;question-common&quot;,&quot;CmpProps&quot;:{&quot;title&quot;:{&quot;mainTitle&quot;:{&quot;showMainTitle&quot;:false},&quot;secondTitle&quot;:{&quot;showSecondTitle&quot;:false}},&quot;layout&quot;:{&quot;paddingBottom&quot;:&quot;0px&quot;,&quot;paddingTop&quot;:&quot;60px&quot;,&quot;background&quot;:{&quot;type&quot;:&quot;no&quot;,&quot;value&quot;:&quot;&quot;}},&quot;question&quot;:[{&quot;Id&quot;:&quot;qweqweqw1&quot;,&quot;question&quot;:&quot;&amp;amp;lt;p&amp;amp;gt;&amp;amp;lt;span style=&amp;amp;quot;font-size: 18px;&amp;amp;quot;&amp;amp;gt;在哪里可以查看到企业最新的招聘信息？&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;answer&quot;:&quot;&amp;amp;lt;p&amp;amp;gt;&amp;amp;lt;span style=&amp;amp;quot;color:#424242&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;span&amp;amp;gt;&amp;amp;lt;/span&amp;amp;gt;查询路径：企业官方网站、企业官网公众号&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;questionColor&quot;:&quot;#141414&quot;,&quot;answerColor&quot;:&quot;#141414&quot;},{&quot;questionColor&quot;:&quot;#141414&quot;,&quot;answerColor&quot;:&quot;#141414&quot;,&quot;answer&quot;:&quot;&amp;amp;lt;p&amp;amp;gt;&amp;amp;lt;span style=&amp;amp;quot;color:#424242&amp;amp;quot;&amp;amp;gt;可以~秋招的结果不影响春招得投递&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;question&quot;:&quot;&amp;amp;lt;p&amp;amp;gt;&amp;amp;lt;span style=&amp;amp;quot;font-size: 18px;&amp;amp;quot;&amp;amp;gt;之前秋招投递过，春招还可以再次投递吗？&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;Id&quot;:&quot;u2rsKpNU1w5sSAXcv_TbZ&quot;},{&quot;questionColor&quot;:&quot;#141414&quot;,&quot;answerColor&quot;:&quot;#141414&quot;,&quot;answer&quot;:&quot;&amp;amp;lt;p&amp;amp;gt;&amp;amp;lt;span style=&amp;amp;quot;color:#424242&amp;amp;quot;&amp;amp;gt;每人可投递3个校招职位，您所投递的第一个职位将作为您的第一志愿&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;question&quot;:&quot;&amp;amp;lt;p&amp;amp;gt;&amp;amp;lt;span style=&amp;amp;quot;font-size: 18px;&amp;amp;quot;&amp;amp;gt;每人可以投递几个校招职位？&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;Id&quot;:&quot;br3h2LWu1qKa3t3lRZbVo&quot;}],&quot;propsEN&quot;:{&quot;title&quot;:{&quot;mainTitle&quot;:{&quot;showMainTitle&quot;:true,&quot;mainTitleText&quot;:&quot;Please enter the main title&quot;},&quot;secondTitle&quot;:{&quot;showSecondTitle&quot;:true,&quot;secondTitleText&quot;:&quot;Please enter the subtitle&quot;}},&quot;question&quot;:[{&quot;Id&quot;:&quot;qweqweqw1&quot;,&quot;question&quot;:&quot;How do you want to play on May Day&quot;,&quot;answer&quot;:&quot;Hot Pot BBQ Mala Tang&quot;}]}},&quot;Id&quot;:&quot;yRQUViaYkveY8wItqQul5&quot;},{&quot;TabIcon&quot;:&quot;https://tcdn.bstatics.com/ux/ux-recruitment-portal-2022/release/dist/images/fc6399a445fd22680b90.png&quot;,&quot;TabTitle&quot;:&quot;内推相关&quot;,&quot;CmpType&quot;:&quot;question-common&quot;,&quot;CmpProps&quot;:{&quot;title&quot;:{&quot;mainTitle&quot;:{&quot;showMainTitle&quot;:false},&quot;secondTitle&quot;:{&quot;showSecondTitle&quot;:false}},&quot;layout&quot;:{&quot;paddingBottom&quot;:&quot;0px&quot;,&quot;paddingTop&quot;:&quot;60px&quot;,&quot;background&quot;:{&quot;type&quot;:&quot;no&quot;,&quot;value&quot;:&quot;&quot;}},&quot;question&quot;:[{&quot;Id&quot;:&quot;qweqweqw1&quot;,&quot;question&quot;:&quot;&amp;amp;lt;p&amp;amp;gt;&amp;amp;lt;span style=&amp;amp;quot;font-size: 18px;&amp;amp;quot;&amp;amp;gt;参与校招内推有哪些优势？&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;answer&quot;:&quot;&amp;amp;lt;p&amp;amp;gt;&amp;amp;lt;span style=&amp;amp;quot;color:#424242&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;span&amp;amp;gt;&amp;amp;lt;/span&amp;amp;gt;通过校招内推投递校招职位的同学可以免简历筛选直通笔试。&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;questionColor&quot;:&quot;#141414&quot;,&quot;answerColor&quot;:&quot;#141414&quot;},{&quot;questionColor&quot;:&quot;#141414&quot;,&quot;answerColor&quot;:&quot;#141414&quot;,&quot;answer&quot;:&quot;&amp;amp;lt;p style=&amp;amp;quot;font-size: 14px; text-align: left; font-family: PingFangSC-Regular; max-width: 1200px; min-height: 20px;&amp;amp;quot; class=&amp;amp;quot;html_container_flag&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;span style=&amp;amp;quot;color:#424242&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;span style=&amp;amp;quot;background-color: transparent;&amp;amp;quot;&amp;amp;gt;同学可以联系在职员工获取内推二维码/字符码，扫描二维码投递并完善简历，或网申简历时填写字符码，即可完成内推。&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;question&quot;:&quot;&amp;amp;lt;p&amp;amp;gt;&amp;amp;lt;span style=&amp;amp;quot;font-size: 18px;&amp;amp;quot;&amp;amp;gt;怎样可以参与校招内推？&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;Id&quot;:&quot;SezY5m7fp7KKW8-Iux8j4&quot;},{&quot;questionColor&quot;:&quot;#141414&quot;,&quot;answerColor&quot;:&quot;#141414&quot;,&quot;answer&quot;:&quot;&amp;amp;lt;p style=&amp;amp;quot;text-align: left; font-family: PingFangSC-Regular; max-width: 1200px; min-height: 20px;&amp;amp;quot; class=&amp;amp;quot;html_container_flag&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;span style=&amp;amp;quot;background-color: transparent;;font-size: 14px;;color:#424242&amp;amp;quot;&amp;amp;gt;投递职位后不能再参与内推，所以如想参与内推，记得提前找到内推二维码/字符码哦。&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;question&quot;:&quot;&amp;amp;lt;p&amp;amp;gt;&amp;amp;lt;span style=&amp;amp;quot;font-size: 18px;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;span&amp;amp;gt;&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;span&amp;amp;gt;我在投递的时候没有参加内推，之后还能参与校招内推吗？&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;Id&quot;:&quot;Rzf68ewJnLKBae02FQbQA&quot;}],&quot;propsEN&quot;:{&quot;title&quot;:{&quot;mainTitle&quot;:{&quot;showMainTitle&quot;:true,&quot;mainTitleText&quot;:&quot;Please enter the main title&quot;},&quot;secondTitle&quot;:{&quot;showSecondTitle&quot;:true,&quot;secondTitleText&quot;:&quot;Please enter the subtitle&quot;}},&quot;question&quot;:[{&quot;Id&quot;:&quot;qweqweqw1&quot;,&quot;question&quot;:&quot;How do you want to play on May Day&quot;,&quot;answer&quot;:&quot;Hot Pot BBQ Mala Tang&quot;}]}},&quot;Id&quot;:&quot;nLBRvlwW4KzAGAOVQ9NcD&quot;},{&quot;TabIcon&quot;:&quot;https://tcdn.bstatics.com/ux/ux-recruitment-portal-2022/release/dist/images/fc6399a445fd22680b90.png&quot;,&quot;TabTitle&quot;:&quot;笔试相关&quot;,&quot;CmpType&quot;:&quot;question-common&quot;,&quot;CmpProps&quot;:{&quot;title&quot;:{&quot;mainTitle&quot;:{&quot;showMainTitle&quot;:false},&quot;secondTitle&quot;:{&quot;showSecondTitle&quot;:false}},&quot;layout&quot;:{&quot;paddingBottom&quot;:&quot;0px&quot;,&quot;paddingTop&quot;:&quot;60px&quot;,&quot;background&quot;:{&quot;type&quot;:&quot;no&quot;,&quot;value&quot;:&quot;&quot;}},&quot;question&quot;:[{&quot;Id&quot;:&quot;qweqweqw1&quot;,&quot;question&quot;:&quot;&amp;amp;lt;p style=&amp;amp;quot;color: rgb(20, 20, 20); text-align: left; font-family: 默认字体; max-width: 1200px; min-height: 20px;&amp;amp;quot; class=&amp;amp;quot;html_container_flag&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;span style=&amp;amp;quot;font-family: PingFangSC-Regular; background-color: transparent;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;font-size: 18px;&amp;amp;quot;&amp;amp;gt;我在笔试前没有收到笔试通知，怎么办&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;answer&quot;:&quot;&amp;amp;lt;p&amp;amp;gt;&amp;amp;lt;font color=&amp;amp;quot;#424242&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;span&amp;amp;gt;&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;span&amp;amp;gt;请同学按照以下顺序进行操作：&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&amp;amp;lt;p&amp;amp;gt;&amp;amp;lt;span&amp;amp;gt;&amp;amp;lt;font color=&amp;amp;quot;#424242&amp;amp;quot;&amp;amp;gt;&amp;amp;amp;nbsp;①笔试通知会通过邮件和短信两种方式发送，任意一种方式都可以获取笔试账号信息，请查阅垃圾箱，以防邮件及短信被拦截。&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&amp;amp;lt;p&amp;amp;gt;&amp;amp;lt;span&amp;amp;gt;&amp;amp;lt;font color=&amp;amp;quot;#424242&amp;amp;quot;&amp;amp;gt;&amp;amp;amp;nbsp;②如果你的网申系统显示已进入【笔试安排】环节，但在笔试开始前一天下午仍未收到邮件和短信通知，请尽快联系公众号，我们将为你安排邮件和短信的补发。&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;questionColor&quot;:&quot;#141414&quot;,&quot;answerColor&quot;:&quot;#141414&quot;},{&quot;questionColor&quot;:&quot;#141414&quot;,&quot;answerColor&quot;:&quot;#141414&quot;,&quot;answer&quot;:&quot;&amp;amp;lt;p&amp;amp;gt;&amp;amp;lt;font color=&amp;amp;quot;#424242&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;span&amp;amp;gt;&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;span&amp;amp;gt;如因特殊情况不能参加本场笔试，请根据笔试邮件中的提示【点击确认是否参加考试】，选择【放弃】，并且不要在笔试时间段进入笔试页面即可。&amp;amp;amp;nbsp;&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&amp;amp;lt;p&amp;amp;gt;&amp;amp;lt;font color=&amp;amp;quot;#424242&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;span&amp;amp;gt;选择【放弃】后可填写合适的日期，如不填写则顺延到下一场笔试。&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&amp;amp;lt;p&amp;amp;gt;&amp;amp;lt;font color=&amp;amp;quot;#424242&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;span&amp;amp;gt;&amp;amp;amp;nbsp;建议大家合理安排笔试时间，早参加笔试，早安排面试，才有机会早拿offer。&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;question&quot;:&quot;&amp;amp;lt;p&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;font-size: 18px;&amp;amp;quot;&amp;amp;gt;我没有时间参加本场笔试或者错过了笔试，怎么办？&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;Id&quot;:&quot;nd8MTCuwwA2F8WHIR_g4D&quot;},{&quot;questionColor&quot;:&quot;#141414&quot;,&quot;answerColor&quot;:&quot;#141414&quot;,&quot;answer&quot;:&quot;&amp;amp;lt;p&amp;amp;gt;&amp;amp;lt;font color=&amp;amp;quot;#424242&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;span&amp;amp;gt;&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;span&amp;amp;gt;笔试成绩不会对外公布，将留在校招系统中供面试官参考，大家要认真对待笔试，好好发挥哦。&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;question&quot;:&quot;&amp;amp;lt;p&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;font-size: 18px;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;span&amp;amp;gt;&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;span&amp;amp;gt;笔试成绩什么时候公布？&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;Id&quot;:&quot;SxafReN3Mv2E8jUGHQAnK&quot;}],&quot;propsEN&quot;:{&quot;title&quot;:{&quot;mainTitle&quot;:{&quot;showMainTitle&quot;:true,&quot;mainTitleText&quot;:&quot;Please enter the main title&quot;},&quot;secondTitle&quot;:{&quot;showSecondTitle&quot;:true,&quot;secondTitleText&quot;:&quot;Please enter the subtitle&quot;}},&quot;question&quot;:[{&quot;Id&quot;:&quot;qweqweqw1&quot;,&quot;question&quot;:&quot;How do you want to play on May Day&quot;,&quot;answer&quot;:&quot;Hot Pot BBQ Mala Tang&quot;}]}},&quot;Id&quot;:&quot;p9q7-WFzf9H8Ii0LHw3eB&quot;},{&quot;TabIcon&quot;:&quot;https://tcdn.bstatics.com/ux/ux-recruitment-portal-2022/release/dist/images/fc6399a445fd22680b90.png&quot;,&quot;TabTitle&quot;:&quot;面试相关&quot;,&quot;CmpType&quot;:&quot;question-common&quot;,&quot;CmpProps&quot;:{&quot;title&quot;:{&quot;mainTitle&quot;:{&quot;showMainTitle&quot;:false},&quot;secondTitle&quot;:{&quot;showSecondTitle&quot;:false}},&quot;layout&quot;:{&quot;paddingBottom&quot;:&quot;0px&quot;,&quot;paddingTop&quot;:&quot;60px&quot;,&quot;background&quot;:{&quot;type&quot;:&quot;no&quot;,&quot;value&quot;:&quot;&quot;}},&quot;question&quot;:[{&quot;Id&quot;:&quot;qweqweqw1&quot;,&quot;question&quot;:&quot;&amp;amp;lt;p&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;font-size: 18px;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;&amp;amp;quot;&amp;amp;gt;完成笔试后&amp;amp;lt;/font&amp;amp;gt;多久才可以收到面试通知呢？&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;answer&quot;:&quot;&amp;amp;lt;p&amp;amp;gt;&amp;amp;lt;font color=&amp;amp;quot;#424242&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;span&amp;amp;gt;&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;span&amp;amp;gt;通过校招内推投递校招职位的同学可以免简历筛选直通笔试。&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;questionColor&quot;:&quot;#141414&quot;,&quot;answerColor&quot;:&quot;#141414&quot;},{&quot;questionColor&quot;:&quot;#141414&quot;,&quot;answerColor&quot;:&quot;#141414&quot;,&quot;answer&quot;:&quot;&amp;amp;lt;p&amp;amp;gt;&amp;amp;lt;font color=&amp;amp;quot;#424242&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;span&amp;amp;gt;&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;span&amp;amp;gt;完成笔试后，所有职位的面试官都有机会看到你的简历，面试官会根据你的简历与岗位的匹配度决定是否发起面试，你如果不想参与其他职位的面试，可以在约面时直接拒绝，不会影响校招的流程。&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;question&quot;:&quot;&amp;amp;lt;p&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;font-size: 18px;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;span&amp;amp;gt;&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;span&amp;amp;gt;为什么通知面试的职位与投递的职位不一样呢？&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;Id&quot;:&quot;8F_CvvkkKrw-yN6Bzg4HW&quot;},{&quot;questionColor&quot;:&quot;#141414&quot;,&quot;answerColor&quot;:&quot;#141414&quot;,&quot;answer&quot;:&quot;&amp;amp;lt;p&amp;amp;gt;&amp;amp;lt;font color=&amp;amp;quot;#424242&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;span&amp;amp;gt;&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;span&amp;amp;gt;收到面试邀约后，如因时间冲突等原因无法参加面试，可直接联系面试通知中的联系人进行沟通&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;question&quot;:&quot;&amp;amp;lt;p&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;font-size: 18px;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;span&amp;amp;gt;&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;span&amp;amp;gt;收到面试通知后，不想参加本次面试，应该怎么处理？&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;Id&quot;:&quot;ey5W5Go8aPUI-ddHcRQeA&quot;}],&quot;propsEN&quot;:{&quot;title&quot;:{&quot;mainTitle&quot;:{&quot;showMainTitle&quot;:true,&quot;mainTitleText&quot;:&quot;Please enter the main title&quot;},&quot;secondTitle&quot;:{&quot;showSecondTitle&quot;:true,&quot;secondTitleText&quot;:&quot;Please enter the subtitle&quot;}},&quot;question&quot;:[{&quot;Id&quot;:&quot;qweqweqw1&quot;,&quot;question&quot;:&quot;How do you want to play on May Day&quot;,&quot;answer&quot;:&quot;Hot Pot BBQ Mala Tang&quot;}]}},&quot;Id&quot;:&quot;-py7-uFmAWLE-Mvppdood&quot;}],&quot;tabTitleStyle&quot;:{&quot;fontColor&quot;:&quot;#141414&quot;,&quot;fontFamily&quot;:&quot;默认&quot;,&quot;fontSize&quot;:&quot;20&quot;},&quot;propsEN&quot;:{&quot;title&quot;:{&quot;mainTitle&quot;:{&quot;showMainTitle&quot;:true,&quot;mainTitleText&quot;:&quot;&amp;amp;lt;p style=&amp;amp;quot;color:#141414;font-size:40px;text-align:center;font-family:默认字体;max-width:1000px;min-height:20px;&amp;amp;quot; class=&amp;amp;quot;html_container_flag&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;span class=&amp;amp;quot;iconfont recruit_iconfont_flag icon-rpcyinhao&amp;amp;quot; style=&amp;amp;quot;font-family:portal-common-font-name;font-size:40px;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;/span&amp;amp;gt;School recruitment Q &amp;amp;amp;amp; A&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;style&quot;:1,&quot;color&quot;:&quot;#141414&quot;,&quot;fontFamliy&quot;:&quot;默认字体&quot;},&quot;secondTitle&quot;:{&quot;showSecondTitle&quot;:false,&quot;secondTitleText&quot;:&quot;Please enter the subtitle&quot;,&quot;color&quot;:&quot;#424242&quot;}},&quot;cardList&quot;:[{&quot;TabIcon&quot;:&quot;https://tcdn.bstatics.com/ux/ux-recruitment-portal-2022/release/dist/images/fc6399a445fd22680b90.png&quot;,&quot;TabTitle&quot;:&quot;Related delivery&quot;,&quot;CmpType&quot;:&quot;question-common&quot;,&quot;CmpProps&quot;:{&quot;title&quot;:{&quot;mainTitle&quot;:{&quot;showMainTitle&quot;:false},&quot;secondTitle&quot;:{&quot;showSecondTitle&quot;:false}},&quot;layout&quot;:{&quot;paddingBottom&quot;:&quot;0px&quot;,&quot;paddingTop&quot;:&quot;60px&quot;,&quot;background&quot;:{&quot;type&quot;:&quot;no&quot;,&quot;value&quot;:&quot;&quot;}},&quot;question&quot;:[{&quot;Id&quot;:&quot;qweqweqw1&quot;,&quot;question&quot;:&quot;&amp;amp;lt;p style=&amp;amp;quot;color: rgb(20, 20, 20); text-align: left; font-family: 默认字体; max-width: 1200px; min-height: 20px;&amp;amp;quot; class=&amp;amp;quot;html_container_flag&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;span style=&amp;amp;quot;font-size: 18px;&amp;amp;quot;&amp;amp;gt;Where can I find the latest recruitment information for the company?&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;answer&quot;:&quot;&amp;amp;lt;p style=&amp;amp;quot;font-size: 14px; text-align: left; font-family: PingFangSC-Regular; max-width: 1200px; min-height: 20px;&amp;amp;quot; class=&amp;amp;quot;html_container_flag&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;span style=&amp;amp;quot;color:#424242&amp;amp;quot;&amp;amp;gt;Query path: official website of the enterprise and official website of the enterprise public number&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&quot;},{&quot;questionColor&quot;:&quot;#141414&quot;,&quot;answerColor&quot;:&quot;#141414&quot;,&quot;answer&quot;:&quot;&amp;amp;lt;p style=&amp;amp;quot;color:#141414;font-size:14px;text-align:left;font-family:PingFangSC-Regular;max-width:1200px;min-height:20px;&amp;amp;quot; class=&amp;amp;quot;html_container_flag&amp;amp;quot;&amp;amp;gt;Can ~ autumn trick results do not affect spring trick delivery&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;question&quot;:&quot;&amp;amp;lt;p style=&amp;amp;quot;color: rgb(20, 20, 20); text-align: left; font-family: 默认字体; max-width: 1200px; min-height: 20px;&amp;amp;quot; class=&amp;amp;quot;html_container_flag&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;span style=&amp;amp;quot;font-size: 18px;&amp;amp;quot;&amp;amp;gt;Earlier autumn recruitment delivered, spring recipe can be delivered again?&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;Id&quot;:&quot;m-VIcqQzDSR5TKLJsaLYS&quot;},{&quot;questionColor&quot;:&quot;#141414&quot;,&quot;answerColor&quot;:&quot;#141414&quot;,&quot;answer&quot;:&quot;&amp;amp;lt;p style=&amp;amp;quot;color:#141414;font-size:14px;text-align:left;font-family:PingFangSC-Regular;max-width:1200px;min-height:20px;&amp;amp;quot; class=&amp;amp;quot;html_container_flag&amp;amp;quot;&amp;amp;gt;Each person can deliver 3 school admissions positions and the first position you deliver will be your first volunteer&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;question&quot;:&quot;&amp;amp;lt;p style=&amp;amp;quot;color: rgb(20, 20, 20); text-align: left; font-family: 默认字体; max-width: 1200px; min-height: 20px;&amp;amp;quot; class=&amp;amp;quot;html_container_flag&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;span style=&amp;amp;quot;font-size: 18px;&amp;amp;quot;&amp;amp;gt;​How many school posts can each person be sent?&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;Id&quot;:&quot;pHZW6tAReyMKx4tYkarJW&quot;}],&quot;propsEN&quot;:{&quot;title&quot;:{&quot;mainTitle&quot;:{&quot;showMainTitle&quot;:true,&quot;mainTitleText&quot;:&quot;Please enter the main title&quot;},&quot;secondTitle&quot;:{&quot;showSecondTitle&quot;:true,&quot;secondTitleText&quot;:&quot;Please enter the subtitle&quot;}},&quot;question&quot;:[{&quot;Id&quot;:&quot;qweqweqw1&quot;,&quot;question&quot;:&quot;How do you want to play on May Day&quot;,&quot;answer&quot;:&quot;Hot Pot BBQ Mala Tang&quot;}]}},&quot;Id&quot;:&quot;vOZ3rAgUVE6uredlxnajZ&quot;},{&quot;TabIcon&quot;:&quot;https://tcdn.bstatics.com/ux/ux-recruitment-portal-2022/release/dist/images/fc6399a445fd22680b90.png&quot;,&quot;TabTitle&quot;:&quot;Inner push related&quot;,&quot;CmpType&quot;:&quot;question-common&quot;,&quot;CmpProps&quot;:{&quot;title&quot;:{&quot;mainTitle&quot;:{&quot;showMainTitle&quot;:false},&quot;secondTitle&quot;:{&quot;showSecondTitle&quot;:false}},&quot;layout&quot;:{&quot;paddingBottom&quot;:&quot;0px&quot;,&quot;paddingTop&quot;:&quot;60px&quot;,&quot;background&quot;:{&quot;type&quot;:&quot;no&quot;,&quot;value&quot;:&quot;&quot;}},&quot;question&quot;:[{&quot;Id&quot;:&quot;qweqweqw1&quot;,&quot;question&quot;:&quot;&amp;amp;lt;p&amp;amp;gt;&amp;amp;lt;span style=&amp;amp;quot;font-size: 18px;;color:#141414&amp;amp;quot;&amp;amp;gt;Where to participate in school recruitment&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;answer&quot;:&quot;&amp;amp;lt;p style=&amp;amp;quot;font-size: 14px; text-align: left; font-family: PingFangSC-Regular; max-width: 1200px; min-height: 20px;&amp;amp;quot; class=&amp;amp;quot;html_container_flag&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;span style=&amp;amp;quot;color:#424242&amp;amp;quot;&amp;amp;gt;Students who submit their posts through school recruitment can free resume screening through direct writing.&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&quot;},{&quot;questionColor&quot;:&quot;#141414&quot;,&quot;answerColor&quot;:&quot;#141414&quot;,&quot;answer&quot;:&quot;&amp;amp;lt;p style=&amp;amp;quot;font-size: 14px; text-align: left; font-family: PingFangSC-Regular; max-width: 1200px; min-height: 20px;&amp;amp;quot; class=&amp;amp;quot;html_container_flag&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;font color=&amp;amp;quot;#424242&amp;amp;quot;&amp;amp;gt;​Classmates can contact employees to obtain inpush QR/character code, scan QR code delivery and improve resume, or fill out character code when online resume, can complete internal push.&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;question&quot;:&quot;&amp;amp;lt;p style=&amp;amp;quot;color: rgb(20, 20, 20); text-align: left; font-family: 默认字体; max-width: 1200px; min-height: 20px;&amp;amp;quot; class=&amp;amp;quot;html_container_flag&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;span style=&amp;amp;quot;font-size: 18px;&amp;amp;quot;&amp;amp;gt;How can y&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;span style=&amp;amp;quot;font-size: 16px;&amp;amp;quot;&amp;amp;gt;ou participate in school push?&amp;amp;lt;span style=&amp;amp;quot;font-size: 18px;&amp;amp;quot;&amp;amp;gt;​&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;Id&quot;:&quot;IF37u46BjuGTjc2MbTyJq&quot;},{&quot;questionColor&quot;:&quot;#141414&quot;,&quot;answerColor&quot;:&quot;#141414&quot;,&quot;answer&quot;:&quot;&amp;amp;lt;p style=&amp;amp;quot;font-size: 14px; text-align: left; font-family: PingFangSC-Regular; max-width: 1200px; min-height: 20px;&amp;amp;quot; class=&amp;amp;quot;html_container_flag&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;span style=&amp;amp;quot;color:#424242&amp;amp;quot;&amp;amp;gt;​After the delivery position, you can no longer participate in the inpush, so if you want to participate in the inner push, remember to find the intransigence code/character code ahead of time.&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;question&quot;:&quot;&amp;amp;lt;p style=&amp;amp;quot;color: rgb(20, 20, 20); text-align: left; font-family: 默认字体; max-width: 1200px; min-height: 20px;&amp;amp;quot; class=&amp;amp;quot;html_container_flag&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;span style=&amp;amp;quot;font-size: 18px;&amp;amp;quot;&amp;amp;gt;​I did not participate in the inner push when I delivered, and then can I participate in the school recruitment push?&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;Id&quot;:&quot;ziZ5JGngmpGMCeLMuXAAw&quot;}],&quot;propsEN&quot;:{&quot;title&quot;:{&quot;mainTitle&quot;:{&quot;showMainTitle&quot;:true,&quot;mainTitleText&quot;:&quot;Please enter the main title&quot;},&quot;secondTitle&quot;:{&quot;showSecondTitle&quot;:true,&quot;secondTitleText&quot;:&quot;Please enter the subtitle&quot;}},&quot;question&quot;:[{&quot;Id&quot;:&quot;qweqweqw1&quot;,&quot;question&quot;:&quot;How do you want to play on May Day&quot;,&quot;answer&quot;:&quot;Hot Pot BBQ Mala Tang&quot;}]}},&quot;Id&quot;:&quot;__tl9lhIAOJSUi5osa_R4&quot;},{&quot;TabIcon&quot;:&quot;https://tcdn.bstatics.com/ux/ux-recruitment-portal-2022/release/dist/images/fc6399a445fd22680b90.png&quot;,&quot;TabTitle&quot;:&quot;Written Test Related&quot;,&quot;CmpType&quot;:&quot;question-common&quot;,&quot;CmpProps&quot;:{&quot;title&quot;:{&quot;mainTitle&quot;:{&quot;showMainTitle&quot;:false},&quot;secondTitle&quot;:{&quot;showSecondTitle&quot;:false}},&quot;layout&quot;:{&quot;paddingBottom&quot;:&quot;0px&quot;,&quot;paddingTop&quot;:&quot;60px&quot;,&quot;background&quot;:{&quot;type&quot;:&quot;no&quot;,&quot;value&quot;:&quot;&quot;}},&quot;question&quot;:[{&quot;Id&quot;:&quot;qweqweqw1&quot;,&quot;question&quot;:&quot;&amp;amp;lt;p style=&amp;amp;quot;text-align: left; font-family: 默认字体; max-width: 1200px; min-height: 20px;&amp;amp;quot; class=&amp;amp;quot;html_container_flag&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;font-size: 18px;&amp;amp;quot; color=&amp;amp;quot;#141414&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;span style=&amp;amp;quot;font-family: PingFangSC-Regular; background-color: transparent;&amp;amp;quot;&amp;amp;gt;​What if I didn&amp;amp;#39;&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;span style=&amp;amp;quot;font-family: PingFangSC-Regular; background-color: transparent;&amp;amp;quot;&amp;amp;gt;t get a written test notice before I wrote it?&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;answer&quot;:&quot;&amp;amp;lt;p&amp;amp;gt;Please follow the following order:&amp;amp;lt;/p&amp;amp;gt;&amp;amp;lt;p&amp;amp;gt;1.Written test notice will be sent via mail and text messages, in any way can obtain the written account information, please consult the spam to prevent mail and text messages from being intercepted.&amp;amp;lt;/p&amp;amp;gt;&amp;amp;lt;p&amp;amp;gt;2.If your online application system shows that you have entered the &amp;amp;quot;written test arrangement&amp;amp;quot; link, but the afternoon of the written test still did not receive email and text message notice, please contact the public as soon as possible, we will arrange for you to arrange for the mail and text message repayment.&amp;amp;lt;/p&amp;amp;gt;&quot;},{&quot;questionColor&quot;:&quot;#141414&quot;,&quot;answerColor&quot;:&quot;#141414&quot;,&quot;answer&quot;:&quot;&amp;amp;lt;p style=&amp;amp;quot;font-size: 14px; text-align: left; font-family: PingFangSC-Regular; max-width: 1200px; min-height: 20px;&amp;amp;quot; class=&amp;amp;quot;html_container_flag&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;span style=&amp;amp;quot;color:#424242&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;span style=&amp;amp;quot;background-color: transparent;&amp;amp;quot;&amp;amp;gt;If you cannot take this exam due to special circumstances, please follow the tips in the written test email [click to confirm whether to take the exam], select [give up] and do not enter the written test page during the written test time.&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&amp;amp;lt;p&amp;amp;gt;&amp;amp;lt;span style=&amp;amp;quot;color:#424242&amp;amp;quot;&amp;amp;gt;After selecting [drop] you can fill in the appropriate date, if not filled, then you will be postponed to the next written test.&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&amp;amp;lt;p&amp;amp;gt;&amp;amp;lt;span style=&amp;amp;quot;color:#424242&amp;amp;quot;&amp;amp;gt;It is recommended that you arrange a written test time, take the written test early, arrange the interview early, in order to have the opportunity to take the offer early.&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;question&quot;:&quot;&amp;amp;lt;p style=&amp;amp;quot;color:#141414;font-size:16px;text-align:left;font-family:默认字体;max-width:1200px;min-height:20px;&amp;amp;quot; class=&amp;amp;quot;html_container_flag&amp;amp;quot;&amp;amp;gt;​What if I don&amp;amp;#39;t have time to take this written test or miss the written test?&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;Id&quot;:&quot;YYs9nppKIBMf0ZYd7I097&quot;},{&quot;questionColor&quot;:&quot;#141414&quot;,&quot;answerColor&quot;:&quot;#141414&quot;,&quot;answer&quot;:&quot;&amp;amp;lt;p style=&amp;amp;quot;color:#141414;font-size:14px;text-align:left;font-family:PingFangSC-Regular;max-width:1200px;min-height:20px;&amp;amp;quot; class=&amp;amp;quot;html_container_flag&amp;amp;quot;&amp;amp;gt;​Written test scores will not be published, will remain in the school recruitment system for interviewers to refer, everyone should take the written test seriously, good play oh.&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;question&quot;:&quot;&amp;amp;lt;p style=&amp;amp;quot;color:#141414;font-size:16px;text-align:left;font-family:默认字体;max-width:1200px;min-height:20px;&amp;amp;quot; class=&amp;amp;quot;html_container_flag&amp;amp;quot;&amp;amp;gt;​When will the written test be announced?&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;Id&quot;:&quot;i_IwFU6H7EMYbL_B0raom&quot;}],&quot;propsEN&quot;:{&quot;title&quot;:{&quot;mainTitle&quot;:{&quot;showMainTitle&quot;:true,&quot;mainTitleText&quot;:&quot;Please enter the main title&quot;},&quot;secondTitle&quot;:{&quot;showSecondTitle&quot;:true,&quot;secondTitleText&quot;:&quot;Please enter the subtitle&quot;}},&quot;question&quot;:[{&quot;Id&quot;:&quot;qweqweqw1&quot;,&quot;question&quot;:&quot;How do you want to play on May Day&quot;,&quot;answer&quot;:&quot;Hot Pot BBQ Mala Tang&quot;}]}},&quot;Id&quot;:&quot;tEZfmlP68e2UlVFqEtggC&quot;},{&quot;TabIcon&quot;:&quot;https://tcdn.bstatics.com/ux/ux-recruitment-portal-2022/release/dist/images/fc6399a445fd22680b90.png&quot;,&quot;TabTitle&quot;:&quot;Interview Related&quot;,&quot;CmpType&quot;:&quot;question-common&quot;,&quot;CmpProps&quot;:{&quot;title&quot;:{&quot;mainTitle&quot;:{&quot;showMainTitle&quot;:false},&quot;secondTitle&quot;:{&quot;showSecondTitle&quot;:false}},&quot;layout&quot;:{&quot;paddingBottom&quot;:&quot;0px&quot;,&quot;paddingTop&quot;:&quot;60px&quot;,&quot;background&quot;:{&quot;type&quot;:&quot;no&quot;,&quot;value&quot;:&quot;&quot;}},&quot;question&quot;:[{&quot;Id&quot;:&quot;qweqweqw1&quot;,&quot;question&quot;:&quot;&amp;amp;lt;p style=&amp;amp;quot;color:#141414;font-size:16px;text-align:left;font-family:默认字体;max-width:1200px;min-height:20px;&amp;amp;quot; class=&amp;amp;quot;html_container_flag&amp;amp;quot;&amp;amp;gt;​How long after the written test is completed?&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;answer&quot;:&quot;&amp;amp;lt;p style=&amp;amp;quot;color:#141414;font-size:14px;text-align:left;font-family:PingFangSC-Regular;max-width:1200px;min-height:20px;&amp;amp;quot; class=&amp;amp;quot;html_container_flag&amp;amp;quot;&amp;amp;gt;​Students who apply to school through recruitment push can exempt resume screening straight-through written test&amp;amp;lt;/p&amp;amp;gt;&quot;},{&quot;questionColor&quot;:&quot;#141414&quot;,&quot;answerColor&quot;:&quot;#141414&quot;,&quot;answer&quot;:&quot;&amp;amp;lt;p style=&amp;amp;quot;color:#141414;font-size:14px;text-align:left;font-family:PingFangSC-Regular;max-width:1200px;min-height:20px;&amp;amp;quot; class=&amp;amp;quot;html_container_flag&amp;amp;quot;&amp;amp;gt;​After completing the written examination, all job interviewers have the opportunity to see your resume, the interviewer will determine whether to initiate the interview according to your resume and the job match, if you do not want to participate in the interview, you can directly refuse in the interview, will not affect the school recruitment process.&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;question&quot;:&quot;&amp;amp;lt;p style=&amp;amp;quot;color:#141414;font-size:16px;text-align:left;font-family:默认字体;max-width:1200px;min-height:20px;&amp;amp;quot; class=&amp;amp;quot;html_container_flag&amp;amp;quot;&amp;amp;gt;​Why is the job of notifying the interview different from the position delivered?&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;Id&quot;:&quot;N8pu30__9QYisNSM_6MMd&quot;},{&quot;questionColor&quot;:&quot;#141414&quot;,&quot;answerColor&quot;:&quot;#141414&quot;,&quot;answer&quot;:&quot;&amp;amp;lt;p style=&amp;amp;quot;color:#141414;font-size:14px;text-align:left;font-family:PingFangSC-Regular;max-width:1200px;min-height:20px;&amp;amp;quot; class=&amp;amp;quot;html_container_flag&amp;amp;quot;&amp;amp;gt;​After receiving an interview invitation, if you can not participate in the interview due to time conflict, you can directly contact the contact in the interview notice for communication&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;question&quot;:&quot;&amp;amp;lt;p style=&amp;amp;quot;color:#141414;font-size:16px;text-align:left;font-family:默认字体;max-width:1200px;min-height:20px;&amp;amp;quot; class=&amp;amp;quot;html_container_flag&amp;amp;quot;&amp;amp;gt;​After receiving the interview notice, do not want to participate in this interview, what should be done?&amp;amp;lt;/p&amp;amp;gt;&quot;,&quot;Id&quot;:&quot;Hhw0QyoNl_UUvAZudqF34&quot;}],&quot;propsEN&quot;:{&quot;title&quot;:{&quot;mainTitle&quot;:{&quot;showMainTitle&quot;:true,&quot;mainTitleText&quot;:&quot;Please enter the main title&quot;},&quot;secondTitle&quot;:{&quot;showSecondTitle&quot;:true,&quot;secondTitleText&quot;:&quot;Please enter the subtitle&quot;}},&quot;question&quot;:[{&quot;Id&quot;:&quot;qweqweqw1&quot;,&quot;question&quot;:&quot;How do you want to play on May Day&quot;,&quot;answer&quot;:&quot;Hot Pot BBQ Mala Tang&quot;}]}},&quot;Id&quot;:&quot;Uc6q4AxV0nDQ11umWOgvL&quot;}],&quot;tabTitleStyle&quot;:{&quot;fontColor&quot;:&quot;#141414&quot;,&quot;fontFamily&quot;:&quot;默认&quot;,&quot;fontSize&quot;:&quot;18&quot;},&quot;isChanged&quot;:true,&quot;layout&quot;:{&quot;paddingTop&quot;:&quot;120px&quot;,&quot;paddingBottom&quot;:&quot;120px&quot;,&quot;background&quot;:{&quot;type&quot;:&quot;image&quot;,&quot;value&quot;:&quot;https://portal-oss.zhiye.com/10000/image/4c3a067e-5468-4343-bf2b-9609dd642eb9.png&quot;},&quot;cardPosition&quot;:&quot;top&quot;,&quot;iconPositon&quot;:&quot;noIcon&quot;,&quot;numberPerLine&quot;:5},&quot;defalultCmpProps&quot;:{&quot;CmpType&quot;:&quot;stack-picturetext&quot;,&quot;CmpProps&quot;:{&quot;title&quot;:{&quot;mainTitle&quot;:{&quot;showMainTitle&quot;:false},&quot;secondTitle&quot;:{&quot;showSecondTitle&quot;:false}},&quot;layout&quot;:{&quot;positionLayout&quot;:1,&quot;paddingTop&quot;:&quot;60px&quot;,&quot;paddingBottom&quot;:&quot;0px&quot;,&quot;background&quot;:{&quot;type&quot;:&quot;no&quot;,&quot;color&quot;:&quot;undefined&quot;,&quot;image&quot;:&quot;undefined&quot;}},&quot;content&quot;:{&quot;image&quot;:&quot;https://tcdn.bstatics.com/ux/ux-recruitment-portal-2022/release/extras/default-img.png&quot;,&quot;showTitle&quot;:true,&quot;title&quot;:&quot;请输入内容标题&quot;,&quot;titleColor&quot;:&quot;#141414&quot;,&quot;showContent&quot;:true,&quot;contentText&quot;:&quot;请输入内容正文&quot;,&quot;contentColor&quot;:&quot;#141414&quot;,&quot;backColor&quot;:&quot;#FFFFFF&quot;},&quot;propsEN&quot;:{&quot;title&quot;:{&quot;mainTitle&quot;:{&quot;showMainTitle&quot;:true,&quot;mainTitleText&quot;:&quot;Please enter the main title&quot;,&quot;style&quot;:1,&quot;color&quot;:&quot;#141414&quot;,&quot;fontFamliy&quot;:&quot;默认字体&quot;},&quot;secondTitle&quot;:{&quot;showSecondTitle&quot;:true,&quot;secondTitleText&quot;:&quot;Please enter the subtitle&quot;,&quot;color&quot;:&quot;#424242&quot;}},&quot;content&quot;:{&quot;image&quot;:&quot;https://tcdn.bstatics.com/ux/ux-recruitment-portal-2022/release/extras/default-img.png&quot;,&quot;showTitle&quot;:true,&quot;title&quot;:&quot;Please enter the content title&quot;,&quot;titleColor&quot;:&quot;#141414&quot;,&quot;showContent&quot;:true,&quot;contentText&quot;:&quot;Please enter the content text&quot;,&quot;contentColor&quot;:&quot;#141414&quot;,&quot;backColor&quot;:&quot;#FFFFFF&quot;}}}}},&quot;defalultCmpProps&quot;:{&quot;CmpType&quot;:&quot;stack-picturetext&quot;,&quot;CmpProps&quot;:{&quot;title&quot;:{&quot;mainTitle&quot;:{&quot;showMainTitle&quot;:false},&quot;secondTitle&quot;:{&quot;showSecondTitle&quot;:false}},&quot;layout&quot;:{&quot;positionLayout&quot;:1,&quot;paddingTop&quot;:&quot;60px&quot;,&quot;paddingBottom&quot;:&quot;0px&quot;,&quot;background&quot;:{&quot;type&quot;:&quot;no&quot;,&quot;color&quot;:&quot;undefined&quot;,&quot;image&quot;:&quot;undefined&quot;}},&quot;content&quot;:{&quot;image&quot;:&quot;https://tcdn.bstatics.com/ux/ux-recruitment-portal-2022/release/extras/default-img.png&quot;,&quot;showTitle&quot;:true,&quot;title&quot;:&quot;请输入内容标题&quot;,&quot;titleColor&quot;:&quot;#141414&quot;,&quot;showContent&quot;:true,&quot;contentText&quot;:&quot;请输入内容正文&quot;,&quot;contentColor&quot;:&quot;#141414&quot;,&quot;backColor&quot;:&quot;#FFFFFF&quot;},&quot;propsEN&quot;:{&quot;title&quot;:{&quot;mainTitle&quot;:{&quot;showMainTitle&quot;:true,&quot;mainTitleText&quot;:&quot;Please enter the main title&quot;,&quot;style&quot;:1,&quot;color&quot;:&quot;#141414&quot;,&quot;fontFamliy&quot;:&quot;默认字体&quot;},&quot;secondTitle&quot;:{&quot;showSecondTitle&quot;:true,&quot;secondTitleText&quot;:&quot;Please enter the subtitle&quot;,&quot;color&quot;:&quot;#424242&quot;}},&quot;content&quot;:{&quot;image&quot;:&quot;https://tcdn.bstatics.com/ux/ux-recruitment-portal-2022/release/extras/default-img.png&quot;,&quot;showTitle&quot;:true,&quot;title&quot;:&quot;Please enter the content title&quot;,&quot;titleColor&quot;:&quot;#141414&quot;,&quot;showContent&quot;:true,&quot;contentText&quot;:&quot;Please enter the content text&quot;,&quot;contentColor&quot;:&quot;#141414&quot;,&quot;backColor&quot;:&quot;#FFFFFF&quot;}}}}}</div></div></div></div><div id=wquCLcHZeh><div class="LRyrZrUcXtXcdv6QX8Ey" style="padding-top:120px;padding-bottom:120px;background-image:;background-color:;background-size:cover;background-repeat:no-repeat"><div class="biOzdlWlnyhyYuVxZ1ze webpart-animation-fadein-up title-root"><div style="display:flex"><div class="Qf6_qv55aAjfB5n8Xnn3 "><span class="edui-body-container"><p style=color:#141414;font-size:40px;text-align:center;font-family:默认字体;max-width:1000px;min-height:20px;font-weight:Regular class="html_container_flag"><span class="iconfont recruit_iconfont_flag icon-rpcyinhao" style=font-family:portal-common-font-name;font-size:40px;></span>加入我们的“N个理由”</p></span></div></div><div class="zNNgfkTSnJ2deYoVuagu" style="color:#8C8C8C;margin-top:20px"><span class="edui-body-container"><p style="color:#8C8C8C;font-size:18px;text-align:center;font-family:默认字体;max-width:1000px;min-height:20px;" class="html_container_flag">Why Join Us</p></span></div></div><div class="webpart-animation-fadein-up"><div class="qDRDhznUXme92lvsgzgx" style="display:flex"><a href="javascript:void(0);" target="_self" class="mWjW0bgqXwLA1O6daEtg VvycbVqY3dY7innr0BBE SzCKBUcCUI2SH9ErVmLB" style="text-decoration:none;background-color:#FFFFFF;cursor:auto"><img loading="lazy" class="GmoCgMZSZwwj8TfSSxhN" src="https://portal-oss.zhiye.com/10000/image/fdd8be4d-17b2-4fc6-a516-e27d2b02a7e4.png" alt=""/><div class="_U7IrNGjAgaVLF6BZXoI"><div class="rzyTIpwSMpLFvsvwNeCQ" style="color:#141414"><span class="edui-body-container"><p style=color:#141414;font-size:24px;text-align:unset;font-family:PingFangSC-Semibold;max-width:1000px;min-height:20px;font-weight:Regular class="html_container_flag">快速的业务发展</p></span></div><div class="NjD5Msbn9sRDJUyjCfQJ" style="color:#141414"><span class="edui-body-container"><p style=color:#141414;font-size:14px;text-align:unset;font-family:PingFangSC-Regular;max-width:1000px;min-height:20px;font-weight:Regular class="html_container_flag">公司处于上升阶段，主营业务呈现快速、高效的发展趋势；主营业务基础上，同时向多个领域规划战略布局，实现全面发展，成为行业top企业。</p></span></div></div></a><a href="javascript:void(0);" target="_self" class="mWjW0bgqXwLA1O6daEtg  vsdf73VZUieByHNs99qk" style="text-decoration:none;background-color:#FFFFFF;cursor:auto"><img loading="lazy" class="GmoCgMZSZwwj8TfSSxhN" src="https://portal-oss.zhiye.com/10000/image/4e2ea903-755c-4312-a917-0acb6114de1e.png" alt=""/><div class="_U7IrNGjAgaVLF6BZXoI"><div class="rzyTIpwSMpLFvsvwNeCQ" style="color:#141414"><span class="edui-body-container"><p style=color:#141414;font-size:24px;text-align:unset;font-family:PingFangSC-Semibold;max-width:1000px;min-height:20px;font-weight:Regular class="html_container_flag">开放的企业文化</p></span></div><div class="NjD5Msbn9sRDJUyjCfQJ" style="color:#141414"><span class="edui-body-container"><p style=color:#141414;font-size:14px;text-align:unset;font-family:PingFangSC-Regular;max-width:1000px;min-height:20px;font-weight:Regular class="html_container_flag">公司内无同事，有的只是一群志同道合的小伙伴。老板定期“开放麦”，面对面了解员工工作生活中遇到的问题，简单真诚的沟通让你享受工作。</p></span></div></div></a></div><div class="qDRDhznUXme92lvsgzgx" style="display:flex;margin-top:20px"><a href="javascript:void(0);" target="_self" class="mWjW0bgqXwLA1O6daEtg VvycbVqY3dY7innr0BBE vsdf73VZUieByHNs99qk" style="text-decoration:none;background-color:#FFFFFF;cursor:auto"><img loading="lazy" class="GmoCgMZSZwwj8TfSSxhN" src="https://portal-oss.zhiye.com/10000/image/a2ab2bdc-a96b-46bc-85c6-8971fcacf685.png" alt=""/><div class="_U7IrNGjAgaVLF6BZXoI"><div class="rzyTIpwSMpLFvsvwNeCQ" style="color:#141414"><span class="edui-body-container"><p style=color:#141414;font-size:24px;text-align:unset;font-family:PingFangSC-Semibold;max-width:1000px;min-height:20px;font-weight:Regular class="html_container_flag">全面的福利关怀</p></span></div><div class="NjD5Msbn9sRDJUyjCfQJ" style="color:#141414"><span class="edui-body-container"><p style=color:#141414;font-size:14px;text-align:unset;font-family:PingFangSC-Regular;max-width:1000px;min-height:20px;font-weight:Regular class="html_container_flag">五险一金及补充商业保险全面保障，免你后顾之忧；弹性的工作时间和充足假期，充足时间享受生活；免费年度体检，让你健康生活，快乐工作。</p></span></div></div></a><a href="javascript:void(0);" target="_self" class="mWjW0bgqXwLA1O6daEtg VvycbVqY3dY7innr0BBE vsdf73VZUieByHNs99qk" style="text-decoration:none;background-color:#FFFFFF;cursor:auto"><img loading="lazy" class="GmoCgMZSZwwj8TfSSxhN" src="https://portal-oss.zhiye.com/10000/image/75a7f3cb-c588-4206-bfaa-5b9aafd9656a.png" alt=""/><div class="_U7IrNGjAgaVLF6BZXoI"><div class="rzyTIpwSMpLFvsvwNeCQ" style="color:#141414"><span class="edui-body-container"><p style=color:#141414;font-size:24px;text-align:unset;font-family:PingFangSC-Semibold;max-width:1000px;min-height:20px;font-weight:Regular class="html_container_flag">温暖的社会公益</p></span></div><div class="NjD5Msbn9sRDJUyjCfQJ" style="color:#141414"><span class="edui-body-container"><p style=color:#141414;font-size:14px;text-align:unset;font-family:PingFangSC-Regular;max-width:1000px;min-height:20px;font-weight:Regular class="html_container_flag">公司在发展业务的同时，成立多个扶贫项目，助力贫困地区发展，帮助更多需要帮助的人，造福社会。</p></span></div></div></a><a href="javascript:void(0);" target="_self" class="mWjW0bgqXwLA1O6daEtg  vsdf73VZUieByHNs99qk" style="text-decoration:none;background-color:#FFFFFF;cursor:auto"><img loading="lazy" class="GmoCgMZSZwwj8TfSSxhN" src="https://portal-oss.zhiye.com/10000/image/89e5c276-f7f0-4013-8dbf-cf94194f64fc.png" alt=""/><div class="_U7IrNGjAgaVLF6BZXoI"><div class="rzyTIpwSMpLFvsvwNeCQ" style="color:#141414"><span class="edui-body-container"><p style=color:#141414;font-size:24px;text-align:unset;font-family:PingFangSC-Semibold;max-width:1000px;min-height:20px;font-weight:Regular class="html_container_flag">自由的工作环境</p></span></div><div class="NjD5Msbn9sRDJUyjCfQJ" style="color:#141414"><span class="edui-body-container"><p style=color:#141414;font-size:14px;text-align:unset;font-family:PingFangSC-Regular;max-width:1000px;min-height:20px;font-weight:Regular class="html_container_flag">公司有舒适的办公环境，下午茶、健身房免费提供；更有剧本杀、同瓦隆、羽毛球、篮球等丰富多样的社团活动，你想要的我们都有。</p></span></div></div></a></div> </div></div></div><div id="page-background" style="background:url()  50% 50% / cover no-repeat;position:absolute;top:0;left:0;width:100%;height:100%;min-width:1200px;z-index:-1"></div>
+  </body>
+  <script id="webpart_script">
+    "use strict";
+
+// plugin-a 插件代码
+(function ($) {
+  $.fn.pluginA = function () {
+    alert(1);
+  };
+})(jQuery);; 
+        (function() {
+          function decode(str) {
+            if (!str || typeof str != "string") {
+              return str;
+            }
+            str = str.toString();
+            return str
+              .replace(/&quot;/g, '"')
+              .replace(/&#39;/g, "'")
+              .replace(/&lt;/g, "<")
+              .replace(/&gt;/g, ">")
+              .replace(/&amp;/g, "&");
+          }
+          var ids = 'xP0HJcv6iZ'.split(',');
+          for (var index = 0; index < ids.length; index++) {
+            var id = ids[index];
+            (function(webpartRoot, webpartProps, pageRoot, clearWebpartEffect, businessTypePath, onNavigate, env, isSetting){
+              "use strict";
+
+// 配置结果
+//组件运行环境
+var $root = $(webpartRoot).find(".root");
+var $playSoundIcon = $root.find('.playSoundIcon'); // 播放声音按钮容器
+
+var $playSound = $root.find('.playSound'); // 播放声音图标
+
+var $soundOff = $root.find('.soundOff'); // 静音图标
+
+var getcookie = function getcookie(objname) {
+  //获取指定名称的cookie的值
+  var arrstr = document.cookie.split("; ");
+
+  for (var i = 0; i < arrstr.length; i++) {
+    var temp = arrstr[i].split("=");
+    if (temp[0] == objname) return unescape(temp[1]);
+  }
+
+  return "";
+};
+
+var getLangType = function getLangType(SupportLanguages) {
+  var currentLangType = getcookie('Language');
+
+  if (!currentLangType || !SupportLanguages) {
+    return {
+      Key: 1,
+      Value: 'zh_CN',
+      Text: '简体中文'
+    };
+  }
+
+  return SupportLanguages == null ? void 0 : SupportLanguages.find(function (item) {
+    return String(item.Key) == currentLangType;
+  });
+};
+
+var getNavProperty = function getNavProperty() {
+  var _location = location,
+      pathname = _location.pathname;
+  var _BSGlobal = BSGlobal,
+      Pages = _BSGlobal.Pages;
+  var curPage = Pages.find(function (page) {
+    return page.Url === pathname;
+  });
+
+  if (!curPage) {
+    return 0;
+  }
+
+  try {
+    var _getLangType, _document$getElements, _navNode$firstElement, _navNode$firstElement2;
+
+    var property = JSON.parse((curPage == null ? void 0 : curPage.Property) || '{}');
+    var langType = ((_getLangType = getLangType(BSGlobal.SupportLanguages)) == null ? void 0 : _getLangType.Value) || 'zh_CN';
+    var navBackground = langType === 'zh_CN' ? property == null ? void 0 : property.navBackground : property == null ? void 0 : property.navBackgroundEN;
+    var isTransparentAtTop = navBackground === 'transparent' && (curPage.PageType === 0 || curPage.PageType === 3);
+    var navNode = (_document$getElements = document.getElementsByClassName('runtime-nav-class')) == null ? void 0 : _document$getElements[0];
+    var navHeight = (navNode == null ? void 0 : (_navNode$firstElement = navNode.firstElementChild) == null ? void 0 : (_navNode$firstElement2 = _navNode$firstElement.getBoundingClientRect()) == null ? void 0 : _navNode$firstElement2.height) || 60;
+    return isTransparentAtTop ? 0 : navHeight;
+  } catch (_unused) {
+    return 0;
+  }
+};
+
+function getQueryString(key) {
+  var queryStringObject = {};
+  location.search.slice(1).split("&").forEach(function (item) {
+    var _item$split = item.split("="),
+        key = _item$split[0],
+        value = _item$split[1];
+
+    queryStringObject[key] = value;
+  });
+  return queryStringObject[key] || "";
+} //#region  初始化事件
+
+/**
+ * 根据设计规约调整高度
+ */
+
+
+var regulateContainerHeight = function regulateContainerHeight() {
+  // 运行态高度调整
+  if (!getQueryString('portalId')) {
+    var _window = window,
+        innerHeight = _window.innerHeight;
+    var navHeight = getNavProperty(); // 调整容器高度，大小在1440~710之间
+
+    var fixedHeight = Math.max(Math.min(1440, innerHeight - navHeight), 710);
+    $root.height(fixedHeight);
+  }
+};
+
+requestAnimationFrame(regulateContainerHeight);
+
+var resizeHandler = function resizeHandler() {
+  requestAnimationFrame(regulateContainerHeight);
+};
+
+window.addEventListener("resize", resizeHandler); //#endregion
+//#region 初始化变量
+
+var mediaBox = $root.find(".media-box"); // 所有媒体框
+
+var totalSlide = mediaBox.length; // 总量
+// 因为要始终从右往左移动，所以用一个数组表示当前卡片的位置关系，方便根据这个关系操作卡片的位置
+// 这里面存的是，当前卡片视觉上的位置，并不是卡片的索引
+// 比如[2,3,4,1,0]，这里表示,当前卡片列表展示成这个排列（通过transform做的位移）
+// 但是卡片在dom中的顺序始终是[0,1,2,3,4]
+
+var arrangeList = [];
+
+for (var i = 0; i < totalSlide; i++) {
+  arrangeList.push(i);
+}
+
+var globalCurrentSlideIndex = 0; //当前展示的幻灯片的索引
+
+var playTimeInterval = webpartProps.transInterv ? webpartProps.transInterv * 1000 : 3000;
+var autoPlayTimer; // 记录自动播放的定时器，在手动切页面的时候要临时停掉
+
+var autoTransDeffered; //#endregion
+//#region 播放幻灯片
+
+/**
+ * 播放视频的方法
+ * @param nextMediaElement
+ * @returns
+ */
+
+function playVideo(nextMediaElement) {
+  var promise = jQuery.Deferred();
+  nextMediaElement.play(); // 幻灯片切换完成，可以播放了
+
+  $playSound.is(':visible') && (nextMediaElement.muted = false); // 播放视频声音
+  //播放完成的事件处理函数
+
+  var playEndHandler = function playEndHandler() {
+    nextMediaElement.removeEventListener("ended", playEndHandler);
+    promise.resolve(null);
+  }; // 播放失败的事件处理函数
+
+
+  var stalledHanlder = function stalledHanlder() {
+    nextMediaElement.removeEventListener("stalled", stalledHanlder);
+    promise.resolve(null);
+  }; // 添加事件监听
+
+
+  nextMediaElement.addEventListener("ended", playEndHandler);
+  nextMediaElement.addEventListener("stalled", stalledHanlder);
+  return promise;
+}
+/**
+ * 幻灯片的切换动画方法，从当前转换成下一张
+ * @param currentSlideIndex 当前展示的索引，转换成下一张
+ * @returns
+ */
+
+
+function transSlide(nextIndex) {
+  var isNumber = typeof nextIndex === "number"; // 第一步，先整体移动
+
+  var nextSlideIndex = isNumber ? nextIndex : (globalCurrentSlideIndex + 1) % totalSlide; // 取下一张幻灯片的index，如果过了，就重头取
+  // 下一张图片在展示列表里的位置
+  // 解决手动从右到左不按顺序点击切换，视频显示不是正确位置：https://jira.beisen-inc.com/browse/RECRUIT-91251
+
+  var arrangeIndex = isNumber ? arrangeList.indexOf(nextIndex) : -1;
+  var nextSlideIndexInArrangeList = isNumber ? Math.max(arrangeIndex, 1) : 1; // 按照排布进行整体的位移
+
+  mediaBox.each(function (thisIndex) {
+    var box = $(this); // 如果当前元素是视频，在动画前先把视频停了，回到初始状态，不然当前视频在播放时，其他视频还在播放中
+
+    var mediaDom = box.eq(0).find('.media').get(0);
+
+    if (mediaDom instanceof HTMLVideoElement) {
+      mediaDom.pause();
+      mediaDom.muted = true;
+      mediaDom.currentTime = 0;
+    }
+
+    var thisBoxIndexInArrangeList = arrangeList.indexOf(thisIndex);
+    box.css("transition", "transform 0.3s ease").css("transform", "translate3d(" + (thisBoxIndexInArrangeList - nextSlideIndexInArrangeList) * 100 + "%, 0, 0)");
+  }); // 已经划过去的存到一个新的数组里（左则视窗以外）
+
+  var pastItems = arrangeList.slice(0, nextSlideIndexInArrangeList); //.reverse();
+  // 把没翻过去的存到另外一个数组里 （当前和右则视窗以外的）
+
+  var currentItems = arrangeList.slice(nextSlideIndexInArrangeList); // 根据滑动的结果生成一个新的卡片位置数据
+
+  arrangeList = [].concat(currentItems, pastItems); // 更新当前显示的卡片的dom索引
+
+  globalCurrentSlideIndex = nextSlideIndex; // 350ms之后，把划过去的同步移动到最右边，保证始终是从右向左滑的
+
+  setTimeout(function () {
+    arrangeList.forEach(function (item, i) {
+      mediaBox.eq(item).css("transition", "none").css("transform", "translate3d(" + i * 100 + "%, 0, 0)");
+    });
+  }, 350); // 针对视频的特殊处理
+
+  var nextSlide = mediaBox.eq(nextSlideIndex);
+  var nextMedia = nextSlide.find(".media"); // 取下一张幻灯片里的媒体元素，如果是视频，有特殊逻辑
+
+  var nextMediaElement = nextMedia.get(0); // 获取到媒体元素的DOM对象
+  // 如果下张是视频，在动画前先把视频停了，回到初始状态
+
+  if (nextMediaElement instanceof HTMLVideoElement) {
+    nextMediaElement.pause();
+    nextMediaElement.muted = true; // https://jira.beisen-inc.com/browse/RECRUIT-91251
+
+    nextMediaElement.currentTime = 0;
+  } // 如果有其他播放中的视频，需要reject
+
+
+  if (autoTransDeffered && autoTransDeffered.state() === "pending") {
+    autoTransDeffered.reject();
+  } // // 通过一个promise 来标记当前切换过程是否结束，结束后，等待一定时间，就可以再来一次了
+
+
+  var promise = jQuery.Deferred();
+  autoTransDeffered = promise; // 之所以存这个reject，是为了在动画过程中，如果用户点击了按钮，接下来的timeout会被注册
+
+  globalCurrentSlideIndex = nextSlideIndex; //播放完成，把globalCurrentSlide设为新的值
+  // 如果是视频的话，等视频播放完再继续滚动幻灯片
+
+  if (nextMediaElement instanceof HTMLVideoElement) {
+    playVideo(nextMediaElement).then(function () {
+      if (promise.state() === "pending") promise.resolve('video');
+    });
+  } else {
+    if (promise.state() === "pending") promise.resolve(null);
+  }
+
+  return promise;
+}
+
+function updateFlipButton(index) {
+  var activeIndex = typeof index === "number" ? index : (globalCurrentSlideIndex + 1) % totalSlide;
+  var flipBtns = $root.find(".flip-btn");
+  flipBtns.removeAttr("active");
+  flipBtns.eq(activeIndex).attr("active", "");
+}
+/**
+ * 展示当前一定时间
+ */
+
+
+function playSlide() {
+  updateFlipButton();
+  transSlide().then(function (type) {
+    // 图片切换完成，等x秒之后再切换下一张，同时更新对应按钮
+    autoPlayTimer = setTimeout(function () {
+      playSlide(); // 自己调自己，开始不停的轮播
+    }, type === 'video' ? 0 : playTimeInterval); // 如果当前卡片是视频，播放完成后，则立即切下一个卡片，无需等待；相关bug：https://jira.beisen-inc.com/browse/RECRUIT-88403
+  });
+}
+
+function manualPlaySlide() {
+  $(".flip-btn").on("click", function (event) {
+    var button = event.target;
+    var strIndex = button.dataset["index"];
+
+    if (strIndex && !$(button).is("[active]")) {
+      mediaBox.each(function (item) {
+        // 当用户手动切换轮播，需要把视频静音
+        var firstElement = $(this).find(".media").get(0);
+
+        if (firstElement instanceof HTMLVideoElement) {
+          firstElement.muted = true;
+        }
+      });
+
+      if (autoTransDeffered && autoTransDeffered.state() === "pending") {
+        autoTransDeffered.reject();
+      }
+
+      var index = parseInt(strIndex);
+      updateFlipButton(index);
+      clearTimeout(autoPlayTimer);
+      transSlide(index).then(function () {
+        autoPlayTimer = setTimeout(playSlide, playTimeInterval);
+      });
+    }
+  });
+}
+
+if (totalSlide > 1) {
+  var startPlay = function startPlay() {
+    autoPlayTimer = setTimeout(playSlide, playTimeInterval);
+  };
+
+  manualPlaySlide(); //在这里启动播放
+
+  var firstElement = mediaBox.eq(0).find(".media").get(0); // 如果启动时第一张就是视频，就得放完再继续播
+
+  if (firstElement instanceof HTMLVideoElement) {
+    playVideo(firstElement).then(function () {
+      // startPlay();
+      playSlide(); // 播放完视频后，无需等待，直接切下一个，相关bug：https://jira.beisen-inc.com/browse/RECRUIT-88403
+    });
+  } else {
+    startPlay();
+  }
+} else if (totalSlide === 1) {
+  // 只有一条视频的时候，循环播放，中间无需暂停
+  var _firstElement = mediaBox.eq(0).find(".media").get(0);
+
+  if (_firstElement instanceof HTMLVideoElement) {
+    var startPlayVideo = function startPlayVideo() {
+      playVideo(_firstElement).then(function () {
+        autoPlayTimer = setTimeout(function () {
+          startPlayVideo();
+        });
+      });
+    };
+
+    startPlayVideo();
+  }
+} //#endregion
+//#region 搜索框里的交互
+// 当搜索框激活并且有内容的时候，要显示清空按钮
+
+
+function searchBoxInteraction() {
+  var activeName = "active";
+  var clearButton = $root.find(".sp-clear");
+  var inputBoxWrap = $root.find(".sp-txt-wrap");
+  var inputBox = $root.find(".sp-ipt");
+  var searchWrap = $root.find(".search-wrap");
+  var clearIconCircle = $root.find(".clear-icon-circle");
+  var isShowClear = false;
+  var isFull = false;
+  clearButton.on("mousedown", function (event) {
+    inputBox.val("");
+    searchWrap.removeAttr("full");
+    event.preventDefault();
+  });
+
+  var showClearButton = function showClearButton() {
+    var val = "" + (inputBox.val() || "");
+
+    if (val.length > 0 && !isShowClear) {
+      clearButton.show();
+      inputBoxWrap.attr(activeName, "");
+      isShowClear = true;
+      isFull = true;
+      searchWrap.attr("full", "");
+    }
+
+    if (val.length === 0) {
+      clearButton.hide();
+      isShowClear = false;
+      inputBoxWrap.removeAttr(activeName);
+      searchWrap.removeAttr("full");
+      isFull = false;
+    }
+  };
+
+  inputBox.on("focus", function () {
+    showClearButton();
+    searchWrap.attr("active", "");
+  });
+  inputBox.on("focusout", function () {
+    clearButton.hide();
+    searchWrap.removeAttr("active");
+    isShowClear = false;
+    inputBoxWrap.removeAttr(activeName);
+  });
+  inputBox.on("input", function () {
+    showClearButton();
+  });
+  clearIconCircle.on("mouseenter", function () {
+    clearIconCircle.attr("fill", "#8C8C8C");
+  });
+  clearIconCircle.on("mouseleave", function () {
+    clearIconCircle.attr("fill", "#BFBFBF");
+  });
+}
+
+var handleSearch = function handleSearch() {
+  // 设置态，不进行跳转
+  if (env !== "setting") {
+    // @ts-ignore
+    var value = $(".sp-ipt")[0] ? $(".sp-ipt")[0].value : "";
+
+    if (value) {
+      var href = (["/", "null", "undefined", null, undefined].includes(businessTypePath) ? "" : businessTypePath) + "/jobs#KeyWords=" + encodeURIComponent(value);
+      onNavigate(href);
+    } // window.open(
+    //   `//${location.host}${businessTypePath}/jobs?keyword=${encodeURIComponent(
+    //     value
+    //   )}`
+    // );
+
+  }
+}; // 搜素跳转
+
+
+$root.find(".sp-search-btn").on("click", handleSearch);
+$root.find(".sp-ipt").on("keypress", function (e) {
+  if (e.keyCode == 13) {
+    handleSearch();
+  }
+});
+searchBoxInteraction(); //#endregion
+//#region 向下滚动的按钮的逻辑和交互
+
+function scrollButtonInteraction() {
+  var scrollButton = $root.find(".sp-scroll");
+
+  var _ref = $root.offset() || {
+    top: 0,
+    left: 0
+  },
+      top = _ref.top;
+
+  var height = $root.height() || 0;
+  var contentHeight = document.documentElement.scrollHeight;
+  var viewportHeight = Math.max(window.innerHeight, 710);
+
+  if (contentHeight > viewportHeight + 80) {
+    scrollButton.css("display", "flex");
+    scrollButton.on("click", function () {
+      window.scrollTo({
+        top: top + height,
+        behavior: "smooth"
+      });
+    });
+  }
+}
+
+setTimeout(scrollButtonInteraction, 100); //#endregion
+
+var hasIcon = $playSoundIcon && $playSoundIcon.length > 0; // 播放声音按钮
+
+hasIcon && $playSoundIcon.on('click', function () {
+  $playSound.toggle(!$playSound.is(':visible'));
+  $soundOff.toggle(!$soundOff.is(':visible'));
+  mediaBox.each(function (item) {
+    var firstElement = $(this).find(".media").get(0);
+
+    if (firstElement instanceof HTMLVideoElement) {
+      firstElement.muted = true;
+    }
+  }); // 针对视频的特殊处理
+
+  var nextSlide = mediaBox.eq(globalCurrentSlideIndex);
+  var nextMedia = nextSlide.find(".media"); // 取下一张幻灯片里的媒体元素，如果是视频，有特殊逻辑
+
+  var nextMediaElement = nextMedia.get(0); // 获取到媒体元素的DOM对象
+  // 如果下张是视频，在动画前先把视频停了，回到初始状态
+
+  if ($playSound.is(':visible') && nextMediaElement instanceof HTMLVideoElement) {
+    nextMediaElement.muted = false;
+  }
+});
+clearWebpartEffect(function () {
+  window.removeEventListener("resize", resizeHandler);
+  clearTimeout(autoPlayTimer);
+  $root.find(".sp-ipt").off();
+  $root.find(".sp-search-btn").off();
+  hasIcon && $playSoundIcon.off();
+});
+            })(
+              jQuery("#"+id),
+              JSON.parse(decode(JSON.stringify({"xP0HJcv6iZ":{"contentAlign":"center","title":"请输入主标题","subTitle":"请输入副标题","displaySearch":false,"displayButtons":false,"showSubTitle":false,"showTitle":false,"titleColor":"#141414","titleFontFamily":"默认字体","subTitleColor":"#141414","transInterv":5,"buttonList":[{"name":"按钮","Id":"BRb-lQZqXZt63JwsKEXuw","url":"","pageName":""}],"mediaList":[{"Id":"hm5R2GBHv3xTTFFQNXIji","src":"https://portal-oss.zhiye.com/10000/image/0a4affbb-865d-458d-9190-5a309a2b27af.png","pageName":"","url":"","activityName":"","activityList":[],"type":"image"}],"searchBoxBgColor":"light","searchBoxTextColor":"#141414","propsEN":{"contentAlign":"center","title":"请输入主标题","subTitle":"请输入副标题","displaySearch":false,"displayButtons":false,"showSubTitle":false,"showTitle":false,"titleColor":"#141414","titleFontFamily":"默认字体","subTitleColor":"#141414","transInterv":5,"buttonList":[{"name":"按钮","Id":"BRb-lQZqXZt63JwsKEXuw","url":"","pageName":""}],"mediaList":[{"Id":"hm5R2GBHv3xTTFFQNXIji","src":"https://portal-oss.zhiye.com/10000/image/bdbc9813-a47d-49b5-a6ce-ffaaaff8e1b9.png","pageName":"","url":"","activityName":"","activityList":[],"type":"image"}],"searchBoxBgColor":"light","searchBoxTextColor":"#141414"},"isChanged":true}}[id]))),
+              jQuery(document.documentElement),
+              function(){},
+              "/campus",
+              function(url, target){
+                if (target === "_self") {
+                  window.location.href = url;
+                } else {
+                  window.open(url);
+                }
+              },
+              'runtime',
+              false
+            )
+          };
+        })(); 
+        (function() {
+          function decode(str) {
+            if (!str || typeof str != "string") {
+              return str;
+            }
+            str = str.toString();
+            return str
+              .replace(/&quot;/g, '"')
+              .replace(/&#39;/g, "'")
+              .replace(/&lt;/g, "<")
+              .replace(/&gt;/g, ">")
+              .replace(/&amp;/g, "&");
+          }
+          var ids = 'y1c-9uVbKo'.split(',');
+          for (var index = 0; index < ids.length; index++) {
+            var id = ids[index];
+            (function(webpartRoot, webpartProps, pageRoot, clearWebpartEffect, businessTypePath, onNavigate, env, isSetting){
+              "use strict";
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+// 配置结果
+// 跟节点
+function S4() {
+  return ((1 + Math.random()) * 0x10000 | 0).toString(16).substring(1);
+}
+
+function getQueryString(key) {
+  var queryStringObject = {};
+  location.search.slice(1).split('&').forEach(function (item) {
+    var _item$split = item.split('='),
+        key = _item$split[0],
+        value = _item$split[1];
+
+    queryStringObject[key] = value;
+  });
+  return queryStringObject[key] || '';
+}
+
+var portalId = window.BSGlobal && BSGlobal.PortalId || getQueryString('portalId'); // Generate a pseudo-GUID by concatenating random hexadecimal.
+
+function guid() {
+  return S4() + S4() + "-" + S4() + "-" + S4() + "-" + S4() + "-" + S4() + S4() + S4();
+}
+
+var mapKey = {
+  "1": "ClassificationOne",
+  "2": "ClassificationTwo",
+  "3": "Classification3",
+  "4": "Classification4",
+  "5": "Classification5",
+  "6": "Classification6",
+  "recruitType": "Category",
+  "interviewSite": "interviewSite"
+};
+var businessTypeMap = {
+  'social': '1',
+  'campus': '2',
+  'intern': '3'
+};
+
+var queryJobNumber = function queryJobNumber() {
+  var _businessTypeMap$cate;
+
+  // const urlStr = webpartProps.content.map((item) => item.Id).join(",");
+  // if(!urlStr) return;
+  var category = webpartProps.currentCategory.id;
+  if (!category) return;
+  var list = businessTypePath && businessTypePath.split('/');
+  var categoryType = list && list.length > 1 && list[1] ? list[1] : ''; // return $.ajax({
+  //   type: "GET",
+  //   url: `/api/JobAd/GetJobCount?type=${category}&codes=${urlStr}&portalId=${portalId}&category=${categoryType}`,
+  //   headers: {
+  //     "EagleEye-TraceID": guid(),
+  //   },
+  //   success: (data) => {
+  //     if (data.Code === 200)
+  //     webpartRoot.find(".job_cnt").each(function () {
+  //       const itemType = this.dataset["type"];
+  //       if (typeof itemType === "string") {
+  //         const num = data.Data[itemType];
+  //         $(this).text($(this).text().replace('0', num));
+  //         $(this).attr('position_count', num);
+  //       }
+  //     });   
+  //   },
+  // });
+
+  var Condition = [];
+  Condition.push({
+    Type: category,
+    Values: webpartProps.content.map(function (item) {
+      return item.Id;
+    })
+  });
+
+  if (webpartProps.conditions) {
+    Object.keys(webpartProps.conditions).map(function (item) {
+      var key = mapKey[item];
+      if (webpartProps.conditions[item].length) Condition.push({
+        Type: item,
+        Values: webpartProps.conditions[item].map(function (el) {
+          return key ? el.value : el.id;
+        })
+      });
+    });
+  } // 当前卡片所属的招聘类别
+
+
+  var categoryId = (_businessTypeMap$cate = businessTypeMap[categoryType]) != null ? _businessTypeMap$cate : categoryType;
+  var categoryObj = categoryId ? {
+    Category: [categoryId]
+  } : {};
+  $.ajax({
+    type: 'POST',
+    url: "/api/JobAd/GetJobCount?portalId=" + portalId,
+    headers: {
+      "EagleEye-TraceID": guid(),
+      "Content-Type": "application/json"
+    },
+    data: JSON.stringify({
+      Condition: Condition,
+      Category: categoryType
+    }),
+    success: function success(data) {
+      if (data.Code === 200) webpartRoot.find(".job_cnt").each(function () {
+        var itemType = this.dataset["type"];
+
+        if (typeof itemType === "string") {
+          var num = data.Data[itemType];
+
+          if (num > 999) {
+            num = '999+';
+          }
+
+          $(this).text($(this).text().replace(/[0-9]{1,99}\+*/g, num));
+          $(this).attr('position_count', num);
+        }
+      });
+    }
+  });
+  $.ajax({
+    type: 'POST',
+    url: "/api/Jobad/GetJobAdPageList",
+    headers: {
+      "EagleEye-TraceID": guid(),
+      "Content-Type": "application/json"
+    },
+    data: JSON.stringify(_extends({}, categoryObj, {
+      PageIndex: 0,
+      PageSize: 1,
+      KeyWords: "",
+      SpecialType: 0,
+      PortalId: portalId,
+      DisplayFields: ["Category"]
+    })),
+    success: function success(data) {
+      if (data.Code === 200) {
+        var count = data.Count;
+
+        if (count > 999) {
+          count = '999+';
+        }
+
+        var moreDom = webpartRoot.find(".job_more");
+        moreDom.text($(moreDom).text().replace(/[0-9]{1,99}\+*/g, count));
+        moreDom.attr('position_count', count);
+      }
+    }
+  });
+};
+
+queryJobNumber();
+$(webpartRoot.find(".card_content")[0]).on("click", ".cardToList", function () {
+  if (webpartProps.conditions) window.sessionStorage.setItem('conditions', JSON.stringify(webpartProps.conditions));
+});
+            })(
+              jQuery("#"+id),
+              JSON.parse(decode(JSON.stringify({"y1c-9uVbKo":{"title":{"mainTitle":{"showMainTitle":true,"mainTitleText":"招聘职位","style":1,"color":"#141414","fontFamliy":"默认字体"},"secondTitle":{"showSecondTitle":true,"secondTitleText":"&amp;lt;p style=&amp;quot;font-size: 18px; text-align: center; font-family: 默认字体; max-width: 1000px; min-height: 20px;&amp;quot; class=&amp;quot;html_container_flag&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;color:#8c8c8c&amp;quot;&amp;gt;Recruitment Position&amp;lt;/span&amp;gt;&amp;lt;/p&amp;gt;","color":"#424242"}},"layout":{"paddingTop":"120px","paddingBottom":"120px","column":3,"background":{"type":"no","value":""}},"currentCategory":{"id":"workLocation","name":"工作地点"},"content":[{"Id":"1100","title":"北京市","fontColor":"#141414","background":{"type":"image","value":"https://portal-oss.zhiye.com/10000/image/692f5510-c5a7-468c-850f-9e598c824d05.png"}},{"Id":"1200","title":"天津市","fontColor":"#141414","background":{"type":"image","value":"https://portal-oss.zhiye.com/10000/image/60281ca2-8ec4-4e75-85e8-365ee9781b26.png"}},{"Id":"3100","title":"上海市","fontColor":"#141414","background":{"type":"image","value":"https://portal-oss.zhiye.com/10000/image/bd549eea-854e-4ec5-ba7c-e87d7d45e87a.png"}},{"Id":"3301","title":"杭州市","fontColor":"#141414","background":{"type":"image","value":"https://portal-oss.zhiye.com/10000/image/c29a25b1-18f0-4cd2-a58f-4378e7862f4f.png"}},{"Id":"4401","title":"广州市","fontColor":"#141414","background":{"type":"image","value":"https://portal-oss.zhiye.com/10000/image/5bac4b00-578d-447b-8e64-74727275a495.png"}},{"Id":"4403","title":"深圳市","fontColor":"#141414","background":{"type":"image","value":"https://portal-oss.zhiye.com/10000/image/f7fffdc6-8027-4546-91e6-0d46038f0038.png"}}],"showExtraCard":false,"extraCardData":{"Id":"showMore","fontColor":"#141414","title":"更多职位","background":{"type":"color","value":"#EBEBEB"}},"propsEN":{"title":{"mainTitle":{"showMainTitle":true,"mainTitleText":"Recruitment Position","style":1,"color":"#141414","fontFamliy":"默认字体"},"secondTitle":{"showSecondTitle":false,"secondTitleText":"Recruitment Position","color":"#424242"}},"layout":{"paddingTop":"120px","paddingBottom":"120px","column":3,"background":{"type":"no","value":""}},"currentCategory":{"id":"workLocation","name":"工作地点"},"content":[{"Id":"1100","title":"Beijing","fontColor":"#141414","background":{"type":"image","value":"https://portal-oss.zhiye.com/10000/image/7a58b7ea-eae9-4938-989e-53d69457b674.png"}},{"Id":"1200","title":"Tianjin","fontColor":"#141414","background":{"type":"image","value":"https://portal-oss.zhiye.com/10000/image/a64753c2-3284-4b5b-bd53-bc6d21573edc.png"}},{"Id":"3100","title":"Shanghai","fontColor":"#141414","background":{"type":"image","value":"https://portal-oss.zhiye.com/10000/image/e4fa15f5-be9b-438e-88e4-ce0f31373465.png"}},{"Id":"3301","title":"Hangzhou","fontColor":"#141414","background":{"type":"image","value":"https://portal-oss.zhiye.com/10000/image/015610f5-a84a-4983-a9da-1ad8c8ab208d.png"}},{"Id":"4401","title":"Guangzhou","fontColor":"#141414","background":{"type":"image","value":"https://portal-oss.zhiye.com/10000/image/0bcb1ff3-dc11-4de0-b692-43f22b1c8767.png"}},{"Id":"4403","title":"Shenzhen","fontColor":"#141414","background":{"type":"image","value":"https://portal-oss.zhiye.com/10000/image/d30e04d3-fd7a-456d-ba2a-f83bd9007ea1.png"}}],"showExtraCard":false,"extraCardData":{"Id":"showMore","fontColor":"#141414","title":"更多职位","background":{"type":"color","value":"#EBEBEB"}},"isChanged":true},"isChanged":true}}[id]))),
+              jQuery(document.documentElement),
+              function(){},
+              "/campus",
+              function(url, target){
+                if (target === "_self") {
+                  window.location.href = url;
+                } else {
+                  window.open(url);
+                }
+              },
+              'runtime',
+              false
+            )
+          };
+        })(); 
+        (function() {
+          function decode(str) {
+            if (!str || typeof str != "string") {
+              return str;
+            }
+            str = str.toString();
+            return str
+              .replace(/&quot;/g, '"')
+              .replace(/&#39;/g, "'")
+              .replace(/&lt;/g, "<")
+              .replace(/&gt;/g, ">")
+              .replace(/&amp;/g, "&");
+          }
+          var ids = 'Mhok02awSh'.split(',');
+          for (var index = 0; index < ids.length; index++) {
+            var id = ids[index];
+            (function(webpartRoot, webpartProps, pageRoot, clearWebpartEffect, businessTypePath, onNavigate, env, isSetting){
+              "use strict";
+            })(
+              jQuery("#"+id),
+              JSON.parse(decode(JSON.stringify({"Mhok02awSh":{"title":{"mainTitle":{"showMainTitle":true,"mainTitleText":"校招流程","style":1,"color":"#141414","fontFamliy":"默认字体"},"secondTitle":{"showSecondTitle":true,"secondTitleText":"&amp;lt;p style=&amp;quot;color:#8C8C8C;font-size:18px;text-align:center;font-family:默认字体;max-width:1000px;min-height:20px;&amp;quot; class=&amp;quot;html_container_flag&amp;quot;&amp;gt;Recruitment Process&amp;lt;/p&amp;gt;","color":"#8C8C8C"}},"processLayout":{"arrowswitch":true,"arrowcolor":"#BFBFBF","paddingTop":"120px","paddingBottom":"120px","background":{"type":"no","value":""}},"processList":[{"Id":"1","picture":"https://portal-oss.zhiye.com/10000/image/cac6a7f3-c3a2-4f92-9958-192a140a15fd.png","title":{"processtitleswitch":true,"processtitlecontent":"空中宣讲会","processtitlecolor":"black"},"data":{"datacontent":"6月1日-6月15日","dataswitch":true,"datacolor":"#8C8C8C"}},{"Id":"2","picture":"https://portal-oss.zhiye.com/10000/image/5ae3f1d9-c9dd-4aad-81e4-425621126858.png","title":{"processtitleswitch":true,"processtitlecontent":"网申/内推","processtitlecolor":"black"},"data":{"datacontent":"6月15日-9月30日","dataswitch":true,"datacolor":"#8C8C8C"}},{"Id":"3","picture":"https://portal-oss.zhiye.com/10000/image/0c132954-9f67-444e-b59e-55f1c6286faa.png","title":{"processtitleswitch":true,"processtitlecontent":"在线笔试","processtitlecolor":"black"},"data":{"datacontent":"7月10日陆续开始","dataswitch":true,"datacolor":"#8C8C8C"}},{"Id":"4","picture":"https://portal-oss.zhiye.com/10000/image/a72934ca-8ec1-47e0-b180-91ab4063c5b0.png","title":{"processtitleswitch":true,"processtitlecontent":"面试","processtitlecolor":"black"},"data":{"datacontent":"7月20日陆续开始","dataswitch":true,"datacolor":"#8C8C8C"}},{"Id":"LjusgUR-VppXKInk7FiC3","picture":"https://portal-oss.zhiye.com/10000/image/8d1ca964-fa8d-4394-a3fd-6c45d54139fa.png","title":{"processtitleswitch":true,"processtitlecontent":"Offer","processtitlecolor":"#141414"},"data":{"datacontent":"7月20日陆续开始","dataswitch":true,"datacolor":"#8C8C8C"}}],"propsEN":{"title":{"mainTitle":{"showMainTitle":true,"mainTitleText":"Recruitment Process","style":1,"color":"#141414","fontFamliy":"默认字体"},"secondTitle":{"showSecondTitle":false,"secondTitleText":"Recruitment Process","color":"#8C8C8C"}},"processLayout":{"arrowswitch":true,"arrowcolor":"#BFBFBF","paddingTop":"120px","paddingBottom":"120px","background":{"type":"no","value":""}},"processList":[{"Id":"1","picture":"https://portal-oss.zhiye.com/10000/image/cac6a7f3-c3a2-4f92-9958-192a140a15fd.png","title":{"processtitleswitch":true,"processtitlecontent":"&amp;lt;p style=&amp;quot;color:black;font-size:24px;text-align:unset;font-family:PingFangSC-Semibold;max-width:1000px;min-height:20px;&amp;quot; class=&amp;quot;html_container_flag&amp;quot;&amp;gt;Lecture&amp;lt;/p&amp;gt;","processtitlecolor":"black"},"data":{"datacontent":"June 1-June 15th","dataswitch":true,"datacolor":"#8C8C8C"}},{"Id":"2","picture":"https://portal-oss.zhiye.com/10000/image/5ae3f1d9-c9dd-4aad-81e4-425621126858.png","title":{"processtitleswitch":true,"processtitlecontent":"Delivery","processtitlecolor":"black"},"data":{"datacontent":"June 15th-September 30th","dataswitch":true,"datacolor":"#8C8C8C"}},{"Id":"3","picture":"https://portal-oss.zhiye.com/10000/image/0c132954-9f67-444e-b59e-55f1c6286faa.png","title":{"processtitleswitch":true,"processtitlecontent":"Online Test","processtitlecolor":"black"},"data":{"datacontent":"Start on July 10","dataswitch":true,"datacolor":"#8C8C8C"}},{"Id":"4","picture":"https://portal-oss.zhiye.com/10000/image/a72934ca-8ec1-47e0-b180-91ab4063c5b0.png","title":{"processtitleswitch":true,"processtitlecontent":"Interview","processtitlecolor":"black"},"data":{"datacontent":"Start on July 20","dataswitch":true,"datacolor":"#8C8C8C"}},{"Id":"LjusgUR-VppXKInk7FiC3","picture":"https://portal-oss.zhiye.com/10000/image/8d1ca964-fa8d-4394-a3fd-6c45d54139fa.png","title":{"processtitleswitch":true,"processtitlecontent":"Offer","processtitlecolor":"#141414"},"data":{"datacontent":"Start on July 20","dataswitch":true,"datacolor":"#8C8C8C"}}],"isChanged":true},"isChanged":true}}[id]))),
+              jQuery(document.documentElement),
+              function(){},
+              "/campus",
+              function(url, target){
+                if (target === "_self") {
+                  window.location.href = url;
+                } else {
+                  window.open(url);
+                }
+              },
+              'runtime',
+              false
+            )
+          };
+        })(); 
+        (function() {
+          function decode(str) {
+            if (!str || typeof str != "string") {
+              return str;
+            }
+            str = str.toString();
+            return str
+              .replace(/&quot;/g, '"')
+              .replace(/&#39;/g, "'")
+              .replace(/&lt;/g, "<")
+              .replace(/&gt;/g, ">")
+              .replace(/&amp;/g, "&");
+          }
+          var ids = 'e2JinY7NLW'.split(',');
+          for (var index = 0; index < ids.length; index++) {
+            var id = ids[index];
+            (function(webpartRoot, webpartProps, pageRoot, clearWebpartEffect, businessTypePath, onNavigate, env, isSetting){
+              "use strict";
+            })(
+              jQuery("#"+id),
+              JSON.parse(decode(JSON.stringify({"e2JinY7NLW":{"title":{"mainTitle":{"showMainTitle":true,"mainTitleText":"&amp;lt;p style=&amp;quot;color:#141414;font-size:40px;text-align:center;font-family:默认字体;max-width:1000px;min-height:20px;&amp;quot; class=&amp;quot;html_container_flag&amp;quot;&amp;gt;&amp;lt;span class=&amp;quot;iconfont recruit_iconfont_flag icon-rpcyinhao&amp;quot; style=&amp;quot;font-family:portal-common-font-name;font-size:40px;&amp;quot;&amp;gt;&amp;lt;/span&amp;gt;校招问答&amp;lt;/p&amp;gt;","style":1,"color":"#141414","fontFamliy":"默认字体"},"secondTitle":{"showSecondTitle":true,"secondTitleText":"&amp;lt;p&amp;gt;&amp;lt;span style=&amp;quot;background-color: transparent;;color:#8c8c8c;font-size: 18px;&amp;quot;&amp;gt;School recruitment Q &amp;amp;amp; A&amp;lt;/span&amp;gt;&amp;lt;span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/p&amp;gt;","color":"#424242"}},"layout":{"paddingTop":"120px","paddingBottom":"120px","background":{"type":"image","value":"https://portal-oss.zhiye.com/10000/image/098e4805-1728-4cf1-b394-70cca8429419.png"},"cardPosition":"top","iconPositon":"noIcon","numberPerLine":6},"cardList":[{"TabIcon":"https://tcdn.bstatics.com/ux/ux-recruitment-portal-2022/release/dist/images/fc6399a445fd22680b90.png","TabTitle":"投递相关","CmpType":"question-common","CmpProps":{"title":{"mainTitle":{"showMainTitle":false},"secondTitle":{"showSecondTitle":false}},"layout":{"paddingBottom":"0px","paddingTop":"60px","background":{"type":"no","value":""}},"question":[{"Id":"qweqweqw1","question":"&amp;lt;p&amp;gt;&amp;lt;span style=&amp;quot;font-size: 18px;&amp;quot;&amp;gt;在哪里可以查看到企业最新的招聘信息？&amp;lt;/span&amp;gt;&amp;lt;/p&amp;gt;","answer":"&amp;lt;p&amp;gt;&amp;lt;span style=&amp;quot;color:#424242&amp;quot;&amp;gt;&amp;lt;span&amp;gt;&amp;lt;/span&amp;gt;查询路径：企业官方网站、企业官网公众号&amp;lt;/span&amp;gt;&amp;lt;/p&amp;gt;","questionColor":"#141414","answerColor":"#141414"},{"questionColor":"#141414","answerColor":"#141414","answer":"&amp;lt;p&amp;gt;&amp;lt;span style=&amp;quot;color:#424242&amp;quot;&amp;gt;可以~秋招的结果不影响春招得投递&amp;lt;/span&amp;gt;&amp;lt;/p&amp;gt;","question":"&amp;lt;p&amp;gt;&amp;lt;span style=&amp;quot;font-size: 18px;&amp;quot;&amp;gt;之前秋招投递过，春招还可以再次投递吗？&amp;lt;/span&amp;gt;&amp;lt;/p&amp;gt;","Id":"u2rsKpNU1w5sSAXcv_TbZ"},{"questionColor":"#141414","answerColor":"#141414","answer":"&amp;lt;p&amp;gt;&amp;lt;span style=&amp;quot;color:#424242&amp;quot;&amp;gt;每人可投递3个校招职位，您所投递的第一个职位将作为您的第一志愿&amp;lt;/span&amp;gt;&amp;lt;/p&amp;gt;","question":"&amp;lt;p&amp;gt;&amp;lt;span style=&amp;quot;font-size: 18px;&amp;quot;&amp;gt;每人可以投递几个校招职位？&amp;lt;/span&amp;gt;&amp;lt;/p&amp;gt;","Id":"br3h2LWu1qKa3t3lRZbVo"}],"propsEN":{"title":{"mainTitle":{"showMainTitle":true,"mainTitleText":"Please enter the main title"},"secondTitle":{"showSecondTitle":true,"secondTitleText":"Please enter the subtitle"}},"question":[{"Id":"qweqweqw1","question":"How do you want to play on May Day","answer":"Hot Pot BBQ Mala Tang"}]}},"Id":"yRQUViaYkveY8wItqQul5"},{"TabIcon":"https://tcdn.bstatics.com/ux/ux-recruitment-portal-2022/release/dist/images/fc6399a445fd22680b90.png","TabTitle":"内推相关","CmpType":"question-common","CmpProps":{"title":{"mainTitle":{"showMainTitle":false},"secondTitle":{"showSecondTitle":false}},"layout":{"paddingBottom":"0px","paddingTop":"60px","background":{"type":"no","value":""}},"question":[{"Id":"qweqweqw1","question":"&amp;lt;p&amp;gt;&amp;lt;span style=&amp;quot;font-size: 18px;&amp;quot;&amp;gt;参与校招内推有哪些优势？&amp;lt;/span&amp;gt;&amp;lt;/p&amp;gt;","answer":"&amp;lt;p&amp;gt;&amp;lt;span style=&amp;quot;color:#424242&amp;quot;&amp;gt;&amp;lt;span&amp;gt;&amp;lt;/span&amp;gt;通过校招内推投递校招职位的同学可以免简历筛选直通笔试。&amp;lt;/span&amp;gt;&amp;lt;/p&amp;gt;","questionColor":"#141414","answerColor":"#141414"},{"questionColor":"#141414","answerColor":"#141414","answer":"&amp;lt;p style=&amp;quot;font-size: 14px; text-align: left; font-family: PingFangSC-Regular; max-width: 1200px; min-height: 20px;&amp;quot; class=&amp;quot;html_container_flag&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;color:#424242&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;background-color: transparent;&amp;quot;&amp;gt;同学可以联系在职员工获取内推二维码/字符码，扫描二维码投递并完善简历，或网申简历时填写字符码，即可完成内推。&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/p&amp;gt;","question":"&amp;lt;p&amp;gt;&amp;lt;span style=&amp;quot;font-size: 18px;&amp;quot;&amp;gt;怎样可以参与校招内推？&amp;lt;/span&amp;gt;&amp;lt;/p&amp;gt;","Id":"SezY5m7fp7KKW8-Iux8j4"},{"questionColor":"#141414","answerColor":"#141414","answer":"&amp;lt;p style=&amp;quot;text-align: left; font-family: PingFangSC-Regular; max-width: 1200px; min-height: 20px;&amp;quot; class=&amp;quot;html_container_flag&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;background-color: transparent;;font-size: 14px;;color:#424242&amp;quot;&amp;gt;投递职位后不能再参与内推，所以如想参与内推，记得提前找到内推二维码/字符码哦。&amp;lt;/span&amp;gt;&amp;lt;/p&amp;gt;","question":"&amp;lt;p&amp;gt;&amp;lt;span style=&amp;quot;font-size: 18px;&amp;quot;&amp;gt;&amp;lt;span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;span&amp;gt;我在投递的时候没有参加内推，之后还能参与校招内推吗？&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/p&amp;gt;","Id":"Rzf68ewJnLKBae02FQbQA"}],"propsEN":{"title":{"mainTitle":{"showMainTitle":true,"mainTitleText":"Please enter the main title"},"secondTitle":{"showSecondTitle":true,"secondTitleText":"Please enter the subtitle"}},"question":[{"Id":"qweqweqw1","question":"How do you want to play on May Day","answer":"Hot Pot BBQ Mala Tang"}]}},"Id":"nLBRvlwW4KzAGAOVQ9NcD"},{"TabIcon":"https://tcdn.bstatics.com/ux/ux-recruitment-portal-2022/release/dist/images/fc6399a445fd22680b90.png","TabTitle":"笔试相关","CmpType":"question-common","CmpProps":{"title":{"mainTitle":{"showMainTitle":false},"secondTitle":{"showSecondTitle":false}},"layout":{"paddingBottom":"0px","paddingTop":"60px","background":{"type":"no","value":""}},"question":[{"Id":"qweqweqw1","question":"&amp;lt;p style=&amp;quot;color: rgb(20, 20, 20); text-align: left; font-family: 默认字体; max-width: 1200px; min-height: 20px;&amp;quot; class=&amp;quot;html_container_flag&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;font-family: PingFangSC-Regular; background-color: transparent;&amp;quot;&amp;gt;&amp;lt;font style=&amp;quot;font-size: 18px;&amp;quot;&amp;gt;我在笔试前没有收到笔试通知，怎么办&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/p&amp;gt;","answer":"&amp;lt;p&amp;gt;&amp;lt;font color=&amp;quot;#424242&amp;quot;&amp;gt;&amp;lt;span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;span&amp;gt;请同学按照以下顺序进行操作：&amp;lt;/span&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;&amp;lt;span&amp;gt;&amp;lt;font color=&amp;quot;#424242&amp;quot;&amp;gt;&amp;amp;nbsp;①笔试通知会通过邮件和短信两种方式发送，任意一种方式都可以获取笔试账号信息，请查阅垃圾箱，以防邮件及短信被拦截。&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;&amp;lt;span&amp;gt;&amp;lt;font color=&amp;quot;#424242&amp;quot;&amp;gt;&amp;amp;nbsp;②如果你的网申系统显示已进入【笔试安排】环节，但在笔试开始前一天下午仍未收到邮件和短信通知，请尽快联系公众号，我们将为你安排邮件和短信的补发。&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/p&amp;gt;","questionColor":"#141414","answerColor":"#141414"},{"questionColor":"#141414","answerColor":"#141414","answer":"&amp;lt;p&amp;gt;&amp;lt;font color=&amp;quot;#424242&amp;quot;&amp;gt;&amp;lt;span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;span&amp;gt;如因特殊情况不能参加本场笔试，请根据笔试邮件中的提示【点击确认是否参加考试】，选择【放弃】，并且不要在笔试时间段进入笔试页面即可。&amp;amp;nbsp;&amp;lt;/span&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;&amp;lt;font color=&amp;quot;#424242&amp;quot;&amp;gt;&amp;lt;span&amp;gt;选择【放弃】后可填写合适的日期，如不填写则顺延到下一场笔试。&amp;lt;/span&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;&amp;lt;font color=&amp;quot;#424242&amp;quot;&amp;gt;&amp;lt;span&amp;gt;&amp;amp;nbsp;建议大家合理安排笔试时间，早参加笔试，早安排面试，才有机会早拿offer。&amp;lt;/span&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/p&amp;gt;","question":"&amp;lt;p&amp;gt;&amp;lt;font style=&amp;quot;font-size: 18px;&amp;quot;&amp;gt;我没有时间参加本场笔试或者错过了笔试，怎么办？&amp;lt;/font&amp;gt;&amp;lt;/p&amp;gt;","Id":"nd8MTCuwwA2F8WHIR_g4D"},{"questionColor":"#141414","answerColor":"#141414","answer":"&amp;lt;p&amp;gt;&amp;lt;font color=&amp;quot;#424242&amp;quot;&amp;gt;&amp;lt;span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;span&amp;gt;笔试成绩不会对外公布，将留在校招系统中供面试官参考，大家要认真对待笔试，好好发挥哦。&amp;lt;/span&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/p&amp;gt;","question":"&amp;lt;p&amp;gt;&amp;lt;font style=&amp;quot;font-size: 18px;&amp;quot;&amp;gt;&amp;lt;span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;span&amp;gt;笔试成绩什么时候公布？&amp;lt;/span&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/p&amp;gt;","Id":"SxafReN3Mv2E8jUGHQAnK"}],"propsEN":{"title":{"mainTitle":{"showMainTitle":true,"mainTitleText":"Please enter the main title"},"secondTitle":{"showSecondTitle":true,"secondTitleText":"Please enter the subtitle"}},"question":[{"Id":"qweqweqw1","question":"How do you want to play on May Day","answer":"Hot Pot BBQ Mala Tang"}]}},"Id":"p9q7-WFzf9H8Ii0LHw3eB"},{"TabIcon":"https://tcdn.bstatics.com/ux/ux-recruitment-portal-2022/release/dist/images/fc6399a445fd22680b90.png","TabTitle":"面试相关","CmpType":"question-common","CmpProps":{"title":{"mainTitle":{"showMainTitle":false},"secondTitle":{"showSecondTitle":false}},"layout":{"paddingBottom":"0px","paddingTop":"60px","background":{"type":"no","value":""}},"question":[{"Id":"qweqweqw1","question":"&amp;lt;p&amp;gt;&amp;lt;font style=&amp;quot;font-size: 18px;&amp;quot;&amp;gt;&amp;lt;font style=&amp;quot;&amp;quot;&amp;gt;完成笔试后&amp;lt;/font&amp;gt;多久才可以收到面试通知呢？&amp;lt;/font&amp;gt;&amp;lt;/p&amp;gt;","answer":"&amp;lt;p&amp;gt;&amp;lt;font color=&amp;quot;#424242&amp;quot;&amp;gt;&amp;lt;span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;span&amp;gt;通过校招内推投递校招职位的同学可以免简历筛选直通笔试。&amp;lt;/span&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/p&amp;gt;","questionColor":"#141414","answerColor":"#141414"},{"questionColor":"#141414","answerColor":"#141414","answer":"&amp;lt;p&amp;gt;&amp;lt;font color=&amp;quot;#424242&amp;quot;&amp;gt;&amp;lt;span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;span&amp;gt;完成笔试后，所有职位的面试官都有机会看到你的简历，面试官会根据你的简历与岗位的匹配度决定是否发起面试，你如果不想参与其他职位的面试，可以在约面时直接拒绝，不会影响校招的流程。&amp;lt;/span&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/p&amp;gt;","question":"&amp;lt;p&amp;gt;&amp;lt;font style=&amp;quot;font-size: 18px;&amp;quot;&amp;gt;&amp;lt;span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;span&amp;gt;为什么通知面试的职位与投递的职位不一样呢？&amp;lt;/span&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/p&amp;gt;","Id":"8F_CvvkkKrw-yN6Bzg4HW"},{"questionColor":"#141414","answerColor":"#141414","answer":"&amp;lt;p&amp;gt;&amp;lt;font color=&amp;quot;#424242&amp;quot;&amp;gt;&amp;lt;span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;span&amp;gt;收到面试邀约后，如因时间冲突等原因无法参加面试，可直接联系面试通知中的联系人进行沟通&amp;lt;/span&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/p&amp;gt;","question":"&amp;lt;p&amp;gt;&amp;lt;font style=&amp;quot;font-size: 18px;&amp;quot;&amp;gt;&amp;lt;span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;span&amp;gt;收到面试通知后，不想参加本次面试，应该怎么处理？&amp;lt;/span&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/p&amp;gt;","Id":"ey5W5Go8aPUI-ddHcRQeA"}],"propsEN":{"title":{"mainTitle":{"showMainTitle":true,"mainTitleText":"Please enter the main title"},"secondTitle":{"showSecondTitle":true,"secondTitleText":"Please enter the subtitle"}},"question":[{"Id":"qweqweqw1","question":"How do you want to play on May Day","answer":"Hot Pot BBQ Mala Tang"}]}},"Id":"-py7-uFmAWLE-Mvppdood"}],"tabTitleStyle":{"fontColor":"#141414","fontFamily":"默认","fontSize":"20"},"propsEN":{"title":{"mainTitle":{"showMainTitle":true,"mainTitleText":"&amp;lt;p style=&amp;quot;color:#141414;font-size:40px;text-align:center;font-family:默认字体;max-width:1000px;min-height:20px;&amp;quot; class=&amp;quot;html_container_flag&amp;quot;&amp;gt;&amp;lt;span class=&amp;quot;iconfont recruit_iconfont_flag icon-rpcyinhao&amp;quot; style=&amp;quot;font-family:portal-common-font-name;font-size:40px;&amp;quot;&amp;gt;&amp;lt;/span&amp;gt;School recruitment Q &amp;amp;amp; A&amp;lt;/p&amp;gt;","style":1,"color":"#141414","fontFamliy":"默认字体"},"secondTitle":{"showSecondTitle":false,"secondTitleText":"Please enter the subtitle","color":"#424242"}},"cardList":[{"TabIcon":"https://tcdn.bstatics.com/ux/ux-recruitment-portal-2022/release/dist/images/fc6399a445fd22680b90.png","TabTitle":"Related delivery","CmpType":"question-common","CmpProps":{"title":{"mainTitle":{"showMainTitle":false},"secondTitle":{"showSecondTitle":false}},"layout":{"paddingBottom":"0px","paddingTop":"60px","background":{"type":"no","value":""}},"question":[{"Id":"qweqweqw1","question":"&amp;lt;p style=&amp;quot;color: rgb(20, 20, 20); text-align: left; font-family: 默认字体; max-width: 1200px; min-height: 20px;&amp;quot; class=&amp;quot;html_container_flag&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;font-size: 18px;&amp;quot;&amp;gt;Where can I find the latest recruitment information for the company?&amp;lt;/span&amp;gt;&amp;lt;/p&amp;gt;","answer":"&amp;lt;p style=&amp;quot;font-size: 14px; text-align: left; font-family: PingFangSC-Regular; max-width: 1200px; min-height: 20px;&amp;quot; class=&amp;quot;html_container_flag&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;color:#424242&amp;quot;&amp;gt;Query path: official website of the enterprise and official website of the enterprise public number&amp;lt;/span&amp;gt;&amp;lt;/p&amp;gt;"},{"questionColor":"#141414","answerColor":"#141414","answer":"&amp;lt;p style=&amp;quot;color:#141414;font-size:14px;text-align:left;font-family:PingFangSC-Regular;max-width:1200px;min-height:20px;&amp;quot; class=&amp;quot;html_container_flag&amp;quot;&amp;gt;Can ~ autumn trick results do not affect spring trick delivery&amp;lt;/p&amp;gt;","question":"&amp;lt;p style=&amp;quot;color: rgb(20, 20, 20); text-align: left; font-family: 默认字体; max-width: 1200px; min-height: 20px;&amp;quot; class=&amp;quot;html_container_flag&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;font-size: 18px;&amp;quot;&amp;gt;Earlier autumn recruitment delivered, spring recipe can be delivered again?&amp;lt;/span&amp;gt;&amp;lt;/p&amp;gt;","Id":"m-VIcqQzDSR5TKLJsaLYS"},{"questionColor":"#141414","answerColor":"#141414","answer":"&amp;lt;p style=&amp;quot;color:#141414;font-size:14px;text-align:left;font-family:PingFangSC-Regular;max-width:1200px;min-height:20px;&amp;quot; class=&amp;quot;html_container_flag&amp;quot;&amp;gt;Each person can deliver 3 school admissions positions and the first position you deliver will be your first volunteer&amp;lt;/p&amp;gt;","question":"&amp;lt;p style=&amp;quot;color: rgb(20, 20, 20); text-align: left; font-family: 默认字体; max-width: 1200px; min-height: 20px;&amp;quot; class=&amp;quot;html_container_flag&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;font-size: 18px;&amp;quot;&amp;gt;​How many school posts can each person be sent?&amp;lt;/span&amp;gt;&amp;lt;/p&amp;gt;","Id":"pHZW6tAReyMKx4tYkarJW"}],"propsEN":{"title":{"mainTitle":{"showMainTitle":true,"mainTitleText":"Please enter the main title"},"secondTitle":{"showSecondTitle":true,"secondTitleText":"Please enter the subtitle"}},"question":[{"Id":"qweqweqw1","question":"How do you want to play on May Day","answer":"Hot Pot BBQ Mala Tang"}]}},"Id":"vOZ3rAgUVE6uredlxnajZ"},{"TabIcon":"https://tcdn.bstatics.com/ux/ux-recruitment-portal-2022/release/dist/images/fc6399a445fd22680b90.png","TabTitle":"Inner push related","CmpType":"question-common","CmpProps":{"title":{"mainTitle":{"showMainTitle":false},"secondTitle":{"showSecondTitle":false}},"layout":{"paddingBottom":"0px","paddingTop":"60px","background":{"type":"no","value":""}},"question":[{"Id":"qweqweqw1","question":"&amp;lt;p&amp;gt;&amp;lt;span style=&amp;quot;font-size: 18px;;color:#141414&amp;quot;&amp;gt;Where to participate in school recruitment&amp;lt;/span&amp;gt;&amp;lt;/p&amp;gt;","answer":"&amp;lt;p style=&amp;quot;font-size: 14px; text-align: left; font-family: PingFangSC-Regular; max-width: 1200px; min-height: 20px;&amp;quot; class=&amp;quot;html_container_flag&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;color:#424242&amp;quot;&amp;gt;Students who submit their posts through school recruitment can free resume screening through direct writing.&amp;lt;/span&amp;gt;&amp;lt;/p&amp;gt;"},{"questionColor":"#141414","answerColor":"#141414","answer":"&amp;lt;p style=&amp;quot;font-size: 14px; text-align: left; font-family: PingFangSC-Regular; max-width: 1200px; min-height: 20px;&amp;quot; class=&amp;quot;html_container_flag&amp;quot;&amp;gt;&amp;lt;font color=&amp;quot;#424242&amp;quot;&amp;gt;​Classmates can contact employees to obtain inpush QR/character code, scan QR code delivery and improve resume, or fill out character code when online resume, can complete internal push.&amp;lt;/font&amp;gt;&amp;lt;/p&amp;gt;","question":"&amp;lt;p style=&amp;quot;color: rgb(20, 20, 20); text-align: left; font-family: 默认字体; max-width: 1200px; min-height: 20px;&amp;quot; class=&amp;quot;html_container_flag&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;font-size: 18px;&amp;quot;&amp;gt;How can y&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;quot;font-size: 16px;&amp;quot;&amp;gt;ou participate in school push?&amp;lt;span style=&amp;quot;font-size: 18px;&amp;quot;&amp;gt;​&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/p&amp;gt;","Id":"IF37u46BjuGTjc2MbTyJq"},{"questionColor":"#141414","answerColor":"#141414","answer":"&amp;lt;p style=&amp;quot;font-size: 14px; text-align: left; font-family: PingFangSC-Regular; max-width: 1200px; min-height: 20px;&amp;quot; class=&amp;quot;html_container_flag&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;color:#424242&amp;quot;&amp;gt;​After the delivery position, you can no longer participate in the inpush, so if you want to participate in the inner push, remember to find the intransigence code/character code ahead of time.&amp;lt;/span&amp;gt;&amp;lt;/p&amp;gt;","question":"&amp;lt;p style=&amp;quot;color: rgb(20, 20, 20); text-align: left; font-family: 默认字体; max-width: 1200px; min-height: 20px;&amp;quot; class=&amp;quot;html_container_flag&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;font-size: 18px;&amp;quot;&amp;gt;​I did not participate in the inner push when I delivered, and then can I participate in the school recruitment push?&amp;lt;/span&amp;gt;&amp;lt;/p&amp;gt;","Id":"ziZ5JGngmpGMCeLMuXAAw"}],"propsEN":{"title":{"mainTitle":{"showMainTitle":true,"mainTitleText":"Please enter the main title"},"secondTitle":{"showSecondTitle":true,"secondTitleText":"Please enter the subtitle"}},"question":[{"Id":"qweqweqw1","question":"How do you want to play on May Day","answer":"Hot Pot BBQ Mala Tang"}]}},"Id":"__tl9lhIAOJSUi5osa_R4"},{"TabIcon":"https://tcdn.bstatics.com/ux/ux-recruitment-portal-2022/release/dist/images/fc6399a445fd22680b90.png","TabTitle":"Written Test Related","CmpType":"question-common","CmpProps":{"title":{"mainTitle":{"showMainTitle":false},"secondTitle":{"showSecondTitle":false}},"layout":{"paddingBottom":"0px","paddingTop":"60px","background":{"type":"no","value":""}},"question":[{"Id":"qweqweqw1","question":"&amp;lt;p style=&amp;quot;text-align: left; font-family: 默认字体; max-width: 1200px; min-height: 20px;&amp;quot; class=&amp;quot;html_container_flag&amp;quot;&amp;gt;&amp;lt;font style=&amp;quot;font-size: 18px;&amp;quot; color=&amp;quot;#141414&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;font-family: PingFangSC-Regular; background-color: transparent;&amp;quot;&amp;gt;​What if I didn&amp;#39;&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;quot;font-family: PingFangSC-Regular; background-color: transparent;&amp;quot;&amp;gt;t get a written test notice before I wrote it?&amp;lt;/span&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/p&amp;gt;","answer":"&amp;lt;p&amp;gt;Please follow the following order:&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;1.Written test notice will be sent via mail and text messages, in any way can obtain the written account information, please consult the spam to prevent mail and text messages from being intercepted.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;2.If your online application system shows that you have entered the &amp;quot;written test arrangement&amp;quot; link, but the afternoon of the written test still did not receive email and text message notice, please contact the public as soon as possible, we will arrange for you to arrange for the mail and text message repayment.&amp;lt;/p&amp;gt;"},{"questionColor":"#141414","answerColor":"#141414","answer":"&amp;lt;p style=&amp;quot;font-size: 14px; text-align: left; font-family: PingFangSC-Regular; max-width: 1200px; min-height: 20px;&amp;quot; class=&amp;quot;html_container_flag&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;color:#424242&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;background-color: transparent;&amp;quot;&amp;gt;If you cannot take this exam due to special circumstances, please follow the tips in the written test email [click to confirm whether to take the exam], select [give up] and do not enter the written test page during the written test time.&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;&amp;lt;span style=&amp;quot;color:#424242&amp;quot;&amp;gt;After selecting [drop] you can fill in the appropriate date, if not filled, then you will be postponed to the next written test.&amp;lt;/span&amp;gt;&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;&amp;lt;span style=&amp;quot;color:#424242&amp;quot;&amp;gt;It is recommended that you arrange a written test time, take the written test early, arrange the interview early, in order to have the opportunity to take the offer early.&amp;lt;/span&amp;gt;&amp;lt;/p&amp;gt;","question":"&amp;lt;p style=&amp;quot;color:#141414;font-size:16px;text-align:left;font-family:默认字体;max-width:1200px;min-height:20px;&amp;quot; class=&amp;quot;html_container_flag&amp;quot;&amp;gt;​What if I don&amp;#39;t have time to take this written test or miss the written test?&amp;lt;/p&amp;gt;","Id":"YYs9nppKIBMf0ZYd7I097"},{"questionColor":"#141414","answerColor":"#141414","answer":"&amp;lt;p style=&amp;quot;color:#141414;font-size:14px;text-align:left;font-family:PingFangSC-Regular;max-width:1200px;min-height:20px;&amp;quot; class=&amp;quot;html_container_flag&amp;quot;&amp;gt;​Written test scores will not be published, will remain in the school recruitment system for interviewers to refer, everyone should take the written test seriously, good play oh.&amp;lt;/p&amp;gt;","question":"&amp;lt;p style=&amp;quot;color:#141414;font-size:16px;text-align:left;font-family:默认字体;max-width:1200px;min-height:20px;&amp;quot; class=&amp;quot;html_container_flag&amp;quot;&amp;gt;​When will the written test be announced?&amp;lt;/p&amp;gt;","Id":"i_IwFU6H7EMYbL_B0raom"}],"propsEN":{"title":{"mainTitle":{"showMainTitle":true,"mainTitleText":"Please enter the main title"},"secondTitle":{"showSecondTitle":true,"secondTitleText":"Please enter the subtitle"}},"question":[{"Id":"qweqweqw1","question":"How do you want to play on May Day","answer":"Hot Pot BBQ Mala Tang"}]}},"Id":"tEZfmlP68e2UlVFqEtggC"},{"TabIcon":"https://tcdn.bstatics.com/ux/ux-recruitment-portal-2022/release/dist/images/fc6399a445fd22680b90.png","TabTitle":"Interview Related","CmpType":"question-common","CmpProps":{"title":{"mainTitle":{"showMainTitle":false},"secondTitle":{"showSecondTitle":false}},"layout":{"paddingBottom":"0px","paddingTop":"60px","background":{"type":"no","value":""}},"question":[{"Id":"qweqweqw1","question":"&amp;lt;p style=&amp;quot;color:#141414;font-size:16px;text-align:left;font-family:默认字体;max-width:1200px;min-height:20px;&amp;quot; class=&amp;quot;html_container_flag&amp;quot;&amp;gt;​How long after the written test is completed?&amp;lt;/p&amp;gt;","answer":"&amp;lt;p style=&amp;quot;color:#141414;font-size:14px;text-align:left;font-family:PingFangSC-Regular;max-width:1200px;min-height:20px;&amp;quot; class=&amp;quot;html_container_flag&amp;quot;&amp;gt;​Students who apply to school through recruitment push can exempt resume screening straight-through written test&amp;lt;/p&amp;gt;"},{"questionColor":"#141414","answerColor":"#141414","answer":"&amp;lt;p style=&amp;quot;color:#141414;font-size:14px;text-align:left;font-family:PingFangSC-Regular;max-width:1200px;min-height:20px;&amp;quot; class=&amp;quot;html_container_flag&amp;quot;&amp;gt;​After completing the written examination, all job interviewers have the opportunity to see your resume, the interviewer will determine whether to initiate the interview according to your resume and the job match, if you do not want to participate in the interview, you can directly refuse in the interview, will not affect the school recruitment process.&amp;lt;/p&amp;gt;","question":"&amp;lt;p style=&amp;quot;color:#141414;font-size:16px;text-align:left;font-family:默认字体;max-width:1200px;min-height:20px;&amp;quot; class=&amp;quot;html_container_flag&amp;quot;&amp;gt;​Why is the job of notifying the interview different from the position delivered?&amp;lt;/p&amp;gt;","Id":"N8pu30__9QYisNSM_6MMd"},{"questionColor":"#141414","answerColor":"#141414","answer":"&amp;lt;p style=&amp;quot;color:#141414;font-size:14px;text-align:left;font-family:PingFangSC-Regular;max-width:1200px;min-height:20px;&amp;quot; class=&amp;quot;html_container_flag&amp;quot;&amp;gt;​After receiving an interview invitation, if you can not participate in the interview due to time conflict, you can directly contact the contact in the interview notice for communication&amp;lt;/p&amp;gt;","question":"&amp;lt;p style=&amp;quot;color:#141414;font-size:16px;text-align:left;font-family:默认字体;max-width:1200px;min-height:20px;&amp;quot; class=&amp;quot;html_container_flag&amp;quot;&amp;gt;​After receiving the interview notice, do not want to participate in this interview, what should be done?&amp;lt;/p&amp;gt;","Id":"Hhw0QyoNl_UUvAZudqF34"}],"propsEN":{"title":{"mainTitle":{"showMainTitle":true,"mainTitleText":"Please enter the main title"},"secondTitle":{"showSecondTitle":true,"secondTitleText":"Please enter the subtitle"}},"question":[{"Id":"qweqweqw1","question":"How do you want to play on May Day","answer":"Hot Pot BBQ Mala Tang"}]}},"Id":"Uc6q4AxV0nDQ11umWOgvL"}],"tabTitleStyle":{"fontColor":"#141414","fontFamily":"默认","fontSize":"18"},"isChanged":true,"layout":{"paddingTop":"120px","paddingBottom":"120px","background":{"type":"image","value":"https://portal-oss.zhiye.com/10000/image/4c3a067e-5468-4343-bf2b-9609dd642eb9.png"},"cardPosition":"top","iconPositon":"noIcon","numberPerLine":5},"defalultCmpProps":{"CmpType":"stack-picturetext","CmpProps":{"title":{"mainTitle":{"showMainTitle":false},"secondTitle":{"showSecondTitle":false}},"layout":{"positionLayout":1,"paddingTop":"60px","paddingBottom":"0px","background":{"type":"no","color":"undefined","image":"undefined"}},"content":{"image":"https://tcdn.bstatics.com/ux/ux-recruitment-portal-2022/release/extras/default-img.png","showTitle":true,"title":"请输入内容标题","titleColor":"#141414","showContent":true,"contentText":"请输入内容正文","contentColor":"#141414","backColor":"#FFFFFF"},"propsEN":{"title":{"mainTitle":{"showMainTitle":true,"mainTitleText":"Please enter the main title","style":1,"color":"#141414","fontFamliy":"默认字体"},"secondTitle":{"showSecondTitle":true,"secondTitleText":"Please enter the subtitle","color":"#424242"}},"content":{"image":"https://tcdn.bstatics.com/ux/ux-recruitment-portal-2022/release/extras/default-img.png","showTitle":true,"title":"Please enter the content title","titleColor":"#141414","showContent":true,"contentText":"Please enter the content text","contentColor":"#141414","backColor":"#FFFFFF"}}}}},"defalultCmpProps":{"CmpType":"stack-picturetext","CmpProps":{"title":{"mainTitle":{"showMainTitle":false},"secondTitle":{"showSecondTitle":false}},"layout":{"positionLayout":1,"paddingTop":"60px","paddingBottom":"0px","background":{"type":"no","color":"undefined","image":"undefined"}},"content":{"image":"https://tcdn.bstatics.com/ux/ux-recruitment-portal-2022/release/extras/default-img.png","showTitle":true,"title":"请输入内容标题","titleColor":"#141414","showContent":true,"contentText":"请输入内容正文","contentColor":"#141414","backColor":"#FFFFFF"},"propsEN":{"title":{"mainTitle":{"showMainTitle":true,"mainTitleText":"Please enter the main title","style":1,"color":"#141414","fontFamliy":"默认字体"},"secondTitle":{"showSecondTitle":true,"secondTitleText":"Please enter the subtitle","color":"#424242"}},"content":{"image":"https://tcdn.bstatics.com/ux/ux-recruitment-portal-2022/release/extras/default-img.png","showTitle":true,"title":"Please enter the content title","titleColor":"#141414","showContent":true,"contentText":"Please enter the content text","contentColor":"#141414","backColor":"#FFFFFF"}}}}}}[id]))),
+              jQuery(document.documentElement),
+              function(){},
+              "/campus",
+              function(url, target){
+                if (target === "_self") {
+                  window.location.href = url;
+                } else {
+                  window.open(url);
+                }
+              },
+              'runtime',
+              false
+            )
+          };
+        })(); 
+        (function() {
+          function decode(str) {
+            if (!str || typeof str != "string") {
+              return str;
+            }
+            str = str.toString();
+            return str
+              .replace(/&quot;/g, '"')
+              .replace(/&#39;/g, "'")
+              .replace(/&lt;/g, "<")
+              .replace(/&gt;/g, ">")
+              .replace(/&amp;/g, "&");
+          }
+          var ids = 'wquCLcHZeh'.split(',');
+          for (var index = 0; index < ids.length; index++) {
+            var id = ids[index];
+            (function(webpartRoot, webpartProps, pageRoot, clearWebpartEffect, businessTypePath, onNavigate, env, isSetting){
+              "use strict";
+            })(
+              jQuery("#"+id),
+              JSON.parse(decode(JSON.stringify({"wquCLcHZeh":{"title":{"mainTitle":{"showMainTitle":true,"mainTitleText":"加入我们的“N个理由”","style":1,"color":"#141414","fontFamliy":"默认字体"},"secondTitle":{"showSecondTitle":true,"secondTitleText":"&amp;lt;p style=&amp;quot;color:#8C8C8C;font-size:18px;text-align:center;font-family:默认字体;max-width:1000px;min-height:20px;&amp;quot; class=&amp;quot;html_container_flag&amp;quot;&amp;gt;Why Join Us&amp;lt;/p&amp;gt;","color":"#8C8C8C"}},"layout":{"paddingTop":"120px","paddingBottom":"120px","cardsNumber":5,"background":{"type":"no","value":""},"textLayout":"all"},"cards":[{"image":"https://portal-oss.zhiye.com/10000/image/fdd8be4d-17b2-4fc6-a516-e27d2b02a7e4.png","linkName":"","title":"快速的业务发展","linkType":"inside","showTitle":true,"showcontent":true,"content":"公司处于上升阶段，主营业务呈现快速、高效的发展趋势；主营业务基础上，同时向多个领域规划战略布局，实现全面发展，成为行业top企业。","url":"","activityName":"","activityList":[],"maskColor":"#FFFFFF","titleColor":"#141414","contentColor":"#141414"},{"image":"https://portal-oss.zhiye.com/10000/image/4e2ea903-755c-4312-a917-0acb6114de1e.png","linkName":"","title":"开放的企业文化","linkType":"inside","showTitle":true,"showcontent":true,"content":"公司内无同事，有的只是一群志同道合的小伙伴。老板定期“开放麦”，面对面了解员工工作生活中遇到的问题，简单真诚的沟通让你享受工作。","url":"","activityName":"","activityList":[],"maskColor":"#FFFFFF","titleColor":"#141414","contentColor":"#141414"},{"image":"https://portal-oss.zhiye.com/10000/image/a2ab2bdc-a96b-46bc-85c6-8971fcacf685.png","linkName":"","title":"全面的福利关怀","linkType":"inside","showTitle":true,"showcontent":true,"content":"五险一金及补充商业保险全面保障，免你后顾之忧；弹性的工作时间和充足假期，充足时间享受生活；免费年度体检，让你健康生活，快乐工作。","url":"","activityName":"","activityList":[],"maskColor":"#FFFFFF","titleColor":"#141414","contentColor":"#141414"},{"image":"https://portal-oss.zhiye.com/10000/image/75a7f3cb-c588-4206-bfaa-5b9aafd9656a.png","linkName":"","title":"温暖的社会公益","linkType":"inside","showTitle":true,"showcontent":true,"content":"公司在发展业务的同时，成立多个扶贫项目，助力贫困地区发展，帮助更多需要帮助的人，造福社会。","url":"","activityName":"","activityList":[],"maskColor":"#FFFFFF","titleColor":"#141414","contentColor":"#141414"},{"image":"https://portal-oss.zhiye.com/10000/image/89e5c276-f7f0-4013-8dbf-cf94194f64fc.png","linkName":"","title":"自由的工作环境","linkType":"inside","showTitle":true,"showcontent":true,"content":"公司有舒适的办公环境，下午茶、健身房免费提供；更有剧本杀、同瓦隆、羽毛球、篮球等丰富多样的社团活动，你想要的我们都有。","url":"","activityName":"","activityList":[],"maskColor":"#FFFFFF","titleColor":"#141414","contentColor":"#141414"}],"propsEN":{"title":{"mainTitle":{"showMainTitle":true,"mainTitleText":"Why Join Us","style":1,"color":"#141414","fontFamliy":"默认字体"},"secondTitle":{"showSecondTitle":false,"secondTitleText":"Why join us","color":"#8C8C8C"}},"layout":{"paddingTop":"120px","paddingBottom":"120px","cardsNumber":5,"background":{"type":"no","value":""},"textLayout":"all"},"cards":[{"image":"https://portal-oss.zhiye.com/10000/image/fdd8be4d-17b2-4fc6-a516-e27d2b02a7e4.png","linkName":"","title":"Fast Business Development","linkType":"inside","showTitle":true,"showcontent":true,"content":"The company is in the rise and the main business shows a rapid and efficient development trend; on the basis of the main business, it is also planned to plan a strategic layout to multiple fields to achieve comprehensive development and become a TOP enterprise in the industry.","url":"","activityName":"","activityList":[],"maskColor":"#FFFFFF","titleColor":"#141414","contentColor":"#141414"},{"image":"https://portal-oss.zhiye.com/10000/image/4e2ea903-755c-4312-a917-0acb6114de1e.png","linkName":"","title":"Open Corporate Culture","linkType":"inside","showTitle":true,"showcontent":true,"content":"There are no colleagues in the company, and some are just a group of like -minded friends. The boss regularly \"open wheat\" to understand the problems encountered in the work and life of the staff. Simple and sincere communication allows you to enjoy the work.","url":"","activityName":"","activityList":[],"maskColor":"#FFFFFF","titleColor":"#141414","contentColor":"#141414"},{"image":"https://portal-oss.zhiye.com/10000/image/a2ab2bdc-a96b-46bc-85c6-8971fcacf685.png","linkName":"","title":"Comprehensive Welfare","linkType":"inside","showTitle":true,"showcontent":true,"content":"Five Social Insurances and Housing Fund and supplement commercial insurance are fully guaranteed to avoid your worries; elastic working hours and sufficient holidays, sufficient time to enjoy life; free physical examination, allowing you to live a healthy life and work happily.","url":"","activityName":"","activityList":[],"maskColor":"#FFFFFF","titleColor":"#141414","contentColor":"#141414"},{"image":"https://portal-oss.zhiye.com/10000/image/75a7f3cb-c588-4206-bfaa-5b9aafd9656a.png","linkName":"","title":"Warm Social Public Welfare","linkType":"inside","showTitle":true,"showcontent":true,"content":"While the company develops business, it has established a number of poverty alleviation projects to help the development of poor areas, help more people in need to help the society.","url":"","activityName":"","activityList":[],"maskColor":"#FFFFFF","titleColor":"#141414","contentColor":"#141414"},{"image":"https://portal-oss.zhiye.com/10000/image/89e5c276-f7f0-4013-8dbf-cf94194f64fc.png","linkName":"","title":"Free Working Environment","linkType":"inside","showTitle":true,"showcontent":true,"content":"The company has a comfortable office environment, provided free of charge in the afternoon tea and gym; there are also rich and diverse community activities such as script killing, Tongwaron, badminton, basketball, etc. You have all we want.","url":"","activityName":"","activityList":[],"maskColor":"#FFFFFF","titleColor":"#141414","contentColor":"#141414"}],"isChanged":true},"isChanged":true}}[id]))),
+              jQuery(document.documentElement),
+              function(){},
+              "/campus",
+              function(url, target){
+                if (target === "_self") {
+                  window.location.href = url;
+                } else {
+                  window.open(url);
+                }
+              },
+              'runtime',
+              false
+            )
+          };
+        })();;"use strict";
+
+/***
+ * 通用动画逻辑-向上渐变出现
+ */
+(function animateFadeinUp() {
+  var presetAnimations = {
+    fadeInUp: "webpart-animation-fadein-up"
+  }; // 使用observer 会出现元素不出来的情况 偶然  换个方案
+
+  var activeClass = "wb-ani-active";
+  var disableClass = "wb-ani-disable";
+
+  var scrollFade = function scrollFade() {
+    var sections = Array.from(document.querySelectorAll("." + presetAnimations.fadeInUp));
+
+    for (var index = 0; index < sections.length; index++) {
+      var targetSection = sections[index];
+      var rect = targetSection.getBoundingClientRect(); // 向上滚动-出现
+
+      if (rect.top < window.innerHeight - 50 && rect.top > 0) {
+        if (!targetSection.classList.contains(activeClass)) {
+          targetSection.classList.remove(disableClass);
+          targetSection.classList.add(activeClass);
+        }
+      } // 消失  || rect.bottom < 0 先去掉从下往上的动画了
+
+
+      if (rect.top > window.innerHeight) {
+        if (!targetSection.classList.contains(disableClass)) {
+          targetSection.classList.remove(activeClass);
+          targetSection.classList.add(disableClass);
+        }
+      }
+    }
+  };
+
+  document.addEventListener("scroll", scrollFade);
+})();
+  </script>
+</html>

@@ -1,0 +1,149 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [
+      1
+    ],
+    "autoArchiveTalentPoolId": 425506,
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-05T14:50:24",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": "27秋-算法"
+      }
+    },
+    "department": {
+      "id": 203019,
+      "name": "国际化事业部"
+    },
+    "departmentId": 203019,
+    "departments": [
+      {
+        "id": 203019,
+        "name": "国际化事业部"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "硕士",
+    "hireMode": 2,
+    "id": "45612d99-91b6-4b2c-b5b8-3cdf18b2a089",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "<p>岗位职责：</p><p>1、参与智能体（Agent）系统的算法设计与实现，重点包括任务规划（Planning）、工具调用（Function Calling）、记忆机制（Memory）等模块的优化，提升Agent在复杂任务中的自主决策能力。</p><p>2、负责基于大语言模型的Prompt Engineering、微调（Fine-tuning）及上下文管理，针对具体业务场景（风控）设计高效的Agent工作流。</p><p>3、跟踪多智能体协作（Multi-Agent）、反思机制（Self-Reflection）、知识融合等前沿方向，将学术界最新成果（如ReAct、Tree of Thoughts、AutoGen）转化为可落地的技术方案。</p><p>4、搭建实验环境，复现相关论文，撰写技术调研报告与开发文档，参与团队技术分享。</p><p><br></p><p><span>任职要求：</span></p><p><span>1、2027届毕业生，硕士及以上学历，计算机、人工智能、数学相关专业优先，具备扎实的机器学习和深度学习理论基础。</span></p><p><span>2、熟练使用Python，代码风格清晰规范；熟悉PyTorch/TensorFlow等主流框架。</span></p><p><span>3、熟悉大语言模型（如GPT系列、LLaMA、ChatGLM等）的基本原理与应用方式。</span></p><p><span>4、良好的沟通协作意识，对AI前沿技术有强烈好奇心与自驱力。</span></p><p><span>5、了解LangChain、AutoGen、Semantic Kernel等至少一种Agent开发框架，有实际搭建Agent项目的经验者优先。</span></p><p><span>6、对ReAct、CoT（Chain-of-Thought）、Function Calling等提示工程技术有实践或深入理解优先。</span></p><p><span>7、在ICLR/NeurIPS/ACL等顶会/期刊发表过论文，或在Kaggle、AI相关竞赛中取得优异成绩优先。</span></p>",
+    "jobIntentions": [
+      1
+    ],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          203019
+        ],
+        "locationIds": [
+          92621,
+          94656
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 110000,
+        "cityName": "北京市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 92621,
+        "provinceName": "北京市"
+      },
+      {
+        "cityId": 310000,
+        "cityName": "上海市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 94656,
+        "provinceName": "上海市"
+      }
+    ],
+    "multiLocale": "{\"mainLocale\":\"zh-CN\",\"secondLocale\":\"\"}",
+    "number": 1,
+    "openedAt": "2026-08-13T08:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 0,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-08-13T10:19:54",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-AI算法工程师（国际化金融）",
+    "updatedAt": "2026-08-28T16:18:17",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 136661,
+      "name": "算法类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

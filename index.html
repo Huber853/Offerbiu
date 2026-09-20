@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8fafc">
+  <meta name="description" content="把目标岗位、简历版本和笔面试安排放在同一个工作台。Offerbiu，让每一次投递，都有下一步。">
+  <title>Offerbiu — 让每一次投递，都有下一步</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="stylesheet" href="motion.css?v=3">
+  <script src="app.js?v=3" defer></script>
+</head>
+<body>
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="3"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12a22 22 0 0 0 18 0M10 12v3h4v-3"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9zm0 0v6h6M8 13h8M8 17h5"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3v4M17 3v4M3 11h18M8 15h2M14 15h2M8 18h2"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5ZM20 2v4M18 4h4"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7Z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></symbol>
+  </svg>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header">
+    <div class="header-inner container">
+      <a class="brand" href="#" aria-label="Offerbiu 首页"><span class="brand-mark"><svg class="icon"><use href="#i-arrow-up"/></svg></span><span>offer<span class="brand-biu">biu</span><span class="brand-dot">.</span></span></a>
+      <nav class="desktop-nav" aria-label="主要导航"><a href="#features">产品功能</a><a href="#how-it-works">使用指南</a><a href="#questions">常见问题</a></nav>
+      <div class="header-actions"><button class="motion-toggle" aria-pressed="false" aria-label="暂停页面动效"><span class="motion-toggle-symbol" aria-hidden="true">Ⅱ</span><span class="motion-toggle-label">暂停动效</span></button><button class="button button-small button-dark" data-open-demo>进入工作台 <svg class="icon"><use href="#i-arrow"/></svg></button><button class="menu-toggle icon-button" aria-label="展开导航" aria-expanded="false" aria-controls="mobile-nav"><svg class="icon"><use href="#i-menu"/></svg></button></div>
+    </div>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="移动端导航" hidden><a href="#features">产品功能</a><a href="#how-it-works">使用指南</a><a href="#questions">常见问题</a></nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-grid container">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="status-dot"></span> YOUR NEXT CHAPTER <span class="eyebrow-line"></span> 秋招，从容一点</div>
+          <h1 id="hero-title">让每一次投递，<br>都有<span class="highlight">下一步<span class="highlight-line"></span></span>。</h1>
+          <p class="hero-description">目标岗位、简历版本、笔面试安排。<br>把整个秋招，放进一个清晰的工作台。</p>
+          <div class="hero-actions"><button class="button button-primary" data-open-demo>开始管理秋招 <svg class="icon"><use href="#i-arrow"/></svg></button><button class="button button-text" data-open-demo><span class="play-circle"><svg class="icon"><use href="#i-play"/></svg></span> 看看工作台</button></div>
+          <div class="hero-footnote"><span><svg class="icon"><use href="#i-check"/></svg> 不错过重要节点</span><span><svg class="icon"><use href="#i-check"/></svg> 每一版简历有迹可循</span></div>
+          <div class="hero-index"><span>LESS CHAOS.</span><span>MORE CLARITY.</span><span class="tiny-arrow">↗</span></div>
+        </div>
+
+        <div class="hero-visual" aria-label="求职工作台示例">
+          <div class="visual-grid" aria-hidden="true"></div>
+          <div class="visual-orbit orbit-one" aria-hidden="true"></div><div class="visual-orbit orbit-two" aria-hidden="true"></div>
+          <div class="floating-label"><span class="live-dot"></span> 你的秋招，正在有序推进</div>
+          <div class="workspace-preview">
+            <div class="preview-topbar"><span class="preview-brand"><span class="mini-mark">↗</span> 我的工作台</span><span class="sample-badge">演示数据</span><span class="preview-avatar">O</span></div>
+            <div class="preview-body">
+              <aside class="preview-rail" aria-hidden="true"><span class="rail-active"><svg class="icon"><use href="#i-grid"/></svg></span><span><svg class="icon"><use href="#i-briefcase"/></svg></span><span><svg class="icon"><use href="#i-file"/></svg></span><span><svg class="icon"><use href="#i-calendar"/></svg></span><span class="rail-bottom"><svg class="icon"><use href="#i-spark"/></svg></span></aside>
+              <div class="preview-content">
+                <div class="preview-heading"><div><p class="small-label">一步一步，离目标更近</p><h2>把今天，安排明白。</h2></div><span class="sun-symbol" aria-hidden="true">☀</span></div>
+                <div class="mini-stats"><div><span>目标岗位</span><strong>12<small>个</small></strong></div><div><span>正在推进</span><strong>08<small>个</small></strong></div><div><span>本周面试</span><strong class="blue-text">02<small>场</small></strong></div></div>
+                <div class="week-heading"><strong>本周安排</strong><span>9 月 7 日 – 13 日 <svg class="icon"><use href="#i-chevron"/></svg></span></div>
+                <div class="week-strip"><div><span>一</span><b>07</b><i></i></div><div class="day-today"><span>二</span><b>08</b><i></i></div><div><span>三</span><b>09</b><i class="has-event"></i></div><div><span>四</span><b>10</b><i></i></div><div><span>五</span><b>11</b><i class="has-event"></i></div><div><span>六</span><b>12</b><i></i></div><div><span>日</span><b>13</b><i></i></div></div>
+                <div class="task-heading"><strong>今天的下一步</strong><span>2 件待办</span></div>
+                <div class="preview-task primary-task"><span class="task-icon task-blue"><svg class="icon"><use href="#i-briefcase"/></svg></span><div><strong>产品经理 · 一面准备</strong><span>星河科技 <i></i> 今天 14:00</span></div><span class="task-tag">面试中</span></div>
+                <div class="preview-task"><span class="task-icon task-orange"><svg class="icon"><use href="#i-file"/></svg></span><div><strong>完善数据分析方向简历</strong><span>为新目标，准备更合适的表达</span></div><span class="task-circle"></span></div>
+              </div>
+            </div>
+          </div>
+          <div class="resume-float"><span class="float-icon"><svg class="icon"><use href="#i-file"/></svg></span><div><span class="small-label">合适的岗位，合适的版本</span><strong>产品方向简历 <span>V2</span></strong><p><svg class="icon"><use href="#i-check"/></svg> 已关联目标岗位</p></div><span class="float-check"><svg class="icon"><use href="#i-check"/></svg></span></div>
+          <div class="next-float"><span class="next-spark"><svg class="icon"><use href="#i-spark"/></svg></span><span><small>下一步建议</small><strong>面试前，再梳理一次项目亮点。</strong></span><svg class="icon"><use href="#i-arrow-up"/></svg></div>
+          <div class="character-scene character-welcome" aria-hidden="true"><span class="character-caption">一起，向前一步。</span><div class="character-sprite"></div></div>
+          <div class="visual-caption"><span class="caption-line"></span> 一个工作台，串起每一个机会。</div>
+        </div>
+      </div>
+      <div class="hero-bottom container"><span>从找到机会，到拿定主意</span><div><span>岗位收集</span><svg class="icon"><use href="#i-arrow"/></svg><span>简历准备</span><svg class="icon"><use href="#i-arrow"/></svg><span>笔面试跟进</span><svg class="icon"><use href="#i-arrow"/></svg><span class="journey-end">Offer 决策 <svg class="icon"><use href="#i-arrow-up"/></svg></span></div></div>
+    </section>
+
+    <section class="features section-pad container" id="features" aria-labelledby="features-title">
+      <div class="section-heading"><div><div class="section-kicker">01 / EVERYTHING IN PLACE</div><h2 id="features-title">少一点来回切换，<br>多一点心中有数。</h2></div><p>散落在表格、收藏夹和备忘录里的信息，<br>现在，都有自己的位置。</p></div>
+      <div class="feature-grid">
+        <article class="feature-card feature-pipeline"><div class="feature-card-heading"><span class="feature-icon"><svg class="icon"><use href="#i-briefcase"/></svg></span><span class="feature-number">01</span></div><h3>每个机会，都有进展。</h3><p>从心动岗位到面试结果，把投递的每一步接起来。</p><div class="kanban-mini" aria-label="投递进度示例"><div class="kanban-column"><span class="column-label"><i class="dot-grey"></i> 待投递 <b>2</b></span><div class="job-mini"><span class="company-letter letter-indigo">N</span><strong>产品实习生</strong><small>南星科技 · 上海</small><span class="job-mini-tag">产品方向 V2</span></div><div class="job-ghost"><span></span><span></span></div></div><div class="kanban-column"><span class="column-label"><i class="dot-blue"></i> 面试中 <b>1</b></span><div class="job-mini selected-job"><span class="company-letter letter-blue">S</span><strong>产品经理</strong><small>星河科技 · 杭州</small><span class="job-mini-tag blue-tag"><svg class="icon"><use href="#i-calendar"/></svg> 今天 14:00</span></div></div></div><span class="card-caption">岗位、状态、下一步，同一处查看</span></article>
+        <article class="feature-card feature-resume"><div class="feature-card-heading"><span class="feature-icon"><svg class="icon"><use href="#i-file"/></svg></span><span class="feature-number">02</span></div><h3>简历版本，不再混淆。</h3><p>哪份简历投过哪个岗位，回看时一清二楚。</p><div class="resume-stack"><div class="resume-paper paper-back"></div><div class="resume-paper paper-front"><div class="paper-header"><span class="paper-avatar"></span><div><b>我的简历</b><small>产品方向</small></div><span class="version-label">V2</span></div><div class="paper-line long"></div><div class="paper-line"></div><div class="paper-line short"></div><div class="paper-section">项目经历 <span></span></div><div class="paper-line long"></div><div class="paper-line"></div><div class="paper-status"><svg class="icon"><use href="#i-check"/></svg> 已关联 3 个目标岗位</div></div></div></article>
+        <article class="feature-card feature-calendar"><div class="feature-card-heading"><span class="feature-icon"><svg class="icon"><use href="#i-calendar"/></svg></span><span class="feature-number">03</span></div><h3>重要节点，提前一步。</h3><p>截止、笔试、面试，排好时间再从容出发。</p><div class="agenda-mini"><div class="agenda-top"><span>接下来的安排</span><svg class="icon"><use href="#i-calendar"/></svg></div><div class="agenda-item"><span class="agenda-date"><b>08</b>周二</span><div><strong>产品经理 · 一面</strong><span>14:00 — 14:45</span><em>留出 30 分钟做准备</em></div></div><div class="agenda-item"><span class="agenda-date muted"><b>09</b>周三</span><div><strong>数据分析 · 网申截止</strong><span>23:59 前完成投递</span></div></div></div></article>
+      </div>
+    </section>
+
+    <section class="flow-section" id="how-it-works" aria-labelledby="flow-title" data-active-step="0">
+      <div class="container flow-grid">
+        <div class="flow-copy">
+          <div class="flow-intro"><div class="section-kicker">02 / SMALL STEPS, REAL PROGRESS</div><h2 id="flow-title">不用一次想好所有事。<br>先走好下一步。</h2><p>从一个心仪岗位开始，<br>慢慢搭起属于你的秋招节奏。</p></div>
+          <div class="flow-steps" role="tablist" aria-label="使用流程">
+            <button id="step-tab-0" class="flow-step active" role="tab" aria-selected="true" aria-controls="flow-panel" data-step="0"><span class="step-number">01</span><span><strong>收下一个好机会</strong><small>记下岗位、招聘链接和截止日期。</small></span><svg class="icon"><use href="#i-arrow"/></svg></button>
+            <button id="step-tab-1" class="flow-step" role="tab" aria-selected="false" aria-controls="flow-panel" tabindex="-1" data-step="1"><span class="step-number">02</span><span><strong>准备更合适的简历</strong><small>选好对应版本，让准备有的放矢。</small></span><svg class="icon"><use href="#i-arrow"/></svg></button>
+            <button id="step-tab-2" class="flow-step" role="tab" aria-selected="false" aria-controls="flow-panel" tabindex="-1" data-step="2"><span class="step-number">03</span><span><strong>把下一步放进日程</strong><small>更新进展，安排好每一次笔面试。</small></span><svg class="icon"><use href="#i-arrow"/></svg></button>
+          </div>
+          <div class="scroll-cue"><span class="scroll-cue-icon" aria-hidden="true"><i></i></span><span class="scroll-cue-copy">向下滚动，看看下一步</span><span class="story-count"><b>01</b> / 03</span></div>
+          <div class="story-progress" aria-hidden="true"><span></span></div>
+        </div>
+        <div class="flow-visual" id="flow-panel" role="tabpanel" aria-labelledby="step-tab-0" tabindex="0">
+          <span class="scene-watermark" aria-hidden="true">01</span>
+          <div class="flow-panel-label"><span class="status-dot"></span><span class="scene-label">从这里开始</span><span>示例</span></div>
+          <div class="flow-demo-card"><span class="flow-demo-icon"><svg class="icon"><use href="#i-briefcase"/></svg></span><span class="flow-demo-kicker">我的第一个目标</span><h3>把心仪岗位，<br>留在工作台里。</h3><div class="flow-fields"><div><span>目标岗位</span><strong>产品经理 · 秋招</strong></div><div><span>公司 / 地点</span><strong>星河科技 / 杭州</strong></div><div><span>投递截止</span><strong>2026 年 9 月 18 日</strong></div></div><div class="flow-confirm"><svg class="icon"><use href="#i-check"/></svg><span>机会已收好，下一步准备简历。</span></div></div>
+          <div class="flow-pagination"><span class="active"></span><span></span><span></span></div>
+          <div class="character-scene character-flow" aria-hidden="true"><div class="character-sprite character-working"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="questions-section section-pad container" id="questions"><div class="section-heading"><div><div class="section-kicker">03 / GOOD TO KNOW</div><h2>开始之前，你可能想知道。</h2></div></div><div class="faq-list"><details><summary>还没开始投递，也可以使用吗？<span class="faq-plus">+</span></summary><p>可以。从收集感兴趣的岗位、整理简历版本开始，再逐步补充截止日期和投递计划。工作台可以跟着你的求职进度慢慢完善。</p></details><details><summary>这里能直接向公司投递简历吗？<span class="faq-plus">+</span></summary><p>这里帮助你整理岗位和跟进进度。实际投递仍需前往企业招聘官网或指定渠道完成，再回到工作台记录进展。</p></details><details><summary>工作台里有哪些功能？<span class="faq-plus">+</span></summary><p>你可以浏览 2027 届官方校招岗位，建立自己的投递清单和日程，使用三套模板在线编辑简历、保存历史版本并打印为 PDF。配置自己的 DeepSeek API 密钥后，可对选定段落生成润色建议，由你确认采纳。首页展示区使用示例内容，真实岗位请进入工作台查看。</p></details></div></section>
+
+    <section class="closing-section container"><div class="closing-card"><div class="closing-grid" aria-hidden="true"></div><div class="closing-copy"><span class="closing-kicker">YOUR NEXT CHAPTER STARTS HERE</span><h2>下一份期待，<br>从这一步开始。</h2><p>把目标留给远方，把下一步交给今天。</p></div><div class="character-scene character-closing" aria-hidden="true"><div class="character-sprite"></div></div><button class="button button-white" data-open-demo>打开我的工作台 <svg class="icon"><use href="#i-arrow-up"/></svg></button></div></section>
+  </main>
+  <footer class="site-footer container"><a class="brand" href="#"><span class="brand-mark"><svg class="icon"><use href="#i-arrow-up"/></svg></span><span>offer<span class="brand-biu">biu</span><span class="brand-dot">.</span></span></a><span>让每一次投递，都有下一步。</span><small>© 2026 Offerbiu <span>·</span> 2027 秋招工作台</small></footer>
+
+  <dialog id="workspace-dialog" aria-labelledby="dialog-title"><div class="dialog-top"><div><div class="section-kicker">YOUR CAREER WORKSPACE</div><h2 id="dialog-title">我的秋招工作台</h2></div><button class="icon-button" id="close-dialog" aria-label="关闭工作台"><svg class="icon"><use href="#i-close"/></svg></button></div><p class="demo-notice"><svg class="icon"><use href="#i-spark"/></svg> 交互演示 · 以下为示例岗位，修改仅在当前页面生效。</p><div class="demo-tabs" role="tablist" aria-label="工作台视图"><button id="demo-tab-today" role="tab" aria-selected="true" aria-controls="demo-panel-today" data-demo-tab="today">今日待办 <span id="remaining-count">2</span></button><button id="demo-tab-jobs" role="tab" aria-selected="false" aria-controls="demo-panel-jobs" tabindex="-1" data-demo-tab="jobs">我的投递 <span>3</span></button><button id="demo-tab-resume" role="tab" aria-selected="false" aria-controls="demo-panel-resume" tabindex="-1" data-demo-tab="resume">简历版本 <span>2</span></button></div><div id="demo-panel-today" role="tabpanel" aria-labelledby="demo-tab-today" class="demo-panel" tabindex="0"><p class="demo-intro">先做好眼前这两件事，就很不错。</p><label class="demo-todo"><input type="checkbox"><span class="custom-check"><svg class="icon"><use href="#i-check"/></svg></span><span><strong>梳理产品经理一面的项目亮点</strong><small>星河科技 · 今天 14:00 面试</small></span><span class="demo-todo-time">面试准备</span></label><label class="demo-todo"><input type="checkbox"><span class="custom-check"><svg class="icon"><use href="#i-check"/></svg></span><span><strong>补充数据分析方向简历</strong><small>加入项目方法、个人贡献和结果</small></span><span class="demo-todo-time">简历更新</span></label><div class="demo-feedback" aria-live="polite">完成一项，就勾选一项。进展看得见。</div></div><div id="demo-panel-jobs" role="tabpanel" aria-labelledby="demo-tab-jobs" class="demo-panel" tabindex="0" hidden><p class="demo-intro">每个机会走到哪一步，都记在这里。</p><div class="demo-job"><span class="company-letter letter-blue">S</span><div><strong>产品经理</strong><small>星河科技 · 杭州 · 产品方向 V2</small></div><label class="sr-only" for="job-status-1">产品经理投递状态</label><select id="job-status-1"><option>待投递</option><option>已投递</option><option selected>面试中</option><option>已获 Offer</option></select></div><div class="demo-job"><span class="company-letter letter-indigo">N</span><div><strong>产品实习生</strong><small>南星科技 · 上海 · 产品方向 V2</small></div><label class="sr-only" for="job-status-2">产品实习生投递状态</label><select id="job-status-2"><option selected>待投递</option><option>已投递</option><option>面试中</option><option>已获 Offer</option></select></div><div class="demo-job"><span class="company-letter letter-green">Y</span><div><strong>数据分析师</strong><small>远山数据 · 北京 · 数据方向 V1</small></div><label class="sr-only" for="job-status-3">数据分析师投递状态</label><select id="job-status-3"><option>待投递</option><option selected>已投递</option><option>面试中</option><option>已获 Offer</option></select></div><p id="job-feedback" class="demo-feedback" aria-live="polite">可以切换右侧状态，体验投递进度更新。</p></div><div id="demo-panel-resume" role="tabpanel" aria-labelledby="demo-tab-resume" class="demo-panel" tabindex="0" hidden><p class="demo-intro">为不同方向，准备不同的表达。</p><div class="demo-resume"><span class="feature-icon"><svg class="icon"><use href="#i-file"/></svg></span><div><strong>产品方向简历 <span class="version-label">V2</span></strong><small>重点展示用户研究、需求分析与项目推进</small></div><span class="resume-use-count">关联 2 个岗位</span></div><div class="demo-resume"><span class="feature-icon"><svg class="icon"><use href="#i-file"/></svg></span><div><strong>数据方向简历 <span class="version-label">V1</span></strong><small>重点展示分析方法、数据处理与业务结论</small></div><span class="resume-use-count">关联 1 个岗位</span></div><p class="demo-feedback">这是版本关联效果示例，尚未上传真实简历文件。</p></div><div class="dialog-footer"><span><svg class="icon"><use href="#i-lock"/></svg> 本演示不会上传个人信息</span><button class="button button-small button-primary" id="finish-demo">继续浏览主页 <svg class="icon"><use href="#i-arrow"/></svg></button></div></dialog>
+</body>
+</html>

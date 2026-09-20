@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcampus=self.webpackChunkcampus||[]).push([[1203],{81203(e,a,n){n.r(a),n.d(a,{default:()=>t});var s=n(30169);function t(){return s.createElement("div",{className:"m-intro-salary animated fadeIn"},s.createElement("div",{className:"img-container"},s.createElement("div",{className:"main-img"})))}}}]);

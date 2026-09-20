@@ -1,0 +1,264 @@
+[
+  {
+    "name": "tencent",
+    "url": "https://join.qq.com/post.html",
+    "title": "岗位投递 | 腾讯校招",
+    "bytes": 1869,
+    "text": "岗位投递 | 腾讯校招",
+    "scripts": [
+      "https://cdn.multilingualres.hr.tencent.com/campusjoin/V2Common_zh-cn.js",
+      "https://cdn.multilingualres.hr.tencent.com/campusjoin/V2Header_zh-cn.js",
+      "https://cdn.multilingualres.hr.tencent.com/campusjoin/V2Footer_zh-cn.js",
+      "https://cdn.multilingualres.hr.tencent.com/campusjoin/V2Post_zh-cn.js",
+      "https://cdn.multilingualres.hr.tencent.com/joinqq/static2/js/vendor/report.js",
+      "https://cdn.multilingualres.hr.tencent.com/joinqq/static2/smart-inquiry/smart-inquiry.umd.js",
+      "https://cdn.multilingualres.hr.tencent.com/joinqq/static2/js/manifest.build.js",
+      "https://cdn.multilingualres.hr.tencent.com/joinqq/static2/js/vendor.build.js",
+      "https://cdn.multilingualres.hr.tencent.com/joinqq/static2/js/p_zh-cn_post.build.js"
+    ]
+  },
+  {
+    "name": "alibaba",
+    "url": "https://talent.alibaba.com/",
+    "title": "阿里巴巴集团招聘官网",
+    "bytes": 7974,
+    "text": "阿里巴巴集团招聘官网",
+    "scripts": [
+      "https://g.alicdn.com/code/lib/babel-polyfill/7.4.4/polyfill.min.js",
+      "//g.alicdn.com/sd/baxia/1.1.1/baxiaCommon.js",
+      "https://g.alicdn.com/code/npm/@ali/cpo-aem/1.0.47/index.js",
+      "https://g.alicdn.com/code/lib/??react/16.14.0/umd/react.production.min.js,react-dom/16.14.0/umd/react-dom.production.min.js,prop-types/15.7.2/prop-types.js",
+      "https://g.alicdn.com/mylib/@ali/recore/1.7.3/umd/recore.min.js",
+      "https://g.alicdn.com/vip/havana-login/0.3.2/js/mini-login-embedder-min.js",
+      "https://lang.alicdn.com/mcms/recruit-careers-center/0.0.56/recruit-careers-center.json",
+      "https://lang.alicdn.com/mcms/recruit-careers-portal/0.0.90/recruit-careers-portal.json",
+      "https://g.alicdn.com/mtb/lib-windvane/3.0.7/windvane.js",
+      "https://g.alicdn.com/platform/new-careers-portal/1.2.73/vendors.min.js",
+      "https://res2.wx.qq.com/open/js/jweixin-1.6.0.js",
+      "https://g.alicdn.com/platform/new-careers-portal/1.2.73/alibaba-group.min.js"
+    ]
+  },
+  {
+    "name": "bytedance",
+    "url": "https://jobs.bytedance.com/campus/position",
+    "title": "字节跳动校园招聘官网｜字节跳动校招",
+    "bytes": 899917,
+    "text": "字节跳动校园招聘官网｜字节跳动校招 校园招聘",
+    "scripts": [
+      "https://lf-package-cn.feishucdn.com/obj/atsx-throne/hire-fe-prod/portal/campus/static/js/391.90b00520.js",
+      "https://lf-package-cn.feishucdn.com/obj/atsx-throne/hire-fe-prod/portal/campus/static/js/9788.92f6758e.js",
+      "https://lf-package-cn.feishucdn.com/obj/atsx-throne/hire-fe-prod/portal/campus/static/js/2576.eedde48a.js",
+      "https://lf-package-cn.feishucdn.com/obj/atsx-throne/hire-fe-prod/portal/campus/static/js/968.5c356a6e.js",
+      "https://lf-package-cn.feishucdn.com/obj/atsx-throne/hire-fe-prod/portal/campus/static/js/3967.cab002d9.js",
+      "https://lf-package-cn.feishucdn.com/obj/atsx-throne/hire-fe-prod/portal/campus/static/js/1682.45d59820.js",
+      "https://lf-package-cn.feishucdn.com/obj/atsx-throne/hire-fe-prod/portal/campus/static/js/9585.2fd4f6d4.js",
+      "https://lf-package-cn.feishucdn.com/obj/atsx-throne/hire-fe-prod/portal/campus/static/js/237.07c17410.js",
+      "https://lf-package-cn.feishucdn.com/obj/atsx-throne/hire-fe-prod/portal/campus/static/js/pc.6ae52cbe.js",
+      "https://lf-package-cn.feishucdn.com/obj/atsx-throne/hire-fe-prod/portal/campus/lib/core.min.js",
+      "https://lf-package-cn.feishucdn.com/obj/atsx-throne/hire-fe-prod/portal/campus/lib/jsbridge.min.js",
+      "https://verify.snssdk.com/static/pc_slide.js"
+    ]
+  },
+  {
+    "name": "meituan",
+    "url": "https://zhaopin.meituan.com/web/campus",
+    "title": "美团招聘",
+    "bytes": 34509,
+    "text": "美团招聘",
+    "scripts": [
+      "//lx.meituan.net/lx.5.min.js",
+      "//s3.meituan.net/mnpm-cdn/@mtfe-mt-apm-web-1.13.0/owl_1.13.0.min.js",
+      "https://s3plus.meituan.net/v1/mss_2b9f8260d56a4db7a43f86aebe87a9a4/mic-survey/MicSurvey_1.0.1.js",
+      "https://s3plus.meituan.net/hr-zhaopin-static-files/monitor/block-network-monitor.js",
+      "https://certificates.meituan.com/cert/latestsdk"
+    ]
+  },
+  {
+    "name": "xiaomi",
+    "url": "https://hr.xiaomi.com/website/campus.html",
+    "title": "校园招聘 | 小米招聘",
+    "bytes": 28700,
+    "text": "校园招聘 | 小米招聘 招聘项目 宣讲会行程 趁年轻， 做点 更酷的事儿 小米2027届全球校园招聘 招聘项目 招聘项目 面向不同背景、不同阶段的你，提供进入小米的多种方式。 招聘流程 在线投递 官网或小米招聘公众号提交简历 › 线上测评 专项能力测试+性格测评 › 简历评估 HR+业务双评估 › 业务面试 2轮及以上 › Offer 入职 发放Offer→背调→入职 投递须知 投递须知 了解小米校招项目，更精准地把握求职机遇。 宣讲会行程 宣讲会行程 全部 3月 24 城市 / 院校 北京 · 清华大学 时间 / 地址 19:00 – 21:00 主楼后厅 · 报告厅 B 形式 进校 3月 26 城市 / 院校 上海 · 上海交通大学 时间 / 地址 19:00 – 21:00 闵行校区 · 东上院 103 形式 进校 3月 28 城市 / 院校 全国 · 线上直播 时间 / 地址 20:00 – 21:30 小米招聘视频号 形式 直播 4月 02 城市 / 院校 武汉 · 华中科技大学 时间 / 地址 19:00 – 21:00 主校区 · 梧桐语问学中心 形式 双选 4月 08 ",
+    "scripts": [
+      "./assets/js/onetrack.js"
+    ]
+  },
+  {
+    "name": "huawei",
+    "url": "https://career.huawei.com/reccampportal/portal5/campus-recruitment.html",
+    "title": "华为应届生_实习生_留学生_海外本地最新招聘信息-华为校园招聘",
+    "bytes": 117069,
+    "text": "华为应届生_实习生_留学生_海外本地最新招聘信息-华为校园招聘 校园招聘 社会招聘 新闻公告 成长与发展 华为生活 登录 Worldwide 联系HR Huawei Worldwide Careers - 中文 Huawei Worldwide Careers - English Choose your local Huawei Careers website here: Northeast Europe - English Western Europe - English 登录 登录 校园招聘 社会招聘 新闻公告 成长与发展 华为生活 Huawei Worldwide Careers\n                    - English Huawei Worldwide Careers\n                    - 中文 Choose your local Huawei website here: Northeast Europe - English Western Europe - English 联系HR Worldwide {{banner[0].title",
+    "scripts": [
+      "js/vendor/swiper.js?v=K120250709",
+      "js/vendor/jquery-1.9.0.min.js?v=K120250709",
+      "js/vendor/vue.min.js?v=20251023",
+      "js/vendor/vue-i18n.js?v=20251023",
+      "js/portal5_index.js?v=x120260812",
+      "js/cookie.js?v=K120251212001",
+      "js/vendor/video-plug/js/jwplayer.js?v=K120250709",
+      "js/vendor/video-plug/js/jwplayer.html5.js?v=K120250709",
+      "js/vendor/video-plug/js/jwpsrv.js?v=K120250709",
+      "/reccampportal/HwPortalReccamp.js?v=K120260811",
+      "/reccampportal/HwPortalRecmng.js?v=K120250709",
+      "/reccampportal/reccamphwa.js?v=K120250709"
+    ]
+  },
+  {
+    "name": "vivo",
+    "url": "https://hr.vivo.com/campus",
+    "title": "vivo招聘官方网站",
+    "bytes": 1897,
+    "text": "vivo招聘官方网站",
+    "scripts": [
+      "https://it-static.vivo.xyz/npm/vmonitor@2023.3.6/vmonitor.min.js",
+      "/assets/index.589548dc.js"
+    ]
+  },
+  {
+    "name": "oppo",
+    "url": "https://careers.oppo.com/campus",
+    "title": "OPPO招聘 - 加入我们 join us",
+    "bytes": 4918,
+    "text": "OPPO招聘 - 加入我们 join us",
+    "scripts": [
+      "/assets/js/campus_oppo-Bj41Y6Cj.js",
+      "/icon_font__ats.js"
+    ]
+  },
+  {
+    "name": "mihoyo",
+    "url": "https://jobs.mihoyo.com/#/campus",
+    "title": "miHoYo招聘官网",
+    "bytes": 1690,
+    "text": "miHoYo招聘官网",
+    "scripts": [
+      "https://fe-static.app.mihoyo.com/npm-unpkg/@sniffing/perf/1.0.12/dist/index.umd.js",
+      "https://fe-static.app.mihoyo.com/npm-unpkg/@sniffing/report/0.8.5/dist/index.umd.js",
+      "https://fe-static.app.mihoyo.com/npm-unpkg/@sniffing/auto/0.8.6/dist/index.umd.js",
+      "https://webstatic.mihoyo.com/dora/biz/mihoyo-account-sdk/main.js",
+      "https://webstatic.hoyoverse.com/dora/biz/hoyoverse-account-sdk/main.js",
+      "https://polyfill.alicdn.com/v3/polyfill.min.js",
+      "/umi.6f1adbea.js"
+    ]
+  },
+  {
+    "name": "netease",
+    "url": "https://hr.163.com/",
+    "title": "网易社会招聘",
+    "bytes": 6083,
+    "text": "网易社会招聘",
+    "scripts": [
+      "/plugins/moment.min.js",
+      "/plugins/lodash.min.js",
+      "//res2.wx.qq.com/open/js/jweixin-1.6.0.js",
+      "//urswebzj.nosdn.127.net/webzj_cdn101/message.js",
+      "https://s6.music.126.net/static_public/5e7dd9894cb30d2fd378f94f/2.6.0/music-corona.min.js",
+      "/static/js/commons.c65656b8.chunk.js",
+      "/static/js/index.7b551ceb.js"
+    ]
+  },
+  {
+    "name": "kuaishou",
+    "url": "https://zhaopin.kuaishou.cn/recruit/e/#/official/campus/",
+    "title": "快手招聘",
+    "bytes": 2383,
+    "text": "快手招聘 You need to enable JavaScript to run this app.",
+    "scripts": [
+      "https://static.yximgs.com/udata/pkg/KS-EFF/common/tkit/1.2.1/ts-polyfill.min.js",
+      "https://s2-11760.ssrcdn.com/kos/nlav11760/dev/careers-experienced/20260917-103451/assets/lib.umd.min.js?v=1.2.1",
+      "https://s2-11760.ssrcdn.com/kos/nlav11760/dev/careers-experienced/20260917-103451/assets/antd.icons.min.js?v=1.0.0",
+      "https://s2-11760.ssrcdn.com/kos/nlav11760/dev/careers-experienced/20260917-103451/assets/js/antd.5b10bce1.chunk.js",
+      "https://s2-11760.ssrcdn.com/kos/nlav11760/dev/careers-experienced/20260917-103451/assets/js/en_US.4cca5a9d.js",
+      "https://s2-11760.ssrcdn.com/kos/nlav11760/dev/careers-experienced/20260917-103451/assets/js/zh_CN.5349b083.js",
+      "https://s2-11760.ssrcdn.com/kos/nlav11760/dev/careers-experienced/20260917-103451/assets/js/main.b815529c.js"
+    ]
+  },
+  {
+    "name": "bilibili",
+    "url": "https://jobs.bilibili.com/campus/",
+    "title": "哔哩哔哩-招聘",
+    "bytes": 4763,
+    "text": "哔哩哔哩-招聘",
+    "scripts": [
+      "//i0.hdslb.com/bfs/eefe-ssr/lunar/base/performance_sendTrack_behavior_error.js",
+      "//s1.hdslb.com/bfs/static/zhaopin-toc/assets/js/chunk-vendors.7909f1c5.js",
+      "//s1.hdslb.com/bfs/static/zhaopin-toc/assets/js/app.b102573e.js",
+      "//s1.hdslb.com/bfs/static/jinkela/long/js/sentry/sentry-5.15.0.min.js"
+    ]
+  },
+  {
+    "name": "didi",
+    "url": "https://talent.didiglobal.com/campus",
+    "title": "滴滴招聘",
+    "bytes": 6402,
+    "text": "滴滴招聘",
+    "scripts": [
+      "//website.didiglobal.com/swiper4/swiper.min.js",
+      "//website.didiglobal.com/static/flexible.js",
+      "//tracker.didistatic.com/static/tracker/2.5.1/omega.min.js",
+      "/static/js/main.77dbb079.js"
+    ]
+  },
+  {
+    "name": "pdd",
+    "url": "https://careers.pddglobalhr.com/campus",
+    "title": "拼多多集团-PDD校园招聘官网",
+    "bytes": 17612,
+    "text": "拼多多集团-PDD校园招聘官网 校园招聘 首页 应届生招聘 实习生招聘 校招公告 关于我们 登录/注册 拼多多集团-PDD ｜ 校园招聘 立即投递 校招项目 Recruitment Project 应届生招聘 2027届校园招聘 毕业时间：2026年9月-2027年8月 立即投递 实习生招聘 面向所有在校生 立即投递 校招公告 Recruitment News 校招动态 校招动态 常见问题 助力校招生成长 Inspire Your Personal Growth 我们能提供 我们期待你 挑战和实践广阔平台 海量需求，快速迭代 应用场景新，资源机会多 始终奔跑在行业前沿，持续发展 实打实地快速成长 学习资源丰富，多方位培养路径 导师带教，创新项目实战 授权新人，最大化激发潜能 年轻极富创造力的团队 汇集知名高校及行业顶尖人才 创新氛围浓厚 并肩优秀同龄人，做有成就感的事 所有付出都收获回报 极具竞争力的薪酬 扁平化管理，简单高效 工作多样化福利，护航职业成长 校招生的成长故事 Employee Voice 拼多多集团 - PDD 校园招聘 关注我们 Copyright © 2026 pd",
+    "scripts": [
+      "https://pfile.pddpic.com/ei-pub/_recruit-campus-web/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js",
+      "https://pfile.pddpic.com/ei-pub/_recruit-campus-web/_next/static/chunks/6205.a0482efea5356b12.js",
+      "https://pfile.pddpic.com/ei-pub/_recruit-campus-web/_next/static/chunks/webpack-9f45d603fec55509.js",
+      "https://pfile.pddpic.com/ei-pub/_recruit-campus-web/_next/static/chunks/framework-eae1dab60e375b5f.js",
+      "https://pfile.pddpic.com/ei-pub/_recruit-campus-web/_next/static/chunks/main-73c9bf3af9412b95.js",
+      "https://pfile.pddpic.com/ei-pub/_recruit-campus-web/_next/static/chunks/pages/_app-0feb8d01c6e529d8.js",
+      "https://pfile.pddpic.com/ei-pub/_recruit-campus-web/_next/static/chunks/pages/index-f4f5b336c61c927c.js",
+      "https://pfile.pddpic.com/ei-pub/_recruit-campus-web/_next/static/XPOoSgVeNKIjzs8T6_tCb/_buildManifest.js",
+      "https://pfile.pddpic.com/ei-pub/_recruit-campus-web/_next/static/XPOoSgVeNKIjzs8T6_tCb/_ssgManifest.js"
+    ]
+  },
+  {
+    "name": "xhs",
+    "url": "https://job.xiaohongshu.com/",
+    "title": "小红书",
+    "bytes": 4046,
+    "text": "小红书",
+    "scripts": [
+      "//fe-static.xhscdn.com/formula-static/ats-website/public/js/runtime-main.e3980c2.js",
+      "//fe-static.xhscdn.com/formula-static/ats-website/public/js/main.f70089e.js"
+    ]
+  },
+  {
+    "name": "ctrip",
+    "url": "https://careers.trip.com/campus",
+    "title": "Trip.com Group Careers",
+    "bytes": 288022,
+    "text": "Trip.com Group Careers You need to enable JavaScript to run this app.",
+    "scripts": [
+      "https://static.tripcdn.com/packages/train/csign/%5E1.0.9/c-sign.js",
+      "//bd-s.tripcdn.cn/modules/hrteam/careers-trip-abroad-ares/static/js/main.79f5759c.js"
+    ]
+  },
+  {
+    "name": "dewu",
+    "url": "https://dw.jobs.feishu.cn/campus",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "insta360",
+    "url": "https://hr.insta360.com/campus",
+    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>"
+  },
+  {
+    "name": "unitree",
+    "url": "https://www.unitree.com/position/",
+    "title": "Join Us - Unitree Robotics",
+    "bytes": 108291,
+    "text": "Join Us - Unitree Robotics Robots Robot - Consumer/Education As2 Go2 Go1 A1 Robot - Industry A2 B2 B1 AlienGo Robotic Arms Robotic Arms Perception 4D LiDAR Components Components As2 Compact Size Industrial Capability As2-W Powerful Pioneer, Compact Yet Extraordinary Human Humanoid Robot H2 R1 G1 H1 / H1-2 Application Plan H2-D R1-A / R1-A-D G1-D G1-Comp G1-Boxing Dexterous Hand Dex2/5 Dex1-1 Dex5-1 Dex3-1 H2 Destiny Awakening H2 Plus Integrated R&D and Manufacturing, Embarking on Full-Stack Deve",
+    "scripts": [
+      "https://hm.baidu.com/hm.js?9840bc0496ce007a17d629df740a4b69",
+      "/_nuxt/D83MwGH5.js"
+    ]
+  }
+]

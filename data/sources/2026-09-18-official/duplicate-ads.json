@@ -1,0 +1,17 @@
+[
+  {
+    "id": "cnnc:15a75b49-a9d0-4618-87c3-a3baec232cc1",
+    "kept_id": "cnnc:234a1485-5665-4b01-af35-e125fd77d359",
+    "reason": "同单位、标题、Base、职责、要求完全相同的重复广告"
+  },
+  {
+    "id": "cnnc:fa3f1036-eca4-46d8-99c5-f2f631e3c347",
+    "kept_id": "cnnc:ab658aad-fca6-4ee2-8b8a-08ca422c28cd",
+    "reason": "同单位、标题、Base、职责、要求完全相同的重复广告"
+  },
+  {
+    "id": "kedacom:511187403",
+    "kept_id": "kedacom:511199330",
+    "reason": "同单位、标题、Base、职责、要求完全相同的重复广告"
+  }
+]

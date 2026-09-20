@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script>var _b=(location.hostname==='localhost'||location.hostname==='127.0.0.1')?'/':'/website/';document.write('<base href="'+_b+'">')</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="preconnect" href="https://info-app-webfile.cnbj1.mi-fds.com" crossorigin>
+<link rel="stylesheet" href="./assets/fonts/global.css" />
+<title>校园招聘 | 小米招聘</title>
+<script>document.write('<link rel="stylesheet" href="'+_b+'assets/css/shared.css">')</script>
+<script src="./assets/js/onetrack.js"></script>
+<style>
+section[id] { scroll-margin-top: 80px; }
+/* ===== Youth Banner ===== */
+.youth-banner {
+  position: relative; overflow: hidden; min-height: 520px;
+  display: flex; align-items: center;
+  background: var(--core-950);
+  background-size: cover; background-position: center top;
+}
+.youth-banner::before {
+  content: ''; position: absolute; inset: 0;
+  /* background: linear-gradient(105deg, rgba(10,10,10,0.25) 0%, rgba(10,10,10,0.55) 50%, rgba(10,10,10,0.88) 100%); */
+}
+.youth-banner::after { display: none; }
+.youth-banner-inner {
+  position: relative; z-index: 2; padding: 80px 64px;
+  max-width: 640px; margin-left: max(96px, (100vw - 1280px) / 2);
+}
+.youth-banner-inner h2 {
+  color: #000;
+  font-size: 60px !important;
+  font-weight: 500 !important;
+  line-height: 1.2 !important;
+  margin-bottom: 8px !important;
+  letter-spacing: 0.04em !important;
+}
+.youth-banner-eyebrow {
+  font-family: var(--font-mono); font-size: 12px; color: var(--accent);
+  letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 24px;
+  display: flex; align-items: center; gap: 12px;
+}
+.youth-banner-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--accent); }
+.youth-banner h2 {
+  font-family: var(--font-display); font-size: clamp(40px, 5.5vw, 72px);
+  font-weight: 900; line-height: 1.1; letter-spacing: -0.04em; margin-bottom: 20px;
+}
+.youth-banner h2 .accent { color: var(--accent); }
+.youth-banner p { font-size: 17px; color: var(--core-300); line-height: 1.7; font-weight: 300; margin-bottom: 36px; margin-left: 8px; }
+.youth-banner-tag {
+  display: inline-block;
+  padding: 10px 24px;
+  border: 1px solid rgba(0,0,0,0.25);
+  border-radius: 100px;
+  font-size: 22px;
+  color: #000;
+  letter-spacing: 0.02em;
+}
+@media (max-width: 768px) {
+  .youth-banner { min-height: auto; align-items: flex-end; justify-content: center; }
+  /* .youth-banner::before { background: linear-gradient(105deg, rgba(10,10,10,0) 0%, rgba(10,10,10,0.4) 40%, rgba(10,10,10,0.7) 100%); } */
+  .youth-banner-inner { padding: 40px 20px; margin-left: 0; max-width: 60%; text-align: left; }
+  .youth-banner-inner h2 {
+    color: #000;
+    font-size: 24px !important;
+    font-weight: 500 !important;
+    line-height: 1.2 !important;
+    margin-bottom: 4px !important;
+    letter-spacing: 0.04em !important;
+  }
+  .youth-banner h2 { font-size: clamp(22px, 6vw, 32px); }
+  .youth-banner-tag { font-size: 12px; padding: 4px 8px; }
+  .youth-banner p { display: none; }
+}
+
+/* Skill chips */
+.pillar-chip {
+  display: inline-flex; align-items: center;
+  padding: 4px 10px; font-size: 12px;
+  letter-spacing: 0.04em; color: var(--accent);
+  background: rgba(255,107,0,0.06); border: 1px solid rgba(255,107,0,0.35);
+  border-radius: 100px; white-space: nowrap;
+}
+
+/* Programs */
+.programs { padding: 120px 48px; max-width: calc(1280px + 96px); margin: 0 auto; }
+.program-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 56px; }
+.program-card {
+  padding: 36px 32px; background: var(--core-900); border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 20px; transition: all 0.4s var(--ease-out); position: relative; overflow: hidden;
+  display: flex; flex-direction: column; text-align: left;
+}
+.program-intro { align-self: start; }
+.program-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 16px; display: flex; flex-direction: column; min-height: 180px; margin-top: auto; }
+.program-actions { margin-top: auto; padding-top: 16px; }
+.program-actions { display: flex; gap: 12px; flex-wrap: wrap; padding-top: 16px; justify-content: flex-start; }
+.program-actions .hero-cta-glass { font-size: 12px; padding: 8px 18px; }
+.program-card::before {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent); opacity: 0; transition: opacity 0.4s;
+}
+.program-card:hover { transform: translateY(-4px); border-color: rgba(255,107,0,0.25); }
+.program-card:hover::before { opacity: 1; }
+.program-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
+.program-tag { font-family: var(--font-mono); font-size: 12px; color: var(--accent); letter-spacing: 0.15em; text-transform: uppercase; padding: 4px 10px; border: 1px solid rgba(255,107,0,0.25); border-radius: 4px; }
+.program-status { font-family: var(--font-mono); font-size: 12px; color: var(--cyber-green); letter-spacing: 0.1em; display: flex; align-items: center; gap: 6px; }
+.program-status .dot { width: 6px; height: 6px; background: var(--cyber-green); border-radius: 50%; animation: pulse-dot 2s infinite; }
+.program-card h3 { font-size: 24px; font-weight: 700; margin-bottom: 14px; letter-spacing: -0.01em; }
+.program-intro { font-size: 14px; color: var(--core-400); line-height: 1.7; padding: 24px 0; font-weight: 300; }
+.program-meta {
+  display: flex; flex-direction: column; gap: 12px; justify-content: flex-start;
+  padding: 16px 0 0; margin-bottom: 0;
+  text-align: left; align-items: flex-start;
+}
+.program-meta-item { }
+.program-meta-label {
+  font-size: 12px; color: var(--accent); font-family: var(--font-mono);
+  letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 6px; font-weight: 700;
+}
+.program-meta-value { font-size: 14px; color: var(--core-200); font-weight: 400; line-height: 1.7; }
+.program-cta {
+  display: inline-flex; align-items: center; gap: 6px; margin-top: 20px;
+  font-size: 13px; color: var(--accent); font-weight: 700; text-decoration: none;
+  font-family: var(--font-mono);
+  transition: gap 0.3s;
+}
+.program-cta:hover { gap: 10px; }
+@media (max-width: 1024px) { .program-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 768px) { .program-grid { grid-template-columns: 1fr; } }
+
+/* News for campus */
+.campus-news { padding: 120px 48px; background: var(--core-900); }
+.campus-news-inner { max-width: 1280px; margin: 0 auto; }
+.cn-tabs { display: flex; gap: 8px; margin-bottom: 32px; flex-wrap: wrap; }
+.cn-tab {
+  padding: 8px 18px; background: transparent; border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 100px; color: var(--core-400); font-size: 13px; cursor: pointer;
+  transition: all 0.3s var(--ease-out);
+}
+.cn-tab:hover, .cn-tab.active { background: var(--accent); border-color: var(--accent); color: var(--core-000); }
+/* 改为轮播 */
+.carousel-wrap { position: relative; overflow: hidden; }
+.carousel-track { display: flex; gap: 20px; transition: transform 0.5s var(--ease-out); }
+.carousel-btn {
+  position: relative; z-index: 10;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: transparent; border: 1px solid rgba(255,107,0,0.5);
+  color: var(--accent); font-size: 16px; cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center;
+  transition: all 0.3s var(--ease-out);
+}
+.carousel-btn.prev { }
+.carousel-btn.next { }
+.carousel-btn:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+.carousel-nav-bottom { display: flex; justify-content: center; gap: 16px; margin-top: 32px; }
+.cn-card { flex: 0 0 calc(33.333% - 14px); }
+.cn-card {
+  padding: 28px; background: var(--core-950); border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 20px; transition: all 0.4s var(--ease-out); text-decoration: none; color: inherit;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.cn-card:hover { border-color: rgba(255,107,0,0.2); }
+.cn-card-meta { display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 12px; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; }
+.cn-card-meta .tag { padding: 3px 10px; border: 1px solid rgba(255,107,0,0.25); border-radius: 4px; }
+.cn-card h4 { font-size: 17px; font-weight: 700; line-height: 1.4; margin-top: 4px; letter-spacing: -0.01em; }
+.cn-card p { font-size: 13px; color: var(--core-400); line-height: 1.7; font-weight: 300; }
+.cn-card-link { margin-top: auto; font-size: 15px; color: var(--accent); font-weight: 700; display: inline-flex; align-items: center; gap: 6px; transition: transform 0.3s var(--ease-out); transform-origin: left center; }
+.cn-card-link::after { content: '→'; font-size: 16px; display: inline-block; vertical-align: middle; transition: transform 0.3s; }
+.cn-card:hover .cn-card-link { transform: scale(1.06); }
+.cn-card:hover .cn-card-link::after { transform: translateX(4px); }
+
+/* Schedule (tour) */
+.schedule { padding: 120px 48px; max-width: calc(1280px + 96px); margin: 0 auto; }
+.sch-head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 48px; flex-wrap: wrap; gap: 24px; }
+.sch-list {
+  border: 1px solid rgba(255,255,255,0.06); border-radius: 20px; overflow: hidden;
+  background: var(--core-900);
+}
+.sch-item {
+  display: grid; grid-template-columns: 120px 1.2fr 1fr 100px auto; gap: 32px;
+  padding: 32px 36px; align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  transition: all 0.3s var(--ease-out);
+}
+.sch-tabs { display: flex; gap: 8px; margin-bottom: 32px; flex-wrap: wrap; }
+.sch-tab {
+  padding: 8px 18px; background: transparent; border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 100px; color: var(--core-400); font-size: 13px; cursor: pointer;
+  transition: all 0.3s var(--ease-out);
+}
+.sch-tab:hover, .sch-tab.active { background: var(--accent); border-color: var(--accent); color: var(--core-000); }
+.sch-item:last-child { border-bottom: none; }
+.sch-item:hover { background: rgba(255,107,0,0.03); }
+.sch-date-col { padding-right: 24px; border-right: 1px solid rgba(255,255,255,0.06); }
+.sch-date { font-family: var(--font-mono); text-align: center; }
+.sch-month { font-size: 13px; color: var(--accent); letter-spacing: 0.15em; text-transform: uppercase; }
+.sch-day { font-family: var(--font-display); font-size: 32px; font-weight: 700; color: var(--core-000); line-height: 1.1; margin-top: 4px; }
+.sch-type-tag {
+  padding: 6px 16px; border-radius: 100px; font-size: 12px; font-weight: 700;
+  letter-spacing: 0.08em; white-space: nowrap;
+  background: rgba(255,107,0,0.08); border: 1px solid rgba(255,107,0,0.25); color: var(--accent);
+}
+.sch-col-label { font-size: 12px; color: var(--core-400); font-family: var(--font-mono); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+.sch-col-value { font-size: 14px; color: var(--core-200); font-weight: 700; line-height: 1.5; }
+.sch-city { font-size: 17px; font-weight: 700; }
+.sch-cta {
+  padding: 8px 16px; background: transparent; border: 1px solid rgba(255,107,0,0.3);
+  border-radius: 100px; color: var(--accent); font-size: 13px; font-weight: 700;
+  text-decoration: none; transition: all 0.3s var(--ease-out);
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.sch-cta:hover { background: var(--accent); color: var(--core-000); border-color: var(--accent); }
+
+@media (max-width: 1024px) {
+  .sch-item { grid-template-columns: 100px 1fr; gap: 16px; align-items: start; }
+  .sch-item > :nth-child(n+3) { grid-column: 2; }
+  .sch-item > :last-child { grid-column: 2; justify-self: start; }
+  .sch-date { border-right: none; padding-right: 0; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 12px; }
+}
+@media (max-width: 768px) {
+  .programs, .campus-news, .schedule { padding: 80px 20px; }
+  .sch-tab { font-size: 11px; padding: 6px 14px; }
+  .sch-item { display: grid; grid-template-columns: 50px 1.2fr 1.2fr auto; align-items: start; gap: 2px 8px; padding: 14px 10px; }
+  .sch-item > * { min-width: 0; grid-column: auto !important; justify-self: auto !important; }
+  .sch-date-col { padding-right: 0; border-right: none; border-bottom: none; padding-bottom: 0; }
+  .sch-date { text-align: left; }
+  .sch-month { font-size: 11px; }
+  .sch-day { font-size: 18px; }
+  .sch-col-label { display: block; font-size: 10px; margin-bottom: 2px; }
+  .sch-col-value { font-size: 12px; }
+  .sch-city { font-size: 12px; font-weight: 600; }
+  .hero-minimal { min-height: 40vh; }
+  .hero-minimal .hero-video { object-fit: cover; }
+  .hero-minimal .hero-fallback { background: url('https://info-app-webfile.cnbj1.mi-fds.com/info-app-webfile/recruitment-website/campus/campus-banner1.jpeg') center/cover no-repeat !important; }
+  .hero-cta-row { bottom: 3vh; flex-direction: row !important; flex-wrap: nowrap !important; align-items: center; justify-content: center; gap: 12px; }
+  .hero-cta-row .hero-cta-glass { padding: 10px 24px; font-size: 14px; min-width: auto !important; white-space: nowrap; flex: none; text-align: center; justify-content: center; }
+}
+
+/* Hiring process - flowing curve */
+.process { padding: 120px 48px; max-width: calc(1280px + 96px); margin: 0 auto; }
+.process-steps { display: flex; align-items: flex-start; justify-content: center; gap: 0; margin-top: 56px; flex-wrap: wrap; }
+.process-step { display: flex; flex-direction: column; align-items: center; gap: 12px; flex: 1; min-width: 100px; }
+.process-step-icon { width: 64px; height: 64px; }
+.process-step-icon svg { width: 100%; height: 100%; }
+.process-step-label { font-size: 18px; font-weight: 700; color: var(--core-100); }
+.process-step-desc { font-size: 14px; color: var(--core-500); text-align: center; }
+.process-step-arrow { display: flex; align-items: center; font-size: 24px; color: var(--core-500); padding-top: 16px; }
+@media (max-width: 768px) {
+  .process { padding: 80px 20px; }
+  .process-steps { flex-direction: column; align-items: stretch; gap: 0; margin-top: 40px; padding-left: 40px; position: relative; }
+  .process-steps::before { content: ''; position: absolute; left: 16px; top: 32px; bottom: 32px; width: 2px; background: linear-gradient(180deg, var(--accent), rgba(255,107,0,0.3)); border-radius: 1px; }
+  .process-step { flex-direction: row; align-items: center; gap: 16px; position: relative; padding: 20px 0; }
+  .process-step::before { content: ''; position: absolute; left: -23px; top: 50%; transform: translate(-50%, -50%); width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 6px solid var(--accent); z-index: 1; }
+  .process-step:first-child::before { content: ''; width: 8px; height: 8px; border: none; background: var(--accent); border-radius: 50%; box-shadow: 0 0 8px rgba(255,107,0,0.4); transform: translate(-50%, -50%); }
+  .process-step-icon { width: 40px; height: 40px; flex-shrink: 0; }
+  .process-step-label { font-size: 14px; }
+  .process-step-desc { font-size: 12px; text-align: left; }
+  .process-step-arrow { display: none; }
+}
+</style>
+</head>
+<body data-page="campus">
+
+<!-- HERO: video-first (minimal) -->
+<section class="hero hero-minimal">
+  <video class="hero-video" muted loop playsinline preload="none" poster="https://info-app-webfile.cnbj1.mi-fds.com/info-app-webfile/recruitment-website/uploads/campus-video-poster.jpg">
+    <source data-src="https://info-app-webfile.cnbj1.mi-fds.com/info-app-webfile/recruitment-website/video/school-recruit-vedio.mp4" type="video/mp4">
+  </video>
+  <div class="hero-fallback" style="background: url('https://info-app-webfile.cnbj1.mi-fds.com/info-app-webfile/recruitment-website/uploads/campus-video-poster.jpg') center/cover no-repeat, var(--core-950);"></div>
+  <div class="hero-vignette"></div>
+  <div class="hero-cta-row">
+    <a class="hero-cta-glass" href="campus.html#programs">
+      <span class="hero-cta-label">招聘项目</span>
+    </a>
+    <a class="hero-cta-glass" href="campus.html#schedule">
+      <span class="hero-cta-label">宣讲会行程</span>
+    </a>
+  </div>
+  <div class="hero-scroll"><div class="scroll-mouse"></div></div>
+</section>
+
+<!-- YOUTH BANNER -->
+<section class="youth-banner" data-lazy-bg="https://info-app-webfile.cnbj1.mi-fds.com/info-app-webfile/recruitment-website/campus/campus-banner-20260809.png">
+  <div class="youth-banner-inner reveal">
+    <h2>趁年轻，<br>做点<span class="accent">更酷的事儿</span></h2>
+    <div class="youth-banner-tag">小米2027届全球校园招聘</div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section class="programs" id="programs">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">招聘项目</div>
+    <h2 class="section-title">招聘项目</h2>
+    <p class="section-desc">面向不同背景、不同阶段的你，提供进入小米的多种方式。</p>
+  </div>
+  <div class="program-grid reveal-stagger"></div>
+</section>
+
+<!-- HIRING PROCESS -->
+<section class="process">
+  <div class="section-header reveal">
+    <h2 class="section-title">招聘流程</h2>
+  </div>
+  <div class="process-steps reveal">
+    <div class="process-step">
+      <div class="process-step-icon">
+        <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="#555" stroke-width="2"/><path d="M18 30l6-6 6 6" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 24v12" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/><path d="M14 18h20" stroke="#555" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+      <div class="process-step-label">在线投递</div>
+      <div class="process-step-desc">官网或小米招聘公众号提交简历</div>
+    </div>
+    <div class="process-step-arrow">›</div>
+    <div class="process-step">
+      <div class="process-step-icon">
+        <svg viewBox="0 0 48 48" fill="none"><rect x="10" y="8" width="28" height="32" rx="3" stroke="#555" stroke-width="2"/><path d="M16 16h16M16 22h16M16 28h10" stroke="#555" stroke-width="1.5"/><circle cx="32" cy="34" r="5" fill="none" stroke="var(--accent)" stroke-width="2"/><path d="M30 34l2 2 3-3" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="process-step-label">线上测评</div>
+      <div class="process-step-desc">专项能力测试+性格测评</div>
+    </div>
+    <div class="process-step-arrow">›</div>
+    <!-- <div class="process-step">
+      <div class="process-step-icon">
+        <svg viewBox="0 0 48 48" fill="none"><rect x="10" y="8" width="28" height="32" rx="3" stroke="#555" stroke-width="2"/><path d="M16 16h16M16 22h16M16 28h10" stroke="#555" stroke-width="1.5"/><path d="M32 32l-8-8" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/><path d="M26 22l6 6" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/><path d="M34 34l3 3" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/></svg>
+      </div>
+      <div class="process-step-label">技术笔试</div>
+      <div class="process-step-desc">部分技术岗安排笔试</div>
+    </div> 
+    <div class="process-step-arrow">›</div>-->
+    <div class="process-step">
+      <div class="process-step-icon">
+        <svg viewBox="0 0 48 48" fill="none"><rect x="10" y="8" width="28" height="32" rx="3" stroke="#555" stroke-width="2"/><path d="M16 16h16M16 22h16M16 28h10" stroke="#555" stroke-width="1.5"/><circle cx="34" cy="14" r="5" fill="none" stroke="var(--accent)" stroke-width="2"/><path d="M34 12v4M32 14h4" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+      <div class="process-step-label">简历评估</div>
+      <div class="process-step-desc">HR+业务双评估</div>
+    </div>
+    <div class="process-step-arrow">›</div>
+    <div class="process-step">
+      <div class="process-step-icon">
+        <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="16" r="8" stroke="#555" stroke-width="2"/><path d="M12 40c0-7 5-12 12-12s12 5 12 12" stroke="#555" stroke-width="2"/><circle cx="24" cy="16" r="4" fill="none" stroke="var(--accent)" stroke-width="1.5"/><path d="M20 36h8" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+      <div class="process-step-label">业务面试</div>
+      <div class="process-step-desc">2轮及以上</div>
+    </div>
+    <div class="process-step-arrow">›</div>
+    <div class="process-step">
+      <div class="process-step-icon">
+        <svg viewBox="0 0 48 48" fill="none"><rect x="12" y="10" width="24" height="30" rx="3" stroke="#555" stroke-width="2"/><path d="M18 20h12M18 26h12M18 32h8" stroke="#555" stroke-width="1.5"/><circle cx="24" cy="14" r="6" fill="none" stroke="var(--accent)" stroke-width="2"/><path d="M21 14l2 2 4-4" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="process-step-label">Offer 入职</div>
+      <div class="process-step-desc">发放Offer→背调→入职</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CAMPUS NEWS -->
+<section class="campus-news" id="campusNews">
+  <div class="campus-news-inner">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">投递须知</div>
+      <h2 class="section-title">投递须知</h2>
+      <p class="section-desc">了解小米校招项目，更精准地把握求职机遇。</p>
+    </div>
+    <div class="carousel-wrap reveal">
+      <div class="carousel-track" id="campusNewsTrack"></div>
+    </div>
+    <div class="carousel-nav-bottom">
+      <button class="carousel-btn prev" id="campusNewsPrevBtn" aria-label="上一张">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+          <path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <button class="carousel-btn next" id="campusNewsNextBtn" aria-label="下一张">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+          <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="schedule" id="schedule">
+  <div class="sch-head reveal">
+    <div>
+      <div class="section-eyebrow">宣讲会行程</div>
+      <h2 class="section-title">宣讲会行程</h2>
+    </div>
+  </div>
+  <div class="sch-tabs" id="schTabs">
+    <button class="sch-tab active" data-city="all">全部</button>
+  </div>
+  <div class="sch-list" id="schList">
+    <div class="sch-item" data-city="北京" data-mode="线下">
+      <div class="sch-date-col">
+        <div class="sch-date"><div class="sch-month">3月</div><div class="sch-day">24</div></div>
+      </div>
+      <div><div class="sch-col-label">城市 / 院校</div><div class="sch-col-value sch-city">北京 · 清华大学</div></div>
+      <div><div class="sch-col-label">时间 / 地址</div><div class="sch-col-value">19:00 – 21:00<br>主楼后厅 · 报告厅 B</div></div>
+      <div><div class="sch-col-label">形式</div><div class="sch-col-value">进校</div></div>
+    </div>
+    <div class="sch-item" data-city="上海" data-mode="线下">
+      <div class="sch-date-col">
+        <div class="sch-date"><div class="sch-month">3月</div><div class="sch-day">26</div></div>
+      </div>
+      <div><div class="sch-col-label">城市 / 院校</div><div class="sch-col-value sch-city">上海 · 上海交通大学</div></div>
+      <div><div class="sch-col-label">时间 / 地址</div><div class="sch-col-value">19:00 – 21:00<br>闵行校区 · 东上院 103</div></div>
+      <div><div class="sch-col-label">形式</div><div class="sch-col-value">进校</div></div>
+    </div>
+    <div class="sch-item" data-city="线上" data-mode="线上">
+      <div class="sch-date-col">
+        <div class="sch-date"><div class="sch-month">3月</div><div class="sch-day">28</div></div>
+      </div>
+      <div><div class="sch-col-label">城市 / 院校</div><div class="sch-col-value sch-city">全国 · 线上直播</div></div>
+      <div><div class="sch-col-label">时间 / 地址</div><div class="sch-col-value">20:00 – 21:30<br>小米招聘视频号</div></div>
+      <div><div class="sch-col-label">形式</div><div class="sch-col-value">直播</div></div>
+    </div>
+    <div class="sch-item" data-city="武汉" data-mode="线下">
+      <div class="sch-date-col">
+        <div class="sch-date"><div class="sch-month">4月</div><div class="sch-day">02</div></div>
+      </div>
+      <div><div class="sch-col-label">城市 / 院校</div><div class="sch-col-value sch-city">武汉 · 华中科技大学</div></div>
+      <div><div class="sch-col-label">时间 / 地址</div><div class="sch-col-value">19:00 – 21:00<br>主校区 · 梧桐语问学中心</div></div>
+      <div><div class="sch-col-label">形式</div><div class="sch-col-value">双选</div></div>
+    </div>
+    <div class="sch-item" data-city="南京" data-mode="线下">
+      <div class="sch-date-col">
+        <div class="sch-date"><div class="sch-month">4月</div><div class="sch-day">08</div></div>
+      </div>
+      <div><div class="sch-col-label">城市 / 院校</div><div class="sch-col-value sch-city">南京 · 南京大学</div></div>
+      <div><div class="sch-col-label">时间 / 地址</div><div class="sch-col-value">18:30 – 20:30<br>仙林校区 · 逸夫楼报告厅</div></div>
+      <div><div class="sch-col-label">形式</div><div class="sch-col-value">双选</div></div>
+    </div>
+  </div>
+</section>
+
+
+<script>document.write('<script src="'+_b+'assets/js/chrome.js?v=20260826"><\/script>')</script>
+<script>document.write('<script src="'+_b+'assets/js/shared.js?v=20260701"><\/script>')</script>
+<script>document.write('<script src="'+_b+'assets/js/api.js"><\/script>')</script>
+<script>
+  // 招聘动态 tab 过滤（按 data-tag 显示/隐藏卡片，并触发 carousel 重排）
+  (function () {
+    const tabs = document.querySelectorAll('#campusNewsTabs .cn-tab');
+    if (!tabs.length) return;
+
+    const apply = (filter) => {
+      const track = document.getElementById('campusNewsTrack');
+      if (!track) return;
+      track.style.transform = 'translateX(0)';
+      const cards = track.querySelectorAll('.cn-card');
+      cards.forEach(card => {
+        const match = filter === 'all' || card.dataset.tag === filter;
+        card.style.display = match ? '' : 'none';
+      });
+      window.dispatchEvent(new Event('resize'));
+    };
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.toggle('active', t === tab));
+        apply(tab.dataset.filter);
+      });
+    });
+    const activeTab = document.querySelector('#campusNewsTabs .cn-tab.active');
+    if (activeTab) apply(activeTab.dataset.filter);
+  })();
+
+  // 宣讲会行程筛选（按城市 / 线上线下）— 事件委托，支持动态 tab
+  (function () {
+    const tabsEl = document.getElementById('schTabs');
+    if (!tabsEl) return;
+    function apply(city) {
+      const items = document.querySelectorAll('#schList .sch-item');
+      items.forEach(item => {
+        if (city === 'all') { item.style.display = ''; return; }
+        if (city === '线上') {
+          item.style.display = item.dataset.mode === '线上' ? '' : 'none';
+        } else {
+          item.style.display = item.dataset.city === city ? '' : 'none';
+        }
+      });
+    }
+    tabsEl.addEventListener('click', function (e) {
+      const tab = e.target.closest('.sch-tab');
+      if (!tab) return;
+      tabsEl.querySelectorAll('.sch-tab').forEach(t => t.classList.toggle('active', t === tab));
+      apply(tab.dataset.city);
+    });
+  })();
+
+  // Process flow draw animation on scroll
+  (function () {
+    const flow = document.querySelector('.process-flow');
+    if (!flow) return;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          flow.classList.add('is-visible');
+          observer.unobserve(flow);
+        }
+      });
+    }, { threshold: 0.3 });
+    observer.observe(flow);
+  })();
+</script>
+<!-- 招聘Agent 注入脚本 -->
+<script>
+(function(){var s=document.createElement("script");s.defer=true;s.src="/ai/chat/chat-widget-loader.js?t="+Date.now();s.setAttribute("data-hr-chat-widget-loader","");document.body.appendChild(s);})();
+</script>
+<script>trackPageEvent('校园招聘')</script>
+</body>
+</html>

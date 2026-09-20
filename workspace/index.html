@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f9fc">
+  <meta name="description" content="Offerbiu 2027 秋招工作台：真实校招岗位、投递进度、在线简历编辑与 DeepSeek 润色。">
+  <title>我的秋招工作台 · Offerbiu</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/workspace/workspace.css?v=20260919-delight">
+  <link rel="stylesheet" href="/workspace/recruitment.css?v=20260919-delight">
+  <link rel="stylesheet" href="/workspace/resume.css?v=20260919-delight">
+  <link rel="stylesheet" href="/workspace/studio.css?v=20260919-delight">
+  <link rel="stylesheet" href="/workspace/delight.css?v=20260919-delight">
+  <script type="module" src="/workspace/main.js?v=20260919-delight"></script>
+</head>
+<body>
+  <a class="skip-link" href="#workspace-content">跳到主要内容</a>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="/" aria-label="返回 Offerbiu 首页"><span class="brand-mark">↗</span><span>offer<span>biu</span><b>.</b></span></a>
+      <div class="workspace-label"><span class="live-dot"></span> 2027 届 · 我的秋招</div>
+      <nav id="side-nav" aria-label="工作台导航"></nav>
+      <div class="sidebar-bottom"><div class="sidebar-note"><span>ONE STEP AT A TIME</span><strong>把下一步，交给今天。</strong><p>今天的一点准备，<br>都是靠近目标的一步。</p></div><button class="user-button" id="account-button"><span class="user-avatar" id="user-avatar">O</span><span><strong id="user-name">访客浏览</strong><small id="user-caption">登录以保存你的进展</small></span><span class="user-more">···</span></button></div>
+    </aside>
+    <div class="mobile-scrim" id="mobile-scrim" hidden></div>
+    <div class="main-shell">
+      <header class="topbar"><div class="topbar-left"><button class="icon-button mobile-menu" id="sidebar-toggle" aria-label="展开工作台导航" aria-expanded="false">☰</button><span class="breadcrumb">工作空间 <span>/</span> <strong id="page-breadcrumb">总览</strong></span></div><div class="topbar-right"><span class="today-label" id="today-label"></span><a class="text-link" href="/">返回首页 ↗</a><button class="button button-small button-primary" id="header-action">添加待办 +</button></div></header>
+      <main id="workspace-content" tabindex="-1"><div class="loading-view"><span class="loader"></span><p>正在整理你的工作空间…</p></div></main>
+      <footer class="app-footer"><span>Offerbiu · 每一步，都算数。</span><span>岗位以企业官网为准 · 简历由你确认后再修改</span></footer>
+    </div>
+  </div>
+  <dialog id="app-dialog" aria-labelledby="dialog-heading"></dialog>
+  <div id="toast-region" aria-live="polite" role="status"></div>
+</body>
+</html>

@@ -1,0 +1,135 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [],
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-14T21:16:50",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": "27秋-前端"
+      }
+    },
+    "department": {
+      "id": 3224890,
+      "name": "ABC"
+    },
+    "departmentId": 3224890,
+    "departments": [
+      {
+        "id": 3224890,
+        "name": "ABC"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "本科",
+    "hireMode": 2,
+    "id": "3630cf81-eaa2-442e-b429-664b97611904",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "<p>岗位职责：</p><p>1、聚焦两轮车、租车等业务场景，深度结合AI进行高效的业务需求开发；</p><p>2、AI模块工程化落地，深度参与前端业务Agent的开发适配和难题攻坚；</p><p>3、参与业务子领域AI新研发范式的建设和UI新交付范式的建设；</p><p>4、参与业务子领域研发规范和检查的建设，确保需求交付的质量和稳定性。</p><p><br></p><p>任职要求：</p><p>1、2027届毕业生，本科以及以上学历；</p><p>2、熟悉 JavaScript/TypeScript，掌握 React/Vue 等至少一种主流框架，了解前端工程化；</p><p>3、深度使用AI Coding工具, 如Claude Code, Codex，Cursor等；</p><p>4、扎实的代码和工程能力，深入理解数据结构、算法、网络和操作系统等知识；</p><p>5、理解主流LLM的能力与局限，熟悉主流大模型的应用范式以及场景Agent框架。</p><p><br></p><p>【加分项】</p><p>1、有小型全栈项目实践经验或自己的产品应用；</p><p>2、有GitHub 项目、开源贡献或可展示的 Demo；</p><p>3、iOS/Android/Web/小程序至少有一端有结合AI的实践经历，且对其中一端的原理有深入学习。</p>",
+    "jobIntentions": [],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          3224890
+        ],
+        "locationIds": [
+          314487
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 330100,
+        "cityName": "杭州市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 314487,
+        "provinceName": "浙江"
+      }
+    ],
+    "multiLocale": "{\"mainLocale\":\"zh-CN\",\"secondLocale\":\"\"}",
+    "number": 1,
+    "openedAt": "2026-08-14T08:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 0,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-08-14T21:47:03",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-前端开发工程师-ABC杭州",
+    "updatedAt": "2026-09-04T13:17:54",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 155571,
+      "name": "工程-前端类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

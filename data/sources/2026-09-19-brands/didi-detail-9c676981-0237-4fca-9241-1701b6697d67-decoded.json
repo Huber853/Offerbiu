@@ -1,0 +1,149 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [
+      1
+    ],
+    "autoArchiveTalentPoolId": 432698,
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-10T19:20:19",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": "27秋-行测"
+      }
+    },
+    "department": {
+      "id": 203019,
+      "name": "国际化事业部"
+    },
+    "departmentId": 203019,
+    "departments": [
+      {
+        "id": 203019,
+        "name": "国际化事业部"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "本科",
+    "hireMode": 2,
+    "id": "9c676981-0237-4fca-9241-1701b6697d67",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "<p>岗位职责：</p><p>1、运营沟通与需求支持</p><p>与各区域运营团队保持日常沟通，收集并整理一线业务反馈和需求，识别痛点需求；</p><p>同步产品功能更新与运营策略调整信息至各区域，跟进区域侧问题反馈并协调内部资源推动解决。</p><p>2、产品落地与迭代协同</p><p>撰写BRD/PRD文档，协助组织功能评审会议，整理会议纪要；</p><p>在Mentor指导下，将碎片化、本地化的运营需求梳理为结构化的产品需求，逐步培养从业务需求中提炼标准化方案的能力；</p><p>参与功能验收测试（UAT），跟踪产品上线后的使用情况，收集用户反馈并进行初步整理与分析；</p><p>将司机生命周期中的初步用户洞察整理为产品需求建议，协同产研团队跟进。</p><p>3、数据分析与增长支持</p><p>协助分析租车司机用户行为数据，参与识别影响转化与留存的关键因子；</p><p>协助搭建和维护核心监控指标看板，追踪供给侧健康度；</p><p>产出基础数据分析报告，为增长策略和产品迭代提供数据支撑。</p><p>4、运营执行与文档支持</p><p><br></p><p>任职要求：</p><p>1、2027届毕业生，经济学、计算机、统计学或相关专业优先；</p><p>2、对出行、租车或互联网行业有浓厚兴趣，有相关实习或项目经验者优先；</p><p>3、具备一定的逻辑思维和数据分析能力，能够从信息中提炼关键要点；</p><p>4、良好的沟通协调能力和团队协作意识，能够适应跨团队协作；</p><p>5、结果导向，具备良好的学习能力和自驱力，能够在指导下独立推进任务；</p><p>6、中英文流利，可作为工作语言，葡语加分。</p>",
+    "jobIntentions": [
+      1
+    ],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          203019
+        ],
+        "locationIds": [
+          314487,
+          92621
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 110000,
+        "cityName": "北京市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 92621,
+        "provinceName": "北京市"
+      },
+      {
+        "cityId": 330100,
+        "cityName": "杭州市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 314487,
+        "provinceName": "浙江"
+      }
+    ],
+    "multiLocale": "{\"mainLocale\":\"zh-CN\",\"secondLocale\":\"\"}",
+    "number": 2,
+    "openedAt": "2026-08-13T00:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 0,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-08-13T10:19:54",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-产品用户运营分析师（国际化出行-葡语/英语）",
+    "updatedAt": "2026-08-28T16:18:17",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 20039,
+      "name": "运营类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

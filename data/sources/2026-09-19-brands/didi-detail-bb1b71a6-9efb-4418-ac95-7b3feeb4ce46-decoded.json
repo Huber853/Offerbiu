@@ -1,0 +1,139 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [
+      1
+    ],
+    "autoArchiveTalentPoolId": 425506,
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-09-07T17:43:41",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": "27秋-算法"
+      }
+    },
+    "department": {
+      "id": 682867,
+      "name": "用户平台部"
+    },
+    "departmentId": 682867,
+    "departments": [
+      {
+        "id": 682867,
+        "name": "用户平台部"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "硕士",
+    "hireMode": 2,
+    "id": "bb1b71a6-9efb-4418-ac95-7b3feeb4ce46",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "<p>岗位职责：</p><p>1、负责多源时序信号的算法建模与挖掘；</p><p>2、设计并落地时序数据的清洗、特征工程、异常检测、趋势预测与风险评估模型；</p><p>3、结合智能设备 / IoT 传感器数据，构建端到端的指标算法链路并持续迭代调优；</p><p>4、与产品、硬件、工程团队协作，将算法能力落地为可上线、可解释、可运维的业务功能；</p><p>5、善用 AI 工具与大模型能力为研发与数据流程提效，提升算法迭代效率。</p><p><br></p><p>任职要求：</p><p>1、2027 届应届毕业生，硕士及以上学历；</p><p>2、扎实的时序算法功底：系统掌握时间序列分析与建模方法，熟悉平稳性 / 趋势 / 周期分解、ARIMA、状态空间模型、滤波（卡尔曼等）、信号处理、异常检测、变点检测等经典方法；</p><p>3、数据 / 模型开发经验：有健康 / 体征类数据的处理与模型开发经验，熟悉生理信号或智能设备数据的建模落地；</p><p>4、机器学习基础：熟练掌握经典机器学习方法（GBDT/XGBoost、聚类、回归、特征工程等）及主流时序深度模型（LSTM/TCN/Transformer 时序变体等）；</p><p>5、工程能力：熟练使用 Python 及 NumPy / Pandas / SciPy / scikit-learn 等工具，具备良好的数据处理与代码工程素养；</p><p>6、对 AI 提效有理解：理解并实践用大模型 / AI 工具提升数据分析与研发效率，能把 AI 融入日常工作流；</p><p><br></p><p>加分项（Plus）：</p><p>1、有 大模型（LLM）相关研究（训练 / 微调 / 应用落地等），能将 LLM 能力与数据场景结合；</p><p>2、有 IoT / 边缘端 / 流式数据实时处理经验；</p><p>3、有数据可视化、A/B 实验或指标体系搭建经验；</p><p>4、有顶会论文、专利或开源项目贡献。</p>",
+    "jobIntentions": [
+      1
+    ],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          682867
+        ],
+        "locationIds": [
+          92621
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 110000,
+        "cityName": "北京市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 92621,
+        "provinceName": "北京市"
+      }
+    ],
+    "number": 2,
+    "openedAt": "2026-09-07T00:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 0,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-09-07T17:43:50",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-算法工程师（用户平台部）",
+    "updatedAt": "2026-09-08T17:49:18",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 136661,
+      "name": "算法类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

@@ -1,0 +1,554 @@
+<!doctype html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <title>西北大学学生就业创业指导服务中心</title>
+    <meta name="viewport" content="width=device-width,user-scalable=yes">
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+    <script>/*@cc_on window.location.href="http://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); @*/</script>    
+    
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/some.css">
+    <link rel="stylesheet" href="../css/zhaopin.css">
+    <link rel="stylesheet" href="../css/rili.css">
+    <link rel="stylesheet" href="../css/animate.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="../js/polyfill.min.js"></script>
+    <script src="../js/jquery-newest.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/skrollr.min.js"></script>
+    <script src="../js/calendar.js"></script>
+    <link rel="stylesheet" href="../css/jquery.idcode.css">
+    <script src="../js/jquery.idcode.js"></script>
+    <script src="/js/jquery-placeholder.js"></script>
+    <script src="../js/lee.min.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/page2.js"></script>
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/wx_get_openid.js"></script>
+    <style>
+        .shaixuan{
+            margin-bottom:20px;
+        }
+        .shaixuan>li>.col-xs-4 {
+            padding: 0px;
+        }
+        .shaixuan>li:last-child {
+            margin-right: 0;
+        }
+        form{
+            position: relative;
+        }
+        .sousuo{
+            position: absolute;
+            top:-35px;
+            right:2px;
+            padding:2px 10px;
+            border-radius: 5px;
+            outline: none;
+            color:#fff;
+            border:none;
+        }
+        .redi_did span:first-child{
+            width: 65%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .n_left>ol>div:first-child{
+            line-height: 47px;
+        }
+    </style>
+</head>
+<body style="background:#f3f3f3;">
+<div class="header"></div>
+<div style="width:100%;height:91px;"></div>
+<!-- banner -->
+<div class="banner">
+    <img src="../image/newbanner.png" alt="">
+</div>
+<!-- 职位列表 -->
+<div class="xz-container">
+    <div class="container" id="joblist">
+    <template>
+        <div class="row">
+            <div class="col-xs-3 col-md-3">
+                <div class="n_left">
+                    <ul>
+                        <div class="bgcolor">就业岗位<span></span></div>
+                        <template v-if="jobtype == 1">
+                        <li class="quan_" style="background:#eee;">
+                            <a :href="'zhiweiList.html?jobtype=1'" class="fcolor">
+                                <span class="bgcolor"></span>
+                                全职
+                            </a>
+                            <span class="hover"></span>
+                        </li>
+                        </template>
+                        <template v-else>
+                        <li class="quan_">
+                            <a :href="'zhiweiList.html?jobtype=1'">
+                                <span class="bgcolor3"></span>
+                                全职
+                            </a>
+                            <span class="hover"></span>
+                        </li>
+                        </template>
+
+                        <template v-if="jobtype == 2">
+                        <li class="shi_" style="background:#eee;">
+                            <a :href="'zhiweiList.html?jobtype=2'" class="fcolor">
+                                <span class="bgcolor"></span>
+                                实习
+                            </a>
+                            <span class="hover"></span>
+                        </li>
+                        </template>
+                        <template v-else>
+                        <li class="shi_">
+                            <a :href="'zhiweiList.html?jobtype=2'">
+                                <span class="bgcolor3"></span>
+                                实习
+                            </a>
+                            <span class="hover"></span>
+                        </li>
+                        </template>
+                        <li class="">
+                            <a :href="'/Zhaopin/zhaopinList.html?cateid='+news1+'&type='+1">
+                                <span class="bgcolor3"></span>
+                                校招
+                            </a>
+                            <span class="hover"></span>
+                        </li>
+
+                        <!-- <li>
+                            <a href="../Chuangye/sxlb.html?status=0">
+                                <span class="bgcolor3"></span>
+                                双选会
+                            </a>
+                            <span class="hover"></span>
+                        </li> -->
+                    </ul>
+                    <div style="height:15px;background: #f3f3f3;"></div>
+                    <ol>
+                        <div class="bgcolor">宣讲会</div>
+                        <div id="calendar">
+                        </div>
+                        <p class="right teday_" style="position: absolute;left: 31%;bottom: 54px;font-size: 12px;">今日宣讲会：<span>0</span> 场</p>
+                        <a href="/Zhaopin/talk.html"  style="border: 1px solid #3C84E8;padding:3px 42px;color: #3C84E8;position: absolute;left: 15%;bottom: 14px;">查看更多宣讲会</a>
+                    </ol>
+                    <ol class="redian" v-if="redian.length > 0">
+                        <div class="rd_top">
+                            <span class="bgcolor fcolor1">H</span>
+                            <p class="fcolor">热门职位</p>
+                        </div>
+                        <li v-for="redian_ in redian">
+                            <a :href="'zhiweiDetail.html?jobtype='+jobtype+'&id='+redian_.id" :title="redian_.work_name">
+                                <template v-if="redian_.istop == '1'">
+                                    <div class="redi_did">
+                                        <span v-html="'<i class='+'istop'+'>【Top】</i>'+redian_.work_name" :title="redian_.work_name" class="left"></span>
+                                        <template v-if='redian_.jobtype=="1"'>
+                                            <span style="float: right;font-size: 12px;"> {{redian_.xinzi}}</span>
+                                        </template>
+                                        <template v-if='redian_.jobtype=="2"'>
+                                            <template v-if='redian_.xinzi=="面议"'>
+                                                <span style="float: right;font-size: 12px;"> {{redian_.xinzi}}</span>
+                                            </template>
+                                            <template v-else>
+                                                <span style="float: right;font-size: 12px;"> {{redian_.xinzi}} / 天</span>
+                                            </template>
+                                        </template>
+                                    </div>
+                                </template>
+                                <template v-else>
+                                    <div class="redi_did">
+                                        <span v-html="redian_.work_name" :title="redian_.work_name" class="left"></span>
+                                        <template v-if='redian_.jobtype=="1"'>
+                                            <span style="float: right;font-size: 12px;"> {{redian_.xinzi}}</span>
+                                        </template>
+                                        <template v-if='redian_.jobtype=="2"'>
+                                            <template v-if='redian_.xinzi=="面议"'>
+                                                <span style="float: right;font-size: 12px;"> {{redian_.xinzi}}</span>
+                                            </template>
+                                            <template v-else>
+                                                <span style="float: right;font-size: 12px;"> {{redian_.xinzi}} / 天</span>
+                                            </template>
+                                        </template>
+                                    </div>
+                                </template>
+                                <p style="overflow: auto;">
+                                    <span class="left"><img src="../image/png/shi_.png" alt="">&nbsp;&nbsp;{{redian_.addtime3}}</span>
+                                    <span class="right"><i class="fa fa-eye"></i> {{redian_.viewcount}}</span>
+                                </p>
+                            </a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="col-xs-9 col-md-9" id="claright" style="position: relative;">
+                <div class="n_right">
+                    <a href="/" class="fcolor">首页</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;
+                    <template v-if="jobtype == 1">全职</template>
+                    <template v-else-if="jobtype == 2">实习</template>
+                    <ol class="ollist">
+                        <template v-for="place in job_place_one">
+                        <a :href="'zhiweiDetail.html?jobtype='+jobtype+'&id='+place.id" class="animated fadeInUp" style="padding-top:12px;padding-bottom:0;">
+                            <div class="ol_left">
+                                <p class="fcolor">{{place.addtime2}}</p>
+                                <span>{{place.addtime1}}</span>
+                            </div>
+                            <div class="ol_right">
+                                <p class="ol_title">
+                                    <template v-if="place.istop == '1'">
+                                        <span :title="place.work_name">
+                                            <i class='istop'>【Top】</i>
+                                            {{place.work_name}}
+                                        </span>
+                                    </template>
+                                    <template v-else>
+                                        <span :title="place.work_name">{{place.work_name}}</span>
+                                    </template>
+                                    <template v-if='place.jobtype=="1"'>
+                                        <i> {{place.xinzi}}</i>
+                                    </template>
+                                    <template v-if='place.jobtype=="2"'>
+                                        <template v-if='place.xinzi=="面议"'>
+                                            <i> {{place.xinzi}}</i>
+                                        </template>
+                                        <template v-else>
+                                            <i> {{place.xinzi}} / 天</i>
+                                        </template>
+                                    </template>
+                                </p>
+                                <p class="ol_detial">
+                                    <span :title="place.province_id_name">工作地址：<i>{{place.province_id_name}}</i></span>
+                                    <i>|</i>
+                                    <span :title="place.xueli_id_name">学历要求：<i>{{place.xueli_id_name}}</i></span>
+                                    <i>|</i>
+                                    <span :title="place.person_count">招聘人数：<i>{{place.person_count}}</i></span>
+                                    <i>|</i>
+                                    <span :title="place.com_id_name">用人单位名称：<i>{{place.com_id_name}}</i></span>
+                                </p>
+                            </div>
+                        </a>
+                        </template>
+                        <div class="pages_wrapper" id="footpage">
+                            <!--分页内容-->
+                        </div>
+                    </ol>
+                </div>
+
+                <!-- <div class="n_center">
+                    <div class="center_rg rg_btn"><i class="fa fa-angle-double-right"></i></div>
+                    <div class="center_jiuy">公告新闻</div>
+                    <ul class="n_cent_ul">
+                        <div class="">公告新闻</div>
+                        <li><a :href="'/News/newsList.html?cateid='+news1">通知</a></li>
+                        <li><a :href="'/News/newsList.html?cateid='+news2">新闻</a></li>
+                        <li><a :href="'/News/newsList.html?cateid='+news3">公告</a></li>
+                    </ul>
+                </div> -->
+            </div>
+        </div>
+    </template>
+    </div>
+</div>
+<!-- 页脚 -->
+<div class="toTop bgcolor4">
+    <span class="glyphicon glyphicon-hand-up"></span> TOP </div>
+<!-- <div class="footer"></div> -->
+</body>
+</html>
+<script>
+    $(function(){
+        $(".header").load("../Public/header.html");
+        $(".footer").load("../Public/footer.html");
+    })
+
+    var school_id = sessionStorage.getItem('school_id');
+    var news1 = sessionStorage.getItem("news1");//重要通知 全局变量
+    var news2 = sessionStorage.getItem("news2");//新闻动态 全局变量
+    var news3 = sessionStorage.getItem("news3");//公示公告 全局变量
+	var jobtype = $.getUrlParam('jobtype');
+    // alert(jobtype)
+	//筛选条件
+	var province_id = $.getUrlParam('province_id');
+	if (is_wxempty(province_id)) {
+        province_id = 0;
+    }else{
+		$("#province").val(province_id);
+		$("#province").trigger("change");
+	}
+    var city_id = $.getUrlParam('city_id');
+    if (is_wxempty(city_id)) {
+        city_id = 0;
+    }
+    var dalei_id = $.getUrlParam('dalei_id');
+    if (is_wxempty(dalei_id)) {
+        dalei_id = 0;
+    }
+    var cate_id1 = $.getUrlParam('cate_id1');
+    if (is_wxempty(cate_id1)) {
+        cate_id1 = 0;
+    }
+    var salary = $.getUrlParam('salary');
+	if (!is_wxempty(salary)) {
+		var arr = salary.split(',');
+		var salary_floor = arr[0];
+        var salay_ceil = arr[1];
+    }else{
+		var salary_floor = '';
+		var salay_ceil = '';
+	}
+    var day = $.getUrlParam('day');
+    if (is_wxempty(day)) {
+        day = 0;
+    }
+	var vm = new Vue({
+        el: "#joblist",
+        data: {
+                job_place_one: [],
+                total: '',
+                pagesize: '',
+                page: '',
+				jobtype:jobtype,
+                province_list:[],//所在省
+                catedl_list:[],//职位大类
+                catelb_list:[],//职位类别
+                redian:[],
+        },
+        methods: {
+
+        },
+        updated: function () {
+            var onPagechange = function (page) {
+                // console.log('当前点击页码', page);
+                window.location.href = UrlUpdateParams(window.location.href, 'page', page);
+            }
+            var obj = {
+                wrapid: 'footpage', //页面显示分页器容器id
+                total: vm.total, //总条数
+                pagesize: vm.pagesize, //每页显示10条
+                currentPage: vm.page, //当前页
+                onPagechange: onPagechange,
+                //btnCount:7 页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
+            }
+            if (vm.total > 0) {
+                pagination.init(obj);
+                $(".allpages").text(vm.total);
+            }
+			$(".n_right>ol>a").hover(function () {
+                $(this).stop().animate({"margin-left":"-10px"},400);
+				$(this).find(".ol_left>p").attr("class", "bgcolor fcolor1");
+				$(this).find(".ol_left>span").attr("class", "fcolor").css("background", "#d2d2d2");
+				$(this).find(".ol_title").attr("class", "ol_title fcolor");
+				$(this).find(".ol_detial").css("color", "#000");
+			}, function () {
+                $(this).stop().animate({"margin-left":"0px"},400);
+				$(this).find(".ol_left>p").attr("class", "bgcolor1 fcolor");
+				$(this).find(".ol_left>span").attr("class", "").css("background", "#fff");
+				$(this).find(".ol_title").attr("class", "ol_title");
+				$(this).find(".ol_detial").css("color", "#7d7d7d");
+			});
+			if(!is_wxempty(province_id)){
+				$("#province").val(province_id);
+				$("#province").trigger("change");
+			}
+			if(!is_wxempty(dalei_id)){
+				$("#dalei_id").val(dalei_id);
+			}
+			if(!is_wxempty(cate_id1)){
+				$("#cate_id1").val(cate_id1);
+			}
+			if(!is_wxempty(day)){
+				$("#day").val(day);
+            }
+            if(!is_wxempty(salary)){
+                for(var i=0;i<$("#salary option").length;i++){
+                    if($("#salary option").eq(i).attr("value")==salary){
+                        $("#salary option").eq(i).attr("selected","selected");
+                    }
+                }
+            }
+
+            var today_p = $(".today").find("div p").length;
+            $(".teday_ span").text(today_p);
+
+            // $(".center_rg").click(function(){
+            //     if($(this).hasClass("rg_btn")){
+            //         $("#claright").animate({"width":"75%"},400);
+            //         $(".n_cent_ul").fadeOut(400);
+            //         $(".center_jiuy").fadeIn(400);
+            //         $(this).removeClass("rg_btn");
+            //     }else{
+            //         $("#claright").animate({"width":"62%"},400);
+            //         $(".center_jiuy").fadeOut(400);
+            //         $(".n_cent_ul").fadeIn(400);
+            //         $(this).addClass("rg_btn");
+            //     }
+            // })
+        },
+        filters: {
+
+        }
+    })
+	//工作地点(省)
+	http3('POST', '/Systemregion/getlist', {"parent_id":0}, function(e){
+	    vm.province_list = e.data.list;
+	});
+	//工作地点(市)
+	function changeSheng(){
+		var val = $("#province").val();
+		$("#city").empty().append("<option value='0'>正在加载城市数据……</option>");
+		http('get','/Systemregion/getlist',{"parent_id":val}, parsedata3);
+		function parsedata3(e){
+			if(e.data.list.length != 0){
+				$("#city").empty().append("<option value='0'>市</option>");
+				for(var i=0;i<e.data.list.length;i++)
+					$("#city").append("<option value='"+e.data.list[i].id+"'>"+e.data.list[i].region_name+"</option>");
+			}else{
+				$("#city").empty().append("<option value='0'>未找到市数据</option>");
+			}
+			if(!is_wxempty(city_id)){
+				$("#city").val(city_id);
+			}
+		}
+	}
+	//职位大类
+	http3('POST', '/Systemcategory/getlist', {"parent_id":0,"type":"zhiweidl"}, function(e){
+	    vm.catedl_list = e.data.list;
+	});
+	//职位类别1
+	http3('POST', '/Systemcategory/getlist', {"parent_id":0,"type":"zhiweilb"}, function(e){
+	    vm.catelb_list = e.data.list;
+	});
+    var page = $.getUrlParam('page');
+    if (is_wxempty(page)) {
+        page = 1;
+    }
+    var size = 20;
+	var where = {};
+    where.jobtype = jobtype
+    where.isunion = 2
+    where.school_id = school_id
+    where.page = page
+    where.size = size
+    where.province_id = province_id
+    where.city_id = city_id
+	where.dalei_id = dalei_id
+	where.cate_id1 = cate_id1
+	// where.salary_floor = salary_floor
+	// where.salay_ceil = salay_ceil
+    if(salary_floor == '0' && salay_ceil == '0'){
+        where.salary_floor = '-1';
+        where.salay_ceil = '-1';
+    }else{
+    	where.salary_floor = salary_floor;
+    	where.salay_ceil = salay_ceil;
+    }
+    where.day = day
+	//获取列表
+    http('POST', '/job/getlist', where, function (e) {
+        // console.log(e)
+        vm.job_place_one = []
+        for (var i = 0; i < e.data.list.length; i++) {
+			e.data.list[i]['addtime1'] = timestampToTime(e.data.list[i].addtime,2);
+			e.data.list[i]['addtime2'] = timestampToTime(e.data.list[i].addtime,3);
+			e.data.list[i]['xinzi'] = xinziExec(e.data.list[i].salary_floor,e.data.list[i].salay_ceil);
+            vm.job_place_one.push(e.data.list[i]);
+        }
+        if (e.data.list.length == 0) {
+            $(".ollist").append(
+                "<div style='width:312px;margin:auto;margin-top:100px;'><img src='../image/is_kong.png' style='width:100%;'></div>"
+            )
+        } else {
+            vm.total = e.data.count;
+            vm.pagesize = e.data.size;
+            vm.page = e.data.page;
+        }
+    });
+	http('POST', '/job/getlist', {"jobtype":jobtype,"school_id":school_id,"isunion":"2","page":"1","size":"5"}, function (e) {
+        // console.log(e)
+        for (var i = 0; i < e.data.list.length; i++) {
+            e.data.list[i]['addtime3'] = timestampToTime(e.data.list[i].addtime,1);
+            e.data.list[i]['xinzi'] = xinziExec(e.data.list[i].salary_floor,e.data.list[i].salay_ceil);
+            vm.redian.push(e.data.list[i]);
+        }
+    })
+
+    //日历插件
+    var date = new Date();
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1;
+    month = (month < 10 ? "0" + month : month);
+    calUtil.setMonthAndDay();
+    calUtil.init(CreatZczphArea(year + "-" + month));
+    function CreatZczphArea(Month) {
+        // console.log(Month,33)
+        // var date2= new Date(Date.parse(Month.replace(/-/g,  "/")));      //转换成Data(); 
+        // var year2 = date2.getFullYear();
+        // var month2 = date2.getMonth()+1;
+        // var zczph = new Array();
+        // var signList = new Array();
+        var date2= Month.split("-");      //转换成Data(); 
+        var year2 = date2[0];
+        var month2 = date2[1];
+        var zczph = new Array();
+        var signList = new Array();
+        http3('POST', '/preach/dategetlist', {"school_id":school_id,"year":year2,"month":month2,"isair":3},function (e) {
+        //    console.log(e,44)
+            if(e.code == 0){
+                var arr=[];
+                for (var i = 0; i < e.data.length; i++) {
+                    for(var j=0;j<e.data[i].list.length;j++){
+                        var obj={};
+                        obj["date"]=e.data[i].key;
+                        obj["value"]=e.data[i].list[j].title;
+                        obj["id"]=e.data[i].list[j].id;
+                        obj["preach_type"] = e.data[i].list[j].preach_type;
+                        arr.push(obj);
+                    }
+                }
+                zczph = arr
+            }
+        });
+        if (zczph.length > 0) {
+            for (var i = 0; i < zczph.length; i++) {
+                var data = {
+                    signmon: zczph[i].date.substring(0, 7),
+                    signDay: new Date(zczph[i].date.replace(/-/g, "/")).getDate(),
+                    signBt: zczph[i].value,
+                    zczphid: zczph[i].id,
+                    types:zczph[i].preach_type
+                }
+                if (data.signmon == Month) {
+                    signList.push(data);
+                }
+            }
+        }
+        return signList;
+    }
+    //日历插件结束
+    // 跳转宣讲会列表
+    function zprl_djrq_index(hold_date){
+        location.href = "/Zhaopin/talk.html?hold_date="+hold_date;
+    }
+    // 跳转专场招聘会详情方法
+    function TzZczphXq(zczphid) {
+        location.href = "zuijin.html?id=" + zczphid ;
+    }
+    function getZero(val){
+        if(val <= 9){
+            return '0'+val;
+        }
+        return val;
+    }
+
+</script>

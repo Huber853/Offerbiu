@@ -1,0 +1,157 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [
+      1
+    ],
+    "autoArchiveTalentPoolId": 425506,
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-05T14:49:45",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": "27秋-算法"
+      }
+    },
+    "department": {
+      "id": 439007,
+      "name": "自动驾驶"
+    },
+    "departmentId": 439007,
+    "departments": [
+      {
+        "id": 439007,
+        "name": "自动驾驶"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "硕士",
+    "hireMode": 2,
+    "id": "11422bef-5006-4659-a5dd-7f41c9efde8a",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "岗位职责：\n依托多传感器和地图先验，感知实现对复杂环境进行识别和理解和自车定位，是自动驾驶安全行驶的前提。在这里，你将接触多模态大模型、世界模型、生成式 AI、模型蒸馏等前沿技术与工程方法，参与感知全栈算法的研究与落地，覆盖目标检测、跟踪、场景理解、高效训练与部署优化等核心方向，赋能无人车的大规模商业化落地，共同创造技术的社会价值与商业价值。\n1、多模态感知大模型：参与自动驾驶感知核心算法的研发与车端落地，覆盖目标检测、语义 / 实例分割、多目标跟踪、多传感器融合定位和标定、场景语义理解等技术方向；探索多模态感知大模型、世界模型、通用占据网络等前沿技术路线，构建高鲁棒、可扩展的统一感知体系，支撑复杂城市场景下的无人车安全运行；\n2、世界模型与场景理解：研究交通场景的结构化建模与关系推理，编码智能体与智能体、地图元素与地图、智能体与地图的交互逻辑；探索世界模型在场景预测、语义补全中的落地应用，实现施工区、长停车辆、异常事件等复杂场景的精准认知，直接支撑车辆的避让、跟随等行为决策；\n3、数据驱动的感知能力迭代体系建设。研究基于大模型、世界模型的高价值场景数据挖掘、合成与生成技术，打造自动化数据闭环链路；探索半监督、自监督、弱监督与知识蒸馏等高效训练范式，既降低模型对标注数据的依赖，也实现大模型能力向轻量化模型的精准迁移，提升开放世界、长尾场景下的算法泛化能力与落地性价比；\n4、参与感知算法的性能优化与工程落地，协同AI Infra团队一起开展模型蒸馏、量化、推理加速等全链路优化技术研发，实现算法在车端的低延迟、高可靠部署；参与Lidar、相机等多传感器的标定、时序同步与精度验证工作，保障感知系统的整体性能与可靠性。\n\n任职要求：\n1、2027届毕业生，硕士及以上学历，计算机或相关专业优先；\n2、编程基础扎实，熟悉基本算法和数据结构，至少熟悉以下一门语言：Python、C++；\n3、熟悉深度学习框架，包括但不限于：PyTorch、TensorFlow等；\n4、善于思考，逻辑清晰，有优秀的问题分析和解决能力；\n5、有强烈的自我提升意愿，持续的自我驱动能力，关注业界前沿技术和国际会议研究动态，不断提升自己；\n6、良好的沟通和合作能力，责任心和团队意识强；\n加分项：\n1、有自动驾驶相关经验，包括但不限于：智能驾驶、机器人、等项目落地经验；\n2、加分项：在顶级国际会议/期刊上发表论文（CVPR、ICCV、ICML、NIPS等）；\n3、加分项：有编程、数学等相关竞赛成绩。",
+    "jobIntentions": [
+      1
+    ],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          439007
+        ],
+        "locationIds": [
+          94656,
+          92621,
+          94657
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 110000,
+        "cityName": "北京市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 92621,
+        "provinceName": "北京市"
+      },
+      {
+        "cityId": 310000,
+        "cityName": "上海市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 94656,
+        "provinceName": "上海市"
+      },
+      {
+        "cityId": 440100,
+        "cityName": "广州市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 94657,
+        "provinceName": "广东"
+      }
+    ],
+    "number": 6,
+    "openedAt": "2026-08-13T08:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 0,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-08-13T10:19:54",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-自动驾驶-感知算法工程师",
+    "updatedAt": "2026-08-28T16:18:17",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 132608,
+      "name": "机器人类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

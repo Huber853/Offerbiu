@@ -1,0 +1,149 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [
+      1
+    ],
+    "autoArchiveTalentPoolId": 425506,
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-05T14:50:24",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": "27秋-数据研发"
+      }
+    },
+    "department": {
+      "id": 203019,
+      "name": "国际化事业部"
+    },
+    "departmentId": 203019,
+    "departments": [
+      {
+        "id": 203019,
+        "name": "国际化事业部"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "本科",
+    "hireMode": 2,
+    "id": "46740682-1e1f-4bba-96ca-ad23affec1d0",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "<p>岗位职责：</p><p>1、基于 Spark、Hive、Flink 等大数据组件，参与完成特征数据离线数仓分层设计、数据体系建设与模型效能报表开发，为算法模型提供可靠的数据支持；</p><p>2、参与数据质量监控体系建设，设计数据校验规则，定位并解决数据异常问题，保障数据准确性与完整性；</p><p>3、探索大数据技术在业务中的落地应用，参与性能优化、任务调度优化、数据治理等方向的技术攻坚。</p><p><br></p><p>任职要求：</p><p>1、2027届毕业生，硕士及以上学历（优秀本科生亦可），计算机、大数据等相关专业优先；</p><p>2、掌握大数据核心技术栈，熟悉 Hadoop、Hive、Spark、Flink 等至少一种主流大数据框架，了解数据仓库建模理论；</p><p>3、熟练使用 SQL，具备复杂 SQL 编写与优化能力，了解 SparkSQL 语法与调优思路；</p><p>4、掌握至少一门编程语言（Python/Java/Scala 优先），能独立完成数据处理脚本开发；</p><p>5、具备基本的数据分析与问题排查能力，能快速定位数据异常与性能瓶颈；</p><p>6、具备良好的沟通表达能力与团队协作精神，对大数据技术充满热情；</p><p>7、对生成式 AI 保持开放和好奇，愿意在工作中主动学习并合理使用 AI 工具提升学习效率、问题分析能力和协作产出质量，并具备基本的结果判断与校验意识，有AI应用实践的优先。</p>",
+    "jobIntentions": [
+      1
+    ],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          203019
+        ],
+        "locationIds": [
+          314487,
+          94656
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 310000,
+        "cityName": "上海市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 94656,
+        "provinceName": "上海市"
+      },
+      {
+        "cityId": 330100,
+        "cityName": "杭州市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 314487,
+        "provinceName": "浙江"
+      }
+    ],
+    "multiLocale": "{\"mainLocale\":\"zh-CN\",\"secondLocale\":\"\"}",
+    "number": 1,
+    "openedAt": "2026-08-13T08:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 0,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-08-13T10:19:54",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-数据研发工程师（国际化金融-Risk）",
+    "updatedAt": "2026-08-28T16:18:17",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 134766,
+      "name": "数据类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

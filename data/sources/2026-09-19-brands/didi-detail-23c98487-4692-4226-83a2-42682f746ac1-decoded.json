@@ -1,0 +1,136 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [],
+    "attributeId": 2544,
+    "autoArchiveTalentPoolId": 425506,
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-05T14:49:35",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": "27秋-算法"
+      }
+    },
+    "department": {
+      "id": 199257,
+      "name": "网约车平台公司"
+    },
+    "departmentId": 199257,
+    "departments": [
+      {
+        "id": 199257,
+        "name": "网约车平台公司"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "本科",
+    "hireMode": 2,
+    "id": "23c98487-4692-4226-83a2-42682f746ac1",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "岗位职责：\n1、交易策略优化：利用机器学习、运筹优化等技术，参与网约车交易市场的核心算法研发，包括但不限于智能权益、动态定价、司乘匹配、品类推荐等场景，持续提升平台的交易效率与用户体验；\n2、 数据建模与分析：基于海量真实出行数据，构建和迭代用户行为预测、供需预测、订单取消率预估等预测模型，为精细化运营提供决策基础；\n3、算法工程化落地：在mentor指导下，将离线训练的算法模型进行线上部署与工程化，参与特征工程、模型训练、效果验证到全量上线的完整链路，解决实际落地中的工程与算法问题；\n4、效果评估与迭代：设计科学的离线与在线评估体系，通过A/B实验验证算法收益，对模型效果进行持续监控、归因分析和迭代优化；\n5、跨团队协作：与产品、运营、工程研发等团队紧密合作，深入理解业务痛点，将模糊的业务问题拆解为清晰的算法解决方案。\n\n任职要求：\n1、2027届毕业生，本科及以上学历，计算机、软件工程、人工智能、自动化、数学、统计学、运筹学等相关专业优先；\n2、具备扎实的计算机科学基础，对数据结构和算法有良好掌握；\n3、熟练使用至少一种主流编程语言，如Python/C++/Java，具备良好的编码习惯和工程实现能力；\n4、熟悉常用的机器学习、深度学习模型及框架（如TensorFlow、PyTorch、XGBoost等），了解模型原理及适用场景；\n5、有处理大规模数据的经验，熟悉Hive、Spark等大数据处理工具者优先；\n6、对因果推断、强化学习、运筹优化中的至少一个方向有基础认知或实践经验者优先；\n7、具有强烈的好奇心和学习能力，乐于钻研，能快速跟进前沿技术并将之应用于业务问题；逻辑思维清晰，能够对复杂问题进行拆解、建模和量化分析；具备良好的沟通协作意识，能清晰表达技术观点，愿意参与团队知识分享；\n8、实习经历及加分项：有机器学习、数据挖掘相关的实习经历者优先；有网约车、电商、本地生活等领域交易策略、搜推广算法实习经验者优先；在机器学习、数据挖掘相关顶会发表过论文，或在有影响力的竞赛（如Kaggle）中取得突出成绩者优先；有扎实的工程落地能力，了解模型在线服务的部署架构者优先。",
+    "jobIntentions": [],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          199257
+        ],
+        "locationIds": [
+          92621
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 110000,
+        "cityName": "北京市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 92621,
+        "provinceName": "北京市"
+      }
+    ],
+    "number": 0,
+    "openedAt": "2026-08-13T08:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 1,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-09-01T12:28:22",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-算法工程师-网约车\n",
+    "updatedAt": "2026-09-01T12:28:22",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 136661,
+      "name": "算法类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

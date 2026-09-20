@@ -1,0 +1,135 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [],
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-14T21:31:47",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": "27秋-行测"
+      }
+    },
+    "department": {
+      "id": 2036637,
+      "name": "两轮车事业部"
+    },
+    "departmentId": 2036637,
+    "departments": [
+      {
+        "id": 2036637,
+        "name": "两轮车事业部"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "本科",
+    "hireMode": 2,
+    "id": "6d3519d9-dc52-49d4-9a1e-13643baf658b",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "<p>岗位职责：</p><p>城市经营：</p><p>1、参与城市经营指标拆解与追踪，学习B端/G端成本管控逻辑，辅助提升订单与收入交付效率；</p><p>2、协助资产安全管理，参与仓储巡检与车辆丢失率管控。</p><p>城市运营：</p><p>1、通过实地走访与数据分析，研判区域供需状况，辅助制定车辆投放与调度方案；</p><p>2、跟踪投放效果与行业动态，推动\"订单市占率匹配投放规模\"的持续优化；</p><p>3、参与故障车/闲置车的排查与干预方案制定，提升车辆运营效率等。</p><p>城市管理：</p><p>1、参与运营团队日常管理，学习排班、调度、激励等一线管理方法；</p><p>2、协助梳理团队工作流程，发现效率瓶颈并提出改进建议。</p><p><br></p><p>任职要求：</p><p>1、2027届在校生，本科及以上学历，数据敏感度高，能熟练使用Excel进行数据整理与基础分析；</p><p>2、逻辑清晰，能从复杂信息中提炼关键结论并形成行动建议；</p><p>3、认同共享出行行业价值，接受西藏自治区内轮岗及后续城市定岗；</p><p>4、有驾照、能熟练骑行电动车者优先。</p>",
+    "jobIntentions": [],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          2036637
+        ],
+        "locationIds": [
+          810040
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 540100,
+        "cityName": "拉萨市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 810040,
+        "provinceName": "西藏"
+      }
+    ],
+    "multiLocale": "{\"mainLocale\":\"zh-CN\",\"secondLocale\":\"\"}",
+    "number": 1,
+    "openedAt": "2026-08-14T08:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 0,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-08-14T21:43:47",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-城市运营主管-拉萨",
+    "updatedAt": "2026-09-04T15:11:34",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 20039,
+      "name": "运营类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

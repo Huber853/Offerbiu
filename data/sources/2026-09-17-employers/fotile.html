@@ -1,0 +1,538 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="format-detection" content="email=no" />
+<meta name="format-detection" content="address=no" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="copyright" content="Copyright 北森测评技术有限公司 beisen.com" />
+<meta name="author" content="s_zhaohaopeng@beisen.com" /> 
+    <link rel="shortcut icon" href="https://stc-cms.beisen.com/cmsportal/10204200/10204200_themes_wangzhan_css_favicon.ico"/>
+	<link rel="bookmark" href="https://stc-cms.beisen.com/cmsportal/10204200/10204200_themes_wangzhan_css_favicon.ico"/>
+	<title>方太集团招聘官网--校园招聘</title>
+	<meta name="mobileUrl" content="//fotile.m.zhiye.com/campus" />
+	<link type="text/css" rel="stylesheet" href="//stc.beisen.com/cmssite//Styles/frontmodule.css" />
+<script type="text/javascript">
+       //mobileUrl rewrite
+       function goPAGE() {
+		    if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+          var appSrcMetas = document.getElementsByName('mobileUrl');
+			      if(appSrcMetas.length > 0) {
+		       		  window.location.href = appSrcMetas[0].getAttribute("content");
+			      }
+		    }
+		  }
+      goPAGE();
+
+       //opsapi
+       window.PERF_START=new Date;
+       function _splash(page, uid, tid, pid){
+        
+    }
+    </script>
+        <script type="text/javascript">var $bs_vars={'st':'//stc.beisen.com/','version':'2025.05.30.001','constSite':'//const.italent.cn'};function vstr(str) {
+         if (typeof ($bs_vars) == 'undefine')
+             return str;
+         var result = str;
+         for (var v in $bs_vars) {
+             var regex = new RegExp('\\$\\{' + v.toString() + '\\}|\\{' + v.toString() + '\\}', 'igm');
+             result = result.replace(regex, $bs_vars[v]);
+         }
+         return result;
+     };</script><!--引用静态文件:requirejs-->
+<script type="text/javascript" src="//stc.beisen.com/2025.05.30.001/base/js/require.js" ></script>
+  	 <link href="https://stc-cms.beisen.com/cmsportal/10204200/10204200_themes_wangzhan_css_css.css?rand=111" rel="stylesheet" />
+<script type="text/javascript" src="https://stc-cms.beisen.com/cmsportal/10204200/10204200_themes_wangzhan_js_jquery.js"></script>
+<script type="text/javascript" src="https://stc-cms.beisen.com/cmsportal/10204200/10204200_themes_wangzhan_js_custom.js"></script>
+
+<script type="text/javascript" src="https://stc-cms.beisen.com/cmsportal/10204200/10204200_themes_wangzhan_js_bsbasemin.js"></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?18fedf0827c285511a82545099227ed6";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+<body>
+ <!-- top_bg -->
+<div class="top_bg">
+   <div class="l">
+  <a href="/index" target="_blank">社会招聘</a>
+  <a href="/school" target="_blank">校园招聘</a>
+  <a href="/about" target="_blank">了解方太</a>
+</div>
+      <a href="https://fotile.zhiye.com/" class="logo"><img src="https://stc-cms.beisen.com/cmsportal/10204200/10204200_themes_wangzhan_pcimg_logo.png" /></a>
+   <div class="r login-hearder">
+        <p class="isLogin" style="display:none">
+            <a class="reg" href="/Portal/Apply/Index">个人中心</a>
+            <a class="reg" href="/User/Account/LogOut">退出</a>
+        </p>        
+        <p class="unLogin" style="display:none">
+            <a class="loginlink reg" href="/Portal/Account/Login">登录</a>
+            <a class="reglink reg" href="/Portal/Account/Register">注册</a>
+        </p>
+    </div>
+
+<script type="text/javascript">
+    var makeUserInfo = function (resp) {
+        var userInfo = {};
+        //userInfo.name = resp.Model.Email;
+        userInfo.isLogin = resp.Success;
+
+        return userInfo;
+    }   
+    $.ajax({
+        url: '/User/Account/GetUserLoginInfo?v=' + Math.random()
+        , data: {}
+        , cache: false
+        , type: 'post'
+        , success: function (resp) {
+            //配置用户基本信息
+            var userInfo = makeUserInfo(resp);
+            var loginView = $(".login-hearder .isLogin");
+            var unLoginView = $(".login-hearder .unLogin");
+            if (userInfo.isLogin) {
+                loginView.show()
+            }
+            else {
+                unLoginView.show()
+            }         
+        }//success
+        , error: function () {
+            throw new Error('ERROR: get user info')
+        }
+    });//ajax
+</script>
+</div>
+
+     
+
+<!-- ny_banner -->
+<div class="ny_banner">
+    <img src="https://stc-cms.beisen.com/cmsportal/10204200/10204200_themes_wangzhan_pcimg_bannerxy.jpg" />
+</div>
+<i id="n"></i>
+<!-- i_banner en -->
+<div class="margin hidden width1200">
+    <!-- ny_top -->
+    <div class="ny_top">
+        <div class="bg">
+            <div class="tit">找到你心仪的职位</div>
+            <div class="col-lg-12 campus-searchinput">
+                <div class="input-group">
+                      <input type="text" onkeydown="if(event.keyCode==13){$(&quot;#searchlink&quot;).click();}" onblur="if(this.value == '') this.value = '输入职位名称进行搜索'" onfocus="if(this.value == '输入职位名称进行搜索') this.value = ''" value="" class="form-control ss_input" placeholder="输入职位名称进行搜索">
+                      <span class="input-group-btn">
+                            <button id="searchlink" type="button" class="btn btn-default"></button>
+                      </span>
+                </div><!-- /input-group -->
+            </div>
+        </div>
+    </div>
+    <!-- job_list -->
+    <div class="job_list">
+        <div class="hidden job_l">
+            <div class="camp-search-key xl">
+                <dd>职位类别 <i class="s">+</i><i class="x">-</i></dd>
+                <div class="c">
+                        <span class="now"><a href="javascript:void(0)" tlt="" >全&nbsp;&nbsp;&nbsp;部</a></span>
+                                              <span class="" tlt="1^36" role="presentation"><a href="#campus">产品开发与管理族</a></span>                                              
+                          <span class="" tlt="1^35" role="presentation"><a href="#campus">市场营销族</a></span>                                              
+                          <span class="" tlt="1^34" role="presentation"><a href="#campus">客户服务族</a></span>                                              
+                          <span class="" tlt="1^33" role="presentation"><a href="#campus">人文族</a></span>                                              
+                          <span class="" tlt="1^31" role="presentation"><a href="#campus">战略质量运营族</a></span>                                              
+                          <span class="" tlt="1^30" role="presentation"><a href="#campus">变革与信息化体系族</a></span>                                              
+                          <span class="" tlt="1^29" role="presentation"><a href="#campus">企业风险族</a></span>                                              
+                          <span class="" tlt="1^28" role="presentation"><a href="#campus">行政综合族</a></span>                                              
+                          <span class="" tlt="1^27" role="presentation"><a href="#campus">销售族</a></span>                                              
+                          <span class="" tlt="1^5" role="presentation"><a href="#campus">供应链族</a></span>                                              
+                          <span class="" tlt="1^38" role="presentation"><a href="#campus">财经族</a></span>                                              
+                </div>
+            </div>
+            <div class="cityclass xl">
+                <dd>工作城市 <i class="s">+</i><i class="x">-</i></dd>
+                <div class="c">
+                        <span class="now" tlt="" ><a href="javascript:void(0)" >全&nbsp;&nbsp;&nbsp;部</a></span>
+                                                   <span class="" tlt="1"><a href="#social"  >全国</a></span>
+                              <span class="" tlt="1100"><a href="#social"  >北京市</a></span>
+                              <span class="" tlt="1200"><a href="#social"  >天津市</a></span>
+                              <span class="" tlt="1300"><a href="#social"  >河北省</a></span>
+                              <span class="" tlt="1301"><a href="#social"  >石家庄市</a></span>
+                              <span class="" tlt="1302"><a href="#social"  >唐山市</a></span>
+                              <span class="" tlt="1303"><a href="#social"  >秦皇岛市</a></span>
+                              <span class="" tlt="1304"><a href="#social"  >邯郸市</a></span>
+                              <span class="" tlt="1306"><a href="#social"  >保定市</a></span>
+                              <span class="" tlt="1307"><a href="#social"  >张家口市</a></span>
+                              <span class="" tlt="1308"><a href="#social"  >承德市</a></span>
+                              <span class="" tlt="1309"><a href="#social"  >沧州市</a></span>
+                              <span class="" tlt="1500"><a href="#social"  >内蒙古自治区</a></span>
+                              <span class="" tlt="1505"><a href="#social"  >通辽市</a></span>
+                              <span class="" tlt="1522"><a href="#social"  >兴安盟</a></span>
+                              <span class="" tlt="2102"><a href="#social"  >大连市</a></span>
+                              <span class="" tlt="2200"><a href="#social"  >吉林省</a></span>
+                              <span class="" tlt="2201"><a href="#social"  >长春市</a></span>
+                              <span class="" tlt="2202"><a href="#social"  >吉林市</a></span>
+                              <span class="" tlt="2207"><a href="#social"  >松原市</a></span>
+                              <span class="" tlt="2208"><a href="#social"  >白城市</a></span>
+                              <span class="" tlt="2300"><a href="#social"  >黑龙江省</a></span>
+                              <span class="" tlt="2301"><a href="#social"  >哈尔滨市</a></span>
+                              <span class="" tlt="2306"><a href="#social"  >大庆市</a></span>
+                              <span class="" tlt="2310"><a href="#social"  >牡丹江市</a></span>
+                              <span class="" tlt="3100"><a href="#social"  >上海市</a></span>
+                              <span class="" tlt="3201"><a href="#social"  >南京市</a></span>
+                              <span class="" tlt="3203"><a href="#social"  >徐州市</a></span>
+                              <span class="" tlt="3204"><a href="#social"  >常州市</a></span>
+                              <span class="" tlt="3208"><a href="#social"  >淮安市</a></span>
+                              <span class="" tlt="3209"><a href="#social"  >盐城市</a></span>
+                              <span class="" tlt="3213"><a href="#social"  >宿迁市</a></span>
+                              <span class="" tlt="3301"><a href="#social"  >杭州市</a></span>
+                              <span class="" tlt="3302"><a href="#social"  >宁波市</a></span>
+                              <span class="" tlt="3303"><a href="#social"  >温州市</a></span>
+                              <span class="" tlt="3304"><a href="#social"  >嘉兴市</a></span>
+                              <span class="" tlt="3305"><a href="#social"  >湖州市</a></span>
+                              <span class="" tlt="3307"><a href="#social"  >金华市</a></span>
+                              <span class="" tlt="3310"><a href="#social"  >台州市</a></span>
+                              <span class="" tlt="3403"><a href="#social"  >蚌埠市</a></span>
+                              <span class="" tlt="3501"><a href="#social"  >福州市</a></span>
+                              <span class="" tlt="3502"><a href="#social"  >厦门市</a></span>
+                              <span class="" tlt="3503"><a href="#social"  >莆田市</a></span>
+                              <span class="" tlt="3601"><a href="#social"  >南昌市</a></span>
+                              <span class="" tlt="3604"><a href="#social"  >九江市</a></span>
+                              <span class="" tlt="3606"><a href="#social"  >鹰潭市</a></span>
+                              <span class="" tlt="3609"><a href="#social"  >宜春市</a></span>
+                              <span class="" tlt="3610"><a href="#social"  >抚州市</a></span>
+                              <span class="" tlt="3611"><a href="#social"  >上饶市</a></span>
+                              <span class="" tlt="3702"><a href="#social"  >青岛市</a></span>
+                              <span class="" tlt="3703"><a href="#social"  >淄博市</a></span>
+                              <span class="" tlt="3706"><a href="#social"  >烟台市</a></span>
+                              <span class="" tlt="3708"><a href="#social"  >济宁市</a></span>
+                              <span class="" tlt="4100"><a href="#social"  >河南省</a></span>
+                              <span class="" tlt="4113"><a href="#social"  >南阳市</a></span>
+                              <span class="" tlt="4201"><a href="#social"  >武汉市</a></span>
+                              <span class="" tlt="4202"><a href="#social"  >黄石市</a></span>
+                              <span class="" tlt="4301"><a href="#social"  >长沙市</a></span>
+                              <span class="" tlt="4302"><a href="#social"  >株洲市</a></span>
+                              <span class="" tlt="4403"><a href="#social"  >深圳市</a></span>
+                              <span class="" tlt="4509"><a href="#social"  >玉林市</a></span>
+                              <span class="" tlt="5000"><a href="#social"  >重庆市</a></span>
+                              <span class="" tlt="5010"><a href="#social"  >万州区</a></span>
+                              <span class="" tlt="5101"><a href="#social"  >成都市</a></span>
+                              <span class="" tlt="5106"><a href="#social"  >德阳市</a></span>
+                              <span class="" tlt="5107"><a href="#social"  >绵阳市</a></span>
+                              <span class="" tlt="5117"><a href="#social"  >达州市</a></span>
+                              <span class="" tlt="5201"><a href="#social"  >贵阳市</a></span>
+                              <span class="" tlt="5300"><a href="#social"  >云南省</a></span>
+                              <span class="" tlt="5301"><a href="#social"  >昆明市</a></span>
+                              <span class="" tlt="5308"><a href="#social"  >普洱市</a></span>
+                              <span class="" tlt="6201"><a href="#social"  >兰州市</a></span>
+                              <span class="" tlt="6400"><a href="#social"  >宁夏回族自治区</a></span>
+                              <span class="" tlt="6500"><a href="#social"  >新疆维吾尔自治区</a></span>
+                              <span class="" tlt="130402"><a href="#social"  >丛台区</a></span>
+                              <span class="" tlt="130626"><a href="#social"  >竞秀区</a></span>
+                              <span class="" tlt="330107"><a href="#social"  >萧山区</a></span>
+                              <span class="" tlt="330203"><a href="#social"  >慈溪市</a></span>
+                              <span class="" tlt="360402"><a href="#social"  >浔阳区</a></span>
+                              <span class="" tlt="360901"><a href="#social"  >袁州区</a></span>
+                              <span class="" tlt="361101"><a href="#social"  >信州区</a></span>
+                              <span class="" tlt="370704"><a href="#social"  >奎文区</a></span>
+                              <span class="" tlt="370802"><a href="#social"  >任城区</a></span>
+                              <span class="" tlt="371301"><a href="#social"  >兰山区</a></span>
+                              <span class="" tlt="410104"><a href="#social"  >金水区</a></span>
+                </div>
+            </div>
+        </div>
+        <script>
+        //点击切换
+        $(function(){
+            $('.job_l .xl').click(function(){
+                var liindex = $('.job_l .xl').index(this);
+                if($(this).hasClass('on')){
+                    $(this).removeClass('on');
+                }
+                else{
+                    $(this).addClass('on').siblings().removeClass('on');
+                }
+            })
+        })
+        </script>
+        <div class="hidden job_r">
+             <!--<div class="t">找到50个相关职位</div>-->
+                <ul class="list">
+                <li>
+                    <a href="/job_show?jobId=561306214" target="_blank">
+                    <dd>具身智能算法方向(J15592)</dd>
+                    <ol>浙江省-宁波市-... ｜ 方太集团 ｜ 2026-09-16</ol>
+                    <dl>
+                        <p>产品力是方太公司的核心竞争力。强大的产品力有赖于雄厚的研发实力：团队上，方太拥有1200余人的高精尖研发队伍，行业关键技术领域专家云集；累计拥有全球专利超 18000 件，位居全球智慧厨房专利申请量榜首，连续 12 年上榜亚洲品牌500强。为规范行业发展，方太推出智慧厨房能力等级（L1-L5），首次为&quot;智慧&quot;建立了可衡量、可验证的评估体系。2026年3月，方太发布全球首个烹饪机器人厨房（机器人总厨 COOK），搭载业界首套&quot;成长型&quot;厨房具身智能系统，由高精度机械臂与人形机器人组成异构机器人矩阵。高动态油烟、高温工况、高反光与透明物体识别、精细操作要求——厨房，是具身智能最复杂也最真实的训练场。方太不仅坚持自主研发，也与浙江人形机器人创新中心、智元机器人等头部机器人机构与企业开展深度技术合作与交流。<br /><br />具身智能岗位职责：<br />1、你将有机会参与厨房场景具身智能模型的研发与落地，包括多模态感知、任务理解、动作生成及机器人操作策略等，提升机器人抓取、搬运、烹饪及清洁任务的成功率；<br />2、你将有机会参与机器人真机数据采集、清洗、标注及数据集建设，协助完成模型在仿真和真实厨房环境中的验证；<br />3、你将有机会负责跟踪具身智能领域前沿技术，完成相关论文复现、技术验证及工程化部署。</p>
+                    </dl>
+                    </a>
+                </li>
+                <li>
+                    <a href="/job_show?jobId=561300016" target="_blank">
+                    <dd>产品营销方向(J15597)</dd>
+                    <ol>浙江省-宁波市-... ｜ 方太集团 ｜ 2026-09-04</ol>
+                    <dl>
+                        <p>你将作为产品营销部的未来核心力量，参与公司重点产品的上市营销全流程。通过系统化的培养与实践，逐步掌握产品营销的本质思维与战略方法，成长为具备商业洞察力与整合营销能力的产品营销专家。<br /><br />产品营销岗位职责：<br />1、你将有机会参与产品线年度营销策略制定：协助进行市场调研与竞品分析，参与产品线年度营销策略的制定与落地执行，支持公司三大业务目标的实现。<br />2、你将有机会支持P-IMC流程执行：协助启动与推进P-IMC流程，参与整合营销策略的制定与执行，配合团队完成营销方案的落地与项目目标达成。<br />3、你将有机会协助营销资源管理与协调：在指导下参与营销资源的统筹与分配，支持资源投入与产品策略的高效匹配。<br />4、你将有机会参与产品商业化包装策划、深入理解用户场景与产品技术特性，协助挖掘产品卖点、撰写产品故事、提炼消费者价值点，支持产品上市营销的高质量落地。<br />5、你将有机会完成上级交办的其他任务：积极响应并闭环完成部门安排的其他工作，快速成长。</p>
+                    </dl>
+                    </a>
+                </li>
+                <li>
+                    <a href="/job_show?jobId=561300011" target="_blank">
+                    <dd>中医研发工程师方向(J15602)</dd>
+                    <ol>浙江省-宁波市-... ｜ 方太集团 ｜ 2026-09-04</ol>
+                    <dl>
+                        <p>1、作为储备中医师，中医学术专员，你将有机会进行康养方案研发：依托传统中医理论结合现代健康管理理念，开展体质辨识、慢病调理、养生康养研究，挖掘中医经典方剂、食疗及外治技法应用价值，定制标准化、个性化中医康养调理方案。<br />2、你将有机会负责临床测试研究：协助开展大健康仪器的临床测试工作，按照流程撰写测试方案、人员招募及筛选、阶段性数据采集、报告撰写等工作。<br />3、你将有机会负责中医数字化建设：辅助健康管理系统、AI中医知识库的搭建、更新与优化，梳理中医专业业务需求，配合团队完成内容迭代与功能完善，助力中医数字化体系建设。<br />4、你将有机会负责健康服务与内容输出：负责线上平台体质测评、体质评估、食疗及康养方案指导；独立撰写中医科普、健康测评、调理干预方案等专业内容。<br />5、你将有机会进行专业能力的储备：深耕中医与现代康养融合领域，积累临床调理、方案研发、健康管理相关经验，参与学术成果总结落地，完成岗位储备培养计划，稳步提升专业能力。</p>
+                    </dl>
+                    </a>
+                </li>
+                <li>
+                    <a href="/job_show?jobId=561300003" target="_blank">
+                    <dd>电子电气方向(J15591)</dd>
+                    <ol>浙江省-宁波市-... ｜ 方太集团 ｜ 2026-09-04</ol>
+                    <dl>
+                        <p>产品力是方太公司的核心竞争力。强大的产品力有赖于雄厚的研发实力：团队上，方太拥有1200余人的高精尖研发队伍，行业关键技术领域专家云集；在投入上，方太坚持每年将不少于销售收入的5%投入研发，方太拥有国家认定的企业技术中心和中国合格评定国家认可委员会认可的实验室，硬件条件也非常好，同时在德国、日本等地设立研究院；方太坚持高价值专利支撑高质量发展，截至2026年7月31日，方太拥有国内授权专利18358件，其中国内授权发明专利5200件。上榜《2023上半年全球智慧家庭发明专利TOP20》；荣登《中国民企发明专利授权量TOP10》。2013年被国家知识产权局评为第一批国家级知识产权示范企业，2019年位居浙江省专利申请量10强企业前三甲，并于2020年斩获省政府颁发的“浙江省专利金奖”。2024年12月方太通过了ISO 56005创新与知识产权管理能力四级评价，是全国专利厨电领域首家通过四级评价的企业，也是宁波首家通过四级评价的企业，标示着方太在创新与知识产权管理方面上升到新台阶。雄厚的科研力量，确保了方太的创新实力。<br /><br />电子电气岗位职责：<br />1、你将有机会负责产品方向的智能电控研发工作，包括软件开发、AI小模型应用及部署，轻量化模型移植、电控控制算法AI优化、整机AI功能调试，打通“电气硬件—嵌入式软件—边缘AI”全链路设计等核心事项；<br />2、你将有机会对接产品电控整体方案设计，整机电气性能、EMC、安规、高低温可靠性测试，输出测试记录与整改建议，推进电控方案的实施并攻关项目中的技术难点；<br />3、你将有机会负责产品的测试与验证，故障问题根因分析，搭建简易自动化测试脚本，确保产品性能，并负责专利的撰写，推进电控标准化。</p>
+                    </dl>
+                    </a>
+                </li>
+                <li>
+                    <a href="/job_show?jobId=561300002" target="_blank">
+                    <dd>具身智能算法方向(J15592)</dd>
+                    <ol>浙江省-宁波市-... ｜ 方太集团 ｜ 2026-09-04</ol>
+                    <dl>
+                        <p>产品力是方太公司的核心竞争力。强大的产品力有赖于雄厚的研发实力：团队上，方太拥有1200余人的高精尖研发队伍，行业关键技术领域专家云集；累计拥有全球专利超 18000 件，位居全球智慧厨房专利申请量榜首，连续 12 年上榜亚洲品牌500强。为规范行业发展，方太推出智慧厨房能力等级（L1-L5），首次为&quot;智慧&quot;建立了可衡量、可验证的评估体系。2026年3月，方太发布全球首个烹饪机器人厨房（机器人总厨 COOK），搭载业界首套&quot;成长型&quot;厨房具身智能系统，由高精度机械臂与人形机器人组成异构机器人矩阵。高动态油烟、高温工况、高反光与透明物体识别、精细操作要求——厨房，是具身智能最复杂也最真实的训练场。方太不仅坚持自主研发，也与浙江人形机器人创新中心、智元机器人等头部机器人机构与企业开展深度技术合作与交流。<br /><br />具身智能岗位职责：<br />1、你将有机会参与厨房场景具身智能模型的研发与落地，包括多模态感知、任务理解、动作生成及机器人操作策略等，提升机器人抓取、搬运、烹饪及清洁任务的成功率；<br />2、你将有机会参与机器人真机数据采集、清洗、标注及数据集建设，协助完成模型在仿真和真实厨房环境中的验证；<br />3、你将有机会负责跟踪具身智能领域前沿技术，完成相关论文复现、技术验证及工程化部署。</p>
+                    </dl>
+                    </a>
+                </li>
+                <li>
+                    <a href="/job_show?jobId=561300001" target="_blank">
+                    <dd>大模型算法方向(J15593)</dd>
+                    <ol>浙江省-杭州市 ｜ 方太集团 ｜ 2026-09-04</ol>
+                    <dl>
+                        <p>产品力是方太公司的核心竞争力。强大的产品力有赖于雄厚的研发实力：团队上，方太拥有1200余人的高精尖研发队伍，行业关键技术领域专家云集；累计拥有全球专利超 18000 件，位居全球智慧厨房专利申请量榜首，连续 12 年上榜亚洲品牌500强。为规范行业发展，方太推出智慧厨房能力等级（L1-L5），首次为&quot;智慧&quot;建立了可衡量、可验证的评估体系。方太自主研发的 ACS 辅助烹饪系统，通过红外热成像、高精度视觉与重量传感，构建&quot;眼-脑-手&quot;全链路协同架构。方太自研的知味大模型（Healthy Cooking GPT），已通过国家大模型备案，它基于千亿级厨房垂域数据与千万级食材、食谱、烹饪等知识图谱训练而成，并沉淀百万级健康膳食方案。<br /><br />大模型算法岗位职责：<br />1、你将有机会负责大语言模型和多模态大模型的应用与算法研发，包括数据准备、训练、评测、推理部署；<br />2、你将有机会负责前沿技术探索，利用大模型能力赋能业务场景；<br />3、你将有机会深度参与产品研发，与产研团队配合提升项目整体收益。</p>
+                    </dl>
+                    </a>
+                </li>
+                <li>
+                    <a href="/job_show?jobId=561300000" target="_blank">
+                    <dd>图像识别算法方向(J15594)</dd>
+                    <ol>浙江省-杭州市 ｜ 方太集团 ｜ 2026-09-04</ol>
+                    <dl>
+                        <p>产品力是方太公司的核心竞争力。强大的产品力有赖于雄厚的研发实力：团队上，方太拥有1200余人的高精尖研发队伍，行业关键技术领域专家云集；累计拥有全球专利超 18000 件，位居全球智慧厨房专利申请量榜首，连续 12 年上榜亚洲品牌500强。为规范行业发展，方太推出智慧厨房能力等级（L1-L5），首次为&quot;智慧&quot;建立了可衡量、可验证的评估体系。方太自主研发的 ACS 辅助烹饪系统，通过红外热成像、高精度视觉与重量传感，构建&quot;眼-脑-手&quot;全链路协同架构。方太自研的知味大模型（Healthy Cooking GPT），已通过国家大模型备案，它基于千亿级厨房垂域数据与千万级食材、食谱、烹饪等知识图谱训练而成，并沉淀百万级健康膳食方案。<br /><br />图像识别算法岗位职责：<br />1、你将有机会负责公司智能产品的机器视觉相关功能的开发工作；<br />2、你将有机会负责端到端地参与产品级项目的开发，从数据集的设计到模型的优化和部署，将机器视觉技术注入到用户身边；<br />3、你将有机会与来自公司内和合作研究机构的优秀伙伴共事，打造家电领域AI时代的颠覆性技术。</p>
+                    </dl>
+                    </a>
+                </li>
+                <li>
+                    <a href="/job_show?jobId=561299999" target="_blank">
+                    <dd>交互设计方向(J15595)</dd>
+                    <ol>浙江省-杭州市 ｜ 方太集团 ｜ 2026-09-04</ol>
+                    <dl>
+                        <p>产品力是方太公司的核心竞争力。强大的产品力有赖于雄厚的研发实力：团队上，方太拥有1200余人的高精尖研发队伍，行业关键技术领域专家云集；累计拥有全球专利超 18000 件，位居全球智慧厨房专利申请量榜首，连续 12 年上榜亚洲品牌500强。为规范行业发展，方太推出智慧厨房能力等级（L1-L5），首次为&quot;智慧&quot;建立了可衡量、可验证的评估体系。方太自主研发的 ACS 辅助烹饪系统，通过红外热成像、高精度视觉与重量传感，构建&quot;眼-脑-手&quot;全链路协同架构。方太自研的知味大模型（Healthy Cooking GPT），已通过国家大模型备案，它基于千亿级厨房垂域数据与千万级食材、食谱、烹饪等知识图谱训练而成，并沉淀百万级健康膳食方案。<br /><br />交互设计岗位职责：<br />1、你将有机会负责智能厨电设备、APP、小程序、平台产品的交互和视觉设计，提供创新性设计解决方案，解决核心体验痛点。通过用户场景分析、竞品研究及数据反馈，持续优化交互与视觉体验，提升产品可用性与情感化表达；<br />2、你将有机会参与用户研究、市场调研过程，善于归纳用户需求及体验目标，帮助发掘和思考产品未来的发展和设计方向。能够基于用户需求和产品理念，高效准确地提供相对合理的设计方案；<br />3、你将有机会探索AI技术在设计提效、方案拓展等方面的应用。推动设计方法创新，提升团队设计效率和方案表现力；<br />4、你将有机会与项目团队紧密合作，推动设计落地，并参与需求讨论与技术可行性评估，沉淀设计知识体系，总结设计方法论，赋能团队及业务上下游。</p>
+                    </dl>
+                    </a>
+                </li>
+                <li>
+                    <a href="/job_show?jobId=561299982" target="_blank">
+                    <dd>销售设计方向（柏厨事业部）(J155...</dd>
+                    <ol>全国 ｜ 方太集团 ｜ 2026-09-04</ol>
+                    <dl>
+                        <p>柏厨事业部运营有智慧全屋高端定制品牌“FotileStyle（方诗得）”，以及品质家居定制品牌“BORCCI（柏厨家居）”。“BORCCI（柏厨家居）”坚持26年匠心专注、精工细作，致力于成为经典厨房与品质全屋定制解决方案引领者，为顾客带来实用美学与卓越品质的精致居家生活，其产品曾荣获德国iF奖、德国红点奖、美国缪斯设计金奖、中国优秀工业设计奖优秀奖、红鼎奖等多项国内外设计大奖。2024年6月18日，凭借方太集团多年厚积的创新科技实力、橱柜与定制家居的技术工艺以及幸福厨居设计理念，正式推出了智慧全屋高端定制品牌—“FotileStyle”，通过打造“智慧场景、柜电集成、情感美学”等新的全屋高端定制方式，以“Form Follows Emotion（形随情感）”为品牌主张，为用户提供智慧、集成、创新的全屋高端定制解决方案，为顾客实现超越想象的智慧便捷、健康舒心的幸福家居生活；纳木那尼系列荣获2025德国iF设计奖，2025旗舰新品“洞庭”系列亦斩获2025喜马拉雅之巅设计奖。<br /><br />销售设计岗位职责：<br />1、你将有机会负责与优质客户建立战略合作，并有效维护客户关系；<br />2、你将有机会负责根据销售设计负责制，按时交付出样内容；<br />3、你将有机会负责根据项目交付进度要求，通过招投标等程序，适时推动工程项目合同的签订；<br />4、你将有机会负责根据项目交付进度要求，提前准备设计图、备料单，按时完成样板房安装交付。</p>
+                    </dl>
+                    </a>
+                </li>
+                <li>
+                    <a href="/job_show?jobId=561299981" target="_blank">
+                    <dd>零售业务方向（东北）(J15598)</dd>
+                    <ol>黑龙江省-大庆市... ｜ 方太集团 ｜ 2026-09-04</ol>
+                    <dl>
+                        <p>1、在方太营销，担任零售业务方向岗位，你将有机会统筹分公司整体规划，通过有效的数据分析，制定年度规划和行动策略；<br />2、你将有机会推动公司销售目标，规划与制定年度、季度、月度销售计划，并组织实施，完成各项销售任务和指标；<br />3、你将有机会对所辖区域渠道进行开发与管理、网点布局及空白市场开发等工作；<br />4、你将有机会对所辖区域的门店进行运营管理，并负责所辖区域市场价格的管理。</p>
+                    </dl>
+                    </a>
+                </li>
+                  
+                  
+            </ul>
+            <nav>
+      <ul class="pagination">
+          <!--<span class="pr30">当前 <span class="colf80">1/3</span> 页</span>-->
+          <div class="pagination"><li><a disabled="disabled" class="disabled next">首页</a></li><li><a disabled="disabled" class="disabled next">上一页</a></li><li>1</li><li><a href='/campus/?PageIndex=2' >2</a></li><li><a href='/campus/?PageIndex=3' >3</a></li><li><a href='/campus/?PageIndex=2' class="next">下一页</a></li><li><a href='/campus/?PageIndex=3' >末页</a></li></div>
+      </ul>            </nav>
+        </div>
+    </div>
+</div>
+<input type="hidden" value="2" id="catogeryType">
+
+<script>
+        //条件查询
+        var t1 = $(".list-group a");
+        t1.click(function () {
+            t1.removeClass("now");
+            $(this).addClass("now");
+            $("#searchlink").click();
+        });   
+        var city = $(".cityclass span");
+        city.click(function () {
+            city.removeClass("now");
+            $(this).addClass("now");
+            $("#searchlink").click();
+        });  
+        var cate = $(".camp-search-key span");
+        cate.click(function () {
+            cate.removeClass("now");
+            $(this).addClass("now");
+            $("#searchlink").click();
+        });            
+  
+
+        $("#searchlink").click(function () {
+            var href = "";
+            var t1 = $(".list-group a.now").attr("tlt");
+            var city = $(".cityclass span.now").attr("tlt");
+            var cate = $(".camp-search-key span.now").attr("tlt");
+            var searchValue = $(".ss_input").val();
+            var type=$("#catogeryType").val();
+            if (searchValue == "输入职位名称进行搜索") searchValue = "";
+          //alert(type);
+          if(type==1)
+          {
+            href = "/campus?k=" + searchValue;
+          }
+          else if(type==2){
+            href = "/campus?k=" + searchValue;
+            //href = "/social2?k=" + searchValue;
+          }
+          else if(type==3)
+          {
+            href = "/internhwl?k=" + searchValue;
+          }
+            if (t1 != undefined && t1!="") {
+                href += "&t=" + t1;
+            }
+            if (city != undefined && city !="") {
+                href += "&city=" + city;
+            }
+            if (cate != undefined && cate !="") {
+                href += "&c=" + cate;
+            }
+            //alert(href);
+          window.location.href = href + "#n";
+        });
+     </script>
+ <div class="foot_bg">
+<div class="margin hidden width1200">
+    <ul class="t">
+        <li class="l l1">
+            <dd><a href="https://fotile.zhiye.com/">首页</a><i></i></dd>
+            <dl>
+                <a href="https://fotile.zhiye.com/social">社会招聘</a>
+                <a href="https://fotile.zhiye.com/campus">校园招聘</a>
+              <a href="https://fotile.zhiye.com/about">了解方太</a>
+                <!--<a href="https://fotile.zhiye.com/intern">实习生招聘</a>-->
+            </dl>
+        </li>
+        <li class="l l2">
+            <div class="bg">
+                <dd><a href="javascript:void(0);">校企合作</a><i></i></dd>
+                <dl>
+                    <a href="javascript:void(0);" onclick="gd_xx();">战略合作</a>
+                    <a href="javascript:void(0);" onclick="gd_xx();">实习实践</a>
+                </dl>
+            </div>
+        </li>
+        <li class="l l3">
+            <div class="bg">
+                <dd><a href="javascript:void(0);">关于方太</a><i></i></dd>
+                <dl>
+                    <a href="https://www.fotile.com/brand/about.html" target="_blank">方太简介</a>
+                    <a href="https://www.fotile.com/brand/history.html" target="_blank">发展历程</a>
+                    <a href="https://www.fotile.com/brand/power.html" target="_blank">方太实力</a>
+                    <a href="https://www.fotile.com/brand/obligation.html" target="_blank">社会责任</a>
+                    <a href="https://www.fotile.com/news/567.html" target="_blank">方太文化研究院</a>
+                  <a href="https://www.hangwanshuyuan.com/" target="_blank">杭湾书院</a>
+                </dl>
+            </div>
+        </li>
+        <li class="l l4">
+            <div class="bg">
+                <dd><a href="javascript:void(0);">媒体中心</a><i></i></dd>
+                <dl>
+                    <a href="https://www.fotile.com/news" target="_blank">方太资讯</a>
+                    <a href="https://www.fotile.com/video.html" target="_blank">方太影像</a>
+                </dl>
+            </div>
+        </li>
+        <li class="r l5">
+            <div class="bg">
+                <dd><a href="">联系我们</a><i></i></dd>
+                <dl>
+                    <a href="javascript:void(0);" onclick="yx_xx();">联系方式</a>
+                    <a href="javascript:void(0);" onclick="gd_xx();">常见问题</a>
+                </dl>
+            </div>
+        </li>
+    </ul>
+  
+    <div class="hidden f">
+        <dl class="l tp"><img src="http://stc-cms.beisen.com/cmsportal/10204200/10204200_themes_wangzhan_pcimg_logo2.png" /></dl>
+        <dl class="l xx">
+            &copy;1996- 2022 方太集团&nbsp;|&nbsp;浙ICP备05083555号-1&nbsp;|&nbsp;浙公网安备 33029202000036号
+        </dl>
+        <dl class="r lj">
+            <a href="https://www.fotile.com/provisions.html" target="_blank">法律声明</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://www.fotile.com/help/link.html" target="_blank">友情链接</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://fotileglobal.com/#/?temp=1661220545870" target="_blank">海外官网</a>
+        </dl>
+        <dl class="r fx">
+            <a href="" class="fx1"></a>
+            <a href="" class="fx2"></a>
+            <a href="" class="fx3"></a>
+            <a href="" class="fx4"></a>
+            <a href="" class="fx5"></a>
+        </dl>
+    </div>
+</div>
+</div>
+   <script>
+  function yx_xx(){
+      $('.xx_bg').addClass('o');
+  }
+  function yx_xx_gb(){
+      $('.xx_bg').removeClass('o');
+  }
+</script>
+<div class="xx_bg">
+      <dl>
+        <a href="javascript:void(0);" onclick="yx_xx_gb();"></a>
+        <!--<p>如您在投递过程中有任何问题，请咨询</p>
+        <p>张启顺：18234030759</p>
+        <p>罗婧文：17858763786</p>-->
+        <p>如您在投递过程中有任何问题，请微信搜索并关注【方太招聘】公众号，HR将根据您的留言进行答疑。</p>
+    </dl>
+</div>
+
+<script>
+  function gd_xx(){
+      $('.gd_xx').addClass('o');
+  }
+  function gd_xx_gb(){
+      $('.gd_xx').removeClass('o');
+  }
+</script>
+<div class="gd_xx">
+      <dl>
+        <a href="javascript:void(0);" onclick="gd_xx_gb();"></a>
+        <p>更多内容正在极力加载中...</p>
+    </dl>
+</div>
+</body>
+</html><script type="text/javascript">
+        require([
+            vstr('${st}/${version}/cmsportal/skin/js/baiduStatistics.js')
+
+		]);
+    </script><script type="text/javascript">
+    $(function(){
+    _splash('zhiye_contentpage',0,102042,'new_zhiye_com');
+    });
+    </script>

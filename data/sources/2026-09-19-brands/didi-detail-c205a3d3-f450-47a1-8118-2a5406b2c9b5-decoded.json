@@ -1,0 +1,136 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [],
+    "attributeId": 2544,
+    "autoArchiveTalentPoolId": 425506,
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-05T15:03:06",
+    "customFields": {
+      "313943": {
+        "name": "笔试方向",
+        "value": "27秋-后端"
+      }
+    },
+    "department": {
+      "id": 199257,
+      "name": "网约车平台公司"
+    },
+    "departmentId": 199257,
+    "departments": [
+      {
+        "id": 199257,
+        "name": "网约车平台公司"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "本科",
+    "hireMode": 2,
+    "id": "c205a3d3-f450-47a1-8118-2a5406b2c9b5",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "这里是滴滴网约车最核心的后端研发团队，参与网约车核心出行、出行中台、智能补贴引擎、广告、内容等公司级核心项目的研发，致力于用技术体系解决出行业务中最复杂的纠纷与安全等负向问题，提升滴滴用户的体验及满意度。技术上你会面对滴滴最复杂业务领域的技术体系建设。团队年轻活力，技术氛围浓厚，团队成长迅速。\n\n岗位职责：\n1.深入了解司乘两端全流程业务，参与出行中台的业务架构设计与优化工作，支持快车、专车、优步、优享、豪华车、拼车、出租车、顺风车等核心业务的研发；\n2.负责运营引擎核心业务的开发，用增长黑客思维和产品、运营一起快速迭代提升负责产品的核心数据；\n3.负责核心业务在线亿级实时事件处理，参与业务数据中心的架构改造和优化工作，参与乘客、司机、订单多维度业务数据特征存取和计算；\n4.构建世界一流的平台型体验业务技术体系，用技术手段提升滴滴的负向业务能力，赋能业务发展。\n\n任职要求：\n1、2027届毕业生，本科及以上学历，计算机等相关专业优先；\n2、掌握至少一门开发语言（golang、java、C++、php等），掌握mysql等常用数据库，了解linux常用命令、操作系统、计算机网络等基础知识；\n3、了解分布式系统设计与开发、负载均衡技术、系统容灾、高可用系统等知识；\n4、具有良好的沟通能力，求知欲强，积极主动学习，不怕困难；\n5、有项目经验或互联网实习经历更佳。",
+    "jobIntentions": [],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          199257
+        ],
+        "locationIds": [
+          92621
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 110000,
+        "cityName": "北京市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 92621,
+        "provinceName": "北京市"
+      }
+    ],
+    "number": 24,
+    "openedAt": "2026-08-13T08:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 1,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-09-01T12:28:22",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-后端研发工程师（出行技术）",
+    "updatedAt": "2026-09-01T12:28:22",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 136659,
+      "name": "工程-后端类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}

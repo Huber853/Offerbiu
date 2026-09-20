@@ -1,0 +1,2696 @@
+[
+  {
+    "url": "https://cnnc.zhiye.com/Campus",
+    "file": "data/sources/2026-09-17-employers/cnnc.html",
+    "sha256": "ffc7962270e8477e957aeb0bff6a8df26efde2fd6d55d00ecf6e5b091726cf7a",
+    "collected_at": "2026-09-17T19:26:43+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/Jobad/GetJobAdPageList",
+    "file": "data/sources/2026-09-17-employers/cnnc-list-0.json",
+    "sha256": "49f815f0eff4b61d78305cdafdd5cb946d468e644d223f705fb3b4b8dd1d59c5",
+    "collected_at": "2026-09-17T19:27:27+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/Jobad/GetJobAdPageList",
+    "file": "data/sources/2026-09-17-employers/cnnc-list-1.json",
+    "sha256": "2e2d93a8bbf886ba0b8c5342094e5942d37e8de3a33bc1759f1d7ced729aaef9",
+    "collected_at": "2026-09-17T19:35:40+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/Jobad/GetJobAdPageList",
+    "file": "data/sources/2026-09-17-employers/cnnc-list-2.json",
+    "sha256": "3c11e5c80b10909c953ca3fb3e2d94797536c0962c3b340561e0db6a4a8dd6fb",
+    "collected_at": "2026-09-17T19:35:40+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/Jobad/GetJobAdPageList",
+    "file": "data/sources/2026-09-17-employers/cnnc-list-3.json",
+    "sha256": "0180983be39fcd9122f874fa39fb9b12520e45ad9d5828c034cc7dcc765ade5d",
+    "collected_at": "2026-09-17T19:35:41+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/Jobad/GetJobAdPageList",
+    "file": "data/sources/2026-09-17-employers/cnnc-list-4.json",
+    "sha256": "0df6553073f85311b0c47ad21507aa2b53a28ed0fdeed58197a25c59db0f064e",
+    "collected_at": "2026-09-17T19:35:41+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/Jobad/GetJobAdPageList",
+    "file": "data/sources/2026-09-17-employers/cnnc-list-5.json",
+    "sha256": "e20d245d1236000809edafa9c10319b8264d3f524f03a3c4669d2e8f7d184767",
+    "collected_at": "2026-09-17T19:35:42+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/Jobad/GetJobAdPageList",
+    "file": "data/sources/2026-09-17-employers/cnnc-list-6.json",
+    "sha256": "2231caf3ebe8591363eb7e58fdfe7fda43c30ad39057f31872a5c399260ace9e",
+    "collected_at": "2026-09-17T19:35:42+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/Jobad/GetJobAdPageList",
+    "file": "data/sources/2026-09-17-employers/cnnc-list-7.json",
+    "sha256": "92ed44be46d3864d3faa71a9b492df7fcbf69e5068d0529b2c7c875d3e653562",
+    "collected_at": "2026-09-17T19:35:43+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/Jobad/GetJobAdPageList",
+    "file": "data/sources/2026-09-17-employers/cnnc-list-8.json",
+    "sha256": "c093abf05e5b01a1a5542eb2ea63937f16961b3f1091d3b1c1b10d4ee37a106b",
+    "collected_at": "2026-09-17T19:35:43+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=491acf3f-e9ec-48b6-b93a-3f3773e8d2c9&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-491acf3f-e9ec-48b6-b93a-3f3773e8d2c9.json",
+    "sha256": "56cf0484a902f453a9eb06eb6ee00acc2f2f064325b7412e7a742320e678d802",
+    "collected_at": "2026-09-17T19:35:43+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=3490551b-2f81-4664-9af6-e903c1184d33&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-3490551b-2f81-4664-9af6-e903c1184d33.json",
+    "sha256": "336b60bd6307d1cd8346abd1adf729ff471cedc60f40f305408681ec02f81304",
+    "collected_at": "2026-09-17T19:35:43+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=8c9efc3c-3f1d-4f72-a962-a4be27f06b5c&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-8c9efc3c-3f1d-4f72-a962-a4be27f06b5c.json",
+    "sha256": "3fc181981c41051d60738b3b95889d3cd9c9eda964b5a138b58c4476b70d3142",
+    "collected_at": "2026-09-17T19:35:43+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=a82bd4e9-9169-4df8-813c-0194ccfe5480&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-a82bd4e9-9169-4df8-813c-0194ccfe5480.json",
+    "sha256": "a52e8968612a05e97a5422f2a4923d6ba5802924a3cf9858efdce236cb59831b",
+    "collected_at": "2026-09-17T19:35:43+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=4fb47826-74ee-4267-bcea-967727857b49&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-4fb47826-74ee-4267-bcea-967727857b49.json",
+    "sha256": "af6d01f3ff978cbd92a3072a34e7188d5ca5e4f582ec9610dac03c8da90abb46",
+    "collected_at": "2026-09-17T19:35:43+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=1f929a2f-1413-461a-9af3-a5e32760321d&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-1f929a2f-1413-461a-9af3-a5e32760321d.json",
+    "sha256": "d8c09c6bd5b2e47ee490e4cd802415a13d1253820411d3f13ee3085d86eccd73",
+    "collected_at": "2026-09-17T19:35:44+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=5d5ede67-03cf-4fee-8fcd-9c69fd1e7ba9&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-5d5ede67-03cf-4fee-8fcd-9c69fd1e7ba9.json",
+    "sha256": "86cead5366d4089104d91686ae09fdabf646df4bc52cfa7aeba7be5916e76a99",
+    "collected_at": "2026-09-17T19:35:43+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=c80f8087-9833-46a6-9b2a-1be8cf979292&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-c80f8087-9833-46a6-9b2a-1be8cf979292.json",
+    "sha256": "94d77e643d91a132eaa084625280a886152e5c63797a283891762cfcede358c3",
+    "collected_at": "2026-09-17T19:35:43+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=01032334-51c4-467a-adb3-f712cc4272e4&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-01032334-51c4-467a-adb3-f712cc4272e4.json",
+    "sha256": "9ae04cbc6c63367015c26cc00b40812659c762dffa72ad0ff62a96c314397927",
+    "collected_at": "2026-09-17T19:35:44+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=7651e123-41b6-4ad8-b534-4e69c880d869&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-7651e123-41b6-4ad8-b534-4e69c880d869.json",
+    "sha256": "5d38702d6d955e099b3c9a76d8ace24ef06f404696be0c85d39036f5f5b19f36",
+    "collected_at": "2026-09-17T19:35:44+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=5609d1dd-6bf7-4e96-bfea-7fe0612dc5dd&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-5609d1dd-6bf7-4e96-bfea-7fe0612dc5dd.json",
+    "sha256": "4fa404c6514ea5af39291c7f29e5ba4e00bf702e6afd431cc16b5c168c61bfdc",
+    "collected_at": "2026-09-17T19:35:44+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=e402d618-6b37-493b-896e-57452ad0cb66&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-e402d618-6b37-493b-896e-57452ad0cb66.json",
+    "sha256": "8788205fa4da1930d70af0797499957f6109f6dad20462b55cd8d968625c55c5",
+    "collected_at": "2026-09-17T19:35:44+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=1bed1656-a263-4487-bee6-f7e8aa95c097&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-1bed1656-a263-4487-bee6-f7e8aa95c097.json",
+    "sha256": "db5d9c228f7ba594952fe0ff3a68702386eac002b28ba214c26bce1c2b7c9316",
+    "collected_at": "2026-09-17T19:35:44+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=d1c5321a-63f1-4e8b-938c-0d877552f908&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-d1c5321a-63f1-4e8b-938c-0d877552f908.json",
+    "sha256": "f53d1dcefdd2c0b546e8b27063ca7c88458c9056e1f21c18c1065c6ea222a608",
+    "collected_at": "2026-09-17T19:35:44+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=234a1485-5665-4b01-af35-e125fd77d359&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-234a1485-5665-4b01-af35-e125fd77d359.json",
+    "sha256": "db54a716d9f1c877ff7ced963b30230fd0b32b958c2970a3cbdb54b4d69767c1",
+    "collected_at": "2026-09-17T19:35:44+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=00d0a5ad-3852-4d81-a4b1-48e6edc942e7&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-00d0a5ad-3852-4d81-a4b1-48e6edc942e7.json",
+    "sha256": "9519c518ce3f05a9d090e5314541ed249c69ede90223fc0c98b39c313e9d349f",
+    "collected_at": "2026-09-17T19:35:44+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=30f26897-f04c-4c05-a038-33d44263c229&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-30f26897-f04c-4c05-a038-33d44263c229.json",
+    "sha256": "641ec6fff60944797e49653aff24cb2066c61aeee4aa325dea1387347d3da249",
+    "collected_at": "2026-09-17T19:35:44+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=f2d2d9d8-4e14-4912-af3e-574f850f2fbb&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-f2d2d9d8-4e14-4912-af3e-574f850f2fbb.json",
+    "sha256": "a89fb5c7311f2192a9e795632b142207389340195db766e7aa8c705ce9effba1",
+    "collected_at": "2026-09-17T19:35:44+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=a136072a-ab7c-480d-ad28-90bd0ce4218b&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-a136072a-ab7c-480d-ad28-90bd0ce4218b.json",
+    "sha256": "415aea878c782b07ace77d78480f6390b37789b2dfe727bc3af973f560df8118",
+    "collected_at": "2026-09-17T19:35:44+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=2281a4b0-ef5c-4325-a3b0-a18a888f492f&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-2281a4b0-ef5c-4325-a3b0-a18a888f492f.json",
+    "sha256": "1a628a27547882341a437b7b454fee7cd85d33439ef8c54aa649595e391a60fa",
+    "collected_at": "2026-09-17T19:35:44+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=5245f480-6c1f-45d8-826c-be31ed4d78d5&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-5245f480-6c1f-45d8-826c-be31ed4d78d5.json",
+    "sha256": "0e0bcfb136cc008a1d8b19938adbd1b64d999a5547b2ed348ffe0567ca8ecdf3",
+    "collected_at": "2026-09-17T19:35:44+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=253865d4-cc04-47fc-b72c-1bf292cf814c&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-253865d4-cc04-47fc-b72c-1bf292cf814c.json",
+    "sha256": "d7a0f8fcadff0aea77a162dc8a59c3e8b34ee6bd735773f010c42f6aca3744b9",
+    "collected_at": "2026-09-17T19:35:44+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=4204e63c-0cf7-4181-8a46-c71688e8efb8&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-4204e63c-0cf7-4181-8a46-c71688e8efb8.json",
+    "sha256": "fc9f8c1c8c92feed1e94e1f3e5b6fea776a8f2716ac82561d940c1d336829d96",
+    "collected_at": "2026-09-17T19:35:44+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=5916263e-e5dd-4c6a-bbb6-7e09a6dc1a23&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-5916263e-e5dd-4c6a-bbb6-7e09a6dc1a23.json",
+    "sha256": "654586b7563438d5d87f3e73ee3282cfef2bd789c2abfe02d863b4b67d1a1e23",
+    "collected_at": "2026-09-17T19:35:44+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=fcd855aa-c8f9-42a0-9c6c-aeb7e40da045&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-fcd855aa-c8f9-42a0-9c6c-aeb7e40da045.json",
+    "sha256": "c1f7b81b5bb4d0ee2c526a7ef6d202b1422b354615f831afb4a02e2d7d00dd8c",
+    "collected_at": "2026-09-17T19:35:44+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=8bce9a76-4d1d-4d17-808b-d5080057dbc2&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-8bce9a76-4d1d-4d17-808b-d5080057dbc2.json",
+    "sha256": "8cd5e274e43b973dcac416c54cc5708160449569f84456d3c38e50f31b6b7701",
+    "collected_at": "2026-09-17T19:35:44+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=11fbe466-819a-43cf-9bc5-c62f6e774fa2&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-11fbe466-819a-43cf-9bc5-c62f6e774fa2.json",
+    "sha256": "efa185de1c786278ea8a86d7b83cf99dbee8d94b4d319dc0087a31c90dd09e00",
+    "collected_at": "2026-09-17T19:35:45+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=1d3f27fe-c5e5-46c9-ae1b-6c65163a1634&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-1d3f27fe-c5e5-46c9-ae1b-6c65163a1634.json",
+    "sha256": "23581b08b76a04bebd0b11b109aec54ca94a61c12639d55faff8d4804122735a",
+    "collected_at": "2026-09-17T19:35:45+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=7879463c-6fa3-4998-97e7-90f0cd09d07c&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-7879463c-6fa3-4998-97e7-90f0cd09d07c.json",
+    "sha256": "bbacdb32532facae2b5fd6cda66b711a04f1d38b8d0c29f87020f57843f74185",
+    "collected_at": "2026-09-17T19:35:45+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=15a75b49-a9d0-4618-87c3-a3baec232cc1&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-15a75b49-a9d0-4618-87c3-a3baec232cc1.json",
+    "sha256": "28252e836ba1ca933050126343012fd56434f813579e611d404871dd8b3e4321",
+    "collected_at": "2026-09-17T19:35:45+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=c7e1d304-ec64-4ad7-a641-8d03f1713268&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-c7e1d304-ec64-4ad7-a641-8d03f1713268.json",
+    "sha256": "855018174e38f827e835e9eb3321c62e3219801395f3ab6d8b11f8f93d4170ff",
+    "collected_at": "2026-09-17T19:35:45+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=1a6c643d-1de3-4662-8b7f-ec45da6ab3e5&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-1a6c643d-1de3-4662-8b7f-ec45da6ab3e5.json",
+    "sha256": "8fb10a2f19cb406f6e07cf88ce07a664a3213aebb81d36cc37dbd4ae0c5c24e3",
+    "collected_at": "2026-09-17T19:35:45+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=abe94346-8bd9-49ae-ab59-ba56353ebf10&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-abe94346-8bd9-49ae-ab59-ba56353ebf10.json",
+    "sha256": "881374a5306d8dd9abf3e184e06bf77e96163d27632e9f2ca5454a728cb80c48",
+    "collected_at": "2026-09-17T19:35:45+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=ebea4a3f-a9af-426c-9036-9ee235f250d7&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-ebea4a3f-a9af-426c-9036-9ee235f250d7.json",
+    "sha256": "36e9990e7a10c9e12e7e82f7004432305fae47c71dbcce36ec33cc5148bdea18",
+    "collected_at": "2026-09-17T19:35:45+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=ea647ad7-9691-4e08-89ac-61fe1803e4ef&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-ea647ad7-9691-4e08-89ac-61fe1803e4ef.json",
+    "sha256": "9414f86e67d7d236d5343c18c2282e64de2fefc27cb3102720eabb56cf600ac6",
+    "collected_at": "2026-09-17T19:35:45+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=982f509a-6afb-44e2-b0cc-77312beb5065&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-982f509a-6afb-44e2-b0cc-77312beb5065.json",
+    "sha256": "d92d9e7182121d5b9524faa83812a330c467581679b65f9e8a1e07c408e370eb",
+    "collected_at": "2026-09-17T19:35:45+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=bd6e9bf9-31de-4b80-b14a-c33cc9bec4ff&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-bd6e9bf9-31de-4b80-b14a-c33cc9bec4ff.json",
+    "sha256": "1d21cfbe9c637780777df30836705282f000d379bd038a532ea2041569903b2d",
+    "collected_at": "2026-09-17T19:35:45+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=3224c11b-c29e-4191-9f43-c9394428f6ea&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-3224c11b-c29e-4191-9f43-c9394428f6ea.json",
+    "sha256": "d7b4efc450979095224565153aae23cb6b3103a0d1cf661423b3acd1c9ac41d0",
+    "collected_at": "2026-09-17T19:35:45+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=9ba62a6f-5d49-49cc-bda0-459f51e7b672&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-9ba62a6f-5d49-49cc-bda0-459f51e7b672.json",
+    "sha256": "ac1922c977bd22ff95220622fba421277f38e2cc98964dbde85591200dcb8c79",
+    "collected_at": "2026-09-17T19:35:45+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=08ec056e-8f3c-4fa5-8b48-2eb8634cae55&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-08ec056e-8f3c-4fa5-8b48-2eb8634cae55.json",
+    "sha256": "4d7fc3075db24e2796187ae7307dd4188d5286accaa030338503bde186b0c402",
+    "collected_at": "2026-09-17T19:35:45+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=ca193388-aea2-40ff-acd1-4c4b0332c4d8&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-ca193388-aea2-40ff-acd1-4c4b0332c4d8.json",
+    "sha256": "4a3d4a168a6e03a6dc40ffc9786ccdd1c721e0475cee6da11c1cd7e4cb21c104",
+    "collected_at": "2026-09-17T19:35:45+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=78782a45-fa52-4f66-8043-f4ccf86a3551&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-78782a45-fa52-4f66-8043-f4ccf86a3551.json",
+    "sha256": "9028479af8bcb4a2c828ecdf10261795a1959eac8a842f8ddc371405e4badd33",
+    "collected_at": "2026-09-17T19:35:45+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=18d94c4d-134e-4c48-a0a0-66f7d87530c7&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-18d94c4d-134e-4c48-a0a0-66f7d87530c7.json",
+    "sha256": "222ddf2a65f1ec10bba9e4f7bfd2ba0e13fc7ff94ab5357e2cf0b79f9d5a277d",
+    "collected_at": "2026-09-17T19:35:45+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=ba607bdf-87c1-46a6-9411-60425ce0e390&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-ba607bdf-87c1-46a6-9411-60425ce0e390.json",
+    "sha256": "aa7207fcd8549c6515995360c07e84de1d5307dc981a0dd5bb634e028441fcf8",
+    "collected_at": "2026-09-17T19:35:45+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=50d6e7cf-8cc2-4e6a-90a4-b1070f0d9add&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-50d6e7cf-8cc2-4e6a-90a4-b1070f0d9add.json",
+    "sha256": "f0adcc12f658beca2adf5ebc96597e06fd8ae797c3b9af943017e05d3f148c7d",
+    "collected_at": "2026-09-17T19:35:46+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=5b86e544-ece2-4e01-99b2-e931b9325162&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-5b86e544-ece2-4e01-99b2-e931b9325162.json",
+    "sha256": "62be9f6e3f410c07ba5e7e3dbf5831504c001f53217c4a1f3723a63821b27c13",
+    "collected_at": "2026-09-17T19:35:46+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=5c24d63d-8c00-42ce-aed0-04f95953504c&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-5c24d63d-8c00-42ce-aed0-04f95953504c.json",
+    "sha256": "8af04774e57193b3fc4ed428f2665639c8ab63408b44f905bde2cfff993b79b9",
+    "collected_at": "2026-09-17T19:35:46+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=ab57df62-2aeb-4f4b-b83c-7b4caecdf7b7&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-ab57df62-2aeb-4f4b-b83c-7b4caecdf7b7.json",
+    "sha256": "3d59699b9f4e1d8b4b05a1840bad797b2638bfaa2db934c6213abe0b55d331d8",
+    "collected_at": "2026-09-17T19:35:46+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=16bb447a-c9a3-4c6b-98e1-95a69725c5e2&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-16bb447a-c9a3-4c6b-98e1-95a69725c5e2.json",
+    "sha256": "68a1c80eac199e1e6e8c175ea0a1148db00f94f14b9de5ce04a4f1d7eb1e5a8f",
+    "collected_at": "2026-09-17T19:35:46+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=c840acae-9207-4cc4-a18a-9b143c6c4d7e&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-c840acae-9207-4cc4-a18a-9b143c6c4d7e.json",
+    "sha256": "b20f5300d083a0ca9777264624a3d7632eed5fa2d223ef07ed50e46089351540",
+    "collected_at": "2026-09-17T19:35:46+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=558cc931-5a15-49a2-a860-0d6214a9ad98&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-558cc931-5a15-49a2-a860-0d6214a9ad98.json",
+    "sha256": "95afa27e1818897ddbd1e5b9beae2578062e764d0bf21acf45404dabf82bc959",
+    "collected_at": "2026-09-17T19:35:46+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=cc03ee39-6b3e-4958-8b3a-b82cb180d31d&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-cc03ee39-6b3e-4958-8b3a-b82cb180d31d.json",
+    "sha256": "fee81e50f32eeba4fd48280c47c5afaa1ba4c0edbe954d22caa61cb4c775e7aa",
+    "collected_at": "2026-09-17T19:35:46+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=8c24a734-896b-4cd3-bfdf-eba9024cf940&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-8c24a734-896b-4cd3-bfdf-eba9024cf940.json",
+    "sha256": "c9134c2b60851043caa9340d1876209bd261f13da3abd56d823e2b068c917bce",
+    "collected_at": "2026-09-17T19:35:46+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=19c6df11-a51b-4e0e-9854-a9bd1c3a02e8&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-19c6df11-a51b-4e0e-9854-a9bd1c3a02e8.json",
+    "sha256": "f579d20e564bfb5f3062a3f3c25e9b6a89219a9633b3973861c125388fa42076",
+    "collected_at": "2026-09-17T19:35:46+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=e7e50b22-8576-457f-8b29-4fbab00d3f65&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-e7e50b22-8576-457f-8b29-4fbab00d3f65.json",
+    "sha256": "52214d3fbf4d4c179fd30bdccc8a073b0a9a366f41191d1f7ba8590a72d6c85f",
+    "collected_at": "2026-09-17T19:35:46+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=51ccddf9-08c6-4f35-8505-61f0ddc6d117&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-51ccddf9-08c6-4f35-8505-61f0ddc6d117.json",
+    "sha256": "b99d4147768a563be9b0537b10f5bfaa9dd85b80923547494b331a289955a957",
+    "collected_at": "2026-09-17T19:35:46+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=c3e726b9-4cda-4fcd-ae32-dac3e5343870&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-c3e726b9-4cda-4fcd-ae32-dac3e5343870.json",
+    "sha256": "d3121004b1de7b9115ba39b9c64eea2e6e46e14db6337faab3079c35684f25aa",
+    "collected_at": "2026-09-17T19:35:46+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=1fe5cec0-a9de-4068-878c-ee627ed11df6&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-1fe5cec0-a9de-4068-878c-ee627ed11df6.json",
+    "sha256": "411152de6152cf0f2fc2bd0720ff31c38f02c0a13f2a381c878fb423650e2fec",
+    "collected_at": "2026-09-17T19:35:46+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=39a66ece-9afa-485a-a30e-5b91f4887b9b&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-39a66ece-9afa-485a-a30e-5b91f4887b9b.json",
+    "sha256": "2f557654623d5bc8da9345de916ad7f86557f9f287bed7c86a57036efbd5ede9",
+    "collected_at": "2026-09-17T19:35:46+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=f28beb22-fd2c-4da3-85db-b228e8ea3f4e&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-f28beb22-fd2c-4da3-85db-b228e8ea3f4e.json",
+    "sha256": "894e27fd4ca02a38212aef2b0f2c0c357afa95901a125ca756a8e9e3b3f4e2ba",
+    "collected_at": "2026-09-17T19:35:46+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=4c25b11c-6d6e-4c80-9303-db06dba81b29&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-4c25b11c-6d6e-4c80-9303-db06dba81b29.json",
+    "sha256": "57fe1daafd80054e5575f6c6dbc6eaaf77049a4a573ccf258ecfd6bf9bc47a3b",
+    "collected_at": "2026-09-17T19:35:46+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=e4cae08d-16c9-46bc-bebc-8ca4374197e9&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-e4cae08d-16c9-46bc-bebc-8ca4374197e9.json",
+    "sha256": "2027951cdce7c7748934c15bec4ab4716110b7a3f278e186512b5b33fc81942c",
+    "collected_at": "2026-09-17T19:35:46+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=693b1f9f-d92a-4c42-98bd-31f960a14cba&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-693b1f9f-d92a-4c42-98bd-31f960a14cba.json",
+    "sha256": "c9e31181efc2e69316827b571ee5bde5f6fb4f78cbe82161ab6df75d275d961f",
+    "collected_at": "2026-09-17T19:35:46+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=0a829b5e-4fdb-425b-96af-4dfb17bc164e&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-0a829b5e-4fdb-425b-96af-4dfb17bc164e.json",
+    "sha256": "2b3369b7b7e9112871b9e4a5cc8367f8e5d5fad70303ef90e611f48d48bd1f24",
+    "collected_at": "2026-09-17T19:35:47+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=efccda6f-c11d-45fc-b4a2-95097e453593&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-efccda6f-c11d-45fc-b4a2-95097e453593.json",
+    "sha256": "fb22865c15c2ead6d8070857a5b4a82b3a8c63ae66aad00a26917921dca8d315",
+    "collected_at": "2026-09-17T19:35:47+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=de67f2f0-1825-40eb-9934-d05a38dd5c5a&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-de67f2f0-1825-40eb-9934-d05a38dd5c5a.json",
+    "sha256": "adf0b325c5dd1827add7f638c34e9b21337ef248fedc099715dc427f97a5fbd6",
+    "collected_at": "2026-09-17T19:35:47+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=cc9310d0-f516-4a26-9670-9ce0adff423f&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-cc9310d0-f516-4a26-9670-9ce0adff423f.json",
+    "sha256": "86bc946b68b95d4c4369021cef7ef6f7b94c60a578733f8632877e8ea86d2809",
+    "collected_at": "2026-09-17T19:35:47+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=602c0c4f-84ba-488a-8544-5b70c93e27f5&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-602c0c4f-84ba-488a-8544-5b70c93e27f5.json",
+    "sha256": "51c6b784f604e0bf451e86f58bc9b707a69a4f794abaa0554ce6ab1ed9ca0e7f",
+    "collected_at": "2026-09-17T19:35:47+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=328f10d2-0b77-405b-9e8b-61273c33db94&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-328f10d2-0b77-405b-9e8b-61273c33db94.json",
+    "sha256": "31d3e33adc106325543c88206db14baa83a37a79e3243f823d569b88f0338c58",
+    "collected_at": "2026-09-17T19:35:47+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=8ff9d36c-c53e-4cc8-8778-908462aa97e5&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-8ff9d36c-c53e-4cc8-8778-908462aa97e5.json",
+    "sha256": "63256d9ca4570454a9761137e53d5b688eee9361bee3062d5fa48a78d0a64e47",
+    "collected_at": "2026-09-17T19:35:47+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=15c65c9b-9964-4caf-a259-dcdb59691bdd&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-15c65c9b-9964-4caf-a259-dcdb59691bdd.json",
+    "sha256": "49b74aef0983e7fb55b5be337326c57198a410a31f13b23037cbeca2f91c1166",
+    "collected_at": "2026-09-17T19:35:47+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=9f64674a-d02f-42a7-8388-def70bb7e04d&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-9f64674a-d02f-42a7-8388-def70bb7e04d.json",
+    "sha256": "5b368dcc88abf067d3ab62d5a5bdc1cc6f90d25bd51e805d0218a1147d2cdadd",
+    "collected_at": "2026-09-17T19:35:47+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=c5a734ed-67d0-4ece-8fa6-e80ca3b44068&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-c5a734ed-67d0-4ece-8fa6-e80ca3b44068.json",
+    "sha256": "2f91d4ecbb470a2c27942e5df46b6e52cc5c25e6477e90d25f65ae4e92a946bf",
+    "collected_at": "2026-09-17T19:35:47+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=419340c2-608f-4a7a-a910-7c7b11e6e5e4&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-419340c2-608f-4a7a-a910-7c7b11e6e5e4.json",
+    "sha256": "52886b7346a8eebab02b91f41a785d74c179fef6076f5ea6f7c343d5902ce47a",
+    "collected_at": "2026-09-17T19:35:47+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=afda82ec-5d18-4cc2-95c2-6152b4eeaa28&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-afda82ec-5d18-4cc2-95c2-6152b4eeaa28.json",
+    "sha256": "09ce4b55bbb6aa1004d082af953e4f312e37eb7923981aa3d0fce198eba3d651",
+    "collected_at": "2026-09-17T19:35:47+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=b3900c59-68ea-4b9b-98f5-4b64c220c552&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-b3900c59-68ea-4b9b-98f5-4b64c220c552.json",
+    "sha256": "c7d6350bca4676b2a76fecbd0f67dc965a3dcaf74c33738f7029c71dd75e12be",
+    "collected_at": "2026-09-17T19:35:47+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=6149b184-b3b3-4138-a930-e0baf48c1958&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-6149b184-b3b3-4138-a930-e0baf48c1958.json",
+    "sha256": "8d5369b5843cbc4fca76a72bea942f16f53cef5452f93280433666e0a839a744",
+    "collected_at": "2026-09-17T19:35:47+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=56847689-a25b-48b7-90a5-fce90e4910e4&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-56847689-a25b-48b7-90a5-fce90e4910e4.json",
+    "sha256": "971e7fcbb60470710ffdbef51ba10866da24fcc5d0a99f5d9e153d08b9a98793",
+    "collected_at": "2026-09-17T19:35:47+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=2fc5720d-21c0-48be-9ba7-eb3c303438e8&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-2fc5720d-21c0-48be-9ba7-eb3c303438e8.json",
+    "sha256": "6eb527dea4c6ce6372646117ae7d8b50f1100cc0aa8b51cdf121d794a539e392",
+    "collected_at": "2026-09-17T19:35:47+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=9816723e-dff2-40bc-a1ed-1afb755e3c59&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-9816723e-dff2-40bc-a1ed-1afb755e3c59.json",
+    "sha256": "ee2683bd250391eb2ff4de11efcf3812c929aaf96d0ed8f5b96b3562bea15f71",
+    "collected_at": "2026-09-17T19:35:47+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=6df63e6b-d3a6-4f5b-8ea6-9c606abf14da&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-6df63e6b-d3a6-4f5b-8ea6-9c606abf14da.json",
+    "sha256": "d0c9950237117743b8dd80aba846c62e1358e7e61af0c933ce1114e3e1b54e95",
+    "collected_at": "2026-09-17T19:35:47+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=515614a5-d285-4e94-be52-f63b33ef9ed7&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-515614a5-d285-4e94-be52-f63b33ef9ed7.json",
+    "sha256": "f2f46ec029fb23e52383723f22f29951a7b1ef06d7e405d62dcb629ed842e5ea",
+    "collected_at": "2026-09-17T19:35:48+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=4f9ee400-93ec-4c3c-b04e-c18a6a7754fe&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-4f9ee400-93ec-4c3c-b04e-c18a6a7754fe.json",
+    "sha256": "4c56ee631526c01d3ef2ca430f43e49cd4875496e593202881a0b584040ce17d",
+    "collected_at": "2026-09-18T14:54:16+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=90bc67b8-d65c-4664-812f-b6cc73451bbd&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-90bc67b8-d65c-4664-812f-b6cc73451bbd.json",
+    "sha256": "2a247f5b2008e55dfe8accf58ac0b0777fd5f98f76d62b5ee1bcb18e1067ad1c",
+    "collected_at": "2026-09-18T14:54:16+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=92831eb6-b630-4046-bbcf-b4e172c903d7&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-92831eb6-b630-4046-bbcf-b4e172c903d7.json",
+    "sha256": "6a0db61df3ace9e363770f295d98a269bfb580f2d5029c36cd2cec919f1c5bc4",
+    "collected_at": "2026-09-18T14:54:16+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=3d03f342-7fcc-49c6-a84d-130e1db87efe&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-3d03f342-7fcc-49c6-a84d-130e1db87efe.json",
+    "sha256": "edbed8778f9c67675e5da0596c2930b823a4de5e2456ca638d290d9324f8755b",
+    "collected_at": "2026-09-18T14:54:17+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=0d9141c3-c6c5-48eb-a7cd-a548ed7ad4e9&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-0d9141c3-c6c5-48eb-a7cd-a548ed7ad4e9.json",
+    "sha256": "1c1ae5d63f4d0651e22aa2a2ab83472c64bccf4a68af226e25915511f5b62758",
+    "collected_at": "2026-09-18T14:54:17+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=3bae83c2-d7c9-479f-bc52-8003ff1611f4&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-3bae83c2-d7c9-479f-bc52-8003ff1611f4.json",
+    "sha256": "e4190b03f4b1c24d6f100ae0f1f518156903e255f2d4afaea3fe22f90391009a",
+    "collected_at": "2026-09-18T14:54:17+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=8eadc530-b157-4486-8a91-198bda64cbe6&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-8eadc530-b157-4486-8a91-198bda64cbe6.json",
+    "sha256": "00e01ac947db3c200df316927e68cf1fd6164d0e87dd09e4577d16228c1fe8d9",
+    "collected_at": "2026-09-18T14:54:17+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=3d3c0148-0583-48b1-89d3-92c8ca3cb25f&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-3d3c0148-0583-48b1-89d3-92c8ca3cb25f.json",
+    "sha256": "fe3f0e84704b17aff19d0453f2fa361f8621990d8d326b5736158066c42eff79",
+    "collected_at": "2026-09-18T14:54:18+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=ad3fab28-4fb5-4ee5-987e-3666212b72f7&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-ad3fab28-4fb5-4ee5-987e-3666212b72f7.json",
+    "sha256": "7a7b612fc7eb192a2576d16c35e793e9d4f4eeb355b2c5cf5ffef84c515ccd83",
+    "collected_at": "2026-09-18T14:54:17+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=25e5abc2-58a2-49c8-b134-3363a724afde&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-25e5abc2-58a2-49c8-b134-3363a724afde.json",
+    "sha256": "afef2ff676bc724db6a681c8929f975403d9f0752771ff9c3f8e293a3df0ff8a",
+    "collected_at": "2026-09-18T14:54:17+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=2bf0963e-2fe4-42a7-8932-be06f0bbfd3a&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-2bf0963e-2fe4-42a7-8932-be06f0bbfd3a.json",
+    "sha256": "6e2389339e9f2050c13d373ea41a3f58cb5ac3ca2532fc08359c5847b12378f0",
+    "collected_at": "2026-09-18T14:54:17+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=b5fd74c8-8ae7-47df-ac25-ae0c484a85d3&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-b5fd74c8-8ae7-47df-ac25-ae0c484a85d3.json",
+    "sha256": "3fc366b0cbc495822d46c9ca56552fe6c2de00aab0c0645d31dcbe7b8efd02e0",
+    "collected_at": "2026-09-18T14:54:18+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=18eeb5f1-fbcb-4a8e-be77-6ea95bca712a&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-18eeb5f1-fbcb-4a8e-be77-6ea95bca712a.json",
+    "sha256": "822ef19b1785545defb81f23779ace0a29edb4eb2ddbf4bedaf5a8f94fa497c8",
+    "collected_at": "2026-09-18T14:54:18+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=41a5a4db-1130-4287-83b2-e52dff5e76f6&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-41a5a4db-1130-4287-83b2-e52dff5e76f6.json",
+    "sha256": "4b93c28a9a1dc64bfcaf5989c8a6be3c85dd2a374bb5fd6b2529965caf433271",
+    "collected_at": "2026-09-18T14:54:18+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=c800d068-3af8-4274-b881-9cf83bcae496&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-c800d068-3af8-4274-b881-9cf83bcae496.json",
+    "sha256": "9e4eb08a1c07899d8a961b4afe62dd7b2b82cce593f757fa3f07f3ad3eee0d7b",
+    "collected_at": "2026-09-18T14:54:18+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=3d793372-b3c0-46fc-bdd6-028d8989302d&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-3d793372-b3c0-46fc-bdd6-028d8989302d.json",
+    "sha256": "77dce666ed9ca1c5a0d9469294cc02e3facc67fc96ea06bc82855cb2540b62b0",
+    "collected_at": "2026-09-18T14:54:18+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=0112700f-ea67-403c-8803-6dd1335074c9&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-0112700f-ea67-403c-8803-6dd1335074c9.json",
+    "sha256": "f2ad31261112371959f2702eb858ebcc7b801cfcf9d67a175c8e6f300e45cabe",
+    "collected_at": "2026-09-18T14:54:19+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=a7385798-6df8-4656-9622-627975ca9bf9&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-a7385798-6df8-4656-9622-627975ca9bf9.json",
+    "sha256": "1582b35ac24cc196b3cdba983b8a6e1e61f77361f2319407b76f84a6167113c2",
+    "collected_at": "2026-09-18T14:54:19+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=eaf22af6-ea5d-4383-a058-98bb929aa332&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-eaf22af6-ea5d-4383-a058-98bb929aa332.json",
+    "sha256": "75d940bce73cbecf2d6d5825cbd3f50b84e4f7bcd7705874ae5130471220ca16",
+    "collected_at": "2026-09-18T14:54:19+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=5b6ed3f2-5921-4f63-8ebd-2c3b16ec6cb2&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-5b6ed3f2-5921-4f63-8ebd-2c3b16ec6cb2.json",
+    "sha256": "9cd1eb8fc4b370f7b4923806084877eec0d6ab410158e097005f1062bb5454d1",
+    "collected_at": "2026-09-18T14:54:19+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=7fbc98ec-c0b6-4ea5-8fa9-c0135f6cbc0f&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-7fbc98ec-c0b6-4ea5-8fa9-c0135f6cbc0f.json",
+    "sha256": "86cc0530641f9fb0fc9a5f467182e7c0874dd0c8736fcfe4cfeef1c8caa60066",
+    "collected_at": "2026-09-18T14:54:19+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=b99e4672-bb7f-4b7b-9e08-d7f655557363&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-b99e4672-bb7f-4b7b-9e08-d7f655557363.json",
+    "sha256": "d57c58f82ad282e77569552760e133139e37d3662627dcbd3ba97ec66c113a38",
+    "collected_at": "2026-09-18T14:54:19+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=e7c968fb-64f3-4e35-8e5a-9508526ea36d&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-e7c968fb-64f3-4e35-8e5a-9508526ea36d.json",
+    "sha256": "eb9c618ae1dc5aa96f40874af54fb353aa4510e463da527dc7f88fb7f6ed0a0c",
+    "collected_at": "2026-09-18T14:54:20+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=168c86fb-9ff5-40a3-94e3-f814234ef767&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-168c86fb-9ff5-40a3-94e3-f814234ef767.json",
+    "sha256": "57e4785131ebca78ba50045fd720bf6b0df4f09db2be0854ec03784e5609bb0b",
+    "collected_at": "2026-09-18T14:54:20+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=054cdf40-b256-4df9-af8a-34aefacee556&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-054cdf40-b256-4df9-af8a-34aefacee556.json",
+    "sha256": "e1f9de9216cd2a8448e7f61d7543a026424c3a586967ba71e510db7cf5d0b9f9",
+    "collected_at": "2026-09-18T14:54:20+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=9cecef90-737b-4a17-8187-b1860f95329f&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-9cecef90-737b-4a17-8187-b1860f95329f.json",
+    "sha256": "79eba53e46585882a2156a6121dd3db34eba41de72d41a0ac797f8c9e5292e89",
+    "collected_at": "2026-09-18T14:54:20+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=40749be2-438b-4d66-93ae-110383ec9fc5&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-40749be2-438b-4d66-93ae-110383ec9fc5.json",
+    "sha256": "6c512f150780c49bc37e3c23309cb06c5198607801b6cafac757aed7f9fad6d1",
+    "collected_at": "2026-09-18T14:54:20+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=a814ab5b-76b8-4134-8dd8-38ac4482b444&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-a814ab5b-76b8-4134-8dd8-38ac4482b444.json",
+    "sha256": "66d0afa7e9e414fd3c8eb8d3775a3a6a8e71fd2e7ce55a8f63842134de044a22",
+    "collected_at": "2026-09-18T14:54:20+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=898a97d2-f1f4-4f28-a989-0c0a8d0cf290&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-898a97d2-f1f4-4f28-a989-0c0a8d0cf290.json",
+    "sha256": "9cf8dc377f8b92c0f42dfde51f79f20c57b09a3d283c610bd4a669ad0a80d26b",
+    "collected_at": "2026-09-18T14:54:20+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=0b6cb98f-5505-44b8-a460-f09ddaa58eac&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-0b6cb98f-5505-44b8-a460-f09ddaa58eac.json",
+    "sha256": "10c389274aec8f52c23a6698d1e240c6f45010584f89ce35fa4faf9b5f8a99b7",
+    "collected_at": "2026-09-18T14:54:20+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=0da062f8-48c2-481c-89e1-e90a79292f7b&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-0da062f8-48c2-481c-89e1-e90a79292f7b.json",
+    "sha256": "9f5e5fbb3be7414d72b1759388c2206530a55a285dd5c8d2da467c7b08a9b31c",
+    "collected_at": "2026-09-18T14:54:21+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=c1cf1fa0-c28d-40fe-9ec5-7b4803dc093b&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-c1cf1fa0-c28d-40fe-9ec5-7b4803dc093b.json",
+    "sha256": "d91b060d5e0ee29c5796bd45d35c9926edd659dee2929041a1dae4316a3f789e",
+    "collected_at": "2026-09-18T14:54:21+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=647c4ff7-bcaf-4219-a53b-c0298dad9193&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-647c4ff7-bcaf-4219-a53b-c0298dad9193.json",
+    "sha256": "6b7df37cf6eabcf835ae07c784b53d8faea47eaec973ed597e4464d41b4b9263",
+    "collected_at": "2026-09-18T14:54:21+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=1050f17b-2065-41f2-8ce2-5b05db5bc0e7&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-1050f17b-2065-41f2-8ce2-5b05db5bc0e7.json",
+    "sha256": "c6aeb788de8530a038fcab29d231b9c817acd6f49580567a52905e0a30550600",
+    "collected_at": "2026-09-18T14:54:21+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=75a1385b-7183-4585-b547-594a71424552&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-75a1385b-7183-4585-b547-594a71424552.json",
+    "sha256": "9509091ef9a4b3819f07afdca057abb9502baf3c8337c3d1639d100ada970fd0",
+    "collected_at": "2026-09-18T14:54:21+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=92219cf1-7312-4443-8864-09bb316eda8c&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-92219cf1-7312-4443-8864-09bb316eda8c.json",
+    "sha256": "c1c56c5862f0857e80c068bb7f3f4a2b72f1c9fe4d229377c0f61b1b932d95c7",
+    "collected_at": "2026-09-18T14:54:21+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=9c59a200-a2c1-4301-be73-30cf19af0ee6&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-9c59a200-a2c1-4301-be73-30cf19af0ee6.json",
+    "sha256": "8e827848e7aa56e7b1cf81eb9ec44d636db6a73901c305da4c0dd6cca4f2d98f",
+    "collected_at": "2026-09-18T14:54:21+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=6c79e702-b71f-4cc7-b4f9-499a510dd066&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-6c79e702-b71f-4cc7-b4f9-499a510dd066.json",
+    "sha256": "e23fa78d96dbb28fe593e404fd1206cad785c97c26cf975970c056838dd35e8e",
+    "collected_at": "2026-09-18T14:54:21+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=8c95338a-4684-4dd5-81c0-e5a8227937e9&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-8c95338a-4684-4dd5-81c0-e5a8227937e9.json",
+    "sha256": "f619f3829cd802233a556b72017052102bdfdf03074287fcad42c3ba0ceffc81",
+    "collected_at": "2026-09-18T14:54:21+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=f73c1c0a-65bd-4ee1-ad0c-4db61b08241d&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-f73c1c0a-65bd-4ee1-ad0c-4db61b08241d.json",
+    "sha256": "c973312d96857d6a401ba87ca559f85c3e326d221d3d9c1903b35a027c6c4c1c",
+    "collected_at": "2026-09-18T14:54:22+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=65adefa3-6d2d-41d3-8c5a-ec7cc5ebc34a&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-65adefa3-6d2d-41d3-8c5a-ec7cc5ebc34a.json",
+    "sha256": "5353d8b0334f7c6a2b8036b7385a0eaef6026b4567b39a554a81089380152416",
+    "collected_at": "2026-09-18T14:54:22+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=9615896b-07ae-4c7b-a227-e7c3a7eb5a4c&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-9615896b-07ae-4c7b-a227-e7c3a7eb5a4c.json",
+    "sha256": "c3895346747632bc3e7df89d0ab24074b2cfb29084b67b4bb90e49ce11ce8672",
+    "collected_at": "2026-09-18T14:54:22+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=bab0697e-0cee-47cb-9bf0-9d7726ba8061&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-bab0697e-0cee-47cb-9bf0-9d7726ba8061.json",
+    "sha256": "c2357c005bfd4ad308f08be5055142229a2a78abc70ffac324606679bf23de2a",
+    "collected_at": "2026-09-18T14:54:22+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=6068e5cc-649d-4398-8981-ec22bddbf244&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-6068e5cc-649d-4398-8981-ec22bddbf244.json",
+    "sha256": "e3f335d19f63c750785b9d599580a252e061a35cb98fdf389a8a203fe7838e22",
+    "collected_at": "2026-09-18T14:54:22+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=8203692b-a003-4787-8ba2-bd64b5b6e2f3&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-8203692b-a003-4787-8ba2-bd64b5b6e2f3.json",
+    "sha256": "7ef72dae321799cb5dd9ed903c04d44850d30d7c41ce6254a47a1f52adc6fba3",
+    "collected_at": "2026-09-18T14:54:22+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=048281d9-aa40-4eb2-a989-dd057bd7d389&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-048281d9-aa40-4eb2-a989-dd057bd7d389.json",
+    "sha256": "448d8d18a095adb1f8040d0a402ae40430a0081e8cef0c86748c526a9407f1fe",
+    "collected_at": "2026-09-18T14:54:24+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=b114f985-5b22-48cf-b563-c56a5d2410a2&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-b114f985-5b22-48cf-b563-c56a5d2410a2.json",
+    "sha256": "5f7155de567c97044bf5011e7d13a0661842e3cb5dca844ea9b1831b9a23a66e",
+    "collected_at": "2026-09-18T14:54:22+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=aeb6274e-f20b-405a-843b-67f8dbfcd2b3&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-aeb6274e-f20b-405a-843b-67f8dbfcd2b3.json",
+    "sha256": "7d73580baf48e9b02c5e07cd5baa4b6dc72a84e7abbc397e9a78812121de7cdb",
+    "collected_at": "2026-09-18T14:54:23+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=af4c16a4-467a-4b8a-a70f-ff36ea218257&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-af4c16a4-467a-4b8a-a70f-ff36ea218257.json",
+    "sha256": "e13e6f2f73b0f2d0b8d4141491bef5d161cfcd7848a0833eaa2a8c583c8afc95",
+    "collected_at": "2026-09-18T14:54:24+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=f531560a-51dd-466d-a152-eb9495a8718f&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-f531560a-51dd-466d-a152-eb9495a8718f.json",
+    "sha256": "5029412f4a82aaabb6cb0e5843b331ea934d8eb1c0eb329dbbf591406f5b1eda",
+    "collected_at": "2026-09-18T14:54:24+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=ab658aad-fca6-4ee2-8b8a-08ca422c28cd&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-ab658aad-fca6-4ee2-8b8a-08ca422c28cd.json",
+    "sha256": "ec77922c32ce5f0b5635d4806b366743787b498d1fb555bc41c9c747c9f02cbb",
+    "collected_at": "2026-09-18T14:54:24+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=fa3f1036-eca4-46d8-99c5-f2f631e3c347&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-fa3f1036-eca4-46d8-99c5-f2f631e3c347.json",
+    "sha256": "b56922ada12516d52ceaaabfe4acf4ac743c2e487498734f1093b252869a07aa",
+    "collected_at": "2026-09-18T14:54:29+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=30a22661-ff95-432f-b0cc-84e45019bbe8&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-30a22661-ff95-432f-b0cc-84e45019bbe8.json",
+    "sha256": "25573bae1e53542502b3a0d7d25a45f5edc9f97497330ed3f96c425f0c2098bd",
+    "collected_at": "2026-09-18T14:54:25+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=46b2b2f7-5fcb-4418-bcc1-265f4631dbb7&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-46b2b2f7-5fcb-4418-bcc1-265f4631dbb7.json",
+    "sha256": "e19973a8b34aaf611800a48907db1b94c915f52333ba5d189e37e7e30f33656c",
+    "collected_at": "2026-09-18T14:54:24+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=bcc749ef-d808-431d-85f4-9fa08aa694b0&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-bcc749ef-d808-431d-85f4-9fa08aa694b0.json",
+    "sha256": "a9b8ec4a2668fc1750ac9223ea99ad5d6009c51effb824d7a898bd7821ba6525",
+    "collected_at": "2026-09-18T14:54:29+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=21974e73-1ba1-4cf0-b7b7-1be5910eb103&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-21974e73-1ba1-4cf0-b7b7-1be5910eb103.json",
+    "sha256": "61884f4600f28bc0387b27305c5df16538974efcde53bc977ace22cd407beb12",
+    "collected_at": "2026-09-18T14:54:29+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=35c5ad0a-fed8-4b04-ab1b-27b1d8571237&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-35c5ad0a-fed8-4b04-ab1b-27b1d8571237.json",
+    "sha256": "07a6acf2516d2d0f7373cd13d097a228b50f3d66a01644cde08f6c0be8da2fff",
+    "collected_at": "2026-09-18T14:54:29+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=a439c9c3-ce04-42e9-832c-6d3f39509008&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-a439c9c3-ce04-42e9-832c-6d3f39509008.json",
+    "sha256": "677d1c4d4c1b6918ed06642aaa4addf9904ab0f8c6d36a6dd40db99c35b9ca0b",
+    "collected_at": "2026-09-18T14:54:29+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=1f308e7b-9b52-42b4-99a8-76765112b6b3&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-1f308e7b-9b52-42b4-99a8-76765112b6b3.json",
+    "sha256": "c4ffdea402a1d7fad16028a1eae4b5bd0d6a1ae6383fda198960abd64c6aaddb",
+    "collected_at": "2026-09-18T14:54:29+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=4bba5966-d219-45e5-9efe-f861b932aed3&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-4bba5966-d219-45e5-9efe-f861b932aed3.json",
+    "sha256": "df3cc13b499e97ddb2beb9d4669aee39e2c439de7f34ee71128800ff9cde0a6a",
+    "collected_at": "2026-09-18T14:54:30+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=b3338d87-f4e9-4de8-9896-11ecaf79d279&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-b3338d87-f4e9-4de8-9896-11ecaf79d279.json",
+    "sha256": "1b81536c5e448c5829413e72c8aaf919b0c43f5db0f175505fe8992c81840a1f",
+    "collected_at": "2026-09-18T14:54:30+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=94808460-ab5d-4abe-abff-65b82a4a7d61&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-94808460-ab5d-4abe-abff-65b82a4a7d61.json",
+    "sha256": "477b395fcdf371fb8d3e6894c136409be4c98cf0942fcd1a9ead6eb9c4b8a853",
+    "collected_at": "2026-09-18T14:54:30+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=11fcfe44-37cc-4b1a-aa6f-918c78bb631c&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-11fcfe44-37cc-4b1a-aa6f-918c78bb631c.json",
+    "sha256": "d56dfc2365cca5e86607c37b62f411e3131aac22f697e81edab855ab2c892b60",
+    "collected_at": "2026-09-18T14:54:30+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=ca17a656-c5ee-47a5-8023-e9669dfdb51e&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-ca17a656-c5ee-47a5-8023-e9669dfdb51e.json",
+    "sha256": "d6ff1ca7a01ccd617ced5a83701fc45bca008689ac63b82d0fa88019af336765",
+    "collected_at": "2026-09-18T14:54:30+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=f32cda45-8165-4a6a-9a15-9720a590652a&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-f32cda45-8165-4a6a-9a15-9720a590652a.json",
+    "sha256": "882142fdedd8fdaae7a93a446d5d222a7b3ba4150feb7b4de750af1ed6a424fe",
+    "collected_at": "2026-09-18T14:54:30+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=48f8ae7d-4937-48b9-a755-21373a4ee64f&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-48f8ae7d-4937-48b9-a755-21373a4ee64f.json",
+    "sha256": "6fce3c1d8d8a1ee079054cab50149007d30169e6a37fb6a74c95dd3a992b2a6d",
+    "collected_at": "2026-09-18T14:54:30+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=31b04d57-e1fe-4c10-ba2a-3f54f2944ddc&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-31b04d57-e1fe-4c10-ba2a-3f54f2944ddc.json",
+    "sha256": "136285134faec93e1bd92387dc96df16f65c323b38256efcefb2c23b11e9c73d",
+    "collected_at": "2026-09-18T14:54:30+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=1303125d-5fee-4dd0-82d8-daa31bed7aaf&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-1303125d-5fee-4dd0-82d8-daa31bed7aaf.json",
+    "sha256": "347d4f4c7d6bb63362d671b634c568d6105dbdbe0e0d0c80cde18728d1f73967",
+    "collected_at": "2026-09-18T14:54:30+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=9019b55d-4b15-4ab5-a85f-df221df81302&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-9019b55d-4b15-4ab5-a85f-df221df81302.json",
+    "sha256": "11532f21520fe4d99af82a1f5d7a76a66261eb6048ea2dbd0724cefd4d809f58",
+    "collected_at": "2026-09-18T14:54:30+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=1577c269-bc2f-4acd-a28d-626547402487&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-1577c269-bc2f-4acd-a28d-626547402487.json",
+    "sha256": "3c3a54fee4bf67731acfce8cdf7efdd631a5f69a480cd8975e6e2d525e89ea2a",
+    "collected_at": "2026-09-18T14:54:31+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=7571ea67-42ca-49da-95b3-87d38457760a&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-7571ea67-42ca-49da-95b3-87d38457760a.json",
+    "sha256": "e96df91491c17d0a6e3a32e811e2c460656dc0d33a7477cfd362ba9a503ff29c",
+    "collected_at": "2026-09-18T14:54:31+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=8a40ceb1-de99-4262-838e-a1e12af7e331&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-8a40ceb1-de99-4262-838e-a1e12af7e331.json",
+    "sha256": "6009a45aafc32a17ef02f14d929547e294c855c5394c6c2c815acb7886793fd6",
+    "collected_at": "2026-09-18T14:54:31+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=eb9647d4-e728-4cce-b4c9-bf295f6b9564&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-eb9647d4-e728-4cce-b4c9-bf295f6b9564.json",
+    "sha256": "38766c2fb284f29d5143f636f14e8627dd0110c8bd1c8541d86fdfefd4b8733d",
+    "collected_at": "2026-09-18T14:54:31+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=da9f618c-3ee3-453e-9515-9a70c381712d&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-da9f618c-3ee3-453e-9515-9a70c381712d.json",
+    "sha256": "e6ff36d47901a0213b1742e261d54eaae4813ddb965c0d78701a91a831d1a5b4",
+    "collected_at": "2026-09-18T14:54:31+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=9d301b0a-e157-4178-9ac0-7477cbb8ea46&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-9d301b0a-e157-4178-9ac0-7477cbb8ea46.json",
+    "sha256": "cf301986b561aeb0b445384e5d5352cdbbf7f303f38788549a1987b930fcd2bf",
+    "collected_at": "2026-09-18T14:54:31+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=f715b958-ed0d-46cf-ac2d-a1b4b4c34f34&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-f715b958-ed0d-46cf-ac2d-a1b4b4c34f34.json",
+    "sha256": "c022713136c62c403d67553cac369823189f79f67b49c36b2dc64e1d6a405e21",
+    "collected_at": "2026-09-18T14:54:31+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=d11cc9a3-0e29-459a-8b63-ecc209cf974d&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-d11cc9a3-0e29-459a-8b63-ecc209cf974d.json",
+    "sha256": "e842523322b9c47632174682509075422e129aa1740dc507a8da9472755fc502",
+    "collected_at": "2026-09-18T14:54:31+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=b949ccdd-c67c-4350-85fa-fd8630c8d5e1&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-b949ccdd-c67c-4350-85fa-fd8630c8d5e1.json",
+    "sha256": "e27a3d275a7d9c4d4a30b2a26af35078ecce14fb84bc0014d191ebab6e1e557c",
+    "collected_at": "2026-09-18T14:54:31+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=25169ae3-33f3-4b3c-b564-f50482d47f5e&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-25169ae3-33f3-4b3c-b564-f50482d47f5e.json",
+    "sha256": "9909791aca6bf6870e96ad654f08625c3280dd89235942ca00a69be0a18159e5",
+    "collected_at": "2026-09-18T14:54:32+08:00"
+  },
+  {
+    "url": "https://cnnc.zhiye.com/api/JobAd/GetJobAdInfo?jobAdId=18635e7d-614f-4297-b124-3e8de5b631a9&category=2&displayFields=%5B%22JobAdName%22%2C+%22LocId%22%2C+%22Degree%22%2C+%22Duty%22%2C+%22Require%22%5D",
+    "file": "data/sources/2026-09-17-employers/cnnc-detail-18635e7d-614f-4297-b124-3e8de5b631a9.json",
+    "sha256": "16ad968b92afc54b7b42925b34e3cd7d24be38efc250bd9278a1b22e1cb8f44a",
+    "collected_at": "2026-09-18T14:54:32+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/Campus",
+    "file": "data/sources/2026-09-17-employers/kedacom.html",
+    "sha256": "1f490b1a321e233fd8e73bafff5e9b6c29ce6feb7db263e219fad8645dda38bd",
+    "collected_at": "2026-09-17T19:26:42+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/campus/?PageIndex=2",
+    "file": "data/sources/2026-09-17-employers/kedacom-page-2.html",
+    "sha256": "92a03826aa2db78a1b3b3f3726898e632697bae1f377c9173c7768408710b4c1",
+    "collected_at": "2026-09-17T19:35:48+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/campus/?PageIndex=3",
+    "file": "data/sources/2026-09-17-employers/kedacom-page-3.html",
+    "sha256": "47fa91dc1054fc34c1516a937c192aa55d52611e911fd933958c0ea2068fdcaa",
+    "collected_at": "2026-09-17T19:35:48+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/campus/?PageIndex=4",
+    "file": "data/sources/2026-09-17-employers/kedacom-page-4.html",
+    "sha256": "9c45d1d9e6e3e0cb7e3de3e9e16bf0f7793f5c1c97c4d18d101d47ec6d0aa738",
+    "collected_at": "2026-09-17T19:35:49+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511187515",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511187515.html",
+    "sha256": "754a1b2d032c9b9b5bfd2fb665b2f63e5a7d866f74cbccfe2b7857c5c1f7c844",
+    "collected_at": "2026-09-17T19:35:49+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511187513",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511187513.html",
+    "sha256": "13a397f3b2b9c50c1750506cda8e52b93399ae038e17bd2c283b7afb0ad48f40",
+    "collected_at": "2026-09-17T19:35:49+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511187473",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511187473.html",
+    "sha256": "4cc888245010ba2e3a993ed68c3775e89044992b7f0ec12e03e32db0152e2d84",
+    "collected_at": "2026-09-17T19:35:49+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511187448",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511187448.html",
+    "sha256": "05cf957b56488d30327dba28612a5b18bddba518a9c0e180789ee1eb96745162",
+    "collected_at": "2026-09-17T19:35:50+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511212560",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511212560.html",
+    "sha256": "2fd6dfe6c7457ba1f69207e608edf8429ba44e039a6d553ba8537670fa6996e8",
+    "collected_at": "2026-09-17T19:35:50+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511187415",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511187415.html",
+    "sha256": "b847a78563ab53d2e95bb043853bf593422bae4721943f6519d020637d4c6f0d",
+    "collected_at": "2026-09-17T19:35:50+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511199330",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511199330.html",
+    "sha256": "00703fef93481aa1902f9392d39a62997d9ec8eef32b0ac040091388245b7d27",
+    "collected_at": "2026-09-17T19:35:50+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511187782",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511187782.html",
+    "sha256": "1b30f0ffd93b9da88cc8f57b7a7c04cacd70e799a3d2cf9f8353243ae351c856",
+    "collected_at": "2026-09-17T19:35:50+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511187437",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511187437.html",
+    "sha256": "76a2123c2e13fbcd024bf557aa7534e3205cd0c0f164201be28c26a7f4916c1e",
+    "collected_at": "2026-09-17T19:35:51+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511187512",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511187512.html",
+    "sha256": "fdf62d66556cfd3bd2227d16988f002f571e1332a5dca1941994cf802ce45480",
+    "collected_at": "2026-09-17T19:35:51+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511187509",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511187509.html",
+    "sha256": "559b12500ccdbe450388d1874b2af6cdc446961ad23aab2707e2b1a5994eb2c0",
+    "collected_at": "2026-09-17T19:35:51+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511187510",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511187510.html",
+    "sha256": "b9e74f8f156262599a415ff35a73b34dbb8709c5491d08661b3167efbd973539",
+    "collected_at": "2026-09-17T19:35:51+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511187508",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511187508.html",
+    "sha256": "7cdae039a59f3b3e1b54ea80a67f9b29120e766b0c6fb153eca5c7970b3f198c",
+    "collected_at": "2026-09-17T19:35:51+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511187507",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511187507.html",
+    "sha256": "e72a7b982d1a6d0f5f9244602122edb5b5ce462caec7730f33b821f4c973ffa4",
+    "collected_at": "2026-09-17T19:35:52+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511187506",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511187506.html",
+    "sha256": "379601f3f7626d0031caa5ed5dee3463840042a3e83d0b2178b1fe8d1c9d95c7",
+    "collected_at": "2026-09-17T19:35:52+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511187505",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511187505.html",
+    "sha256": "06b29e2d48f413ed5a8abb09789681cbfee9d9911d40141825b4390b6c2aab07",
+    "collected_at": "2026-09-17T19:35:52+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511187502",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511187502.html",
+    "sha256": "6b5d7615cdce550facbbc89f64d3bdb91270d291bcd7bcfa8e557910606ca047",
+    "collected_at": "2026-09-17T19:35:53+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511187504",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511187504.html",
+    "sha256": "3e941c7697d4785c54035170a22b0e90098719edf416d4ddfadaad4658236d46",
+    "collected_at": "2026-09-17T19:35:52+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511187501",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511187501.html",
+    "sha256": "74b67bc71f3949b8ee0849d87ea33adfb416ef7290f693efd37c2335a19bc5eb",
+    "collected_at": "2026-09-17T19:35:53+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511187500",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511187500.html",
+    "sha256": "ab6108b69d86ffcddb1c2c12862270f0029812334c2d7b388939e7a4e9664ba2",
+    "collected_at": "2026-09-17T19:35:53+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511187498",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511187498.html",
+    "sha256": "145bec80ac4e82a422726b7e789728c527723d07965af4d8e7a0af8476aa3856",
+    "collected_at": "2026-09-17T19:35:54+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511187476",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511187476.html",
+    "sha256": "efba987ad985206241dadc5e944a790e866b316b40d5ff1487c9f1909a65260f",
+    "collected_at": "2026-09-17T19:35:54+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511187489",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511187489.html",
+    "sha256": "b0f6ad4ee03cd2417644dfef66e70774fdbcb7e929c55a232b01ce279f80bf61",
+    "collected_at": "2026-09-17T19:35:53+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511187451",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511187451.html",
+    "sha256": "f8c671715acbe164d96ae92946a99c86707cc162c59be5e45658abe416276e5f",
+    "collected_at": "2026-09-17T19:35:54+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511187453",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511187453.html",
+    "sha256": "cb6667b26b67d74af8860de00a05e2267d9199ea50687a2a2d3c52be8a571083",
+    "collected_at": "2026-09-17T19:35:54+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511187447",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511187447.html",
+    "sha256": "71277869326930082411e14ae03e8fb1e7e6e91e93f087492032834e55b6aecf",
+    "collected_at": "2026-09-17T19:35:54+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511187441",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511187441.html",
+    "sha256": "0c3a8ecb8b3857832f253b1de826f8feef8ce5ebc1bc17d7bf1fdb6ea4c155ae",
+    "collected_at": "2026-09-17T19:35:54+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511187434",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511187434.html",
+    "sha256": "914f300838a6d5a245e38cd4427fe28bf16c679dbb922b280c34863967ed4f6b",
+    "collected_at": "2026-09-17T19:35:55+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511187435",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511187435.html",
+    "sha256": "353020701a8a937ed6dd3d014b374efdc6a326ae299911fed227749a0e59f300",
+    "collected_at": "2026-09-17T19:35:55+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511187433",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511187433.html",
+    "sha256": "0b24e175e13e6631909ab2692ec787f7b748846f646ce2004a9712e39f3bf450",
+    "collected_at": "2026-09-17T19:35:55+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511187430",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511187430.html",
+    "sha256": "d23ded78ae5eb6c088dda67cc3b037043e6d310bfc6b42d3de206e3304264887",
+    "collected_at": "2026-09-17T19:35:56+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511187412",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511187412.html",
+    "sha256": "793944875cba524d47ccc7b5a7e201f9f02ae787a07241dbd548a21a662a3aee",
+    "collected_at": "2026-09-17T19:35:55+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511187411",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511187411.html",
+    "sha256": "022e55846090aa358505f53c976201a1e0c8aaa2e5a0fc2e9fa55e9e05a559a8",
+    "collected_at": "2026-09-17T19:35:56+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511187410",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511187410.html",
+    "sha256": "18997752068a75c502d4148ca9bffb063413dccb16288690fc0daa2c8000e9ae",
+    "collected_at": "2026-09-17T19:35:56+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511187408",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511187408.html",
+    "sha256": "90dde02d195bc36a335e65749dee7e62eb1bae8c89f75ca528646cf1ad010312",
+    "collected_at": "2026-09-17T19:35:56+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511187403",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511187403.html",
+    "sha256": "1f91533ab14dccceb37365693f767a41ae07a8b068afc5826f7e57b7e762cb3f",
+    "collected_at": "2026-09-17T19:35:56+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511187402",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511187402.html",
+    "sha256": "1ae6315c1e73a6250fd80653ecbda7db8a1030ab757b3e13d0bef14fc609a87d",
+    "collected_at": "2026-09-17T19:35:56+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511187399",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511187399.html",
+    "sha256": "23827827a1d3831ce707ceb46223aa66f2498ccfff608b75b5f02648b6a8dbcd",
+    "collected_at": "2026-09-17T19:35:56+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511164562",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511164562.html",
+    "sha256": "748e4b99b175ee9b252af1a9b3692ff8b7c5421334c96485f67996998636b218",
+    "collected_at": "2026-09-17T19:35:58+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511164559",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511164559.html",
+    "sha256": "91788cfc3893fd5e2f84222959bd084e356332d145fb339059e6313f31c5c900",
+    "collected_at": "2026-09-17T19:35:57+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511164557",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511164557.html",
+    "sha256": "50b1072e7b7eec1e43b37e7d155d48555b8382dd344a58ad55b178583e445289",
+    "collected_at": "2026-09-17T19:35:57+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511164554",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511164554.html",
+    "sha256": "9bb9133b3a533807a265d5643d1d0d2f2d8dd98c6fecf3792b11018ad02cd42e",
+    "collected_at": "2026-09-17T19:35:57+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511164552",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511164552.html",
+    "sha256": "8a8fa055672660e755942faffdb130ffab8ab2e94bc893236e55a142285a6294",
+    "collected_at": "2026-09-17T19:35:58+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511164549",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511164549.html",
+    "sha256": "fb685f6c984a760835cd1dd0e69d2bfe6af7519d0be6fff28c660be7931a7ad3",
+    "collected_at": "2026-09-17T19:35:58+08:00"
+  },
+  {
+    "url": "https://kedacom.zhiye.com/zpdetail/511164546",
+    "file": "data/sources/2026-09-17-employers/kedacom-detail-511164546.html",
+    "sha256": "a0550051dffc4589bfc2d17dc578fbbf3f240af581e17787f54228fbad4cc66d",
+    "collected_at": "2026-09-17T19:35:58+08:00"
+  },
+  {
+    "url": "https://jingce.zhiye.com/Campus",
+    "file": "data/sources/2026-09-17-employers/jingce.html",
+    "sha256": "702d37dab4f71cbb90013040726cead11bd3d8fc9b0bbc63c801b0e2df36f25d",
+    "collected_at": "2026-09-17T19:26:42+08:00"
+  },
+  {
+    "url": "https://jingce.zhiye.com/campus/?PageIndex=2",
+    "file": "data/sources/2026-09-17-employers/jingce-page-2.html",
+    "sha256": "d623a5393d27cdb7ff126bbb619373db271cfc90ef34342fb9ef0b7add90dbbc",
+    "collected_at": "2026-09-17T19:35:58+08:00"
+  },
+  {
+    "url": "https://jingce.zhiye.com/zpdetail/390867148",
+    "file": "data/sources/2026-09-17-employers/jingce-detail-390867148.html",
+    "sha256": "7940abc3ec8510ca647cb4429eb02137018e0f699570c3d47a2497d4d8bdc4e1",
+    "collected_at": "2026-09-17T19:35:59+08:00"
+  },
+  {
+    "url": "https://jingce.zhiye.com/zpdetail/390854899",
+    "file": "data/sources/2026-09-17-employers/jingce-detail-390854899.html",
+    "sha256": "47f61c7251a1d2008e14741e86d037b9dce651df707cdf69add3d57f9429a19a",
+    "collected_at": "2026-09-17T19:35:59+08:00"
+  },
+  {
+    "url": "https://jingce.zhiye.com/zpdetail/390854898",
+    "file": "data/sources/2026-09-17-employers/jingce-detail-390854898.html",
+    "sha256": "17d6bafb3a2e058455c00d23d753f6ab45f2e81519ffccc863e00a878dfa93d1",
+    "collected_at": "2026-09-17T19:35:59+08:00"
+  },
+  {
+    "url": "https://jingce.zhiye.com/zpdetail/390854897",
+    "file": "data/sources/2026-09-17-employers/jingce-detail-390854897.html",
+    "sha256": "805715378355e2258eb7fdd705b320b14ffdcde098e4f792a62d42900a1bcb36",
+    "collected_at": "2026-09-17T19:35:59+08:00"
+  },
+  {
+    "url": "https://jingce.zhiye.com/zpdetail/390854896",
+    "file": "data/sources/2026-09-17-employers/jingce-detail-390854896.html",
+    "sha256": "a0ebeecab596900dacfdfa6e2fc1554a10fdc8eab8e0b7b1b638e93dfcf6c155",
+    "collected_at": "2026-09-17T19:36:00+08:00"
+  },
+  {
+    "url": "https://jingce.zhiye.com/zpdetail/390854895",
+    "file": "data/sources/2026-09-17-employers/jingce-detail-390854895.html",
+    "sha256": "4b1bdfefb711d36c0343367a76a21bb0bbcf913a4e9ecb2c5f2a3e677f1d1289",
+    "collected_at": "2026-09-17T19:36:00+08:00"
+  },
+  {
+    "url": "https://jingce.zhiye.com/zpdetail/390854894",
+    "file": "data/sources/2026-09-17-employers/jingce-detail-390854894.html",
+    "sha256": "b3470eba56cab27519f1335c9d3485e6f344008d53611db24d005af994fcbc18",
+    "collected_at": "2026-09-17T19:36:00+08:00"
+  },
+  {
+    "url": "https://jingce.zhiye.com/zpdetail/390854893",
+    "file": "data/sources/2026-09-17-employers/jingce-detail-390854893.html",
+    "sha256": "01b5d109d262909867fee7565807e4d666f2b329c41832e2e18338150eacf752",
+    "collected_at": "2026-09-17T19:36:00+08:00"
+  },
+  {
+    "url": "https://jingce.zhiye.com/zpdetail/390854892",
+    "file": "data/sources/2026-09-17-employers/jingce-detail-390854892.html",
+    "sha256": "bf507458366805293d7540d27938fc9166f4eb2bbe0e9de504bdd5c682fa961d",
+    "collected_at": "2026-09-17T19:36:00+08:00"
+  },
+  {
+    "url": "https://jingce.zhiye.com/zpdetail/390854890",
+    "file": "data/sources/2026-09-17-employers/jingce-detail-390854890.html",
+    "sha256": "8243484049c1d95163ce41281c3c4702610bf345393ab3997c7dbe35539c8ead",
+    "collected_at": "2026-09-17T19:36:01+08:00"
+  },
+  {
+    "url": "https://jingce.zhiye.com/zpdetail/390854891",
+    "file": "data/sources/2026-09-17-employers/jingce-detail-390854891.html",
+    "sha256": "b819b2c7137958c3788063b9fd354490779546497d671c1e872ec7c786985d29",
+    "collected_at": "2026-09-17T19:36:01+08:00"
+  },
+  {
+    "url": "https://jingce.zhiye.com/zpdetail/390852965",
+    "file": "data/sources/2026-09-17-employers/jingce-detail-390852965.html",
+    "sha256": "803036aa9e561622fc8256b622bcc8d5259d40468d38cf284809413d0a1edcb9",
+    "collected_at": "2026-09-17T19:36:01+08:00"
+  },
+  {
+    "url": "https://jingce.zhiye.com/zpdetail/390852949",
+    "file": "data/sources/2026-09-17-employers/jingce-detail-390852949.html",
+    "sha256": "4738168d19ccc9bb01dd134230559288b3a937e7d914c9a2b74bf70284ccd383",
+    "collected_at": "2026-09-17T19:36:02+08:00"
+  },
+  {
+    "url": "https://jingce.zhiye.com/zpdetail/390852962",
+    "file": "data/sources/2026-09-17-employers/jingce-detail-390852962.html",
+    "sha256": "d53646291f23c5c424767d0b85bcc1247ae01eb0e0f522588df1b75c845cbe68",
+    "collected_at": "2026-09-17T19:36:01+08:00"
+  },
+  {
+    "url": "https://jingce.zhiye.com/zpdetail/390852919",
+    "file": "data/sources/2026-09-17-employers/jingce-detail-390852919.html",
+    "sha256": "cf835ceaa4b8ef0a418740beb96961c4d4a08e65c6e76951576e5e69696df1e9",
+    "collected_at": "2026-09-17T19:36:02+08:00"
+  },
+  {
+    "url": "https://jingce.zhiye.com/zpdetail/390851841",
+    "file": "data/sources/2026-09-17-employers/jingce-detail-390851841.html",
+    "sha256": "ea92ac863f4c29c1ed97aed5bbd8297094a9e98911c4075783c03326c301b72c",
+    "collected_at": "2026-09-17T19:36:02+08:00"
+  },
+  {
+    "url": "https://jingce.zhiye.com/zpdetail/390851792",
+    "file": "data/sources/2026-09-17-employers/jingce-detail-390851792.html",
+    "sha256": "0189e89f12f9e7b1c9a16b60d8b56268df1b24d74c894b560dee4cef7557b27b",
+    "collected_at": "2026-09-17T19:36:02+08:00"
+  },
+  {
+    "url": "https://jingce.zhiye.com/zpdetail/390851793",
+    "file": "data/sources/2026-09-17-employers/jingce-detail-390851793.html",
+    "sha256": "c016e2eab5610d2fb7b017d366ba311c9587a63930853a6d0b3edce26dbc10a9",
+    "collected_at": "2026-09-17T19:36:02+08:00"
+  },
+  {
+    "url": "https://jingce.zhiye.com/zpdetail/390851791",
+    "file": "data/sources/2026-09-17-employers/jingce-detail-390851791.html",
+    "sha256": "9b71bbd12b8a50af422b3fc7a1b2e2072a42a857c82617cb9840017bd5419069",
+    "collected_at": "2026-09-17T19:36:03+08:00"
+  },
+  {
+    "url": "https://jingce.zhiye.com/zpdetail/390851790",
+    "file": "data/sources/2026-09-17-employers/jingce-detail-390851790.html",
+    "sha256": "3a37514f94a2931385aaf9c91d81e8f939063f03d7d0e0ef853bbdb3e0ee4deb",
+    "collected_at": "2026-09-17T19:36:03+08:00"
+  },
+  {
+    "url": "https://jingce.zhiye.com/zpdetail/390851789",
+    "file": "data/sources/2026-09-17-employers/jingce-detail-390851789.html",
+    "sha256": "2b4414c97172d48f561982aba1280f66babb3b13433884e1709e0bd345229cf3",
+    "collected_at": "2026-09-17T19:36:03+08:00"
+  },
+  {
+    "url": "https://jingce.zhiye.com/zpdetail/390851788",
+    "file": "data/sources/2026-09-17-employers/jingce-detail-390851788.html",
+    "sha256": "0e5672e6c38ce894ed2772e94e1c7881b4a83c5632f224c8cc87056f89fe27b6",
+    "collected_at": "2026-09-17T19:36:03+08:00"
+  },
+  {
+    "url": "https://jingce.zhiye.com/zpdetail/390851786",
+    "file": "data/sources/2026-09-17-employers/jingce-detail-390851786.html",
+    "sha256": "88de67675a257b4f8abf9a9ab9530432303dba7c84f44ad2bb1aef756d903946",
+    "collected_at": "2026-09-17T19:36:03+08:00"
+  },
+  {
+    "url": "https://jingce.zhiye.com/zpdetail/390851785",
+    "file": "data/sources/2026-09-17-employers/jingce-detail-390851785.html",
+    "sha256": "dde5c3dd88948fb3b62d07ce1f77c147f0b51d082b876e82b5ef8e81558ff1af",
+    "collected_at": "2026-09-17T19:36:04+08:00"
+  },
+  {
+    "url": "https://jingce.zhiye.com/zpdetail/390841817",
+    "file": "data/sources/2026-09-17-employers/jingce-detail-390841817.html",
+    "sha256": "3b3bb76123d5bb335266cf2da094106f6a9fc4b0af88906f2d4166a54474a93e",
+    "collected_at": "2026-09-17T19:36:04+08:00"
+  },
+  {
+    "url": "https://jingce.zhiye.com/zpdetail/390841816",
+    "file": "data/sources/2026-09-17-employers/jingce-detail-390841816.html",
+    "sha256": "5bc23ffe969f5cdbe50d709c8c9a27965bc8423f758ecc00484dcb06e66a61d0",
+    "collected_at": "2026-09-17T19:36:04+08:00"
+  },
+  {
+    "url": "https://jingce.zhiye.com/zpdetail/390851645",
+    "file": "data/sources/2026-09-17-employers/jingce-detail-390851645.html",
+    "sha256": "212519d4d1855bba1554aa3411a1d611677172722a15a9186c3710761e597c7d",
+    "collected_at": "2026-09-17T19:36:04+08:00"
+  },
+  {
+    "url": "https://jingce.zhiye.com/zpdetail/390841229",
+    "file": "data/sources/2026-09-17-employers/jingce-detail-390841229.html",
+    "sha256": "4a8483575a8b42c2344ae08486dbc0b32a8171515aad03a63d0f1d0fab934ca6",
+    "collected_at": "2026-09-17T19:36:04+08:00"
+  },
+  {
+    "url": "https://telink.zhiye.com/Campus",
+    "file": "data/sources/2026-09-17-employers/telink.html",
+    "sha256": "7e74a2588010a31406bbaff75952c442043e5f73c314ac6683dc86b9224404be",
+    "collected_at": "2026-09-17T19:26:42+08:00"
+  },
+  {
+    "url": "https://telink.zhiye.com/zpdetail/190837585",
+    "file": "data/sources/2026-09-17-employers/telink-detail-190837585.html",
+    "sha256": "5a2316781e677789bf24be24b5201608d771ebbcae55567e5ab71c96be9b1450",
+    "collected_at": "2026-09-17T19:36:05+08:00"
+  },
+  {
+    "url": "https://telink.zhiye.com/zpdetail/190837575",
+    "file": "data/sources/2026-09-17-employers/telink-detail-190837575.html",
+    "sha256": "cd8b81dd967e177fac0c5eee3c7dc04d540e4f9659ba0eb13b9dd4290e344d6b",
+    "collected_at": "2026-09-17T19:36:05+08:00"
+  },
+  {
+    "url": "https://telink.zhiye.com/zpdetail/190837563",
+    "file": "data/sources/2026-09-17-employers/telink-detail-190837563.html",
+    "sha256": "b19de7b6d551009809e540df078ec3a218d277925636eb3c322a2d5fae503f42",
+    "collected_at": "2026-09-17T19:36:05+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campus/",
+    "file": "data/sources/2026-09-17-employers/smic.html",
+    "sha256": "00ee2140757888df09f4cd3309519f203ae5812511c47caa3a55bd75020f2514",
+    "collected_at": "2026-09-17T19:26:43+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campus/?PageIndex=2",
+    "file": "data/sources/2026-09-17-employers/smic-page-2.html",
+    "sha256": "467a500692874d7ad13a3b1e753a021866d820c3c23445724abb85ab59ebefca",
+    "collected_at": "2026-09-17T19:36:05+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campus/?PageIndex=3",
+    "file": "data/sources/2026-09-17-employers/smic-page-3.html",
+    "sha256": "7e7b464b849df2b5ebe81318afeeba506fc2055472320021fd9555d48477f2a6",
+    "collected_at": "2026-09-17T19:36:06+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campus/?PageIndex=4",
+    "file": "data/sources/2026-09-17-employers/smic-page-4.html",
+    "sha256": "4401429589e605493fafdc6e2fcdc1b9e3d4295f543f87e1b2dfaa598a65a705",
+    "collected_at": "2026-09-17T19:36:06+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campus/?PageIndex=5",
+    "file": "data/sources/2026-09-17-employers/smic-page-5.html",
+    "sha256": "de43c5855c2c0203e5e5bc9f8d846798a2860ac35c57ccf5f2c3b37ab082ade0",
+    "collected_at": "2026-09-17T19:36:06+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campus/?PageIndex=6",
+    "file": "data/sources/2026-09-17-employers/smic-page-6.html",
+    "sha256": "889135d6f534dad7ad3c93c6eefc3fc65b4ddc4b028483e65ebbfc030ededbcf",
+    "collected_at": "2026-09-17T19:36:06+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campus/?PageIndex=7",
+    "file": "data/sources/2026-09-17-employers/smic-page-7.html",
+    "sha256": "07d139b008410be1ef674e08306cfd4bc775ce722dac97334f8b6c9784ebf8dd",
+    "collected_at": "2026-09-17T19:36:07+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campus/?PageIndex=8",
+    "file": "data/sources/2026-09-17-employers/smic-page-8.html",
+    "sha256": "17691983bd3bda873da0ff7b21abe7bd02bb24616f4be95ce25bf394672f1ab3",
+    "collected_at": "2026-09-17T19:36:07+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campus/?PageIndex=9",
+    "file": "data/sources/2026-09-17-employers/smic-page-9.html",
+    "sha256": "5c0f14216a4b569ff858bb9d7e75849812f066d6660fe4a500fcb58bd0bfb32f",
+    "collected_at": "2026-09-17T19:36:08+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campus/?PageIndex=10",
+    "file": "data/sources/2026-09-17-employers/smic-page-10.html",
+    "sha256": "90b6b548eeb718c5870db7962ddf0fe17e9e763b1104004db76d30dec89e586e",
+    "collected_at": "2026-09-17T19:36:09+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campus/?PageIndex=11",
+    "file": "data/sources/2026-09-17-employers/smic-page-11.html",
+    "sha256": "7d7e201828c577295956acbba28ad0c5489133163afe1c1bf6482cd7d89055e4",
+    "collected_at": "2026-09-17T19:36:09+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campus/?PageIndex=12",
+    "file": "data/sources/2026-09-17-employers/smic-page-12.html",
+    "sha256": "1524aa624a2b44e48494d2a5fb68bf82fb28af7221e57ea6da7c8047ed203fbc",
+    "collected_at": "2026-09-17T19:36:10+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campus/?PageIndex=13",
+    "file": "data/sources/2026-09-17-employers/smic-page-13.html",
+    "sha256": "3398912e55a9e07eec65ab1fd12e2cf1017c1a607ede3441e360407f5e2093e1",
+    "collected_at": "2026-09-17T19:36:10+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campus/?PageIndex=14",
+    "file": "data/sources/2026-09-17-employers/smic-page-14.html",
+    "sha256": "392b4b09bddbbfbe0d67c155f0d840932c195b91f7d53ce15baba77d3a453132",
+    "collected_at": "2026-09-17T19:36:11+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campus/?PageIndex=15",
+    "file": "data/sources/2026-09-17-employers/smic-page-15.html",
+    "sha256": "28740c6e71ee80b71d1e3704a0193dcf5bc4d9c38a1fdc184476ea9d4aa05ad6",
+    "collected_at": "2026-09-17T19:36:11+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campus/?PageIndex=16",
+    "file": "data/sources/2026-09-17-employers/smic-page-16.html",
+    "sha256": "93ce29b3a03814b0917d0b7b6a5dd484b56c1f9b5e4d97992dd3378cf4c07497",
+    "collected_at": "2026-09-17T19:36:12+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campus/?PageIndex=17",
+    "file": "data/sources/2026-09-17-employers/smic-page-17.html",
+    "sha256": "4633285eac32601d22660d5240494976355267ae843500ae0e3ce3efc8cec715",
+    "collected_at": "2026-09-17T19:36:12+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campus/?PageIndex=18",
+    "file": "data/sources/2026-09-17-employers/smic-page-18.html",
+    "sha256": "e18253ca6d13a758a6a373dfd47d5bb7a8a3ca0a5cd79c56990f9ce7a9d4cc75",
+    "collected_at": "2026-09-17T19:36:13+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campus/?PageIndex=19",
+    "file": "data/sources/2026-09-17-employers/smic-page-19.html",
+    "sha256": "5bee78a751fa88959a35ae3340ae27983693ff656bac1c18f0e84947e91ee5e7",
+    "collected_at": "2026-09-17T19:36:13+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campus/?PageIndex=20",
+    "file": "data/sources/2026-09-17-employers/smic-page-20.html",
+    "sha256": "cb7f8826ba5bff96be80defdc3c3987333f35d6de25f258e50f89c47caf7925a",
+    "collected_at": "2026-09-17T19:36:14+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campus/?PageIndex=21",
+    "file": "data/sources/2026-09-17-employers/smic-page-21.html",
+    "sha256": "1ec6825cc319a117e8bbb48a646b53bc22f4d31f8dcfe470fb864139c0ef6074",
+    "collected_at": "2026-09-17T19:36:14+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campus/?PageIndex=22",
+    "file": "data/sources/2026-09-17-employers/smic-page-22.html",
+    "sha256": "c5b852f0662cad33605f5200ef0649474870df81e475ff65d04d93e5b61a8d2c",
+    "collected_at": "2026-09-17T19:36:15+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campus/?PageIndex=23",
+    "file": "data/sources/2026-09-17-employers/smic-page-23.html",
+    "sha256": "d2a1f21b02cdcc1b22c9fafffe4676bc5938c38f598c62cae352290fab5c3d0f",
+    "collected_at": "2026-09-17T19:36:15+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campus/?PageIndex=24",
+    "file": "data/sources/2026-09-17-employers/smic-page-24.html",
+    "sha256": "4140be0051eee7e6a6e8d0c205bbf9290f8656e742e4a9d6fe4de3cb76aaac40",
+    "collected_at": "2026-09-17T19:36:16+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campus/?PageIndex=25",
+    "file": "data/sources/2026-09-17-employers/smic-page-25.html",
+    "sha256": "19642bf44eb26ffd452dc7468ad53b6234a4f68d41091157794829db4f363260",
+    "collected_at": "2026-09-17T19:36:16+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campus/?PageIndex=26",
+    "file": "data/sources/2026-09-17-employers/smic-page-26.html",
+    "sha256": "b9c80d3ed70f5a196a5eef5b80a87349fce9da2da67019db9e49b26005934719",
+    "collected_at": "2026-09-17T19:36:18+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852397",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852397.html",
+    "sha256": "a450bb9ddb98d9c6fce4e98d7744ab67853962d783a826e71b1d8cb18dead855",
+    "collected_at": "2026-09-17T19:36:18+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852209",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852209.html",
+    "sha256": "6f12a051a3d126ca5c71c87ee36dd8b4d26e2dd0a1dfee3b0b7062f91c1d9f4a",
+    "collected_at": "2026-09-17T19:36:18+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852405",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852405.html",
+    "sha256": "bd2d6abc431f939504ae5af938dd5379ed7890e092d35f4ebc7c2adba5814ea8",
+    "collected_at": "2026-09-17T19:36:18+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852438",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852438.html",
+    "sha256": "f838dee0e5f2b8ded7998aca2c1810d5b501102750339eabec2914ea2d31b841",
+    "collected_at": "2026-09-17T19:36:18+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852387",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852387.html",
+    "sha256": "d1986230553846f55a69853cf81e1483924a0421e5c0ba7c1fa11c31e14bae8d",
+    "collected_at": "2026-09-17T19:36:18+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852360",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852360.html",
+    "sha256": "0e895dea8ea283eff89e3166acffd4f18df92b4ba2af6daca28cdc797b624c44",
+    "collected_at": "2026-09-17T19:36:18+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852362",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852362.html",
+    "sha256": "44c0494f7cbfb5ef89c9966fea02324e0845471c0295cdcd4899fe611d4ae741",
+    "collected_at": "2026-09-17T19:36:19+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852327",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852327.html",
+    "sha256": "ed230fb5637d49de94b004430029d52c1dc3fa4329b0d9bfc0f0577610712260",
+    "collected_at": "2026-09-17T19:36:19+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852286",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852286.html",
+    "sha256": "9a7541ec7659f15a449016687294234403dcbf7b641881e39a95ad2b95ad1192",
+    "collected_at": "2026-09-17T19:36:19+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852320",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852320.html",
+    "sha256": "0c9b8a309d77adfd81b7cd5d5e6b4187fe87b536390baf93d1349bc43c570fe3",
+    "collected_at": "2026-09-17T19:36:19+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852283",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852283.html",
+    "sha256": "8e078bec61c920e099293ebc35ab6874aba425bda487d16c3578f15d53f37a41",
+    "collected_at": "2026-09-17T19:36:19+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852324",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852324.html",
+    "sha256": "05c5f813c6835dae75e68fd6a8d542707d09b9d8d6d432f55a872560827ba8c2",
+    "collected_at": "2026-09-17T19:36:20+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852296",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852296.html",
+    "sha256": "3d283301c40284625491623f4ef074375876deade2ac9b7aa28b782235081a47",
+    "collected_at": "2026-09-17T19:36:20+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852294",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852294.html",
+    "sha256": "80792dc33c4b26166151e46eb39f7792dd439857b4dd89c3e91d02e587aa9f23",
+    "collected_at": "2026-09-17T19:36:19+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852281",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852281.html",
+    "sha256": "e970959e539144a6af4d08406cd3dafb9134cb853bd74b577688dab2640a5358",
+    "collected_at": "2026-09-17T19:36:20+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852224",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852224.html",
+    "sha256": "8878a6dbf1c78389029106bd42e57371f36275e5c40447413c4262b735ff4f52",
+    "collected_at": "2026-09-17T19:36:20+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390866737",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390866737.html",
+    "sha256": "9251179f549c2012462e376a7a9170e3d9e190da374588a1044d77b87125eb20",
+    "collected_at": "2026-09-17T19:36:20+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390866598",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390866598.html",
+    "sha256": "5ebdbf46079acbb61542788d12ab40011479bc527c6f012a6757a2ba6cd338b2",
+    "collected_at": "2026-09-17T19:36:20+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390866606",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390866606.html",
+    "sha256": "8630848d3e06b11d3e8bad7b15b48baf977dbf9d6ed5f48c607aa64b8d7301c9",
+    "collected_at": "2026-09-17T19:36:20+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390865195",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390865195.html",
+    "sha256": "f836148be5c22fe8f58ff66de5344e0387e1126e3f0a0e39c7adcc378916d6d4",
+    "collected_at": "2026-09-17T19:36:20+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852445",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852445.html",
+    "sha256": "24c838cbd3ce8e7b9ffd9c29addc088e685bb4e149e52ff0f03b3ef32c1c6108",
+    "collected_at": "2026-09-17T19:36:20+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852443",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852443.html",
+    "sha256": "675d52d58e0897d7e30315406a6d8b127b8f3223e3ee627e0b0cd6f7fd0b531f",
+    "collected_at": "2026-09-17T19:36:21+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852441",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852441.html",
+    "sha256": "9a7a0c28a315ee85d882c687a189db699d131426285ef5132b65fbf748823713",
+    "collected_at": "2026-09-17T19:36:21+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852439",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852439.html",
+    "sha256": "bf82af20312c7ab71e80f7ef108fdc76e85a54cf0b938e59568a92d0fc776400",
+    "collected_at": "2026-09-17T19:36:21+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852435",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852435.html",
+    "sha256": "53d4f0e1a4314822e46b698b3c9783b77c3b0f28701d2db5adbc6314dfb6dee7",
+    "collected_at": "2026-09-17T19:36:21+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852436",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852436.html",
+    "sha256": "5d91d2ef01758827286c7b256eebfaa256b3e80249f2fdf39e145b57f687bf3e",
+    "collected_at": "2026-09-17T19:36:21+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852432",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852432.html",
+    "sha256": "a3782b6083c02b83b6a994b9d70afb8baef6fc84ff3ee3f313f49f83b7ac8fc8",
+    "collected_at": "2026-09-17T19:36:21+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852433",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852433.html",
+    "sha256": "0471c2cef6846d7aeb356f006a2259b71241310fba83949eaa7f604266090d34",
+    "collected_at": "2026-09-17T19:36:21+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852431",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852431.html",
+    "sha256": "1b6bd898343ce7e7550c4d1fdd9626f2150c83ac2dffcab1d84504cd6f0aa713",
+    "collected_at": "2026-09-17T19:36:21+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852428",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852428.html",
+    "sha256": "9e22080ff3ab3f33e6adbe0567944c4a9a3e4da5936c1f6457cc29abb9474993",
+    "collected_at": "2026-09-17T19:36:22+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852429",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852429.html",
+    "sha256": "5f4f1db046e454173c64bfb2db87456e927698143f3ff110c632a10176f59848",
+    "collected_at": "2026-09-17T19:36:21+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852427",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852427.html",
+    "sha256": "abd44a107a190a77a14f1a3be3d2bbd79259428a29ddd1ac58bd073a1caee583",
+    "collected_at": "2026-09-17T19:36:22+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852425",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852425.html",
+    "sha256": "c4b51e88d0e28416412bd09650877cfc6d819f53f060d9f8f5f4d34d0da63eb3",
+    "collected_at": "2026-09-17T19:36:22+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852424",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852424.html",
+    "sha256": "8f40b6a9244164bef1d7211cd60bd73e453d4bd3d887357fe814ba1c8a12e4b6",
+    "collected_at": "2026-09-17T19:36:22+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852420",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852420.html",
+    "sha256": "c6122db8b7d063a9bce6d034237f4aa41d05d94a5bbbc825d35bc5b3dd41721e",
+    "collected_at": "2026-09-17T19:36:22+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852421",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852421.html",
+    "sha256": "38c6db3493ef6bd739e9360602df036cca782c63184670db98be4d69099ba4cc",
+    "collected_at": "2026-09-17T19:36:22+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852418",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852418.html",
+    "sha256": "3ead5dd6e5e82da1eea4752a5c37956fb12db183458eb6f6c55fdb4da8a8e2d6",
+    "collected_at": "2026-09-17T19:36:22+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852411",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852411.html",
+    "sha256": "839ad4d6c58bd94bc29831527fd8a242cdcb7b3945eb6c920f1b6a8cb6a5fe15",
+    "collected_at": "2026-09-17T19:36:23+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852416",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852416.html",
+    "sha256": "5bd2f23933a683aa5afa073b9ff545585e30cacaacb1b38f702dd1ffebea5153",
+    "collected_at": "2026-09-17T19:36:23+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852414",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852414.html",
+    "sha256": "8133572eeb955c4bf1fff6dac2be687b81f4564ed95d206b37544eb87868cce3",
+    "collected_at": "2026-09-17T19:36:22+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852403",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852403.html",
+    "sha256": "025cd8ebe845e9e2a93c9f6e0c922d6288e172e8fbb6c5e7241536a04874d7f2",
+    "collected_at": "2026-09-17T19:36:23+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852409",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852409.html",
+    "sha256": "71c2688f31250db87fec24daeeb93592f6ea2c90eb47f27f0a759f89f1ad81f4",
+    "collected_at": "2026-09-17T19:36:23+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852407",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852407.html",
+    "sha256": "9b3fdd15f6e3fc33fd82a730c6685fac2683bfcc0eabad70d3037c0b0722df83",
+    "collected_at": "2026-09-17T19:36:23+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852399",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852399.html",
+    "sha256": "fb0fa4807b0c4dab73525c4426a32084bc24093842c2e61b326982ae24c0bcc4",
+    "collected_at": "2026-09-17T19:36:23+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852402",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852402.html",
+    "sha256": "5b8910e72c64a09b96dcd05de0ba620c51678fd731063ce1b500db2a28597b32",
+    "collected_at": "2026-09-17T19:36:23+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852398",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852398.html",
+    "sha256": "5e7a36b3b87f3412b244f95f3f3f18650549387047fbb7d90ff597e6f78f735f",
+    "collected_at": "2026-09-17T19:36:23+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852396",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852396.html",
+    "sha256": "764da59a694b71bc9088379494bc4537fdf5ece965d8c128b4877602261f9e29",
+    "collected_at": "2026-09-17T19:36:23+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852394",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852394.html",
+    "sha256": "ff76807f8f15a376eee4c181c0120659ca67809f47afac931dc7ef5be4f2f92f",
+    "collected_at": "2026-09-17T19:36:24+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852392",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852392.html",
+    "sha256": "45cf2f6d08a305dac5be6cc75be543185a881a41578b25e37a33c4ae06a06c7d",
+    "collected_at": "2026-09-17T19:36:24+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852390",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852390.html",
+    "sha256": "4fe4ede82e603a3fe7ef46c39db3c69116ad6f1c2b9265cbf8010cda5d0abbe6",
+    "collected_at": "2026-09-17T19:36:24+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852388",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852388.html",
+    "sha256": "29bf6c968caaf4973c16323b1525741a5a81c2fcf06c09ea3ab109eefddad071",
+    "collected_at": "2026-09-17T19:36:24+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852385",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852385.html",
+    "sha256": "5771c5fb4acbed18ac5607161bf91dec1ee4057c2228c6ba877f66e0c72ad925",
+    "collected_at": "2026-09-17T19:36:24+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852384",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852384.html",
+    "sha256": "0a4921d11bf2ce3a7e5abde0fa078b0c9d507d2bb32cece3835583152914f073",
+    "collected_at": "2026-09-17T19:36:24+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852383",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852383.html",
+    "sha256": "a3545a0d94b035cbe40ce758033ea41dfc22f022fbfc42cbe2ceecbc551047ec",
+    "collected_at": "2026-09-17T19:36:24+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852380",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852380.html",
+    "sha256": "0d5a78adbfa4dd5bc76a1fe9dcd27bc0c3571238dc444d966c5ed68efdeee97f",
+    "collected_at": "2026-09-17T19:36:24+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852378",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852378.html",
+    "sha256": "b3a52b74eb9c2d9515651a95cea1169c55d7ec227687b2fece6bd0138251e4ff",
+    "collected_at": "2026-09-17T19:36:24+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852379",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852379.html",
+    "sha256": "03ef30b0eebf71e366b4c03e5eb2bafb77f8107ef45a5536a19f96b5d4a474f1",
+    "collected_at": "2026-09-17T19:36:24+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852376",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852376.html",
+    "sha256": "a8df5e82effd5e6c0c7549d594817f2b006f201599a36a0cb8d17b75d44c5d09",
+    "collected_at": "2026-09-17T19:36:25+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852375",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852375.html",
+    "sha256": "2ac44e7053a2386d550847472b492720ce17f5638b7e7b06ad38f182e81f2618",
+    "collected_at": "2026-09-17T19:36:25+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852373",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852373.html",
+    "sha256": "5e20e4914a5b9ada8e01501416809aee44f11b580f10106e59f17504109351d6",
+    "collected_at": "2026-09-17T19:36:25+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852371",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852371.html",
+    "sha256": "b553fddc3638ee98cbf95a0d8ac2b790fc0846fc4bd952c0dcabce2f928d1122",
+    "collected_at": "2026-09-17T19:36:25+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852370",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852370.html",
+    "sha256": "231225b44e17b13185bd4a8bc62c18a7f6635b64c10d754b4a255821d9b56663",
+    "collected_at": "2026-09-17T19:36:25+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852369",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852369.html",
+    "sha256": "a193680942e8b03142e905fca86c94f78fc57b42ceee848373f54a16439df917",
+    "collected_at": "2026-09-17T19:36:25+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852359",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852359.html",
+    "sha256": "d6909ba252a71411ab85ea4d0d338aada8175a7cc3ed51020adb84e89b437418",
+    "collected_at": "2026-09-17T19:36:26+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852366",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852366.html",
+    "sha256": "fc3a28284b7ed05a9f7db37643d02093a55f0a9568f9276af163624ed968d599",
+    "collected_at": "2026-09-17T19:36:25+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852365",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852365.html",
+    "sha256": "18b5994d1dd8a557b1c0fd00f39bed5823371dbb7f7e0faeb818b1ee03ee430f",
+    "collected_at": "2026-09-17T19:36:25+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852356",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852356.html",
+    "sha256": "0e588c7f4829ba719e7df923b789162fbae3e02333563f8cfdb2752518a240ee",
+    "collected_at": "2026-09-17T19:36:25+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852353",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852353.html",
+    "sha256": "d3cc139d428c62a651d03a16e377529d3573d3770dc96d5be35247021fe04b9e",
+    "collected_at": "2026-09-17T19:36:26+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852355",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852355.html",
+    "sha256": "7ab01536f39f118e397fc06b71bca0d51a0c0ebf90f17ed89fb830bd7a88534f",
+    "collected_at": "2026-09-17T19:36:26+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852352",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852352.html",
+    "sha256": "6c89785d194df8f14f1f02ac708f6e9c3dc51cd4305238c4f22a3dfbcca385b1",
+    "collected_at": "2026-09-17T19:36:27+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852351",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852351.html",
+    "sha256": "cc32bdd3180ec19cd0ebff814bfc401bb3533224846ab74218b543259dc34415",
+    "collected_at": "2026-09-17T19:36:26+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852349",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852349.html",
+    "sha256": "e5ca5e2e69425165cd6445e35c67f0506f2d150201d40c573ba7d5993ea3a15c",
+    "collected_at": "2026-09-17T19:36:27+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852350",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852350.html",
+    "sha256": "f2bda010a9a069c0840269bfd393bbf330eab38a2b70b7ca43cdeb4c2547a6ec",
+    "collected_at": "2026-09-17T19:36:28+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852348",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852348.html",
+    "sha256": "60346af366f06394a95b10950ab4a472e245156ec4e88f751d95b492db7b01f9",
+    "collected_at": "2026-09-17T19:36:27+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852346",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852346.html",
+    "sha256": "156c0dc5342aacff5cea299b967113c452adf981554c1c81ecb1dece0d94c1ed",
+    "collected_at": "2026-09-17T19:36:27+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852344",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852344.html",
+    "sha256": "8d2627a674011133fe6818242a91f8858a586a027b6e1f9c05436b5c279a30ee",
+    "collected_at": "2026-09-17T19:36:27+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852341",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852341.html",
+    "sha256": "61167381106be4a11bd0da21350f166c9c027123e98dd98de0255f8e770c02a3",
+    "collected_at": "2026-09-17T19:36:28+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852339",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852339.html",
+    "sha256": "35df52cb0fee6c3793a7c3ef3e243e86fd1807f7433c94b8c59b05abb63fc5d5",
+    "collected_at": "2026-09-17T19:36:28+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852343",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852343.html",
+    "sha256": "1e1d521e086ca3fd4e7964761103d082496f2f9963b4a918feff460ea56a2e80",
+    "collected_at": "2026-09-17T19:36:27+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852336",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852336.html",
+    "sha256": "72e461c33ba312299ef3f36246bf67886c3c49af3d324cf8b5924364734e073b",
+    "collected_at": "2026-09-17T19:36:28+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852332",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852332.html",
+    "sha256": "f00502a89edb67c642629eced4945a714bc3da4fa0789f50ac967e5c4ea1d54e",
+    "collected_at": "2026-09-17T19:36:28+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852334",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852334.html",
+    "sha256": "fb2d30178f6ba91b8b15bb3c6d3990b12add673dc9afcdfbf6d854e9dff3b0c7",
+    "collected_at": "2026-09-17T19:36:28+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852330",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852330.html",
+    "sha256": "1dc2a79fe3f735a8d4065d153aa615c33b2f9e140523acee1742660cde2ebbb3",
+    "collected_at": "2026-09-17T19:36:28+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852329",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852329.html",
+    "sha256": "30742faed4867577d219f99c19a142f6723d7722d10f02f09ef52bc241076280",
+    "collected_at": "2026-09-17T19:36:28+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852325",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852325.html",
+    "sha256": "ee46e4de3fede8f43c709156bb2b8f85052d5eebee204e71577130f1ff01293a",
+    "collected_at": "2026-09-17T19:36:29+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852326",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852326.html",
+    "sha256": "d912e58bb7f84ac03a4977e9619ee1c6ced7d59137518493c73d7821f6680f86",
+    "collected_at": "2026-09-17T19:36:29+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852323",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852323.html",
+    "sha256": "cec1fad01d9aebea44220140274fa624b0c5fe9019e24172f951ec7d16c6c506",
+    "collected_at": "2026-09-17T19:36:29+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852322",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852322.html",
+    "sha256": "72c49469ed2f76d4b2f41b8b25d137a17d4c1dd64cfc90ca87de625fc57f1eb5",
+    "collected_at": "2026-09-17T19:36:29+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852319",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852319.html",
+    "sha256": "06537a4308fa9fbf787480c9175f881b5f7d846af25434ccda953de1f2df0d46",
+    "collected_at": "2026-09-17T19:36:29+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852321",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852321.html",
+    "sha256": "d0132d304212bf7f6de05506057cd3959a9bf9f876f0bbb05799229b6d6209b8",
+    "collected_at": "2026-09-17T19:36:29+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852317",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852317.html",
+    "sha256": "6cbc7440210f2aaa0c811c9245e6219af8887471d5fc33f045e4e1e4412a85aa",
+    "collected_at": "2026-09-17T19:36:29+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852315",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852315.html",
+    "sha256": "96abb4df5c1f595e0aa4472cd9f70c2b29a0f50eacfbbc970c786ddac0f6bcb6",
+    "collected_at": "2026-09-17T19:36:29+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852316",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852316.html",
+    "sha256": "848a3ddbdb407d2749164a2374c40f6ffaac7d01ace98e1ce8b5435470ba881f",
+    "collected_at": "2026-09-17T19:36:30+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852313",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852313.html",
+    "sha256": "656b8c6f94a8c2c069d13945fc298c9572a0bef371db146c5f76be6ef98059e4",
+    "collected_at": "2026-09-17T19:36:30+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852309",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852309.html",
+    "sha256": "78e55d7b7162b8c53acdc0ddba09fd7c003ba4b9a41d7815e52afb1c3d78a80e",
+    "collected_at": "2026-09-17T19:36:30+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852311",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852311.html",
+    "sha256": "3596da92243a6e124458be49aa361297b696ce0c65b40ce8541c9ab1bbeaccb1",
+    "collected_at": "2026-09-17T19:36:30+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852308",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852308.html",
+    "sha256": "f057b3a967d76a9018ca8c90b128b427899746952bdcd19b8c631a3dc5049e72",
+    "collected_at": "2026-09-17T19:36:30+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852306",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852306.html",
+    "sha256": "fada877a7aed07d240b5bcba42f58965569659b3b0af211516114cf7d02bc98c",
+    "collected_at": "2026-09-17T19:36:30+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852304",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852304.html",
+    "sha256": "d6e9f4839058a1fa2cdeaf008e03af524d99db9e1aa01f8396c0a13ec861c174",
+    "collected_at": "2026-09-17T19:36:30+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852301",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852301.html",
+    "sha256": "08273916ed5d271f8860166f7b0d8d1f79005c324cdb7844a1a7edf6cadd9484",
+    "collected_at": "2026-09-17T19:36:30+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852300",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852300.html",
+    "sha256": "534205852dee61bfe6108282fe9cb93060c4d1e478c164db5bcf68d954372897",
+    "collected_at": "2026-09-17T19:36:30+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852298",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852298.html",
+    "sha256": "f7a94ba1c61a269ad45273e758381d2848754e879bbd0e9fad2200bc0f2f2138",
+    "collected_at": "2026-09-17T19:36:31+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852297",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852297.html",
+    "sha256": "9b8b229b9e405a32032f646c7b48939fbca4326805602a7b4eb4f77b5b53eed8",
+    "collected_at": "2026-09-17T19:36:31+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852293",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852293.html",
+    "sha256": "99447d93e05f9f49a730e208144630d4845306bb5784d231cb97065aec075e29",
+    "collected_at": "2026-09-17T19:36:31+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852291",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852291.html",
+    "sha256": "c789285972209d102c0a43ca902fb111b801537ccc48bbfb0d3e58d2489ffd93",
+    "collected_at": "2026-09-17T19:36:31+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852289",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852289.html",
+    "sha256": "4ff256f377962e8dbbaedbcf2fac4abfe89c24e14679206dd6c430c69fdf083e",
+    "collected_at": "2026-09-17T19:36:31+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852288",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852288.html",
+    "sha256": "2ab936e33bb825239a1761ae4b6d965f250b62dd78918a2bdff63f753ea0fac0",
+    "collected_at": "2026-09-17T19:36:31+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852284",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852284.html",
+    "sha256": "34382f6650c24a63884cd90bce2ed6f9e513d3e932ebe9be3f26a78fbc0a35d1",
+    "collected_at": "2026-09-17T19:36:31+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852282",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852282.html",
+    "sha256": "6c9ff44e16cdc3d9dd435bba2989eef4b03e8b57861a73a1bb8712a42bd4f4d6",
+    "collected_at": "2026-09-17T19:36:32+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852241",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852241.html",
+    "sha256": "fda12a0e98f7113cd732bd6027469e80f26afb13e5b5bea90d0da83a9fed1416",
+    "collected_at": "2026-09-17T19:36:32+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852243",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852243.html",
+    "sha256": "74d87aefee2ae6a14d9e25aced4b1c0d8667f5be3c3bc74f4ec4429c379bd8d7",
+    "collected_at": "2026-09-17T19:36:31+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852238",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852238.html",
+    "sha256": "d3a6b04408ac4a8ed0879649927191c8861abf39fdc507e2dc714335ca33fdd5",
+    "collected_at": "2026-09-17T19:36:32+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852237",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852237.html",
+    "sha256": "870420de412f817a166df27617c6cfb62974194867119fae7c119f7fafb2b0cb",
+    "collected_at": "2026-09-17T19:36:32+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852234",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852234.html",
+    "sha256": "9f3a28334576e58195a6022c87f63001560f3efdba0ee257c788bdf43d47d64e",
+    "collected_at": "2026-09-17T19:36:32+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852232",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852232.html",
+    "sha256": "bce69299d6bf170558f308b15bace566055d33969d2e1ded3944e6cdba8ae279",
+    "collected_at": "2026-09-17T19:36:32+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852230",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852230.html",
+    "sha256": "3ccb16d0710233fb05a8d20285bdcca4e0a156ea93a7a346f97d6294658eeb62",
+    "collected_at": "2026-09-17T19:36:33+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852227",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852227.html",
+    "sha256": "b22b6b0057bfc7ee0e608976bc1edd0b91b003d99cc43ab277edd22bfafefba6",
+    "collected_at": "2026-09-17T19:36:33+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852223",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852223.html",
+    "sha256": "14cde0e0d6ec382b46bfa264e18a390251256f155f9fc980dac20efc65bfc3b2",
+    "collected_at": "2026-09-17T19:36:33+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852219",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852219.html",
+    "sha256": "e7318585e46041d2cd50160c2199ec2c364d9bc064e9ba7442f5e0749adf7d58",
+    "collected_at": "2026-09-17T19:36:33+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852220",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852220.html",
+    "sha256": "6e1aa357d1b48c4168fdf41051decfe67ef1e8e093a3855f76549bff8b65bdd1",
+    "collected_at": "2026-09-17T19:36:33+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852212",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852212.html",
+    "sha256": "a0a371f1634319c5669a0e35973acc57cb7dec91d2d5262989126e1017f4045f",
+    "collected_at": "2026-09-17T19:36:33+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852211",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852211.html",
+    "sha256": "0a2ef6ec02395bd4ba7a07a2d37d1b647f641ed2a222d310e3d82b33e547449c",
+    "collected_at": "2026-09-17T19:36:33+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852210",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852210.html",
+    "sha256": "44d65e0193d123d03f58d1ba59f557cb16b19889a89518f6d832b2f624edc587",
+    "collected_at": "2026-09-17T19:36:33+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852208",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852208.html",
+    "sha256": "64e016ba696a80b06396b1d992cd64b8b13c3048d2f311b901dbf597a3a6821a",
+    "collected_at": "2026-09-17T19:36:33+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852206",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852206.html",
+    "sha256": "c7f56579ef9c2cac91feebe07becd46e128b426fe4c1757950f1ea8a8cd6d70d",
+    "collected_at": "2026-09-17T19:36:34+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852207",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852207.html",
+    "sha256": "8746380bdff8e4e9b83416ae52b1820ab4d4678513c4b8a99e6738cf9abb6a46",
+    "collected_at": "2026-09-17T19:36:34+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390852201",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390852201.html",
+    "sha256": "0c3c362e0cf9d40fcec6e326ab3183bfd0a09d78e3c56ea109c7fa9859ee8827",
+    "collected_at": "2026-09-17T19:36:34+08:00"
+  },
+  {
+    "url": "https://smics.zhiye.com/campusxq?jobId=390839458",
+    "file": "data/sources/2026-09-17-employers/smic-detail-390839458.html",
+    "sha256": "f1d954dde1285f1cc9916193be8d05947987d9322affbeb83f40eedbe675ce45",
+    "collected_at": "2026-09-17T19:36:34+08:00"
+  },
+  {
+    "url": "https://eswinchipch.zhiye.com/campus",
+    "file": "data/sources/2026-09-17-employers/eswin.html",
+    "sha256": "27dd5ae0be2900c2d0bcdeaa977cbc86cc0bd06614853ea59d61b5120bde40b4",
+    "collected_at": "2026-09-17T19:26:44+08:00"
+  },
+  {
+    "url": "https://eswinchipch.zhiye.com/campusxq?jobId=311186299",
+    "file": "data/sources/2026-09-17-employers/eswin-detail-311186299.html",
+    "sha256": "80a4dec0e7a773b35773c2f9d7bfdf3ec92f46350deccc61aeb09d1807e48025",
+    "collected_at": "2026-09-17T19:36:34+08:00"
+  },
+  {
+    "url": "https://eswinchipch.zhiye.com/campusxq?jobId=311186297",
+    "file": "data/sources/2026-09-17-employers/eswin-detail-311186297.html",
+    "sha256": "f662dbfec69196b66c30a6f9fe6b1c8f7a59240c59312dc60fb15adb81a09b68",
+    "collected_at": "2026-09-17T19:36:34+08:00"
+  },
+  {
+    "url": "https://eswinchipch.zhiye.com/campusxq?jobId=311167170",
+    "file": "data/sources/2026-09-17-employers/eswin-detail-311167170.html",
+    "sha256": "0480f14f1934465e493f2461f53293d15a132ff207e0a31e8777726d7f309bf5",
+    "collected_at": "2026-09-17T19:36:34+08:00"
+  },
+  {
+    "url": "https://eswinchipch.zhiye.com/campusxq?jobId=311184899",
+    "file": "data/sources/2026-09-17-employers/eswin-detail-311184899.html",
+    "sha256": "0ffee752a8e169a2ca9f982fec3081f6e57eb99058cf392b3e937cc65de87854",
+    "collected_at": "2026-09-17T19:36:35+08:00"
+  },
+  {
+    "url": "https://eswinchipch.zhiye.com/campusxq?jobId=311184897",
+    "file": "data/sources/2026-09-17-employers/eswin-detail-311184897.html",
+    "sha256": "95afb04b7a96c42b88a938dd18346804b7650e03a4f001c09132668f77f08cd2",
+    "collected_at": "2026-09-17T19:36:35+08:00"
+  },
+  {
+    "url": "https://eswinchipch.zhiye.com/campusxq?jobId=311184896",
+    "file": "data/sources/2026-09-17-employers/eswin-detail-311184896.html",
+    "sha256": "5a6ff39171e1009d702f23ae2838cb5680963dcd51bc3ca339a565af28de8581",
+    "collected_at": "2026-09-17T19:36:35+08:00"
+  },
+  {
+    "url": "https://eswinchipch.zhiye.com/campusxq?jobId=311184895",
+    "file": "data/sources/2026-09-17-employers/eswin-detail-311184895.html",
+    "sha256": "28fb00778345274995cede84cc3e298fdef91a66fd66213de14a5936340e36ca",
+    "collected_at": "2026-09-17T19:36:35+08:00"
+  },
+  {
+    "url": "https://eswinchipch.zhiye.com/campusxq?jobId=311184893",
+    "file": "data/sources/2026-09-17-employers/eswin-detail-311184893.html",
+    "sha256": "b1f54c0c515ca8fa94f362a2b61dbfe09c0a0e7bd50b13cc82280c8aa095f0a9",
+    "collected_at": "2026-09-17T19:36:35+08:00"
+  },
+  {
+    "url": "https://eswinchipch.zhiye.com/campusxq?jobId=311184894",
+    "file": "data/sources/2026-09-17-employers/eswin-detail-311184894.html",
+    "sha256": "c222c299fae4e7b03c51a2fedf60ea28d4a89fb5cf31eb82ff3a579de4fcef42",
+    "collected_at": "2026-09-17T19:36:35+08:00"
+  },
+  {
+    "url": "https://eswinchipch.zhiye.com/campusxq?jobId=311184892",
+    "file": "data/sources/2026-09-17-employers/eswin-detail-311184892.html",
+    "sha256": "02664eaa6354b8f69c244699a8e7cbaa105ed5bfaef075fa59a100d50d4fadc9",
+    "collected_at": "2026-09-17T19:36:35+08:00"
+  },
+  {
+    "url": "https://eswinchipch.zhiye.com/campusxq?jobId=311184891",
+    "file": "data/sources/2026-09-17-employers/eswin-detail-311184891.html",
+    "sha256": "e929bd68befdd9dbf93dcb8d254d98766e357b05dad1e193228dc4db635e2ea1",
+    "collected_at": "2026-09-17T19:36:35+08:00"
+  },
+  {
+    "url": "https://eswinchipch.zhiye.com/campusxq?jobId=311184889",
+    "file": "data/sources/2026-09-17-employers/eswin-detail-311184889.html",
+    "sha256": "147a1a52ef056ba53833e864cb65771c08c9cb6cad678380a56bb81a4decabfe",
+    "collected_at": "2026-09-17T19:36:36+08:00"
+  },
+  {
+    "url": "https://eswinchipch.zhiye.com/campusxq?jobId=311184890",
+    "file": "data/sources/2026-09-17-employers/eswin-detail-311184890.html",
+    "sha256": "d55ff4f0fdaf6bf47397de866aad6d51fc2a44e9035287ff65036bb65cbbd158",
+    "collected_at": "2026-09-17T19:36:36+08:00"
+  },
+  {
+    "url": "https://gtgroup.zhiye.com/Campus",
+    "file": "data/sources/2026-09-17-employers/gtgroup.html",
+    "sha256": "32eaf6b0f03a5abf921f6f545bf11449dacc3c5a0bb7850addede67affabfc12",
+    "collected_at": "2026-09-17T19:33:18+08:00"
+  },
+  {
+    "url": "https://gtgroup.zhiye.com/campus/?PageIndex=2",
+    "file": "data/sources/2026-09-17-employers/gtgroup-page-2.html",
+    "sha256": "7fc0ac2116d31f244f111017639b1cb441ea3a9193bc80445365c1d2e5b3b94b",
+    "collected_at": "2026-09-17T19:36:36+08:00"
+  },
+  {
+    "url": "https://gtgroup.zhiye.com/zpdetail/351610929",
+    "file": "data/sources/2026-09-17-employers/gtgroup-detail-351610929.html",
+    "sha256": "7d73dc05c727ae9769709a17b84dbe6fe4e851b8960dc5d2f9a75d11a9d1b8b5",
+    "collected_at": "2026-09-17T19:36:38+08:00"
+  },
+  {
+    "url": "https://gtgroup.zhiye.com/zpdetail/351610927",
+    "file": "data/sources/2026-09-17-employers/gtgroup-detail-351610927.html",
+    "sha256": "9878f670c097e79d94dd97a9aa34768517de96529e765286eb5ec4106c3cfed7",
+    "collected_at": "2026-09-17T19:36:37+08:00"
+  },
+  {
+    "url": "https://gtgroup.zhiye.com/zpdetail/351610928",
+    "file": "data/sources/2026-09-17-employers/gtgroup-detail-351610928.html",
+    "sha256": "bc5ad412d93ccb63541e044f1738a2db191479595bb9803ee525a28a916a7830",
+    "collected_at": "2026-09-17T19:36:37+08:00"
+  },
+  {
+    "url": "https://gtgroup.zhiye.com/zpdetail/351610925",
+    "file": "data/sources/2026-09-17-employers/gtgroup-detail-351610925.html",
+    "sha256": "3ffbcd009456f2ef6adade3ec8c4513d08aabebeaf94e12ebea3ff452e419603",
+    "collected_at": "2026-09-17T19:36:37+08:00"
+  },
+  {
+    "url": "https://gtgroup.zhiye.com/zpdetail/351610920",
+    "file": "data/sources/2026-09-17-employers/gtgroup-detail-351610920.html",
+    "sha256": "164d3af727837c730576d0fb42b91e513fe09884314dc923f1fdeeec32cddd80",
+    "collected_at": "2026-09-17T19:36:38+08:00"
+  },
+  {
+    "url": "https://gtgroup.zhiye.com/zpdetail/351610922",
+    "file": "data/sources/2026-09-17-employers/gtgroup-detail-351610922.html",
+    "sha256": "48b6ebe4fafb0d00819886a283cfb986661ab6a6a1416ac3969744ff1a656fba",
+    "collected_at": "2026-09-17T19:36:38+08:00"
+  },
+  {
+    "url": "https://gtgroup.zhiye.com/zpdetail/351605224",
+    "file": "data/sources/2026-09-17-employers/gtgroup-detail-351605224.html",
+    "sha256": "9ffd829949ef04991726abf04f135982a10807c23210f40389b7c7187b277501",
+    "collected_at": "2026-09-17T19:36:38+08:00"
+  },
+  {
+    "url": "https://gtgroup.zhiye.com/zpdetail/351608583",
+    "file": "data/sources/2026-09-17-employers/gtgroup-detail-351608583.html",
+    "sha256": "d966261c6bb6ae145fe51089227f01fd2844315e9a7bb28f144b67d086c942d4",
+    "collected_at": "2026-09-17T19:36:38+08:00"
+  },
+  {
+    "url": "https://gtgroup.zhiye.com/zpdetail/351607047",
+    "file": "data/sources/2026-09-17-employers/gtgroup-detail-351607047.html",
+    "sha256": "e0b456034da81f1aa3fca6e98c2f34f3e56d63ac90626d0b98efea8a74a1d3fa",
+    "collected_at": "2026-09-17T19:36:38+08:00"
+  },
+  {
+    "url": "https://gtgroup.zhiye.com/zpdetail/351607055",
+    "file": "data/sources/2026-09-17-employers/gtgroup-detail-351607055.html",
+    "sha256": "d15ffb3abf67f2ee6ca99da7afc1eb1da8c587ce4e6b4b76ffece81b9cb45407",
+    "collected_at": "2026-09-17T19:36:39+08:00"
+  },
+  {
+    "url": "https://gtgroup.zhiye.com/zpdetail/351607059",
+    "file": "data/sources/2026-09-17-employers/gtgroup-detail-351607059.html",
+    "sha256": "991677286b3f2b992c51fd56dad84d03bbec702aea1aa865ab1d5c13a42cb65f",
+    "collected_at": "2026-09-17T19:36:39+08:00"
+  },
+  {
+    "url": "https://gtgroup.zhiye.com/zpdetail/351606593",
+    "file": "data/sources/2026-09-17-employers/gtgroup-detail-351606593.html",
+    "sha256": "d99e9ab05039772ff985f7bfb9da0a0b1b605f4de5201ba11ce3bcdca39dec73",
+    "collected_at": "2026-09-17T19:36:39+08:00"
+  },
+  {
+    "url": "https://gtgroup.zhiye.com/zpdetail/351607181",
+    "file": "data/sources/2026-09-17-employers/gtgroup-detail-351607181.html",
+    "sha256": "a77231ef8c89f298b67da254808577f4d3297dce73e7f62c98791549038f0d75",
+    "collected_at": "2026-09-17T19:36:39+08:00"
+  },
+  {
+    "url": "https://gtgroup.zhiye.com/zpdetail/351606500",
+    "file": "data/sources/2026-09-17-employers/gtgroup-detail-351606500.html",
+    "sha256": "0b7a2452aa1eb5d7f0b8de172350b2302ff50231e4a6d1d20c068642ca1cc195",
+    "collected_at": "2026-09-17T19:36:39+08:00"
+  },
+  {
+    "url": "https://gtgroup.zhiye.com/zpdetail/351606233",
+    "file": "data/sources/2026-09-17-employers/gtgroup-detail-351606233.html",
+    "sha256": "d63a2d32c2d29c75e318480c55b5378c4b9db8f2267fe341bb9a0a47b24780fe",
+    "collected_at": "2026-09-17T19:36:39+08:00"
+  },
+  {
+    "url": "https://gtgroup.zhiye.com/zpdetail/351606230",
+    "file": "data/sources/2026-09-17-employers/gtgroup-detail-351606230.html",
+    "sha256": "e7484544286e620f2fdccc8d497413b3d49d87a4819644b54e2ca548cfe2e137",
+    "collected_at": "2026-09-17T19:36:40+08:00"
+  },
+  {
+    "url": "https://gtgroup.zhiye.com/zpdetail/351606226",
+    "file": "data/sources/2026-09-17-employers/gtgroup-detail-351606226.html",
+    "sha256": "feb25faeb4f330a8bc5a7ffe08dc3b53838bbba3983e318503509adcd9161cb3",
+    "collected_at": "2026-09-17T19:36:40+08:00"
+  },
+  {
+    "url": "https://gtgroup.zhiye.com/zpdetail/351605354",
+    "file": "data/sources/2026-09-17-employers/gtgroup-detail-351605354.html",
+    "sha256": "a5399b12f587dee991745c6c0137e6ff57fedd5cc5d08acf80519a9572f1916c",
+    "collected_at": "2026-09-17T19:36:40+08:00"
+  },
+  {
+    "url": "https://gtgroup.zhiye.com/zpdetail/351605171",
+    "file": "data/sources/2026-09-17-employers/gtgroup-detail-351605171.html",
+    "sha256": "5b9dd96175b8a84228afd7f5e4710728a6f3b10cf8abf561e3035d330fc2bdfe",
+    "collected_at": "2026-09-17T19:36:40+08:00"
+  },
+  {
+    "url": "https://gtgroup.zhiye.com/zpdetail/351605140",
+    "file": "data/sources/2026-09-17-employers/gtgroup-detail-351605140.html",
+    "sha256": "c64764f9bbc8952d3b9b7e7b9547cccc9293169fee6de468c68dfd822627761c",
+    "collected_at": "2026-09-17T19:36:40+08:00"
+  },
+  {
+    "url": "https://gtgroup.zhiye.com/zpdetail/351605010",
+    "file": "data/sources/2026-09-17-employers/gtgroup-detail-351605010.html",
+    "sha256": "5b672f53ccdd44019c5d46b00295c7023da4ca9f01ea48a6ea5f73cb2b65eadb",
+    "collected_at": "2026-09-17T19:36:41+08:00"
+  },
+  {
+    "url": "https://campus.chinahr.com/pages/2027-boc/",
+    "file": "data/sources/2026-09-17-employers/boc.html",
+    "sha256": "ee4282482a260f05f65c2b529e8bcbb5601922f9187644cba37e19b9c3cdd3be",
+    "collected_at": "2026-09-17T19:25:47+08:00"
+  },
+  {
+    "url": "https://ats.chinahr.com/api/job/list?token=3efebbc0-ba85-4199-9999-6c3c1c0e8cf7&page=1&pageSize=10000",
+    "file": "data/sources/2026-09-17-employers/boc-alljobs.json",
+    "sha256": "465b0f59deb19f86e00a7e0f8bd706e3b905ac379bf4a1796781c3fc567cc648",
+    "collected_at": "2026-09-17T19:36:37+08:00"
+  },
+  {
+    "url": "https://ats.chinahr.com/api/company/list?token=3efebbc0-ba85-4199-9999-6c3c1c0e8cf7&page=1&pageSize=10000",
+    "file": "data/sources/2026-09-17-employers/boc-companies.json",
+    "sha256": "a2b1325bc3a1ee43c55d4aa2e101295548169a0c4067203f0f611e4e4afad1be",
+    "collected_at": "2026-09-17T19:36:17+08:00"
+  }
+]

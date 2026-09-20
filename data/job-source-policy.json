@@ -1,0 +1,229 @@
+{
+  "version": "official-nwu-v1",
+  "cohort": 2027,
+  "school_id": "1917e634-eee1-1358-537d-7e36f6f41777",
+  "sources": [
+    {
+      "host": "talent.baidu.com",
+      "source_type": "employer_official",
+      "company": "百度",
+      "path_pattern": "^/jobs/detail/GRADUATE/[^/]+$",
+      "id_query": null
+    },
+    {
+      "host": "join.tencentmusic.com",
+      "source_type": "employer_official",
+      "company": "腾讯音乐",
+      "path_pattern": "^/campus/post-details/?$",
+      "id_query": "id"
+    },
+    {
+      "host": "szkingdom.zhiye.com",
+      "source_type": "employer_official",
+      "company": "金证科技",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "jczx.nwu.edu.cn",
+      "source_type": "nwu_official",
+      "company": null,
+      "path_pattern": "^/Zhaopin/zhiweiDetail\\.html$",
+      "id_query": "id"
+    },
+    {
+      "host": "cnnc.zhiye.com",
+      "source_type": "employer_official",
+      "company": "中核集团",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "kedacom.zhiye.com",
+      "source_type": "employer_official",
+      "company": "苏州科达",
+      "path_pattern": "^/zpdetail/[0-9]+$",
+      "id_query": null
+    },
+    {
+      "host": "jingce.zhiye.com",
+      "source_type": "employer_official",
+      "company": "精测电子",
+      "path_pattern": "^/zpdetail/[0-9]+$",
+      "id_query": null
+    },
+    {
+      "host": "telink.zhiye.com",
+      "source_type": "employer_official",
+      "company": "泰凌微电子",
+      "path_pattern": "^/zpdetail/[0-9]+$",
+      "id_query": null
+    },
+    {
+      "host": "smics.zhiye.com",
+      "source_type": "employer_official",
+      "company": "中芯国际",
+      "path_pattern": "^/campusxq$",
+      "id_query": "jobId"
+    },
+    {
+      "host": "eswinchipch.zhiye.com",
+      "source_type": "employer_official",
+      "company": "奕斯伟计算",
+      "path_pattern": "^/campusxq$",
+      "id_query": "jobId"
+    },
+    {
+      "host": "gtgroup.zhiye.com",
+      "source_type": "employer_official",
+      "company": "绿城中国",
+      "path_pattern": "^/zpdetail/[0-9]+$",
+      "id_query": null
+    },
+    {
+      "host": "applyjob.chinahr.com",
+      "source_type": "employer_official",
+      "company": "中国银行",
+      "path_pattern": "^/apply/job/wish/[a-f0-9]{24}$",
+      "id_query": null,
+      "project_id": "6a82a408f6bf3d0ac213d518",
+      "evidence_urls": [
+        "https://campus.chinahr.com/pages/2027-boc/"
+      ],
+      "authorization_url": "https://www.boc.cn/big5/aboutboc/bi4/202609/t20260903_25689311.html"
+    },
+    {
+      "host": "join.qq.com",
+      "source_type": "employer_official",
+      "company": "腾讯",
+      "path_pattern": "^/post_detail\\.html$",
+      "id_query": "postid"
+    },
+    {
+      "host": "campus-talent.alibaba.com",
+      "source_type": "employer_official",
+      "company": "阿里巴巴",
+      "path_pattern": "^/campus/position/[0-9]+$",
+      "id_query": null
+    },
+    {
+      "host": "jobs.bytedance.com",
+      "source_type": "employer_official",
+      "company": "字节跳动",
+      "path_pattern": "^/campus/position/[0-9]+/detail$",
+      "id_query": null,
+      "id_path_pattern": "^/campus/position/([0-9]+)/detail$"
+    },
+    {
+      "host": "campus.kuaishou.cn",
+      "source_type": "employer_official",
+      "company": "快手",
+      "path_pattern": "^/$",
+      "id_query": null,
+      "id_fragment_pattern": "^/campus/job-info/([0-9]+)$"
+    },
+    {
+      "host": "hr-campus.vivo.com",
+      "source_type": "employer_official",
+      "company": "vivo",
+      "path_pattern": "^/campus/detail$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "careers.oppo.com",
+      "source_type": "employer_official",
+      "company": "OPPO",
+      "path_pattern": "^/campus/post/[0-9]+$",
+      "id_query": null
+    },
+    {
+      "host": "campus.163.com",
+      "source_type": "employer_official",
+      "company": "网易",
+      "path_pattern": "^/app/detail/index$",
+      "id_query": "id"
+    },
+    {
+      "host": "campus.game.163.com",
+      "source_type": "employer_official",
+      "company": "网易",
+      "path_pattern": "^/app/detail/index$",
+      "id_query": "id"
+    },
+    {
+      "host": "jobs.mihoyo.com",
+      "source_type": "employer_official",
+      "company": "米哈游",
+      "path_pattern": "^/$",
+      "id_query": null,
+      "id_fragment_pattern": "^/campus/position/([0-9]+)$"
+    },
+    {
+      "host": "job.xiaohongshu.com",
+      "source_type": "employer_official",
+      "company": "小红书",
+      "path_pattern": "^/campus/position/[0-9]+$",
+      "id_query": null
+    },
+    {
+      "host": "zhaopin.meituan.com",
+      "source_type": "employer_official",
+      "company": "美团",
+      "path_pattern": "^/web/position/detail$",
+      "id_query": "jobUnionId"
+    },
+    {
+      "host": "poizon.jobs.feishu.cn",
+      "source_type": "employer_official",
+      "company": "得物",
+      "path_pattern": "^/578078/position/[0-9]+/detail$",
+      "id_query": null,
+      "id_path_pattern": "^/578078/position/([0-9]+)/detail$"
+    },
+    {
+      "host": "arashivision.jobs.feishu.cn",
+      "source_type": "employer_official",
+      "company": "影石",
+      "path_pattern": "^/campus/position/[0-9]+/detail$",
+      "id_query": null,
+      "id_path_pattern": "^/campus/position/([0-9]+)/detail$"
+    },
+    {
+      "host": "xiaomi.jobs.f.mioffice.cn",
+      "source_type": "employer_official",
+      "company": "小米",
+      "path_pattern": "^/campus/position/[0-9]+/detail$",
+      "id_query": null,
+      "id_path_pattern": "^/campus/position/([0-9]+)/detail$"
+    },
+    {
+      "host": "careers.pddglobalhr.com",
+      "source_type": "employer_official",
+      "company": "拼多多",
+      "path_pattern": "^/campus/grad/detail$",
+      "id_query": "positionId"
+    },
+    {
+      "host": "jobs.bilibili.com",
+      "source_type": "employer_official",
+      "company": "B站",
+      "path_pattern": "^/campus/positions/[0-9]+$",
+      "id_query": null
+    },
+    {
+      "host": "career.huawei.com",
+      "source_type": "employer_official",
+      "company": "华为",
+      "path_pattern": "^/cn/job-details$",
+      "id_query": "advertisementId"
+    },
+    {
+      "host": "campus.didiglobal.com",
+      "source_type": "employer_official",
+      "company": "滴滴",
+      "path_pattern": "^/campus_apply/didiglobal/96064$",
+      "id_query": null,
+      "id_fragment_pattern": "^/job/([a-f0-9-]+)$"
+    }
+  ]
+}

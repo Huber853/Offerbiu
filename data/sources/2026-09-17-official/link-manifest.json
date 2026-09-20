@@ -1,0 +1,1418 @@
+[
+  {
+    "url": "https://talent.baidu.com/jobs/list?recruitType=GRADUATE",
+    "file": "data/sources/2026-09-17-official/baidu-current-cohort.html",
+    "sha256": "e488bec33dd7f95f9dc8eb616a8960ef275bdcd105e64a3e937e620744983460",
+    "collected_at": "2026-09-17T18:46:27+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/campus/faq/",
+    "file": "data/sources/2026-09-17-official/tme-current-cohort.html",
+    "sha256": "996cfa7285baa9342d70f2c9868dfe2d4bf85f260bc12cd05e18c48abd3cb081",
+    "collected_at": "2026-09-17T18:46:28+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/master/",
+    "file": "data/sources/2026-09-17-official/tme-current-master.html",
+    "sha256": "ca9901dd8e24ff9fa50bf4f070db1348c912bc793a79301c26497c49cd8ecf22",
+    "collected_at": "2026-09-17T18:46:28+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/211b04aa-696c-4d8e-9d89-bf324e4910c1",
+    "file": "data/sources/2026-09-17-official/baidu-live-211b04aa-696c-4d8e-9d89-bf324e4910c1.html",
+    "sha256": "0054e31f6660380a816b9e78225da46778b447325f2833f0d035103f8415406d",
+    "collected_at": "2026-09-17T18:46:28+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/03133d02-d2e2-41e3-b81f-347098401d4d",
+    "file": "data/sources/2026-09-17-official/baidu-live-03133d02-d2e2-41e3-b81f-347098401d4d.html",
+    "sha256": "684b28b8634bb0592a2df5fef034cfc57814030e76ed4fabb8dca6f611351c47",
+    "collected_at": "2026-09-17T18:46:28+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/ad023edd-8729-488d-b899-cabd96796916",
+    "file": "data/sources/2026-09-17-official/baidu-live-ad023edd-8729-488d-b899-cabd96796916.html",
+    "sha256": "6b7ef24c930e460c47b0dd9a429e506e1bcbc8d9cd80a5cfc94b738a38e19d24",
+    "collected_at": "2026-09-17T18:46:28+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/f0954f31-202d-4ffc-a94c-b5789eb22c70",
+    "file": "data/sources/2026-09-17-official/baidu-live-f0954f31-202d-4ffc-a94c-b5789eb22c70.html",
+    "sha256": "8739a0045f4891013beff4ea4981ffc08ce79f13e688b304b245d17c94f0a6eb",
+    "collected_at": "2026-09-17T18:46:29+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/8af5fc29-815e-44d3-9918-af2f414934ae",
+    "file": "data/sources/2026-09-17-official/baidu-live-8af5fc29-815e-44d3-9918-af2f414934ae.html",
+    "sha256": "f9c6ea0b9b5642d93d88fe411927d7e27418aaa78fd895e573089bb3d743df10",
+    "collected_at": "2026-09-17T18:46:29+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/79e85217-8204-4a5f-9b05-03b2bb2597bd",
+    "file": "data/sources/2026-09-17-official/baidu-live-79e85217-8204-4a5f-9b05-03b2bb2597bd.html",
+    "sha256": "8913b2cd28bda1531600ab7daad3a0fc3d0170109c444c9db0bcc3a2f5ccf490",
+    "collected_at": "2026-09-17T18:46:29+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/5ac74bce-f135-4e82-bedb-3439f0630c44",
+    "file": "data/sources/2026-09-17-official/baidu-live-5ac74bce-f135-4e82-bedb-3439f0630c44.html",
+    "sha256": "a46b309f2c869ebeab57775924cbc43a4eff39071708a602d3d4d647b77062aa",
+    "collected_at": "2026-09-17T18:46:29+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=15043",
+    "file": "data/sources/2026-09-17-official/tme-live-15043.json",
+    "sha256": "648c1e212950f1d34dd27b37899139c54419434ad2d700f9b99f194b90bd2e9f",
+    "collected_at": "2026-09-17T18:46:29+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=15042",
+    "file": "data/sources/2026-09-17-official/tme-live-15042.json",
+    "sha256": "6c48a5724c3fd17d0e76c33513046349fc543701fe0c353c8e2d0cd3048befc3",
+    "collected_at": "2026-09-17T18:46:29+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=15041",
+    "file": "data/sources/2026-09-17-official/tme-live-15041.json",
+    "sha256": "4e862a78253bc848a6168167d976d6e577d2c96dce6226eeb7d7ea1485939e8a",
+    "collected_at": "2026-09-17T18:46:29+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/campus/post-details?id=15042",
+    "file": "data/sources/2026-09-17-official/tme-page-15042.html",
+    "sha256": "9b1e1093fe12e4891c32e61b44bb3b75a51d770a599a2428b9118cf6223fdb01",
+    "collected_at": "2026-09-17T18:46:29+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/campus/post-details?id=15043",
+    "file": "data/sources/2026-09-17-official/tme-page-15043.html",
+    "sha256": "9b1e1093fe12e4891c32e61b44bb3b75a51d770a599a2428b9118cf6223fdb01",
+    "collected_at": "2026-09-17T18:46:29+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=15040",
+    "file": "data/sources/2026-09-17-official/tme-live-15040.json",
+    "sha256": "eba77f12f808b7dabfa6334e57fdcfb884e028030c88d96b38d4d57d9bb0dcd9",
+    "collected_at": "2026-09-17T18:46:30+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/campus/post-details?id=15041",
+    "file": "data/sources/2026-09-17-official/tme-page-15041.html",
+    "sha256": "9b1e1093fe12e4891c32e61b44bb3b75a51d770a599a2428b9118cf6223fdb01",
+    "collected_at": "2026-09-17T18:46:30+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=15039",
+    "file": "data/sources/2026-09-17-official/tme-live-15039.json",
+    "sha256": "65d679d0d5e999e1b6a8ba9a48f8883f6ab891699ebce6afb207af7ffcf37539",
+    "collected_at": "2026-09-17T18:46:30+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/campus/post-details?id=15040",
+    "file": "data/sources/2026-09-17-official/tme-page-15040.html",
+    "sha256": "9b1e1093fe12e4891c32e61b44bb3b75a51d770a599a2428b9118cf6223fdb01",
+    "collected_at": "2026-09-17T18:46:30+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=15038",
+    "file": "data/sources/2026-09-17-official/tme-live-15038.json",
+    "sha256": "2960defd675dc6dae9f5bc2ba8fe1c53821fe9b565be71babc6fd0336c7f6717",
+    "collected_at": "2026-09-17T18:46:30+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/campus/post-details?id=15039",
+    "file": "data/sources/2026-09-17-official/tme-page-15039.html",
+    "sha256": "9b1e1093fe12e4891c32e61b44bb3b75a51d770a599a2428b9118cf6223fdb01",
+    "collected_at": "2026-09-17T18:46:30+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=15037",
+    "file": "data/sources/2026-09-17-official/tme-live-15037.json",
+    "sha256": "d7e9d3e441a7a2e5080e410bbec97e15d0b6e45498fc93ae2ba9cda75182b135",
+    "collected_at": "2026-09-17T18:46:30+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=15036",
+    "file": "data/sources/2026-09-17-official/tme-live-15036.json",
+    "sha256": "28cb9aaad3a4432be77877c865d1d1dc518777bd7c12ec871f7556507eb16cf6",
+    "collected_at": "2026-09-17T18:46:30+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/campus/post-details?id=15038",
+    "file": "data/sources/2026-09-17-official/tme-page-15038.html",
+    "sha256": "9b1e1093fe12e4891c32e61b44bb3b75a51d770a599a2428b9118cf6223fdb01",
+    "collected_at": "2026-09-17T18:46:30+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/campus/post-details?id=15037",
+    "file": "data/sources/2026-09-17-official/tme-page-15037.html",
+    "sha256": "9b1e1093fe12e4891c32e61b44bb3b75a51d770a599a2428b9118cf6223fdb01",
+    "collected_at": "2026-09-17T18:46:31+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/campus/post-details?id=15036",
+    "file": "data/sources/2026-09-17-official/tme-page-15036.html",
+    "sha256": "9b1e1093fe12e4891c32e61b44bb3b75a51d770a599a2428b9118cf6223fdb01",
+    "collected_at": "2026-09-17T18:46:31+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=14983",
+    "file": "data/sources/2026-09-17-official/tme-live-14983.json",
+    "sha256": "acb28811940f1354eaf638f9ff8f0a1b92aac282d84ea618c650a2f209f73b1f",
+    "collected_at": "2026-09-17T18:46:31+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/f2884dc8-9a0f-48e2-9a71-767850c4ca9a",
+    "file": "data/sources/2026-09-17-official/baidu-live-f2884dc8-9a0f-48e2-9a71-767850c4ca9a.html",
+    "sha256": "e97cdbed0ef53751ff70f9fedf644abddf578dac6bf7e425bb1c079420fe52f1",
+    "collected_at": "2026-09-17T18:46:31+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/a3ae93a6-014d-4049-9a23-50297499d5d9",
+    "file": "data/sources/2026-09-17-official/baidu-live-a3ae93a6-014d-4049-9a23-50297499d5d9.html",
+    "sha256": "c07ba241c7cb95734f6cbbb8eb1587a432dbbd09c2192885bc7ebae134999362",
+    "collected_at": "2026-09-17T18:46:31+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/545e6823-28d2-4cb5-aba2-3c520a31b4e0",
+    "file": "data/sources/2026-09-17-official/baidu-live-545e6823-28d2-4cb5-aba2-3c520a31b4e0.html",
+    "sha256": "a0730fc296ea7d5049a08a1366fb23d3196d13259e0bb5cc772289e3c7951d0d",
+    "collected_at": "2026-09-17T18:46:31+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/d29404bd-55de-4cc1-929b-e67d304abc97",
+    "file": "data/sources/2026-09-17-official/baidu-live-d29404bd-55de-4cc1-929b-e67d304abc97.html",
+    "sha256": "5a921c109b60a01d875c7fcd77c9a38b972f505f72834b14ce77d40ce51dde2a",
+    "collected_at": "2026-09-17T18:46:31+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/ab5ec82f-a8be-4b4a-8e6f-5debc34ea804",
+    "file": "data/sources/2026-09-17-official/baidu-live-ab5ec82f-a8be-4b4a-8e6f-5debc34ea804.html",
+    "sha256": "a6374606e205eae362ca5460c48865a22138b3e30d69cb8cb7e41b95b0bb225b",
+    "collected_at": "2026-09-17T18:46:31+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/campus/post-details?id=14983",
+    "file": "data/sources/2026-09-17-official/tme-page-14983.html",
+    "sha256": "9b1e1093fe12e4891c32e61b44bb3b75a51d770a599a2428b9118cf6223fdb01",
+    "collected_at": "2026-09-17T18:46:31+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/4f1cbc80-8332-4a92-b8fa-c0132b17d47e",
+    "file": "data/sources/2026-09-17-official/baidu-live-4f1cbc80-8332-4a92-b8fa-c0132b17d47e.html",
+    "sha256": "e38dab3dde23bf78310c7ba1f83611452bf7891d593b4b4b7874a548ce9b27af",
+    "collected_at": "2026-09-17T18:46:31+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/8ded98ee-9ddf-486c-96e9-75d4941d943b",
+    "file": "data/sources/2026-09-17-official/baidu-live-8ded98ee-9ddf-486c-96e9-75d4941d943b.html",
+    "sha256": "34091f77606ab2ce76ec37b141df659a24a8c1f4c2ee0d4d4691b491c7e0f1e8",
+    "collected_at": "2026-09-17T18:46:31+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/62597167-3972-42ef-98aa-162290f5e7e6",
+    "file": "data/sources/2026-09-17-official/baidu-live-62597167-3972-42ef-98aa-162290f5e7e6.html",
+    "sha256": "2ddae60927fcf2c47e540bb2b20cdebdc7f4da00a7248a10a630a9f722502cc4",
+    "collected_at": "2026-09-17T18:46:31+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/27b383fe-edfe-477b-9310-be09c1f386e2",
+    "file": "data/sources/2026-09-17-official/baidu-live-27b383fe-edfe-477b-9310-be09c1f386e2.html",
+    "sha256": "b4c9da22f740b113c75ccc2e34d16ac8e87128c763f1a43f7938b74380077485",
+    "collected_at": "2026-09-17T18:46:31+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/45cd8aa8-587a-4cfe-a8d0-5290376e6427",
+    "file": "data/sources/2026-09-17-official/baidu-live-45cd8aa8-587a-4cfe-a8d0-5290376e6427.html",
+    "sha256": "f3dd7438e481fd5cef4e2fe3634b8a158ec53c46c54576a3634e518a4b0ff409",
+    "collected_at": "2026-09-17T18:46:32+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/feba13ab-0676-468a-8342-d483d232c6ac",
+    "file": "data/sources/2026-09-17-official/baidu-live-feba13ab-0676-468a-8342-d483d232c6ac.html",
+    "sha256": "9e89fe29ed0ed0e6209ac437d09128c79edacc1e1321460ed9278da7dfcc180f",
+    "collected_at": "2026-09-17T18:46:32+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/ff5a2fbf-b169-41cd-8a9d-56fa5b01267a",
+    "file": "data/sources/2026-09-17-official/baidu-live-ff5a2fbf-b169-41cd-8a9d-56fa5b01267a.html",
+    "sha256": "cc961725d16aaece3c31b691627e74ff8cda7e495d77322c7f96da543725b34e",
+    "collected_at": "2026-09-17T18:46:32+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/fe876a65-1a6c-499a-9506-2169009a02a1",
+    "file": "data/sources/2026-09-17-official/baidu-live-fe876a65-1a6c-499a-9506-2169009a02a1.html",
+    "sha256": "9ad0aadc3c9a925760d173c112dd9d71ec9493dc6db52c6a37ddeeae086ddda1",
+    "collected_at": "2026-09-17T18:46:32+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/fea4ea6b-86a6-4a22-807f-b9dc6fa116a6",
+    "file": "data/sources/2026-09-17-official/baidu-live-fea4ea6b-86a6-4a22-807f-b9dc6fa116a6.html",
+    "sha256": "60835cb0ae2fceeec763600f60491829a75d1e76d71f9ed15c3608ef3d37cc32",
+    "collected_at": "2026-09-17T18:46:32+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/fbf35cc4-f196-4f4c-9ba1-9fca982e5269",
+    "file": "data/sources/2026-09-17-official/baidu-live-fbf35cc4-f196-4f4c-9ba1-9fca982e5269.html",
+    "sha256": "d21f8acda4435f4ee92da31d55db069df7e9fbd60761b3e2c0d8ff94be84cad5",
+    "collected_at": "2026-09-17T18:46:32+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/fd615cd0-aebd-47c3-bb3d-6e4335e6be90",
+    "file": "data/sources/2026-09-17-official/baidu-live-fd615cd0-aebd-47c3-bb3d-6e4335e6be90.html",
+    "sha256": "de6d715cb3a80e8bd54d9bc979a9b89ae13e61ff4e8834ae0ae072f13d0ad5b9",
+    "collected_at": "2026-09-17T18:46:32+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/fb0984ff-fe4d-4a87-adf2-215fa1b4920f",
+    "file": "data/sources/2026-09-17-official/baidu-live-fb0984ff-fe4d-4a87-adf2-215fa1b4920f.html",
+    "sha256": "c61f947bde58861dfbd7c1708348cb0a6fc53d3005711feca08fadcbad86e69b",
+    "collected_at": "2026-09-17T18:46:32+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/f96e30fd-c286-4e74-923b-10b5238fe7af",
+    "file": "data/sources/2026-09-17-official/baidu-live-f96e30fd-c286-4e74-923b-10b5238fe7af.html",
+    "sha256": "8e5a1b1f29f2261eedc6b9c9c66f4069039b4b4af0bba96af3c439b6676c85af",
+    "collected_at": "2026-09-17T18:46:32+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/faba69b8-0b55-413e-bc5e-e2998da3e085",
+    "file": "data/sources/2026-09-17-official/baidu-live-faba69b8-0b55-413e-bc5e-e2998da3e085.html",
+    "sha256": "55b5ef6f052904a008888c1e4585f645b30f2a7ae1e631a713bdad5d079133d1",
+    "collected_at": "2026-09-17T18:46:32+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/f0c02346-05c2-4742-aa52-2a8d50cf0792",
+    "file": "data/sources/2026-09-17-official/baidu-live-f0c02346-05c2-4742-aa52-2a8d50cf0792.html",
+    "sha256": "5362e974f7050e553c437419751dcb80e5e59126cc82e16f4477f7af33973edd",
+    "collected_at": "2026-09-17T18:46:32+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/ebb64b78-0b20-4e6f-8866-e494eb0aee6d",
+    "file": "data/sources/2026-09-17-official/baidu-live-ebb64b78-0b20-4e6f-8866-e494eb0aee6d.html",
+    "sha256": "13acca258a113d576ce84eba9aec29ba616b68812ae73c9f6230fcdfa3b2d88c",
+    "collected_at": "2026-09-17T18:46:32+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/ed7155b8-3af7-4ea4-adc4-c19d0f54aa21",
+    "file": "data/sources/2026-09-17-official/baidu-live-ed7155b8-3af7-4ea4-adc4-c19d0f54aa21.html",
+    "sha256": "9c493b7bdb692c04cb02cfb01149f7271d0fa5889c648d08c76eacc0e7385d21",
+    "collected_at": "2026-09-17T18:46:33+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/ea157b5c-f6ce-4f19-8981-81572b11bd5a",
+    "file": "data/sources/2026-09-17-official/baidu-live-ea157b5c-f6ce-4f19-8981-81572b11bd5a.html",
+    "sha256": "a388045c58fd59012ac47b1d4de86b38471a64944d33ed60c82102d4c3556ef4",
+    "collected_at": "2026-09-17T18:46:33+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/e47c72e4-689c-495f-ba79-0852d956d083",
+    "file": "data/sources/2026-09-17-official/baidu-live-e47c72e4-689c-495f-ba79-0852d956d083.html",
+    "sha256": "5e1226ea3ec708285925141a4ac2cb792aa5aeb046159504f0ab8cc21677bea8",
+    "collected_at": "2026-09-17T18:46:33+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/e448c05c-5bd6-45a8-9991-5a4c8a807c81",
+    "file": "data/sources/2026-09-17-official/baidu-live-e448c05c-5bd6-45a8-9991-5a4c8a807c81.html",
+    "sha256": "f1611e8ac65ddb3ec3797d1c3c723b20616cd2dd3eb483a73e53fbbdb4e5ef0c",
+    "collected_at": "2026-09-17T18:46:33+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/deb5366b-9b40-48cb-a128-277747b551be",
+    "file": "data/sources/2026-09-17-official/baidu-live-deb5366b-9b40-48cb-a128-277747b551be.html",
+    "sha256": "86af36b12fb0ae8e8f0dd27d7b2f70d9b874cc18b92ce4cb26af396639f703f0",
+    "collected_at": "2026-09-17T18:46:33+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/df1e79e6-b6cc-4300-acf2-2e0d0a5a3eaf",
+    "file": "data/sources/2026-09-17-official/baidu-live-df1e79e6-b6cc-4300-acf2-2e0d0a5a3eaf.html",
+    "sha256": "55ef82010a8fc0071d463df47c0e6ce4ed2b79f57d628a638cc3098e9b96548f",
+    "collected_at": "2026-09-17T18:46:33+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/dac1c43b-b010-494d-909a-21b42df17aac",
+    "file": "data/sources/2026-09-17-official/baidu-live-dac1c43b-b010-494d-909a-21b42df17aac.html",
+    "sha256": "2ebdfe224ddd59fc563f7c445d3a25eed9de88a4f01d6047714c9ef8961d0e5f",
+    "collected_at": "2026-09-17T18:46:33+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/dc2ffe50-f9ff-4907-bf2b-d5e83cf7db5e",
+    "file": "data/sources/2026-09-17-official/baidu-live-dc2ffe50-f9ff-4907-bf2b-d5e83cf7db5e.html",
+    "sha256": "af2c88601ca956d0ea1d0068de10cf1790d7bea3600361fee4effa1f06b1388c",
+    "collected_at": "2026-09-17T18:46:33+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/d3ac982a-f979-4625-b1a3-8b3e01f497f3",
+    "file": "data/sources/2026-09-17-official/baidu-live-d3ac982a-f979-4625-b1a3-8b3e01f497f3.html",
+    "sha256": "50d87bf72ce3ca36dc079d81e84804bb4a453b9ab339c08c118048452ebbe559",
+    "collected_at": "2026-09-17T18:46:33+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/d198c2d2-fce0-4d8c-84a1-933e2b047989",
+    "file": "data/sources/2026-09-17-official/baidu-live-d198c2d2-fce0-4d8c-84a1-933e2b047989.html",
+    "sha256": "be65eee454f1ab87100f98ad3853a06de215c048bb51670cac6bec222e1e21fc",
+    "collected_at": "2026-09-17T18:46:33+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/d34cbaff-ddab-41ba-b043-5f8529fec40e",
+    "file": "data/sources/2026-09-17-official/baidu-live-d34cbaff-ddab-41ba-b043-5f8529fec40e.html",
+    "sha256": "08bc92044706593ca9d79e8cb8cade7200d2b640666ff4e5b823a9eb86b3865e",
+    "collected_at": "2026-09-17T18:46:33+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/d1241fcf-3d48-41bc-882b-5e3e1d91be3f",
+    "file": "data/sources/2026-09-17-official/baidu-live-d1241fcf-3d48-41bc-882b-5e3e1d91be3f.html",
+    "sha256": "adfd02f9c92c056f94c4bc94369c6b17646afcfb1aca608df8394542e324bcac",
+    "collected_at": "2026-09-17T18:46:33+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/cf735c1e-f162-4e98-b494-89771184a8fb",
+    "file": "data/sources/2026-09-17-official/baidu-live-cf735c1e-f162-4e98-b494-89771184a8fb.html",
+    "sha256": "f5a67269328250033c4546c1971e741f2aeccf2db0284a976119994f77765411",
+    "collected_at": "2026-09-17T18:46:33+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/d0292487-eed3-46a4-ad2f-cd4809ec50a6",
+    "file": "data/sources/2026-09-17-official/baidu-live-d0292487-eed3-46a4-ad2f-cd4809ec50a6.html",
+    "sha256": "57c7c9ab7ee9a9e30b0bf1bb61f5a1cc5d1d142b59562425ee3b3e9952978924",
+    "collected_at": "2026-09-17T18:46:33+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/cf5915ca-32d2-4bef-a5cb-dcf2b66ecf30",
+    "file": "data/sources/2026-09-17-official/baidu-live-cf5915ca-32d2-4bef-a5cb-dcf2b66ecf30.html",
+    "sha256": "0d0897e3c19ff92cd634bb955f8f4cf1776c04dc58166150426c65e5f41311db",
+    "collected_at": "2026-09-17T18:46:33+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/cd7d5159-6779-4298-abe4-1a97ccdcea35",
+    "file": "data/sources/2026-09-17-official/baidu-live-cd7d5159-6779-4298-abe4-1a97ccdcea35.html",
+    "sha256": "7e040093b63cf7aefe6d99cc87a1a472238b31ded47eb4b20cd568bb37f417db",
+    "collected_at": "2026-09-17T18:46:34+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/ccfdea4e-4ae4-4954-9062-fd94960a2861",
+    "file": "data/sources/2026-09-17-official/baidu-live-ccfdea4e-4ae4-4954-9062-fd94960a2861.html",
+    "sha256": "2f63e4be74516bcbc1b53c1547c3a9b887f6f34d8e4564883f7937adeb483026",
+    "collected_at": "2026-09-17T18:46:34+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/cbdc8a04-785e-483e-9037-43c2b7fa873e",
+    "file": "data/sources/2026-09-17-official/baidu-live-cbdc8a04-785e-483e-9037-43c2b7fa873e.html",
+    "sha256": "1b949010495cc6baf2dbac7efb112631db66cfe11bfa6915b8793b88a6a362e7",
+    "collected_at": "2026-09-17T18:46:34+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/cad8f67a-4118-4e26-a39d-0cc84f699f9d",
+    "file": "data/sources/2026-09-17-official/baidu-live-cad8f67a-4118-4e26-a39d-0cc84f699f9d.html",
+    "sha256": "efe47fc5a3bf3d3cd5add57e856ac1db10efd3d70d01b13fef916aac150acd47",
+    "collected_at": "2026-09-17T18:46:34+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/c5291eee-adee-48f6-be2d-6c88f190eb35",
+    "file": "data/sources/2026-09-17-official/baidu-live-c5291eee-adee-48f6-be2d-6c88f190eb35.html",
+    "sha256": "796a1bfc346187f3d6a2d55eef85adaeb49ef5e065c296023677b759eba567cb",
+    "collected_at": "2026-09-17T18:46:34+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/c3a69286-92d5-4abb-b861-1058ed1f2592",
+    "file": "data/sources/2026-09-17-official/baidu-live-c3a69286-92d5-4abb-b861-1058ed1f2592.html",
+    "sha256": "485b7efa414a8c62cdaf35a4b99566c503b742471609190c39aa16160d8cd598",
+    "collected_at": "2026-09-17T18:46:34+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/c259a4a3-f685-4a17-97aa-8ee19ff7257d",
+    "file": "data/sources/2026-09-17-official/baidu-live-c259a4a3-f685-4a17-97aa-8ee19ff7257d.html",
+    "sha256": "8e5421319928ee4dd8f35e913c171e10a7d0039b48e4fe9e7180abd2b7dff67d",
+    "collected_at": "2026-09-17T18:46:34+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/c33d1ab9-f40b-4e8e-abba-037660adb4cf",
+    "file": "data/sources/2026-09-17-official/baidu-live-c33d1ab9-f40b-4e8e-abba-037660adb4cf.html",
+    "sha256": "5730ebb3192c882dd6405a7ac1cb82d7608354772382a619289cf2531b7141e9",
+    "collected_at": "2026-09-17T18:46:34+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/bec91efe-5415-463d-86d8-a1549798262e",
+    "file": "data/sources/2026-09-17-official/baidu-live-bec91efe-5415-463d-86d8-a1549798262e.html",
+    "sha256": "b57013a651b1fbab653cdbc61d50320d90d882879d024cee051158b963133daa",
+    "collected_at": "2026-09-17T18:46:34+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/bf49fdc7-2bd1-4d6c-87cc-f1ef35ade99b",
+    "file": "data/sources/2026-09-17-official/baidu-live-bf49fdc7-2bd1-4d6c-87cc-f1ef35ade99b.html",
+    "sha256": "c45413f6a8169deb33adae8bc20c9f31e2e61d624eb4c5ad45f62198e76f3f83",
+    "collected_at": "2026-09-17T18:46:34+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/bd823572-b687-4535-ba47-22e6ef4110b9",
+    "file": "data/sources/2026-09-17-official/baidu-live-bd823572-b687-4535-ba47-22e6ef4110b9.html",
+    "sha256": "9eb1ffd909992ce2f882fbe27349e32bcf8fb07e51221a657f07d5f641b13071",
+    "collected_at": "2026-09-17T18:46:34+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/b9f68e95-00a5-4dcd-9c32-876865e79916",
+    "file": "data/sources/2026-09-17-official/baidu-live-b9f68e95-00a5-4dcd-9c32-876865e79916.html",
+    "sha256": "1bf58201e4962284082bb8c4996529fccdd8695800ca1c87caf09d227e98b3cb",
+    "collected_at": "2026-09-17T18:46:34+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/bb0bc7f4-866e-44cf-8473-53e372eb95a2",
+    "file": "data/sources/2026-09-17-official/baidu-live-bb0bc7f4-866e-44cf-8473-53e372eb95a2.html",
+    "sha256": "7f643f08f597c9762bd40e03cd8c51e142dbe55175219f45d4ad4e388454bb0e",
+    "collected_at": "2026-09-17T18:46:34+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/b9ad50c9-07c7-4b9c-998d-7049bb706edf",
+    "file": "data/sources/2026-09-17-official/baidu-live-b9ad50c9-07c7-4b9c-998d-7049bb706edf.html",
+    "sha256": "73301d0845ee1630858cf34b97004228f9e13585ee554d7c5de00e3c9b741db2",
+    "collected_at": "2026-09-17T18:46:34+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/b71d3ca4-1383-4925-ab22-ef5e6e14aafd",
+    "file": "data/sources/2026-09-17-official/baidu-live-b71d3ca4-1383-4925-ab22-ef5e6e14aafd.html",
+    "sha256": "8e2eb5c139992ff2b50a5036f752f37c0667f8a190f559bc946023dc31dd1756",
+    "collected_at": "2026-09-17T18:46:35+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/b7532741-3f9d-4ee6-9446-a76b5413eb17",
+    "file": "data/sources/2026-09-17-official/baidu-live-b7532741-3f9d-4ee6-9446-a76b5413eb17.html",
+    "sha256": "795a3e35d089d7c1ddc178b162f996b169e627142b3e8208fdbae2ae7bfbec47",
+    "collected_at": "2026-09-17T18:46:35+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/b9915b1e-791b-4278-a58f-0078543edb41",
+    "file": "data/sources/2026-09-17-official/baidu-live-b9915b1e-791b-4278-a58f-0078543edb41.html",
+    "sha256": "e6d5ca6a1325b302225ce6ff90ee57c0a2c07f53e1dbaad2438251e3d1c1d5e1",
+    "collected_at": "2026-09-17T18:46:35+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/b6d4fb04-cfd2-43f4-bf7f-12115a53eb54",
+    "file": "data/sources/2026-09-17-official/baidu-live-b6d4fb04-cfd2-43f4-bf7f-12115a53eb54.html",
+    "sha256": "dc5f5c3081d56ade2ecd150c029863fe8aff856cfcd9efe4da7f976438af7e74",
+    "collected_at": "2026-09-17T18:46:35+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/b1537e9d-99b2-4f5c-a546-559d5c5a8718",
+    "file": "data/sources/2026-09-17-official/baidu-live-b1537e9d-99b2-4f5c-a546-559d5c5a8718.html",
+    "sha256": "b675167e746f4462b577a41f64dbcc3904428d5eae7e38b5d520f09c5b3c6464",
+    "collected_at": "2026-09-17T18:46:35+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/b68949bd-516b-463b-8219-844dd2e184c2",
+    "file": "data/sources/2026-09-17-official/baidu-live-b68949bd-516b-463b-8219-844dd2e184c2.html",
+    "sha256": "d1ed53180fe54c10ba209cf89eab997610d47109ae7d145e2c02ca7710c3e7f6",
+    "collected_at": "2026-09-17T18:46:35+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/af16d3b6-1432-41a1-8cf9-5dda7e2fa22b",
+    "file": "data/sources/2026-09-17-official/baidu-live-af16d3b6-1432-41a1-8cf9-5dda7e2fa22b.html",
+    "sha256": "3ce9fed811344eaa9aa881c28251501355f1bff265bffbe3ad0d351a6c8fc41b",
+    "collected_at": "2026-09-17T18:46:35+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/adbd918c-f990-4d58-9e87-dc0e3bdb2e01",
+    "file": "data/sources/2026-09-17-official/baidu-live-adbd918c-f990-4d58-9e87-dc0e3bdb2e01.html",
+    "sha256": "9411fed2cf271f7cb4d1fd5d6689e18fb72eb4d3afdac313f494daf0846aefde",
+    "collected_at": "2026-09-17T18:46:35+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/ab2c6525-f336-4128-8136-91bd7e06b024",
+    "file": "data/sources/2026-09-17-official/baidu-live-ab2c6525-f336-4128-8136-91bd7e06b024.html",
+    "sha256": "bf46f0615c18318483be44aba52fe6a6cd7c1ec44913cf5fe1d46648d966c4d9",
+    "collected_at": "2026-09-17T18:46:35+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/a4cfdb64-4af0-4374-999e-54460e8e8cb2",
+    "file": "data/sources/2026-09-17-official/baidu-live-a4cfdb64-4af0-4374-999e-54460e8e8cb2.html",
+    "sha256": "ec2cdd0696b2a7e2b20deef042fb356ae0f8a8892b1e79ca2a8640fbed8792b8",
+    "collected_at": "2026-09-17T18:46:35+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/a2c9e979-0fa1-4900-8a61-c1b4dbfca640",
+    "file": "data/sources/2026-09-17-official/baidu-live-a2c9e979-0fa1-4900-8a61-c1b4dbfca640.html",
+    "sha256": "32606bf040fcb86c2792566ec27c36c44a9504a8f9a90f82b32f0fa11c0bc047",
+    "collected_at": "2026-09-17T18:46:35+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/9e9dbcf8-daf2-4c59-b6e0-8f6709e89130",
+    "file": "data/sources/2026-09-17-official/baidu-live-9e9dbcf8-daf2-4c59-b6e0-8f6709e89130.html",
+    "sha256": "1f4ef2e42acbd32e3bcd385f803cf3eb0ba32e29b8c5f108d8df8c646fcaf97c",
+    "collected_at": "2026-09-17T18:46:35+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/9846d62c-35ca-48b0-86e2-6164b9643b77",
+    "file": "data/sources/2026-09-17-official/baidu-live-9846d62c-35ca-48b0-86e2-6164b9643b77.html",
+    "sha256": "68c6d21d3272c1301b6ad939911cd4409307c1e7057bacaf464ada81f37106ad",
+    "collected_at": "2026-09-17T18:46:35+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/9c20ea8d-db12-4bea-8c69-292391ba31d4",
+    "file": "data/sources/2026-09-17-official/baidu-live-9c20ea8d-db12-4bea-8c69-292391ba31d4.html",
+    "sha256": "46deac43ffe3039447b17ef3010e30fe6177a11f2b34498dc53c1fb7df7513cd",
+    "collected_at": "2026-09-17T18:46:35+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/97861027-b822-4716-9824-9ee2665e3079",
+    "file": "data/sources/2026-09-17-official/baidu-live-97861027-b822-4716-9824-9ee2665e3079.html",
+    "sha256": "c4341bc908ed89335048ecdae659c5053dc3aba6bb908bec88a6b80d5352aa33",
+    "collected_at": "2026-09-17T18:46:36+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/983bf64b-8c25-447c-9a16-ccf99917f599",
+    "file": "data/sources/2026-09-17-official/baidu-live-983bf64b-8c25-447c-9a16-ccf99917f599.html",
+    "sha256": "0e16e9d29a1292f255ef9bfc573f56ffdebe1cb75456b4d2d00e37bae642fd90",
+    "collected_at": "2026-09-17T18:46:36+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/961fd57f-db07-43ac-97af-ee6cad6d0bb5",
+    "file": "data/sources/2026-09-17-official/baidu-live-961fd57f-db07-43ac-97af-ee6cad6d0bb5.html",
+    "sha256": "452c8809d79c51776e05948faf522295663abc176861bba21631ce7110d625cb",
+    "collected_at": "2026-09-17T18:46:36+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/964932f7-03dc-4423-a1a4-22d8948f52e7",
+    "file": "data/sources/2026-09-17-official/baidu-live-964932f7-03dc-4423-a1a4-22d8948f52e7.html",
+    "sha256": "d9df55e3036d4a3a5182b0e6573d2ba0de9280b62f453655ace00efd3cee5e13",
+    "collected_at": "2026-09-17T18:46:36+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/950150b6-f8d8-454e-8cc8-88a2b046e96a",
+    "file": "data/sources/2026-09-17-official/baidu-live-950150b6-f8d8-454e-8cc8-88a2b046e96a.html",
+    "sha256": "4232180708c1254bce0c92689dede68faa7034660b98708655f0e99e849d70b0",
+    "collected_at": "2026-09-17T18:46:36+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/931edd6c-bfc0-40b0-8eef-3538be216d10",
+    "file": "data/sources/2026-09-17-official/baidu-live-931edd6c-bfc0-40b0-8eef-3538be216d10.html",
+    "sha256": "d993fe59c54ab9acb51c306a64178d8e436f8d32c98a04d0a7fa75f7fc51f35b",
+    "collected_at": "2026-09-17T18:46:36+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/9083b096-8c75-4876-8e96-ab333be46f28",
+    "file": "data/sources/2026-09-17-official/baidu-live-9083b096-8c75-4876-8e96-ab333be46f28.html",
+    "sha256": "35f9112fdedef06a5212240777a495d17bd2bb48b97c85878dad94aaa96c2821",
+    "collected_at": "2026-09-17T18:46:36+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/8d5ba7d0-d0dd-4c20-951a-7e3660922e0b",
+    "file": "data/sources/2026-09-17-official/baidu-live-8d5ba7d0-d0dd-4c20-951a-7e3660922e0b.html",
+    "sha256": "7d02e906dcf5cc8c8e48669536818810dcff9436bbbc756247192cc53c15fd0b",
+    "collected_at": "2026-09-17T18:46:36+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/8d528038-983d-4165-b6f0-1fea77e3097a",
+    "file": "data/sources/2026-09-17-official/baidu-live-8d528038-983d-4165-b6f0-1fea77e3097a.html",
+    "sha256": "a78a6ff735b12f834824d86b80f7293f27b70dd733da1c45a793aa928005a0b3",
+    "collected_at": "2026-09-17T18:46:36+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/8d3dfff6-f8a1-48e1-a4d9-2b36ce0be6e2",
+    "file": "data/sources/2026-09-17-official/baidu-live-8d3dfff6-f8a1-48e1-a4d9-2b36ce0be6e2.html",
+    "sha256": "fb26e26217a3090e8501fdfea8dfcc76799afb094cd87276062a14cc0651841e",
+    "collected_at": "2026-09-17T18:46:36+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/8ae7e7b5-26fe-4b2d-8ba2-996f574bef4b",
+    "file": "data/sources/2026-09-17-official/baidu-live-8ae7e7b5-26fe-4b2d-8ba2-996f574bef4b.html",
+    "sha256": "bef85610a56e25661e6817ab6b1abc5ea7a0aa65361dee35a7bb1a330ad44323",
+    "collected_at": "2026-09-17T18:46:36+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/88197b70-ccef-44d9-a160-128d35fb503a",
+    "file": "data/sources/2026-09-17-official/baidu-live-88197b70-ccef-44d9-a160-128d35fb503a.html",
+    "sha256": "57593e32bfadcd7108204118d7e941a97f8696144402d3372876ac34041e3e41",
+    "collected_at": "2026-09-17T18:46:36+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/87704809-d2ab-4940-93bb-1120a5900fa3",
+    "file": "data/sources/2026-09-17-official/baidu-live-87704809-d2ab-4940-93bb-1120a5900fa3.html",
+    "sha256": "415c47347940fffb41357ed51fcf86784e494bf023de8652eded1cbfd14f16e7",
+    "collected_at": "2026-09-17T18:46:36+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/8683fc23-9bff-4d25-84b2-f5ddce782c5a",
+    "file": "data/sources/2026-09-17-official/baidu-live-8683fc23-9bff-4d25-84b2-f5ddce782c5a.html",
+    "sha256": "00bed9256ce4727c9cbfe5899ad0e5069d16bcde452bb3b0f29e87b4ab15d24b",
+    "collected_at": "2026-09-17T18:46:36+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/84d7dc47-f8a9-48df-9274-6d68c6ebef30",
+    "file": "data/sources/2026-09-17-official/baidu-live-84d7dc47-f8a9-48df-9274-6d68c6ebef30.html",
+    "sha256": "aca2017f25dc6177d3682c4def7ee196997ab86e7751cd1db0ec8481abc8b936",
+    "collected_at": "2026-09-17T18:46:37+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/830f9695-ab10-4577-b26c-6898acef2af4",
+    "file": "data/sources/2026-09-17-official/baidu-live-830f9695-ab10-4577-b26c-6898acef2af4.html",
+    "sha256": "f986bab9dda0324ed94fbe37128dc0db42afb4b0873226c73b6e7f7bcfcf0c13",
+    "collected_at": "2026-09-17T18:46:37+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/82aaab66-b85c-4931-8ffd-7adc1fa9f227",
+    "file": "data/sources/2026-09-17-official/baidu-live-82aaab66-b85c-4931-8ffd-7adc1fa9f227.html",
+    "sha256": "7cfc1614a20da9c406565b7225323a120dc703c510400a3833223b7c7681cc00",
+    "collected_at": "2026-09-17T18:46:37+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/7ff7abca-c330-483e-ba3a-9d2858fde1e3",
+    "file": "data/sources/2026-09-17-official/baidu-live-7ff7abca-c330-483e-ba3a-9d2858fde1e3.html",
+    "sha256": "d718732d5025e769fc8ef7c1fc003fb3aff1b554bad87b367db24b4c9753bf12",
+    "collected_at": "2026-09-17T18:46:37+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/7c13be02-1c5b-4dcc-a620-43d3f268cdb5",
+    "file": "data/sources/2026-09-17-official/baidu-live-7c13be02-1c5b-4dcc-a620-43d3f268cdb5.html",
+    "sha256": "032ee5f03f151116cfdec5482d0795a004f1c9c10797d88e3eb4b2712bc2d0a1",
+    "collected_at": "2026-09-17T18:46:37+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/7a640456-4b78-41b6-a75f-829e2188a190",
+    "file": "data/sources/2026-09-17-official/baidu-live-7a640456-4b78-41b6-a75f-829e2188a190.html",
+    "sha256": "2c32c07046a1a4fbef4342a90a4eff1414869867595fd69c9e40dcc3f1307714",
+    "collected_at": "2026-09-17T18:46:37+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/7753cdb4-70b0-462b-a634-ee53818c7c9a",
+    "file": "data/sources/2026-09-17-official/baidu-live-7753cdb4-70b0-462b-a634-ee53818c7c9a.html",
+    "sha256": "5d9f0ebb69b12990cc95308a787efc28c447bd21f6a38a3a31ed58d6e68b88af",
+    "collected_at": "2026-09-17T18:46:37+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/75dbfdb9-d80f-41a8-a929-345fcd23b246",
+    "file": "data/sources/2026-09-17-official/baidu-live-75dbfdb9-d80f-41a8-a929-345fcd23b246.html",
+    "sha256": "ff8045f362d3cf57610eeea2ffd27bad1dff89584a0c24f7593fcdc789efbb78",
+    "collected_at": "2026-09-17T18:46:37+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/76dc2520-f6f7-4cbe-ab8e-beb6e0bf00f5",
+    "file": "data/sources/2026-09-17-official/baidu-live-76dc2520-f6f7-4cbe-ab8e-beb6e0bf00f5.html",
+    "sha256": "c2babc9fbe42cda4c22fc4a266c8f418fb79e4ee3a3d5c301d2c2b963f5a54f4",
+    "collected_at": "2026-09-17T18:46:37+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/74d83772-1bd0-42b9-8cc5-69eb45696b62",
+    "file": "data/sources/2026-09-17-official/baidu-live-74d83772-1bd0-42b9-8cc5-69eb45696b62.html",
+    "sha256": "685bb4438822f6453bd11bc9899346ae866f18d88d9b609122775eeaeb92850d",
+    "collected_at": "2026-09-17T18:46:37+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/72145a13-5eb1-41ce-8853-d00aa7369281",
+    "file": "data/sources/2026-09-17-official/baidu-live-72145a13-5eb1-41ce-8853-d00aa7369281.html",
+    "sha256": "1568d1be2f585d0a2566ca562fb7ea6c50f3f13cb9a315234d070dd97c309def",
+    "collected_at": "2026-09-17T18:46:37+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/7255dcd6-78c6-4592-b328-f5d3b09eef53",
+    "file": "data/sources/2026-09-17-official/baidu-live-7255dcd6-78c6-4592-b328-f5d3b09eef53.html",
+    "sha256": "741a1e13cf0290c2a4e786c01ece468a0f59f2e9a0c85fac4e3e0c066aeef1f3",
+    "collected_at": "2026-09-17T18:46:37+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/6f9c3a86-6557-409d-8fa7-e6f4c68d6765",
+    "file": "data/sources/2026-09-17-official/baidu-live-6f9c3a86-6557-409d-8fa7-e6f4c68d6765.html",
+    "sha256": "d5c1a2b1d2cd1a8584130657119db422a96204455a3b248374fabed333cb76e0",
+    "collected_at": "2026-09-17T18:46:37+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/6f3fd06d-c510-4212-8d90-07422c0ea407",
+    "file": "data/sources/2026-09-17-official/baidu-live-6f3fd06d-c510-4212-8d90-07422c0ea407.html",
+    "sha256": "d72c155fca3a215091020ae8245657108f7f1a2ecb1396b5ca5827a76e49fe8e",
+    "collected_at": "2026-09-17T18:46:38+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/6e4f3a6a-31f5-4799-9133-3b1801ebe9ff",
+    "file": "data/sources/2026-09-17-official/baidu-live-6e4f3a6a-31f5-4799-9133-3b1801ebe9ff.html",
+    "sha256": "9f5f5235f7f0f3baa8db4bf954fcf25ff04eec1fef2a40ee9fa5214f330502e7",
+    "collected_at": "2026-09-17T18:46:38+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/720ab09c-f78c-4dda-80fa-10afd09b8094",
+    "file": "data/sources/2026-09-17-official/baidu-live-720ab09c-f78c-4dda-80fa-10afd09b8094.html",
+    "sha256": "7b653136c4792034cecfd2b16efc1345d9de0df6b4ec10de292045e72e7a3874",
+    "collected_at": "2026-09-17T18:46:38+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/6c2e943b-ac8e-40b1-aa64-9787335d4b06",
+    "file": "data/sources/2026-09-17-official/baidu-live-6c2e943b-ac8e-40b1-aa64-9787335d4b06.html",
+    "sha256": "7cf1d73902c4ace0e5c7c1916919ff59fd8c72b1c56f58ce4107258028b7ec5b",
+    "collected_at": "2026-09-17T18:46:38+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/6b3882fe-dbce-4538-8b0f-ab26fa0e6528",
+    "file": "data/sources/2026-09-17-official/baidu-live-6b3882fe-dbce-4538-8b0f-ab26fa0e6528.html",
+    "sha256": "7d0ad283ca3f62ba2f411e0d7b1c1f284d27111f84a2b60199ab8720ee123626",
+    "collected_at": "2026-09-17T18:46:38+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/6a6addeb-054a-4a53-8361-396fcb4c52b9",
+    "file": "data/sources/2026-09-17-official/baidu-live-6a6addeb-054a-4a53-8361-396fcb4c52b9.html",
+    "sha256": "d15e3b6d9871b11f6a7a5a42686fda3717833a007bbcab1b2293f59cf250d224",
+    "collected_at": "2026-09-17T18:46:38+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/66a12645-f0f1-435c-8426-9fb91f1be330",
+    "file": "data/sources/2026-09-17-official/baidu-live-66a12645-f0f1-435c-8426-9fb91f1be330.html",
+    "sha256": "4430ff7bda7ec96d832beeb6722a1e33cb998b69d63086c4413b8674eeb4aa1d",
+    "collected_at": "2026-09-17T18:46:38+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/6481eab8-5639-4c17-a08e-33d12fca9a3c",
+    "file": "data/sources/2026-09-17-official/baidu-live-6481eab8-5639-4c17-a08e-33d12fca9a3c.html",
+    "sha256": "c5ea5ff32d14858bde1aba5dc66370eb6036ed2c96d68faae850c070563e3d7f",
+    "collected_at": "2026-09-17T18:46:38+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/634762a0-9f29-445f-8162-38b7394233c9",
+    "file": "data/sources/2026-09-17-official/baidu-live-634762a0-9f29-445f-8162-38b7394233c9.html",
+    "sha256": "fc426cde9ccad56676382cae10007322fa51fdb21af8d8d82e2cdbe50d3dccfd",
+    "collected_at": "2026-09-17T18:46:38+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/6061be03-f92b-4430-a1b8-9168de0f91f6",
+    "file": "data/sources/2026-09-17-official/baidu-live-6061be03-f92b-4430-a1b8-9168de0f91f6.html",
+    "sha256": "8339f5cc9a1803c5fe31088e1f1163bebe62e55ab28c06c8cda1213e08aacded",
+    "collected_at": "2026-09-17T18:46:38+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/60c33e57-89a3-441a-8fd1-132bbf3758ae",
+    "file": "data/sources/2026-09-17-official/baidu-live-60c33e57-89a3-441a-8fd1-132bbf3758ae.html",
+    "sha256": "804b2d16964b1e32987411c4eac149df56c8b7eb4287559f6af9b7463e2e3ae7",
+    "collected_at": "2026-09-17T18:46:38+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/5cc7a488-5b39-4501-9c06-3f2ef703c5bd",
+    "file": "data/sources/2026-09-17-official/baidu-live-5cc7a488-5b39-4501-9c06-3f2ef703c5bd.html",
+    "sha256": "956475d667260d541710bf7c0db4deec8cfacb5ac2c691ce50091b26be1509c4",
+    "collected_at": "2026-09-17T18:46:38+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/4a24a509-42b0-42fe-989d-bc24e863ce7b",
+    "file": "data/sources/2026-09-17-official/baidu-live-4a24a509-42b0-42fe-989d-bc24e863ce7b.html",
+    "sha256": "b6de43f4daa9894a11cf51e06b30ea9b146e4c1601a773ec68fb1bfaa66801cf",
+    "collected_at": "2026-09-17T18:46:38+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/59d9bb54-46e5-4d3c-aa26-e59b1dea387a",
+    "file": "data/sources/2026-09-17-official/baidu-live-59d9bb54-46e5-4d3c-aa26-e59b1dea387a.html",
+    "sha256": "a2b8e423f80221842c591c3e85bd9964e11098841435ea2927272e12de1d4fee",
+    "collected_at": "2026-09-17T18:46:39+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/49e5f2c5-2790-4b20-902e-c20fbbf117f7",
+    "file": "data/sources/2026-09-17-official/baidu-live-49e5f2c5-2790-4b20-902e-c20fbbf117f7.html",
+    "sha256": "64c7d999858aa910125c1df7ba512c872d462296052ee6185f05e1d657fc1dbc",
+    "collected_at": "2026-09-17T18:46:39+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/47462917-75f1-4c6f-89b8-9d545aa7f159",
+    "file": "data/sources/2026-09-17-official/baidu-live-47462917-75f1-4c6f-89b8-9d545aa7f159.html",
+    "sha256": "1b798ff2e067dfbe78fc9e87550830c3533a861b3dfd83409d591537f42a59fd",
+    "collected_at": "2026-09-17T18:46:39+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/46cc7bf1-1d94-4d3b-a699-0322632eb43a",
+    "file": "data/sources/2026-09-17-official/baidu-live-46cc7bf1-1d94-4d3b-a699-0322632eb43a.html",
+    "sha256": "a97a30f50e999c2b600f93ce3e2cb7048d94e3ba5955f903251a4e16aba866d8",
+    "collected_at": "2026-09-17T18:46:39+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/423c0fa3-a0f3-4def-a882-7466d3685b79",
+    "file": "data/sources/2026-09-17-official/baidu-live-423c0fa3-a0f3-4def-a882-7466d3685b79.html",
+    "sha256": "f8723afa0cac43391ad216e224a262f7da41f7d46b5ed33a88cca29fc0ad41f1",
+    "collected_at": "2026-09-17T18:46:39+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/4635bd24-347e-4e54-b97f-88d760f1b752",
+    "file": "data/sources/2026-09-17-official/baidu-live-4635bd24-347e-4e54-b97f-88d760f1b752.html",
+    "sha256": "af4413016dfe58600592ae3e4409328dfd8ebb8754accb541728f1af8a5c194e",
+    "collected_at": "2026-09-17T18:46:39+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/3fbd2b8c-43a6-4fa6-a71c-784bfe2ec4cd",
+    "file": "data/sources/2026-09-17-official/baidu-live-3fbd2b8c-43a6-4fa6-a71c-784bfe2ec4cd.html",
+    "sha256": "53ce95ad8809d165e9fcb7347ac9ad1c82b13278366a36fafd04a291bafafd04",
+    "collected_at": "2026-09-17T18:46:39+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/41d77373-f9d3-41ff-9559-1f092c65a3c7",
+    "file": "data/sources/2026-09-17-official/baidu-live-41d77373-f9d3-41ff-9559-1f092c65a3c7.html",
+    "sha256": "294f198e1c1ecf1abfb68d3309b8db6a202096230212742bd9e16f0da903f05c",
+    "collected_at": "2026-09-17T18:46:39+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/3b3888c3-5d8b-4c62-9bbb-a142c24e7d86",
+    "file": "data/sources/2026-09-17-official/baidu-live-3b3888c3-5d8b-4c62-9bbb-a142c24e7d86.html",
+    "sha256": "21431eab61e5e32ca90efdcd72cce6b911923ecfbe0f6bd4318fb1de6a74a013",
+    "collected_at": "2026-09-17T18:46:39+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/3d46adf6-09b3-4e04-b6d3-7959ddeab7bd",
+    "file": "data/sources/2026-09-17-official/baidu-live-3d46adf6-09b3-4e04-b6d3-7959ddeab7bd.html",
+    "sha256": "270fe810436b2415490b2043c40e35460786d0b7b4b56859a3ed0182df733179",
+    "collected_at": "2026-09-17T18:46:39+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/36743b66-94bb-491e-8e4b-b45873a31389",
+    "file": "data/sources/2026-09-17-official/baidu-live-36743b66-94bb-491e-8e4b-b45873a31389.html",
+    "sha256": "977c4c95d8ac03e9117fbea494ad2ec12184e559adcd2d3f3dd0ce94eee9fd33",
+    "collected_at": "2026-09-17T18:46:39+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/358aa42d-0fb4-43e6-8204-1d083b980d21",
+    "file": "data/sources/2026-09-17-official/baidu-live-358aa42d-0fb4-43e6-8204-1d083b980d21.html",
+    "sha256": "daaabfc25e9e1196f70561be1cce11a996d8c1d1d4fa1da05467b7a7428a746d",
+    "collected_at": "2026-09-17T18:46:39+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/342cf5e1-8162-46af-8f38-3115cec3d960",
+    "file": "data/sources/2026-09-17-official/baidu-live-342cf5e1-8162-46af-8f38-3115cec3d960.html",
+    "sha256": "4f4371ce4617dbc1e688a1a29f40e357c77304f027f63869e309a0369101f8a7",
+    "collected_at": "2026-09-17T18:46:39+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/33f41590-5770-4a91-9395-3c05e7ed1571",
+    "file": "data/sources/2026-09-17-official/baidu-live-33f41590-5770-4a91-9395-3c05e7ed1571.html",
+    "sha256": "537d3b87b0761a3650d35834f2aef6c0255c211de1223057908f110a12602389",
+    "collected_at": "2026-09-17T18:46:39+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/329d589b-2eca-4964-bf25-59b1b632a663",
+    "file": "data/sources/2026-09-17-official/baidu-live-329d589b-2eca-4964-bf25-59b1b632a663.html",
+    "sha256": "da939fa44cccea84668f9b9116570705fbd379722cae608024cea792afb83eeb",
+    "collected_at": "2026-09-17T18:46:39+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/31e3795e-d5fd-4573-854b-960ab1fcf46a",
+    "file": "data/sources/2026-09-17-official/baidu-live-31e3795e-d5fd-4573-854b-960ab1fcf46a.html",
+    "sha256": "0bd3ef6f3549377260974dafb49c041e05c2eb2e5e1eb3b4cb6184503f4fcd22",
+    "collected_at": "2026-09-17T18:46:40+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/3287bb6a-8c27-4648-a3c2-b3cac16c3d36",
+    "file": "data/sources/2026-09-17-official/baidu-live-3287bb6a-8c27-4648-a3c2-b3cac16c3d36.html",
+    "sha256": "697e7704f8330eabcfb85d75012ca35bcc591feffd8822e8af6c9c85d36947fc",
+    "collected_at": "2026-09-17T18:46:40+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/307e48c3-7e1e-4710-9cd4-96d942eade3d",
+    "file": "data/sources/2026-09-17-official/baidu-live-307e48c3-7e1e-4710-9cd4-96d942eade3d.html",
+    "sha256": "f7e23e62e2d9f0caee6c52e4a4e38a88c99f5d70ca74ade53fa51e6c0ed436c9",
+    "collected_at": "2026-09-17T18:46:40+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/2f4467af-0b6f-4dd8-9f01-1fa09fa72e33",
+    "file": "data/sources/2026-09-17-official/baidu-live-2f4467af-0b6f-4dd8-9f01-1fa09fa72e33.html",
+    "sha256": "3bc685d22614bea23edcc1e48edf1f24c676118c5286e3ec12c04d59acf18941",
+    "collected_at": "2026-09-17T18:46:40+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/2df21b8d-b533-40e4-ad89-6dea847a44c8",
+    "file": "data/sources/2026-09-17-official/baidu-live-2df21b8d-b533-40e4-ad89-6dea847a44c8.html",
+    "sha256": "84eb658842145f424298cf7aebaa170dc5f57a0eb46982587fc15f8b0221f8a5",
+    "collected_at": "2026-09-17T18:46:40+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/2db47184-bf40-4225-bdef-620c6e819cac",
+    "file": "data/sources/2026-09-17-official/baidu-live-2db47184-bf40-4225-bdef-620c6e819cac.html",
+    "sha256": "f3978c7d983135c6634504f35d329c89ba71012d49c98d890dfa8a28961b2296",
+    "collected_at": "2026-09-17T18:46:40+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/2ce00a5c-20eb-42cf-a4d9-200cc904386f",
+    "file": "data/sources/2026-09-17-official/baidu-live-2ce00a5c-20eb-42cf-a4d9-200cc904386f.html",
+    "sha256": "2f4ef99ea30afd0818092860840f9cee90437acc611aaff218689ec4d1d9d025",
+    "collected_at": "2026-09-17T18:46:40+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/291b5b2d-cbe3-4f5d-8435-a63ff55dd182",
+    "file": "data/sources/2026-09-17-official/baidu-live-291b5b2d-cbe3-4f5d-8435-a63ff55dd182.html",
+    "sha256": "8d28989c4b37af9f18df9893734fb8b24ed5921b4004209af68d71d276a37db0",
+    "collected_at": "2026-09-17T18:46:40+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/2674fa02-968f-4e10-985f-847fb216ec77",
+    "file": "data/sources/2026-09-17-official/baidu-live-2674fa02-968f-4e10-985f-847fb216ec77.html",
+    "sha256": "4842b4a58d393756dfab669f28cbe298b549e0ef5da783f8b3bd2f3fd44d8cdd",
+    "collected_at": "2026-09-17T18:46:40+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/2726a03c-94e5-4511-9c98-077f07ecd6c6",
+    "file": "data/sources/2026-09-17-official/baidu-live-2726a03c-94e5-4511-9c98-077f07ecd6c6.html",
+    "sha256": "404a454729098cf8424451aa90d7e6b8402be9de778631ec1ef62bc6ae7615d2",
+    "collected_at": "2026-09-17T18:46:40+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/26589494-be28-4d0e-8ceb-727e998c0867",
+    "file": "data/sources/2026-09-17-official/baidu-live-26589494-be28-4d0e-8ceb-727e998c0867.html",
+    "sha256": "39dfd793dfd245680f5f96a34b5a080ef2465c8f3115f582a3ae471dcc0651e4",
+    "collected_at": "2026-09-17T18:46:40+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/257f5f71-cbdb-4628-87ab-23e6a821ea04",
+    "file": "data/sources/2026-09-17-official/baidu-live-257f5f71-cbdb-4628-87ab-23e6a821ea04.html",
+    "sha256": "df00d0762dd097304c7255ead5242058a6c48a14f1234b5141957ebd7adcd9f2",
+    "collected_at": "2026-09-17T18:46:40+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/24ca5d5d-9b04-4edc-9e2c-436bbade161c",
+    "file": "data/sources/2026-09-17-official/baidu-live-24ca5d5d-9b04-4edc-9e2c-436bbade161c.html",
+    "sha256": "452f3dda2b05265067c639744ab50abfc9eafe149f17d594a2cd7ae3194782ae",
+    "collected_at": "2026-09-17T18:46:41+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/236fd232-fe6a-4265-b4ec-b5349abb05d8",
+    "file": "data/sources/2026-09-17-official/baidu-live-236fd232-fe6a-4265-b4ec-b5349abb05d8.html",
+    "sha256": "904309061be6f22b8df0e96e63b4c4ddbdc35ced2996ad56dccd067476b4bc79",
+    "collected_at": "2026-09-17T18:46:41+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/200fb2bc-0826-466a-93f4-8ae31ab7e1c8",
+    "file": "data/sources/2026-09-17-official/baidu-live-200fb2bc-0826-466a-93f4-8ae31ab7e1c8.html",
+    "sha256": "2f896188af8273f59875d54449c3ff4c43d75ba1d8373ad77236b652aed5b8b3",
+    "collected_at": "2026-09-17T18:46:41+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/1d6833eb-77b2-4e03-99d6-8a42d43dbae3",
+    "file": "data/sources/2026-09-17-official/baidu-live-1d6833eb-77b2-4e03-99d6-8a42d43dbae3.html",
+    "sha256": "d9cdc4616940a3b18c45b1a27f8c09ed0fa04ecf1a95043e26ad0881502d1a77",
+    "collected_at": "2026-09-17T18:46:41+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/171712de-4669-4426-abb3-2406da533ec4",
+    "file": "data/sources/2026-09-17-official/baidu-live-171712de-4669-4426-abb3-2406da533ec4.html",
+    "sha256": "aa2d6e8ba269a19cdcbb90bc1b69d26c2864bf4b6f13799562f56995ccda3e19",
+    "collected_at": "2026-09-17T18:46:41+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/16d411c7-b071-444d-ac2e-43337be4bb27",
+    "file": "data/sources/2026-09-17-official/baidu-live-16d411c7-b071-444d-ac2e-43337be4bb27.html",
+    "sha256": "ec7bff777fc62c9697c495cbc9fcb673658dead23c58e74f364b3b481d07f5d4",
+    "collected_at": "2026-09-17T18:46:41+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/175d332c-0f01-4e14-b3cd-99f29be61966",
+    "file": "data/sources/2026-09-17-official/baidu-live-175d332c-0f01-4e14-b3cd-99f29be61966.html",
+    "sha256": "fcbb8a7973d73185b172fe7bc3e4d7e2a99f0fa163a186522bdca7bc5a18c0a4",
+    "collected_at": "2026-09-17T18:46:41+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/15a59bf3-83f9-4c35-8d5e-bce6c50c59cc",
+    "file": "data/sources/2026-09-17-official/baidu-live-15a59bf3-83f9-4c35-8d5e-bce6c50c59cc.html",
+    "sha256": "ac2aa9b1d7dc485938fcf17fdc5aa271341ea643e2f369c8c1c4f6765e6e6db3",
+    "collected_at": "2026-09-17T18:46:41+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/14fa977b-f16b-4b82-b994-0d343e2e70a1",
+    "file": "data/sources/2026-09-17-official/baidu-live-14fa977b-f16b-4b82-b994-0d343e2e70a1.html",
+    "sha256": "ca734c47affcbd788aa4f1ad44ab1ef56573444d5cec6ea71ef21206e80d1d7a",
+    "collected_at": "2026-09-17T18:46:41+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/12f522c1-491e-4954-bc3c-9ae8bae6dbb8",
+    "file": "data/sources/2026-09-17-official/baidu-live-12f522c1-491e-4954-bc3c-9ae8bae6dbb8.html",
+    "sha256": "1136869c695ff5a0766165032b3d9f375b7b5b7a53082fbaebef98c545097025",
+    "collected_at": "2026-09-17T18:46:41+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/127e69e3-6b3b-440e-83d6-080076768c13",
+    "file": "data/sources/2026-09-17-official/baidu-live-127e69e3-6b3b-440e-83d6-080076768c13.html",
+    "sha256": "c547fae29c747425e4655b0a812f706b4d64cc08b1f039773932a46a93e49386",
+    "collected_at": "2026-09-17T18:46:41+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/1270fb70-730e-4569-9385-b013690e607d",
+    "file": "data/sources/2026-09-17-official/baidu-live-1270fb70-730e-4569-9385-b013690e607d.html",
+    "sha256": "dcc9f9e892b4bd00c3475a791e203dbfc43afaa9e12aa3082cf95003b865affa",
+    "collected_at": "2026-09-17T18:46:42+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/113e72a8-0df4-4040-bac8-bd04ccf252b2",
+    "file": "data/sources/2026-09-17-official/baidu-live-113e72a8-0df4-4040-bac8-bd04ccf252b2.html",
+    "sha256": "d6f70566604cf2257bef29432db9b1e6b348e64a2db8b21075111760fef5e7ad",
+    "collected_at": "2026-09-17T18:46:42+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/0f7b69e8-55e9-4984-bd76-88de2513ab85",
+    "file": "data/sources/2026-09-17-official/baidu-live-0f7b69e8-55e9-4984-bd76-88de2513ab85.html",
+    "sha256": "4482a9eec9ad169246f187df5a799f9301f6e1ba02b45f6d5d7c776d829bcd9e",
+    "collected_at": "2026-09-17T18:46:42+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/0f336f8e-a440-4ebb-a45a-5554b493e527",
+    "file": "data/sources/2026-09-17-official/baidu-live-0f336f8e-a440-4ebb-a45a-5554b493e527.html",
+    "sha256": "465c0a728ccc69c38129e265828dbb51e5eec041598f8b7ae78bff7bcc5ea884",
+    "collected_at": "2026-09-17T18:46:42+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/098d795f-102f-43f0-a3c3-f639b63f0703",
+    "file": "data/sources/2026-09-17-official/baidu-live-098d795f-102f-43f0-a3c3-f639b63f0703.html",
+    "sha256": "2db22b41c5f382cd0f3a70a5b73122df102c59038c23503b182868eb59aa11e5",
+    "collected_at": "2026-09-17T18:46:42+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/0905f373-35cb-4c2c-b4cc-8998f2d7d18a",
+    "file": "data/sources/2026-09-17-official/baidu-live-0905f373-35cb-4c2c-b4cc-8998f2d7d18a.html",
+    "sha256": "278b13a8ab7a8123fea82f96fad5dc4499a0852847063691916f7ec42e8ad4c1",
+    "collected_at": "2026-09-17T18:46:42+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/0826d67c-3431-4ab5-b449-f74793d5376d",
+    "file": "data/sources/2026-09-17-official/baidu-live-0826d67c-3431-4ab5-b449-f74793d5376d.html",
+    "sha256": "44fa1c29453eeb5001cc3f9638839c2af824755612c98fd3c661f444dd9f1ea4",
+    "collected_at": "2026-09-17T18:46:42+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/0aa80bfa-a052-4052-afc1-28c38407c13c",
+    "file": "data/sources/2026-09-17-official/baidu-live-0aa80bfa-a052-4052-afc1-28c38407c13c.html",
+    "sha256": "2f46632df2873bb3c31f59fa4a67be52caf81d0a26328a246b3cc7cee5c199d5",
+    "collected_at": "2026-09-17T18:46:42+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/04989ad4-f152-45c4-a177-eb04258c6e95",
+    "file": "data/sources/2026-09-17-official/baidu-live-04989ad4-f152-45c4-a177-eb04258c6e95.html",
+    "sha256": "510444a4e7d27d528f24e868af940c2afeec20fa6f4ac63b3353769e7743e602",
+    "collected_at": "2026-09-17T18:46:42+08:00"
+  },
+  {
+    "url": "https://talent.baidu.com/jobs/detail/GRADUATE/02f73086-be71-4d09-8d6e-f1c6981b8b48",
+    "file": "data/sources/2026-09-17-official/baidu-live-02f73086-be71-4d09-8d6e-f1c6981b8b48.html",
+    "sha256": "9ac2db2f1f993f3d4c939cebfc8ec8a73705a082090bb18b9a149093e2128225",
+    "collected_at": "2026-09-17T18:46:42+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=14984",
+    "file": "data/sources/2026-09-17-official/tme-live-14984.json",
+    "sha256": "7dc58b5463dad558f05ade7b29c6ccdb532b383ad8f958cb04b4e68a60f9b19e",
+    "collected_at": "2026-09-17T18:46:42+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=14989",
+    "file": "data/sources/2026-09-17-official/tme-live-14989.json",
+    "sha256": "8a93f03ada9b3acd74f73e300912e303b14a91b1f052c3cbf16701e0de01a3e7",
+    "collected_at": "2026-09-17T18:46:42+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=14982",
+    "file": "data/sources/2026-09-17-official/tme-live-14982.json",
+    "sha256": "0d4cc072b45f4d139cef377713e4682fcde5ab862b218245d885ea34efbe1883",
+    "collected_at": "2026-09-17T18:46:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/campus/post-details?id=14984",
+    "file": "data/sources/2026-09-17-official/tme-page-14984.html",
+    "sha256": "9b1e1093fe12e4891c32e61b44bb3b75a51d770a599a2428b9118cf6223fdb01",
+    "collected_at": "2026-09-17T18:46:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/campus/post-details?id=14989",
+    "file": "data/sources/2026-09-17-official/tme-page-14989.html",
+    "sha256": "9b1e1093fe12e4891c32e61b44bb3b75a51d770a599a2428b9118cf6223fdb01",
+    "collected_at": "2026-09-17T18:46:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/campus/post-details?id=14982",
+    "file": "data/sources/2026-09-17-official/tme-page-14982.html",
+    "sha256": "9b1e1093fe12e4891c32e61b44bb3b75a51d770a599a2428b9118cf6223fdb01",
+    "collected_at": "2026-09-17T18:46:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=14951",
+    "file": "data/sources/2026-09-17-official/tme-live-14951.json",
+    "sha256": "5abf62774b32b5d2b08a038298ffb8e94b2e083b7c62632521e5fb34cd53a6a5",
+    "collected_at": "2026-09-17T18:46:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=11734",
+    "file": "data/sources/2026-09-17-official/tme-live-11734.json",
+    "sha256": "370ff86ed9853dad24f22b060b0500528ff72a10e0ea0186a1dc8538d0870500",
+    "collected_at": "2026-09-17T18:46:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=13098",
+    "file": "data/sources/2026-09-17-official/tme-live-13098.json",
+    "sha256": "db03080e86f9f15ea113f0acb2f50788b2ac7c1297df7a1900ca3bf6d62f754d",
+    "collected_at": "2026-09-17T18:46:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/campus/post-details?id=14951",
+    "file": "data/sources/2026-09-17-official/tme-page-14951.html",
+    "sha256": "9b1e1093fe12e4891c32e61b44bb3b75a51d770a599a2428b9118cf6223fdb01",
+    "collected_at": "2026-09-17T18:46:43+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/campus/post-details?id=13098",
+    "file": "data/sources/2026-09-17-official/tme-page-13098.html",
+    "sha256": "9b1e1093fe12e4891c32e61b44bb3b75a51d770a599a2428b9118cf6223fdb01",
+    "collected_at": "2026-09-17T18:46:44+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=14785",
+    "file": "data/sources/2026-09-17-official/tme-live-14785.json",
+    "sha256": "5587c16d763f909b028ca7a7914ca980394b0e8792551dd7399d4eb58805b8f2",
+    "collected_at": "2026-09-17T18:46:44+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/campus/post-details?id=11734",
+    "file": "data/sources/2026-09-17-official/tme-page-11734.html",
+    "sha256": "9b1e1093fe12e4891c32e61b44bb3b75a51d770a599a2428b9118cf6223fdb01",
+    "collected_at": "2026-09-17T18:46:44+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=12505",
+    "file": "data/sources/2026-09-17-official/tme-live-12505.json",
+    "sha256": "4ee9562115c131d91c98d45d19fc459162090d81f06e2e025d90f1fc51e1b8f9",
+    "collected_at": "2026-09-17T18:46:44+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=13086",
+    "file": "data/sources/2026-09-17-official/tme-live-13086.json",
+    "sha256": "c43b7d6144c0a119450216428d1dd4b06a5970fa786aece2daa7686141630d3e",
+    "collected_at": "2026-09-17T18:46:44+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/campus/post-details?id=12505",
+    "file": "data/sources/2026-09-17-official/tme-page-12505.html",
+    "sha256": "9b1e1093fe12e4891c32e61b44bb3b75a51d770a599a2428b9118cf6223fdb01",
+    "collected_at": "2026-09-17T18:46:44+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/campus/post-details?id=14785",
+    "file": "data/sources/2026-09-17-official/tme-page-14785.html",
+    "sha256": "9b1e1093fe12e4891c32e61b44bb3b75a51d770a599a2428b9118cf6223fdb01",
+    "collected_at": "2026-09-17T18:46:45+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/campus/post-details?id=13086",
+    "file": "data/sources/2026-09-17-official/tme-page-13086.html",
+    "sha256": "9b1e1093fe12e4891c32e61b44bb3b75a51d770a599a2428b9118cf6223fdb01",
+    "collected_at": "2026-09-17T18:46:45+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=14659",
+    "file": "data/sources/2026-09-17-official/tme-live-14659.json",
+    "sha256": "183f69a4c5f02ce9cbb831f22c58d5b6dd99220dbb92f7a73bb90b7be258e82c",
+    "collected_at": "2026-09-17T18:46:45+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=13099",
+    "file": "data/sources/2026-09-17-official/tme-live-13099.json",
+    "sha256": "e3ec073b60ba28b899e5308d8d34534627c9f1eebbb488bf60fd461ab91c1b93",
+    "collected_at": "2026-09-17T18:46:45+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=11718",
+    "file": "data/sources/2026-09-17-official/tme-live-11718.json",
+    "sha256": "ffe40712cb1cf9b0b623c7be7cf0b3c52cf1e6a5377cce75643a8ecf2cb8eab8",
+    "collected_at": "2026-09-17T18:46:45+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/campus/post-details?id=14659",
+    "file": "data/sources/2026-09-17-official/tme-page-14659.html",
+    "sha256": "9b1e1093fe12e4891c32e61b44bb3b75a51d770a599a2428b9118cf6223fdb01",
+    "collected_at": "2026-09-17T18:46:45+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/campus/post-details?id=13099",
+    "file": "data/sources/2026-09-17-official/tme-page-13099.html",
+    "sha256": "9b1e1093fe12e4891c32e61b44bb3b75a51d770a599a2428b9118cf6223fdb01",
+    "collected_at": "2026-09-17T18:46:45+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=13602",
+    "file": "data/sources/2026-09-17-official/tme-live-13602.json",
+    "sha256": "436612c1b82afbb71246ec19ca0cd345dfead6a3c5ed5bc343e7a7ff37a94275",
+    "collected_at": "2026-09-17T18:46:45+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/campus/post-details?id=11718",
+    "file": "data/sources/2026-09-17-official/tme-page-11718.html",
+    "sha256": "9b1e1093fe12e4891c32e61b44bb3b75a51d770a599a2428b9118cf6223fdb01",
+    "collected_at": "2026-09-17T18:46:45+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=13095",
+    "file": "data/sources/2026-09-17-official/tme-live-13095.json",
+    "sha256": "8f6a7807bf95d90ba6f36cb80c59969e20b6fe72978c6220ca980e92f0b59d57",
+    "collected_at": "2026-09-17T18:46:45+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/campus/post-details?id=13602",
+    "file": "data/sources/2026-09-17-official/tme-page-13602.html",
+    "sha256": "9b1e1093fe12e4891c32e61b44bb3b75a51d770a599a2428b9118cf6223fdb01",
+    "collected_at": "2026-09-17T18:46:46+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/campus/post-details?id=13095",
+    "file": "data/sources/2026-09-17-official/tme-page-13095.html",
+    "sha256": "9b1e1093fe12e4891c32e61b44bb3b75a51d770a599a2428b9118cf6223fdb01",
+    "collected_at": "2026-09-17T18:46:46+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=13093",
+    "file": "data/sources/2026-09-17-official/tme-live-13093.json",
+    "sha256": "f7dc73fb1e887e80fad2825af72eff9214e286f8035869b0e9717823663ee1f3",
+    "collected_at": "2026-09-17T18:46:46+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=11730",
+    "file": "data/sources/2026-09-17-official/tme-live-11730.json",
+    "sha256": "3f819181a740742e6d2f489c15b25d03e2387da57c1058b1ce0ff5590483fec5",
+    "collected_at": "2026-09-17T18:46:46+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=11729",
+    "file": "data/sources/2026-09-17-official/tme-live-11729.json",
+    "sha256": "3004c2920fcfa4347c224bb58e6983fa7a7eb4dc3dd3b051aff19d4fce030d1a",
+    "collected_at": "2026-09-17T18:46:46+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/campus/post-details?id=11730",
+    "file": "data/sources/2026-09-17-official/tme-page-11730.html",
+    "sha256": "9b1e1093fe12e4891c32e61b44bb3b75a51d770a599a2428b9118cf6223fdb01",
+    "collected_at": "2026-09-17T18:46:46+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/campus/post-details?id=13093",
+    "file": "data/sources/2026-09-17-official/tme-page-13093.html",
+    "sha256": "9b1e1093fe12e4891c32e61b44bb3b75a51d770a599a2428b9118cf6223fdb01",
+    "collected_at": "2026-09-17T18:46:46+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=11728",
+    "file": "data/sources/2026-09-17-official/tme-live-11728.json",
+    "sha256": "7348cffe380e5fdefa21c62bb6dfcada9d60a76669675fed31f1721e3c24c8e4",
+    "collected_at": "2026-09-17T18:46:46+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=11726",
+    "file": "data/sources/2026-09-17-official/tme-live-11726.json",
+    "sha256": "308093d43f971ffb1b61021a7eecda383005150581f06523db58e131f45fee79",
+    "collected_at": "2026-09-17T18:46:47+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/campus/post-details?id=11729",
+    "file": "data/sources/2026-09-17-official/tme-page-11729.html",
+    "sha256": "9b1e1093fe12e4891c32e61b44bb3b75a51d770a599a2428b9118cf6223fdb01",
+    "collected_at": "2026-09-17T18:46:47+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/campus/post-details?id=11728",
+    "file": "data/sources/2026-09-17-official/tme-page-11728.html",
+    "sha256": "9b1e1093fe12e4891c32e61b44bb3b75a51d770a599a2428b9118cf6223fdb01",
+    "collected_at": "2026-09-17T18:46:47+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=11723",
+    "file": "data/sources/2026-09-17-official/tme-live-11723.json",
+    "sha256": "237791842538c479a37b92d2467e1d93f76537a8655cf53c9b3bbcbc2e48af18",
+    "collected_at": "2026-09-17T18:46:47+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/campus/post-details?id=11726",
+    "file": "data/sources/2026-09-17-official/tme-page-11726.html",
+    "sha256": "9b1e1093fe12e4891c32e61b44bb3b75a51d770a599a2428b9118cf6223fdb01",
+    "collected_at": "2026-09-17T18:46:47+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=11721",
+    "file": "data/sources/2026-09-17-official/tme-live-11721.json",
+    "sha256": "0b5ae8fb759a3d83066e2318865d0b4da29ce35b87fcb93d80207980568b3efd",
+    "collected_at": "2026-09-17T18:46:47+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/campus/post-details?id=11723",
+    "file": "data/sources/2026-09-17-official/tme-page-11723.html",
+    "sha256": "9b1e1093fe12e4891c32e61b44bb3b75a51d770a599a2428b9118cf6223fdb01",
+    "collected_at": "2026-09-17T18:46:47+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=11722",
+    "file": "data/sources/2026-09-17-official/tme-live-11722.json",
+    "sha256": "c7a8a167c930576dee469428618f22c4c8aa0d3d1c29d532a8556a92e1ecaaa3",
+    "collected_at": "2026-09-17T18:46:47+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=11724",
+    "file": "data/sources/2026-09-17-official/tme-live-11724.json",
+    "sha256": "4c74961453e4e29271a6f4819c5c00bf957dcc62f66e00f9f889fdabf003cb8c",
+    "collected_at": "2026-09-17T18:46:48+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/campus/post-details?id=11721",
+    "file": "data/sources/2026-09-17-official/tme-page-11721.html",
+    "sha256": "9b1e1093fe12e4891c32e61b44bb3b75a51d770a599a2428b9118cf6223fdb01",
+    "collected_at": "2026-09-17T18:46:48+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/campus/post-details?id=11722",
+    "file": "data/sources/2026-09-17-official/tme-page-11722.html",
+    "sha256": "9b1e1093fe12e4891c32e61b44bb3b75a51d770a599a2428b9118cf6223fdb01",
+    "collected_at": "2026-09-17T18:46:48+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=13097",
+    "file": "data/sources/2026-09-17-official/tme-live-13097.json",
+    "sha256": "d943f42b08f05139f8bfeca17ef1e37d88f09d729ec6e5d6e024a39b94d09143",
+    "collected_at": "2026-09-17T18:46:48+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/campus/post-details?id=11724",
+    "file": "data/sources/2026-09-17-official/tme-page-11724.html",
+    "sha256": "9b1e1093fe12e4891c32e61b44bb3b75a51d770a599a2428b9118cf6223fdb01",
+    "collected_at": "2026-09-17T18:46:48+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=13087",
+    "file": "data/sources/2026-09-17-official/tme-live-13087.json",
+    "sha256": "e02cffd531b9982d22a8821b710784e071977c6595b1b0228ba4f21d8a31be24",
+    "collected_at": "2026-09-17T18:46:48+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/campus/post-details?id=13097",
+    "file": "data/sources/2026-09-17-official/tme-page-13097.html",
+    "sha256": "9b1e1093fe12e4891c32e61b44bb3b75a51d770a599a2428b9118cf6223fdb01",
+    "collected_at": "2026-09-17T18:46:48+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=13092",
+    "file": "data/sources/2026-09-17-official/tme-live-13092.json",
+    "sha256": "6915f74caf170d38f2b8efacfac822d40e1bdea4760cf3e075782e89d7abcb96",
+    "collected_at": "2026-09-17T18:46:48+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/campus/post-details?id=13087",
+    "file": "data/sources/2026-09-17-official/tme-page-13087.html",
+    "sha256": "9b1e1093fe12e4891c32e61b44bb3b75a51d770a599a2428b9118cf6223fdb01",
+    "collected_at": "2026-09-17T18:46:48+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=13091",
+    "file": "data/sources/2026-09-17-official/tme-live-13091.json",
+    "sha256": "54c13dbbf44b8503d2a9f0731fe376242467982ceead80796bd9797a4fe7bf8b",
+    "collected_at": "2026-09-17T18:46:49+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/api/uc-job/info?id=15068",
+    "file": "data/sources/2026-09-17-official/tme-live-15068.json",
+    "sha256": "714bfce09049a5873705835c1061295774c1684cd61271c0d7e71c0750ef122f",
+    "collected_at": "2026-09-17T18:46:49+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/campus/post-details?id=13092",
+    "file": "data/sources/2026-09-17-official/tme-page-13092.html",
+    "sha256": "9b1e1093fe12e4891c32e61b44bb3b75a51d770a599a2428b9118cf6223fdb01",
+    "collected_at": "2026-09-17T18:46:49+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/campus/post-details?id=13091",
+    "file": "data/sources/2026-09-17-official/tme-page-13091.html",
+    "sha256": "9b1e1093fe12e4891c32e61b44bb3b75a51d770a599a2428b9118cf6223fdb01",
+    "collected_at": "2026-09-17T18:46:49+08:00"
+  },
+  {
+    "url": "https://join.tencentmusic.com/campus/post-details?id=15068",
+    "file": "data/sources/2026-09-17-official/tme-page-15068.html",
+    "sha256": "9b1e1093fe12e4891c32e61b44bb3b75a51d770a599a2428b9118cf6223fdb01",
+    "collected_at": "2026-09-17T18:46:49+08:00"
+  }
+]

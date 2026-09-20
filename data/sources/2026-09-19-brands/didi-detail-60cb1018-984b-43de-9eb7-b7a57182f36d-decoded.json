@@ -1,0 +1,129 @@
+{
+  "code": 0,
+  "codeType": 0,
+  "data": {
+    "aiCurrentAccuracy": 0.5,
+    "aiThresholdAccuracy": 0.5,
+    "aimFields": [],
+    "autoArchiveTalentPoolId": 425506,
+    "autoDistribution": 0,
+    "autoFilterThreshold": 0.253,
+    "campusSiteGroupByCity": [],
+    "campusSites": [],
+    "commitment": "全职",
+    "createMethod": "手动添加",
+    "createdAt": "2026-08-05T14:50:42",
+    "department": {
+      "id": 203019,
+      "name": "国际化事业部"
+    },
+    "departmentId": 203019,
+    "departments": [
+      {
+        "id": 203019,
+        "name": "国际化事业部"
+      }
+    ],
+    "deptParentId": 0,
+    "education": "本科",
+    "hireMode": 2,
+    "id": "60cb1018-984b-43de-9eb7-b7a57182f36d",
+    "isShowRecommendSite": true,
+    "jobContactWorkWechatQRCode": "",
+    "jobDescription": "岗位职责：\n1、AI商家产品规划：参与面向外卖商家的AI赋能产品整体规划与路线图制定，覆盖商家全生命周期，协助明确阶段目标与优先级；\n2、多Agent产品设计：参与Multi-Agent在商家核心场景的方案设计，包括线索转化、话术推荐、商户经营扶持、商户画像、销售管理、自动化流程等；协助定义多Agent间的协作逻辑与任务编排；\n3、技术方案协同：与算法和工程团队紧密协作，参与Multi-Agent架构设计讨论，理解RAG、Prompt工程、Function Calling等技术方案的能力与边界，确保产品方案的技术可行性；\n4、评估体系与效果提升：协助建立AI产品效果的量化评估体系；通过Prompt工程、模型微调等手段参与持续降低幻觉率、提升输出质量的实验与优化工作；\n5、前沿技术跟踪：跟踪AI Agent/LLM前沿动态，撰写技术调研报告，将技术洞察转化为可落地的产品机会点建议；\n6、跨团队协作：与运营、研发团队高效协同，参与项目从方案到上线的全流程推进，积累实战经验。\n\n任职要求：\n1、2027届毕业生，本科及以上学历，计算机、人工智能、数据科学、信息管理、商科等相关专业优先；\n2、英语水平优秀者优先，具备西语能力者优先；\n3、有产品实习经验、数据处理能力佳的优先 ；\n4、对产品经理工作有浓厚兴趣，有互联网公司产品/运营相关实习经验，或校内产品设计/创新创业项目经验；\n5、对B端/SaaS/CRM逻辑有一定认知，了解销售管理或商户运营业务流程者优先（可通过课程设计、实习或案例研究体现）；\n6、理解LLM基本原理，了解Multi-Agent技术栈（Prompt工程、RAG、Function Calling、模型微调、工作流编排等）的基本概念，能将业务问题拆解为AI任务（有相关课程项目或自学实践经历）；\n7、具备出色的逻辑思维能力、快速学习能力和团队协作精神，有较强的项目推动意识。",
+    "jobIntentions": [],
+    "jobRankIds": [],
+    "locDepCampusList": [
+      {
+        "campusSiteIds": [],
+        "departmentIds": [
+          203019
+        ],
+        "locationIds": [
+          92621
+        ],
+        "storeIds": []
+      }
+    ],
+    "locations": [
+      {
+        "cityId": 110000,
+        "cityName": "北京市",
+        "country": "中国",
+        "countryDescription": "中国",
+        "id": 92621,
+        "provinceName": "北京市"
+      }
+    ],
+    "number": 1,
+    "openedAt": "2026-08-13T08:00",
+    "orgId": "didiglobal",
+    "pipelineId": 5546,
+    "postRequestResult": 0,
+    "prior": 0,
+    "projectFolder": {
+      "id": 100126280,
+      "name": "2027届-秋招",
+      "settings": {
+        "deliveryLimit": {
+          "classType": 0,
+          "content": {
+            "channels": [
+              "website",
+              "campus",
+              "recommend"
+            ],
+            "limit": 3,
+            "remainder": -1,
+            "type": 1
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "deliveryLimit"
+        },
+        "graduateDateLimit": {
+          "classType": 0,
+          "content": {
+            "endDate": "2027-8",
+            "startDate": "2026-9"
+          },
+          "creatorId": 2575085,
+          "hireMode": 2,
+          "name": "2027届-秋招",
+          "orgId": "didiglobal",
+          "projectFolderId": 100126280,
+          "status": 1,
+          "type": "graduateDateLimit"
+        }
+      }
+    },
+    "publishedAt": "2026-08-13T10:19:54",
+    "recommendAccessTimes": 0,
+    "recommendShareTimes": 0,
+    "recommendationBonus": 0,
+    "recommendationReason": {
+      "notNull": false,
+      "require": true
+    },
+    "salaryUnit": 0,
+    "shmInterview": 0,
+    "shmNextInterview": 0,
+    "showCampusSites": true,
+    "showIsCampus": true,
+    "status": "open",
+    "title": "27届秋招-AI产品助理（国际化外卖-新业务）",
+    "updatedAt": "2026-08-28T16:18:17",
+    "useHeadhunter": 0,
+    "virtual": 0,
+    "zhineng": {
+      "id": 20037,
+      "name": "产品类"
+    }
+  },
+  "msg": "成功",
+  "success": true
+}
