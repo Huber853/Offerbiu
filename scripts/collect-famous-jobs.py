@@ -36,7 +36,12 @@ def read(url,name,body=None,opener=None,headers=None):
         'collected_at':dt.datetime.fromtimestamp(file.stat().st_mtime,dt.timezone(dt.timedelta(hours=8))).isoformat(timespec='seconds')})
     return data
 
-def api(url,name,body=None,opener=None,headers=None):return json.loads(read(url,name,body,opener,headers))
+def api(url,name,body=None,opener=None,headers=None):
+    # A few tenants emit JSON with raw control characters inside strings, which
+    # strict mode rejects; retry leniently before letting the caller see a failure.
+    data=read(url,name,body,opener,headers)
+    try:return json.loads(data)
+    except ValueError:return json.loads(data.decode('utf-8','replace'),strict=False)
 def loc(value):
     if isinstance(value,str):value=re.split(r'[,，、;；/]',value)
     return list(dict.fromkeys(str(x).strip().removesuffix('市').replace('深圳总部','深圳') for x in value if x and str(x).strip()))
@@ -200,7 +205,12 @@ def meituan():
 FEISHU=[('字节跳动','bytedance','https://jobs.bytedance.com','campus',2,'互联网与软件'),
         ('得物','dewu','https://poizon.jobs.feishu.cn','578078',6,'互联网与软件'),
         ('影石','insta360','https://arashivision.jobs.feishu.cn','campus',6,'消费电子与硬件'),
-        ('小米','xiaomi','https://xiaomi.jobs.f.mioffice.cn','campus',6,'消费电子与硬件')]
+        ('小米','xiaomi','https://xiaomi.jobs.f.mioffice.cn','campus',6,'消费电子与硬件'),
+        ('小鹏汽车','xiaopeng','https://xiaopeng.jobs.feishu.cn','398875',6,'汽车与新能源'),
+        ('莉莉丝游戏','lilithgames','https://lilithgames.jobs.feishu.cn','campus',6,'游戏与文娱'),
+        ('微派网络','wepie','https://wepie.jobs.feishu.cn','359597',6,'游戏与文娱'),
+        ('MetaApp','metaapp','https://meta.jobs.feishu.cn','140297',6,'游戏与文娱'),
+        ('MiniMax','minimax','https://vrfi1sk8a0.jobs.feishu.cn','379481',6,'人工智能与数据')]
 
 def feishu(site):
     company,prefix,origin,path,portal,industry=site

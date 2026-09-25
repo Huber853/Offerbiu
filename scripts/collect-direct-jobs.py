@@ -19,6 +19,12 @@ STAMP=dt.datetime.now(dt.timezone(dt.timedelta(hours=8))).isoformat(timespec='se
 RAW=ROOT/'data/sources'/f'{STAMP[:10]}-official'
 RAW.mkdir(parents=True,exist_ok=True)
 SCHOOL='1917e634-eee1-1358-537d-7e36f6f41777'
+# The board is ordered newest first and only postings published inside the current
+# 2027 cohort window carry per-job cohort evidence, so paging stops once a whole
+# page predates the window instead of walking the full archive.
+NWU_CUTOFF=int(dt.datetime(2026,8,1,tzinfo=dt.timezone(dt.timedelta(hours=8))).timestamp())
+NWU_PAGE_SIZE=200
+NWU_MAX_PAGES=60
 MANIFEST=[]
 REJECTED=[]
 
@@ -98,17 +104,39 @@ def nwu():
     conf=read('https://jczx.nwu.edu.cn/js/config.js','nwu-config.txt').decode()
     user=re.search(r'apiuser\s*=\s*"([^"]+)"',conf).group(1)
     password=re.search(r'apipass\s*=\s*"([^"]+)"',conf).group(1)
-    headers={'auth':'Baisc '+base64.b64encode((user+':'+password).encode()).decode(),'Referer':'https://jczx.nwu.edu.cn/'}
+    fallback='Baisc '+base64.b64encode((user+':'+password).encode()).decode()
+    common={'login_user_id':1,'login_admin_school_code':'10697','login_admin_school_id':SCHOOL}
+    lock={'value':None,'at':0.0}
+    def auth():
+        # 2026-09: the public frontend stopped sending the static portal credentials
+        # as the auth header and now exchanges them for a short lived lock at
+        # /wx/getselock, which is what business requests carry. The static header is
+        # kept only as a fallback so an unchanged deployment still works.
+        if lock['value'] and time.time()-lock['at']<240:return lock['value']
+        exchange=urllib.request.Request('https://a.jiuyeb.cn/mobile.php/wx/getselock?'+urllib.parse.urlencode(common),
+            headers={'User-Agent':'Mozilla/5.0','Referer':'https://jczx.nwu.edu.cn/','token':''})
+        try:
+            with urllib.request.urlopen(exchange,timeout=25) as response:payload=json.loads(response.read())
+            lock['value']=(payload.get('data') or {}).get('lock') or fallback
+        except Exception:lock['value']=fallback
+        lock['at']=time.time()
+        return lock['value']
     def request(endpoint,body,name):
-        form={**body,'login_user_id':1,'login_admin_school_code':'10697','login_admin_school_id':SCHOOL}
-        return json.loads(read('https://a.jiuyeb.cn/mobile.php'+endpoint,name,urllib.parse.urlencode(form).encode(),headers))
+        form={**body,**common}
+        return json.loads(read('https://a.jiuyeb.cn/mobile.php'+endpoint,name,
+            urllib.parse.urlencode(form).encode(),{'Referer':'https://jczx.nwu.edu.cn/','auth':auth()}))
     def page(n):
-        try:return request('/job/getlist',{'jobtype':1,'isunion':2,'school_id':SCHOOL,'page':n,'size':20},f'nwu-list-{n}.json')['data']['list']
+        try:return request('/job/getlist',{'jobtype':1,'isunion':2,'school_id':SCHOOL,'page':n,'size':NWU_PAGE_SIZE},f'nwu-list-{n}.json')['data']['list']
         except Exception as error:
             REJECTED.append(dict(source='西北大学',page=n,reason=str(error)));return []
-    with concurrent.futures.ThreadPoolExecutor(max_workers=3) as pool:
-        listed=[j for chunk in pool.map(page,range(1,16)) for j in chunk]
-    unique={j['job_id']:j for j in listed if j.get('school_id')==SCHOOL and j.get('jobtype')==1}
+    listed=[]
+    for n in range(1,NWU_MAX_PAGES+1):
+        chunk=page(n)
+        if not chunk:break
+        listed+=chunk
+        if all((j.get('addtime') or 0)<NWU_CUTOFF for j in chunk):break
+        time.sleep(0.2)
+    unique={j['job_id']:j for j in listed if j.get('school_id')==SCHOOL and j.get('jobtype')==1 and (j.get('addtime') or 0)>=NWU_CUTOFF}
     def detail(j):
         title=j['work_name']
         if re.search(r'类岗位$|类$|校园招聘|招聘简章|招聘公告|招募计划|全球校招|科学研究$|校招岗位|储备人才$',title):

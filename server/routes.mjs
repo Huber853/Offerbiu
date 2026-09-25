@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { db, ROOT, transaction, jobMetadata, unpackResume } from './db.mjs';
 import { HttpError, demand, text, now, id, getSession, createSession, clearSession, passwordHash, passwordMatches, rateLimit, sanitizeResume, encrypt, resumeField } from './security.mjs';
-import { aiSettings, polishResume, MODELS } from './deepseek.mjs';
+import { aiSettings, guardBaseUrl, polishResume, PROVIDERS } from './ai.mjs';
 import { blankResume, templates, statuses } from '../shared/templates.mjs';
 import { RESUME_FILE_LIMIT } from '../shared/resume-media.mjs';
 
@@ -251,9 +251,15 @@ async function api(req, res, url) {
   }
   if (pathname === '/api/settings/ai' && method === 'GET') return json(res, aiSettings(userId));
   if (pathname === '/api/settings/ai' && method === 'PUT') {
-    const model = text(body.model, 80);
-    demand(MODELS.includes(model), 400, '模型不支持。');
     const old = db.prepare('SELECT * FROM ai_settings WHERE user_id=?').get(userId);
+    const previous = PROVIDERS[old?.provider] ? old.provider : 'deepseek';
+    const provider = PROVIDERS[body.provider] ? body.provider : previous;
+    const meta = PROVIDERS[provider];
+    const model = text(body.model, 80) || (provider === previous ? text(old?.model, 80) : '') || meta.defaultModel;
+    if (provider === 'deepseek') demand(meta.models.includes(model), 400, '模型不支持。');
+    else demand(model, 400, '请填写模型名称。');
+    const baseUrl = provider === 'custom'
+      ? guardBaseUrl(body.baseUrl || (previous === 'custom' ? old?.base_url : '')) : '';
     let stored = old?.key_encrypted || null;
     if (body.removeKey === true) stored = null;
     else if (body.apiKey) {
@@ -261,13 +267,13 @@ async function api(req, res, url) {
       demand(key.length >= 16 && !/\s/.test(key), 400, '密钥格式不正确。');
       stored = encrypt(key);
     }
-    db.prepare('INSERT INTO ai_settings(user_id,key_encrypted,model,updated_at) VALUES(?,?,?,?) ON CONFLICT(user_id) DO UPDATE SET key_encrypted=excluded.key_encrypted,model=excluded.model,updated_at=excluded.updated_at').run(userId, stored, model, now());
+    db.prepare('INSERT INTO ai_settings(user_id,key_encrypted,model,provider,base_url,updated_at) VALUES(?,?,?,?,?,?) ON CONFLICT(user_id) DO UPDATE SET key_encrypted=excluded.key_encrypted,model=excluded.model,provider=excluded.provider,base_url=excluded.base_url,updated_at=excluded.updated_at').run(userId, stored, model, provider, baseUrl, now());
     return json(res, aiSettings(userId));
   }
   if (pathname === '/api/ai/polish' && method === 'POST') return json(res, await polishResume(userId, body), 201);
   if (pathname === '/api/ai/reports' && method === 'GET') {
-    const reportRows = db.prepare('SELECT id,resume_id,resume_revision,field_path,original,revised,changes,questions,model,created_at,applied_at FROM ai_reports WHERE user_id=? ORDER BY created_at DESC LIMIT 50').all(userId);
-    return json(res, reportRows.map(row => ({ ...row, changes: JSON.parse(row.changes), questions: JSON.parse(row.questions) })));
+    const reportRows = db.prepare('SELECT id,resume_id,resume_revision,field_path,original,revised,changes,questions,match_analysis,model,created_at,applied_at FROM ai_reports WHERE user_id=? ORDER BY created_at DESC LIMIT 50').all(userId);
+    return json(res, reportRows.map(row => { const { match_analysis, ...rest } = row; return { ...rest, changes: JSON.parse(row.changes), questions: JSON.parse(row.questions), match: match_analysis ? JSON.parse(match_analysis) : null }; }));
   }
   const applyReport = pathname.match(/^\/api\/ai\/reports\/([^/]+)\/apply$/);
   if (applyReport && method === 'POST') {

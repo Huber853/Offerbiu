@@ -224,6 +224,1295 @@
       "path_pattern": "^/campus_apply/didiglobal/96064$",
       "id_query": null,
       "id_fragment_pattern": "^/job/([a-f0-9-]+)$"
+    },
+    {
+      "host": "app.mokahr.com",
+      "source_type": "employer_official",
+      "company": "炎魂网络",
+      "path_pattern": "^/campus_apply/yanhun/24017$",
+      "id_query": null,
+      "id_fragment_pattern": "^/job/([^/]+)$"
+    },
+    {
+      "host": "app.mokahr.com",
+      "source_type": "employer_official",
+      "company": "途游游戏",
+      "path_pattern": "^/campus-recruitment/tuyoogame/146219$",
+      "id_query": null,
+      "id_fragment_pattern": "^/job/([^/]+)$"
+    },
+    {
+      "host": "app.mokahr.com",
+      "source_type": "employer_official",
+      "company": "掌趣科技",
+      "path_pattern": "^/campus-recruitment/ourpalm/43628$",
+      "id_query": null,
+      "id_fragment_pattern": "^/job/([^/]+)$"
+    },
+    {
+      "host": "app.mokahr.com",
+      "source_type": "employer_official",
+      "company": "鹰角网络",
+      "path_pattern": "^/campus-recruitment/hypergryph/26326$",
+      "id_query": null,
+      "id_fragment_pattern": "^/job/([^/]+)$"
+    },
+    {
+      "host": "app.mokahr.com",
+      "source_type": "employer_official",
+      "company": "Garena",
+      "path_pattern": "^/campus-recruitment/garena/148076$",
+      "id_query": null,
+      "id_fragment_pattern": "^/job/([^/]+)$"
+    },
+    {
+      "host": "app.mokahr.com",
+      "source_type": "employer_official",
+      "company": "完美世界",
+      "path_pattern": "^/campus-recruitment/pwrd/172467$",
+      "id_query": null,
+      "id_fragment_pattern": "^/job/([^/]+)$"
+    },
+    {
+      "host": "app.mokahr.com",
+      "source_type": "employer_official",
+      "company": "三七互娱",
+      "path_pattern": "^/campus-recruitment/37/58016$",
+      "id_query": null,
+      "id_fragment_pattern": "^/job/([^/]+)$"
+    },
+    {
+      "host": "app.mokahr.com",
+      "source_type": "employer_official",
+      "company": "游卡",
+      "path_pattern": "^/campus-recruitment/yokagames/41940$",
+      "id_query": null,
+      "id_fragment_pattern": "^/job/([^/]+)$"
+    },
+    {
+      "host": "app.mokahr.com",
+      "source_type": "employer_official",
+      "company": "富特科技",
+      "path_pattern": "^/campus_apply/evtech/47503$",
+      "id_query": null,
+      "id_fragment_pattern": "^/job/([^/]+)$"
+    },
+    {
+      "host": "app.mokahr.com",
+      "source_type": "employer_official",
+      "company": "猛士汽车",
+      "path_pattern": "^/campus-recruitment/dfmc/168535$",
+      "id_query": null,
+      "id_fragment_pattern": "^/job/([^/]+)$"
+    },
+    {
+      "host": "app.mokahr.com",
+      "source_type": "employer_official",
+      "company": "神龙汽车",
+      "path_pattern": "^/campus-recruitment/dfmc/170464$",
+      "id_query": null,
+      "id_fragment_pattern": "^/job/([^/]+)$"
+    },
+    {
+      "host": "app.mokahr.com",
+      "source_type": "employer_official",
+      "company": "徐工集团",
+      "path_pattern": "^/campus-recruitment/xcmg$",
+      "id_query": null,
+      "id_fragment_pattern": "^/job/([^/]+)$"
+    },
+    {
+      "host": "app.mokahr.com",
+      "source_type": "employer_official",
+      "company": "未岚大陆",
+      "path_pattern": "^/campus-recruitment/weilandalu$",
+      "id_query": null,
+      "id_fragment_pattern": "^/job/([^/]+)$"
+    },
+    {
+      "host": "xiaopeng.jobs.feishu.cn",
+      "source_type": "employer_official",
+      "company": "小鹏汽车",
+      "path_pattern": "^/398875/position/[0-9]+/detail$",
+      "id_query": null,
+      "id_path_pattern": "^/398875/position/([0-9]+)/detail$"
+    },
+    {
+      "host": "lilithgames.jobs.feishu.cn",
+      "source_type": "employer_official",
+      "company": "莉莉丝游戏",
+      "path_pattern": "^/campus/position/[0-9]+/detail$",
+      "id_query": null,
+      "id_path_pattern": "^/campus/position/([0-9]+)/detail$"
+    },
+    {
+      "host": "wepie.jobs.feishu.cn",
+      "source_type": "employer_official",
+      "company": "微派网络",
+      "path_pattern": "^/359597/position/[0-9]+/detail$",
+      "id_query": null,
+      "id_path_pattern": "^/359597/position/([0-9]+)/detail$"
+    },
+    {
+      "host": "meta.jobs.feishu.cn",
+      "source_type": "employer_official",
+      "company": "MetaApp",
+      "path_pattern": "^/140297/position/[0-9]+/detail$",
+      "id_query": null,
+      "id_path_pattern": "^/140297/position/([0-9]+)/detail$"
+    },
+    {
+      "host": "vrfi1sk8a0.jobs.feishu.cn",
+      "source_type": "employer_official",
+      "company": "MiniMax",
+      "path_pattern": "^/379481/position/[0-9]+/detail$",
+      "id_query": null,
+      "id_path_pattern": "^/379481/position/([0-9]+)/detail$"
+    },
+    {
+      "host": "liteon.zhiye.com",
+      "source_type": "employer_official",
+      "company": "光宝科技",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "irootech.zhiye.com",
+      "source_type": "employer_official",
+      "company": "树根互联",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "intsig.zhiye.com",
+      "source_type": "employer_official",
+      "company": "合合信息",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "popmart.zhiye.com",
+      "source_type": "employer_official",
+      "company": "泡泡玛特",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "jobtaikang.zhiye.com",
+      "source_type": "employer_official",
+      "company": "泰康资产",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "shrcb.zhiye.com",
+      "source_type": "employer_official",
+      "company": "上海农商银行",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "norincogroupzhaopin.zhiye.com",
+      "source_type": "employer_official",
+      "company": "智元研究院",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "huicecom.zhiye.com",
+      "source_type": "employer_official",
+      "company": "慧策",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "chinacpt.zhiye.com",
+      "source_type": "employer_official",
+      "company": "康比特",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "jdbchina.zhiye.com",
+      "source_type": "employer_official",
+      "company": "加多宝",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "jusha.zhiye.com",
+      "source_type": "employer_official",
+      "company": "巨鲨显示",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "novastar.zhiye.com",
+      "source_type": "employer_official",
+      "company": "诺瓦星云",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "degson.zhiye.com",
+      "source_type": "employer_official",
+      "company": "高松技术",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "pudutech.zhiye.com",
+      "source_type": "employer_official",
+      "company": "普渡科技",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "cicc.zhiye.com",
+      "source_type": "employer_official",
+      "company": "中金公司",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "app.mokahr.com",
+      "source_type": "employer_official",
+      "company": "华虹半导体",
+      "path_pattern": "^/campus-recruitment/huahong/70000$",
+      "id_query": null,
+      "id_fragment_pattern": "^/job/([^/]+)$"
+    },
+    {
+      "host": "app.mokahr.com",
+      "source_type": "employer_official",
+      "company": "作业帮",
+      "path_pattern": "^/campus-recruitment/zuoyebang/144908$",
+      "id_query": null,
+      "id_fragment_pattern": "^/job/([^/]+)$"
+    },
+    {
+      "host": "app.mokahr.com",
+      "source_type": "employer_official",
+      "company": "FMG时尚动势集团",
+      "path_pattern": "^/campus-recruitment/ur/45210$",
+      "id_query": null,
+      "id_fragment_pattern": "^/job/([^/]+)$"
+    },
+    {
+      "host": "app.mokahr.com",
+      "source_type": "employer_official",
+      "company": "珠海万达商管",
+      "path_pattern": "^/campus-recruitment/wandacm/164049$",
+      "id_query": null,
+      "id_fragment_pattern": "^/job/([^/]+)$"
+    },
+    {
+      "host": "app.mokahr.com",
+      "source_type": "employer_official",
+      "company": "华润置地",
+      "path_pattern": "^/campus-recruitment/crland/168540$",
+      "id_query": null,
+      "id_fragment_pattern": "^/job/([^/]+)$"
+    },
+    {
+      "host": "app.mokahr.com",
+      "source_type": "employer_official",
+      "company": "阶跃星辰",
+      "path_pattern": "^/campus-recruitment/step/94905$",
+      "id_query": null,
+      "id_fragment_pattern": "^/job/([^/]+)$"
+    },
+    {
+      "host": "app.mokahr.com",
+      "source_type": "employer_official",
+      "company": "海光信息",
+      "path_pattern": "^/campus-recruitment/hygon/169939$",
+      "id_query": null,
+      "id_fragment_pattern": "^/job/([^/]+)$"
+    },
+    {
+      "host": "app.mokahr.com",
+      "source_type": "employer_official",
+      "company": "宁德时代",
+      "path_pattern": "^/campus-recruitment/catlhr/148948$",
+      "id_query": null,
+      "id_fragment_pattern": "^/job/([^/]+)$"
+    },
+    {
+      "host": "app.mokahr.com",
+      "source_type": "employer_official",
+      "company": "宁德时代",
+      "path_pattern": "^/campus-recruitment/catlhr/142992$",
+      "id_query": null,
+      "id_fragment_pattern": "^/job/([^/]+)$"
+    },
+    {
+      "host": "app.mokahr.com",
+      "source_type": "employer_official",
+      "company": "宁德时代",
+      "path_pattern": "^/campus-recruitment/catlhr/143035$",
+      "id_query": null,
+      "id_fragment_pattern": "^/job/([^/]+)$"
+    },
+    {
+      "host": "united-imaging.zhiye.com",
+      "source_type": "employer_official",
+      "company": "联影集团",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "medcaptain.zhiye.com",
+      "source_type": "employer_official",
+      "company": "麦科田医疗",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "bmc-medical.zhiye.com",
+      "source_type": "employer_official",
+      "company": "瑞迈特",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "sansurehr.zhiye.com",
+      "source_type": "employer_official",
+      "company": "圣湘生物",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "zztrp1.zhiye.com",
+      "source_type": "employer_official",
+      "company": "中车时代新材",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "gotion.zhiye.com",
+      "source_type": "employer_official",
+      "company": "国轩高科",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "sokon.zhiye.com",
+      "source_type": "employer_official",
+      "company": "赛力斯汽车",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "kaijin2.zhiye.com",
+      "source_type": "employer_official",
+      "company": "凯金新能源",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "youshan.zhiye.com",
+      "source_type": "employer_official",
+      "company": "友山科技",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "aiva.zhiye.com",
+      "source_type": "employer_official",
+      "company": "赛豆科技",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "topdon.zhiye.com",
+      "source_type": "employer_official",
+      "company": "鼎匠创新",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "app.mokahr.com",
+      "source_type": "employer_official",
+      "company": "百草味",
+      "path_pattern": "^/campus-recruitment/vipbcw/4343$",
+      "id_query": null,
+      "id_fragment_pattern": "^/job/([^/]+)$"
+    },
+    {
+      "host": "app.mokahr.com",
+      "source_type": "employer_official",
+      "company": "满帮集团",
+      "path_pattern": "^/campus_apply/manbang/94191$",
+      "id_query": null,
+      "id_fragment_pattern": "^/job/([^/]+)$"
+    },
+    {
+      "host": "app.mokahr.com",
+      "source_type": "employer_official",
+      "company": "苏商银行",
+      "path_pattern": "^/campus-recruitment/snb/45592$",
+      "id_query": null,
+      "id_fragment_pattern": "^/job/([^/]+)$"
+    },
+    {
+      "host": "app.mokahr.com",
+      "source_type": "employer_official",
+      "company": "骑士集团",
+      "path_pattern": "^/campus_apply/black-unique/29232$",
+      "id_query": null,
+      "id_fragment_pattern": "^/job/([^/]+)$"
+    },
+    {
+      "host": "kkguan.zhiye.com",
+      "source_type": "employer_official",
+      "company": "KK集团",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "qiaqiafood.zhiye.com",
+      "source_type": "employer_official",
+      "company": "洽洽食品",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "charleskeith.zhiye.com",
+      "source_type": "employer_official",
+      "company": "CHARLES & KEITH",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "jingpai.zhiye.com",
+      "source_type": "employer_official",
+      "company": "劲牌",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "djdc.zhiye.com",
+      "source_type": "employer_official",
+      "company": "中国电建地产",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "zgky.zhiye.com",
+      "source_type": "employer_official",
+      "company": "藏格矿业",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "xnjz.zhiye.com",
+      "source_type": "employer_official",
+      "company": "中建西南院",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "shenergy.zhiye.com",
+      "source_type": "employer_official",
+      "company": "申能集团",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "app.mokahr.com",
+      "source_type": "employer_official",
+      "company": "增芯科技",
+      "path_pattern": "^/campus-recruitment/zensemi/142586$",
+      "id_query": null,
+      "id_fragment_pattern": "^/job/([^/]+)$"
+    },
+    {
+      "host": "app.mokahr.com",
+      "source_type": "employer_official",
+      "company": "金蝶",
+      "path_pattern": "^/campus-recruitment/kingdeehr/166565$",
+      "id_query": null,
+      "id_fragment_pattern": "^/job/([^/]+)$"
+    },
+    {
+      "host": "app.mokahr.com",
+      "source_type": "employer_official",
+      "company": "星钥半导体",
+      "path_pattern": "^/campus-recruitment/starksemi/142996$",
+      "id_query": null,
+      "id_fragment_pattern": "^/job/([^/]+)$"
+    },
+    {
+      "host": "digiwin.zhiye.com",
+      "source_type": "employer_official",
+      "company": "鼎捷数智",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "dcits.zhiye.com",
+      "source_type": "employer_official",
+      "company": "神州信息",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "yusys.zhiye.com",
+      "source_type": "employer_official",
+      "company": "宇信科技",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "csii.zhiye.com",
+      "source_type": "employer_official",
+      "company": "长亮科技",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "iflytek.zhiye.com",
+      "source_type": "employer_official",
+      "company": "科大讯飞",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "epoint.zhiye.com",
+      "source_type": "employer_official",
+      "company": "新点软件",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "newland.zhiye.com",
+      "source_type": "employer_official",
+      "company": "新大陆",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "egova.zhiye.com",
+      "source_type": "employer_official",
+      "company": "数字政通",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "chery.zhiye.com",
+      "source_type": "employer_official",
+      "company": "奇瑞汽车",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "changan.zhiye.com",
+      "source_type": "employer_official",
+      "company": "长安汽车",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "leapmotor.zhiye.com",
+      "source_type": "employer_official",
+      "company": "零跑汽车",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "sany.zhiye.com",
+      "source_type": "employer_official",
+      "company": "三一集团",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "weichai.zhiye.com",
+      "source_type": "employer_official",
+      "company": "潍柴集团",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "transsion.zhiye.com",
+      "source_type": "employer_official",
+      "company": "传音控股",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "boe.zhiye.com",
+      "source_type": "employer_official",
+      "company": "京东方",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "wuxiapptec.zhiye.com",
+      "source_type": "employer_official",
+      "company": "药明康德",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "mindray.zhiye.com",
+      "source_type": "employer_official",
+      "company": "迈瑞医疗",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "snibe.zhiye.com",
+      "source_type": "employer_official",
+      "company": "新产业生物",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "joinsilicon.zhiye.com",
+      "source_type": "employer_official",
+      "company": "中茵微电子",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "pensun.zhiye.com",
+      "source_type": "employer_official",
+      "company": "鹏新旭",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "app.mokahr.com",
+      "source_type": "employer_official",
+      "company": "佑驾创新",
+      "path_pattern": "^/campus-recruitment/minieye/118571$",
+      "id_query": null,
+      "id_fragment_pattern": "^/job/([^/]+)$"
+    },
+    {
+      "host": "app.mokahr.com",
+      "source_type": "employer_official",
+      "company": "大众汽车集团（中国）",
+      "path_pattern": "^/campus-recruitment/vwa/168597$",
+      "id_query": null,
+      "id_fragment_pattern": "^/job/([^/]+)$"
+    },
+    {
+      "host": "app.mokahr.com",
+      "source_type": "employer_official",
+      "company": "延锋",
+      "path_pattern": "^/campus-recruitment/yanfeng/45086$",
+      "id_query": null,
+      "id_fragment_pattern": "^/job/([^/]+)$"
+    },
+    {
+      "host": "app.mokahr.com",
+      "source_type": "employer_official",
+      "company": "吉利控股",
+      "path_pattern": "^/campus_apply/geely/78436$",
+      "id_query": null,
+      "id_fragment_pattern": "^/job/([^/]+)$"
+    },
+    {
+      "host": "mengniu.zhiye.com",
+      "source_type": "employer_official",
+      "company": "蒙牛",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "haitian.zhiye.com",
+      "source_type": "employer_official",
+      "company": "海天集团",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "markor.zhiye.com",
+      "source_type": "employer_official",
+      "company": "美克家居",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "wecruit.hotjob.cn",
+      "source_type": "employer_official",
+      "company": "康师傅",
+      "path_pattern": "^/SU691abf70e3842960d1989b29/mc/detail$",
+      "id_query": "postId"
+    },
+    {
+      "host": "career.yonyou.com",
+      "source_type": "employer_official",
+      "company": "用友",
+      "path_pattern": "^/SU67ac41886202cc7916ae3029/mc/detail$",
+      "id_query": "postId"
+    },
+    {
+      "host": "faw-zhaopin.hotjob.cn",
+      "source_type": "employer_official",
+      "company": "中国一汽",
+      "path_pattern": "^/SU603374380dcad4635b836531/mc/detail$",
+      "id_query": "postId"
+    },
+    {
+      "host": "sunwoda.zhiye.com",
+      "source_type": "employer_official",
+      "company": "欣旺达",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "joeone.zhiye.com",
+      "source_type": "employer_official",
+      "company": "九牧王",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "ellassay.zhiye.com",
+      "source_type": "employer_official",
+      "company": "歌力思",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "bailian.zhiye.com",
+      "source_type": "employer_official",
+      "company": "百联集团",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "huaxin.zhiye.com",
+      "source_type": "employer_official",
+      "company": "华新建材",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "deppon.zhiye.com",
+      "source_type": "employer_official",
+      "company": "德邦快递",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "sinotrans.zhiye.com",
+      "source_type": "employer_official",
+      "company": "中国外运",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "tsingtao.zhiye.com",
+      "source_type": "employer_official",
+      "company": "青岛啤酒",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "auxgroup.zhiye.com",
+      "source_type": "employer_official",
+      "company": "奥克斯",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "delixi.zhiye.com",
+      "source_type": "employer_official",
+      "company": "德力西",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "tongwei.zhiye.com",
+      "source_type": "employer_official",
+      "company": "通威股份",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "ceec.zhiye.com",
+      "source_type": "employer_official",
+      "company": "中国能建",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "efort.zhiye.com",
+      "source_type": "employer_official",
+      "company": "埃夫特",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "inovance.zhiye.com",
+      "source_type": "employer_official",
+      "company": "汇川技术",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "siasun.zhiye.com",
+      "source_type": "employer_official",
+      "company": "新松机器人",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "ey.hotjob.cn",
+      "source_type": "employer_official",
+      "company": "安永",
+      "path_pattern": "^/SU6710d7c21c240e54e1f82a1b/mc/detail$",
+      "id_query": "postId"
+    },
+    {
+      "host": "guosen.zhiye.com",
+      "source_type": "employer_official",
+      "company": "国信证券",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "csc108.zhiye.com",
+      "source_type": "employer_official",
+      "company": "中信建投证券",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "chinastock.zhiye.com",
+      "source_type": "employer_official",
+      "company": "中国银河证券",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "ebscn.zhiye.com",
+      "source_type": "employer_official",
+      "company": "光大证券",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "dwzq.zhiye.com",
+      "source_type": "employer_official",
+      "company": "东吴证券",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "htsec.zhiye.com",
+      "source_type": "employer_official",
+      "company": "海通证券",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "chinalife.zhiye.com",
+      "source_type": "employer_official",
+      "company": "中国人寿",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "picc.zhiye.com",
+      "source_type": "employer_official",
+      "company": "中国人保",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "gtfund.zhiye.com",
+      "source_type": "employer_official",
+      "company": "国泰基金",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "hffund.zhiye.com",
+      "source_type": "employer_official",
+      "company": "华富基金",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "qilu-pharma.zhiye.com",
+      "source_type": "employer_official",
+      "company": "齐鲁制药",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "xinhecheng1.zhiye.com",
+      "source_type": "employer_official",
+      "company": "新和成",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "hayao.zhiye.com",
+      "source_type": "employer_official",
+      "company": "哈药集团",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "viva.zhiye.com",
+      "source_type": "employer_official",
+      "company": "维亚生物",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "gobroadhealthcare.zhiye.com",
+      "source_type": "employer_official",
+      "company": "高博医疗集团",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "sph.zhiye.com",
+      "source_type": "employer_official",
+      "company": "上海医药",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "jingxinpharm.zhiye.com",
+      "source_type": "employer_official",
+      "company": "京新药业",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "wecruit.hotjob.cn",
+      "source_type": "employer_official",
+      "company": "先声药业",
+      "path_pattern": "^/SU61458d83bef57c54dcb4e43f/mc/detail$",
+      "id_query": "postId"
+    },
+    {
+      "host": "bicheng.zhiye.com",
+      "source_type": "employer_official",
+      "company": "碧橙数字",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "app135149.dingtalkoxm.com",
+      "source_type": "employer_official",
+      "company": "中信出版集团",
+      "path_pattern": "^/campus-recruitment/zxcb/100004552$",
+      "id_query": null,
+      "id_fragment_pattern": "^/job/([^/]+)$"
+    },
+    {
+      "host": "hisun.zhiye.com",
+      "source_type": "employer_official",
+      "company": "海正药业",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "fosunpharma.zhiye.com",
+      "source_type": "employer_official",
+      "company": "复星医药",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "3sbio.zhiye.com",
+      "source_type": "employer_official",
+      "company": "三生制药",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "genomics.zhiye.com",
+      "source_type": "employer_official",
+      "company": "华大基因",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "henlius.zhiye.com",
+      "source_type": "employer_official",
+      "company": "复宏汉霖",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "shuanghui.zhiye.com",
+      "source_type": "employer_official",
+      "company": "双汇",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "wantwant.zhiye.com",
+      "source_type": "employer_official",
+      "company": "旺旺",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "uni-president.zhiye.com",
+      "source_type": "employer_official",
+      "company": "统一企业",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "dahua.zhiye.com",
+      "source_type": "employer_official",
+      "company": "大华股份",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "goldwind.zhiye.com",
+      "source_type": "employer_official",
+      "company": "金风科技",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "gjzq.zhiye.com",
+      "source_type": "employer_official",
+      "company": "国金证券",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "huafeng.zhiye.com",
+      "source_type": "employer_official",
+      "company": "华峰集团",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "synear.zhiye.com",
+      "source_type": "employer_official",
+      "company": "思念食品",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "kanghong.zhiye.com",
+      "source_type": "employer_official",
+      "company": "康弘药业",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "cnnc.zhiye.com",
+      "source_type": "employer_official",
+      "company": "中核集团",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "wingtech.zhiye.com",
+      "source_type": "employer_official",
+      "company": "闻泰科技",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "xdf.zhiye.com",
+      "source_type": "employer_official",
+      "company": "新东方",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "hoshine.zhiye.com",
+      "source_type": "employer_official",
+      "company": "合盛硅业",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "roborock.zhiye.com",
+      "source_type": "employer_official",
+      "company": "石头科技",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "nexchip.zhiye.com",
+      "source_type": "employer_official",
+      "company": "晶合集成",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "yuewen.zhiye.com",
+      "source_type": "employer_official",
+      "company": "阅文集团",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "chinaunicom.zhiye.com",
+      "source_type": "employer_official",
+      "company": "广州联通",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "hwatsing.zhiye.com",
+      "source_type": "employer_official",
+      "company": "华海清科",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "app.mokahr.com",
+      "source_type": "employer_official",
+      "company": "好未来",
+      "path_pattern": "^/campus-recruitment/tal/95443$",
+      "id_query": null,
+      "id_fragment_pattern": "^/job/([^/]+)$"
+    },
+    {
+      "host": "galanz.zhiye.com",
+      "source_type": "employer_official",
+      "company": "格兰仕",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "richsys1.zhiye.com",
+      "source_type": "employer_official",
+      "company": "理奇智能装备",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "sailuntire.zhiye.com",
+      "source_type": "employer_official",
+      "company": "赛轮集团",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "wika.zhiye.com",
+      "source_type": "employer_official",
+      "company": "威卡中国",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "app.mokahr.com",
+      "source_type": "employer_official",
+      "company": "中兴通讯",
+      "path_pattern": "^/campus-recruitment/zte/46903$",
+      "id_query": null,
+      "id_fragment_pattern": "^/job/([^/]+)$"
+    },
+    {
+      "host": "tica.zhiye.com",
+      "source_type": "employer_official",
+      "company": "天加环境",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "robotime.zhiye.com",
+      "source_type": "employer_official",
+      "company": "若态集团",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "ginlong.zhiye.com",
+      "source_type": "employer_official",
+      "company": "锦浪科技",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "sf-auto.zhiye.com",
+      "source_type": "employer_official",
+      "company": "四方继保",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "yizumi.zhiye.com",
+      "source_type": "employer_official",
+      "company": "伊之密",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "xnjz.zhiye.com",
+      "source_type": "employer_official",
+      "company": "中建西南院",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "greenway-battery.zhiye.com",
+      "source_type": "employer_official",
+      "company": "博力威",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "sunwodacampus.zhiye.com",
+      "source_type": "employer_official",
+      "company": "欣旺达",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "dymind.zhiye.com",
+      "source_type": "employer_official",
+      "company": "帝迈生物",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "insight-med.zhiye.com",
+      "source_type": "employer_official",
+      "company": "北芯生命",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "job.wuxibiologics.com.cn",
+      "source_type": "employer_official",
+      "company": "药明生物",
+      "path_pattern": "^/campus-recruitment/wuxibiologics/99961$",
+      "id_query": null,
+      "id_fragment_pattern": "^/job/([^/]+)$"
+    },
+    {
+      "host": "wecruit.hotjob.cn",
+      "source_type": "employer_official",
+      "company": "新风天域集团",
+      "path_pattern": "^/SU66bf08ab1eb8054b1a642288/mc/detail$",
+      "id_query": "postId"
+    },
+    {
+      "host": "cictmobile.zhiye.com",
+      "source_type": "employer_official",
+      "company": "中信科移动",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
+    },
+    {
+      "host": "cscnrczp.zhiye.com",
+      "source_type": "employer_official",
+      "company": "中国星网",
+      "path_pattern": "^/campus/detail/?$",
+      "id_query": "jobAdId"
     }
   ]
 }

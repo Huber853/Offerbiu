@@ -29,7 +29,10 @@ def accepted(row):
     if not all(row.get(k) for k in ['external_id','title','description','cohort_evidence']):return False
     if re.search('实习生|实习岗位|招聘公告|招募计划',row['title']):return False
     urls=[urllib.parse.urlparse(row.get(k,'')) for k in ['source_url','apply_url','cohort_evidence_url']]
-    rule=next((r for r in POLICY['sources'] if r['host']==urls[0].hostname and r['source_type']==row.get('source_type')),None)
+    # Reviewed employers also live on multi-tenant platforms (Moka, Beisen, Feishu)
+    # where one host serves many companies, so the path pattern takes part in rule
+    # selection instead of assuming a host maps to a single employer.
+    rule=next((r for r in POLICY['sources'] if r['host']==urls[0].hostname and r['source_type']==row.get('source_type') and re.search(r['path_pattern'],urls[0].path)),None)
     if not rule or (rule['company'] and rule['company']!=row['company']):return False
     if any(u.scheme!='https' or u.username or u.password for u in urls):return False
     if any(u.hostname!=rule['host'] for u in urls[:2]):return False

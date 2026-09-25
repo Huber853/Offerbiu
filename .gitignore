@@ -7,3 +7,5 @@ node_modules/
 data/*.pending.json
 backups/
 __pycache__/
+data/sources/
+.workbuddy/

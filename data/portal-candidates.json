@@ -1,0 +1,386 @@
+{
+  "probed": [
+    {
+      "slug": "yinlun",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/yinlun",
+      "error": "HTTP Error 302: The HTTP server returned a redirect error that would lead to an "
+    },
+    {
+      "slug": "tica",
+      "platform": "beisen",
+      "url": "https://tica.zhiye.com/campus/jobs",
+      "matched": true,
+      "title": "南京天加环境科技有限公司招聘网站",
+      "company": null
+    },
+    {
+      "slug": "mageline",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/mageline",
+      "matched": false,
+      "title": "您访问的页面不存在",
+      "company": null
+    },
+    {
+      "slug": "robotime",
+      "platform": "beisen",
+      "url": "https://robotime.zhiye.com/campus/jobs",
+      "matched": true,
+      "title": "若态人才招聘",
+      "company": null
+    },
+    {
+      "slug": "hongheidiao",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/hongheidiao",
+      "matched": false,
+      "title": "您访问的页面不存在",
+      "company": null
+    },
+    {
+      "slug": "saic",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/saic",
+      "matched": false,
+      "title": "您访问的页面不存在",
+      "company": null
+    },
+    {
+      "slug": "baic",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/baic",
+      "matched": false,
+      "title": "您访问的页面不存在",
+      "company": null
+    },
+    {
+      "slug": "faw-vw",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/faw-vw",
+      "matched": false,
+      "title": "您访问的页面不存在",
+      "company": null
+    },
+    {
+      "slug": "xinhe",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/xinhe",
+      "matched": false,
+      "title": "您访问的页面不存在",
+      "company": null
+    },
+    {
+      "slug": "hualu",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/hualu",
+      "matched": false,
+      "title": "您访问的页面不存在",
+      "company": null
+    },
+    {
+      "slug": "xiabu",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/xiabu",
+      "matched": false,
+      "title": "您访问的页面不存在",
+      "company": null
+    },
+    {
+      "slug": "tastien",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/tastien",
+      "matched": false,
+      "title": "当前网页已关停",
+      "company": null
+    },
+    {
+      "slug": "starbucks-china",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/starbucks-china",
+      "matched": false,
+      "title": "您访问的页面不存在",
+      "company": null
+    },
+    {
+      "slug": "mcdonalds-china",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/mcdonalds-china",
+      "matched": false,
+      "title": "您访问的页面不存在",
+      "company": null
+    },
+    {
+      "slug": "beike",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/beike",
+      "matched": false,
+      "title": "您访问的页面不存在",
+      "company": null
+    },
+    {
+      "slug": "lianjia",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/lianjia",
+      "matched": false,
+      "title": "您访问的页面不存在",
+      "company": null
+    },
+    {
+      "slug": "zhaopin",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/zhaopin",
+      "matched": false,
+      "title": "您访问的页面不存在",
+      "company": null
+    },
+    {
+      "slug": "liepin",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/liepin",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "slug": "tongrentang",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/tongrentang",
+      "matched": false,
+      "title": "您访问的页面不存在",
+      "company": null
+    },
+    {
+      "slug": "dong-e-ejiao",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/dong-e-ejiao",
+      "matched": false,
+      "title": "您访问的页面不存在",
+      "company": null
+    },
+    {
+      "slug": "taiji-group",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/taiji-group",
+      "matched": false,
+      "title": "您访问的页面不存在",
+      "company": null
+    },
+    {
+      "slug": "huarun-sanjiu",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/huarun-sanjiu",
+      "matched": false,
+      "title": "您访问的页面不存在",
+      "company": null
+    },
+    {
+      "slug": "kangmei",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/kangmei",
+      "matched": false,
+      "title": "您访问的页面不存在",
+      "company": null
+    },
+    {
+      "slug": "sohu",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/sohu",
+      "error": "HTTP Error 302: The HTTP server returned a redirect error that would lead to an "
+    },
+    {
+      "slug": "tom",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/tom",
+      "matched": false,
+      "title": "您访问的页面不存在",
+      "company": null
+    },
+    {
+      "slug": "netease",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/netease",
+      "error": "HTTP Error 302: The HTTP server returned a redirect error that would lead to an "
+    },
+    {
+      "slug": "ximalaya",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/ximalaya",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "slug": "douban",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/douban",
+      "matched": false,
+      "title": "您访问的页面不存在",
+      "company": null
+    },
+    {
+      "slug": "huafeng2",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/huafeng2",
+      "matched": false,
+      "title": "您访问的页面不存在",
+      "company": null
+    },
+    {
+      "slug": "yongxin",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/yongxin",
+      "matched": false,
+      "title": "您访问的页面不存在",
+      "company": null
+    },
+    {
+      "slug": "mizone",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/mizone",
+      "matched": false,
+      "title": "您访问的页面不存在",
+      "company": null
+    },
+    {
+      "slug": "jiuzhou",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/jiuzhou",
+      "error": "HTTP Error 302: The HTTP server returned a redirect error that would lead to an "
+    },
+    {
+      "slug": "sunrain",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/sunrain",
+      "matched": false,
+      "title": "您访问的页面不存在",
+      "company": null
+    },
+    {
+      "slug": "chint-electric",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/chint-electric",
+      "matched": false,
+      "title": "您访问的页面不存在",
+      "company": null
+    },
+    {
+      "slug": "wanma",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/wanma",
+      "matched": false,
+      "title": "您访问的页面不存在",
+      "company": null
+    },
+    {
+      "slug": "hongfa",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/hongfa",
+      "matched": false,
+      "title": "您访问的页面不存在",
+      "company": null
+    },
+    {
+      "slug": "hoymiles",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/hoymiles",
+      "error": "HTTP Error 302: The HTTP server returned a redirect error that would lead to an "
+    },
+    {
+      "slug": "ginlong",
+      "platform": "beisen",
+      "url": "https://ginlong.zhiye.com/campus/jobs",
+      "matched": true,
+      "title": "锦浪科技",
+      "company": null
+    },
+    {
+      "slug": "goodwe",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/goodwe",
+      "matched": false,
+      "title": "您访问的页面不存在",
+      "company": null
+    },
+    {
+      "slug": "solax",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/solax",
+      "matched": false,
+      "title": "您访问的页面不存在",
+      "company": null
+    },
+    {
+      "slug": "sf-auto",
+      "platform": "beisen",
+      "url": "https://sf-auto.zhiye.com/campus/jobs",
+      "matched": true,
+      "title": "北京四方继保自动化股份有限公司",
+      "company": null
+    },
+    {
+      "slug": "techlong",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/techlong",
+      "matched": false,
+      "title": "您访问的页面不存在",
+      "company": null
+    },
+    {
+      "slug": "yizumi",
+      "platform": "beisen",
+      "url": "https://yizumi.zhiye.com/campus/jobs",
+      "matched": true,
+      "title": "伊之密",
+      "company": null
+    },
+    {
+      "slug": "haitian-drive",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/haitian-drive",
+      "matched": false,
+      "title": "您访问的页面不存在",
+      "company": null
+    },
+    {
+      "slug": "kelong",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/kelong",
+      "matched": false,
+      "title": "您访问的页面不存在",
+      "company": null
+    },
+    {
+      "slug": "jiuli",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/jiuli",
+      "matched": false,
+      "title": "您访问的页面不存在",
+      "company": null
+    },
+    {
+      "slug": "huatong",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/huatong",
+      "matched": false,
+      "title": "您访问的页面不存在",
+      "company": null
+    },
+    {
+      "slug": "mengdian",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/mengdian",
+      "matched": false,
+      "title": "您访问的页面不存在",
+      "company": null
+    },
+    {
+      "slug": "tbea",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/tbea",
+      "error": "HTTP Error 302: The HTTP server returned a redirect error that would lead to an "
+    },
+    {
+      "slug": "kehua",
+      "platform": "moka",
+      "url": "https://app.mokahr.com/campus-recruitment/kehua",
+      "error": "HTTP Error 302: The HTTP server returned a redirect error that would lead to an "
+    }
+  ]
+}
