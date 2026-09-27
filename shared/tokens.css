@@ -1,0 +1,21 @@
+/* Shared Offerbiu design tokens — homepage and workspace both load this first. */
+:root {
+  --blue: #365cf5;
+  --blue-dark: #2549d8;
+  --blue-hover: #2849d8;
+  --ink: #172238;
+  --body: #657087;
+  --text: #65728a;
+  --muted: #8590a3;
+  --line: #e7ebf2;
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --white: #fff;
+  --radius: 18px;
+  --radius-control: 10px;
+  --radius-small: 8px;
+  --shadow-soft: 0 6px 18px #4057740a;
+  --shadow-button: 0 6px 16px #365cf52e;
+  --font: "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --focus-ring: #93acff;
+}

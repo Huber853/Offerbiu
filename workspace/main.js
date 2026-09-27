@@ -48,7 +48,21 @@ async function overviewPage() {
   const pending = d.tasks.filter(t => !t.completed).slice(0, 5);
   const recent = d.applications.slice(0, 4);
   const submitted = d.applications.filter(a => a.status !== 'saved').length;
-  return pageHeading('overview') + `<section class="dashboard-banner"><div><span class="banner-eyebrow">${e(state.user.name)}，每一步都算数。</span><h2>${pending.length ? '今天，先从眼前的事开始。' : '给下一份期待，留一点准备。'}</h2><p>${d.total ? `你已收下 ${d.total} 个目标岗位，${d.counts.interview} 个正在面试。` : '先找到一个心仪岗位，再为它准备合适的简历。'}</p><a class="button button-primary button-small" href="#/jobs">寻找新机会 ${icon('arrow')}</a></div><div class="banner-decoration" aria-hidden="true"><span class="banner-ring"></span><span class="banner-arrow">↗</span><span class="banner-card">NEXT STEP<br><b>心中有数。</b></span></div></section><div class="stats-grid">${[['目标岗位', d.total, 'jobs', '已经加入投递清单'], ['已投递', submitted, 'applications', '包括笔试、面试和结果'], ['面试中', d.counts.interview, 'calendar', '保持准备，及时跟进'], ['已获 Offer', d.counts.offer, 'ai', '认真比较，做出选择']].map(([label, n, name, note]) => `<article class="stat-card"><div><span>${label}</span>${icon(name)}</div><strong>${String(n).padStart(2, '0')}</strong><small>${note}</small></article>`).join('')}</div><div class="dashboard-columns"><section class="panel"><div class="panel-heading"><h2>接下来的安排 <span>${d.pendingTasks}</span></h2><button class="text-link" data-action="new-task">添加待办 +</button></div>${pending.length ? pending.map(t => taskItem(t, true)).join('') : emptyState('暂时没有待办', '为笔面试或重要截止时间留一个位置。', '<button class="button button-soft button-small" data-action="new-task">添加第一个安排</button>')}</section><section class="panel"><div class="panel-heading"><h2>投递节奏</h2><a href="#/applications" class="text-link">查看全部 ↗</a></div><div class="pipeline-summary">${statuses.map(s => `<div><span><i class="status-dot dot-${s.color}"></i>${s.label}</span><div class="bar-track"><span class="bar-${s.color}" style="width:${d.total ? Math.max(d.counts[s.id] / d.total * 100, d.counts[s.id] ? 3 : 0) : 0}%"></span></div><b>${d.counts[s.id]}</b></div>`).join('')}</div><div class="resume-nudge">${icon('resumes')}<span>已保存 <strong>${d.resumeCount}</strong> 份简历</span><a class="text-link" href="#/resumes">去完善 →</a></div></section></div><section class="panel"><div class="panel-heading"><h2>最近推进的机会</h2><a href="#/jobs" class="text-link">逛逛岗位库 ↗</a></div>${recent.length ? recent.map(a => applicationRow(a)).join('') : emptyState('你的机会清单，从这里开始', '将岗位加入“我的投递”，就能记录进度与简历版本。', '<a class="button button-primary button-small" href="#/jobs">浏览真实岗位</a>')}</section>`;
+  const metrics = [
+    ['目标岗位', d.total, '#/applications'],
+    ['已投递', submitted, '#/applications'],
+    ['面试中', d.counts.interview, '#/applications'],
+    ['Offer', d.counts.offer, '#/applications'],
+  ];
+  return `<section class="dashboard-banner overview-banner"><div>
+      <span class="banner-eyebrow">${e(state.user.name)}，每一步都算数。</span>
+      <h2>${pending.length ? '今天，先从眼前的事开始。' : '给下一份期待，留一点准备。'}</h2>
+      <p>${d.total ? `你已收下 ${d.total} 个目标岗位，${d.counts.interview} 个正在面试。` : '先找到一个心仪岗位，再为它准备合适的简历。'}</p>
+      <div class="overview-metrics" role="list">${metrics.map(([label, n, href]) => `<a class="metric-pill" role="listitem" href="${href}"><span>${label}</span><strong>${String(n).padStart(2, '0')}</strong></a>`).join('')}</div>
+      <a class="button button-primary button-small" href="#/jobs">寻找新机会 ${icon('arrow')}</a>
+    </div><div class="banner-decoration" aria-hidden="true"><span class="banner-ring"></span><span class="banner-arrow">↗</span><span class="banner-card">NEXT STEP<br><b>心中有数。</b></span></div></section>
+    <div class="dashboard-columns"><section class="panel"><div class="panel-heading"><h2>接下来的安排 <span>${d.pendingTasks}</span></h2><button class="text-link" data-action="new-task">添加待办 +</button></div>${pending.length ? pending.map(t => taskItem(t, true)).join('') : emptyState('暂时没有待办', '为笔面试或重要截止时间留一个位置。', '<button class="button button-soft button-small" data-action="new-task">添加第一个安排</button>')}</section><section class="panel"><div class="panel-heading"><h2>投递节奏</h2><a href="#/applications" class="text-link">查看全部 ↗</a></div><div class="pipeline-summary">${statuses.map(s => `<div><span><i class="status-dot dot-${s.color}"></i>${s.label}</span><div class="bar-track"><span class="bar-${s.color}" style="width:${d.total ? Math.max(d.counts[s.id] / d.total * 100, d.counts[s.id] ? 3 : 0) : 0}%"></span></div><b>${d.counts[s.id]}</b></div>`).join('')}</div><div class="resume-nudge">${icon('resumes')}<span>已保存 <strong>${d.resumeCount}</strong> 份简历</span><a class="text-link" href="#/resumes">去完善 →</a></div></section></div>
+    <section class="panel"><div class="panel-heading"><h2>最近推进的机会</h2><a href="#/jobs" class="text-link">逛逛岗位库 ↗</a></div>${recent.length ? recent.map(a => applicationRow(a)).join('') : emptyState('你的机会清单，从这里开始', '将岗位加入“我的投递”，就能记录进度与简历版本。', '<a class="button button-primary button-small" href="#/jobs">浏览真实岗位</a>')}</section>`;
 }
 
 function selectOptions(items, current) { return items.map(item => `<option value="${e(item)}" ${item === current ? 'selected' : ''}>${e(item)}</option>`).join(''); }
@@ -82,7 +96,7 @@ async function jobsPage() {
   return pageHeading('jobs', `<span class="source-chip">${icon('clock')} ${date(meta.collected_at)} 数据整理</span>`) + `
     <section class="recruit-summary"><div><strong>${meta.company_count}</strong><span>家招聘单位</span></div><div><strong>${meta.job_count}</strong><span>条具体岗位</span></div><div><strong>${meta.employer_count}</strong><span>条企业官网岗位</span></div><div><strong>${meta.nwu_count}</strong><span>条西大岗位</span></div><p>把选择，看得更广一点。<small>企业官网 / 西北大学 · 每条直达岗位投递页</small></p></section>
     <div class="recruit-tabs" aria-label="岗位来源">${[['', '全部岗位', meta.count], ['employer_official', '企业官网', meta.employer_count], ['nwu_official', '西北大学', meta.nwu_count]].map(([value,label,count]) => `<button class="${f.source_type === value ? 'active' : ''}" aria-pressed="${f.source_type === value}" data-action="job-facet" data-field="source_type" data-value="${value}">${label}<span>${count}</span></button>`).join('')}</div>
-    <section class="recruit-filters"><div class="industry-row"><span>行业</span><div><button class="filter-chip ${!f.industry ? 'active' : ''}" data-action="job-facet" data-field="industry" data-value="">全部</button>${state.meta.industries.map(i => `<button class="filter-chip ${f.industry === i.name ? 'active' : ''}" data-action="job-facet" data-field="industry" data-value="${e(i.name)}" aria-pressed="${f.industry === i.name}">${e(i.name)}<small>${i.count}</small></button>`).join('')}</div></div>
+    <section class="recruit-filters"><div class="industry-row"><span>行业</span><div><button class="filter-chip ${!f.industry ? 'active' : ''}" aria-pressed="${!f.industry}" data-action="job-facet" data-field="industry" data-value="">全部</button>${state.meta.industries.map(i => `<button class="filter-chip ${f.industry === i.name ? 'active' : ''}" data-action="job-facet" data-field="industry" data-value="${e(i.name)}" aria-pressed="${f.industry === i.name}">${e(i.name)}<small>${i.count}</small></button>`).join('')}</div></div>
     <form id="job-filters" class="recruit-filter-form">
       <input type="hidden" name="record_type" value="job"><input type="hidden" name="source_type" value="${e(f.source_type)}"><input type="hidden" name="industry" value="${e(f.industry)}">
       <div class="recruit-search-row"><label class="search-field">${icon('search')}<input name="q" value="${e(f.q)}" placeholder="搜索公司、岗位、技能，例如：金证 / Java / 管培生" aria-label="搜索招聘信息"></label><button class="button button-primary button-small" type="submit">搜索机会 ${icon('arrow')}</button><button class="text-link" type="button" data-action="reset-jobs">清除筛选</button></div>
@@ -115,7 +129,7 @@ async function applicationsPage() {
   if (!state.user) return loginEmpty('applications');
   state.applications = await api('/applications');
   const rows = state.applications.filter(a => state.appFilter === 'all' || a.status === state.appFilter);
-  return pageHeading('applications', '<a href="#/jobs" class="button button-primary button-small">发现新机会 +</a>') + `<div class="status-filters"><button class="${state.appFilter === 'all' ? 'active' : ''}" data-action="app-filter" data-status="all">全部 <span>${state.applications.length}</span></button>${statuses.map(s => `<button class="${state.appFilter === s.id ? 'active' : ''}" data-action="app-filter" data-status="${s.id}">${s.label} <span>${state.applications.filter(a => a.status === s.id).length}</span></button>`).join('')}</div><section class="panel application-list">${rows.length ? rows.map(applicationRow).join('') : emptyState('这里还没有投递记录', '从岗位库收下目标职位，再记录投递状态和简历版本。', '<a href="#/jobs" class="button button-primary button-small">去岗位库看看</a>')}</section><p class="data-note">“加入投递”是收藏到自己的清单，不会代你向企业提交申请。实际投递请前往官方渠道。</p>`;
+  return pageHeading('applications', '<a href="#/jobs" class="button button-primary button-small">发现新机会 +</a>') + `<div class="status-filters" role="group" aria-label="按状态筛选"><button type="button" class="${state.appFilter === 'all' ? 'active' : ''}" aria-pressed="${state.appFilter === 'all'}" data-action="app-filter" data-status="all">全部 <span>${state.applications.length}</span></button>${statuses.map(s => `<button type="button" class="${state.appFilter === s.id ? 'active' : ''}" aria-pressed="${state.appFilter === s.id}" data-action="app-filter" data-status="${s.id}">${s.label} <span>${state.applications.filter(a => a.status === s.id).length}</span></button>`).join('')}</div><section class="panel application-list">${rows.length ? rows.map(applicationRow).join('') : emptyState('这里还没有投递记录', '从岗位库收下目标职位，再记录投递状态和简历版本。', '<a href="#/jobs" class="button button-primary button-small">去岗位库看看</a>')}</section><p class="data-note">“加入投递”是收藏到自己的清单，不会代你向企业提交申请。实际投递请前往官方渠道。</p>`;
 }
 async function editApplication(applicationId) {
   if (!requireUser(() => {})) return;
@@ -216,9 +230,11 @@ async function renderRoute() {
     const content = await (renderers[route] || overviewPage)();
     if (currentNavigation !== state.navigation) return;
     main.innerHTML = content; wirePage();
+    main.focus({ preventScroll: true });
   } catch (err) {
     if (currentNavigation !== state.navigation) return;
     main.innerHTML = emptyState('暂时没有加载成功', err.message, '<button class="button button-primary button-small" data-action="retry">重新加载</button>');
+    main.focus({ preventScroll: true });
   }
 }
 function wirePage() {

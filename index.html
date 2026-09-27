@@ -7,9 +7,10 @@
   <meta name="description" content="把目标岗位、简历版本和笔面试安排放在同一个工作台。Offerbiu，让每一次投递，都有下一步。">
   <title>Offerbiu — 让每一次投递，都有下一步</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=3">
-  <link rel="stylesheet" href="motion.css?v=3">
-  <script src="app.js?v=3" defer></script>
+  <link rel="stylesheet" href="shared/tokens.css?v=20260927-ui2">
+  <link rel="stylesheet" href="styles.css?v=20260927-ui2">
+  <link rel="stylesheet" href="motion.css?v=20260927-ui2">
+  <script src="app.js?v=20260927-ui2" defer></script>
 </head>
 <body>
   <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -43,6 +44,7 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-grid container">
         <div class="hero-copy">
+          <p class="hero-brand" aria-hidden="true"><span class="brand-mark"><svg class="icon"><use href="#i-arrow-up"/></svg></span><span>offer<span class="brand-biu">biu</span><span class="brand-dot">.</span></span></p>
           <div class="eyebrow"><span class="status-dot"></span> YOUR NEXT CHAPTER <span class="eyebrow-line"></span> 秋招，从容一点</div>
           <h1 id="hero-title">让每一次投递，<br>都有<span class="highlight">下一步<span class="highlight-line"></span></span>。</h1>
           <p class="hero-description">目标岗位、简历版本、笔面试安排。<br>把整个秋招，放进一个清晰的工作台。</p>
@@ -54,9 +56,8 @@
         <div class="hero-visual" aria-label="求职工作台示例">
           <div class="visual-grid" aria-hidden="true"></div>
           <div class="visual-orbit orbit-one" aria-hidden="true"></div><div class="visual-orbit orbit-two" aria-hidden="true"></div>
-          <div class="floating-label"><span class="live-dot"></span> 你的秋招，正在有序推进</div>
           <div class="workspace-preview">
-            <div class="preview-topbar"><span class="preview-brand"><span class="mini-mark">↗</span> 我的工作台</span><span class="sample-badge">演示数据</span><span class="preview-avatar">O</span></div>
+            <div class="preview-topbar"><span class="preview-brand"><span class="mini-mark">↗</span> Offerbiu 工作台</span><span class="sample-badge">演示数据</span><span class="preview-avatar">O</span></div>
             <div class="preview-body">
               <aside class="preview-rail" aria-hidden="true"><span class="rail-active"><svg class="icon"><use href="#i-grid"/></svg></span><span><svg class="icon"><use href="#i-briefcase"/></svg></span><span><svg class="icon"><use href="#i-file"/></svg></span><span><svg class="icon"><use href="#i-calendar"/></svg></span><span class="rail-bottom"><svg class="icon"><use href="#i-spark"/></svg></span></aside>
               <div class="preview-content">
@@ -71,7 +72,6 @@
             </div>
           </div>
           <div class="resume-float"><span class="float-icon"><svg class="icon"><use href="#i-file"/></svg></span><div><span class="small-label">合适的岗位，合适的版本</span><strong>产品方向简历 <span>V2</span></strong><p><svg class="icon"><use href="#i-check"/></svg> 已关联目标岗位</p></div><span class="float-check"><svg class="icon"><use href="#i-check"/></svg></span></div>
-          <div class="next-float"><span class="next-spark"><svg class="icon"><use href="#i-spark"/></svg></span><span><small>下一步建议</small><strong>面试前，再梳理一次项目亮点。</strong></span><svg class="icon"><use href="#i-arrow-up"/></svg></div>
           <div class="character-scene character-welcome" aria-hidden="true"><span class="character-caption">一起，向前一步。</span><div class="character-sprite"></div></div>
           <div class="visual-caption"><span class="caption-line"></span> 一个工作台，串起每一个机会。</div>
         </div>
