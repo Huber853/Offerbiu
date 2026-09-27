@@ -24,8 +24,16 @@ POLICY=json.loads((ROOT/'data/job-source-policy.json').read_text(encoding='utf-8
 STAMP=direct.STAMP
 RAW=direct.RAW
 
+def deadline_expired(value, today=None):
+    if not value: return False
+    match=re.match(r'^(\d{4})-(\d{2})-(\d{2})', str(value))
+    if not match: return False
+    end=dt.date(int(match.group(1)), int(match.group(2)), int(match.group(3)))
+    return end < (today or dt.date.today())
+
 def accepted(row):
     if row.get('source_policy')!=POLICY['version'] or row.get('record_type')!='job' or row.get('cohort')!=2027 or not row.get('direct_apply_verified') or row.get('catalog_status')!='active':return False
+    if deadline_expired(row.get('deadline')):return False
     if not all(row.get(k) for k in ['external_id','title','description','cohort_evidence']):return False
     if re.search('实习生|实习岗位|招聘公告|招募计划',row['title']):return False
     urls=[urllib.parse.urlparse(row.get(k,'')) for k in ['source_url','apply_url','cohort_evidence_url']]
@@ -143,8 +151,18 @@ def main():
     # official-only submission route that the notice does not link at job level.
     excluded_companies={'杭州加多宝饮料有限公司','中信证券股份有限公司陕西分公司','中信证券股份有限公司上海分公司'}
     fresh=[r for r in fresh if r['company'] not in excluded_companies and not re.search('实习|招聘公告|招募计划',r['title'])]
+    # collect-jobs.py writes official-portal-candidates.json (posting candidates).
+    # data/portal-candidates.json is discover-employer-portals.py probe output — not interchangeable.
     candidate_file=ROOT/'data/official-portal-candidates.json'
-    portal_candidates=json.loads(candidate_file.read_text(encoding='utf-8'))['jobs'] if candidate_file.exists() else old['jobs']
+    if args.merge_only:
+        portal_candidates=[]
+    elif candidate_file.exists():
+        portal_candidates=json.loads(candidate_file.read_text(encoding='utf-8'))['jobs']
+    else:
+        raise SystemExit(
+            f'Missing {candidate_file}. Run `python scripts/collect-jobs.py` first, '
+            'or use --merge-only to only merge employer/brand snapshots into the current catalog.'
+        )
     # Include previously withdrawn official posts so a later successful source
     # check can restore them without changing saved-application IDs.
     archived=ROOT/'data/archive/jobs-before-official-nwu-policy.json'
@@ -161,6 +179,12 @@ def main():
     else:
         retained=[r for r in old['jobs'] if r['company'] not in ['百度','腾讯音乐']]
         combined=retained+original_jobs(candidates)+fresh+list(expansion.values())
+    withdrawn_expired=0
+    for row in combined:
+        if row.get('catalog_status')=='active' and deadline_expired(row.get('deadline')):
+            row['catalog_status']='withdrawn'
+            row['withdrawn_reason']='deadline_passed'
+            withdrawn_expired+=1
     rows=[enrich(r) for r in combined if accepted(r)]
     rows=list({r['id']:r for r in rows}.values())
     unique={};duplicates=[]
@@ -182,8 +206,9 @@ def main():
               companies=counts,company_count=len(counts),industry_count=len({r['industry'] for r in rows}),
               employer_count=sources['employer_official'],nwu_count=sources['nwu_official'],
               company_natures=dict(Counter(r['company_nature'] for r in rows)),
+              withdrawn_expired=withdrawn_expired,
               scope='仅企业官方招聘网站和西北大学就业网的具体2027届岗位，链接直达单岗位投递页。',
-              limitations='来源仅限企业官方招聘渠道及西北大学就业网。均为具体岗位，保留岗位编号、届别依据和投递页；第三方招聘系统仅接入已核实的企业专属站点。可能需要登录来源网站，招聘状态以投递页为准。')
+              limitations='来源仅限企业官方招聘渠道及西北大学就业网。均为具体岗位，保留岗位编号、届别依据和投递页；第三方招聘系统仅接入已核实的企业专属站点。可能需要登录来源网站，招聘状态以投递页为准。已过截止日期的岗位会自动下架，不承诺仍在招。')
     draft=seed.with_suffix('.pending.json');draft.write_text(json.dumps({**meta,'jobs':rows},ensure_ascii=False,indent=2),encoding='utf-8');draft.replace(seed)
     with sqlite3.connect(ROOT/'storage/offerbiu.sqlite',timeout=15) as conn:
         if 'catalog_active' not in [x[1] for x in conn.execute('PRAGMA table_info(jobs)')]:conn.execute('ALTER TABLE jobs ADD COLUMN catalog_active INTEGER NOT NULL DEFAULT 0')

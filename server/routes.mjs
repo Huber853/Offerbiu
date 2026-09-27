@@ -40,7 +40,9 @@ function snapshotResume(row, reason) {
 function saveResume(current, data, title, template, reason) {
   const updated = { ...current, data, title, template, revision: current.revision + 1, updated_at: now() };
   transaction(() => {
-    db.prepare('UPDATE resumes SET data=?,title=?,template=?,revision=?,updated_at=? WHERE id=? AND user_id=?').run(JSON.stringify(data), title, template, updated.revision, updated.updated_at, current.id, current.user_id);
+    const result = db.prepare('UPDATE resumes SET data=?,title=?,template=?,revision=?,updated_at=? WHERE id=? AND user_id=? AND revision=?')
+      .run(JSON.stringify(data), title, template, updated.revision, updated.updated_at, current.id, current.user_id, current.revision);
+    demand(result.changes === 1, 409, '这份简历已在其他页面更新。请先保留当前内容并重新加载。', 'REVISION_CONFLICT');
     snapshotResume(updated, reason);
   });
   return updated;
@@ -259,7 +261,7 @@ async function api(req, res, url) {
     if (provider === 'deepseek') demand(meta.models.includes(model), 400, '模型不支持。');
     else demand(model, 400, '请填写模型名称。');
     const baseUrl = provider === 'custom'
-      ? guardBaseUrl(body.baseUrl || (previous === 'custom' ? old?.base_url : '')) : '';
+      ? await guardBaseUrl(body.baseUrl || (previous === 'custom' ? old?.base_url : '')) : '';
     let stored = old?.key_encrypted || null;
     if (body.removeKey === true) stored = null;
     else if (body.apiKey) {

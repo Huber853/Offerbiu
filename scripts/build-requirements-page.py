@@ -70,7 +70,7 @@ p{margin:0}
 .brand .dot{width:26px;height:26px;border-radius:9px;flex:none;background:linear-gradient(140deg,var(--brand),var(--brand2));
   box-shadow:0 6px 16px -6px rgba(43,92,255,.7);display:grid;place-items:center;color:#fff;font-size:13px;font-weight:800;font-family:var(--mono)}
 .brand small{font-weight:500;color:var(--ink3);font-size:12.5px;margin-left:2px}
-.nav{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.nav{display:flex;gap:4px;margin-left:auto;min-width:0;overflow-x:auto;scrollbar-width:none}
 .nav::-webkit-scrollbar{display:none}
 .nav a{padding:7px 13px;border-radius:999px;font-size:13.5px;color:var(--ink3);font-weight:500;white-space:nowrap;
   transition:background .22s,color .22s}
@@ -198,6 +198,28 @@ main{position:relative;z-index:1}
   cursor:pointer;display:inline-flex;align-items:center;gap:5px}
 .toggle svg{transition:transform .3s}
 .rc.open .toggle svg{transform:rotate(180deg)}
+/* 需求勾选 */
+.chk{flex:none;width:22px;height:22px;margin-right:2px;padding:0;border-radius:7px;border:1.5px solid var(--line);
+  background:#fff;cursor:pointer;display:grid;place-items:center;color:#fff;transition:background .22s,border-color .22s,box-shadow .22s}
+.chk svg{opacity:0;transform:scale(.4);transition:opacity .18s,transform .24s cubic-bezier(.2,1.5,.4,1)}
+.chk:hover{border-color:var(--brand);background:#f3f7ff}
+.chk:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+.chk.on{background:linear-gradient(135deg,#22c55e,#10b981);border-color:#10b981;box-shadow:0 2px 8px rgba(16,185,129,.32)}
+.chk.on svg{opacity:1;transform:scale(1)}
+.rc.done{border-color:#bfe7d4;background:linear-gradient(180deg,#f7fdfa,var(--panel))}
+.rc.done::before{background:#10b981}
+.rc.done h4{color:#0f7a55}
+.rc.done .desc{color:var(--ink3)}
+.chkbar{margin:0 0 4px;padding:11px 15px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  background:var(--panel);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow)}
+.chkbar .ci{font-size:12.5px;color:var(--ink3);white-space:nowrap}
+.chkbar .ci b{font-family:var(--mono);font-size:14px;color:#0f9d6c}
+.chkbar .ct{flex:1;min-width:110px;height:7px;border-radius:999px;background:#eef1f8;overflow:hidden}
+.chkbar .ct i{display:block;height:100%;width:0;border-radius:999px;
+  background:linear-gradient(90deg,#34d399,#10b981);transition:width .45s cubic-bezier(.2,.8,.3,1)}
+.chkbar button{font-family:inherit;font-size:12px;font-weight:600;color:var(--ink3);background:#fff;
+  border:1px solid var(--line);padding:5px 11px;border-radius:8px;cursor:pointer;transition:all .22s;white-space:nowrap}
+.chkbar button:hover{color:var(--ink);border-color:#c9d4e8;transform:translateY(-1px)}
 .empty{padding:56px 20px;text-align:center;color:var(--ink4);font-size:13.5px}
 
 /* acceptance */
@@ -258,6 +280,12 @@ main{position:relative;z-index:1}
 .uc-h h4{font-size:16px;font-weight:700}
 .uc-h .who{margin-left:auto;font-size:12px;color:var(--ink3);background:var(--panel2);border:1px solid var(--line2);
   padding:3px 10px;border-radius:999px;font-weight:600;white-space:nowrap}
+.uc-desc{margin:11px 0 0;font-size:13.5px;color:var(--ink2);line-height:1.78}
+.uc-value{margin:12px 0 0;display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border-radius:11px;
+  background:linear-gradient(135deg,#fdf7ec,#fefaf2);border:1px solid #f2e2c2}
+.uc-value .vk{flex:none;font-size:10.5px;font-weight:800;letter-spacing:.08em;color:#a8711a;background:#f8e9cb;
+  border:1px solid #eed9ae;padding:2.5px 8px;border-radius:7px;margin-top:1px}
+.uc-value .vv{font-size:13px;color:#7a5a1e;line-height:1.72}
 .flows{margin-top:15px;display:grid;gap:11px}
 .fl{display:grid;grid-template-columns:74px 1fr;gap:12px;align-items:start}
 .fl .k{font-size:11.5px;font-weight:700;color:var(--ink4);padding-top:2px;letter-spacing:.02em}
@@ -281,16 +309,61 @@ footer code{font-family:var(--mono);font-size:11.8px;background:#eef1f8;padding:
 .dots button.on{background:var(--brand);height:24px;border-radius:999px}
 .dots button:hover{background:var(--brand2)}
 
+/* 开始使用 */
+.gh{margin-left:14px;display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:var(--ink2);
+  background:#fff;border:1px solid var(--line);padding:6px 12px;border-radius:9px;text-decoration:none;
+  white-space:nowrap;transition:all .22s}
+.gh:hover{color:var(--ink);border-color:#c9d4e8;transform:translateY(-1px)}
+.gh svg{flex:none}
+.start{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.start .card{padding:24px 26px}
+.start-tag{display:inline-flex;font-size:11px;font-weight:800;letter-spacing:.06em;color:var(--brand);
+  background:var(--brand-soft);border:1px solid #dbe3ff;padding:3px 9px;border-radius:999px}
+.start h3{margin-top:13px;font-size:18px;font-weight:800;letter-spacing:-.02em}
+.start p{margin-top:9px;font-size:13.2px;color:var(--ink2);line-height:1.75}
+.start pre{margin:15px 0 0;padding:13px 15px;border-radius:11px;background:#0f1729;overflow-x:auto}
+.start pre code{font-family:var(--mono);font-size:12.5px;color:#cfe0ff;background:none;padding:0}
+.links{margin:15px 0 0;padding:0;list-style:none;display:grid;gap:8px}
+.links li{display:flex;align-items:baseline;gap:10px;font-size:12.7px}
+.links span{color:var(--ink4);flex:none;min-width:60px}
+.links a{color:var(--brand);text-decoration:none;font-family:var(--mono);font-size:12.2px;word-break:break-all}
+.links a:hover{text-decoration:underline}
+.tiny{margin-top:14px;font-size:11.8px;color:var(--ink4);line-height:1.72}
+.btn{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:13px;font-weight:700;
+  padding:10px 16px;border-radius:11px;border:1px solid transparent;transition:all .22s;white-space:nowrap}
+.btn.primary{margin-top:18px;align-self:flex-start;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;
+  box-shadow:0 10px 24px -12px rgba(43,92,255,.95)}
+.btn.primary:hover{transform:translateY(-2px);box-shadow:0 14px 30px -12px rgba(43,92,255,1)}
+.btn.ghost{background:#fff;color:var(--ink2);border-color:var(--line)}
+.btn.ghost:hover{color:var(--ink);border-color:#c9d4e8;transform:translateY(-2px)}
+.issue{margin-top:18px;padding:24px 26px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;
+  background:linear-gradient(135deg,#f7f9ff,#fbfcff)}
+.issue h3{font-size:18px;font-weight:800;letter-spacing:-.02em}
+.issue p{margin-top:8px;font-size:13px;color:var(--ink2);line-height:1.75}
+.issue code{font-family:var(--mono);font-size:12px;background:#eef1f8;padding:1.5px 6px;border-radius:6px;color:var(--ink2)}
+.issue-act{display:flex;gap:9px;flex-wrap:wrap}
+.issue-act .btn{margin-top:0}
+footer .flinks{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}
+footer .flinks a{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;color:var(--ink2);
+  text-decoration:none;background:#fff;border:1px solid var(--line);padding:5px 11px;border-radius:8px;transition:all .22s}
+footer .flinks a:hover{color:var(--brand);border-color:#dbe3ff;transform:translateY(-1px)}
+
 @media (max-width:1000px){
   .dist{grid-template-columns:1fr}
   .acc-wrap{grid-template-columns:1fr}
   .acc-side{position:static}
+  .start{grid-template-columns:1fr}
   .dots{display:none}
 }
 @media (max-width:720px){
   .stats{grid-template-columns:repeat(2,1fr)}
-  .nav a{padding:6px 10px;font-size:12.5px}
+  .bar-in{gap:10px;padding:0 16px}
+  .nav{gap:2px}
+  .nav a{padding:6px 9px;font-size:12.5px}
   .brand small{display:none}
+  .gh span{display:none}
+  .gh{padding:6px 9px;margin-left:8px}
+  .issue{grid-template-columns:1fr}
   .search{margin-left:0;width:100%}
   .search input{width:100%}
   .sec{padding:70px 18px 20px}
@@ -306,7 +379,7 @@ footer code{font-family:var(--mono);font-size:11.8px;background:#eef1f8;padding:
   .rv{opacity:1;transform:none}
 }
 @media print{
-  .bar,.up,.dots,.tools,.cue,.prog{display:none}
+  .bar,.up,.dots,.tools,.cue,.prog,.chkbar,.chk{display:none}
   body::before{display:none}
   .rv{opacity:1;transform:none}
   .rc,.ac,.uc-card,.card{break-inside:avoid;box-shadow:none}
@@ -328,10 +401,15 @@ footer code{font-family:var(--mono);font-size:11.8px;background:#eef1f8;padding:
     <div class="brand"><span class="dot">O</span>Offerbiu<small>需求 · 验收总览</small></div>
     <nav class="nav" id="nav">
       <a href="#top" class="on">首页</a>
+      <a href="#uc">用况</a>
       <a href="#req">需求全景</a>
       <a href="#acc">验收要点</a>
-      <a href="#uc">用况</a>
+      <a href="#start">开始使用</a>
     </nav>
+    <a class="gh" href="https://github.com/Huber853/Offerbiu" target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.4 7.4 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+      <span>GitHub</span>
+    </a>
   </div>
 </header>
 
@@ -356,11 +434,20 @@ footer code{font-family:var(--mono);font-size:11.8px;background:#eef1f8;padding:
 </section>
 
 <main>
+  <section class="sec" id="uc">
+    <div class="sec-head rv">
+      <div class="kicker">Use Cases</div>
+      <h2>用况</h2>
+      <p>__N_UC__ 个用况覆盖从启动服务、注册登录，到岗位投递、简历润色、日程管理、导出备份与岗位重新采集的完整链路；每个用况附描述与业务价值说明。</p>
+    </div>
+    <div class="tl" id="ucList"></div>
+  </section>
+
   <section class="sec" id="req">
     <div class="sec-head rv">
       <div class="kicker">Requirements</div>
       <h2>需求全景</h2>
-      <p>共 __N_REQ__ 条需求，按层级归入 8 个类别，覆盖项目概述、用户与角色、系统目标、功能需求、非功能需求、架构需求、边界约束与验收结论。</p>
+      <p>共 __N_REQ__ 条需求，按层级归入 8 个类别，覆盖项目概述、用户与角色、系统目标、功能需求、非功能需求、架构需求、边界约束与验收结论。每张卡片左侧可打勾标记完成，勾选结果保存在本机浏览器，便于逐条对照验收。</p>
     </div>
 
     <div class="dist">
@@ -381,6 +468,12 @@ footer code{font-family:var(--mono);font-size:11.8px;background:#eef1f8;padding:
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
         <input id="q" type="search" placeholder="搜索编号、需求项、描述…">
       </div>
+    </div>
+    <div class="chkbar rv" style="--d:110ms">
+      <span class="ci">已完成 <b id="chkDone">0</b> / __N_REQ__ 条</span>
+      <span class="ct"><i id="chkFill"></i></span>
+      <button id="chkAll" type="button">全部勾选</button>
+      <button id="chkClear" type="button">清除勾选</button>
     </div>
     <div class="count" id="count"></div>
     <div id="reqBody"></div>
@@ -416,25 +509,73 @@ footer code{font-family:var(--mono);font-size:11.8px;background:#eef1f8;padding:
     </div>
   </section>
 
-  <section class="sec" id="uc">
+  <section class="sec" id="start">
     <div class="sec-head rv">
-      <div class="kicker">Use Cases</div>
-      <h2>用况</h2>
-      <p>__N_UC__ 个用况覆盖从启动服务、注册登录，到岗位投递、简历润色、日程管理、导出备份与岗位重新采集的完整链路。</p>
+      <div class="kicker">Get Started</div>
+      <h2>开始使用</h2>
+      <p>本机离线运行、或直接访问线上站点，两种方式都可以。使用中发现问题、或想要某个功能，欢迎到 GitHub 提 Issue。</p>
     </div>
-    <div class="tl" id="ucList"></div>
+
+    <div class="start">
+      <div class="card panel rv">
+        <div class="start-tag">方式一 · 本地运行</div>
+        <h3>在自己的电脑上跑起来</h3>
+        <p>需要 Node.js 24 或更新版本。克隆仓库后在项目根目录执行下面的命令，或直接双击 <code>启动工作台.cmd</code>；保持窗口打开即可。</p>
+        <pre><code>git clone https://github.com/Huber853/Offerbiu.git
+cd Offerbiu
+node server/index.mjs</code></pre>
+        <ul class="links">
+          <li><span>品牌主页</span><a href="http://127.0.0.1:4174/" target="_blank" rel="noopener">http://127.0.0.1:4174/</a></li>
+          <li><span>工作台</span><a href="http://127.0.0.1:4174/workspace/" target="_blank" rel="noopener">http://127.0.0.1:4174/workspace/</a></li>
+        </ul>
+        <p class="tiny">首次使用请在工作台注册账号。岗位数据、投递记录与简历都保存在本机 SQLite，服务默认只监听 127.0.0.1，不会自动暴露到公网。</p>
+      </div>
+
+      <div class="card panel rv" style="--d:110ms">
+        <div class="start-tag">方式二 · 在线访问</div>
+        <h3>打开线上站点直接用</h3>
+        <p>不想配环境的话，直接访问线上站点即可浏览 2027 届岗位、在线编辑简历、记录投递与日程。</p>
+        <a class="btn primary" href="https://www.papertrace.xyz" target="_blank" rel="noopener">
+          www.papertrace.xyz
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
+        </a>
+        <ul class="links">
+          <li><span>主页</span><a href="https://www.papertrace.xyz" target="_blank" rel="noopener">www.papertrace.xyz</a></li>
+          <li><span>工作台</span><a href="https://www.papertrace.xyz/workspace/" target="_blank" rel="noopener">www.papertrace.xyz/workspace/</a></li>
+        </ul>
+        <p class="tiny">线上站点用于演示与试用，个人数据仍归你自己的账号；实际投递请前往企业官方招聘页完成。</p>
+      </div>
+    </div>
+
+    <div class="card issue rv" style="--d:160ms">
+      <div>
+        <h3>欢迎来提 Issue</h3>
+        <p>发现 Bug、岗位来源有问题，或者希望增加某个功能 —— 都欢迎在 GitHub 开 Issue 告诉我们。顺手点个 Star 就更好了。</p>
+        <p style="margin-top:6px">仓库：<code>github.com/Huber853/Offerbiu</code></p>
+      </div>
+      <div class="issue-act">
+        <a class="btn primary" href="https://github.com/Huber853/Offerbiu/issues/new" target="_blank" rel="noopener">提 Issue</a>
+        <a class="btn ghost" href="https://github.com/Huber853/Offerbiu" target="_blank" rel="noopener">GitHub 仓库</a>
+      </div>
+    </div>
   </section>
 </main>
-
 <footer>
   <div class="card fcard">
     <div>
       <p><b>数据来源：</b><code>需求文档.docx</code>（Offerbiu 求职工作台需求文档）、<code>需求分析.docx</code>（需求分析 + 六、验收要点 + 七、用况）。</p>
       <p style="margin-top:9px"><b>中间产物：</b><code>docs/Offerbiu-需求清单.csv</code>、<code>docs/Offerbiu-验收要点清单.csv</code>、<code>docs/Offerbiu-用况清单.csv</code>；本页由 <code>scripts/build-requirements-page.py</code> 生成。</p>
-      <p style="margin-top:9px"><b>口径提示：</b>需求分析文档仍写「196 条岗位」为早期口径，现口径以需求文档为准 —— 6373 条岗位／约 40 家企业。项目已开发，但未执行编译、测试或浏览器验收。</p>
+      <p style="margin-top:9px"><b>口径提示：</b>现口径以 <code>data/jobs-2027.json</code> 为准 —— 约 16375 条岗位／约 214 家企业／32 个行业（快照 2026-09-27）。早期「196 / 6373」口径已废弃。项目已开发，但未执行编译、测试或浏览器验收。</p>
+      <p style="margin-top:9px"><b>哪里能用：</b>本机 <code>node server/index.mjs</code> 后访问 <code>127.0.0.1:4174</code>，或直接打开 <code>www.papertrace.xyz</code>。</p>
+      <div class="flinks">
+        <a href="https://www.papertrace.xyz" target="_blank" rel="noopener">线上站点 papertrace.xyz</a>
+        <a href="https://github.com/Huber853/Offerbiu" target="_blank" rel="noopener">GitHub 仓库</a>
+        <a href="https://github.com/Huber853/Offerbiu/issues/new" target="_blank" rel="noopener">提 Issue / 反馈</a>
+        <a href="https://github.com/Huber853/Offerbiu/blob/master/README.md" target="_blank" rel="noopener">README 说明</a>
+      </div>
     </div>
     <div style="text-align:right;white-space:nowrap">
-      <div style="font-weight:700;color:var(--ink2);font-size:13px">Offerbiu</div>
+      <div style="font-weight:700;color:var(--ink2);font-size:13px">Offerbiu · papertrace.xyz</div>
       <div>整理日期 2026-09-23</div>
     </div>
   </div>
@@ -500,20 +641,44 @@ footer code{font-family:var(--mono);font-size:11.8px;background:#eef1f8;padding:
     ));
   });
 
+  /* 需求勾选状态：存 localStorage，只在本机浏览器记忆，不写回 CSV */
+  var LS_KEY = 'offerbiu.req.done.v1';
+  var CHK_ALL = '已完成';
+  var TICK = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>';
+  var checked = (function(){
+    try{
+      var raw = JSON.parse(localStorage.getItem(LS_KEY) || '[]');
+      return new Set(Array.isArray(raw) ? raw : []);
+    }catch(e){ return new Set(); }
+  })();
+  var chkDoneEl = document.getElementById('chkDone'), chkFillEl = document.getElementById('chkFill');
+  function saveChecked(){
+    try{ localStorage.setItem(LS_KEY, JSON.stringify(Array.from(checked))); }catch(e){}
+  }
+  function paintChecked(){
+    chkDoneEl.textContent = String(checked.size);
+    chkFillEl.style.width = (REQ.length ? (checked.size / REQ.length * 100) : 0) + '%';
+  }
+
   /* 筛选 + 卡片 */
   var state = {lv:'全部', q:''};
   var chips = document.getElementById('chips');
   function chipHtml(k){
-    var n = k === '全部' ? REQ.length : (byLv[k] || 0);
+    var n = k === '全部' ? REQ.length : (k === CHK_ALL ? checked.size : (byLv[k] || 0));
     return '<button class="chip' + (state.lv === k ? ' on' : '') + '" data-lv="' + esc(k) + '">' + esc(k) + ' <u>' + n + '</u></button>';
   }
-  chips.innerHTML = chipHtml('全部') + LV_ORDER.map(chipHtml).join('');
+  function drawChips(){
+    chips.innerHTML = chipHtml('全部') + chipHtml(CHK_ALL) + LV_ORDER.map(chipHtml).join('');
+  }
+  drawChips();
 
   var body = document.getElementById('reqBody');
   var countEl = document.getElementById('count');
 
   function match(r){
-    if(state.lv !== '全部' && r['需求层级'] !== state.lv) return false;
+    if(state.lv === CHK_ALL){
+      if(!checked.has(r['需求编号'])) return false;
+    } else if(state.lv !== '全部' && r['需求层级'] !== state.lv) return false;
     if(!state.q) return true;
     var hay = ['需求编号','需求层级','所属模块','需求项','需求描述','验收标准','来源文档','备注']
       .map(function(k){ return r[k] || ''; }).join(' ').toLowerCase();
@@ -524,8 +689,10 @@ footer code{font-family:var(--mono);font-size:11.8px;background:#eef1f8;padding:
     var c = LV_COLOR[r['需求层级']] || '#2b5cff';
     var extra = ['验收标准','验收方式','验收结果','来源文档','备注']
       .filter(function(k){ return r[k] && r[k] !== '—'; });
-    return '<article class="rc" style="--c:' + c + '">' +
-      '<div class="rc-top"><span class="id">' + esc(r['需求编号']) + '</span>' +
+    return '<article class="rc" style="--c:' + c + '" data-id="' + esc(r['需求编号']) + '">' +
+      '<div class="rc-top">' +
+        '<button class="chk" type="button" role="checkbox" aria-checked="false" aria-label="标记 ' + esc(r['需求编号']) + ' 为已完成" title="标记为已完成">' + TICK + '</button>' +
+        '<span class="id">' + esc(r['需求编号']) + '</span>' +
         '<span class="tag ' + (PRI_CLS[r['优先级']] || 'pc') + '">' + esc(r['优先级']) + '</span>' +
         '<span class="t-lv">' + esc(r['需求层级']) + '</span></div>' +
       '<h4>' + esc(r['需求项']) + '</h4>' +
@@ -546,7 +713,9 @@ footer code{font-family:var(--mono);font-size:11.8px;background:#eef1f8;padding:
     var list = REQ.filter(match);
     countEl.textContent = '显示 ' + list.length + ' / ' + REQ.length + ' 条需求';
     if(!list.length){
-      body.innerHTML = '<div class="card empty">没有匹配的需求，试试换个关键词或切换层级。</div>';
+      body.innerHTML = '<div class="card empty">' + (state.lv === CHK_ALL
+        ? '还没有勾选任何需求 —— 切到「全部」打开卡片左侧的方框即可打勾。'
+        : '没有匹配的需求，试试换个关键词或切换层级。') + '</div>';
       return;
     }
     var html = '', cur = null, n = 0;
@@ -565,6 +734,28 @@ footer code{font-family:var(--mono);font-size:11.8px;background:#eef1f8;padding:
     var cards = body.querySelectorAll('.rc');
     Array.prototype.forEach.call(cards, function(card, i){
       card.style.setProperty('--cd', (Math.min(i, 14) * 28) + 'ms');
+      var rid = card.dataset.id;
+      var box = card.querySelector('.chk');
+      if(box){
+        var on = checked.has(rid);
+        card.classList.toggle('done', on);
+        box.classList.toggle('on', on);
+        box.setAttribute('aria-checked', on ? 'true' : 'false');
+        box.addEventListener('click', function(ev){
+          ev.stopPropagation();
+          var now = !checked.has(rid);
+          if(now){ checked.add(rid); } else { checked.delete(rid); }
+          card.classList.toggle('done', now);
+          this.classList.toggle('on', now);
+          this.setAttribute('aria-checked', now ? 'true' : 'false');
+          saveChecked(); paintChecked();
+          if(state.lv === CHK_ALL && !now){
+            render();      /* 「已完成」视图下取消勾选，立即从列表移除 */
+          } else {
+            drawChips();   /* 刷新「已完成」筛选项计数 */
+          }
+        });
+      }
       var tg = card.querySelector('.toggle');
       if(tg){
         tg.addEventListener('click', function(){
@@ -579,9 +770,7 @@ footer code{font-family:var(--mono);font-size:11.8px;background:#eef1f8;padding:
     var b = e.target.closest('.chip');
     if(!b) return;
     state.lv = b.dataset.lv;
-    Array.prototype.forEach.call(chips.querySelectorAll('.chip'), function(c){
-      c.classList.toggle('on', c === b);
-    });
+    drawChips();
     render();
   });
   var qt;
@@ -593,6 +782,16 @@ footer code{font-family:var(--mono);font-size:11.8px;background:#eef1f8;padding:
     }, 140);
   });
   render();
+
+  document.getElementById('chkAll').addEventListener('click', function(){
+    REQ.forEach(function(r){ checked.add(r['需求编号']); });
+    saveChecked(); paintChecked(); drawChips(); render();
+  });
+  document.getElementById('chkClear').addEventListener('click', function(){
+    checked.clear();
+    saveChecked(); paintChecked(); drawChips(); render();
+  });
+  paintChecked();
 
   /* 验收要点 */
   var accList = document.getElementById('accList');
@@ -639,6 +838,8 @@ footer code{font-family:var(--mono);font-size:11.8px;background:#eef1f8;padding:
       '<article class="uc"><div class="uc-card">' +
         '<div class="uc-h"><span class="n">' + esc(u['用况编号']) + '</span><h4>' + esc(u['用况名称']) + '</h4>' +
           '<span class="who">' + esc(u['参与者']) + '</span></div>' +
+        '<p class="uc-desc">' + esc(u['用况描述']) + '</p>' +
+        '<div class="uc-value"><span class="vk">价值</span><span class="vv">' + esc(u['业务利益/价值']) + '</span></div>' +
         '<div class="flows">' +
           '<div class="fl"><span class="k">前置条件</span><span class="v">' + esc(u['前置条件']) + '</span></div>' +
           '<div class="fl main"><span class="k">基本流</span><span class="v">' + esc(u['基本流']) + '</span></div>' +
@@ -695,7 +896,7 @@ footer code{font-family:var(--mono);font-size:11.8px;background:#eef1f8;padding:
   /* 滚动进度 / 章节切换 / 侧点 */
   var prog = document.getElementById('prog'), up = document.getElementById('up');
   var navLinks = Array.prototype.slice.call(document.querySelectorAll('#nav a'));
-  var IDs = ['top','req','acc','uc'], LABELS = ['首页','需求全景','验收要点','用况'];
+  var IDs = ['top','uc','req','acc','start'], LABELS = ['首页','用况','需求全景','验收要点','开始使用'];
   var secs = IDs.map(function(id){ return document.getElementById(id); });
   var dots = document.getElementById('dots');
   LABELS.forEach(function(label, i){

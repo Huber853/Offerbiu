@@ -5,8 +5,19 @@ export const sourcePolicy = JSON.parse(fs.readFileSync(new URL('../data/job-sour
 // so the path pattern has to take part in rule selection: matching on host alone
 // always resolves to the first rule and rejects every other tenant on that host.
 const rules = sourcePolicy.sources.map(rule => ({ ...rule, pattern: new RegExp(rule.path_pattern) }));
+
+/** Past application deadlines leave the live catalog; saved applications keep historical rows. */
+export function isDeadlineExpired(deadline, now = new Date()) {
+  if (!deadline) return false;
+  const match = String(deadline).match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (!match) return false;
+  const end = Date.UTC(Number(match[1]), Number(match[2]) - 1, Number(match[3]), 23, 59, 59);
+  return end < now.getTime();
+}
+
 export function acceptsJob(job) {
   if (job.source_policy !== sourcePolicy.version || job.record_type !== 'job' || Number(job.cohort) !== sourcePolicy.cohort || job.direct_apply_verified !== true || job.catalog_status !== 'active') return false;
+  if (isDeadlineExpired(job.deadline)) return false;
   if (!job.external_id || !job.title || !job.description || !job.cohort_evidence || /实习生|实习岗位|招聘公告|招募计划/.test(job.title)) return false;
   try {
     const source = new URL(job.source_url), apply = new URL(job.apply_url), evidence = new URL(job.cohort_evidence_url);

@@ -6,7 +6,7 @@ Offerbiu 是一个面向 2027 届秋招的个人求职工作台。它把官方�
 
 ## 功能概览
 
-- **岗位库**：收录约 6,373 条具体岗位，覆盖约 40 家企业/集团；支持公司、行业、岗位方向、Base、来源和关键词筛选。
+- **岗位库**：收录约 16,375 条具体岗位（快照 2026-09-27），覆盖约 214 家企业/集团、32 个行业；支持公司、行业、岗位方向、Base、来源和关键词筛选。已过截止日期的岗位会自动下架。
 - **官方直达**：每条岗位保留企业官网或西北大学就业网的具体岗位详情链接，可直接进入投递页面。
 - **投递管理**：收藏岗位，记录投递状态、跟进时间、备注和所使用的简历版本。
 - **简历工作室**：在浏览器沙箱中选择模板、编辑纸面内容、调整字号/颜色/行距/模块顺序，并支持撤销、重做和版本恢复。
@@ -77,26 +77,26 @@ DEEPSEEK_MODEL=deepseek-flash
 岗位采集脚本需要 Python 和 `beautifulsoup4`。常用流程如下：
 
 ```powershell
-# 采集候选数据，不直接改动在线岗位库
+# 采集候选数据，写入 data/official-portal-candidates.json（不直接改在线岗位库）
 python scripts/collect-jobs.py
 
-# 读取企业官网和西北大学公开岗位
+# 读取企业官网和西北大学公开岗位 → data/sources/<日期>-official/accepted.json
 python scripts/collect-direct-jobs.py
 
-# 扩充已审核的企业官方渠道
+# 扩充已审核的企业官方渠道 → data/sources/<日期>-employers|brands/accepted.json
 python scripts/collect-employer-expansion.py
 
-# 发布前核对单岗位链接、届别、Base 和来源规则
+# 按来源规则发布；缺少 official-portal-candidates.json 时会直接失败（勿与 portal-candidates.json 探测结果混淆）
 python scripts/publish-direct-jobs.py
 ```
 
-只合并新增企业快照时可以使用：
+只合并新增企业/品牌快照、不重跑门户候选时可以使用：
 
 ```powershell
 python scripts/publish-direct-jobs.py --merge-only
 ```
 
-采集脚本生成的是证据快照，重新运行不会自动保证岗位仍然实时开放。新增企业前，应先在 `data/job-source-policy.json` 中登记官方域名和单岗位路径规则。
+`data/portal-candidates.json` 是 `discover-employer-portals.py` 的探测结果，不是发布候选。采集脚本生成的是证据快照，重新运行不会自动保证岗位仍然实时开放；已过 `deadline` 的岗位在发布与服务端导入时都会下架。新增企业前，应先在 `data/job-source-policy.json` 中登记官方域名和单岗位路径规则。
 
 ## 项目结构
 
@@ -108,9 +108,9 @@ server/index.mjs                                服务入口与环境配置
 server/routes.mjs                               同源 HTTP API 与静态文件服务
 server/db.mjs                                   SQLite 数据库、导入和事务
 server/security.mjs                             会话、校验、限流和密钥加密
-server/deepseek.mjs                             DeepSeek API 调用与润色报告
+server/ai.mjs                                   DeepSeek / 自定义兼容接口与润色报告
 data/jobs-2027.json                             已发布岗位目录
-data/sources/                                   带日期的来源快照
+data/sources/                                   带日期的来源快照（本地证据，默认不入库）
 assets/resume-templates/                        简历模板和授权说明
 scripts/                                        招聘数据采集与发布脚本
 storage/                                        本机运行数据，已被 Git 忽略
