@@ -114,4 +114,38 @@ export function jobMetadata() {
   return row ? JSON.parse(row.value) : { count: 0, collected_at: null, companies: {}, limitations: '尚未导入岗位数据' };
 }
 
+let facetCache = null;
+/** Facets for /api/meta — rebuilt only when the job import stamp changes. */
+export function catalogFacets() {
+  const stamp = db.prepare('SELECT value FROM metadata WHERE key=?').get('jobs_imported_at')?.value || '';
+  const active = db.prepare('SELECT COUNT(*) AS n FROM jobs WHERE cohort=2027 AND catalog_active=1').get().n;
+  if (facetCache && facetCache.stamp === stamp && facetCache.active === active) return facetCache.payload;
+  const rows = db.prepare('SELECT payload FROM jobs WHERE cohort=2027 AND catalog_active=1').all().map(row => JSON.parse(row.payload));
+  const sorted = values => [...new Set(values.filter(Boolean))].sort((a, b) => a.localeCompare(b, 'zh-CN'));
+  const companies = sorted(rows.map(j => j.company)).map(company => ({ company, count: rows.filter(j => j.company === company).length }));
+  const industries = sorted(rows.map(j => j.industry)).map(name => ({ name, count: rows.filter(j => j.industry === name).length }));
+  const payload = {
+    jobs: {
+      ...jobMetadata(),
+      count: rows.length,
+      company_count: companies.length,
+      industry_count: industries.length,
+      job_count: rows.filter(j => j.record_type !== 'campaign').length,
+      campaign_count: rows.filter(j => j.record_type === 'campaign').length,
+      official_post_count: rows.filter(j => j.listing_kind === 'official_post').length,
+      notice_role_count: 0,
+      nwu_count: rows.filter(j => j.source_type === 'nwu_official').length,
+      employer_count: rows.filter(j => j.source_type === 'employer_official').length,
+    },
+    companies,
+    industries,
+    companyNatures: sorted(rows.map(j => j.company_nature)),
+    cities: sorted(rows.flatMap(j => j.cities || [])),
+    categories: sorted(rows.flatMap(j => j.directions?.length ? j.directions : [j.category])),
+    batches: sorted(rows.map(j => j.batch)),
+  };
+  facetCache = { stamp, active, payload };
+  return payload;
+}
+
 export function unpackResume(row) { return row ? { ...row, data: JSON.parse(row.data) } : null; }

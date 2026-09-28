@@ -25,6 +25,10 @@ server.on('error', error => {
 server.listen(port, host, () => {
   console.log(`Offerbiu 已启动：http://${host}:${port}/`);
   console.log(`工作台：http://${host}:${port}/workspace/`);
+  if (process.env.APP_ORIGIN) console.log(`对外站点 Origin：${process.env.APP_ORIGIN}`);
+  else if (host !== '127.0.0.1' && host !== 'localhost') {
+    console.warn('未设置 APP_ORIGIN。公网/HTTPS 部署请在 .env 填写浏览器访问地址，否则注册/登录可能报「跨来源请求被拒绝」。');
+  }
   console.log('持久化数据库：storage/offerbiu.sqlite。按 Ctrl+C 停止。');
 });
 for (const signal of ['SIGINT', 'SIGTERM']) process.on(signal, () => server.close(() => process.exit(0)));

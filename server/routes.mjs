@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { db, ROOT, transaction, jobMetadata, unpackResume } from './db.mjs';
+import { db, ROOT, transaction, unpackResume, catalogFacets } from './db.mjs';
 import { HttpError, demand, text, now, id, getSession, createSession, clearSession, passwordHash, passwordMatches, rateLimit, sanitizeResume, encrypt, resumeField } from './security.mjs';
 import { aiSettings, guardBaseUrl, polishResume, PROVIDERS } from './ai.mjs';
 import { blankResume, templates, statuses } from '../shared/templates.mjs';
@@ -10,6 +10,22 @@ const statusIds = new Set(statuses.map(s => s.id));
 const templateIds = new Set(templates.map(t => t.id));
 const mime = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.mjs': 'text/javascript; charset=utf-8', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg':'image/jpeg', '.jpeg':'image/jpeg', '.webp':'image/webp', '.json': 'application/json; charset=utf-8' };
 function json(res, data, status = 200) { res.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' }); res.end(JSON.stringify(data)); }
+function headerList(value) {
+  return String(value || '').split(',').map(part => part.trim()).filter(Boolean);
+}
+/** Public site origin for CSRF checks — prefer APP_ORIGIN; otherwise trust reverse-proxy headers. */
+function allowedOrigins(req) {
+  const configured = headerList(process.env.APP_ORIGIN).map(origin => origin.replace(/\/+$/, ''));
+  if (configured.length) return configured;
+  const proto = headerList(req.headers['x-forwarded-proto'])[0] || 'http';
+  const host = headerList(req.headers['x-forwarded-host'])[0] || req.headers.host || 'localhost';
+  return [`${proto}://${host}`.replace(/\/+$/, '')];
+}
+function sameOrigin(req) {
+  const origin = req.headers.origin;
+  if (!origin) return true;
+  return allowedOrigins(req).includes(String(origin).replace(/\/+$/, ''));
+}
 async function readBody(req, limit = 300000) {
   demand((req.headers['content-type'] || '').startsWith('application/json'), 415, '请使用 JSON 提交数据。');
   const chunks = [];
@@ -37,15 +53,19 @@ function snapshotResume(row, reason) {
   db.prepare('INSERT INTO resume_versions(id,resume_id,revision,title,template,data,reason,created_at) VALUES(?,?,?,?,?,?,?,?)')
     .run(id(), row.id, row.revision, row.title, row.template, JSON.stringify(row.data), reason, row.updated_at);
 }
-function saveResume(current, data, title, template, reason) {
+function saveResume(current, data, title, template, reason, afterSave) {
   const updated = { ...current, data, title, template, revision: current.revision + 1, updated_at: now() };
   transaction(() => {
     const result = db.prepare('UPDATE resumes SET data=?,title=?,template=?,revision=?,updated_at=? WHERE id=? AND user_id=? AND revision=?')
       .run(JSON.stringify(data), title, template, updated.revision, updated.updated_at, current.id, current.user_id, current.revision);
     demand(result.changes === 1, 409, '这份简历已在其他页面更新。请先保留当前内容并重新加载。', 'REVISION_CONFLICT');
     snapshotResume(updated, reason);
+    afterSave?.();
   });
   return updated;
+}
+function likePattern(value) {
+  return '%' + String(value).replace(/([\\%_])/g, '\\$1') + '%';
 }
 function publicUser(session) { return session ? { id: session.user_id, name: session.name, email: session.email } : null; }
 function unpackApplication(row) {
@@ -62,9 +82,7 @@ async function api(req, res, url) {
   const pathname = url.pathname;
   const session = getSession(req);
   if (!['GET', 'HEAD'].includes(method)) {
-    const origin = req.headers.origin;
-    const expected = process.env.APP_ORIGIN || `http://${req.headers.host}`;
-    demand(!origin || origin === expected, 403, '跨来源请求被拒绝。');
+    demand(sameOrigin(req), 403, '跨来源请求被拒绝。请在服务器 .env 设置 APP_ORIGIN 为浏览器访问的完整地址（含 https）。');
     demand(req.headers['sec-fetch-site'] !== 'cross-site', 403, '跨站请求被拒绝。');
     if (session) demand(req.headers['x-csrf-token'] === session.csrf, 403, '会话校验失败，请刷新页面。');
   }
@@ -72,17 +90,7 @@ async function api(req, res, url) {
   const body = ['POST', 'PUT', 'PATCH', 'DELETE'].includes(method) ? await readBody(req, resumeWrite ? RESUME_FILE_LIMIT : 300000) : {};
   if (pathname === '/api/session' && method === 'GET') return json(res, { user: publicUser(session), csrf: session?.csrf || null });
   if (pathname === '/api/meta' && method === 'GET') {
-    const rows = db.prepare('SELECT payload FROM jobs WHERE cohort=2027 AND catalog_active=1').all().map(row => JSON.parse(row.payload));
-    const sorted = values => [...new Set(values.filter(Boolean))].sort((a, b) => a.localeCompare(b, 'zh-CN'));
-    const companies = sorted(rows.map(j => j.company)).map(company => ({ company, count: rows.filter(j => j.company === company).length }));
-    const industries = sorted(rows.map(j => j.industry)).map(name => ({ name, count: rows.filter(j => j.industry === name).length }));
-    const jobs = { ...jobMetadata(), count: rows.length, company_count: companies.length, industry_count: industries.length,
-      job_count: rows.filter(j => j.record_type !== 'campaign').length, campaign_count: rows.filter(j => j.record_type === 'campaign').length,
-      official_post_count: rows.filter(j => j.listing_kind === 'official_post').length,
-      notice_role_count: 0, nwu_count: rows.filter(j => j.source_type === 'nwu_official').length,
-      employer_count: rows.filter(j => j.source_type === 'employer_official').length };
-    return json(res, { jobs, companies, industries, companyNatures: sorted(rows.map(j => j.company_nature)), cities: sorted(rows.flatMap(j => j.cities || [])),
-      categories: sorted(rows.flatMap(j => j.directions?.length ? j.directions : [j.category])), batches: sorted(rows.map(j => j.batch)), templates, statuses });
+    return json(res, { ...catalogFacets(), templates, statuses });
   }
   if (pathname === '/api/auth/register' && method === 'POST') {
     rateLimit('register:' + req.socket.remoteAddress, 8, 3600000);
@@ -92,18 +100,21 @@ async function api(req, res, url) {
     demand(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email), 400, '请输入有效邮箱。');
     demand(name.length > 0, 400, '请填写称呼。');
     demand(typeof password === 'string' && password.length >= 8 && password.length <= 128, 400, '密码需要 8–128 个字符。');
-    demand(!db.prepare('SELECT id FROM users WHERE email=?').get(email), 409, '该邮箱已注册，请登录。');
+    if (db.prepare('SELECT id FROM users WHERE email=?').get(email)) {
+      throw new HttpError(409, '该邮箱无法注册，请直接登录或更换邮箱。');
+    }
     const hash = await passwordHash(password);
     const userId = id();
     try { db.prepare('INSERT INTO users(id,email,name,password_hash,created_at) VALUES(?,?,?,?,?)').run(userId, email, name, hash, now()); }
-    catch (error) { if (String(error.code).includes('CONSTRAINT')) throw new HttpError(409, '该邮箱已注册，请登录。'); throw error; }
+    catch (error) { if (String(error.code).includes('CONSTRAINT')) throw new HttpError(409, '该邮箱无法注册，请直接登录或更换邮箱。'); throw error; }
     if (session) clearSession(session, res);
     const csrf = createSession(userId, res);
     return json(res, { user: { id: userId, name, email }, csrf }, 201);
   }
   if (pathname === '/api/auth/login' && method === 'POST') {
-    rateLimit('login:' + req.socket.remoteAddress, 30, 900000);
     const email = text(body.email, 254).toLowerCase();
+    rateLimit('login:' + req.socket.remoteAddress, 12, 900000);
+    rateLimit('login-email:' + email, 8, 900000);
     demand(typeof body.password === 'string' && body.password.length <= 128, 400, '请输入密码。');
     const user = db.prepare('SELECT * FROM users WHERE email=?').get(email);
     const valid = user && await passwordMatches(body.password, user.password_hash);
@@ -127,7 +138,11 @@ async function api(req, res, url) {
       clauses.push("EXISTS (SELECT 1 FROM json_each(jobs.payload,'$.cities') c WHERE c.value=?)"); values.push(text(url.searchParams.get('city'), 100));
     }
     const q = text(url.searchParams.get('q'), 100);
-    if (q) { clauses.push('(title LIKE ? OR company LIKE ? OR cities LIKE ? OR payload LIKE ?)'); for (let i = 0; i < 4; i++) values.push('%' + q + '%'); }
+    if (q) {
+      const pattern = likePattern(q);
+      clauses.push("(title LIKE ? ESCAPE '\\' OR company LIKE ? ESCAPE '\\' OR cities LIKE ? ESCAPE '\\' OR payload LIKE ? ESCAPE '\\')");
+      for (let i = 0; i < 4; i++) values.push(pattern);
+    }
     const where = clauses.join(' AND ');
     const total = db.prepare(`SELECT COUNT(*) AS n FROM jobs WHERE ${where}`).get(...values).n;
     const limit = 15;
@@ -165,7 +180,15 @@ async function api(req, res, url) {
     const old = db.prepare('SELECT id FROM applications WHERE user_id=? AND job_id=?').get(userId, jobId);
     if (old) return json(res, { id: old.id, existing: true });
     const applicationId = id();
-    db.prepare('INSERT INTO applications(id,user_id,job_id,created_at,updated_at) VALUES(?,?,?,?,?)').run(applicationId, userId, jobId, now(), now());
+    try {
+      db.prepare('INSERT INTO applications(id,user_id,job_id,created_at,updated_at) VALUES(?,?,?,?,?)').run(applicationId, userId, jobId, now(), now());
+    } catch (error) {
+      if (String(error.code).includes('CONSTRAINT')) {
+        const existing = db.prepare('SELECT id FROM applications WHERE user_id=? AND job_id=?').get(userId, jobId);
+        if (existing) return json(res, { id: existing.id, existing: true });
+      }
+      throw error;
+    }
     return json(res, { id: applicationId }, 201);
   }
   const snapshotMatch = pathname.match(/^\/api\/applications\/([^/]+)\/resume$/);
@@ -249,7 +272,13 @@ async function api(req, res, url) {
     demand(Number(body.currentRevision) === current.revision, 409, '当前版本已变化，请重新加载后恢复。');
     const previous = db.prepare('SELECT * FROM resume_versions WHERE resume_id=? AND revision=?').get(current.id, Number(body.revision));
     demand(previous, 404, '该历史版本不存在。');
-    return json(res, saveResume(current, JSON.parse(previous.data), previous.title, previous.template, `恢复自 V${previous.revision}`));
+    let restored;
+    try { restored = sanitizeResume(JSON.parse(previous.data)); }
+    catch (error) {
+      if (error instanceof HttpError) throw error;
+      throw new HttpError(400, '该历史版本数据已损坏，无法恢复。');
+    }
+    return json(res, saveResume(current, restored, previous.title, previous.template, `恢复自 V${previous.revision}`));
   }
   if (pathname === '/api/settings/ai' && method === 'GET') return json(res, aiSettings(userId));
   if (pathname === '/api/settings/ai' && method === 'PUT') {
@@ -286,8 +315,9 @@ async function api(req, res, url) {
     const field = resumeField(current.data, report.field_path);
     demand(field.value === report.original, 409, '原段落已修改，为避免覆盖，请复制建议后手动合并。');
     field.parent[field.key] = report.revised;
-    const saved = saveResume(current, sanitizeResume(current.data), current.title, current.template, '采纳 DeepSeek 润色');
-    db.prepare('UPDATE ai_reports SET applied_at=? WHERE id=? AND user_id=?').run(now(), report.id, userId);
+    const saved = saveResume(current, sanitizeResume(current.data), current.title, current.template, '采纳 DeepSeek 润色', () => {
+      db.prepare('UPDATE ai_reports SET applied_at=? WHERE id=? AND user_id=?').run(now(), report.id, userId);
+    });
     return json(res, saved);
   }
   if (pathname === '/api/export' && method === 'GET') {

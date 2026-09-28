@@ -21,7 +21,8 @@ export async function passwordHash(password) {
   return `${salt}:${derived.toString('hex')}`;
 }
 export async function passwordMatches(password, encoded) {
-  const [salt, hash] = encoded.split(':');
+  const [salt, hash] = String(encoded || '').split(':');
+  if (!salt || !hash || !/^[a-f0-9]+$/i.test(hash)) return false;
   const derived = await scrypt(password, salt, 64);
   const expected = Buffer.from(hash, 'hex');
   return expected.length === derived.length && crypto.timingSafeEqual(derived, expected);
