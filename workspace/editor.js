@@ -29,8 +29,15 @@ export function mountEditor(container, initial, onSaved = () => {}, options = {}
   let alive = true;
   function cacheDraft() {
     if (!local || !options.draftKey) return;
-    try { sessionStorage.setItem(options.draftKey, JSON.stringify({ ...snapshot(), savedAt: Date.now() })); draftStored = true; }
-    catch { draftStored = false; if (!storageWarned) toast('浏览器草稿空间不可用，请及时导出 JSON。', true); storageWarned = true; }
+    try {
+      localStorage.setItem(options.draftKey, JSON.stringify({ ...snapshot(), savedAt: Date.now() }));
+      try { sessionStorage.removeItem(options.draftKey); } catch {}
+      draftStored = true;
+    } catch {
+      draftStored = false;
+      if (!storageWarned) toast('浏览器草稿空间不可用，请及时导出 JSON。', true);
+      storageWarned = true;
+    }
   }
   const setDirty = () => { undoStack.push(lastSnapshot); const cap = resume.data.media?.portrait?.src || resume.data.media?.gallery?.length ? 12 : 60; while (undoStack.length > cap) undoStack.shift(); redoStack.length = 0; lastSnapshot = snapshot(); generation++; dirty = true; cacheDraft(); status(); };
   function historyStep(redo = false) {
@@ -53,7 +60,7 @@ export function mountEditor(container, initial, onSaved = () => {}, options = {}
   }
   function status() {
     const label = container.querySelector('#save-state');
-    if (label) { label.textContent = saving ? '正在保存…' : local ? '浏览器会话草稿 · 请导出或存入账号' : dirty ? '有未保存的修改' : `已保存 · V${resume.revision}`; label.classList.toggle('unsaved', dirty && !local); }
+    if (label) { label.textContent = saving ? '正在保存…' : local ? (draftStored ? '本机草稿已保存 · 登录后可换设备同步' : '本机草稿未写入 · 请导出或存入账号') : dirty ? '有未保存的修改' : `已保存 · V${resume.revision}`; label.classList.toggle('unsaved', dirty && !local); }
     const btn = container.querySelector('#save-resume'); if (btn) btn.disabled = saving;
     const undo = container.querySelector('#editor-undo'), redo = container.querySelector('#editor-redo');
     if (undo) undo.disabled = !undoStack.length || saving; if (redo) redo.disabled = !redoStack.length || saving;
@@ -161,7 +168,7 @@ export function mountEditor(container, initial, onSaved = () => {}, options = {}
       onSaved(updated); return updated;
     } finally { saving = false; status(); }
   }
-  async function saveAction() { try { await save(); toast(local ? '草稿已保存在当前浏览器会话。' : '简历已保存到数据库。'); } catch (err) { toast(err.message, true); } }
+  async function saveAction() { try { await save(); toast(local ? '草稿已保存在本机浏览器。换设备前请导出或登录存入账号。' : '简历已保存到数据库。'); } catch (err) { toast(err.message, true); } }
 
   async function versionHistory() {
     const versions = await api('/resumes/' + resume.id + '/versions');
@@ -180,7 +187,7 @@ export function mountEditor(container, initial, onSaved = () => {}, options = {}
     if (local) { toast('先点击“存入我的简历”，再使用已连接的 AI 服务润色。'); return; }
     const [settings, applications] = await Promise.all([api('/settings/ai'), api('/applications')]);
     if (!settings.configured) {
-      dialog('先连接 AI 服务', '<p class="modal-description">在设置中填写你的 API 密钥（可选 DeepSeek 或任意 OpenAI 兼容接口）。密钥保存在后端，页面不会回显；配置后即可润色真实经历。</p><a class="button button-primary" href="#/settings" id="go-settings">前往设置 →</a>', el => el.querySelector('#go-settings').addEventListener('click', () => el.close())); return;
+      dialog('先连接 AI 服务', '<p class="modal-description">在设置中填写 API 密钥（DeepSeek 或 OpenAI 兼容接口），保存后点「测试连接」确认可用，再回来润色真实经历。</p><a class="button button-primary" href="#/settings" id="go-settings">前往设置并测试 →</a>', el => el.querySelector('#go-settings').addEventListener('click', () => el.close())); return;
     }
     const options = [];
     if (resume.data.basics.summary) options.push(['basics.summary', '个人简介']);
@@ -238,7 +245,7 @@ export function mountEditor(container, initial, onSaved = () => {}, options = {}
     resume.data.media = normalizeMedia(resume.data.media);
     lastSnapshot = snapshot();
     const selected = templates.find(t => t.id === resume.template) || templates[0];
-    container.innerHTML = `<div class="editor-page studio-page"><div class="studio-banner"><span>RESUME STUDIO / 简历工作室</span><p>写下经历，让每一页都更接近下一份机会。</p><a href="#/templates">浏览模板 ↗</a></div><div class="editor-heading"><div><a class="back-link" href="#/resumes">← 简历中心</a><div class="editor-title-line"><input class="title-input" id="resume-title" aria-label="简历名称" value="${e(resume.title)}" maxlength="100"><span class="save-state" id="save-state"></span></div></div><div class="editor-actions"><button class="button button-soft button-small" id="starter">快速生成</button>${!local ? '<button class="button button-soft button-small" id="resume-history">版本记录</button>' : ''}<button class="button button-soft button-small" id="resume-ai">${icon('ai')} AI 润色</button><button class="button button-primary button-small" id="save-resume">${local ? '保存草稿' : '保存简历'} ${icon('check')}</button>${local ? '<button class="button button-primary button-small" id="save-account">存入我的简历 ↗</button>' : ''}</div></div><div class="studio-commandbar"><div><button class="button button-soft button-small" id="editor-undo">↶ 撤销</button><button class="button button-soft button-small" id="editor-redo">↷ 重做</button><span>直接点击纸面文字编辑</span></div><div><button class="text-link" id="import-draft">导入 JSON</button><button class="text-link" id="export-json">导出 JSON</button><button class="text-link" id="export-html">导出网页</button><button class="button button-primary button-small" id="print-resume">导出 PDF / 打印</button></div></div><div class="editor-layout"><section class="editor-form-panel"><div class="editor-form-top"><strong>内容与排版</strong><span>左侧填写，也可以直接编辑右侧文字</span></div><div class="editor-section-tabs" role="tablist" aria-label="简历模块">${Object.entries(sectionLabels).map(([key,label]) => `<button role="tab" aria-selected="${key === activeSection}" data-section="${key}">${label}</button>`).join('')}</div><div id="section-form"></div>${layoutPanel()}<div class="editor-help">空白模块不导出。隐藏模块保留内容，重新勾选即可恢复。</div></section><section class="editor-preview-panel"><div class="preview-toolbar"><label><span>模板</span><select id="template-select">${templates.map(t => `<option value="${t.id}" ${resume.template === t.id ? 'selected' : ''}>${e(t.name)}</option>`).join('')}</select></label><label><span>缩放</span><select id="preview-zoom">${[['fit','适应宽度'],['.75','75%'],['1','100%']].map(([v,label]) => `<option value="${v}" ${zoom === v ? 'selected' : ''}>${label}</option>`).join('')}</select></label></div><div class="paper-viewport studio-viewport"><div class="paper-stage"><iframe id="resume-preview" title="可编辑简历 A4 预览" sandbox="allow-same-origin" referrerpolicy="no-referrer"></iframe></div></div><div class="studio-preview-footer"><span id="paper-size">A4 · 正在排版</span><span>${selected.source ? `<a href="${selected.source}" target="_blank" rel="noopener noreferrer">${selected.collection ? 'ResumeCollection · '+selected.number : selected.license+' 开源模板'} · 网页适配 ↗</a>` : 'Offerbiu 原创排版'}</span></div></section></div><input id="studio-import-file" type="file" accept="application/json,.json" hidden></div>`;
+    container.innerHTML = `<div class="editor-page studio-page"><div class="studio-banner"><span>RESUME STUDIO / 简历工作室</span><p>写下经历，让每一页都更接近下一份机会。</p><a href="#/templates">浏览模板 ↗</a></div>${local ? '<div class="studio-persist-note" role="status">草稿保存在本机浏览器，关标签一般不会丢。清除站点数据或换设备前，请导出 JSON，或点击「存入我的简历」登录保存。</div>' : ''}<div class="editor-heading"><div><a class="back-link" href="#/resumes">← 简历中心</a><div class="editor-title-line"><input class="title-input" id="resume-title" aria-label="简历名称" value="${e(resume.title)}" maxlength="100"><span class="save-state" id="save-state"></span></div></div><div class="editor-actions"><button class="button button-soft button-small" id="starter">快速生成</button>${!local ? '<button class="button button-soft button-small" id="resume-history">版本记录</button>' : ''}<button class="button button-soft button-small" id="resume-ai">${icon('ai')} AI 润色</button><button class="button button-primary button-small" id="save-resume">${local ? '保存草稿' : '保存简历'} ${icon('check')}</button>${local ? '<button class="button button-primary button-small" id="save-account">存入我的简历 ↗</button>' : ''}</div></div><div class="studio-commandbar"><div><button class="button button-soft button-small" id="editor-undo">↶ 撤销</button><button class="button button-soft button-small" id="editor-redo">↷ 重做</button><span>直接点击纸面文字编辑</span></div><div><button class="text-link" id="import-draft">导入 JSON</button><button class="text-link" id="export-json">导出 JSON</button><button class="text-link" id="export-html">导出网页</button><button class="button button-primary button-small" id="print-resume">导出 PDF / 打印</button></div></div><div class="editor-layout"><section class="editor-form-panel"><div class="editor-form-top"><strong>内容与排版</strong><span>左侧填写，也可以直接编辑右侧文字</span></div><div class="editor-section-tabs" role="tablist" aria-label="简历模块">${Object.entries(sectionLabels).map(([key,label]) => `<button role="tab" aria-selected="${key === activeSection}" data-section="${key}">${label}</button>`).join('')}</div><div id="section-form"></div>${layoutPanel()}<div class="editor-help">空白模块不导出。隐藏模块保留内容，重新勾选即可恢复。</div></section><section class="editor-preview-panel"><div class="preview-toolbar"><label><span>模板</span><select id="template-select">${templates.map(t => `<option value="${t.id}" ${resume.template === t.id ? 'selected' : ''}>${e(t.name)}</option>`).join('')}</select></label><label><span>缩放</span><select id="preview-zoom">${[['fit','适应宽度'],['.75','75%'],['1','100%']].map(([v,label]) => `<option value="${v}" ${zoom === v ? 'selected' : ''}>${label}</option>`).join('')}</select></label></div><div class="paper-viewport studio-viewport"><div class="paper-stage"><iframe id="resume-preview" title="可编辑简历 A4 预览" sandbox="allow-same-origin" referrerpolicy="no-referrer"></iframe></div></div><div class="studio-preview-footer"><span id="paper-size">A4 · 正在排版</span><span>${selected.source ? `<a href="${selected.source}" target="_blank" rel="noopener noreferrer">${selected.collection ? 'ResumeCollection · '+selected.number : selected.license+' 开源模板'} · 网页适配 ↗</a>` : 'Offerbiu 原创排版'}</span></div></section></div><input id="studio-import-file" type="file" accept="application/json,.json" hidden></div>`;
     container.querySelector('#resume-title').addEventListener('input', event => { resume.title = event.target.value; setDirty(); });
     container.querySelector('#template-select').addEventListener('change', event => { resume.template = event.target.value; resume.data.design.accent = ''; setDirty(); render(); });
     container.querySelectorAll('[data-section]').forEach(button => button.addEventListener('click', () => { activeSection = button.dataset.section; syncTabs(); renderForm(); }));

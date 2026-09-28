@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { db, ROOT, transaction, unpackResume, catalogFacets } from './db.mjs';
 import { HttpError, demand, text, now, id, getSession, createSession, clearSession, passwordHash, passwordMatches, rateLimit, sanitizeResume, encrypt, resumeField } from './security.mjs';
-import { aiSettings, guardBaseUrl, polishResume, PROVIDERS } from './ai.mjs';
+import { aiSettings, guardBaseUrl, polishResume, testAiConnection, PROVIDERS } from './ai.mjs';
 import { blankResume, templates, statuses } from '../shared/templates.mjs';
 import { RESUME_FILE_LIMIT } from '../shared/resume-media.mjs';
 
@@ -300,6 +300,9 @@ async function api(req, res, url) {
     }
     db.prepare('INSERT INTO ai_settings(user_id,key_encrypted,model,provider,base_url,updated_at) VALUES(?,?,?,?,?,?) ON CONFLICT(user_id) DO UPDATE SET key_encrypted=excluded.key_encrypted,model=excluded.model,provider=excluded.provider,base_url=excluded.base_url,updated_at=excluded.updated_at').run(userId, stored, model, provider, baseUrl, now());
     return json(res, aiSettings(userId));
+  }
+  if (pathname === '/api/settings/ai/test' && method === 'POST') {
+    return json(res, await testAiConnection(userId, body));
   }
   if (pathname === '/api/ai/polish' && method === 'POST') return json(res, await polishResume(userId, body), 201);
   if (pathname === '/api/ai/reports' && method === 'GET') {

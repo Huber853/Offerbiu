@@ -83,7 +83,7 @@ function jobCard(j) {
     <div class="job-tags">${j.company_nature && j.company_nature !== '其他／待核实' ? `<span class="nature-tag">${e(j.company_nature)}</span>` : ''}${(j.directions?.length ? j.directions : [j.category]).slice(0, 4).map(d => `<span>${e(d)}</span>`).join('')}${j.deadline ? `<span class="deadline-tag">${date(j.deadline)} 截止</span>` : ''}</div>
     <p class="job-excerpt">${e((j.description || j.requirements || '查看招聘详情。').replace(/\n/g, ' ').slice(0, 140))}</p>
     <div class="direct-job-actions"><a class="button button-primary button-small" href="${e(safeUrl(j.apply_url))}" target="_blank" rel="noopener noreferrer">${j.source_type === 'nwu_official' ? '去西大投递' : '去官网投递'} ${icon('link')}</a><button class="text-link" data-action="job-detail" data-id="${e(j.id)}">查看详情</button></div>
-    <div class="job-card-footer"><span>${j.updated_at ? '更新 ' + date(j.updated_at) : j.published_at || j.published_at_raw ? '发布 ' + date(j.published_at || j.published_at_raw) : '采集 ' + date(j.collected_at)}</span><button class="button button-small button-soft" data-action="${j.application ? 'edit-application' : 'save-job'}" data-id="${e(j.application?.id || j.id)}">${j.application ? '已收藏 · 查看' : '收藏岗位 +'}</button></div>
+    <div class="job-card-footer"><span>${j.updated_at ? '更新 ' + date(j.updated_at) : j.published_at || j.published_at_raw ? '发布 ' + date(j.published_at || j.published_at_raw) : '采集 ' + date(j.collected_at)}</span><button class="button button-small button-soft" data-action="${j.application ? 'edit-application' : 'save-job'}" data-id="${e(j.application?.id || j.id)}" title="${j.application ? '已在清单中，尚未等于官网投递' : '只加入个人清单，不会代你向企业投递'}">${j.application ? '已在清单 · 查看' : '加入清单 +'}</button></div>
   </article>`;
 }
 async function jobsPage() {
@@ -107,7 +107,7 @@ async function jobsPage() {
     <div class="list-meta recruit-list-meta"><span>找到 <strong>${data.total}</strong> 条信息${active.length ? ' · ' + active.map(e).join(' / ') : ''}</span><span>点击岗位名称或投递按钮，直达来源岗位页</span></div>
     <div class="job-grid">${data.items.map(jobCard).join('') || emptyState('没有匹配的招聘信息', '可以放宽 Base、行业或地点精度。未公布地点的信息不会猜测归入某个城市。', '<button class="button button-soft button-small" data-action="reset-jobs">清除筛选</button>')}</div>
     <div class="pagination"><span>第 ${data.page} / ${Math.max(1, data.pages)} 页</span><button class="button button-soft button-small" data-action="job-page" data-page="${data.page - 1}" ${data.page <= 1 ? 'disabled' : ''}>上一页</button><button class="button button-soft button-small" data-action="job-page" data-page="${data.page + 1}" ${data.page >= data.pages ? 'disabled' : ''}>下一页</button></div>
-    <p class="data-note">${e(meta.limitations)} 多城市同一岗位不拆分计数。企业和校内页面可能要求登录；收藏仅保存到个人清单，不会向企业提交简历。</p>`;
+    <p class="data-note">${e(meta.limitations)} 多城市同一岗位不拆分计数。企业和校内页面可能要求登录；「加入清单」仅保存到个人清单，不会向企业提交简历，正式申请请点「去官网投递」。</p>`;
 }
 async function showJob(jobId) {
   const j = await api('/jobs/' + encodeURIComponent(jobId));
@@ -120,16 +120,25 @@ async function showJob(jobId) {
     <div class="detail-facts">${[['招聘届别','2027 届'],['招聘批次',j.batch || j.program],['岗位方向',(j.directions || [j.category]).join(' / ')],['学历',j.education || '详见简章和岗位要求'],['薪资',j.salary || '未明确公布'],['截止日期',j.deadline ? date(j.deadline) : '未明确公布']].map(([k,v]) => `<div><span>${k}</span><strong>${e(v)}</strong></div>`).join('')}</div>
     <section class="job-description"><h3>${campaign ? '招聘计划' : j.listing_kind === 'notice_role' ? '岗位说明' : '工作职责'}</h3><p>${e(j.description || '请查看招聘详情。')}</p><h3>应聘要求</h3><p>${e(j.requirements || '请查看招聘简章或网申岗位。')}</p></section>
     <div class="provenance-box"><strong>来源：${e(j.source_name || sourceLabel(j))}</strong><p>${e(j.cohort_evidence)}</p><p>${e(j.notes)}</p><small>原始发布：${date(j.published_at || j.published_at_raw)} · 采集：${date(j.collected_at)}${j.external_id ? ' · 来源编号：' + e(j.external_id) : ' · 公告整理岗位（无独立官网编号）'}</small><div class="button-row">${source ? `<a href="${e(source)}" target="_blank" rel="noopener noreferrer" class="text-link">查看原始${campaign ? '招聘公告' : '岗位来源'} ↗</a>` : ''}${evidence && evidence !== source ? `<a href="${e(evidence)}" target="_blank" rel="noopener noreferrer" class="text-link">查看 2027 届依据 ↗</a>` : ''}</div></div>
-    <div class="modal-actions">${apply ? `<a class="button button-soft" href="${e(apply)}" target="_blank" rel="noopener noreferrer">${applyLabel} ${icon('link')}</a>` : ''}<button class="button button-primary" id="detail-save">收藏到我的清单 ${icon('plus')}</button></div>`, el => el.querySelector('#detail-save').addEventListener('click', () => { requireUser(() => handle(saveJob(jobId))); }), 'modal-wide');
+    <div class="modal-actions">${apply ? `<a class="button button-primary" href="${e(apply)}" target="_blank" rel="noopener noreferrer">${applyLabel} ${icon('link')}</a>` : ''}<button class="button button-soft" id="detail-save">加入清单（不代投） ${icon('plus')}</button></div>`, el => el.querySelector('#detail-save').addEventListener('click', () => { requireUser(() => handle(saveJob(jobId))); }), 'modal-wide');
 }
-async function saveJob(jobId) { const result = await api('/applications', { method: 'POST', data: { jobId } }); toast(result.existing ? '这份机会已在投递清单中。' : '已收下这个机会。可在“我的投递”记录进展。'); document.getElementById('app-dialog').close(); await renderRoute(); }
+async function saveJob(jobId) {
+  const result = await api('/applications', { method: 'POST', data: { jobId } });
+  toast(result.existing
+    ? '这份机会已在「我的投递」清单中。加入清单 ≠ 已向企业投递。'
+    : '已加入「我的投递」，当前为待投递。请另点「去官网投递」完成正式申请。');
+  document.getElementById('app-dialog').close();
+  await renderRoute();
+}
 
-function applicationRow(a) { return `<div class="application-row">${companyLogo(a.job.company)}<button class="application-title" data-action="edit-application" data-id="${a.id}"><strong>${e(a.job.title)}</strong><small>${e(a.job.company)} · ${e(a.job.cities.join(' / '))}${a.job.catalog_active === false ? ' · 已下架（历史记录）' : ''}</small></button>${statusBadge(a.status, statuses)}<span class="application-resume">${a.resume_title ? e(a.resume_title) + ' · V' + a.resume_revision : '尚未绑定简历'}</span><span class="application-next">${a.next_date ? time(a.next_date) : '下一步待安排'}</span><button class="icon-button" data-action="edit-application" data-id="${a.id}" aria-label="编辑投递">${icon('arrow')}</button></div>`; }
+function applicationRow(a) {
+  return `<div class="application-row">${companyLogo(a.job.company)}<div class="application-main"><button class="application-title" data-action="edit-application" data-id="${a.id}"><strong>${e(a.job.title)}</strong><small>${e(a.job.company)} · ${e(a.job.cities.join(' / '))}${a.job.catalog_active === false ? ' · 已下架（历史记录）' : ''}</small></button><div class="application-meta"><span class="application-resume">${a.resume_title ? e(a.resume_title) + ' · V' + a.resume_revision : '尚未绑定简历'}</span><span class="application-next">${a.next_date ? '下一步 ' + time(a.next_date) : '下一步待安排'}</span></div></div>${statusBadge(a.status, statuses)}<button class="button button-soft button-small application-edit" data-action="edit-application" data-id="${a.id}">编辑</button></div>`;
+}
 async function applicationsPage() {
   if (!state.user) return loginEmpty('applications');
   state.applications = await api('/applications');
   const rows = state.applications.filter(a => state.appFilter === 'all' || a.status === state.appFilter);
-  return pageHeading('applications', '<a href="#/jobs" class="button button-primary button-small">发现新机会 +</a>') + `<div class="status-filters" role="group" aria-label="按状态筛选"><button type="button" class="${state.appFilter === 'all' ? 'active' : ''}" aria-pressed="${state.appFilter === 'all'}" data-action="app-filter" data-status="all">全部 <span>${state.applications.length}</span></button>${statuses.map(s => `<button type="button" class="${state.appFilter === s.id ? 'active' : ''}" aria-pressed="${state.appFilter === s.id}" data-action="app-filter" data-status="${s.id}">${s.label} <span>${state.applications.filter(a => a.status === s.id).length}</span></button>`).join('')}</div><section class="panel application-list">${rows.length ? rows.map(applicationRow).join('') : emptyState('这里还没有投递记录', '从岗位库收下目标职位，再记录投递状态和简历版本。', '<a href="#/jobs" class="button button-primary button-small">去岗位库看看</a>')}</section><p class="data-note">“加入投递”是收藏到自己的清单，不会代你向企业提交申请。实际投递请前往官方渠道。</p>`;
+  return pageHeading('applications', '<a href="#/jobs" class="button button-primary button-small">发现新机会 +</a>') + `<div class="status-filters" role="group" aria-label="按状态筛选"><button type="button" class="${state.appFilter === 'all' ? 'active' : ''}" aria-pressed="${state.appFilter === 'all'}" data-action="app-filter" data-status="all">全部 <span>${state.applications.length}</span></button>${statuses.map(s => `<button type="button" class="${state.appFilter === s.id ? 'active' : ''}" aria-pressed="${state.appFilter === s.id}" data-action="app-filter" data-status="${s.id}">${s.label} <span>${state.applications.filter(a => a.status === s.id).length}</span></button>`).join('')}</div><section class="panel application-list">${rows.length ? rows.map(applicationRow).join('') : emptyState('这里还没有投递记录', '从岗位库收下目标职位，再记录投递状态和简历版本。', '<a href="#/jobs" class="button button-primary button-small">去岗位库看看</a>')}</section><p class="data-note">「加入清单」只保存在你的账号里，不会代你向企业提交。实际投递请点岗位卡上的「去官网投递」。</p>`;
 }
 async function editApplication(applicationId) {
   if (!requireUser(() => {})) return;
@@ -163,7 +172,7 @@ function templateThumbnail(template) { return `<div class="template-paper" aria-
 function templatesPage() { return pageHeading('templates', '<a class="button button-primary button-small" href="#/studio/classic">打开简历工作室 →</a>') + `<div class="template-intro"><span>01 选一套版式</span><span>02 填写真实资料</span><span>03 编辑、润色与导出</span><small>预览中的内容为排版示例，开始编辑时使用空白草稿。</small></div><div class="template-grid studio-template-grid">${[...templates].sort((a,b)=>Number(!!b.collection)-Number(!!a.collection)).map(t => `<article class="template-card">${templateThumbnail(t)}<div><span class="template-tag">${t.collection ? "精选 "+t.number+" · " : ""}${e(t.tag)}</span><h2>${e(t.name)}</h2><p>${e(t.description)}</p><div class="template-source">${t.source ? `<a href="${t.source}" target="_blank" rel="noopener noreferrer">${t.collection ? "ResumeCollection · "+t.number : t.license+" · 开源原作"} ↗</a><a href="${t.licenseUrl || "/assets/resume-templates/"+t.id+"/LICENSE"}" target="_blank" rel="noopener noreferrer">许可</a>${t.reference ? `<a href="${t.reference}" target="_blank" rel="noopener noreferrer">原版预览</a>` : ""}` : '<span>Offerbiu 原创模板</span>'}</div><a class="button button-primary button-small" href="#/studio/${t.id}">使用模板 · 在线编辑 ${icon('arrow')}</a></div></article>`).join('')}</div><div class="info-strip">${icon('check')}<p>浏览器内直接编辑、实时预览、导出 PDF / HTML / JSON。登录后保存到个人简历库；开源模板已适配中文，不依赖第三方字体或模板服务器。</p></div>`; }
 
 async function resumesPage() {
-  if (!state.user) return pageHeading('resumes','<a class="button button-primary" href="#/studio/classic">直接开始编辑 →</a>') + '<div class="welcome-panel"><div><span class="page-kicker">YOUR RESUME STUDIO</span><h2>先写好简历，再开启下一步。</h2><p>无需登录即可使用简历工作室。草稿保存在当前浏览器会话，可导出 PDF、网页及 JSON；登录后可保存版本并使用 AI 润色。</p><a class="button button-soft" href="#/templates">挑选精品模板 ↗</a></div></div>';
+  if (!state.user) return pageHeading('resumes','<a class="button button-primary" href="#/studio/classic">直接开始编辑 →</a>') + '<div class="welcome-panel"><div><span class="page-kicker">YOUR RESUME STUDIO</span><h2>先写好简历，再开启下一步。</h2><p>无需登录即可使用简历工作室。草稿保存在本机浏览器（关标签一般不丢）；登录后可保存版本、换设备同步，并使用 AI 润色。</p><a class="button button-soft" href="#/templates">挑选精品模板 ↗</a></div></div>';
   state.resumes = await api('/resumes');
   return pageHeading('resumes', '<div class="button-row"><button class="button button-soft button-small" data-action="import-resume">导入 JSON</button><button class="button button-primary button-small" data-action="new-resume">新建简历 +</button></div>') + `<div class="resume-grid">${state.resumes.map(r => `<article class="resume-card"><a href="#/resume/${r.id}" class="resume-card-preview" aria-label="编辑 ${e(r.title)}">${templateThumbnail(templates.find(t => t.id === r.template) || templates[0])}<span class="resume-edit-label">继续编辑 ${icon('arrow')}</span></a><div class="resume-card-body"><span class="template-tag">${e((templates.find(t => t.id === r.template) || templates[0]).name)} · V${r.revision}</span><h2><a href="#/resume/${r.id}">${e(r.title)}</a></h2><p>更新于 ${time(r.updated_at)}</p><div class="resume-card-actions"><a class="button button-soft button-small" href="#/resume/${r.id}">打开编辑器</a><button class="icon-button" data-action="clone-resume" data-id="${r.id}" title="创建副本" aria-label="创建副本">${icon('plus')}</button><button class="icon-button danger-link" data-action="delete-resume" data-id="${r.id}" aria-label="删除简历">${icon('trash')}</button></div></div></article>`).join('')}${!state.resumes.length ? emptyState('你的第一份简历，从这里开始', '选择模板，直接在网页中填写和修改真实经历。', '<a href="#/templates" class="button button-primary">挑选模板 →</a>') : ''}</div><input id="resume-import" type="file" accept=".json,application/json" hidden>`;
 }
@@ -202,7 +211,7 @@ async function aiPage() {
 async function settingsPage() {
   if (!state.user) return loginEmpty('settings');
   const config = await api('/settings/ai');
-  return pageHeading('settings') + `<div class="settings-layout"><section class="panel settings-panel"><div class="panel-heading"><h2>${icon('ai')} AI 接入</h2><span class="badge ${config.configured ? 'badge-green' : 'badge-slate'}">${config.configured ? '已配置' : '待配置'}</span></div><p class="settings-description">使用你自己的 AI 服务账户。密钥由后端加密保存，不会回显到浏览器；只有点击润色时才调用。</p><form id="ai-settings-form"><label class="field"><span>服务商</span><select name="provider" id="ai-provider">${config.providers.map(item => `<option value="${item.key}" ${config.provider === item.key ? 'selected' : ''}>${e(item.label)}</option>`).join('')}</select></label><label class="field" id="ai-baseurl-field"${config.provider === 'custom' ? '' : ' hidden'}><span>接口地址（OpenAI 兼容，须 https）</span><input name="baseUrl" type="url" maxlength="300" placeholder="https://your-endpoint.example.com/v1" value="${e(config.baseUrl)}"></label><label class="field"><span>API 密钥${config.source === 'personal' ? '（已保存，留空则不修改）' : ''}</span><input name="apiKey" type="password" autocomplete="new-password" maxlength="500" placeholder="在这里填写 API 密钥"></label><label class="field" id="ai-model-pick"${config.provider === 'custom' ? ' hidden' : ''}><span>模型</span><select name="model">${config.models.map(model => `<option value="${model}" ${config.model === model ? 'selected' : ''}>${model === 'deepseek-flash' ? 'DeepSeek Flash · 日常润色' : 'DeepSeek V4 Pro · 深入优化'}</option>`).join('')}</select></label><label class="field" id="ai-model-free"${config.provider === 'custom' ? '' : ' hidden'}><span>模型名称</span><input name="modelCustom" maxlength="80" placeholder="例如 gpt-4o-mini" value="${config.provider === 'custom' ? e(config.model) : ''}"></label><p class="form-error" role="alert"></p><div class="button-row"><button class="button button-primary button-small" type="submit">保存配置</button>${config.source === 'personal' ? '<button class="button button-soft button-small" id="remove-ai-key" type="button">移除个人密钥</button>' : ''}${config.providers.find(item => item.key === config.provider)?.keyUrl ? `<a href="${config.providers.find(item => item.key === config.provider).keyUrl}" target="_blank" rel="noopener noreferrer" class="text-link">前往服务商平台 ↗</a>` : ''}</div><p class="field-note">当前来源：${config.source === 'personal' ? '个人配置' : config.source === 'server' ? '服务器环境配置' : '尚未配置'}。保存配置不会自动发起调用，也不代表已经验证密钥可用。自定义接口地址不得指向本机或内网。</p></form></section><div><section class="panel settings-panel"><div class="panel-heading"><h2>我的账号</h2></div><div class="profile-summary"><span class="user-avatar">${e(state.user.name.slice(0, 1))}</span><div><strong>${e(state.user.name)}</strong><small>${e(state.user.email)}</small></div></div><button class="button button-soft button-small" data-action="logout">${icon('logout')} 退出登录</button></section><section class="panel settings-panel"><div class="panel-heading"><h2>数据与备份</h2></div><p class="settings-description">导出你的投递、待办与简历内容。导出文件不含密码或 API 密钥，请妥善保存个人资料。</p><button class="button button-soft button-small" data-action="export-data">${icon('download')} 导出我的数据</button><p class="field-note">本地数据保存在启动这个项目的电脑。邮箱暂仅用作账号，不提供邮件找回。</p></section></div></div><section class="panel source-panel"><div class="panel-heading"><h2>岗位数据说明</h2></div><p>本批 ${state.meta.jobs.count} 条，来源：${state.meta.companies.map(c => `${e(c.company)} ${c.count} 条`).join('、')}。采集于 ${date(state.meta.jobs.collected_at)}。</p><p>${e(state.meta.jobs.limitations)}</p><p>点击条目可查看企业官网或西北大学岗位页、2027 届依据和原始发布日期。当前不会自动刷新外部招聘状态。</p></section>`;
+  return pageHeading('settings') + `<div class="settings-layout"><section class="panel settings-panel"><div class="panel-heading"><h2>${icon('ai')} AI 接入</h2><span class="badge ${config.configured ? 'badge-green' : 'badge-slate'}">${config.configured ? '已配置' : '待配置'}</span></div><p class="settings-description">使用你自己的 AI 服务账户。密钥由后端加密保存，不会回显到浏览器；保存后可点「测试连接」确认密钥可用，再去简历编辑器润色。</p><form id="ai-settings-form"><label class="field"><span>服务商</span><select name="provider" id="ai-provider">${config.providers.map(item => `<option value="${item.key}" ${config.provider === item.key ? 'selected' : ''}>${e(item.label)}</option>`).join('')}</select></label><label class="field" id="ai-baseurl-field"${config.provider === 'custom' ? '' : ' hidden'}><span>接口地址（OpenAI 兼容，须 https）</span><input name="baseUrl" type="url" maxlength="300" placeholder="https://your-endpoint.example.com/v1" value="${e(config.baseUrl)}"></label><label class="field"><span>API 密钥${config.source === 'personal' ? '（已保存，留空则不修改）' : ''}</span><input name="apiKey" type="password" autocomplete="new-password" maxlength="500" placeholder="在这里填写 API 密钥"></label><label class="field" id="ai-model-pick"${config.provider === 'custom' ? ' hidden' : ''}><span>模型</span><select name="model">${config.models.map(model => `<option value="${model}" ${config.model === model ? 'selected' : ''}>${model === 'deepseek-flash' ? 'DeepSeek Flash · 日常润色' : 'DeepSeek V4 Pro · 深入优化'}</option>`).join('')}</select></label><label class="field" id="ai-model-free"${config.provider === 'custom' ? '' : ' hidden'}><span>模型名称</span><input name="modelCustom" maxlength="80" placeholder="例如 gpt-4o-mini" value="${config.provider === 'custom' ? e(config.model) : ''}"></label><p class="form-error" role="alert"></p><div class="button-row"><button class="button button-primary button-small" type="submit">保存配置</button><button class="button button-soft button-small" id="test-ai-key" type="button">测试连接</button>${config.source === 'personal' ? '<button class="button button-soft button-small" id="remove-ai-key" type="button">移除个人密钥</button>' : ''}${config.providers.find(item => item.key === config.provider)?.keyUrl ? `<a href="${config.providers.find(item => item.key === config.provider).keyUrl}" target="_blank" rel="noopener noreferrer" class="text-link">前往服务商平台 ↗</a>` : ''}</div><p class="field-note">当前来源：${config.source === 'personal' ? '个人配置' : config.source === 'server' ? '服务器环境配置' : '尚未配置'}。保存只会写入本地配置；「测试连接」会向服务商发起一次轻量请求以验证密钥。自定义接口地址不得指向本机或内网。</p></form></section><div><section class="panel settings-panel"><div class="panel-heading"><h2>我的账号</h2></div><div class="profile-summary"><span class="user-avatar">${e(state.user.name.slice(0, 1))}</span><div><strong>${e(state.user.name)}</strong><small>${e(state.user.email)}</small></div></div><button class="button button-soft button-small" data-action="logout">${icon('logout')} 退出登录</button></section><section class="panel settings-panel"><div class="panel-heading"><h2>数据与备份</h2></div><p class="settings-description">导出你的投递、待办与简历内容。导出文件不含密码或 API 密钥，请妥善保存个人资料。</p><button class="button button-soft button-small" data-action="export-data">${icon('download')} 导出我的数据</button><p class="field-note">本地数据保存在启动这个项目的电脑。邮箱暂仅用作账号，不提供邮件找回。</p></section></div></div><section class="panel source-panel"><div class="panel-heading"><h2>岗位数据说明</h2></div><p>本批 ${state.meta.jobs.count} 条，来源：${state.meta.companies.map(c => `${e(c.company)} ${c.count} 条`).join('、')}。采集于 ${date(state.meta.jobs.collected_at)}。</p><p>${e(state.meta.jobs.limitations)}</p><p>点击条目可查看企业官网或西北大学岗位页、2027 届依据和原始发布日期。当前不会自动刷新外部招聘状态。</p></section>`;
 }
 
 async function renderRoute() {
@@ -217,7 +226,15 @@ async function renderRoute() {
       const template = templates.some(t => t.id === routeParts[1]) ? routeParts[1] : 'classic';
       const draftKey = 'offerbiu:studio:' + (state.user?.id || 'guest') + ':' + template;
       let initial = { id:'local',title:'我的校招简历',template,data:blankResume(),revision:0 };
-      try { const cached = JSON.parse(sessionStorage.getItem(draftKey)); if (cached?.data?.basics && ['education','experience','projects'].every(k => Array.isArray(cached.data[k]))) initial = {...initial,...cached,id:'local',revision:0}; } catch {}
+      try {
+        let raw = localStorage.getItem(draftKey);
+        if (!raw) {
+          raw = sessionStorage.getItem(draftKey);
+          if (raw) { try { localStorage.setItem(draftKey, raw); sessionStorage.removeItem(draftKey); } catch {} }
+        }
+        const cached = raw ? JSON.parse(raw) : null;
+        if (cached?.data?.basics && ['education','experience','projects'].every(k => Array.isArray(cached.data[k]))) initial = {...initial,...cached,id:'local',revision:0};
+      } catch {}
       state.editor = mountEditor(main,initial,()=>{}, {local:true,draftKey,onSaveAccount:saveStudioToAccount}); return;
     }
     if (route === 'resume') {
@@ -242,7 +259,42 @@ function wirePage() {
   filters?.addEventListener('submit', event => { event.preventDefault(); state.jobs = { ...Object.fromEntries(new FormData(filters)), page: 1 }; handle(renderRoute()); });
   filters?.querySelectorAll('select').forEach(select => select.addEventListener('change', () => filters.requestSubmit()));
   const aiForm = document.getElementById('ai-settings-form');
-  aiForm?.addEventListener('submit', async event => { event.preventDefault(); const btn = aiForm.querySelector('[type=submit]'); btn.disabled = true; try { const values = Object.fromEntries(new FormData(aiForm)); const provider = values.provider === 'custom' ? 'custom' : 'deepseek'; await api('/settings/ai', { method: 'PUT', data: { provider, apiKey: values.apiKey, baseUrl: values.baseUrl || '', model: provider === 'custom' ? values.modelCustom : values.model } }); aiForm.elements.apiKey.value = ''; toast('配置已保存；尚未发起 API 调用。'); await renderRoute(); } catch (err) { aiForm.querySelector('.form-error').textContent = err.message; btn.disabled = false; } });
+  const aiPayload = () => {
+    const values = Object.fromEntries(new FormData(aiForm));
+    const provider = values.provider === 'custom' ? 'custom' : 'deepseek';
+    return { provider, apiKey: values.apiKey, baseUrl: values.baseUrl || '', model: provider === 'custom' ? values.modelCustom : values.model };
+  };
+  aiForm?.addEventListener('submit', async event => {
+    event.preventDefault();
+    const btn = aiForm.querySelector('[type=submit]');
+    btn.disabled = true;
+    aiForm.querySelector('.form-error').textContent = '';
+    try {
+      const payload = aiPayload();
+      await api('/settings/ai', { method: 'PUT', data: payload });
+      aiForm.elements.apiKey.value = '';
+      if (payload.apiKey) {
+        try {
+          await api('/settings/ai/test', { method: 'POST', data: { provider: payload.provider, baseUrl: payload.baseUrl, model: payload.model } });
+          toast('配置已保存，连接测试通过。');
+        } catch (err) {
+          toast('配置已保存，但连接测试失败：' + err.message, true);
+        }
+      } else toast('配置已保存。可点「测试连接」验证密钥。');
+      await renderRoute();
+    } catch (err) { aiForm.querySelector('.form-error').textContent = err.message; btn.disabled = false; }
+  });
+  document.getElementById('test-ai-key')?.addEventListener('click', async () => {
+    const btn = document.getElementById('test-ai-key');
+    btn.disabled = true;
+    aiForm.querySelector('.form-error').textContent = '';
+    try {
+      const payload = aiPayload();
+      await api('/settings/ai/test', { method: 'POST', data: payload });
+      toast('连接测试通过，可以去简历编辑器润色了。');
+    } catch (err) { aiForm.querySelector('.form-error').textContent = err.message; toast(err.message, true); }
+    finally { btn.disabled = false; }
+  });
   const providerSelect = document.getElementById('ai-provider');
   providerSelect?.addEventListener('change', () => { const custom = providerSelect.value === 'custom'; document.getElementById('ai-baseurl-field').hidden = !custom; document.getElementById('ai-model-pick').hidden = custom; document.getElementById('ai-model-free').hidden = !custom; });
   document.getElementById('remove-ai-key')?.addEventListener('click', async () => { if (!confirm('移除保存在本机的个人 API 密钥？')) return; try { await api('/settings/ai', { method: 'PUT', data: { provider: aiForm.elements.provider.value, baseUrl: aiForm.elements.baseUrl.value, model: aiForm.elements.provider.value === 'custom' ? aiForm.elements.modelCustom.value : aiForm.elements.model.value, removeKey: true } }); await renderRoute(); toast('个人密钥已移除。'); } catch (err) { errorMessage(err); } });

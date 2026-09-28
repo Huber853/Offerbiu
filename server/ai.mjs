@@ -132,6 +132,57 @@ async function resolveTarget(config) {
 
 const inflight = new Set();
 
+/** Lightweight connectivity check — models list first, then a 1-token chat fallback. */
+export async function testAiConnection(userId, body = {}) {
+  rateLimit('ai-test:' + userId, 8, 3600000);
+  const row = db.prepare('SELECT * FROM ai_settings WHERE user_id=?').get(userId);
+  const provider = PROVIDERS[body.provider] ? body.provider : (PROVIDERS[row?.provider] ? row.provider : 'deepseek');
+  const meta = PROVIDERS[provider];
+  const model = text(body.model, 80) || text(row?.model, 80) || (provider === 'deepseek' ? process.env.DEEPSEEK_MODEL : '') || meta.defaultModel;
+  let key = body.apiKey ? text(body.apiKey, 500) : '';
+  if (key) demand(key.length >= 16 && !/\s/.test(key), 400, '密钥格式不正确。');
+  else if (row?.key_encrypted) key = decrypt(row.key_encrypted);
+  else key = process.env.DEEPSEEK_API_KEY || process.env.AI_API_KEY || '';
+  demand(key, 400, '请先填写 API 密钥。');
+  const target = await resolveTarget({
+    provider,
+    model,
+    base_url: provider === 'custom' ? (body.baseUrl || row?.base_url || '') : '',
+  });
+  const headers = { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' };
+  try {
+    const modelsRes = await fetch(target.url.replace(/\/chat\/completions$/, '/models'), {
+      method: 'GET', redirect: 'error', signal: AbortSignal.timeout(15000), headers: { Authorization: `Bearer ${key}` },
+    });
+    if (modelsRes.ok) return { ok: true, provider: target.provider, model: target.model, method: 'models' };
+    if (modelsRes.status === 401 || modelsRes.status === 403) {
+      throw new HttpError(502, `${target.label} 密钥无效或权限不足，请核对后重试。`);
+    }
+  } catch (error) {
+    if (error instanceof HttpError) throw error;
+  }
+  let response;
+  try {
+    response = await fetch(target.url, {
+      method: 'POST', redirect: 'error', signal: AbortSignal.timeout(20000), headers,
+      body: JSON.stringify({
+        model: target.model, stream: false, max_tokens: 1, ...target.extra,
+        messages: [{ role: 'user', content: 'ping' }],
+      }),
+    });
+  } catch (error) {
+    throw new HttpError(502, error.name === 'TimeoutError' ? `${target.label} 响应超时，请稍后重试。` : `暂时无法连接 ${target.label}。`);
+  }
+  if (response.ok) return { ok: true, provider: target.provider, model: target.model, method: 'chat' };
+  const messages = {
+    401: `${target.label} 密钥无效，请重新填写。`,
+    403: `${target.label} 拒绝了请求，请检查密钥权限。`,
+    402: `${target.label} 账户余额不足。`,
+    429: `${target.label} 请求限流，请稍后重试。`,
+  };
+  throw new HttpError(502, messages[response.status] || `${target.label} 测试失败（${response.status}）。`);
+}
+
 export async function polishResume(userId, body) {
   demand(body.consent === true, 400, '请同意将所选段落和岗位描述发送至所选 AI 服务商。');
   demand(!inflight.has(userId), 429, '上一份润色尚未完成，请稍候。');
