@@ -154,6 +154,13 @@ export function mountEditor(container, initial, onSaved = () => {}, options = {}
     form.querySelectorAll('[data-image-remove]').forEach(button=>button.addEventListener('click',()=>{resume.data.media.gallery.splice(Number(button.dataset.imageRemove),1);setDirty();renderForm();queuePreview();}));
     form.querySelectorAll('[data-image-move]').forEach(button=>button.addEventListener('click',()=>{const index=Number(button.dataset.imageMove),to=index+Number(button.dataset.delta),list=resume.data.media.gallery;[list[index],list[to]]=[list[to],list[index]];setDirty();renderForm();queuePreview();}));
   }
+  function acceptSaved(updated, startedGeneration) {
+    const unchanged = startedGeneration === generation;
+    if (unchanged) { resume = updated; dirty = false; lastSnapshot = snapshot(); }
+    else { resume.revision = updated.revision; resume.updated_at = updated.updated_at; }
+    onSaved(updated);
+    return unchanged;
+  }
   async function save() {
     if (saving) throw new Error('正在保存，请稍候。');
     if (local) { cacheDraft(); if (!draftStored) throw new Error('浏览器草稿保存失败，请导出 JSON 或存入账号。'); dirty = false; status(); return resume; }
@@ -163,29 +170,37 @@ export function mountEditor(container, initial, onSaved = () => {}, options = {}
     const draft = structuredClone(resume);
     try {
       const updated = await api('/resumes/' + resume.id, { method: 'PUT', data: { title: draft.title, template: draft.template, data: draft.data, revision: draft.revision } });
-      if (savingGeneration === generation) { resume = updated; dirty = false; }
-      else { resume.revision = updated.revision; resume.updated_at = updated.updated_at; }
-      onSaved(updated); return updated;
-    } finally { saving = false; status(); }
+      if (alive) acceptSaved(updated, savingGeneration);
+      return updated;
+    } finally { saving = false; if (alive) status(); }
   }
   async function saveAction() { try { await save(); toast(local ? '草稿已保存在本机浏览器。换设备前请导出或登录存入账号。' : '简历已保存到数据库。'); } catch (err) { toast(err.message, true); } }
 
   async function versionHistory() {
     const versions = await api('/resumes/' + resume.id + '/versions');
+    if (!alive) return;
     dialog('简历版本记录', `<p class="modal-description">恢复会生成新版本，不会删除后续历史。</p><div class="version-list">${versions.map(v => `<div class="version-row"><span class="version-number">V${v.revision}</span><div><strong>${e(v.title)}</strong><small>${e(v.reason)} · ${time(v.created_at)}</small></div><button class="button button-small button-soft" data-restore="${v.revision}" ${v.revision === resume.revision ? 'disabled' : ''}>${v.revision === resume.revision ? '当前版本' : '恢复'}</button></div>`).join('')}</div>`, el => {
       el.querySelectorAll('[data-restore]').forEach(btn => btn.addEventListener('click', async () => {
+        if (saving) return;
         if (dirty && !confirm('当前有未保存修改。确定用这个历史版本替换编辑区？')) return;
-        btn.disabled = true;
+        const startedGeneration = generation;
+        saving = true; status(); btn.disabled = true;
         try {
-          resume = await api('/resumes/' + resume.id + '/restore', { method: 'POST', data: { currentRevision: resume.revision, revision: Number(btn.dataset.restore) } });
-          dirty = false; render(); el.close(); toast('已恢复，并保留为新版本。'); onSaved(resume);
+          const updated = await api('/resumes/' + resume.id + '/restore', { method: 'POST', data: { currentRevision: resume.revision, revision: Number(btn.dataset.restore) } });
+          if (!alive) return;
+          const unchanged = acceptSaved(updated, startedGeneration);
+          if (unchanged) render();
+          if (btn.isConnected) el.close();
+          toast(unchanged ? '已恢复，并保留为新版本。' : '账号版本已恢复；编辑区的新修改已保留，请确认后保存。');
         } catch (err) { btn.disabled = false; toast(err.message, true); }
+        finally { saving = false; if (alive) status(); }
       }));
     });
   }
   async function showPolish() {
     if (local) { toast('先点击“存入我的简历”，再使用已连接的 AI 服务润色。'); return; }
     const [settings, applications] = await Promise.all([api('/settings/ai'), api('/applications')]);
+    if (!alive) return;
     if (!settings.configured) {
       dialog('先连接 AI 服务', '<p class="modal-description">在设置中填写 API 密钥（DeepSeek 或 OpenAI 兼容接口），保存后点「测试连接」确认可用，再回来润色真实经历。</p><a class="button button-primary" href="#/settings" id="go-settings">前往设置并测试 →</a>', el => el.querySelector('#go-settings').addEventListener('click', () => el.close())); return;
     }
@@ -195,7 +210,7 @@ export function mountEditor(container, initial, onSaved = () => {}, options = {}
     if (resume.data.skills) options.push(['skills', '专业技能']); if (resume.data.awards) options.push(['awards', '荣誉证书']);
     if (!options.length) { toast('先填写个人简介或一段真实经历，再使用 AI 润色。', true); return; }
     const preferred = options.find(([path]) => path.startsWith(activeSection))?.[0] || options[0][0];
-    const uniqueJobs = [...new Map(applications.map(a => [a.job.id, a.job])).values()];
+    const uniqueJobs = [...new Map(applications.filter(a => a.job.catalog_active !== false).map(a => [a.job.id, a.job])).values()];
     dialog('AI 润色这一段', `<div id="polish-content"><p class="modal-description">围绕真实经历优化表达。不会自动发送姓名、手机、邮箱，也不会直接覆盖简历。</p><form id="polish-form"><label class="field"><span>选择模块</span><select name="field">${options.map(([value, label]) => `<option value="${e(value)}" ${value === preferred ? 'selected' : ''}>${e(label)}</option>`).join('')}</select></label><label class="field"><span>目标岗位（来自我的投递）</span><select name="jobId"><option value="">不指定岗位</option>${uniqueJobs.map(j => `<option value="${e(j.id)}">${e(j.company)} · ${e(j.title)}</option>`).join('')}</select></label><label class="field"><span>润色方向</span><select name="tone"><option value="professional">表达更专业、清晰</option><option value="concise">精简重复，突出重点</option><option value="star">围绕情境、行动、结果组织</option></select></label><div class="original-preview"><span>即将发送的原文</span><p id="polish-original">${e(get(preferred))}</p></div><label class="consent"><input type="checkbox" name="consent" required><span>同意将这段文字及所选岗位要求发送给所选 AI 服务商。若段落含个人敏感信息，请先删去。调用可能消耗你的 API 余额。</span></label><div class="modal-actions"><span class="muted">${e(settings.model)}</span><button class="button button-primary" type="submit">${icon('ai')} ${dirty ? '先保存，再润色' : '开始润色'}</button></div><p class="form-error" role="alert"></p></form></div>`, el => {
       const form = el.querySelector('form');
       form.elements.field.addEventListener('change', () => { el.querySelector('#polish-original').textContent = get(form.elements.field.value); });
@@ -205,14 +220,30 @@ export function mountEditor(container, initial, onSaved = () => {}, options = {}
         const btn = form.querySelector('button[type=submit]'); btn.disabled = true; btn.textContent = 'AI 正在润色…'; form.querySelector('.form-error').textContent = '';
         try {
           await save();
+          if (!alive || !el.open || !form.isConnected) return;
+          if (dirty) throw new Error('保存期间有新修改，请确认原文后重新润色。');
           const report = await api('/ai/polish', { method: 'POST', data: { resumeId: resume.id, revision: resume.revision, field: values.field, jobId: values.jobId || null, tone: values.tone, consent: values.consent === 'on' } });
-          if (!alive || !el.open) { toast('润色完成，可在 AI 记录中查看。'); return; }
+          if (!alive || !el.open || !form.isConnected) { toast('润色完成，可在 AI 记录中查看。'); return; }
           el.querySelector('#polish-content').innerHTML = `<div class="polish-comparison"><section><h3>原文 · V${report.resume_revision}</h3><p>${e(report.original)}</p></section><section class="revised-text"><h3>润色建议</h3><p>${e(report.revised)}</p></section></div><div class="ai-reasons"><h3>为什么这样改</h3><ul>${report.changes.map(s => `<li>${e(s)}</li>`).join('')}</ul>${report.questions.length ? `<h3>建议你补充的事实</h3><ul>${report.questions.map(s => `<li>${e(s)}</li>`).join('')}</ul>` : ''}</div>${report.match ? `<div class="ai-reasons"><h3>岗位匹配分析 · ${report.match.score} 分</h3>${report.match.advice ? `<p>${e(report.match.advice)}</p>` : ''}${report.match.matched.length ? `<h3>简历已具备</h3><ul>${report.match.matched.map(s => `<li>${e(s)}</li>`).join('')}</ul>` : ''}${report.match.missing.length ? `<h3>岗位要求但尚未体现</h3><ul>${report.match.missing.map(s => `<li>${e(s)}</li>`).join('')}</ul>` : ''}</div>` : ''}<p class="modal-description">请核对数字、经历与职责。采纳后生成新版本，原版本仍可恢复。</p><div class="modal-actions"><button class="button button-soft" id="copy-revised">复制建议</button><button class="button button-primary" id="apply-revised">采纳到简历 ${icon('check')}</button></div>`;
           el.querySelector('#copy-revised').addEventListener('click', async () => { try { await navigator.clipboard.writeText(report.revised); toast('已复制。'); } catch { toast('请选中润色文本后手动复制。', true); } });
           el.querySelector('#apply-revised').addEventListener('click', async event => {
-            event.currentTarget.disabled = true;
-            try { await save(); resume = await api('/ai/reports/' + report.id + '/apply', { method: 'POST', data: { revision: resume.revision } }); dirty = false; render(); el.close(); onSaved(resume); toast('已采纳，保存为 V' + resume.revision); }
-            catch (err) { toast(err.message, true); if (el.open) el.querySelector('#apply-revised').disabled = false; }
+            const button = event.currentTarget;
+            button.disabled = true;
+            try {
+              await save();
+              if (!alive || !el.open || !button.isConnected) return;
+              if (dirty) throw new Error('保存期间有新修改，请先保存后再采纳。');
+              const startedGeneration = generation;
+              saving = true; status();
+              try {
+                const updated = await api('/ai/reports/' + report.id + '/apply', { method: 'POST', data: { revision: resume.revision } });
+                if (!alive) return;
+                const unchanged = acceptSaved(updated, startedGeneration);
+                if (unchanged) render();
+                if (button.isConnected) el.close();
+                toast(unchanged ? '已采纳，保存为 V' + updated.revision : '建议已存入账号；编辑区的新修改已保留，请确认后保存。');
+              } finally { saving = false; if (alive) status(); }
+            } catch (err) { toast(err.message, true); if (button.isConnected) button.disabled = false; }
           });
         } catch (err) { if (el.open && form.isConnected) { form.querySelector('.form-error').textContent = err.message; btn.disabled = false; btn.textContent = '重新润色'; } else toast(err.message, true); }
       });

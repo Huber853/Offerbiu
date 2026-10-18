@@ -9,7 +9,7 @@ import { templates, statuses, blankResume, resumeText, sampleResume } from '/sha
 const main = document.getElementById('workspace-content');
 initDelight(main);
 const emptyJobFilters = () => ({ q: '', company: '', company_nature: '', city: '', category: '', industry: '', record_type: 'job', source_type: '', base_scope: '', batch: '', sort: 'recent', page: 1 });
-const state = { user: null, meta: null, route: 'overview', editor: null, navigation: 0, jobs: emptyJobFilters(), applications: [], resumes: [], tasks: [], calendarMonth: new Date(new Date().getFullYear(), new Date().getMonth(), 1), selectedDay: '', appFilter: 'all' };
+const state = { user: null, meta: null, route: 'overview', editor: null, navigation: 0, jobs: emptyJobFilters(), applications: [], resumes: [], tasks: [], calendarMonth: new Date(new Date().getFullYear(), new Date().getMonth(), 1), selectedDay: '', appFilter: 'all', selectedApplications: new Set() };
 const navigation = [['overview', '总览'], ['jobs', '校招岗位库'], ['applications', '我的投递'], ['resumes', '简历中心'], ['templates', '模板与工作室'], ['calendar', '日程与待办'], ['ai', 'AI 润色记录'], ['settings', '个人设置']];
 const pageHeaders = { overview: ['把今天，安排明白。', '机会、准备和进展，在一个地方继续。'], jobs: ['下一份机会，从这里发现。', '企业官网与西北大学的 2027 届具体岗位，直接前往对应投递页。'], applications: ['每个机会，都有进展。', '记下投递状态、使用的简历版本，以及下一步。'], resumes: ['让好的经历，被看见。', '按目标岗位准备不同版本，修改与历史都有迹可循。'], templates: ['让经历，拥有好的版面。', '精选十一套可编辑版式，新增 ResumeCollection 模板与头像、作品配图。'], calendar: ['重要的事，提前安排。', '把截止、笔试、面试与跟进，放进自己的节奏里。'], ai: ['把经历，讲得更清楚。', '保留原文与润色建议，由你决定采纳。'], settings: ['让工作台，更适合你。', '连接 AI 服务，管理你的账号和数据。'] };
 function pageHeading(key, action = '') { const [title, sub] = pageHeaders[key]; return `<div class="page-heading"><div><span class="page-kicker">YOUR NEXT CHAPTER / ${key.toUpperCase()}</span><h1>${title}</h1><p>${sub}</p></div>${action}</div>`; }
@@ -57,7 +57,7 @@ async function overviewPage() {
   return `<section class="dashboard-banner overview-banner"><div>
       <span class="banner-eyebrow">${e(state.user.name)}，每一步都算数。</span>
       <h2>${pending.length ? '今天，先从眼前的事开始。' : '给下一份期待，留一点准备。'}</h2>
-      <p>${d.total ? `你已收下 ${d.total} 个目标岗位，${d.counts.interview} 个正在面试。` : '先找到一个心仪岗位，再为它准备合适的简历。'}</p>
+      <p>${d.total ? `你已收下 ${d.total} 个目标岗位，${d.counts.interview} 个正在面试。${d.archived ? `其中 ${d.archived} 个招聘入口已下架，个人进展仍保留。` : ''}` : '先找到一个心仪岗位，再为它准备合适的简历。'}</p>
       <div class="overview-metrics" role="list">${metrics.map(([label, n, href]) => `<a class="metric-pill" role="listitem" href="${href}"><span>${label}</span><strong>${String(n).padStart(2, '0')}</strong></a>`).join('')}</div>
       <a class="button button-primary button-small" href="#/jobs">寻找新机会 ${icon('arrow')}</a>
     </div><div class="banner-decoration" aria-hidden="true"><span class="banner-ring"></span><span class="banner-arrow">↗</span><span class="banner-card">NEXT STEP<br><b>心中有数。</b></span></div></section>
@@ -131,14 +131,30 @@ async function saveJob(jobId) {
   await renderRoute();
 }
 
-function applicationRow(a) {
-  return `<div class="application-row">${companyLogo(a.job.company)}<div class="application-main"><button class="application-title" data-action="edit-application" data-id="${a.id}"><strong>${e(a.job.title)}</strong><small>${e(a.job.company)} · ${e(a.job.cities.join(' / '))}${a.job.catalog_active === false ? ' · 已下架（历史记录）' : ''}</small></button><div class="application-meta"><span class="application-resume">${a.resume_title ? e(a.resume_title) + ' · V' + a.resume_revision : '尚未绑定简历'}</span><span class="application-next">${a.next_date ? '下一步 ' + time(a.next_date) : '下一步待安排'}</span></div></div>${statusBadge(a.status, statuses)}<button class="button button-soft button-small application-edit" data-action="edit-application" data-id="${a.id}">编辑</button></div>`;
+function statusOptions(current) { return statuses.map(s => `<option value="${s.id}" ${s.id === current ? 'selected' : ''}>${s.label}</option>`).join(''); }
+/** In-list progress control: changing it saves immediately, so no dialog round trip is needed. */
+function inlineStatus(a) {
+  return `<label class="application-status"><select data-action="app-status" data-id="${a.id}" aria-label="更新投递状态">${statusOptions(a.status)}</select></label>`;
+}
+function applicationRow(a, manage = false) {
+  const selected = manage && state.selectedApplications.has(a.id);
+  const picker = manage ? `<label class="application-pick"><input type="checkbox" data-action="pick-application" data-id="${a.id}" ${selected ? 'checked' : ''} aria-label="选择这条投递记录"></label>` : '';
+  const progress = manage ? inlineStatus(a) : statusBadge(a.status, statuses);
+  const edit = manage ? '' : `<button class="button button-soft button-small application-edit" data-action="edit-application" data-id="${a.id}">编辑</button>`;
+  return `<div class="application-row${manage ? ' application-row-manage' : ''}${selected ? ' is-selected' : ''}"${manage ? ` data-row="${a.id}"` : ''}>${picker}${companyLogo(a.job.company)}<div class="application-main"><button class="application-title" data-action="edit-application" data-id="${a.id}"><strong>${e(a.job.title)}</strong><small>${e(a.job.company)} · ${e(a.job.cities.join(' / '))}${a.job.catalog_active === false ? ' · 已下架（历史记录）' : ''}</small></button><div class="application-meta"><span class="application-resume">${a.resume_title ? e(a.resume_title) + ' · V' + a.resume_revision : '尚未绑定简历'}</span><span class="application-next">${a.next_date ? '下一步 ' + time(a.next_date) : '下一步待安排'}</span></div></div>${progress}${edit}</div>`;
 }
 async function applicationsPage() {
   if (!state.user) return loginEmpty('applications');
   state.applications = await api('/applications');
+  // Drop selections that no longer exist, so a batch action can never carry a stale id.
+  const present = new Set(state.applications.map(a => a.id));
+  for (const id of [...state.selectedApplications]) if (!present.has(id)) state.selectedApplications.delete(id);
   const rows = state.applications.filter(a => state.appFilter === 'all' || a.status === state.appFilter);
-  return pageHeading('applications', '<a href="#/jobs" class="button button-primary button-small">发现新机会 +</a>') + `<div class="status-filters" role="group" aria-label="按状态筛选"><button type="button" class="${state.appFilter === 'all' ? 'active' : ''}" aria-pressed="${state.appFilter === 'all'}" data-action="app-filter" data-status="all">全部 <span>${state.applications.length}</span></button>${statuses.map(s => `<button type="button" class="${state.appFilter === s.id ? 'active' : ''}" aria-pressed="${state.appFilter === s.id}" data-action="app-filter" data-status="${s.id}">${s.label} <span>${state.applications.filter(a => a.status === s.id).length}</span></button>`).join('')}</div><section class="panel application-list">${rows.length ? rows.map(applicationRow).join('') : emptyState('这里还没有投递记录', '从岗位库收下目标职位，再记录投递状态和简历版本。', '<a href="#/jobs" class="button button-primary button-small">去岗位库看看</a>')}</section><p class="data-note">「加入清单」只保存在你的账号里，不会代你向企业提交。实际投递请点岗位卡上的「去官网投递」。</p>`;
+  const archivedCount = state.applications.filter(a => a.job.catalog_active === false).length;
+  const picked = state.selectedApplications.size;
+  const allPicked = rows.length > 0 && rows.every(a => state.selectedApplications.has(a.id));
+  const toolbar = `<div class="batch-bar${picked ? ' is-active' : ''}" role="group" aria-label="批量操作"><label class="batch-all"><input type="checkbox" data-action="pick-all-applications" ${allPicked ? 'checked' : ''} ${rows.length ? '' : 'disabled'}> 全选本页</label><span class="batch-count">已选 <strong>${picked}</strong> 条</span><div class="batch-actions"><button class="button button-soft button-small" data-action="batch-status" ${picked ? '' : 'disabled'}>批量改状态</button><button class="button button-soft button-small" data-action="batch-task" ${picked ? '' : 'disabled'}>批量安排待办</button><button class="button button-soft button-small danger-link" data-action="batch-remove" ${picked ? '' : 'disabled'}>移出清单</button><button class="text-link" data-action="clear-selection" ${picked ? '' : 'disabled'}>取消选择</button></div></div>`;
+  return pageHeading('applications', '<a href="#/jobs" class="button button-primary button-small">发现新机会 +</a>') + `<div class="status-filters" role="group" aria-label="按状态筛选"><button type="button" class="${state.appFilter === 'all' ? 'active' : ''}" aria-pressed="${state.appFilter === 'all'}" data-action="app-filter" data-status="all">全部 <span>${state.applications.length}</span></button>${statuses.map(s => `<button type="button" class="${state.appFilter === s.id ? 'active' : ''}" aria-pressed="${state.appFilter === s.id}" data-action="app-filter" data-status="${s.id}">${s.label} <span>${state.applications.filter(a => a.status === s.id).length}</span></button>`).join('')}</div>${state.applications.length ? toolbar : ''}<section class="panel application-list" id="application-list">${rows.length ? rows.map(a => applicationRow(a, true)).join('') : emptyState('这里还没有投递记录', '从岗位库收下目标职位，再记录投递状态和简历版本。', '<a href="#/jobs" class="button button-primary button-small">去岗位库看看</a>')}</section><p class="data-note">直接改状态下拉即可保存进度，不必打开弹窗。「加入清单」只保存在你的账号里，不会代你向企业提交。${archivedCount ? ` 其中 ${archivedCount} 条岗位已下架，仅保留历史记录。` : ''} 实际投递请点岗位卡上的「去官网投递」。</p>`;
 }
 async function editApplication(applicationId) {
   if (!requireUser(() => {})) return;
@@ -161,7 +177,7 @@ async function editApplication(applicationId) {
       });
     }
     el.querySelector('#application-task').addEventListener('click', () => handle(showTask(a.id)));
-    el.querySelector('#remove-application').addEventListener('click', async () => { if (!confirm('从清单移除这条记录？岗位仍保留在岗位库，关联待办会保留。')) return; try { await api('/applications/' + a.id, { method: 'DELETE' }); el.close(); await renderRoute(); toast('已移出清单。'); } catch (err) { errorMessage(err); } });
+    el.querySelector('#remove-application').addEventListener('click', async () => { if (!confirm('删除这条投递记录及其简历快照、进展日志？此操作不可恢复，关联待办会保留。')) return; try { await api('/applications/' + a.id, { method: 'DELETE' }); el.close(); await renderRoute(); toast('已移出清单。'); } catch (err) { errorMessage(err); } });
     el.querySelector('form').addEventListener('submit', async event => { event.preventDefault(); const form = event.currentTarget; const values = Object.fromEntries(new FormData(form)); const btn = form.querySelector('[type=submit]'); btn.disabled = true;
       try { await api('/applications/' + a.id, { method: 'PUT', data: { ...values, refreshResumeSnapshot: values.refreshResumeSnapshot === 'on' } }); el.close(); await renderRoute(); toast('进展已保存。'); } catch (err) { form.querySelector('.form-error').textContent = err.message; btn.disabled = false; }
     });
@@ -200,7 +216,19 @@ async function calendarPage() {
 async function showTask(applicationId = '') {
   if (!state.user) { showAuth('register', () => handle(showTask(applicationId))); return; }
   const applications = await api('/applications');
-  dialog('安排你的下一步', `<form id="task-form"><label class="field"><span>要做什么</span><input name="title" maxlength="200" required placeholder="如：准备产品经理一面"></label><div class="form-grid"><label class="field"><span>类型</span><select name="kind">${['面试', '笔试', '截止', '跟进', '其他'].map(s => `<option>${s}</option>`).join('')}</select></label><label class="field"><span>日期与时间</span><input name="dueAt" type="datetime-local" required value="${state.selectedDay ? state.selectedDay + 'T09:00' : localDateInput(new Date(Date.now() + 3600000).toISOString())}"></label></div><label class="field"><span>关联投递（可选）</span><select name="applicationId"><option value="">不关联</option>${applications.map(a => `<option value="${a.id}" ${a.id === applicationId ? 'selected' : ''}>${e(a.job.company)} · ${e(a.job.title)}</option>`).join('')}</select></label><label class="field"><span>备注</span><textarea name="notes" rows="3" maxlength="3000" placeholder="会议链接、面试准备、需要携带的材料…"></textarea></label><p class="form-error" role="alert"></p><div class="modal-actions"><button class="button button-primary" type="submit">保存安排 ${icon('check')}</button></div></form>`, el => el.querySelector('form').addEventListener('submit', async event => { event.preventDefault(); const form = event.currentTarget; const btn = form.querySelector('button'); btn.disabled = true; try { await api('/tasks', { method: 'POST', data: Object.fromEntries(new FormData(form)) }); el.close(); await renderRoute(); toast('下一步已安排。'); } catch (err) { form.querySelector('.form-error').textContent = err.message; btn.disabled = false; } }));
+  dialog('安排你的下一步', `<form id="task-form"><label class="field"><span>要做什么</span><input name="title" maxlength="200" required placeholder="如：准备产品经理一面"></label><div class="form-grid"><label class="field"><span>类型</span><select name="kind">${['面试', '笔试', '截止', '跟进', '其他'].map(s => `<option>${s}</option>`).join('')}</select></label><label class="field"><span>日期与时间（可选）</span><input name="dueAt" type="datetime-local" value="${state.selectedDay ? state.selectedDay + 'T09:00' : localDateInput(new Date(Date.now() + 3600000).toISOString())}"></label></div><label class="field"><span>关联投递（可选）</span><select name="applicationId"><option value="">不关联</option>${applications.map(a => `<option value="${a.id}" ${a.id === applicationId ? 'selected' : ''}>${e(a.job.company)} · ${e(a.job.title)}</option>`).join('')}</select></label><label class="field"><span>备注</span><textarea name="notes" rows="3" maxlength="3000" placeholder="会议链接、面试准备、需要携带的材料…"></textarea></label><p class="form-error" role="alert"></p><div class="modal-actions"><button class="button button-primary" type="submit">保存安排 ${icon('check')}</button></div></form>`, el => {
+    el.querySelector('form').addEventListener('submit', async event => {
+      event.preventDefault();
+      const form = event.currentTarget, button = form.querySelector('[type=submit]');
+      button.disabled = true;
+      try {
+        await api('/tasks', { method: 'POST', data: Object.fromEntries(new FormData(form)) });
+        if (form.isConnected) el.close();
+        await renderRoute();
+        toast('下一步已安排。');
+      } catch (err) { form.querySelector('.form-error').textContent = err.message; button.disabled = false; }
+    });
+  });
 }
 
 async function aiPage() {
@@ -215,9 +243,10 @@ async function settingsPage() {
 }
 
 async function renderRoute() {
+  // Navigation closes the editor explicitly; background refreshes keep the current draft.
+  if (state.editor) return;
   const routeParts = location.hash.replace(/^#\/?/, '').split('/'); const route = routeParts[0] || 'overview';
   const currentNavigation = ++state.navigation;
-  state.editor?.destroy(); state.editor = null;
   state.route = route; renderNav(); document.getElementById('page-breadcrumb').textContent = ['resume','studio'].includes(route) ? '简历工作室' : navigation.find(([key]) => key === route)?.[1] || '总览';
   document.title = document.getElementById('page-breadcrumb').textContent + ' · Offerbiu';
   main.innerHTML = loading();
@@ -304,6 +333,83 @@ function wirePage() {
   });
 }
 
+async function selectedApplications() {
+  const chosen = state.applications.filter(a => state.selectedApplications.has(a.id));
+  if (!chosen.length) throw new Error('请先选择要处理的投递记录。');
+  return chosen;
+}
+function batchStatusDialog() {
+  return dialog('批量修改投递状态', `<p class="modal-description">将选中的 ${state.selectedApplications.size} 条记录改为同一状态。已下架的历史记录也可以改，状态会照常保存。</p><form id="batch-form"><div class="form-grid"><label class="field"><span>新状态</span><select name="status">${statusOptions('applied')}</select></label></div><p class="form-error" role="alert"></p><div class="modal-actions"><button type="button" class="button button-soft" data-close-dialog>取消</button><button class="button button-primary" type="submit">保存状态 ${icon('check')}</button></div></form>`, el => {
+    el.querySelector('form').addEventListener('submit', async event => {
+      event.preventDefault();
+      const form = event.currentTarget;
+      const button = form.querySelector('[type=submit]');
+      const status = new FormData(form).get('status');
+      button.disabled = true;
+      try {
+        const result = await api('/applications/batch', { method: 'POST', data: { op: 'status', status, ids: [...state.selectedApplications] } });
+        el.close(); state.selectedApplications.clear(); await renderRoute();
+        toast(`已把 ${result.updated} 条记录改为「${statuses.find(s => s.id === status)?.label}」。`);
+      } catch (err) { form.querySelector('.form-error').textContent = err.message; button.disabled = false; }
+    });
+  });
+}
+function batchTaskDialog() {
+  const count = state.selectedApplications.size;
+  return dialog('批量安排待办', `<p class="modal-description">为选中的 ${count} 条机会各建一条待办，方便按时间跟进。${count > 1 ? '标题留空时按公司名自动命名。' : ''}</p><form id="batch-task-form"><div class="form-grid"><label class="field"><span>待办标题</span><input name="title" maxlength="200" placeholder="${count > 1 ? '留空则按公司自动命名' : '例如：投递截止前检查材料'}"></label><label class="field"><span>类型</span><select name="kind">${['跟进', '笔试', '面试', '截止', '其他'].map(k => `<option value="${k}">${k}</option>`).join('')}</select></label><label class="field field-wide"><span>时间</span><input type="datetime-local" name="dueAt"></label><label class="field field-wide"><span>备注</span><textarea name="notes" rows="3" maxlength="3000" placeholder="选填，例如需要准备的材料。"></textarea></label></div><p class="form-error" role="alert"></p><div class="modal-actions"><button type="button" class="button button-soft" data-close-dialog>取消</button><button class="button button-primary" type="submit">创建待办 ${icon('check')}</button></div></form>`, el => {
+    el.querySelector('form').addEventListener('submit', async event => {
+      event.preventDefault();
+      const form = event.currentTarget;
+      const button = form.querySelector('[type=submit]');
+      const values = Object.fromEntries(new FormData(form));
+      button.disabled = true;
+      try {
+        const result = await api('/applications/batch', { method: 'POST', data: { ...values, op: 'task', ids: [...state.selectedApplications] } });
+        el.close(); state.selectedApplications.clear(); await renderRoute();
+        toast(`已创建 ${result.created} 条待办，可在「日程与待办」查看。`);
+      } catch (err) { form.querySelector('.form-error').textContent = err.message; button.disabled = false; }
+    });
+  });
+}
+function batchRemoveDialog() {
+  const count = state.selectedApplications.size;
+  return dialog('移出投递清单', `<p class="modal-description">将删除选中的 ${count} 条投递记录及其简历快照、进展日志，此操作不可恢复。关联待办会保留。</p><p class="form-error" role="alert"></p><div class="modal-actions"><button type="button" class="button button-soft" data-close-dialog>取消</button><button type="button" class="button button-primary danger-link" id="confirm-batch-remove">确认删除 ${count} 条</button></div>`, el => {
+    el.querySelector('#confirm-batch-remove').addEventListener('click', async event => {
+      const button = event.currentTarget;
+      button.disabled = true;
+      try {
+        const result = await api('/applications/batch', { method: 'POST', data: { op: 'remove', ids: [...state.selectedApplications] } });
+        el.close(); state.selectedApplications.clear(); await renderRoute();
+        toast(`已移出 ${result.removed} 条记录。`);
+      } catch (err) { el.querySelector('.form-error').textContent = err.message; button.disabled = false; }
+    });
+  });
+}
+async function changeApplicationStatus(select) {
+  const id = select.dataset.id, status = select.value;
+  const current = state.applications.find(a => a.id === id);
+  if (!current || current.status === status) return;
+  const previous = current.status;
+  select.disabled = true;
+  try {
+    await api('/applications/' + id, { method: 'PATCH', data: { status } });
+    current.status = status;
+    const row = main.querySelector(`[data-row="${id}"]`);
+    const stillVisible = state.appFilter === 'all' || state.appFilter === status;
+    if (row && stillVisible) {
+      row.outerHTML = applicationRow(current, true);
+      const fresh = main.querySelector(`[data-row="${id}"]`);
+      fresh?.querySelector('select')?.focus({ preventScroll: true });
+    } else if (row) row.remove();
+    document.querySelectorAll('.status-filters button').forEach(button => {
+      const key = button.dataset.status;
+      const count = key === 'all' ? state.applications.length : state.applications.filter(a => a.status === key).length;
+      const badge = button.querySelector('span');
+      if (badge) badge.textContent = count;
+    });
+    toast(`已更新为「${statuses.find(s => s.id === status)?.label}」（原为「${statuses.find(s => s.id === previous)?.label}」）。`);
+  } catch (err) { select.value = previous; select.disabled = false; throw err; }
+}
 async function action(button) {
   const kind = button.dataset.action, key = button.dataset.id;
   if (kind === 'auth') return showAuth('register');
@@ -315,6 +421,20 @@ async function action(button) {
   if (kind === 'job-facet') { const filters = document.getElementById('job-filters'); state.jobs = { ...state.jobs, ...(filters ? Object.fromEntries(new FormData(filters)) : {}), [button.dataset.field]: button.dataset.value, page: 1 }; return renderRoute(); }
   if (kind === 'job-page') { state.jobs.page = Number(button.dataset.page); await renderRoute(); main.scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }
   if (kind === 'app-filter') { state.appFilter = button.dataset.status; return renderRoute(); }
+  if (kind === 'pick-application') {
+    if (state.selectedApplications.has(key)) state.selectedApplications.delete(key); else state.selectedApplications.add(key);
+    return renderRoute();
+  }
+  if (kind === 'pick-all-applications') {
+    const rows = state.applications.filter(a => state.appFilter === 'all' || a.status === state.appFilter);
+    const allPicked = rows.length > 0 && rows.every(a => state.selectedApplications.has(a.id));
+    for (const a of rows) { if (allPicked) state.selectedApplications.delete(a.id); else state.selectedApplications.add(a.id); }
+    return renderRoute();
+  }
+  if (kind === 'clear-selection') { state.selectedApplications.clear(); return renderRoute(); }
+  if (kind === 'batch-status') return batchStatusDialog();
+  if (kind === 'batch-task') return batchTaskDialog();
+  if (kind === 'batch-remove') return batchRemoveDialog();
   if (kind === 'new-resume') return createResume(button.dataset.template || 'classic');
   if (kind === 'import-resume') return document.getElementById('resume-import').click();
   if (kind === 'clone-resume') { const old = await api('/resumes/' + key); const copy = await api('/resumes', { method: 'POST', data: { title: old.title + ' · 副本', template: old.template, data: old.data } }); location.hash = '/resume/' + copy.id; return; }
@@ -334,6 +454,11 @@ async function action(button) {
   }
 }
 main.addEventListener('click', event => { const button = event.target.closest('[data-action]'); if (button && !button.disabled) handle(action(button)); });
+// Selects do not fire click, so the status control gets its own delegated listener.
+main.addEventListener('change', event => {
+  const select = event.target.closest('[data-action="app-status"]');
+  if (select && !select.disabled) handle(changeApplicationStatus(select));
+});
 document.getElementById('header-action').addEventListener('click', () => handle(showTask()));
 document.getElementById('account-button').addEventListener('click', () => { if (!state.user) showAuth('login'); else location.hash = '/settings'; });
 const sidebar = document.getElementById('sidebar'), scrim = document.getElementById('mobile-scrim'), menu = document.getElementById('sidebar-toggle');

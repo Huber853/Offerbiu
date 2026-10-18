@@ -56,7 +56,7 @@ export function dialog(title, content, setup, className = '') {
   if (el.open) el.close();
   el.className = className;
   el.innerHTML = `<div class="modal-heading"><h2 id="dialog-heading">${escape(title)}</h2><button class="icon-button" data-close-dialog aria-label="关闭">${icon('close')}</button></div>${content}`;
-  el.querySelector('[data-close-dialog]').addEventListener('click', () => el.close());
+  el.querySelectorAll('[data-close-dialog]').forEach(button => button.addEventListener('click', () => el.close()));
   el.onclick = event => { if (event.target !== el) return; const r = el.getBoundingClientRect(); if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) el.close(); };
   el.showModal(); setup?.(el); return el;
 }

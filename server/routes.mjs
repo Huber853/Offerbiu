@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { db, ROOT, transaction, unpackResume, catalogFacets } from './db.mjs';
+import { db, ROOT, transaction, unpackResume, catalogFacets, refreshCatalog } from './db.mjs';
 import { HttpError, demand, text, now, id, getSession, createSession, clearSession, passwordHash, passwordMatches, rateLimit, sanitizeResume, encrypt, resumeField } from './security.mjs';
 import { aiSettings, guardBaseUrl, polishResume, testAiConnection, PROVIDERS } from './ai.mjs';
 import { blankResume, templates, statuses } from '../shared/templates.mjs';
@@ -35,9 +35,26 @@ async function readBody(req, limit = 300000) {
   catch (error) { if (error instanceof HttpError) throw error; throw new HttpError(400, 'JSON 格式不正确。'); }
 }
 function dateValue(value, optional = true) {
-  if (!value && optional) return null;
+  // An untouched <input type="datetime-local"> submits "", and cleared fields submit null.
+  // Both mean "no value" when the field is optional; only a real malformed string is an error.
+  const empty = value === '' || value === null || value === undefined;
+  if (empty) {
+    if (!optional) throw new HttpError(400, '请填写时间。');
+    return null;
+  }
   demand(typeof value === 'string' && value.length < 50 && !Number.isNaN(Date.parse(value)), 400, '日期格式不正确。');
   return new Date(value).toISOString();
+}
+/** The form only offers minute precision, so compare timestamps at that granularity. */
+function sameMinute(a, b) {
+  const stamp = value => (value ? String(value).slice(0, 16) : '');
+  return stamp(a) === stamp(b);
+}
+// tasks.due_at is NOT NULL in the existing schema, so "no date" is stored as '' —
+// which every reader already treats as unset (falsy, and `date()` prints 未公布).
+function taskDueAt(value) {
+  const parsed = dateValue(value);
+  return parsed === null ? '' : parsed;
 }
 function ownResume(userId, resumeId) {
   const row = unpackResume(db.prepare('SELECT * FROM resumes WHERE id=? AND user_id=?').get(resumeId, userId));
@@ -64,6 +81,34 @@ function saveResume(current, data, title, template, reason, afterSave) {
   });
   return updated;
 }
+/** Progress log for one saved opportunity. Snapshots are never stored here, only field deltas. */
+function yesNo(value) { return value ? '是' : '否'; }
+/** A change log should only record actual deltas, never repeated identical values. */
+function changed(from, to, value) { return value !== undefined && value !== from ? value : ''; }
+function recordEvent(userId, applicationId, kind, payload = {}) {
+  const detail = Object.fromEntries(Object.entries(payload).filter(([, value]) => value !== undefined && value !== null && value !== '' && value !== false));
+  if (!Object.keys(detail).length) return;
+  db.prepare('INSERT INTO application_events(id,user_id,application_id,kind,payload,created_at) VALUES(?,?,?,?,?,?)')
+    .run(id(), userId, applicationId, kind, JSON.stringify(detail), now());
+}
+function applyStatus(current, status, extra = {}) {
+  if (status === current.status) return;
+  db.prepare('UPDATE applications SET status=?,updated_at=? WHERE id=? AND user_id=?').run(status, now(), current.id, current.user_id);
+  recordEvent(current.user_id, current.id, 'status_changed', { from: current.status, to: status, ...extra });
+}
+/** Batch bodies are user supplied, so the shape and the size are both bounded here. */
+function applicationIds(value) {
+  demand(Array.isArray(value) && value.length > 0, 400, '请先选择要处理的投递记录。');
+  demand(value.length <= 200, 400, '一次最多处理 200 条记录。');
+  const ids = [...new Set(value.map(item => text(item, 80)).filter(Boolean))];
+  demand(ids.length > 0 && ids.length <= 200, 400, '请先选择要处理的投递记录。');
+  return ids;
+}
+function ownApplications(userId, ids) {
+  const rows = db.prepare(`SELECT * FROM applications WHERE user_id=? AND id IN (${ids.map(() => '?').join(',')})`).all(userId, ...ids);
+  demand(rows.length === ids.length, 404, '部分投递记录不存在或无权访问，请刷新页面后重试。');
+  return rows;
+}
 function likePattern(value) {
   return '%' + String(value).replace(/([\\%_])/g, '\\$1') + '%';
 }
@@ -78,6 +123,7 @@ function applicationRows(userId) {
 }
 
 async function api(req, res, url) {
+  refreshCatalog();
   const method = req.method;
   const pathname = url.pathname;
   const session = getSession(req);
@@ -140,8 +186,9 @@ async function api(req, res, url) {
     const q = text(url.searchParams.get('q'), 100);
     if (q) {
       const pattern = likePattern(q);
-      clauses.push("(title LIKE ? ESCAPE '\\' OR company LIKE ? ESCAPE '\\' OR cities LIKE ? ESCAPE '\\' OR payload LIKE ? ESCAPE '\\')");
-      for (let i = 0; i < 4; i++) values.push(pattern);
+      const fields = ['title', 'company', 'cities', 'category', "json_extract(payload,'$.description')", "json_extract(payload,'$.requirements')"];
+      clauses.push('(' + fields.map(field => `${field} LIKE ? ESCAPE '\\'`).join(' OR ') + ')');
+      values.push(...fields.map(() => pattern));
     }
     const where = clauses.join(' AND ');
     const total = db.prepare(`SELECT COUNT(*) AS n FROM jobs WHERE ${where}`).get(...values).n;
@@ -170,8 +217,9 @@ async function api(req, res, url) {
     const applications = applicationRows(userId);
     const tasks = db.prepare('SELECT * FROM tasks WHERE user_id=? ORDER BY completed,due_at LIMIT 100').all(userId);
     const counts = Object.fromEntries(statuses.map(s => [s.id, applications.filter(a => a.status === s.id).length]));
+    const archived = applications.filter(a => a.job?.catalog_active === false).length;
     const resumeCount = db.prepare('SELECT COUNT(*) AS n FROM resumes WHERE user_id=?').get(userId).n;
-    return json(res, { applications, tasks, counts, resumeCount, total: applications.length, pendingTasks: tasks.filter(t => !t.completed).length });
+    return json(res, { applications, tasks, counts, resumeCount, total: applications.length, archived, pendingTasks: tasks.filter(t => !t.completed).length });
   }
   if (pathname === '/api/applications' && method === 'GET') return json(res, applicationRows(userId));
   if (pathname === '/api/applications' && method === 'POST') {
@@ -189,7 +237,44 @@ async function api(req, res, url) {
       }
       throw error;
     }
+    recordEvent(userId, applicationId, 'saved', { status: 'saved' });
     return json(res, { id: applicationId }, 201);
+  }
+  // Must stay ahead of appMatch: /api/applications/batch would otherwise be read as one id.
+  if (pathname === '/api/applications/batch' && method === 'POST') {
+    const ids = applicationIds(body.ids);
+    const rows = ownApplications(userId, ids);
+    const op = text(body.op, 20);
+    if (op === 'status') {
+      const status = text(body.status, 30);
+      demand(statusIds.has(status), 400, '投递状态不正确。');
+      transaction(() => { for (const row of rows) applyStatus(row, status, { batch: true }); });
+      return json(res, { ok: true, updated: rows.length, unchanged: rows.filter(row => row.status === status).length });
+    }
+    if (op === 'task') {
+      const kind = ['笔试', '面试', '截止', '跟进', '其他'].includes(body.kind) ? body.kind : '跟进';
+      const dueAt = taskDueAt(body.dueAt);
+      let created = 0;
+      transaction(() => {
+        for (const row of rows) {
+          const job = db.prepare('SELECT payload FROM jobs WHERE id=?').get(row.job_id);
+          const title = text(body.title, 200) || (job ? `${JSON.parse(job.payload).company} · 跟进投递` : '跟进投递');
+          const taskId = id();
+          db.prepare('INSERT INTO tasks(id,user_id,application_id,title,kind,due_at,notes,created_at,updated_at) VALUES(?,?,?,?,?,?,?,?,?)')
+            .run(taskId, userId, row.id, title, kind, dueAt, text(body.notes, 3000), now(), now());
+          recordEvent(userId, row.id, 'task_created', { task_id: taskId, title, due_at: dueAt, batch: true });
+          created += 1;
+        }
+      });
+      return json(res, { ok: true, created }, 201);
+    }
+    if (op === 'remove') {
+      transaction(() => {
+        for (const row of rows) db.prepare('DELETE FROM applications WHERE id=? AND user_id=?').run(row.id, userId);
+      });
+      return json(res, { ok: true, removed: rows.length });
+    }
+    throw new HttpError(400, '不支持的批量操作。');
   }
   const snapshotMatch = pathname.match(/^\/api\/applications\/([^/]+)\/resume$/);
   if (snapshotMatch && method === 'GET') {
@@ -197,10 +282,23 @@ async function api(req, res, url) {
     demand(application.resume_snapshot, 404, '这条投递尚未绑定简历快照。');
     return json(res, { revision: application.resume_revision, data: JSON.parse(application.resume_snapshot), application_id: application.id });
   }
+  const eventsMatch = pathname.match(/^\/api\/applications\/([^/]+)\/events$/);
+  if (eventsMatch && method === 'GET') {
+    const application = ownApplication(userId, eventsMatch[1]);
+    const rows = db.prepare('SELECT id,kind,payload,created_at FROM application_events WHERE application_id=? AND user_id=? ORDER BY created_at DESC, rowid DESC LIMIT 200').all(application.id, userId);
+    return json(res, rows.map(row => { const { payload, ...rest } = row; return { ...rest, payload: JSON.parse(payload) }; }));
+  }
   const appMatch = pathname.match(/^\/api\/applications\/([^/]+)$/);
   if (appMatch) {
     const current = ownApplication(userId, appMatch[1]);
     if (method === 'DELETE') { db.prepare('DELETE FROM applications WHERE id=? AND user_id=?').run(current.id, userId); return json(res, { ok: true }); }
+    // Single-field path used by the in-list status control: no resume or note reload needed.
+    if (method === 'PATCH') {
+      const status = text(body.status, 30);
+      demand(statusIds.has(status), 400, '投递状态不正确。');
+      if (status !== current.status) applyStatus(current, status);
+      return json(res, { ok: true, id: current.id, status });
+    }
     if (method === 'PUT') {
       const status = text(body.status, 30);
       demand(statusIds.has(status), 400, '投递状态不正确。');
@@ -211,8 +309,14 @@ async function api(req, res, url) {
         if (resumeId === current.resume_id && !body.refreshResumeSnapshot) { revision = current.resume_revision; snapshot = current.resume_snapshot; }
         else { revision = resume.revision; snapshot = JSON.stringify(resume.data); }
       }
+      const notes = text(body.notes, 10000), appliedAt = dateValue(body.appliedAt), nextDate = dateValue(body.nextDate);
       db.prepare('UPDATE applications SET status=?,resume_id=?,resume_revision=?,resume_snapshot=?,notes=?,applied_at=?,next_date=?,updated_at=? WHERE id=? AND user_id=?')
-        .run(status, resumeId, revision, snapshot, text(body.notes, 10000), dateValue(body.appliedAt), dateValue(body.nextDate), now(), current.id, userId);
+        .run(status, resumeId, revision, snapshot, notes, appliedAt, nextDate, now(), current.id, userId);
+      const statusChanged = status !== current.status;
+      const boundChanged = resumeId !== current.resume_id || revision !== current.resume_revision;
+      recordEvent(userId, current.id, 'updated', { status_from: statusChanged ? current.status : '', status_to: statusChanged ? status : '',
+        resume_bound: boundChanged ? yesNo(resumeId) : '', applied_at_set: appliedAt && !sameMinute(appliedAt, current.applied_at),
+        next_date: changed(current.next_date, nextDate, nextDate), notes_changed: notes !== current.notes });
       return json(res, { ok: true });
     }
   }
@@ -224,7 +328,7 @@ async function api(req, res, url) {
     const taskId = id();
     const kind = ['笔试', '面试', '截止', '跟进', '其他'].includes(body.kind) ? body.kind : '其他';
     db.prepare('INSERT INTO tasks(id,user_id,application_id,title,kind,due_at,notes,created_at,updated_at) VALUES(?,?,?,?,?,?,?,?,?)')
-      .run(taskId, userId, applicationId, title, kind, dateValue(body.dueAt, false), text(body.notes, 3000), now(), now());
+      .run(taskId, userId, applicationId, title, kind, taskDueAt(body.dueAt), text(body.notes, 3000), now(), now());
     return json(res, { id: taskId }, 201);
   }
   const taskMatch = pathname.match(/^\/api\/tasks\/([^/]+)$/);
@@ -236,7 +340,7 @@ async function api(req, res, url) {
       const title = 'title' in body ? text(body.title, 200) : task.title;
       demand(title, 400, '请填写待办标题。');
       db.prepare('UPDATE tasks SET title=?,due_at=?,notes=?,completed=?,updated_at=? WHERE id=? AND user_id=?')
-        .run(title, 'dueAt' in body ? dateValue(body.dueAt, false) : task.due_at, 'notes' in body ? text(body.notes, 3000) : task.notes, typeof body.completed === 'boolean' ? Number(body.completed) : task.completed, now(), task.id, userId);
+        .run(title, 'dueAt' in body ? taskDueAt(body.dueAt) : task.due_at, 'notes' in body ? text(body.notes, 3000) : task.notes, typeof body.completed === 'boolean' ? Number(body.completed) : task.completed, now(), task.id, userId);
       return json(res, { ok: true });
     }
   }
@@ -291,7 +395,8 @@ async function api(req, res, url) {
     else demand(model, 400, '请填写模型名称。');
     const baseUrl = provider === 'custom'
       ? await guardBaseUrl(body.baseUrl || (previous === 'custom' ? old?.base_url : '')) : '';
-    let stored = old?.key_encrypted || null;
+    const sameTarget = provider === previous && (provider !== 'custom' || baseUrl === old?.base_url);
+    let stored = sameTarget ? old?.key_encrypted || null : null;
     if (body.removeKey === true) stored = null;
     else if (body.apiKey) {
       const key = text(body.apiKey, 500);

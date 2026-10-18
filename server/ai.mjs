@@ -104,7 +104,7 @@ export function aiSettings(userId) {
   const row = db.prepare('SELECT * FROM ai_settings WHERE user_id=?').get(userId);
   const provider = PROVIDERS[row?.provider] ? row.provider : 'deepseek';
   const meta = PROVIDERS[provider];
-  const envKey = process.env.DEEPSEEK_API_KEY || process.env.AI_API_KEY;
+  const envKey = serverKey(provider);
   return {
     configured: Boolean(row?.key_encrypted || envKey),
     source: row?.key_encrypted ? 'personal' : envKey ? 'server' : 'none',
@@ -116,10 +116,14 @@ export function aiSettings(userId) {
   };
 }
 
+function serverKey(provider) {
+  return provider === 'deepseek' ? (process.env.DEEPSEEK_API_KEY || process.env.AI_API_KEY || '') : '';
+}
+
 async function resolveTarget(config) {
   const provider = PROVIDERS[config?.provider] ? config.provider : 'deepseek';
   const meta = PROVIDERS[provider];
-  const model = text(config?.model, 80) || meta.defaultModel;
+  const model = text(config?.model, 80) || (provider === 'deepseek' ? process.env.DEEPSEEK_MODEL : '') || meta.defaultModel;
   if (provider === 'deepseek') demand(meta.models.includes(model), 400, '请选择当前支持的模型。');
   else demand(model, 400, '请填写模型名称。');
   let baseUrl = meta.baseUrl;
@@ -127,7 +131,7 @@ async function resolveTarget(config) {
     demand(config?.base_url, 503, '请先在设置中填写自定义接口地址。', 'AI_NOT_CONFIGURED');
     baseUrl = await guardBaseUrl(config.base_url);
   }
-  return { provider, model, label: meta.label, url: baseUrl + '/chat/completions', extra: meta.extra };
+  return { provider, model, baseUrl, label: meta.label, url: baseUrl + '/chat/completions', extra: meta.extra };
 }
 
 const inflight = new Set();
@@ -139,16 +143,17 @@ export async function testAiConnection(userId, body = {}) {
   const provider = PROVIDERS[body.provider] ? body.provider : (PROVIDERS[row?.provider] ? row.provider : 'deepseek');
   const meta = PROVIDERS[provider];
   const model = text(body.model, 80) || text(row?.model, 80) || (provider === 'deepseek' ? process.env.DEEPSEEK_MODEL : '') || meta.defaultModel;
-  let key = body.apiKey ? text(body.apiKey, 500) : '';
-  if (key) demand(key.length >= 16 && !/\s/.test(key), 400, '密钥格式不正确。');
-  else if (row?.key_encrypted) key = decrypt(row.key_encrypted);
-  else key = process.env.DEEPSEEK_API_KEY || process.env.AI_API_KEY || '';
-  demand(key, 400, '请先填写 API 密钥。');
   const target = await resolveTarget({
     provider,
     model,
     base_url: provider === 'custom' ? (body.baseUrl || row?.base_url || '') : '',
   });
+  const sameTarget = provider === (row?.provider || 'deepseek')
+    && (provider !== 'custom' || target.baseUrl === row?.base_url);
+  let key = text(body.apiKey, 500);
+  if (key) demand(key.length >= 16 && !/\s/.test(key), 400, '密钥格式不正确。');
+  else key = sameTarget && row?.key_encrypted ? decrypt(row.key_encrypted) : serverKey(provider);
+  demand(key, 400, '请为当前服务商和接口地址填写 API 密钥。');
   const headers = { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' };
   try {
     const modelsRes = await fetch(target.url.replace(/\/chat\/completions$/, '/models'), {
@@ -193,9 +198,9 @@ export async function polishResume(userId, body) {
   const field = resumeField(resume.data, fieldPath);
   demand(field.value.length >= 8, 400, '先在所选模块填写至少 8 个字的真实经历。');
   const config = db.prepare('SELECT * FROM ai_settings WHERE user_id=?').get(userId);
-  const key = config?.key_encrypted ? decrypt(config.key_encrypted) : (process.env.DEEPSEEK_API_KEY || process.env.AI_API_KEY);
+  const provider = PROVIDERS[config?.provider] ? config.provider : 'deepseek';
+  const key = config?.key_encrypted ? decrypt(config.key_encrypted) : serverKey(provider);
   demand(key, 503, '请先在设置中配置 API 密钥。', 'AI_NOT_CONFIGURED');
-  const target = await resolveTarget(config);
   let targetJob = null;
   if (body.jobId) {
     targetJob = db.prepare('SELECT payload FROM jobs WHERE id=? AND catalog_active=1').get(text(body.jobId, 160));
@@ -205,6 +210,7 @@ export async function polishResume(userId, body) {
   rateLimit('ai:' + userId, 10, 3600000);
   inflight.add(userId);
   try {
+    const target = await resolveTarget(config);
     // Only selected text + target-role requirements leave the server. No automatic contact-field inclusion.
     const prompt = { selected_text: field.value, target_role: job?.title || text(body.targetRole, 150),
       job_requirements: job ? text(job.requirements, 6500) : '', job_responsibilities: job ? text(job.description, 6500) : '',

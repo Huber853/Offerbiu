@@ -2,12 +2,13 @@ import { DatabaseSync } from 'node:sqlite';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { acceptsJob } from './job-policy.mjs';
+import { acceptsJob, catalogDate } from './job-policy.mjs';
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const STORAGE = path.join(ROOT, 'storage');
 fs.mkdirSync(STORAGE, { recursive: true });
-export const db = new DatabaseSync(path.join(STORAGE, 'offerbiu.sqlite'));
+// Tests and throwaway runs can point at a copy so the real database is never touched.
+export const db = new DatabaseSync(process.env.OFFERBIU_DB || path.join(STORAGE, 'offerbiu.sqlite'));
 db.exec(`
   PRAGMA journal_mode=WAL;
   PRAGMA foreign_keys=ON;
@@ -57,8 +58,15 @@ db.exec(`
     questions TEXT NOT NULL, match_analysis TEXT, target_job_id TEXT, snapshot TEXT NOT NULL, model TEXT NOT NULL,
     usage TEXT, applied_at TEXT, created_at TEXT NOT NULL
   );
+  CREATE TABLE IF NOT EXISTS application_events (
+    id TEXT PRIMARY KEY, user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    application_id TEXT NOT NULL REFERENCES applications(id) ON DELETE CASCADE,
+    kind TEXT NOT NULL, payload TEXT NOT NULL DEFAULT '{}', created_at TEXT NOT NULL
+  );
   CREATE TABLE IF NOT EXISTS metadata (key TEXT PRIMARY KEY, value TEXT NOT NULL);
   CREATE INDEX IF NOT EXISTS jobs_company_idx ON jobs(company);
+  CREATE INDEX IF NOT EXISTS application_events_app_idx ON application_events(application_id, created_at);
+  CREATE INDEX IF NOT EXISTS application_events_user_idx ON application_events(user_id, created_at);
   CREATE INDEX IF NOT EXISTS applications_user_idx ON applications(user_id, status);
   CREATE INDEX IF NOT EXISTS tasks_user_date_idx ON tasks(user_id, due_at);
   CREATE INDEX IF NOT EXISTS resumes_user_idx ON resumes(user_id);
@@ -107,6 +115,16 @@ if (fs.existsSync(sourcePath)) {
       update.run(activeIds.has(row.id) && acceptsJob(job) ? 1 : 0, row.id);
     }
   });
+}
+
+let checkedDay = '';
+export function refreshCatalog() {
+  const day = catalogDate();
+  if (day === checkedDay) return;
+  db.prepare(`UPDATE jobs SET catalog_active=0 WHERE catalog_active=1
+    AND json_extract(payload,'$.deadline') GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]*'
+    AND substr(json_extract(payload,'$.deadline'),1,10) < ?`).run(day);
+  checkedDay = day;
 }
 
 export function jobMetadata() {

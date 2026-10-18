@@ -23,13 +23,14 @@ direct=importlib.util.module_from_spec(spec);spec.loader.exec_module(direct)
 POLICY=json.loads((ROOT/'data/job-source-policy.json').read_text(encoding='utf-8'))
 STAMP=direct.STAMP
 RAW=direct.RAW
+CST=dt.timezone(dt.timedelta(hours=8))
 
 def deadline_expired(value, today=None):
     if not value: return False
     match=re.match(r'^(\d{4})-(\d{2})-(\d{2})', str(value))
     if not match: return False
     end=dt.date(int(match.group(1)), int(match.group(2)), int(match.group(3)))
-    return end < (today or dt.date.today())
+    return end < (today or dt.datetime.now(CST).date())
 
 def accepted(row):
     if row.get('source_policy')!=POLICY['version'] or row.get('record_type')!='job' or row.get('cohort')!=2027 or not row.get('direct_apply_verified') or row.get('catalog_status')!='active':return False
@@ -144,13 +145,30 @@ def enrich(row):
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--merge-only',action='store_true',help='Merge new reviewed employers; preserve the current catalog without refreshing older sources')
+    parser.add_argument('--replace-company',action='append',default=[],metavar='COMPANY',help='Replace one employer from a complete snapshot; may be repeated')
+    parser.add_argument('--snapshot',type=Path,help='Complete accepted.json array for the employers being replaced (an empty array removes their active jobs)')
     args=parser.parse_args()
+    if bool(args.replace_company) != bool(args.snapshot):
+        parser.error('--replace-company and --snapshot must be used together')
     seed=ROOT/'data/jobs-2027.json';old=json.loads(seed.read_text(encoding='utf-8'))
+    refreshes=dict(old.get('company_refreshed_at',{}))
+    def after_refresh(row):
+        observed=max(row.get('collected_at') or '',row.get('link_checked_at') or '')
+        return observed >= refreshes.get(row['company'],'')
+    replacements=[]
+    if args.snapshot:
+        replacements=json.loads(args.snapshot.read_text(encoding='utf-8'))
+        if not isinstance(replacements,list):parser.error('--snapshot must contain a job array')
+        for row in replacements:
+            if not isinstance(row,dict) or row.get('company') not in args.replace_company:
+                parser.error('Snapshot contains an employer outside --replace-company')
+            if not deadline_expired(row.get('deadline')) and not accepted(row):
+                parser.error('Snapshot contains a job that does not meet the source policy')
     fresh=json.loads((RAW/'accepted.json').read_text(encoding='utf-8')) if (RAW/'accepted.json').exists() else []
     # These NWU postings are group announcements or explicitly require an external
     # official-only submission route that the notice does not link at job level.
     excluded_companies={'杭州加多宝饮料有限公司','中信证券股份有限公司陕西分公司','中信证券股份有限公司上海分公司'}
-    fresh=[r for r in fresh if r['company'] not in excluded_companies and not re.search('实习|招聘公告|招募计划',r['title'])]
+    fresh=[r for r in fresh if after_refresh(r) and r['company'] not in excluded_companies and not re.search('实习|招聘公告|招募计划',r['title'])]
     # collect-jobs.py writes official-portal-candidates.json (posting candidates).
     # data/portal-candidates.json is discover-employer-portals.py probe output — not interchangeable.
     candidate_file=ROOT/'data/official-portal-candidates.json'
@@ -173,12 +191,16 @@ def main():
     expansion={}
     catalogs=list((ROOT/'data/sources').glob('*-employers/accepted.json'))+list((ROOT/'data/sources').glob('*-brands/accepted.json'))
     for filename in sorted(catalogs):
-        for row in json.loads(filename.read_text(encoding='utf-8')): expansion[row['id']]=row
+        for row in json.loads(filename.read_text(encoding='utf-8')):
+            if after_refresh(row):expansion[row['id']]=row
     if args.merge_only:
         combined=old['jobs']+list(expansion.values())
     else:
         retained=[r for r in old['jobs'] if r['company'] not in ['百度','腾讯音乐']]
         combined=retained+original_jobs(candidates)+fresh+list(expansion.values())
+    if args.replace_company:
+        combined=[r for r in combined if r['company'] not in args.replace_company]+replacements
+        refreshes.update({company:STAMP for company in args.replace_company})
     withdrawn_expired=0
     for row in combined:
         if row.get('catalog_status')=='active' and deadline_expired(row.get('deadline')):
@@ -206,7 +228,7 @@ def main():
               companies=counts,company_count=len(counts),industry_count=len({r['industry'] for r in rows}),
               employer_count=sources['employer_official'],nwu_count=sources['nwu_official'],
               company_natures=dict(Counter(r['company_nature'] for r in rows)),
-              withdrawn_expired=withdrawn_expired,
+              withdrawn_expired=withdrawn_expired,company_refreshed_at=refreshes,
               scope='仅企业官方招聘网站和西北大学就业网的具体2027届岗位，链接直达单岗位投递页。',
               limitations='来源仅限企业官方招聘渠道及西北大学就业网。均为具体岗位，保留岗位编号、届别依据和投递页；第三方招聘系统仅接入已核实的企业专属站点。可能需要登录来源网站，招聘状态以投递页为准。已过截止日期的岗位会自动下架，不承诺仍在招。')
     draft=seed.with_suffix('.pending.json');draft.write_text(json.dumps({**meta,'jobs':rows},ensure_ascii=False,indent=2),encoding='utf-8');draft.replace(seed)

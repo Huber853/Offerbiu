@@ -6,13 +6,16 @@ export const sourcePolicy = JSON.parse(fs.readFileSync(new URL('../data/job-sour
 // always resolves to the first rule and rejects every other tenant on that host.
 const rules = sourcePolicy.sources.map(rule => ({ ...rule, pattern: new RegExp(rule.path_pattern) }));
 
-/** Past application deadlines leave the live catalog; saved applications keep historical rows. */
+export function catalogDate(now = new Date()) {
+  return new Date(now.getTime() + 8 * 3600000).toISOString().slice(0, 10);
+}
+
+/** Recruitment dates use Asia/Shanghai. A date-only deadline includes that whole day. */
 export function isDeadlineExpired(deadline, now = new Date()) {
   if (!deadline) return false;
   const match = String(deadline).match(/^(\d{4})-(\d{2})-(\d{2})/);
   if (!match) return false;
-  const end = Date.UTC(Number(match[1]), Number(match[2]) - 1, Number(match[3]), 23, 59, 59);
-  return end < now.getTime();
+  return match[0] < catalogDate(now);
 }
 
 export function acceptsJob(job) {
