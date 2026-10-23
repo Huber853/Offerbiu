@@ -3,9 +3,10 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { acceptsJob, catalogDate } from './job-policy.mjs';
+import { applyReviewedJob } from './catalog-reviews.mjs';
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-export const STORAGE = path.join(ROOT, 'storage');
+export const STORAGE = process.env.OFFERBIU_STORAGE ? path.resolve(process.env.OFFERBIU_STORAGE) : path.join(ROOT, 'storage');
 fs.mkdirSync(STORAGE, { recursive: true });
 // Tests and throwaway runs can point at a copy so the real database is never touched.
 export const db = new DatabaseSync(process.env.OFFERBIU_DB || path.join(STORAGE, 'offerbiu.sqlite'));
@@ -92,18 +93,37 @@ export function transaction(fn) {
   catch (error) { db.exec('ROLLBACK'); throw error; }
 }
 
-const sourcePath = path.join(ROOT, 'data', 'jobs-2027.json');
+const workflowSchema = Number(db.prepare('SELECT value FROM metadata WHERE key=?').get('workflow_schema_version')?.value || 0);
+if (workflowSchema < 1) transaction(() => {
+  db.exec(fs.readFileSync(new URL('./migrations/001-job-workflow.sql', import.meta.url), 'utf8'));
+  db.prepare('INSERT OR REPLACE INTO metadata(key,value) VALUES(?,?)').run('workflow_schema_version', '1');
+});
+
+const sourcePath = process.env.OFFERBIU_JOB_SOURCE ? path.resolve(process.env.OFFERBIU_JOB_SOURCE) : path.join(ROOT, 'data', 'jobs-2027.json');
 if (fs.existsSync(sourcePath)) {
   const bundle = JSON.parse(fs.readFileSync(sourcePath, 'utf8'));
+  const reviewsPath = path.join(ROOT, 'data', 'job-workflow-reviews.json');
+  const reviews = !process.env.OFFERBIU_JOB_SOURCE && fs.existsSync(reviewsPath) ? JSON.parse(fs.readFileSync(reviewsPath, 'utf8')) : null;
+  const reviewsById = new Map((reviews?.reviews || []).map(review => [review.job_id, review]));
+  bundle.jobs = bundle.jobs.map(job => applyReviewedJob(job, reviewsById.get(job.id)));
+  const importStamp = reviews ? `${bundle.collected_at}|${reviews.reviewed_at}` : bundle.collected_at;
   const imported = db.prepare('SELECT value FROM metadata WHERE key=?').get('jobs_imported_at');
-  if (imported?.value !== bundle.collected_at) {
+  if (imported?.value !== importStamp) {
     const upsert = db.prepare(`INSERT INTO jobs(id,company,title,cities,category,cohort,payload,collected_at) VALUES(?,?,?,?,?,?,?,?)
       ON CONFLICT(id) DO UPDATE SET company=excluded.company,title=excluded.title,cities=excluded.cities,category=excluded.category,cohort=excluded.cohort,payload=excluded.payload,collected_at=excluded.collected_at`);
+    const existingJob = db.prepare('SELECT id FROM jobs WHERE id=?');
     transaction(() => {
-      for (const job of bundle.jobs) if (acceptsJob(job)) upsert.run(job.id, job.company, job.title, (job.cities || []).join(' / '), job.category || '综合', Number(job.cohort), JSON.stringify(job), job.collected_at);
+      for (const job of bundle.jobs) {
+        // Existing saved applications need the latest closure/deadline evidence.
+        // Ignore only lifecycle fields here; retain every official source check.
+        const accepted = acceptsJob(job);
+        const validHistory = !accepted && ['active', 'withdrawn'].includes(job.catalog_status)
+          && existingJob.get(job.id) && acceptsJob({ ...job, catalog_status: 'active', deadline: null });
+        if (accepted || validHistory) upsert.run(job.id, job.company, job.title, (job.cities || []).join(' / '), job.category || '综合', Number(job.cohort), JSON.stringify(job), job.collected_at);
+      }
       const { jobs, ...meta } = bundle;
-      db.prepare('INSERT OR REPLACE INTO metadata(key,value) VALUES(?,?)').run('jobs_metadata', JSON.stringify(meta));
-      db.prepare('INSERT OR REPLACE INTO metadata(key,value) VALUES(?,?)').run('jobs_imported_at', bundle.collected_at);
+      db.prepare('INSERT OR REPLACE INTO metadata(key,value) VALUES(?,?)').run('jobs_metadata', JSON.stringify({ ...meta, workflow_reviewed_at: reviews?.reviewed_at || null, workflow_review_count: reviewsById.size }));
+      db.prepare('INSERT OR REPLACE INTO metadata(key,value) VALUES(?,?)').run('jobs_imported_at', importStamp);
     });
   }
   // Retain historical rows for saved applications, but never expose them in the live catalog.

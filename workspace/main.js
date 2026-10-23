@@ -2,6 +2,9 @@ import { api, setCsrf } from './api.js';
 import { initDelight } from './delight.js';
 import { escape as e, icon, date, time, localDateInput, companyLogo, emptyState, toast, loading, dialog, downloadJson, statusBadge, safeUrl } from './ui.js';
 import { mountEditor } from './editor.js';
+import { mountProfile } from './profile.js';
+import { mountEvaluations, jobQualityMarkup, evaluationSummaryMarkup, evaluationSelectionMarkup } from './job-evaluation.js';
+import { mountApplicationMaterials } from './application-materials.js';
 import { resumeMarkup } from './resume-renderer.js';
 import { RESUME_FILE_LIMIT } from '/shared/resume-media.mjs';
 import { templates, statuses, blankResume, resumeText, sampleResume } from '/shared/templates.mjs';
@@ -9,11 +12,12 @@ import { templates, statuses, blankResume, resumeText, sampleResume } from '/sha
 const main = document.getElementById('workspace-content');
 initDelight(main);
 const emptyJobFilters = () => ({ q: '', company: '', company_nature: '', city: '', category: '', industry: '', record_type: 'job', source_type: '', base_scope: '', batch: '', sort: 'recent', page: 1 });
-const state = { user: null, meta: null, route: 'overview', editor: null, navigation: 0, jobs: emptyJobFilters(), applications: [], resumes: [], tasks: [], calendarMonth: new Date(new Date().getFullYear(), new Date().getMonth(), 1), selectedDay: '', appFilter: 'all', selectedApplications: new Set() };
-const navigation = [['overview', '总览'], ['jobs', '校招岗位库'], ['applications', '我的投递'], ['resumes', '简历中心'], ['templates', '模板与工作室'], ['calendar', '日程与待办'], ['ai', 'AI 润色记录'], ['settings', '个人设置']];
-const pageHeaders = { overview: ['把今天，安排明白。', '机会、准备和进展，在一个地方继续。'], jobs: ['下一份机会，从这里发现。', '企业官网与西北大学的 2027 届具体岗位，直接前往对应投递页。'], applications: ['每个机会，都有进展。', '记下投递状态、使用的简历版本，以及下一步。'], resumes: ['让好的经历，被看见。', '按目标岗位准备不同版本，修改与历史都有迹可循。'], templates: ['让经历，拥有好的版面。', '精选十一套可编辑版式，新增 ResumeCollection 模板与头像、作品配图。'], calendar: ['重要的事，提前安排。', '把截止、笔试、面试与跟进，放进自己的节奏里。'], ai: ['把经历，讲得更清楚。', '保留原文与润色建议，由你决定采纳。'], settings: ['让工作台，更适合你。', '连接 AI 服务，管理你的账号和数据。'] };
+const state = { user: null, meta: null, route: 'overview', editor: null, workflow: null, pageController: null, navigation: 0, jobs: emptyJobFilters(), displayedJobs: [], selectedJobs: new Map(), jobEvaluations: new Map(), applications: [], resumes: [], tasks: [], calendarMonth: new Date(new Date().getFullYear(), new Date().getMonth(), 1), selectedDay: '', appFilter: 'all', selectedApplications: new Set() };
+const navigation = [['overview', '总览'], ['jobs', '校招岗位库'], ['applications', '我的投递'], ['profile', '真实经历底稿'], ['evaluations', '岗位评估记录'], ['resumes', '简历中心'], ['templates', '模板与工作室'], ['calendar', '日程与待办'], ['ai', 'AI 润色记录'], ['settings', '个人设置']];
+const pageHeaders = { overview: ['把今天，安排明白。', '机会、准备和进展，在一个地方继续。'], jobs: ['下一份机会，从这里发现。', '企业官网与西北大学的 2027 届具体岗位，直接前往对应投递页。'], applications: ['每个机会，都有进展。', '记下投递状态、使用的简历版本，以及下一步。'], resumes: ['让好的经历，被看见。', '按目标岗位准备不同版本，修改与历史都有迹可循。'], templates: ['让经历，拥有好的版面。', `精选 ${templates.length} 套可编辑版式，新增中文学术、技术履历与清爽双栏。`], calendar: ['重要的事，提前安排。', '把截止、笔试、面试与跟进，放进自己的节奏里。'], ai: ['把经历，讲得更清楚。', '保留原文与润色建议，由你决定采纳。'], settings: ['让工作台，更适合你。', '连接 AI 服务，管理你的账号和数据。'] };
 function pageHeading(key, action = '') { const [title, sub] = pageHeaders[key]; return `<div class="page-heading"><div><span class="page-kicker">YOUR NEXT CHAPTER / ${key.toUpperCase()}</span><h1>${title}</h1><p>${sub}</p></div>${action}</div>`; }
-function errorMessage(error) { toast(error.message || '操作未完成。', true); }
+Object.assign(pageHeaders, { profile: ['让真实经历，成为依据。', '确认本人事实和求职偏好，再评估岗位与准备材料。'], evaluations: ['每个判断，都有依据。', '仅评估你主动选择的岗位，保留原文、事实引用与待核实项。'], materials: ['为这次机会，准备材料。', '核对草稿、单独复核、人工采纳，再确认实际投递快照。'] });
+function errorMessage(error) { if (error.name !== 'AbortError') toast(error.message || '操作未完成。', true); }
 function handle(promise) { Promise.resolve(promise).catch(errorMessage); }
 function setAccount() {
   document.getElementById('user-name').textContent = state.user?.name || '访客浏览';
@@ -21,10 +25,10 @@ function setAccount() {
   document.getElementById('user-avatar').textContent = state.user?.name.slice(0, 1) || 'O';
 }
 function renderNav() {
-  document.getElementById('side-nav').innerHTML = navigation.map(([key, label], index) => `${index === 3 ? '<span class="nav-group-label">简历与准备</span>' : index === 7 ? '<span class="nav-divider"></span>' : ''}<a href="#/${key}" class="nav-item ${state.route === key || (['resume','studio'].includes(state.route) && key === 'resumes') ? 'active' : ''}">${icon(key)}<span>${label}</span>${key === 'jobs' ? `<small>${state.meta?.jobs.count || 0}</small>` : key === 'ai' ? '<small class="nav-ai">AI</small>' : ''}</a>`).join('');
+  document.getElementById('side-nav').innerHTML = navigation.map(([key, label]) => `${key === 'profile' ? '<span class="nav-group-label">经历与材料准备</span>' : key === 'settings' ? '<span class="nav-divider"></span>' : ''}<a href="#/${key}" class="nav-item ${state.route === key || (['resume','studio'].includes(state.route) && key === 'resumes') || (['evaluate','evaluation'].includes(state.route) && key === 'evaluations') || (state.route === 'materials' && key === 'applications') ? 'active' : ''}">${icon(key === 'profile' ? 'resumes' : key === 'evaluations' ? 'ai' : key)}<span>${label}</span>${key === 'jobs' ? `<small>${state.meta?.jobs.count || 0}</small>` : key === 'ai' ? '<small class="nav-ai">AI</small>' : ''}</a>`).join('');
 }
 function requireUser(callback) { if (!state.user) { showAuth('register', callback); return false; } callback?.(); return true; }
-function loginEmpty(key) { return pageHeading(key) + `<div class="welcome-panel"><span class="welcome-art">↗</span><div><span class="page-kicker">WELCOME TO YOUR WORKSPACE</span><h2>从一个机会，开始你的秋招。</h2><p>登录后，投递、简历和日程会保存到你的独立账号。你也可以先看看真实岗位。</p><div class="button-row"><button class="button button-primary" data-action="auth">创建我的工作台 ${icon('arrow')}</button><a href="#/jobs" class="button button-soft">先看看岗位</a></div></div></div><div class="intro-grid"><article>${icon('jobs')}<h3>${state.meta.jobs.count} 条校招信息</h3><p>届别、原始来源与采集时间可追溯。</p></article><article>${icon('resumes')}<h3>简历在线编辑</h3><p>十一套模板、图片上传与历史版本。</p></article><article>${icon('ai')}<h3>AI 润色</h3><p>围绕真实经历优化表达，由你采纳。</p></article></div>`; }
+function loginEmpty(key) { return pageHeading(key) + `<div class="welcome-panel"><span class="welcome-art">↗</span><div><span class="page-kicker">WELCOME TO YOUR WORKSPACE</span><h2>从一个机会，开始你的秋招。</h2><p>登录后，投递、简历和日程会保存到你的独立账号。你也可以先看看真实岗位。</p><div class="button-row"><button class="button button-primary" data-action="auth">创建我的工作台 ${icon('arrow')}</button><a href="#/jobs" class="button button-soft">先看看岗位</a></div></div></div><div class="intro-grid"><article>${icon('jobs')}<h3>${state.meta.jobs.count} 条校招信息</h3><p>届别、原始来源与采集时间可追溯。</p></article><article>${icon('resumes')}<h3>简历在线编辑</h3><p>${templates.length} 套模板、图片上传与历史版本。</p></article><article>${icon('ai')}<h3>AI 润色</h3><p>围绕真实经历优化表达，由你采纳。</p></article></div>`; }
 
 function showAuth(mode = 'login', after) {
   const register = mode === 'register';
@@ -75,6 +79,7 @@ function jobCard(j) {
   const cities = j.cities || [], campaign = j.record_type === 'campaign';
   const location = cities.slice(0, 3).join(' / ') + (cities.length > 3 ? ` 等 ${cities.length} 个地区` : '');
   return `<article class="job-card ${campaign ? 'campaign-card' : ''}">
+    <label class="wf-job-picker"><input type="checkbox" data-action="pick-job" data-id="${e(j.id)}" ${state.selectedJobs.has(j.id) ? 'checked' : ''}>选择评估</label>
     <div class="job-card-top">${companyLogo(j.company)}<div><strong>${e(j.company)}</strong><small>${e(j.industry || j.program)}</small></div><span class="official-tag">${sourceLabel(j)}</span></div>
     <div class="record-label"><span>${typeLabel(j)}</span><span>${e(j.batch || '校园招聘')} · 2027</span></div>
     <a class="job-title" href="${e(safeUrl(j.apply_url))}" target="_blank" rel="noopener noreferrer">${e(j.title)} ↗</a>
@@ -82,13 +87,21 @@ function jobCard(j) {
     <div class="job-base ${j.base_scope === 'campaign' ? 'base-campaign' : ''}" title="${e(cities.join(' / '))}">${icon('jobs')}<span><small>${baseLabel(j)}</small>${e(location || '简章未明确')}</span></div>
     <div class="job-tags">${j.company_nature && j.company_nature !== '其他／待核实' ? `<span class="nature-tag">${e(j.company_nature)}</span>` : ''}${(j.directions?.length ? j.directions : [j.category]).slice(0, 4).map(d => `<span>${e(d)}</span>`).join('')}${j.deadline ? `<span class="deadline-tag">${date(j.deadline)} 截止</span>` : ''}</div>
     <p class="job-excerpt">${e((j.description || j.requirements || '查看招聘详情。').replace(/\n/g, ' ').slice(0, 140))}</p>
+    ${jobQualityMarkup(j, true)}<div class="wf-card-assessment">${evaluationSummaryMarkup(state.jobEvaluations.get(j.id))}<a class="text-link" href="#/evaluate/${e(j.id)}">评估此岗位 →</a></div>
     <div class="direct-job-actions"><a class="button button-primary button-small" href="${e(safeUrl(j.apply_url))}" target="_blank" rel="noopener noreferrer">${j.source_type === 'nwu_official' ? '去西大投递' : '去官网投递'} ${icon('link')}</a><button class="text-link" data-action="job-detail" data-id="${e(j.id)}">查看详情</button></div>
     <div class="job-card-footer"><span>${j.updated_at ? '更新 ' + date(j.updated_at) : j.published_at || j.published_at_raw ? '发布 ' + date(j.published_at || j.published_at_raw) : '采集 ' + date(j.collected_at)}</span><button class="button button-small button-soft" data-action="${j.application ? 'edit-application' : 'save-job'}" data-id="${e(j.application?.id || j.id)}" title="${j.application ? '已在清单中，尚未等于官网投递' : '只加入个人清单，不会代你向企业投递'}">${j.application ? '已在清单 · 查看' : '加入清单 +'}</button></div>
   </article>`;
 }
 async function jobsPage() {
   const query = new URLSearchParams(Object.entries(state.jobs).filter(([, value]) => value));
-  const data = await api('/jobs?' + query);
+  const data = await api('/jobs?' + query, { signal: state.pageController?.signal });
+  state.displayedJobs = data.items;
+  const latestEvaluations = new Map();
+  if (state.user) {
+    const summaries = await Promise.allSettled(data.items.map(j => api('/job-evaluations?jobId=' + encodeURIComponent(j.id) + '&limit=1&includeStale=1&sort=recent', { signal: state.pageController?.signal })));
+    summaries.forEach((result, index) => { if (result.status === 'fulfilled' && result.value.items?.[0]) latestEvaluations.set(data.items[index].id, result.value.items[0]); });
+  }
+  state.jobEvaluations = latestEvaluations;
   const meta = state.meta.jobs, f = state.jobs;
   const featured = ['腾讯', '阿里巴巴', '字节跳动', '滴滴', '美团', '拼多多', '网易', '快手', '小红书', 'B站', '米哈游', '得物', '小米', 'OPPO', '华为', 'vivo', '影石', '中核集团', '中国银行', '中芯国际', '百度', '腾讯音乐', '金证科技'].map(name => state.meta.companies.find(c => c.company === name)).filter(Boolean);
   const active = [f.q && `搜索：${f.q}`, f.company, f.company_nature, f.industry, f.city && `Base：${f.city}`, f.category, f.batch, f.source_type && ({ employer_official: '企业官网', nwu_official: '西北大学' })[f.source_type], f.base_scope && ({ job: '岗位已明确地点', unspecified: '地点未公布' })[f.base_scope]].filter(Boolean);
@@ -105,22 +118,25 @@ async function jobsPage() {
       <label class="job-filter-field"><span>排序</span><select name="sort">${[['recent','发布 / 更新优先'],['company','按招聘单位'],['deadline','截止时间优先']].map(([value,label]) => `<option value="${value}" ${f.sort === value ? 'selected' : ''}>${label}</option>`).join('')}</select></label></div>
     </form><div class="company-shortcuts"><span>快速查找</span>${featured.map(c => `<button class="${f.company === c.company ? 'active' : ''}" data-action="job-facet" data-field="company" data-value="${e(c.company)}">${e(c.company)} <small>${c.count}</small> ↗</button>`).join('')}</div></section>
     <div class="list-meta recruit-list-meta"><span>找到 <strong>${data.total}</strong> 条信息${active.length ? ' · ' + active.map(e).join(' / ') : ''}</span><span>点击岗位名称或投递按钮，直达来源岗位页</span></div>
-    <div class="job-grid">${data.items.map(jobCard).join('') || emptyState('没有匹配的招聘信息', '可以放宽 Base、行业或地点精度。未公布地点的信息不会猜测归入某个城市。', '<button class="button button-soft button-small" data-action="reset-jobs">清除筛选</button>')}</div>
+    ${evaluationSelectionMarkup(state.selectedJobs)}<div class="job-grid">${data.items.map(jobCard).join('') || emptyState('没有匹配的招聘信息', '可以放宽 Base、行业或地点精度。未公布地点的信息不会猜测归入某个城市。', '<button class="button button-soft button-small" data-action="reset-jobs">清除筛选</button>')}</div>
     <div class="pagination"><span>第 ${data.page} / ${Math.max(1, data.pages)} 页</span><button class="button button-soft button-small" data-action="job-page" data-page="${data.page - 1}" ${data.page <= 1 ? 'disabled' : ''}>上一页</button><button class="button button-soft button-small" data-action="job-page" data-page="${data.page + 1}" ${data.page >= data.pages ? 'disabled' : ''}>下一页</button></div>
     <p class="data-note">${e(meta.limitations)} 多城市同一岗位不拆分计数。企业和校内页面可能要求登录；「加入清单」仅保存到个人清单，不会向企业提交简历，正式申请请点「去官网投递」。</p>`;
 }
 async function showJob(jobId) {
-  const j = await api('/jobs/' + encodeURIComponent(jobId));
+  const navigation = state.navigation, signal = state.pageController?.signal;
+  const j = await api('/jobs/' + encodeURIComponent(jobId), { signal });
+  if (navigation !== state.navigation || signal?.aborted) return;
   const source = safeUrl(j.source_url), evidence = safeUrl(j.cohort_evidence_url), apply = safeUrl(j.apply_url) || source;
   const campaign = j.record_type === 'campaign', cities = j.cities || [];
   const applyLabel = j.source_type === 'nwu_official' ? '去西大岗位页投递' : '去官网岗位页投递';
   dialog(j.title, `<div class="job-detail-brand">${companyLogo(j.company)}<div><strong>${e(j.company)}</strong><small>${e(j.industry)} · ${typeLabel(j)} · ${sourceLabel(j)}</small></div></div>
     <p class="detail-employer">${j.employer_unit ? `招聘单位：${e(j.employer_unit)} · ` : ''}${e(j.company_nature || '企业性质待核实')}${j.official_job_code ? ` · 岗位代码 ${e(j.official_job_code)}` : ''}</p>
+    ${jobQualityMarkup(j)}
     <div class="detail-base"><span>${baseLabel(j)}</span><strong>${e(cities.join(' / ') || '未公布')}</strong><p>${e(j.base_note || '')}</p></div>
     <div class="detail-facts">${[['招聘届别','2027 届'],['招聘批次',j.batch || j.program],['岗位方向',(j.directions || [j.category]).join(' / ')],['学历',j.education || '详见简章和岗位要求'],['薪资',j.salary || '未明确公布'],['截止日期',j.deadline ? date(j.deadline) : '未明确公布']].map(([k,v]) => `<div><span>${k}</span><strong>${e(v)}</strong></div>`).join('')}</div>
     <section class="job-description"><h3>${campaign ? '招聘计划' : j.listing_kind === 'notice_role' ? '岗位说明' : '工作职责'}</h3><p>${e(j.description || '请查看招聘详情。')}</p><h3>应聘要求</h3><p>${e(j.requirements || '请查看招聘简章或网申岗位。')}</p></section>
     <div class="provenance-box"><strong>来源：${e(j.source_name || sourceLabel(j))}</strong><p>${e(j.cohort_evidence)}</p><p>${e(j.notes)}</p><small>原始发布：${date(j.published_at || j.published_at_raw)} · 采集：${date(j.collected_at)}${j.external_id ? ' · 来源编号：' + e(j.external_id) : ' · 公告整理岗位（无独立官网编号）'}</small><div class="button-row">${source ? `<a href="${e(source)}" target="_blank" rel="noopener noreferrer" class="text-link">查看原始${campaign ? '招聘公告' : '岗位来源'} ↗</a>` : ''}${evidence && evidence !== source ? `<a href="${e(evidence)}" target="_blank" rel="noopener noreferrer" class="text-link">查看 2027 届依据 ↗</a>` : ''}</div></div>
-    <div class="modal-actions">${apply ? `<a class="button button-primary" href="${e(apply)}" target="_blank" rel="noopener noreferrer">${applyLabel} ${icon('link')}</a>` : ''}<button class="button button-soft" id="detail-save">加入清单（不代投） ${icon('plus')}</button></div>`, el => el.querySelector('#detail-save').addEventListener('click', () => { requireUser(() => handle(saveJob(jobId))); }), 'modal-wide');
+    <div class="modal-actions"><a class="button button-soft" id="detail-evaluate" href="#/evaluate/${e(jobId)}">评估此岗位</a>${apply ? `<a class="button button-primary" href="${e(apply)}" target="_blank" rel="noopener noreferrer">${applyLabel} ${icon('link')}</a>` : ''}<button class="button button-soft" id="detail-save">加入清单（不代投） ${icon('plus')}</button></div>`, el => { el.querySelector('#detail-save').addEventListener('click', () => { requireUser(() => handle(saveJob(jobId))); }); el.querySelector('#detail-evaluate').addEventListener('click', () => el.close()); }, 'modal-wide');
 }
 async function saveJob(jobId) {
   const result = await api('/applications', { method: 'POST', data: { jobId } });
@@ -141,7 +157,7 @@ function applicationRow(a, manage = false) {
   const picker = manage ? `<label class="application-pick"><input type="checkbox" data-action="pick-application" data-id="${a.id}" ${selected ? 'checked' : ''} aria-label="选择这条投递记录"></label>` : '';
   const progress = manage ? inlineStatus(a) : statusBadge(a.status, statuses);
   const edit = manage ? '' : `<button class="button button-soft button-small application-edit" data-action="edit-application" data-id="${a.id}">编辑</button>`;
-  return `<div class="application-row${manage ? ' application-row-manage' : ''}${selected ? ' is-selected' : ''}"${manage ? ` data-row="${a.id}"` : ''}>${picker}${companyLogo(a.job.company)}<div class="application-main"><button class="application-title" data-action="edit-application" data-id="${a.id}"><strong>${e(a.job.title)}</strong><small>${e(a.job.company)} · ${e(a.job.cities.join(' / '))}${a.job.catalog_active === false ? ' · 已下架（历史记录）' : ''}</small></button><div class="application-meta"><span class="application-resume">${a.resume_title ? e(a.resume_title) + ' · V' + a.resume_revision : '尚未绑定简历'}</span><span class="application-next">${a.next_date ? '下一步 ' + time(a.next_date) : '下一步待安排'}</span></div></div>${progress}${edit}</div>`;
+  return `<div class="application-row${manage ? ' application-row-manage' : ''}${selected ? ' is-selected' : ''}"${manage ? ` data-row="${a.id}"` : ''}>${picker}${companyLogo(a.job.company)}<div class="application-main"><button class="application-title" data-action="edit-application" data-id="${a.id}"><strong>${e(a.job.title)}</strong><small>${e(a.job.company)} · ${e(a.job.cities.join(' / '))}${a.job.catalog_active === false ? ' · 已下架（历史记录）' : ''}</small></button><div class="application-meta"><span class="application-resume">${a.resume_title ? e(a.resume_title) + ' · V' + a.resume_revision : '尚未绑定简历'}</span><span class="application-next">${a.next_date ? '下一步 ' + time(a.next_date) : '下一步待安排'}</span></div></div><a class="text-link wf-app-material-link" href="#/materials/${e(a.id)}">材料与留档 →</a>${progress}${edit}</div>`;
 }
 async function applicationsPage() {
   if (!state.user) return loginEmpty('applications');
@@ -158,9 +174,13 @@ async function applicationsPage() {
 }
 async function editApplication(applicationId) {
   if (!requireUser(() => {})) return;
-  const [apps, resumes] = await Promise.all([api('/applications'), api('/resumes')]); state.applications = apps;
+  const navigation = state.navigation, signal = state.pageController?.signal;
+  const [apps, resumes] = await Promise.all([api('/applications', { signal }), api('/resumes', { signal })]);
+  if (navigation !== state.navigation || signal?.aborted) return;
+  state.applications = apps;
   const a = apps.find(x => x.id === applicationId); if (!a) throw new Error('这条投递已不存在。');
-  dialog('推进这份机会', `<div class="job-detail-brand">${companyLogo(a.job.company)}<div><strong>${e(a.job.title)}</strong><small>${e(a.job.company)}</small></div></div>${a.job.catalog_active === false ? '<p class="archived-job-note">此岗位已从当前岗位库下架（来源规则调整或投递页待核实）。这条收藏和原有进展仍为你保留。</p>' : ''}<form id="application-form"><div class="form-grid"><label class="field"><span>当前状态</span><select name="status">${statuses.map(s => `<option value="${s.id}" ${a.status === s.id ? 'selected' : ''}>${s.label}</option>`).join('')}</select></label><label class="field"><span>使用的简历</span><select name="resumeId"><option value="">暂不绑定</option>${resumes.map(r => `<option value="${r.id}" ${r.id === a.resume_id ? 'selected' : ''}>${e(r.title)} · 当前 V${r.revision}</option>`).join('')}</select></label><label class="field"><span>实际投递时间</span><input type="datetime-local" name="appliedAt" value="${localDateInput(a.applied_at)}"></label><label class="field"><span>下次跟进时间</span><input type="datetime-local" name="nextDate" value="${localDateInput(a.next_date)}"></label><label class="field field-wide"><span>备注 / 面试记录</span><textarea name="notes" rows="5" maxlength="10000" placeholder="记录你关心的信息、沟通结果和下一步。">${e(a.notes)}</textarea></label></div>${a.resume_id ? `<label class="consent"><input name="refreshResumeSnapshot" type="checkbox"><span>更新为所选简历的最新版本快照（目前绑定 V${a.resume_revision}）</span></label>` : ''}<p class="form-error" role="alert"></p><div class="modal-actions"><button type="button" class="text-link danger-link" id="remove-application">移出清单</button><button type="button" class="button button-soft" id="application-task">安排待办</button><button class="button button-primary" type="submit">保存进展 ${icon('check')}</button></div></form>`, el => {
+  dialog('推进这份机会', `<div class="job-detail-brand">${companyLogo(a.job.company)}<div><strong>${e(a.job.title)}</strong><small>${e(a.job.company)}</small></div></div>${a.job.catalog_active === false ? '<p class="archived-job-note">此岗位已从当前岗位库下架（来源规则调整或投递页待核实）。这条收藏和原有进展仍为你保留。</p>' : ''}<div class="wf-application-entry"><a class="button button-soft button-small" id="application-materials-link" href="#/materials/${e(a.id)}">准备材料、复核与投递留档 →</a><a class="text-link" id="application-evaluation-link" href="#/evaluate/${e(a.job_id || a.job.id)}">评估本岗位</a></div><form id="application-form"><div class="form-grid"><label class="field"><span>当前状态</span><select name="status">${statuses.map(s => `<option value="${s.id}" ${a.status === s.id ? 'selected' : ''}>${s.label}</option>`).join('')}</select></label><label class="field"><span>使用的简历</span><select name="resumeId"><option value="">暂不绑定</option>${resumes.map(r => `<option value="${r.id}" ${r.id === a.resume_id ? 'selected' : ''}>${e(r.title)} · 当前 V${r.revision}</option>`).join('')}</select></label><label class="field"><span>实际投递时间</span><input type="datetime-local" name="appliedAt" value="${localDateInput(a.applied_at)}"></label><label class="field"><span>下次跟进时间</span><input type="datetime-local" name="nextDate" value="${localDateInput(a.next_date)}"></label><label class="field field-wide"><span>备注 / 面试记录</span><textarea name="notes" rows="5" maxlength="10000" placeholder="记录你关心的信息、沟通结果和下一步。">${e(a.notes)}</textarea></label></div>${a.resume_id ? `<label class="consent"><input name="refreshResumeSnapshot" type="checkbox"><span>更新为所选简历的最新版本快照（目前绑定 V${a.resume_revision}）</span></label>` : ''}<p class="form-error" role="alert"></p><div class="modal-actions"><button type="button" class="text-link danger-link" id="remove-application">移出清单</button><button type="button" class="button button-soft" id="application-task">安排待办</button><button class="button button-primary" type="submit">保存进展 ${icon('check')}</button></div></form>`, el => {
+    el.querySelectorAll('#application-materials-link,#application-evaluation-link').forEach(link => link.addEventListener('click', () => el.close()));
     if (a.has_resume_snapshot) {
       const snapshotButton = document.createElement('button');
       snapshotButton.type = 'button'; snapshotButton.className = 'text-link snapshot-link';
@@ -177,7 +197,7 @@ async function editApplication(applicationId) {
       });
     }
     el.querySelector('#application-task').addEventListener('click', () => handle(showTask(a.id)));
-    el.querySelector('#remove-application').addEventListener('click', async () => { if (!confirm('删除这条投递记录及其简历快照、进展日志？此操作不可恢复，关联待办会保留。')) return; try { await api('/applications/' + a.id, { method: 'DELETE' }); el.close(); await renderRoute(); toast('已移出清单。'); } catch (err) { errorMessage(err); } });
+    el.querySelector('#remove-application').addEventListener('click', async () => { if (!confirm('删除这条投递记录及其材料、投递留档、简历绑定快照、进展日志？此操作不可恢复，关联待办会保留。')) return; try { await api('/applications/' + a.id, { method: 'DELETE' }); el.close(); await renderRoute(); toast('已移出清单。'); } catch (err) { errorMessage(err); } });
     el.querySelector('form').addEventListener('submit', async event => { event.preventDefault(); const form = event.currentTarget; const values = Object.fromEntries(new FormData(form)); const btn = form.querySelector('[type=submit]'); btn.disabled = true;
       try { await api('/applications/' + a.id, { method: 'PUT', data: { ...values, refreshResumeSnapshot: values.refreshResumeSnapshot === 'on' } }); el.close(); await renderRoute(); toast('进展已保存。'); } catch (err) { form.querySelector('.form-error').textContent = err.message; btn.disabled = false; }
     });
@@ -185,7 +205,7 @@ async function editApplication(applicationId) {
 }
 
 function templateThumbnail(template) { return `<div class="template-paper" aria-hidden="true">${resumeMarkup(sampleResume(),template.id,false,{sample:true})}</div>`; }
-function templatesPage() { return pageHeading('templates', '<a class="button button-primary button-small" href="#/studio/classic">打开简历工作室 →</a>') + `<div class="template-intro"><span>01 选一套版式</span><span>02 填写真实资料</span><span>03 编辑、润色与导出</span><small>预览中的内容为排版示例，开始编辑时使用空白草稿。</small></div><div class="template-grid studio-template-grid">${[...templates].sort((a,b)=>Number(!!b.collection)-Number(!!a.collection)).map(t => `<article class="template-card">${templateThumbnail(t)}<div><span class="template-tag">${t.collection ? "精选 "+t.number+" · " : ""}${e(t.tag)}</span><h2>${e(t.name)}</h2><p>${e(t.description)}</p><div class="template-source">${t.source ? `<a href="${t.source}" target="_blank" rel="noopener noreferrer">${t.collection ? "ResumeCollection · "+t.number : t.license+" · 开源原作"} ↗</a><a href="${t.licenseUrl || "/assets/resume-templates/"+t.id+"/LICENSE"}" target="_blank" rel="noopener noreferrer">许可</a>${t.reference ? `<a href="${t.reference}" target="_blank" rel="noopener noreferrer">原版预览</a>` : ""}` : '<span>Offerbiu 原创模板</span>'}</div><a class="button button-primary button-small" href="#/studio/${t.id}">使用模板 · 在线编辑 ${icon('arrow')}</a></div></article>`).join('')}</div><div class="info-strip">${icon('check')}<p>浏览器内直接编辑、实时预览、导出 PDF / HTML / JSON。登录后保存到个人简历库；开源模板已适配中文，不依赖第三方字体或模板服务器。</p></div>`; }
+function templatesPage() { return pageHeading('templates', '<a class="button button-primary button-small" href="#/studio/classic">打开简历工作室 →</a>') + `<div class="template-intro"><span>01 选一套版式</span><span>02 填写真实资料</span><span>03 编辑、润色与导出</span><small>预览中的内容为排版示例，开始编辑时使用空白草稿。</small></div><div class="template-grid studio-template-grid">${[...templates].sort((a,b)=>Number(!!b.featured)-Number(!!a.featured)||Number(!!b.collection)-Number(!!a.collection)).map(t => `<article class="template-card">${templateThumbnail(t)}<div><span class="template-tag">${t.featured ? "新增 · " : t.collection ? "精选 "+t.number+" · " : ""}${e(t.tag)}</span><h2>${e(t.name)}</h2><p>${e(t.description)}</p><div class="template-source">${t.source ? `<a href="${t.source}" target="_blank" rel="noopener noreferrer">${t.collection ? "ResumeCollection · "+t.number : t.license+" · 开源原作"} ↗</a><a href="${t.licenseUrl || "/assets/resume-templates/"+t.id+"/LICENSE"}" target="_blank" rel="noopener noreferrer">许可</a>${t.reference ? `<a href="${t.reference}" target="_blank" rel="noopener noreferrer">原版预览</a>` : ""}` : '<span>Offerbiu 原创模板</span>'}</div><a class="button button-primary button-small" href="#/studio/${t.id}">使用模板 · 在线编辑 ${icon('arrow')}</a></div></article>`).join('')}</div><div class="info-strip">${icon('check')}<p>浏览器内直接编辑、实时预览、导出 PDF / HTML / JSON。登录后保存到个人简历库；开源模板已适配中文，不依赖第三方字体或模板服务器。</p></div>`; }
 
 async function resumesPage() {
   if (!state.user) return pageHeading('resumes','<a class="button button-primary" href="#/studio/classic">直接开始编辑 →</a>') + '<div class="welcome-panel"><div><span class="page-kicker">YOUR RESUME STUDIO</span><h2>先写好简历，再开启下一步。</h2><p>无需登录即可使用简历工作室。草稿保存在本机浏览器（关标签一般不丢）；登录后可保存版本、换设备同步，并使用 AI 润色。</p><a class="button button-soft" href="#/templates">挑选精品模板 ↗</a></div></div>';
@@ -239,18 +259,31 @@ async function aiPage() {
 async function settingsPage() {
   if (!state.user) return loginEmpty('settings');
   const config = await api('/settings/ai');
-  return pageHeading('settings') + `<div class="settings-layout"><section class="panel settings-panel"><div class="panel-heading"><h2>${icon('ai')} AI 接入</h2><span class="badge ${config.configured ? 'badge-green' : 'badge-slate'}">${config.configured ? '已配置' : '待配置'}</span></div><p class="settings-description">使用你自己的 AI 服务账户。密钥由后端加密保存，不会回显到浏览器；保存后可点「测试连接」确认密钥可用，再去简历编辑器润色。</p><form id="ai-settings-form"><label class="field"><span>服务商</span><select name="provider" id="ai-provider">${config.providers.map(item => `<option value="${item.key}" ${config.provider === item.key ? 'selected' : ''}>${e(item.label)}</option>`).join('')}</select></label><label class="field" id="ai-baseurl-field"${config.provider === 'custom' ? '' : ' hidden'}><span>接口地址（OpenAI 兼容，须 https）</span><input name="baseUrl" type="url" maxlength="300" placeholder="https://your-endpoint.example.com/v1" value="${e(config.baseUrl)}"></label><label class="field"><span>API 密钥${config.source === 'personal' ? '（已保存，留空则不修改）' : ''}</span><input name="apiKey" type="password" autocomplete="new-password" maxlength="500" placeholder="在这里填写 API 密钥"></label><label class="field" id="ai-model-pick"${config.provider === 'custom' ? ' hidden' : ''}><span>模型</span><select name="model">${config.models.map(model => `<option value="${model}" ${config.model === model ? 'selected' : ''}>${model === 'deepseek-flash' ? 'DeepSeek Flash · 日常润色' : 'DeepSeek V4 Pro · 深入优化'}</option>`).join('')}</select></label><label class="field" id="ai-model-free"${config.provider === 'custom' ? '' : ' hidden'}><span>模型名称</span><input name="modelCustom" maxlength="80" placeholder="例如 gpt-4o-mini" value="${config.provider === 'custom' ? e(config.model) : ''}"></label><p class="form-error" role="alert"></p><div class="button-row"><button class="button button-primary button-small" type="submit">保存配置</button><button class="button button-soft button-small" id="test-ai-key" type="button">测试连接</button>${config.source === 'personal' ? '<button class="button button-soft button-small" id="remove-ai-key" type="button">移除个人密钥</button>' : ''}${config.providers.find(item => item.key === config.provider)?.keyUrl ? `<a href="${config.providers.find(item => item.key === config.provider).keyUrl}" target="_blank" rel="noopener noreferrer" class="text-link">前往服务商平台 ↗</a>` : ''}</div><p class="field-note">当前来源：${config.source === 'personal' ? '个人配置' : config.source === 'server' ? '服务器环境配置' : '尚未配置'}。保存只会写入本地配置；「测试连接」会向服务商发起一次轻量请求以验证密钥。自定义接口地址不得指向本机或内网。</p></form></section><div><section class="panel settings-panel"><div class="panel-heading"><h2>我的账号</h2></div><div class="profile-summary"><span class="user-avatar">${e(state.user.name.slice(0, 1))}</span><div><strong>${e(state.user.name)}</strong><small>${e(state.user.email)}</small></div></div><button class="button button-soft button-small" data-action="logout">${icon('logout')} 退出登录</button></section><section class="panel settings-panel"><div class="panel-heading"><h2>数据与备份</h2></div><p class="settings-description">导出你的投递、待办与简历内容。导出文件不含密码或 API 密钥，请妥善保存个人资料。</p><button class="button button-soft button-small" data-action="export-data">${icon('download')} 导出我的数据</button><p class="field-note">本地数据保存在启动这个项目的电脑。邮箱暂仅用作账号，不提供邮件找回。</p></section></div></div><section class="panel source-panel"><div class="panel-heading"><h2>岗位数据说明</h2></div><p>本批 ${state.meta.jobs.count} 条，来源：${state.meta.companies.map(c => `${e(c.company)} ${c.count} 条`).join('、')}。采集于 ${date(state.meta.jobs.collected_at)}。</p><p>${e(state.meta.jobs.limitations)}</p><p>点击条目可查看企业官网或西北大学岗位页、2027 届依据和原始发布日期。当前不会自动刷新外部招聘状态。</p></section>`;
+  return pageHeading('settings') + `<div class="settings-layout"><section class="panel settings-panel"><div class="panel-heading"><h2>${icon('ai')} AI 接入</h2><span class="badge ${config.configured ? 'badge-green' : 'badge-slate'}">${config.configured ? '已配置' : '待配置'}</span></div><p class="settings-description">使用你自己的 AI 服务账户。密钥由后端加密保存，不会回显到浏览器；保存后可点「测试连接」确认密钥可用，再去简历编辑器润色。</p><form id="ai-settings-form"><label class="field"><span>服务商</span><select name="provider" id="ai-provider">${config.providers.map(item => `<option value="${item.key}" ${config.provider === item.key ? 'selected' : ''}>${e(item.label)}</option>`).join('')}</select></label><label class="field" id="ai-baseurl-field"${config.provider === 'custom' ? '' : ' hidden'}><span>接口地址（OpenAI 兼容，须 https）</span><input name="baseUrl" type="url" maxlength="300" placeholder="https://your-endpoint.example.com/v1" value="${e(config.baseUrl)}"></label><label class="field"><span>API 密钥${config.source === 'personal' ? '（已保存，留空则不修改）' : ''}</span><input name="apiKey" type="password" autocomplete="new-password" maxlength="500" placeholder="在这里填写 API 密钥"></label><label class="field" id="ai-model-pick"${config.provider === 'custom' ? ' hidden' : ''}><span>模型</span><select name="model">${config.models.map(model => `<option value="${model}" ${config.model === model ? 'selected' : ''}>${model === 'deepseek-flash' ? 'DeepSeek Flash · 日常润色' : 'DeepSeek V4 Pro · 深入优化'}</option>`).join('')}</select></label><label class="field" id="ai-model-free"${config.provider === 'custom' ? '' : ' hidden'}><span>模型名称</span><input name="modelCustom" maxlength="80" placeholder="例如 gpt-4o-mini" value="${config.provider === 'custom' ? e(config.model) : ''}"></label><p class="form-error" role="alert"></p><div class="button-row"><button class="button button-primary button-small" type="submit">保存配置</button><button class="button button-soft button-small" id="test-ai-key" type="button">测试连接</button>${config.source === 'personal' ? '<button class="button button-soft button-small" id="remove-ai-key" type="button">移除个人密钥</button>' : ''}${config.providers.find(item => item.key === config.provider)?.keyUrl ? `<a href="${config.providers.find(item => item.key === config.provider).keyUrl}" target="_blank" rel="noopener noreferrer" class="text-link">前往服务商平台 ↗</a>` : ''}</div><p class="field-note">当前来源：${config.source === 'personal' ? '个人配置' : config.source === 'server' ? '服务器环境配置' : '尚未配置'}。保存只会写入本地配置；「测试连接」会向服务商发起一次轻量请求以验证密钥。自定义接口地址不得指向本机或内网。</p></form></section><div><section class="panel settings-panel"><div class="panel-heading"><h2>我的账号</h2></div><div class="profile-summary"><span class="user-avatar">${e(state.user.name.slice(0, 1))}</span><div><strong>${e(state.user.name)}</strong><small>${e(state.user.email)}</small></div></div><button class="button button-soft button-small" data-action="logout">${icon('logout')} 退出登录</button></section><section class="panel settings-panel"><div class="panel-heading"><h2>数据与备份</h2></div><p class="settings-description">导出你的投递、待办、简历、候选人底稿、岗位评估、材料与投递快照。导出文件不含密码或 API 密钥，请妥善保存个人资料。</p><button class="button button-soft button-small" data-action="export-data">${icon('download')} 导出我的数据</button><p class="field-note">本地数据保存在启动这个项目的电脑。邮箱暂仅用作账号，不提供邮件找回。</p></section></div></div><section class="panel source-panel"><div class="panel-heading"><h2>岗位数据说明</h2></div><p>本批 ${state.meta.jobs.count} 条，来源：${state.meta.companies.map(c => `${e(c.company)} ${c.count} 条`).join('、')}。采集于 ${date(state.meta.jobs.collected_at)}。</p><p>${e(state.meta.jobs.limitations)}</p><p>点击条目可查看企业官网或西北大学岗位页、2027 届依据和原始发布日期。当前不会自动刷新外部招聘状态。</p></section>`;
 }
 
 async function renderRoute() {
   // Navigation closes the editor explicitly; background refreshes keep the current draft.
   if (state.editor) return;
-  const routeParts = location.hash.replace(/^#\/?/, '').split('/'); const route = routeParts[0] || 'overview';
+  if (state.workflow?.isDirty?.()) return;
+  state.workflow?.destroy(); state.workflow = null;
+  state.pageController?.abort(); state.pageController = new AbortController();
+  const [routePath, routeQuery = ''] = location.hash.replace(/^#\/?/, '').split('?');
+  const routeParts = routePath.split('/'); const route = routeParts[0] || 'overview';
+  const workflowQuery = new URLSearchParams(routeQuery);
   const currentNavigation = ++state.navigation;
-  state.route = route; renderNav(); document.getElementById('page-breadcrumb').textContent = ['resume','studio'].includes(route) ? '简历工作室' : navigation.find(([key]) => key === route)?.[1] || '总览';
+  state.currentHash = location.hash || '#/overview';
+  state.route = route; renderNav(); document.getElementById('page-breadcrumb').textContent = ['resume','studio'].includes(route) ? '简历工作室' : route === 'materials' ? '申请材料与投递留档' : ['evaluate','evaluation'].includes(route) ? '岗位评估' : navigation.find(([key]) => key === route)?.[1] || '总览';
   document.title = document.getElementById('page-breadcrumb').textContent + ' · Offerbiu';
   main.innerHTML = loading();
   try {
+    if (['profile', 'evaluations', 'evaluate', 'evaluation', 'materials'].includes(route)) {
+      if (!state.user) { main.innerHTML = loginEmpty(route === 'materials' ? 'materials' : route === 'profile' ? 'profile' : 'evaluations'); return; }
+      const context = { signal: state.pageController.signal, isCurrent: () => currentNavigation === state.navigation };
+      const mounted = route === 'profile' ? await mountProfile(main, context) : route === 'materials' ? await mountApplicationMaterials(main, { ...context, applicationId: routeParts[1] || '', evaluationId: workflowQuery.get('evaluation') || '' }) : await mountEvaluations(main, { ...context, mode: route === 'evaluate' ? 'single' : route === 'evaluation' ? 'detail' : 'list', id: routeParts[1] || '', selectedJobs: state.selectedJobs });
+      if (currentNavigation !== state.navigation) { mounted?.destroy(); return; }
+      state.workflow = mounted; main.focus({ preventScroll: true }); return;
+    }
     if (route === 'studio') {
       const template = templates.some(t => t.id === routeParts[1]) ? routeParts[1] : 'classic';
       const draftKey = 'offerbiu:studio:' + (state.user?.id || 'guest') + ':' + template;
@@ -268,7 +301,7 @@ async function renderRoute() {
     }
     if (route === 'resume') {
       if (!state.user) { main.innerHTML = loginEmpty('resumes'); return; }
-      const resume = await api('/resumes/' + encodeURIComponent(routeParts[1] || ''));
+      const resume = await api('/resumes/' + encodeURIComponent(routeParts[1] || ''), { signal: state.pageController.signal });
       if (currentNavigation !== state.navigation) return;
       state.editor = mountEditor(main, resume); return;
     }
@@ -278,7 +311,7 @@ async function renderRoute() {
     main.innerHTML = content; wirePage();
     main.focus({ preventScroll: true });
   } catch (err) {
-    if (currentNavigation !== state.navigation) return;
+    if (currentNavigation !== state.navigation || err.name === 'AbortError') return;
     main.innerHTML = emptyState('暂时没有加载成功', err.message, '<button class="button button-primary button-small" data-action="retry">重新加载</button>');
     main.focus({ preventScroll: true });
   }
@@ -417,6 +450,15 @@ async function action(button) {
   if (kind === 'job-detail') return showJob(key);
   if (kind === 'save-job') return requireUser(() => handle(saveJob(key)));
   if (kind === 'edit-application') return editApplication(key);
+  if (kind === 'pick-job') {
+    if (state.selectedJobs.has(key)) state.selectedJobs.delete(key);
+    else {
+      if (state.selectedJobs.size >= 10) { button.checked = false; toast('每批最多选择 10 个岗位，请先取消一项。', true); return; }
+      const job = state.displayedJobs.find(j => j.id === key); if (job) state.selectedJobs.set(key, job);
+    }
+    return updateJobSelection();
+  }
+  if (kind === 'clear-job-selection') { state.selectedJobs.clear(); return updateJobSelection(); }
   if (kind === 'reset-jobs') { state.jobs = emptyJobFilters(); return renderRoute(); }
   if (kind === 'job-facet') { const filters = document.getElementById('job-filters'); state.jobs = { ...state.jobs, ...(filters ? Object.fromEntries(new FormData(filters)) : {}), [button.dataset.field]: button.dataset.value, page: 1 }; return renderRoute(); }
   if (kind === 'job-page') { state.jobs.page = Number(button.dataset.page); await renderRoute(); main.scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }
@@ -446,14 +488,18 @@ async function action(button) {
   if (kind === 'calendar-today') { const d = new Date(); state.calendarMonth = new Date(d.getFullYear(), d.getMonth(), 1); state.selectedDay = dayKey(d); return renderRoute(); }
   if (kind === 'select-day') { state.selectedDay = button.dataset.day; return renderRoute(); }
   if (kind === 'clear-day') { state.selectedDay = ''; return renderRoute(); }
-  if (kind === 'logout') { await api('/auth/logout', { method: 'POST' }); state.user = null; setCsrf(null); setAccount(); state.editor?.destroy(); state.editor = null; location.hash = '/overview'; await renderRoute(); return; }
+  if (kind === 'logout') { await api('/auth/logout', { method: 'POST' }); state.user = null; setCsrf(null); setAccount(); state.editor?.destroy(); state.editor = null; state.workflow?.destroy(); state.workflow = null; state.selectedJobs.clear(); state.jobEvaluations.clear(); location.hash = '/overview'; await renderRoute(); return; }
   if (kind === 'export-data') { const data = await api('/export'); return downloadJson(data, 'Offerbiu-我的秋招备份.json'); }
   if (kind === 'report-detail') {
     const report = state.reports.find(r => r.id === key); if (!report) return;
     return dialog('润色前后对比', `<div class="polish-comparison"><section><h3>原文 · V${report.resume_revision}</h3><p>${e(report.original)}</p></section><section class="revised-text"><h3>润色建议</h3><p>${e(report.revised)}</p></section></div><div class="ai-reasons"><h3>修改理由</h3><ul>${report.changes.map(s => `<li>${e(s)}</li>`).join('')}</ul>${report.questions.length ? `<h3>待补充的事实</h3><ul>${report.questions.map(s => `<li>${e(s)}</li>`).join('')}</ul>` : ''}</div>${report.match ? `<div class="ai-reasons"><h3>岗位匹配分析 · ${report.match.score} 分</h3>${report.match.advice ? `<p>${e(report.match.advice)}</p>` : ''}${report.match.matched.length ? `<h3>简历已具备</h3><ul>${report.match.matched.map(s => `<li>${e(s)}</li>`).join('')}</ul>` : ''}${report.match.missing.length ? `<h3>岗位要求但尚未体现</h3><ul>${report.match.missing.map(s => `<li>${e(s)}</li>`).join('')}</ul>` : ''}</div>` : ''}<div class="modal-actions"><button class="button button-soft" id="copy-report">复制建议</button>${report.resume_id ? `<a href="#/resume/${report.resume_id}" class="button button-primary" id="open-report-resume">回到简历编辑</a>` : '<span class="muted">原简历已删除，报告仍保留</span>'}</div>`, el => { el.querySelector('#copy-report').addEventListener('click', async () => { try { await navigator.clipboard.writeText(report.revised); toast('已复制建议。'); } catch { toast('请手动选中文字复制。', true); } }); el.querySelector('#open-report-resume')?.addEventListener('click', () => el.close()); }, 'modal-wide');
   }
 }
-main.addEventListener('click', event => { const button = event.target.closest('[data-action]'); if (button && !button.disabled) handle(action(button)); });
+function updateJobSelection() {
+  main.querySelectorAll('[data-action=pick-job]').forEach(input => { input.checked = state.selectedJobs.has(input.dataset.id); });
+  const toolbar = main.querySelector('.wf-selection-bar'); if (toolbar) toolbar.outerHTML = evaluationSelectionMarkup(state.selectedJobs);
+}
+main.addEventListener('click', event => { if (event.target.closest('[data-selected-evaluate][aria-disabled=true]')) { event.preventDefault(); toast('请先勾选要评估的岗位。'); return; } const button = event.target.closest('[data-action]'); if (button && !button.disabled) handle(action(button)); });
 // Selects do not fire click, so the status control gets its own delegated listener.
 main.addEventListener('change', event => {
   const select = event.target.closest('[data-action="app-status"]');
@@ -468,9 +514,12 @@ scrim.addEventListener('click', closeSidebar);
 document.getElementById('side-nav').addEventListener('click', event => { if (event.target.closest('a')) closeSidebar(); });
 window.addEventListener('hashchange', () => {
   if (state.editor?.dirty && !confirm('简历有未保存修改，确定离开？也可以先保存或导出 JSON。')) { history.replaceState(null, '', '#' + state.editor.route); return; }
-  state.editor?.destroy(); state.editor = null; handle(renderRoute());
+  if (state.workflow?.isDirty?.() && !confirm('当前底稿或材料有未保存修改，确定离开？')) { history.replaceState(null, '', state.currentHash); return; }
+  state.editor?.destroy(); state.editor = null; state.workflow?.destroy(); state.workflow = null;
+  const modal = document.getElementById('app-dialog'); if (modal.open) modal.close();
+  handle(renderRoute());
 });
-window.addEventListener('beforeunload', event => { if (state.editor?.dirty) { event.preventDefault(); event.returnValue = ''; } });
+window.addEventListener('beforeunload', event => { if (state.editor?.dirty || state.workflow?.isDirty?.()) { event.preventDefault(); event.returnValue = ''; } });
 document.getElementById('today-label').textContent = new Intl.DateTimeFormat('zh-CN', { month: 'long', day: 'numeric', weekday: 'long' }).format(new Date());
 
 try {

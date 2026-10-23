@@ -1,0 +1,5 @@
+# Keep pinned upstream snapshots byte-exact, including original whitespace.
+assets/resume-templates/billryan/** -text -whitespace
+assets/resume-templates/stackoverflow/** -text -whitespace
+assets/resume-templates/kendall/** -text -whitespace
+assets/resume-templates/macchiato/** -text -whitespace

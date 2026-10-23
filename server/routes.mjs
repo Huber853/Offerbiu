@@ -1,3 +1,4 @@
+import { workflowRoute, exportWorkflow } from './workflow-routes.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import { db, ROOT, transaction, unpackResume, catalogFacets, refreshCatalog } from './db.mjs';
@@ -9,7 +10,7 @@ import { RESUME_FILE_LIMIT } from '../shared/resume-media.mjs';
 const statusIds = new Set(statuses.map(s => s.id));
 const templateIds = new Set(templates.map(t => t.id));
 const mime = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.mjs': 'text/javascript; charset=utf-8', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg':'image/jpeg', '.jpeg':'image/jpeg', '.webp':'image/webp', '.json': 'application/json; charset=utf-8' };
-function json(res, data, status = 200) { res.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' }); res.end(JSON.stringify(data)); }
+function json(res, data, status = 200) { if(res.destroyed) return; res.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' }); res.end(JSON.stringify(data)); }
 function headerList(value) {
   return String(value || '').split(',').map(part => part.trim()).filter(Boolean);
 }
@@ -212,6 +213,8 @@ async function api(req, res, url) {
   }
   demand(session, 401, '请先登录，数据会保存到你的独立账号。', 'LOGIN_REQUIRED');
   const userId = session.user_id;
+  const workflow = await workflowRoute({userId,pathname,method,query:Object.fromEntries(url.searchParams),body,signal:req.aiSignal});
+  if (workflow) return json(res, workflow.data, workflow.status);
   if (pathname === '/api/auth/logout' && method === 'POST') { clearSession(session, res); return json(res, { ok: true }); }
   if (pathname === '/api/dashboard' && method === 'GET') {
     const applications = applicationRows(userId);
@@ -365,6 +368,13 @@ async function api(req, res, url) {
       return json(res, saveResume(current, sanitizeResume(body.data), title, body.template, '手动保存'));
     }
   }
+  const versionContent = pathname.match(/^\/api\/resumes\/([^/]+)\/versions\/(\d+)$/);
+  if (versionContent && method === 'GET') {
+    const current = ownResume(userId, versionContent[1]);
+    const version = db.prepare('SELECT * FROM resume_versions WHERE resume_id=? AND revision=?').get(current.id, Number(versionContent[2]));
+    demand(version, 404, '该历史版本不存在。');
+    return json(res, { id: current.id, title: version.title, template: version.template, data: JSON.parse(version.data), revision: version.revision });
+  }
   const versionsMatch = pathname.match(/^\/api\/resumes\/([^/]+)\/versions$/);
   if (versionsMatch && method === 'GET') {
     const current = ownResume(userId, versionsMatch[1]);
@@ -409,7 +419,7 @@ async function api(req, res, url) {
   if (pathname === '/api/settings/ai/test' && method === 'POST') {
     return json(res, await testAiConnection(userId, body));
   }
-  if (pathname === '/api/ai/polish' && method === 'POST') return json(res, await polishResume(userId, body), 201);
+  if (pathname === '/api/ai/polish' && method === 'POST') return json(res, await polishResume(userId, body, {signal:req.aiSignal}), 201);
   if (pathname === '/api/ai/reports' && method === 'GET') {
     const reportRows = db.prepare('SELECT id,resume_id,resume_revision,field_path,original,revised,changes,questions,match_analysis,model,created_at,applied_at FROM ai_reports WHERE user_id=? ORDER BY created_at DESC LIMIT 50').all(userId);
     return json(res, reportRows.map(row => { const { match_analysis, ...rest } = row; return { ...rest, changes: JSON.parse(row.changes), questions: JSON.parse(row.questions), match: match_analysis ? JSON.parse(match_analysis) : null }; }));
@@ -429,9 +439,9 @@ async function api(req, res, url) {
     return json(res, saved);
   }
   if (pathname === '/api/export' && method === 'GET') {
-    const data = { exported_at: now(), format: 'offerbiu-user-data-v1', user: publicUser(session),
+    const data = { exported_at: now(), format: 'offerbiu-user-data-v2', user: publicUser(session),
       applications: applicationRows(userId), tasks: db.prepare('SELECT * FROM tasks WHERE user_id=?').all(userId),
-      resumes: db.prepare('SELECT * FROM resumes WHERE user_id=?').all(userId).map(unpackResume) };
+      resumes: db.prepare('SELECT * FROM resumes WHERE user_id=?').all(userId).map(unpackResume), ...exportWorkflow(userId) };
     res.setHeader('Content-Disposition', 'attachment; filename="offerbiu-backup.json"');
     return json(res, data);
   }
@@ -439,6 +449,9 @@ async function api(req, res, url) {
 }
 
 export async function handleRequest(req, res) {
+  const abort = new AbortController();
+  req.aiSignal = abort.signal;
+  res.once('close', () => { if (!res.writableEnded) abort.abort(); });
   res.setHeader('X-Content-Type-Options', 'nosniff');
   res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
   res.setHeader('X-Frame-Options', 'SAMEORIGIN');

@@ -75,6 +75,127 @@
           "sha256": "84d4c00e7d6be44077b91de99f0ef093ec7f78b53fd011c4046bb4539fb9be4c"
         }
       ]
+    },
+    {
+      "id": "billryan",
+      "source": "https://github.com/billryan/resume/tree/zh_CN",
+      "license": "MIT",
+      "retrieved_date": "2026-10-23",
+      "source_tree_sha": "4393ef6bb910f381aee586214abe903269de16b7",
+      "adaptation": "参考中文分支的居中抬头、通栏章节线和日期对齐，转换为现有HTML编辑器的中文A4版；教育前置，不包含上游字体或示例个人资料。",
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "d92e7f89ae796169222b476b1a629a73a1c1c807ac974cd6ff934062505367a5"
+        },
+        {
+          "file": "README.md",
+          "sha256": "fad0765dc3c8c96b1238216938d1950a3ce0f77db3f28ffd73c9096cbd9bd6b7"
+        },
+        {
+          "file": "resume.cls",
+          "sha256": "4d293646b3f12f9f49eb33faae5d20ba69831370bce8430cca9be261ce7d9c0a"
+        },
+        {
+          "file": "resume-zh_CN.tex",
+          "sha256": "0fec2e331fc0ff95fac50b325a58db200f60ebbccbb3854f630e938601e24b63"
+        }
+      ]
+    },
+    {
+      "id": "stackoverflow",
+      "source": "https://github.com/phoinixi/jsonresume-theme-stackoverflow",
+      "license": "MIT",
+      "retrieved_date": "2026-10-23",
+      "source_tree_sha": "868d6db3fc322047c05e872f63a56fd026894f0a",
+      "adaptation": "保留橙色章节、浅蓝简介与履历层级，项目优先；不运行Svelte，不加载远程字体、图标或脚本。",
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "a4d1d3e6ae84168e5f65e0b3357157dfeccf2e114c8c3a50a23fbbbddf3be3b4"
+        },
+        {
+          "file": "README.md",
+          "sha256": "d4ada2d73abb31080bd10b31065e493c40a9be94eaa1ce26422fc855e91a63d0"
+        },
+        {
+          "file": "styles/global.css",
+          "sha256": "5290d3f36ed5215f4f60372919021811bd22e841faa81341ebf4994110b25900"
+        },
+        {
+          "file": "src/components/Resume.svelte",
+          "sha256": "e081c07b025715e100924954571337f06c470d517a93ff9b662b2590674ad9c7"
+        },
+        {
+          "file": "src/components/TimelineItem.svelte",
+          "sha256": "99f2ab16394eb978b168822e1b24d1fe8101a90aa704eb8a1ce1093701b507ed"
+        },
+        {
+          "file": "src/components/SectionHeader.svelte",
+          "sha256": "67f0fd4476484137d797634c523c0ea0e008c74b9424215f4345542eff824be0"
+        },
+        {
+          "file": "src/components/Basics.svelte",
+          "sha256": "0b70f0dd4db830b55a36d139d631d209acc0495012ad9ffde307748540b68ef2"
+        }
+      ]
+    },
+    {
+      "id": "kendall",
+      "source": "https://github.com/LinuxBozo/jsonresume-theme-kendall",
+      "license": "MIT",
+      "retrieved_date": "2026-10-23",
+      "source_tree_sha": "90438746fd64fc8184f439d5731a7d118660ab7a",
+      "adaptation": "保留深石板色抬头、青绿章节和右侧信息栏；技能与荣誉固定右栏，其他内容按用户顺序排列；使用本机中文字体。",
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "09f4303a3fb836b733cfb0a96eccda365f7710d28b2c3c603c742ec8246f3aff"
+        },
+        {
+          "file": "README.md",
+          "sha256": "0a00f8de76711d0fcce1d6880aab992e6170ba19bfb413f7fe02ce54d7962ed7"
+        },
+        {
+          "file": "style.css",
+          "sha256": "5a4fda5789bd22db23228ef44f351d52d19f0f0ccdc97ab742c5e097de567086"
+        },
+        {
+          "file": "print.css",
+          "sha256": "7c31c98393a0394e900acb8e1bac3916b4e39c5c8c246fdecb04c128a5d929a1"
+        },
+        {
+          "file": "resume.template",
+          "sha256": "99d6c6f938adf976e36f9119ddb3ee07726ce8f5a2edbd9cd4522323edad49b0"
+        }
+      ]
+    },
+    {
+      "id": "macchiato",
+      "source": "https://github.com/biosan/jsonresume-theme-macchiato",
+      "license": "MIT",
+      "retrieved_date": "2026-10-23",
+      "source_tree_sha": "c783186d31c88924b7808bf65a892cef233099c4",
+      "adaptation": "保留青绿顶线、短章节线与左侧信息栏；联系方式、技能置左，其他模块置右；不加载远程字体或图标。",
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "2a726d549105fa4f716438035af5a39ffe51c5a2b13a3aa2eed415e54020c8de"
+        },
+        {
+          "file": "README.md",
+          "sha256": "ade7a431690f18afff2996c944786368e4718974e1145d86c04132dcc0e14393"
+        },
+        {
+          "file": "src/style.css",
+          "sha256": "38dbe00ea15deef1c6395ae6753676e19643372fc06d0af0c07d409ac9d649f5"
+        },
+        {
+          "file": "src/resume.hbs",
+          "sha256": "6b155238eb2eb1a6ae999d24593383d361fe868b1d5adc0bfa5a137eaef8e96b"
+        }
+      ]
     }
-  ]
+  ],
+  "updated_date": "2026-10-23"
 }

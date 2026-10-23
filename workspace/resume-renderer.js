@@ -1,6 +1,6 @@
 import { escape } from './ui.js';
-import { templates, normalizeDesign } from '/shared/templates.mjs';
-import { normalizeMedia } from '/shared/resume-media.mjs';
+import { templates, normalizeDesign } from '../shared/templates.mjs';
+import { normalizeMedia } from '../shared/resume-media.mjs';
 
 function field(value, path, tag, cls, edit, placeholder = '') {
   return `<${tag} class="${cls}"${edit ? ` contenteditable="plaintext-only" data-resume-field="${path}" data-placeholder="${placeholder}" aria-label="${placeholder || path}" spellcheck="false"` : ''}>${escape(value || '')}</${tag}>`;
@@ -41,6 +41,15 @@ export function resumeMarkup(data, template = 'classic', preview = true, options
   const identity = `<div class="resume-identity">${field(basics.name,'basics.name','h1','resume-name',preview,'你的姓名')}${basics.headline || preview ? field(basics.headline,'basics.headline','p','resume-headline',preview,'填写求职方向') : ''}</div>`;
   const contacts = `<div class="resume-contact">${contact}</div>`;
   const empty = preview ? '<p class="resume-placeholder">从左侧填写内容，或点击“快速生成”开始。已有文字可以直接在纸面上修改。</p>' : '';
+  if (['kendall', 'macchiato'].includes(selected.layout)) {
+    const isKendall = selected.layout === 'kendall';
+    const asideKeys = new Set(isKendall ? ['skills', 'awards'] : ['skills']);
+    const aside = (isKendall || !contact ? '' : section('contact', '联系方式', contacts)) + order.filter(key => asideKeys.has(key)).map(key => blocks[key]).join('');
+    const content = order.filter(key => !asideKeys.has(key)).map(key => blocks[key]).join('');
+    const main = `<div class="resume-main">${content || empty}</div>`;
+    const sidebar = aside ? `<aside class="resume-sidebar">${aside}</aside>` : '';
+    return `<article class="resume-sheet resume-template-${selected.id}" style="${style}"><header class="resume-header ${photo ? 'has-portrait' : ''}">${photo}<div>${identity}${isKendall ? contacts : ''}</div></header><div class="resume-columns${aside ? ' has-sidebar' : ''}">${isKendall ? main + sidebar : sidebar + main}</div></article>`;
+  }
   if (['coral','navy','slate','jade'].includes(selected.layout)) {
     const asideKeys = new Set(['skills']);
     const aside = order.filter(key => asideKeys.has(key)).map(key => blocks[key]).join('');

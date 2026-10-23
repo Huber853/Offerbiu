@@ -1,0 +1,633 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-10-23T11:34:05.911Z",
+  "catalog_collected_at": "2026-09-27T21:30:00+08:00",
+  "scope": "20条现有官方岗位文本审核；17条完整、3条待复核；当前公开网页在招状态均未知，不改变采集时间。",
+  "reviews": [
+    {
+      "job_id": "kingdom:da7cb700-c052-476e-bbde-6e36b896c04c",
+      "source_hash": "1710878abfacb76f5dc7f744bb2db07d2570c44db950c4a1a849679159297995",
+      "reviewed_at": "2026-10-23T11:34:05.911Z",
+      "review_basis": "人工检查现有采集快照中的职责、任职要求和引用适用性；未据此确认当前在招。",
+      "content_quality": {
+        "level": "partial",
+        "reason": "正文要求硕士，官网摘要另标本科，最低学历存在冲突，需复核。",
+        "reviewed_at": "2026-10-23T11:34:05.911Z",
+        "reference_urls": []
+      },
+      "availability": {
+        "state": "unknown",
+        "reason": "响应没有可确认的具体岗位标题",
+        "evidence_quote": null,
+        "checked_at": "2026-10-23T11:27:25.854Z",
+        "method": "public_page_text",
+        "http_status": 200,
+        "evidence_url": "https://szkingdom.zhiye.com/campus/detail?jobAdId=da7cb700-c052-476e-bbde-6e36b896c04c",
+        "last_available_at": null
+      },
+      "eligibility_constraints": []
+    },
+    {
+      "job_id": "kingdom:5e77ec20-e535-4230-af28-7c3d2c6345d0",
+      "source_hash": "54d815d5460ec22f0425d8062886db3507e72d2fc9a96af43ccbdf736a21a7bb",
+      "reviewed_at": "2026-10-23T11:34:05.911Z",
+      "review_basis": "人工检查现有采集快照中的职责、任职要求和引用适用性；未据此确认当前在招。",
+      "content_quality": {
+        "level": "complete",
+        "reason": "现有快照含该具体岗位职责和任职条件；未知学历、专业等仍须按原文保留未知。",
+        "reviewed_at": "2026-10-23T11:34:05.911Z",
+        "reference_urls": []
+      },
+      "availability": {
+        "state": "unknown",
+        "reason": "响应没有可确认的具体岗位标题",
+        "evidence_quote": null,
+        "checked_at": "2026-10-23T11:27:25.900Z",
+        "method": "public_page_text",
+        "http_status": 200,
+        "evidence_url": "https://szkingdom.zhiye.com/campus/detail?jobAdId=5e77ec20-e535-4230-af28-7c3d2c6345d0",
+        "last_available_at": null
+      },
+      "eligibility_constraints": [
+        {
+          "id": "minimum-degree",
+          "kind": "minimum_degree",
+          "operator": "at_least",
+          "value": "本科",
+          "source_field": "education",
+          "source_quote": "本科及以上",
+          "source_url": "https://szkingdom.zhiye.com/campus/detail?jobAdId=5e77ec20-e535-4230-af28-7c3d2c6345d0",
+          "reviewed_at": "2026-10-23T11:34:05.911Z"
+        }
+      ]
+    },
+    {
+      "job_id": "kingdom:f81a38a8-348f-4711-b074-cd3ccf67f982",
+      "source_hash": "a89cd28df5b6d87d19519bcbe213029953e822d9f3eb280dc43b4242669cefba",
+      "reviewed_at": "2026-10-23T11:34:05.911Z",
+      "review_basis": "人工检查现有采集快照中的职责、任职要求和引用适用性；未据此确认当前在招。",
+      "content_quality": {
+        "level": "complete",
+        "reason": "现有快照含该具体岗位职责和任职条件；未知学历、专业等仍须按原文保留未知。",
+        "reviewed_at": "2026-10-23T11:34:05.911Z",
+        "reference_urls": []
+      },
+      "availability": {
+        "state": "unknown",
+        "reason": "响应没有可确认的具体岗位标题",
+        "evidence_quote": null,
+        "checked_at": "2026-10-23T11:27:25.901Z",
+        "method": "public_page_text",
+        "http_status": 200,
+        "evidence_url": "https://szkingdom.zhiye.com/campus/detail?jobAdId=f81a38a8-348f-4711-b074-cd3ccf67f982",
+        "last_available_at": null
+      },
+      "eligibility_constraints": []
+    },
+    {
+      "job_id": "kingdom:911afb6e-d9f3-4405-9c29-445837bc1fe6",
+      "source_hash": "dc717a4f060bfe38129ffb57a5c40ac5a7039f201e3e616b739aae681f3b0d20",
+      "reviewed_at": "2026-10-23T11:34:05.911Z",
+      "review_basis": "人工检查现有采集快照中的职责、任职要求和引用适用性；未据此确认当前在招。",
+      "content_quality": {
+        "level": "complete",
+        "reason": "现有快照含该具体岗位职责和任职条件；未知学历、专业等仍须按原文保留未知。",
+        "reviewed_at": "2026-10-23T11:34:05.911Z",
+        "reference_urls": []
+      },
+      "availability": {
+        "state": "unknown",
+        "reason": "响应没有可确认的具体岗位标题",
+        "evidence_quote": null,
+        "checked_at": "2026-10-23T11:27:25.901Z",
+        "method": "public_page_text",
+        "http_status": 200,
+        "evidence_url": "https://szkingdom.zhiye.com/campus/detail?jobAdId=911afb6e-d9f3-4405-9c29-445837bc1fe6",
+        "last_available_at": null
+      },
+      "eligibility_constraints": [
+        {
+          "id": "minimum-degree",
+          "kind": "minimum_degree",
+          "operator": "at_least",
+          "value": "本科",
+          "source_field": "education",
+          "source_quote": "本科及以上",
+          "source_url": "https://szkingdom.zhiye.com/campus/detail?jobAdId=911afb6e-d9f3-4405-9c29-445837bc1fe6",
+          "reviewed_at": "2026-10-23T11:34:05.911Z"
+        }
+      ]
+    },
+    {
+      "job_id": "nwu:3817a8d8-8c08-33b5-7b17-ce069a843f5a",
+      "source_hash": "9f2a95f959cd80eef486c32c898fbc85ea789c6728e8a6cd035181e46ea23d03",
+      "reviewed_at": "2026-10-23T11:34:05.911Z",
+      "review_basis": "人工检查现有采集快照中的职责、任职要求和引用适用性；未据此确认当前在招。",
+      "content_quality": {
+        "level": "partial",
+        "reason": "毕业时间按境内外院校分支规定，需补核具体适用条件及原文完整度。",
+        "reviewed_at": "2026-10-23T11:34:05.911Z",
+        "reference_urls": []
+      },
+      "availability": {
+        "state": "unknown",
+        "reason": "响应没有可确认的具体岗位标题",
+        "evidence_quote": null,
+        "checked_at": "2026-10-23T11:27:26.149Z",
+        "method": "public_page_text",
+        "http_status": 200,
+        "evidence_url": "https://jczx.nwu.edu.cn/Zhaopin/zhiweiDetail.html?jobtype=1&id=3817a8d8-8c08-33b5-7b17-ce069a843f5a",
+        "last_available_at": null
+      },
+      "eligibility_constraints": []
+    },
+    {
+      "job_id": "nwu:d617cbdc-56b9-a02f-a8b9-b2540901cc6e",
+      "source_hash": "634c4b8591bf7a50c846b87aba8a09e0681e4d93ceefd0d4499ad1e3e094086a",
+      "reviewed_at": "2026-10-23T11:34:05.911Z",
+      "review_basis": "人工检查现有采集快照中的职责、任职要求和引用适用性；未据此确认当前在招。",
+      "content_quality": {
+        "level": "complete",
+        "reason": "现有快照含该具体岗位职责和任职条件；未知学历、专业等仍须按原文保留未知。",
+        "reviewed_at": "2026-10-23T11:34:05.911Z",
+        "reference_urls": []
+      },
+      "availability": {
+        "state": "unknown",
+        "reason": "响应没有可确认的具体岗位标题",
+        "evidence_quote": null,
+        "checked_at": "2026-10-23T11:27:26.150Z",
+        "method": "public_page_text",
+        "http_status": 200,
+        "evidence_url": "https://jczx.nwu.edu.cn/Zhaopin/zhiweiDetail.html?jobtype=1&id=d617cbdc-56b9-a02f-a8b9-b2540901cc6e",
+        "last_available_at": null
+      },
+      "eligibility_constraints": [
+        {
+          "id": "minimum-degree",
+          "kind": "minimum_degree",
+          "operator": "at_least",
+          "value": "本科",
+          "source_field": "description",
+          "source_quote": "2027年毕业，本科及以上学历",
+          "source_url": "https://jczx.nwu.edu.cn/Zhaopin/zhiweiDetail.html?jobtype=1&id=d617cbdc-56b9-a02f-a8b9-b2540901cc6e",
+          "reviewed_at": "2026-10-23T11:34:05.911Z"
+        }
+      ]
+    },
+    {
+      "job_id": "nwu:e9a7f1e4-5fed-c98d-1612-850048e7bae5",
+      "source_hash": "cf1f0a1b31ced4f3b47b878617691bde324ee388436d0f8fef1febbd6263f837",
+      "reviewed_at": "2026-10-23T11:34:05.911Z",
+      "review_basis": "人工检查现有采集快照中的职责、任职要求和引用适用性；未据此确认当前在招。",
+      "content_quality": {
+        "level": "complete",
+        "reason": "现有快照含该具体岗位职责和任职条件；未知学历、专业等仍须按原文保留未知。",
+        "reviewed_at": "2026-10-23T11:34:05.911Z",
+        "reference_urls": []
+      },
+      "availability": {
+        "state": "unknown",
+        "reason": "响应没有可确认的具体岗位标题",
+        "evidence_quote": null,
+        "checked_at": "2026-10-23T11:27:26.157Z",
+        "method": "public_page_text",
+        "http_status": 200,
+        "evidence_url": "https://jczx.nwu.edu.cn/Zhaopin/zhiweiDetail.html?jobtype=1&id=e9a7f1e4-5fed-c98d-1612-850048e7bae5",
+        "last_available_at": null
+      },
+      "eligibility_constraints": [
+        {
+          "id": "minimum-degree",
+          "kind": "minimum_degree",
+          "operator": "at_least",
+          "value": "硕士",
+          "source_field": "description",
+          "source_quote": "2027年毕业，硕士及以上学历",
+          "source_url": "https://jczx.nwu.edu.cn/Zhaopin/zhiweiDetail.html?jobtype=1&id=e9a7f1e4-5fed-c98d-1612-850048e7bae5",
+          "reviewed_at": "2026-10-23T11:34:05.911Z"
+        }
+      ]
+    },
+    {
+      "job_id": "nwu:327dd027-348f-bcea-bca5-ba07c24850c1",
+      "source_hash": "9829f4979880fbb89bd962646dd331cedf4ca3a25f83c7b4b715792fa879a4aa",
+      "reviewed_at": "2026-10-23T11:34:05.911Z",
+      "review_basis": "人工检查现有采集快照中的职责、任职要求和引用适用性；未据此确认当前在招。",
+      "content_quality": {
+        "level": "complete",
+        "reason": "现有快照含该具体岗位职责和任职条件；未知学历、专业等仍须按原文保留未知。",
+        "reviewed_at": "2026-10-23T11:34:05.911Z",
+        "reference_urls": []
+      },
+      "availability": {
+        "state": "unknown",
+        "reason": "响应没有可确认的具体岗位标题",
+        "evidence_quote": null,
+        "checked_at": "2026-10-23T11:27:26.158Z",
+        "method": "public_page_text",
+        "http_status": 200,
+        "evidence_url": "https://jczx.nwu.edu.cn/Zhaopin/zhiweiDetail.html?jobtype=1&id=327dd027-348f-bcea-bca5-ba07c24850c1",
+        "last_available_at": null
+      },
+      "eligibility_constraints": [
+        {
+          "id": "minimum-degree",
+          "kind": "minimum_degree",
+          "operator": "at_least",
+          "value": "本科",
+          "source_field": "description",
+          "source_quote": "2027年毕业，本科及以上学历",
+          "source_url": "https://jczx.nwu.edu.cn/Zhaopin/zhiweiDetail.html?jobtype=1&id=327dd027-348f-bcea-bca5-ba07c24850c1",
+          "reviewed_at": "2026-10-23T11:34:05.911Z"
+        }
+      ]
+    },
+    {
+      "job_id": "nwu:6638f94a-dc59-ffb7-47c5-2e46447665c0",
+      "source_hash": "a79bba207b281ef91ec156ef5644109490f9eca7395ca6f919f0ae1b5133de22",
+      "reviewed_at": "2026-10-23T11:34:05.911Z",
+      "review_basis": "人工检查现有采集快照中的职责、任职要求和引用适用性；未据此确认当前在招。",
+      "content_quality": {
+        "level": "complete",
+        "reason": "现有快照含该具体岗位职责和任职条件；未知学历、专业等仍须按原文保留未知。",
+        "reviewed_at": "2026-10-23T11:34:05.911Z",
+        "reference_urls": []
+      },
+      "availability": {
+        "state": "unknown",
+        "reason": "响应没有可确认的具体岗位标题",
+        "evidence_quote": null,
+        "checked_at": "2026-10-23T11:27:26.252Z",
+        "method": "public_page_text",
+        "http_status": 200,
+        "evidence_url": "https://jczx.nwu.edu.cn/Zhaopin/zhiweiDetail.html?jobtype=1&id=6638f94a-dc59-ffb7-47c5-2e46447665c0",
+        "last_available_at": null
+      },
+      "eligibility_constraints": [
+        {
+          "id": "minimum-degree",
+          "kind": "minimum_degree",
+          "operator": "at_least",
+          "value": "硕士",
+          "source_field": "description",
+          "source_quote": "2027届计算机科学、统计学、应用数学、人工智能或相关领域的硕士研究生",
+          "source_url": "https://jczx.nwu.edu.cn/Zhaopin/zhiweiDetail.html?jobtype=1&id=6638f94a-dc59-ffb7-47c5-2e46447665c0",
+          "reviewed_at": "2026-10-23T11:34:05.911Z"
+        }
+      ]
+    },
+    {
+      "job_id": "nwu:3b9adc97-1af7-123c-2fa0-3adca075f1da",
+      "source_hash": "547ee9a7d77e5879836f39fe5cd550b1be2cb1d780d4b6fc14f7d740d9e0205a",
+      "reviewed_at": "2026-10-23T11:34:05.911Z",
+      "review_basis": "人工检查现有采集快照中的职责、任职要求和引用适用性；未据此确认当前在招。",
+      "content_quality": {
+        "level": "complete",
+        "reason": "现有快照含该具体岗位职责和任职条件；未知学历、专业等仍须按原文保留未知。",
+        "reviewed_at": "2026-10-23T11:34:05.911Z",
+        "reference_urls": []
+      },
+      "availability": {
+        "state": "unknown",
+        "reason": "响应没有可确认的具体岗位标题",
+        "evidence_quote": null,
+        "checked_at": "2026-10-23T11:27:26.256Z",
+        "method": "public_page_text",
+        "http_status": 200,
+        "evidence_url": "https://jczx.nwu.edu.cn/Zhaopin/zhiweiDetail.html?jobtype=1&id=3b9adc97-1af7-123c-2fa0-3adca075f1da",
+        "last_available_at": null
+      },
+      "eligibility_constraints": [
+        {
+          "id": "minimum-degree",
+          "kind": "minimum_degree",
+          "operator": "at_least",
+          "value": "本科",
+          "source_field": "description",
+          "source_quote": "2027届应届统招本科及以上学历毕业生",
+          "source_url": "https://jczx.nwu.edu.cn/Zhaopin/zhiweiDetail.html?jobtype=1&id=3b9adc97-1af7-123c-2fa0-3adca075f1da",
+          "reviewed_at": "2026-10-23T11:34:05.911Z"
+        }
+      ]
+    },
+    {
+      "job_id": "nwu:72d3c058-182c-4c3c-da82-ba2cac8ec804",
+      "source_hash": "ecafd07a02834f220f140d27c12ef3124311b7ad176cca5e49ef4e244c0e828f",
+      "reviewed_at": "2026-10-23T11:34:05.911Z",
+      "review_basis": "人工检查现有采集快照中的职责、任职要求和引用适用性；未据此确认当前在招。",
+      "content_quality": {
+        "level": "complete",
+        "reason": "现有快照含该具体岗位职责和任职条件；未知学历、专业等仍须按原文保留未知。",
+        "reviewed_at": "2026-10-23T11:34:05.911Z",
+        "reference_urls": []
+      },
+      "availability": {
+        "state": "unknown",
+        "reason": "响应没有可确认的具体岗位标题",
+        "evidence_quote": null,
+        "checked_at": "2026-10-23T11:27:26.257Z",
+        "method": "public_page_text",
+        "http_status": 200,
+        "evidence_url": "https://jczx.nwu.edu.cn/Zhaopin/zhiweiDetail.html?jobtype=1&id=72d3c058-182c-4c3c-da82-ba2cac8ec804",
+        "last_available_at": null
+      },
+      "eligibility_constraints": [
+        {
+          "id": "minimum-degree",
+          "kind": "minimum_degree",
+          "operator": "at_least",
+          "value": "本科",
+          "source_field": "description",
+          "source_quote": "2027届应届统招本科及以上学历毕业生",
+          "source_url": "https://jczx.nwu.edu.cn/Zhaopin/zhiweiDetail.html?jobtype=1&id=72d3c058-182c-4c3c-da82-ba2cac8ec804",
+          "reviewed_at": "2026-10-23T11:34:05.911Z"
+        }
+      ]
+    },
+    {
+      "job_id": "nwu:1e325b8d-4262-8118-0e60-8466bd53943e",
+      "source_hash": "ca1118933dd6f40d0187a75c77d6d5f7b5198c0b0d53061bca5a168f2748f541",
+      "reviewed_at": "2026-10-23T11:34:05.911Z",
+      "review_basis": "人工检查现有采集快照中的职责、任职要求和引用适用性；未据此确认当前在招。",
+      "content_quality": {
+        "level": "partial",
+        "reason": "正文混有竞赛教练、主讲教师和管培生，需人工抽取本岗位适用要求。",
+        "reviewed_at": "2026-10-23T11:34:05.911Z",
+        "reference_urls": []
+      },
+      "availability": {
+        "state": "unknown",
+        "reason": "响应没有可确认的具体岗位标题",
+        "evidence_quote": null,
+        "checked_at": "2026-10-23T11:27:26.258Z",
+        "method": "public_page_text",
+        "http_status": 200,
+        "evidence_url": "https://jczx.nwu.edu.cn/Zhaopin/zhiweiDetail.html?jobtype=1&id=1e325b8d-4262-8118-0e60-8466bd53943e",
+        "last_available_at": null
+      },
+      "eligibility_constraints": []
+    },
+    {
+      "job_id": "nwu:9b2b5000-7a03-572e-9ef9-f7035f948018",
+      "source_hash": "996479142887ff9b9007c7b8293b832bcc62737c2cf9724d1f11d4595a8a2931",
+      "reviewed_at": "2026-10-23T11:34:05.911Z",
+      "review_basis": "人工检查现有采集快照中的职责、任职要求和引用适用性；未据此确认当前在招。",
+      "content_quality": {
+        "level": "complete",
+        "reason": "现有快照含该具体岗位职责和任职条件；未知学历、专业等仍须按原文保留未知。",
+        "reviewed_at": "2026-10-23T11:34:05.911Z",
+        "reference_urls": []
+      },
+      "availability": {
+        "state": "unknown",
+        "reason": "响应没有可确认的具体岗位标题",
+        "evidence_quote": null,
+        "checked_at": "2026-10-23T11:27:26.271Z",
+        "method": "public_page_text",
+        "http_status": 200,
+        "evidence_url": "https://jczx.nwu.edu.cn/Zhaopin/zhiweiDetail.html?jobtype=1&id=9b2b5000-7a03-572e-9ef9-f7035f948018",
+        "last_available_at": null
+      },
+      "eligibility_constraints": [
+        {
+          "id": "minimum-degree",
+          "kind": "minimum_degree",
+          "operator": "at_least",
+          "value": "硕士",
+          "source_field": "description",
+          "source_quote": "全日制统招硕士研究生及以上学历",
+          "source_url": "https://jczx.nwu.edu.cn/Zhaopin/zhiweiDetail.html?jobtype=1&id=9b2b5000-7a03-572e-9ef9-f7035f948018",
+          "reviewed_at": "2026-10-23T11:34:05.911Z"
+        }
+      ]
+    },
+    {
+      "job_id": "cnnc:491acf3f-e9ec-48b6-b93a-3f3773e8d2c9",
+      "source_hash": "daf1ff4046286e05035ff1cddf5d0bd4d2b201b1a33015622cfc5c4f2b927336",
+      "reviewed_at": "2026-10-23T11:34:05.911Z",
+      "review_basis": "人工检查现有采集快照中的职责、任职要求和引用适用性；未据此确认当前在招。",
+      "content_quality": {
+        "level": "complete",
+        "reason": "现有快照含该具体岗位职责和任职条件；未知学历、专业等仍须按原文保留未知。",
+        "reviewed_at": "2026-10-23T11:34:05.911Z",
+        "reference_urls": []
+      },
+      "availability": {
+        "state": "unknown",
+        "reason": "响应没有可确认的具体岗位标题",
+        "evidence_quote": null,
+        "checked_at": "2026-10-23T11:27:26.274Z",
+        "method": "public_page_text",
+        "http_status": 200,
+        "evidence_url": "https://cnnc.zhiye.com/campus/detail?jobAdId=491acf3f-e9ec-48b6-b93a-3f3773e8d2c9",
+        "last_available_at": null
+      },
+      "eligibility_constraints": [
+        {
+          "id": "minimum-degree",
+          "kind": "minimum_degree",
+          "operator": "at_least",
+          "value": "硕士",
+          "source_field": "requirements",
+          "source_quote": "2027届硕士研究生及以上学历及相应学位应届毕业生",
+          "source_url": "https://cnnc.zhiye.com/campus/detail?jobAdId=491acf3f-e9ec-48b6-b93a-3f3773e8d2c9",
+          "reviewed_at": "2026-10-23T11:34:05.911Z"
+        }
+      ]
+    },
+    {
+      "job_id": "cnnc:8c9efc3c-3f1d-4f72-a962-a4be27f06b5c",
+      "source_hash": "dda271fbaa41d6ea726aaccd063620842c270b590aeec2f1b12817c834113fc9",
+      "reviewed_at": "2026-10-23T11:34:05.911Z",
+      "review_basis": "人工检查现有采集快照中的职责、任职要求和引用适用性；未据此确认当前在招。",
+      "content_quality": {
+        "level": "complete",
+        "reason": "现有快照含该具体岗位职责和任职条件；未知学历、专业等仍须按原文保留未知。",
+        "reviewed_at": "2026-10-23T11:34:05.911Z",
+        "reference_urls": []
+      },
+      "availability": {
+        "state": "unknown",
+        "reason": "响应没有可确认的具体岗位标题",
+        "evidence_quote": null,
+        "checked_at": "2026-10-23T11:27:26.294Z",
+        "method": "public_page_text",
+        "http_status": 200,
+        "evidence_url": "https://cnnc.zhiye.com/campus/detail?jobAdId=8c9efc3c-3f1d-4f72-a962-a4be27f06b5c",
+        "last_available_at": null
+      },
+      "eligibility_constraints": [
+        {
+          "id": "minimum-degree",
+          "kind": "minimum_degree",
+          "operator": "at_least",
+          "value": "本科",
+          "source_field": "requirements",
+          "source_quote": "本科及以上学历",
+          "source_url": "https://cnnc.zhiye.com/campus/detail?jobAdId=8c9efc3c-3f1d-4f72-a962-a4be27f06b5c",
+          "reviewed_at": "2026-10-23T11:34:05.911Z"
+        }
+      ]
+    },
+    {
+      "job_id": "cnnc:a82bd4e9-9169-4df8-813c-0194ccfe5480",
+      "source_hash": "19abdf9dc91dd74921325cfff9f3e790bcc615585aa6098738222bc5da949d46",
+      "reviewed_at": "2026-10-23T11:34:05.911Z",
+      "review_basis": "人工检查现有采集快照中的职责、任职要求和引用适用性；未据此确认当前在招。",
+      "content_quality": {
+        "level": "complete",
+        "reason": "现有快照含该具体岗位职责和任职条件；未知学历、专业等仍须按原文保留未知。",
+        "reviewed_at": "2026-10-23T11:34:05.911Z",
+        "reference_urls": []
+      },
+      "availability": {
+        "state": "unknown",
+        "reason": "响应没有可确认的具体岗位标题",
+        "evidence_quote": null,
+        "checked_at": "2026-10-23T11:27:26.295Z",
+        "method": "public_page_text",
+        "http_status": 200,
+        "evidence_url": "https://cnnc.zhiye.com/campus/detail?jobAdId=a82bd4e9-9169-4df8-813c-0194ccfe5480",
+        "last_available_at": null
+      },
+      "eligibility_constraints": [
+        {
+          "id": "minimum-degree",
+          "kind": "minimum_degree",
+          "operator": "at_least",
+          "value": "本科",
+          "source_field": "requirements",
+          "source_quote": "本科及以上学历",
+          "source_url": "https://cnnc.zhiye.com/campus/detail?jobAdId=a82bd4e9-9169-4df8-813c-0194ccfe5480",
+          "reviewed_at": "2026-10-23T11:34:05.911Z"
+        }
+      ]
+    },
+    {
+      "job_id": "cnnc:1a6c643d-1de3-4662-8b7f-ec45da6ab3e5",
+      "source_hash": "b5bc9e73f53efdf08bd403d347ac7e8883832653d7bcbaf5c029621ae3aab281",
+      "reviewed_at": "2026-10-23T11:34:05.911Z",
+      "review_basis": "人工检查现有采集快照中的职责、任职要求和引用适用性；未据此确认当前在招。",
+      "content_quality": {
+        "level": "complete",
+        "reason": "现有快照含该具体岗位职责和任职条件；未知学历、专业等仍须按原文保留未知。",
+        "reviewed_at": "2026-10-23T11:34:05.911Z",
+        "reference_urls": []
+      },
+      "availability": {
+        "state": "unknown",
+        "reason": "响应没有可确认的具体岗位标题",
+        "evidence_quote": null,
+        "checked_at": "2026-10-23T11:27:26.302Z",
+        "method": "public_page_text",
+        "http_status": 200,
+        "evidence_url": "https://cnnc.zhiye.com/campus/detail?jobAdId=1a6c643d-1de3-4662-8b7f-ec45da6ab3e5",
+        "last_available_at": null
+      },
+      "eligibility_constraints": [
+        {
+          "id": "minimum-degree",
+          "kind": "minimum_degree",
+          "operator": "at_least",
+          "value": "博士",
+          "source_field": "requirements",
+          "source_quote": "学历要求：博士",
+          "source_url": "https://cnnc.zhiye.com/campus/detail?jobAdId=1a6c643d-1de3-4662-8b7f-ec45da6ab3e5",
+          "reviewed_at": "2026-10-23T11:34:05.911Z"
+        }
+      ]
+    },
+    {
+      "job_id": "cnnc:6df63e6b-d3a6-4f5b-8ea6-9c606abf14da",
+      "source_hash": "56b5b7cbfc54968b22176c331a34eb04ef82f8774f1a00c5af5705a0e457de15",
+      "reviewed_at": "2026-10-23T11:34:05.911Z",
+      "review_basis": "人工检查现有采集快照中的职责、任职要求和引用适用性；未据此确认当前在招。",
+      "content_quality": {
+        "level": "complete",
+        "reason": "现有快照含该具体岗位职责和任职条件；未知学历、专业等仍须按原文保留未知。",
+        "reviewed_at": "2026-10-23T11:34:05.911Z",
+        "reference_urls": []
+      },
+      "availability": {
+        "state": "unknown",
+        "reason": "响应没有可确认的具体岗位标题",
+        "evidence_quote": null,
+        "checked_at": "2026-10-23T11:27:26.541Z",
+        "method": "public_page_text",
+        "http_status": 200,
+        "evidence_url": "https://cnnc.zhiye.com/campus/detail?jobAdId=6df63e6b-d3a6-4f5b-8ea6-9c606abf14da",
+        "last_available_at": null
+      },
+      "eligibility_constraints": []
+    },
+    {
+      "job_id": "cnnc:92831eb6-b630-4046-bbcf-b4e172c903d7",
+      "source_hash": "020439445fd0afc78f76b467c71f2d90ce4f78b050e2ef5da58eb49a38f322f5",
+      "reviewed_at": "2026-10-23T11:34:05.911Z",
+      "review_basis": "人工检查现有采集快照中的职责、任职要求和引用适用性；未据此确认当前在招。",
+      "content_quality": {
+        "level": "complete",
+        "reason": "现有快照含该具体岗位职责和任职条件；未知学历、专业等仍须按原文保留未知。",
+        "reviewed_at": "2026-10-23T11:34:05.911Z",
+        "reference_urls": []
+      },
+      "availability": {
+        "state": "unknown",
+        "reason": "响应没有可确认的具体岗位标题",
+        "evidence_quote": null,
+        "checked_at": "2026-10-23T11:27:26.546Z",
+        "method": "public_page_text",
+        "http_status": 200,
+        "evidence_url": "https://cnnc.zhiye.com/campus/detail?jobAdId=92831eb6-b630-4046-bbcf-b4e172c903d7",
+        "last_available_at": null
+      },
+      "eligibility_constraints": [
+        {
+          "id": "minimum-degree",
+          "kind": "minimum_degree",
+          "operator": "at_least",
+          "value": "硕士",
+          "source_field": "requirements",
+          "source_quote": "硕士研究生及以上",
+          "source_url": "https://cnnc.zhiye.com/campus/detail?jobAdId=92831eb6-b630-4046-bbcf-b4e172c903d7",
+          "reviewed_at": "2026-10-23T11:34:05.911Z"
+        }
+      ]
+    },
+    {
+      "job_id": "smic:390852418",
+      "source_hash": "05f3667ba3733eb8353fe8838a3ebf064b0c954bc67f099b648eef874e88339a",
+      "reviewed_at": "2026-10-23T11:34:05.911Z",
+      "review_basis": "人工检查现有采集快照中的职责、任职要求和引用适用性；未据此确认当前在招。",
+      "content_quality": {
+        "level": "complete",
+        "reason": "现有快照含该具体岗位职责和任职条件；未知学历、专业等仍须按原文保留未知。",
+        "reviewed_at": "2026-10-23T11:34:05.911Z",
+        "reference_urls": []
+      },
+      "availability": {
+        "state": "unknown",
+        "reason": "可以定位岗位标题，尚无明确在招证据",
+        "evidence_quote": " 中芯国际 首页 关于我们 社会招聘 校园招聘 海外招聘 内部推荐 --> 登录 / 注册 会员中心 / 退出 良率数据分析工程师-张江（2027届校招）(J13273) 分享： 工作类型： 职位类别： 工艺工程类 职位学历： 硕士 招聘人数： 若干 更新时间： 2026.08.10 更新时间： 2026.08.07 --> 工作地点： 上海市 职位描述 1.SEDA、PBA系统维护，用户需求收集",
+        "checked_at": "2026-10-23T11:27:26.560Z",
+        "method": "public_page_text",
+        "http_status": 200,
+        "evidence_url": "https://smics.zhiye.com/campusxq?jobId=390852418",
+        "last_available_at": null
+      },
+      "eligibility_constraints": [
+        {
+          "id": "minimum-degree",
+          "kind": "minimum_degree",
+          "operator": "at_least",
+          "value": "硕士",
+          "source_field": "education",
+          "source_quote": "硕士",
+          "source_url": "https://smics.zhiye.com/campusxq?jobId=390852418",
+          "reviewed_at": "2026-10-23T11:34:05.911Z"
+        }
+      ]
+    }
+  ]
+}

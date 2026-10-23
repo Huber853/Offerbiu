@@ -1,0 +1,94 @@
+/* Variables (light) */
+:root {
+  --color-text: #40484f; --color-text-secondary: #606d76; --color-text-muted: #757575;
+  --color-heading: #202931; --color-date: #202931; --color-accent: #ff6d1f;
+  --color-link: #0095ff; --color-link-hover: #0c65a5;
+  --color-background: var(--color-section-title-bg); --color-background-alt: #f1f8ff;
+  --color-border: #ccc; --color-border-light: #ddd;
+  --color-keyword-text: #2c5777; --color-keyword-bg: #dfeaf1; --color-keyword-border: #dfeaf1;
+  --color-reference-border: #ff6d1f;
+  --color-bar-beginner: #eb5f51; --color-bar-intermediate: #ffdf1f;
+  --color-bar-advanced: #5cb85c; --color-bar-master: #59c596;
+  --color-section-title-bg: #fff;
+  --font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+
+  /* Type scale — 14px base, ~1.14 ratio (subtle, professional) */
+  --fs-name: 2.143rem;       /* 30px */
+  --fs-label: 1.429rem;      /* 20px */
+  --fs-title: 1.143rem;      /* 16px */
+  --fs-card: 1.071rem;       /* 15px */
+  --fs-body: 1rem;           /* 14px */
+  --fs-meta: 0.929rem;       /* 13px (date, location, keywords) */
+  --fs-section: 0.857rem;    /* 12px caps with tracking */
+  --fs-fine: 0.786rem;       /* 11px */
+
+  /* Line heights — multiples of 4 against base */
+  --lh-tight: 1.15;
+  --lh-snug: 1.3;
+  --lh-base: 1.5;
+
+  /* Spacing — 8pt grid */
+  --sp-1: 0.286rem;  /*  4px */
+  --sp-2: 0.571rem;  /*  8px */
+  --sp-3: 0.857rem;  /* 12px */
+  --sp-4: 1.143rem;  /* 16px */
+  --sp-5: 1.714rem;  /* 24px */
+  --sp-6: 2.286rem;  /* 32px */
+}
+
+/* Variables (dark) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text: #d4d4d8; --color-text-secondary: #a1a1aa; --color-text-muted: #9ca3af;
+    --color-heading: #e4e4e7; --color-date: #ffffff; --color-accent: #fb923c;
+    --color-link: #60a5fa; --color-link-hover: #93c5fd;
+    --color-background: #18181b; --color-background-alt: #27272a;
+    --color-border: #3f3f46; --color-border-light: #3f3f46;
+    --color-keyword-text: #93c5fd; --color-keyword-bg: #1e3a5f; --color-keyword-border: #1e3a5f;
+    --color-reference-border: #fb923c;
+    --color-bar-beginner: #ef4444; --color-bar-intermediate: #eab308;
+    --color-bar-advanced: #22c55e; --color-bar-master: #34d399;
+    --color-section-title-bg: #18181b;
+    --font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  }
+}
+
+/* Minimal reset */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+
+/* Base typography */
+body, html { font-family: var(--font-family); font-size: 14px; color: var(--color-text); background-color: var(--color-background); font-weight: 400; line-height: var(--lh-base); text-align: left; }
+p { display: block; }
+a { color: var(--color-link); text-decoration: none; }
+a:hover { color: var(--color-link-hover); text-decoration: underline; }
+li { list-style-type: square; list-style-position: outside; margin-left: 1.3em; }
+h1 { font-size: var(--fs-name); line-height: var(--lh-tight); }
+h2 { font-size: var(--fs-label); line-height: var(--lh-snug); }
+h3 { font-size: var(--fs-card); line-height: var(--lh-snug); }
+em { color: var(--color-text-muted); }
+strong { font-weight: 700; }
+
+/* Accessibility */
+.skip-to-content { position: absolute; left: -9999px; top: 0; z-index: 999; padding: 0.5em 1em; background: var(--color-accent); color: #fff; font-weight: 600; text-decoration: none; }
+.skip-to-content:focus { left: 0; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; border-radius: 2px; }
+
+/* Print */
+@media print {
+  @page { margin: 1.4cm 1.4cm; }
+  body { line-height: var(--lh-snug); }
+  ul { margin-top: var(--sp-2); }
+  ul, li { padding: 0; }
+}
+
+@media screen and (min-width: 1025px) { li { margin-left: 1.5em; } }
+
+/* Timeline item dates — global so rules apply across scoped child components (DateRange, singleDate) */
+.timeline-item header .date { display: block; font-size: var(--fs-meta); padding: 0; color: var(--color-text-secondary); font-weight: 500; line-height: var(--lh-snug); letter-spacing: 0.02em; }
+@media screen and (max-width: 601px) { .timeline-item header .date { float: none; margin-top: var(--sp-1); } }
+@media screen and (min-width: 602px) { .timeline-item header .date { float: right; padding-top: 0.2em; } }
+@media print { .timeline-item header .date { float: right; padding-top: 0.2em; } }
