@@ -5,6 +5,10 @@ export const templates = [
   { id: 'even', name: 'Even · 留白叙事', tag: '产品 / 数据 / 通用', description: '浅灰抬头、侧边章节标题与宽松留白，中文 A4 适配版。', accent: '#0073aa', source: 'https://github.com/rbardini/jsonresume-theme-even', author: 'Rafael Bardini', license: 'MIT' },
   { id: 'class', name: 'Class · 蓝调名片', tag: '市场 / 运营 / 商务', description: '深蓝姓名区搭配清晰的经历层级，中文 A4 适配版。', accent: '#13509b', source: 'https://github.com/jsonresume/jsonresume-theme-class', author: 'James Spencer / JSON Resume Contributors', license: 'MIT' },
   { id: 'classy', name: 'Classy · 经典刊物', tag: '职能 / 咨询 / 金融', description: '居中姓名、克制的黑白章节与编辑式排版，中文 A4 适配版。', accent: '#333333', source: 'https://github.com/JaredCubilla/jsonresume-theme-classy', author: 'Jared Cubilla', license: 'MIT' },
+  { id: 'billryan', name: 'Bill Ryan · 中文学术', tag: '升学 / 科研 / 研发', description: '教育经历前置、居中姓名与通栏细线，保留中文学术简历的紧凑层级。', accent: '#222222', source: 'https://github.com/billryan/resume/tree/zh_CN', author: 'Bill Ryan', license: 'MIT', featured: true, sectionOrder: ['education', 'experience', 'projects', 'skills', 'awards', 'summary', 'images'] },
+  { id: 'stackoverflow', name: 'Stack Overflow · 技术履历', tag: '研发 / 算法 / 数据', description: '橙色章节、浅蓝简介和经历时间线，项目优先展示，适合技术岗位。', accent: '#e8651b', source: 'https://github.com/phoinixi/jsonresume-theme-stackoverflow', author: 'Francesco Esposito', license: 'MIT', featured: true, sectionOrder: ['summary', 'skills', 'projects', 'experience', 'education', 'awards', 'images'] },
+  { id: 'kendall', name: 'Kendall · 专业双栏', tag: '商务 / 产品 / 管理', description: '居中抬头、深石板色层级与右侧技能、荣誉栏，经历区域保持宽阔。', accent: '#227c74', source: 'https://github.com/LinuxBozo/jsonresume-theme-kendall', author: 'M. Adam Kendall', license: 'MIT', featured: true, layout: 'kendall', photoShape: 'circle' },
+  { id: 'macchiato', name: 'Macchiato · 清爽分栏', tag: '设计 / 运营 / 通用', description: '青绿色顶线、轻量标题与左侧联系信息、技能栏，留白清爽。', accent: '#56817a', source: 'https://github.com/biosan/jsonresume-theme-macchiato', author: 'Alessandro Biondi', license: 'MIT', featured: true, layout: 'macchiato', photoShape: 'circle' },
   ...[
     ['004','collection-coral','珊瑚红 · 人物名片','运营 / 商务 / 应届生','#ef6262','coral','circle','浅灰侧栏、环形头像与珊瑚红章节，突出人物和经历。'],
     ['005','collection-navy','海军蓝 · 专业双栏','市场 / 产品 / 管理','#23465f','navy','square','深蓝信息侧栏、方形照片和细线章节，清晰区分个人信息与经历。'],
@@ -21,7 +25,7 @@ export const resumeSections = ['summary', 'education', 'experience', 'projects',
 export function normalizeDesign(value = {}, template = 'classic') {
   const safe = value && typeof value === 'object' ? value : {};
   const bound = (x, fallback, min, max) => Number.isFinite(Number(x)) ? Math.min(max, Math.max(min, Number(x))) : fallback;
-  const defaults = template === 'technical' ? ['summary', 'education', 'projects', 'experience', 'skills', 'awards', 'images'] : resumeSections;
+  const defaults = templates.find(item => item.id === template)?.sectionOrder || (template === 'technical' ? ['summary', 'education', 'projects', 'experience', 'skills', 'awards', 'images'] : resumeSections);
   return { accent: /^#[0-9a-f]{6}$/i.test(safe.accent) ? safe.accent : '', fontSize: bound(safe.fontSize, 10, 9, 13),
     lineHeight: bound(safe.lineHeight, 1.65, 1.3, 2), spacing: bound(safe.spacing, 18, 10, 28),
     order: [...new Set([...(Array.isArray(safe.order) ? safe.order.filter(s => resumeSections.includes(s)) : []), ...defaults])],

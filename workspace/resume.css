@@ -41,3 +41,69 @@
 .resume-template-collection-slate{--collection-side:#f2f3f4;border-left:5mm solid var(--resume-accent);border-bottom:0}.resume-template-collection-slate .collection-ribbon{display:none}.resume-template-collection-slate .collection-columns{min-height:297mm}.resume-template-collection-slate .collection-sidebar{padding:12mm 5mm}.resume-template-collection-slate .collection-main{padding:12mm 9mm}.resume-template-collection-slate .collection-sidebar .resume-portrait{border:5px solid #fff;background:#e6eaee}.resume-template-collection-slate .collection-sidebar .resume-name{font-weight:500;color:#354251}.resume-template-collection-slate .collection-sidebar .resume-contact>span{background:#e8eaed;border-bottom:2px solid #fff;padding:9px 7px}.resume-template-collection-slate .collection-main .resume-section-title{border-bottom:1px solid #aab1b9;padding-bottom:8px}.resume-template-collection-slate .collection-main .resume-section-title:after{display:none}.resume-template-collection-slate .collection-main .resume-section-title:before{width:18px;height:18px;border-radius:0}
 .resume-template-collection-mist{padding:14mm 16mm;border:4mm solid color-mix(in srgb,var(--resume-accent) 50%,white);outline:1px solid #b5cbd0;outline-offset:-6mm}.resume-template-collection-mist .resume-header{border-bottom:4px double var(--resume-accent);padding-bottom:16px}.resume-template-collection-mist .resume-portrait{border:4px solid #b5d0d8;box-shadow:5px 5px 0 #d4d7d8}.resume-template-collection-mist .resume-name{font-size:26pt;letter-spacing:3px}.resume-template-collection-mist .resume-section-title{border-bottom:3px double #b6cbd0;padding-bottom:6px;font-weight:500;color:#395d68}.resume-template-collection-mist .resume-section-title:after{display:none}.resume-template-collection-mist .resume-entry-heading strong{font-weight:600}
 @media print{.resume-portrait,.resume-work-image{break-inside:avoid}.resume-collection{padding:0!important;min-height:0}.collection-columns,.resume-template-collection-navy .collection-columns,.resume-template-collection-slate .collection-columns{min-height:0}.resume-template-collection-mist{padding:8mm!important}.portrait-placeholder{display:none!important}.resume-sheet{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+/* Bill Ryan, Stack Overflow, Kendall and Macchiato: Chinese A4 adaptations.
+   Original MIT licenses, pinned sources and attribution: assets/resume-templates/NOTICE.md.
+   Bill Ryan: https://github.com/billryan/resume/tree/zh_CN (MIT)
+   Copyright (c) 2019-present Francesco Esposito (Stack Overflow)
+   Copyright (c) 2014 M. Adam Kendall (Kendall)
+   Copyright (c) 2019 Alessandro Biondi (Macchiato)
+
+   Permission is hereby granted, free of charge, to any person obtaining a copy
+   of this software and associated documentation files (the "Software"), to deal
+   in the Software without restriction, including without limitation the rights
+   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+   copies of the Software, and to permit persons to whom the Software is
+   furnished to do so, subject to the following conditions:
+
+   The above copyright notice and this permission notice shall be included in
+   all copies or substantial portions of the Software.
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+   THE SOFTWARE. */
+.resume-template-billryan{font-family:"SimSun","Songti SC","Times New Roman",serif;color:#222;padding:15mm 18mm}
+.resume-template-billryan .resume-header{border:0;text-align:center;margin-bottom:12px;padding-bottom:5px}
+.resume-template-billryan .resume-name{font-family:"SimHei","Microsoft YaHei",sans-serif;font-size:24pt;letter-spacing:3px;font-weight:500}
+.resume-template-billryan .resume-headline{font-size:10pt;font-weight:400;color:var(--resume-accent);margin:4px 0 7px}
+.resume-template-billryan .resume-contact{justify-content:center;color:#333}
+.resume-template-billryan .resume-section-title{display:block;border-bottom:1px solid var(--resume-accent);padding-bottom:4px;margin-bottom:9px;color:var(--resume-accent);letter-spacing:1px;font-size:1.2em}
+.resume-template-billryan .resume-section-title:after{display:none}
+.resume-template-billryan .resume-entry{margin-bottom:10px}.resume-template-billryan .resume-entry-sub{color:#444;font-style:italic}.resume-template-billryan .resume-entry-heading time{color:#333}
+.resume-template-stackoverflow{color:#40484f;padding:16mm 18mm}
+.resume-template-stackoverflow .resume-header{border:0;padding-bottom:3px;margin-bottom:20px}
+.resume-template-stackoverflow .resume-name{font-size:28pt;font-weight:300;letter-spacing:0;color:#202931}
+.resume-template-stackoverflow .resume-headline{font-size:12pt;color:#606d76;font-weight:400}
+.resume-template-stackoverflow .resume-contact{color:#606d76}
+.resume-template-stackoverflow .resume-section-title{font-size:1.05em;letter-spacing:1px}.resume-template-stackoverflow .resume-section-title:after{background:#d4dadd}
+.resume-template-stackoverflow [data-resume-section="summary"] .resume-section-content{padding:10px 13px;background:#f1f8ff;border-radius:2px}
+.resume-template-stackoverflow [data-resume-section="summary"] .resume-body-copy{margin:0}
+.resume-template-stackoverflow .resume-entry{position:relative;border-left:1px solid #d9e0e5;padding-left:14px;margin-left:3px;margin-bottom:16px}
+.resume-template-stackoverflow .resume-entry:before{content:"";position:absolute;left:-4px;top:7px;width:7px;height:7px;border-radius:50%;background:var(--resume-accent)}
+.resume-template-stackoverflow .resume-entry-sub{color:#606d76}.resume-template-stackoverflow .resume-entry-heading time{color:#606d76}
+.resume-template-kendall .resume-columns,.resume-template-macchiato .resume-columns{display:grid;grid-template-columns:minmax(0,1fr);column-gap:8mm;align-items:start}
+.resume-template-kendall .resume-main,.resume-template-macchiato .resume-main,.resume-template-kendall .resume-sidebar,.resume-template-macchiato .resume-sidebar{min-width:0}
+.resume-template-kendall .resume-columns.has-sidebar{grid-template-columns:minmax(0,1fr) minmax(0,30%)}
+.resume-template-kendall{color:#363636;border-top:4mm solid #334960;padding:12mm 16mm 17mm}
+.resume-template-kendall .resume-header,.resume-template-kendall .resume-header.has-portrait{display:block;text-align:center;border-bottom:1px solid #ddd;margin-bottom:6px;padding-bottom:15px}
+.resume-template-kendall .resume-portrait{margin:0 auto 10px;border:3px solid #334960;padding:3px;background:#fff;width:27mm;height:32mm}.resume-template-kendall .portrait-circle{height:27mm}
+.resume-template-kendall .resume-name{color:#334960;font-size:24pt;font-weight:800;letter-spacing:1px}.resume-template-kendall .resume-headline{color:#617080;font-size:10.5pt}.resume-template-kendall .resume-contact{justify-content:center}
+.resume-template-kendall .resume-section-title{display:block;font-size:1.2em}.resume-template-kendall .resume-section-title:after{display:none}
+.resume-template-kendall [data-resume-section="education"] .resume-entry{border-left:3px solid #334960;background:#f4f5f6;padding:9px 11px}
+.resume-template-kendall .resume-entry-heading{flex-wrap:wrap;gap:2px 10px}.resume-template-kendall .resume-entry-heading time{max-width:100%}
+.resume-template-kendall .resume-sidebar{border-left:1px solid #e1e5e8;padding-left:6mm}.resume-template-kendall .resume-sidebar .resume-body-copy{font-size:.93em}
+.resume-template-macchiato{color:#39424b;border-top:3mm solid var(--resume-accent);padding:13mm 16mm 17mm}
+.resume-template-macchiato .resume-header{display:flex;gap:16px;align-items:center;border:0;padding-bottom:14px;margin-bottom:6px}
+.resume-template-macchiato .resume-name{font-size:26pt;letter-spacing:1px;color:#39424b}.resume-template-macchiato .resume-headline{font-size:10.5pt;font-weight:400;margin-bottom:0}
+.resume-template-macchiato .resume-portrait{width:23mm;height:29mm;border:2px solid var(--resume-accent);background:white}.resume-template-macchiato .portrait-circle{height:23mm}
+.resume-template-macchiato .resume-columns.has-sidebar{grid-template-columns:minmax(0,28%) minmax(0,1fr)}
+.resume-template-macchiato .has-sidebar .resume-main{grid-column:2;grid-row:1}.resume-template-macchiato .resume-sidebar{grid-column:1;grid-row:1;border-right:1px solid #e2e9e7;padding-right:6mm}
+.resume-template-macchiato .resume-section-title{display:block;color:#39424b;font-weight:500;letter-spacing:.5px;margin-bottom:10px}
+.resume-template-macchiato .resume-section-title:after{display:block;width:12mm;height:1px;background:var(--resume-accent);margin-top:6px}
+.resume-template-macchiato .resume-contact{display:flex;flex-direction:column;gap:7px;font-size:.9em;color:#52615e}
+.resume-template-macchiato .resume-sidebar .resume-body-copy{font-size:.93em}.resume-template-macchiato .resume-entry{margin-bottom:18px}.resume-template-macchiato .resume-entry-sub{color:#6d7777}
+@media print{.resume-template-billryan,.resume-template-stackoverflow,.resume-template-kendall,.resume-template-macchiato{padding:0}.resume-template-kendall,.resume-template-macchiato{padding-top:6mm}.resume-template-stackoverflow .resume-entry:before{print-color-adjust:exact}.resume-template-macchiato .resume-section-title:after{print-color-adjust:exact}}
+@media print{.resume-template-kendall .resume-section-content,.resume-template-macchiato .resume-section-content{display:contents}.resume-template-kendall .resume-section-title,.resume-template-macchiato .resume-section-title{break-inside:avoid;page-break-inside:avoid}}
