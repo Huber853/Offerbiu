@@ -7,6 +7,10 @@ export function jobReviewHash(job) {
   return createHash('sha256').update(canonicalJson(Object.fromEntries(fields.map(key => [key, job[key] ?? null])))).digest('hex');
 }
 
+export function shouldReloadCatalog(savedDigest, digest, jobCount) {
+  return !(typeof savedDigest === 'string' && savedDigest.length > 0 && savedDigest === digest && Number(jobCount) > 0);
+}
+
 export function mergeCatalogJobs(baseJobs, extraJobs) {
   const merged = new Map();
   for (const job of baseJobs || []) if (job?.id) merged.set(job.id, job);

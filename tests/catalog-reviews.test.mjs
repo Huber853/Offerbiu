@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { jobReviewHash,applyReviewedJob,mergeEvidenceReview,mergeCatalogJobs } from '../server/catalog-reviews.mjs';
+import { jobReviewHash,applyReviewedJob,mergeEvidenceReview,mergeCatalogJobs,shouldReloadCatalog } from '../server/catalog-reviews.mjs';
 const job={id:'demo',company:'演示',title:'开发',description:'接口开发。',requirements:'掌握 Python。',catalog_status:'active',source_url:'https://example.com/jobs/demo'};
 const review={job_id:'demo',content_quality:{level:'complete',reason:'人工核对快照正文'},availability:{state:'unknown'},eligibility_constraints:[]};
 test('quality annotations only apply to the exact reviewed public text snapshot',()=>{
@@ -32,6 +32,12 @@ test('evidence merge keeps reviewed text when a new probe is unknown and rejects
   assert.equal(strong.review.availability.state,'available');
   assert.equal(strong.review.content_quality.level,'complete');
   assert.equal(mergeEvidenceReview(job,current,{job_id:job.id,source_hash:'ab'.repeat(32)}).action,'skipped');
+});
+test('catalog reload happens unless the content digest and existing rows both match', () => {
+  assert.equal(shouldReloadCatalog('abc', 'abc', 10), false);
+  assert.equal(shouldReloadCatalog('abc', 'abd', 10), true);
+  assert.equal(shouldReloadCatalog(undefined, 'abc', 10), true);
+  assert.equal(shouldReloadCatalog('abc', 'abc', 0), true);
 });
 test('supplement jobs never replace an existing catalog id',()=>{
   const merged=mergeCatalogJobs([{id:'keep',title:'旧'}],[{id:'keep',title:'新'},{id:'fresh',title:'补充'}]);

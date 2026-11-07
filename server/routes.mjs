@@ -217,6 +217,18 @@ async function api(req, res, url) {
   const workflow = await workflowRoute({userId,pathname,method,query:url.searchParams,body,signal:req.aiSignal});
   if (workflow) return json(res, workflow.data, workflow.status);
   if (pathname === '/api/auth/logout' && method === 'POST') { clearSession(session, res); return json(res, { ok: true }); }
+  if (pathname === '/api/auth/account' && method === 'DELETE') {
+    rateLimit('delete-account:' + userId, 5, 3600000);
+    const email = text(body.email, 254).toLowerCase();
+    demand(body.confirm === true, 400, '请确认删除账号。账号未删除。');
+    demand(email && email === String(session.email).toLowerCase(), 400, '请输入当前账号邮箱以确认删除。账号未删除。');
+    demand(typeof body.password === 'string' && body.password.length >= 1 && body.password.length <= 128, 400, '请输入密码。账号未删除。');
+    const user = db.prepare('SELECT * FROM users WHERE id=?').get(userId);
+    demand(user && await passwordMatches(body.password, user.password_hash), 401, '密码不正确，账号未删除。');
+    db.prepare('DELETE FROM users WHERE id=?').run(userId);
+    clearSession(session, res);
+    return json(res, { deleted: true });
+  }
   if (pathname === '/api/auth/password' && method === 'POST') {
     rateLimit('password:' + userId, 8, 3600000);
     demand(typeof body.currentPassword === 'string' && body.currentPassword.length >= 1 && body.currentPassword.length <= 128, 400, '请输入当前密码。');

@@ -64,6 +64,16 @@ DEEPSEEK_MODEL=deepseek-flash
 - PDF 由浏览器打印生成；项目不提供 Word 导出或 Word/PDF 简历自动解析。
 - 默认启动地址仅供本机访问。公网部署需自行配置 HTTPS、`APP_ORIGIN`、安全 Cookie 和持久化存储；仓库不代表已经完成公网生产部署。
 
+公网部署前核对：
+
+1. 用 HTTPS 反向代理，并转发 `Host`、`X-Forwarded-Proto`、`X-Forwarded-Host`。
+2. `HOST` 保持本机回环（例如 `127.0.0.1`），不要把 Node 端口直接暴露到公网。
+3. `APP_ORIGIN` 写成浏览器地址栏中的源，包含 `https://`，不要带末尾斜杠。多个源用逗号分隔。
+4. `COOKIE_SECURE=true`。
+5. 不要依赖「本机共享服务器密钥」。设置 `OFFERBIU_SERVER_KEY_EMAILS` 为允许使用服务器密钥的邮箱，或让每个账号填写自己的密钥。
+6. 把 `OFFERBIU_STORAGE` 指到已用 `scripts/copy-storage.mjs` 复制好的目录，并同时保留 `offerbiu.sqlite` 与 `.encryption-key`。
+7. 确认注册策略：当前代码仍允许知道地址的人注册。公网开放前要自行限制来源或网络访问。
+
 招聘数据的纳入规则和采集维护方法见[数据来源说明](docs/数据来源.md)。岗位状态与企业招聘页面可能不同步，请以岗位来源页面为准。
 
 ## 开发与验证

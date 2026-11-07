@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { acceptsJob, catalogDate } from './job-policy.mjs';
-import { applyReviewedJob, mergeCatalogJobs } from './catalog-reviews.mjs';
+import { applyReviewedJob, mergeCatalogJobs, shouldReloadCatalog } from './catalog-reviews.mjs';
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const STORAGE = process.env.OFFERBIU_STORAGE ? path.resolve(process.env.OFFERBIU_STORAGE) : path.join(ROOT, 'storage');
@@ -100,6 +100,24 @@ if (workflowSchema < 1) transaction(() => {
   db.prepare('INSERT OR REPLACE INTO metadata(key,value) VALUES(?,?)').run('workflow_schema_version', '1');
 });
 
+function hashFile(hash, file) {
+  hash.update(fs.existsSync(file) ? fs.readFileSync(file) : 'missing');
+}
+function sourceDigest(sourcePath) {
+  const hash = crypto.createHash('sha256');
+  hashFile(hash, sourcePath);
+  if (!process.env.OFFERBIU_JOB_SOURCE) {
+    hashFile(hash, path.join(ROOT, 'data', 'job-workflow-reviews.json'));
+    const dir = path.join(ROOT, 'data', 'job-supplements');
+    if (fs.existsSync(dir)) {
+      for (const name of fs.readdirSync(dir).filter(item => item.endsWith('.json')).sort()) {
+        hash.update(name);
+        hashFile(hash, path.join(dir, name));
+      }
+    }
+  }
+  return hash.digest('hex');
+}
 function readSupplements() {
   if (process.env.OFFERBIU_JOB_SOURCE) return { jobs: [], stamp: 'none' };
   const dir = path.join(ROOT, 'data', 'job-supplements');
@@ -116,7 +134,14 @@ function readSupplements() {
   return { jobs, stamp: files.length ? hash.digest('hex') : 'none' };
 }
 const sourcePath = process.env.OFFERBIU_JOB_SOURCE ? path.resolve(process.env.OFFERBIU_JOB_SOURCE) : path.join(ROOT, 'data', 'jobs-2027.json');
-if (fs.existsSync(sourcePath)) {
+let checkedDay = '';
+const catalogDigest = sourceDigest(sourcePath);
+const savedDigest = db.prepare('SELECT value FROM metadata WHERE key=?').get('jobs_source_digest')?.value;
+const storedJobs = db.prepare('SELECT COUNT(*) AS n FROM jobs').get().n;
+if (!shouldReloadCatalog(savedDigest, catalogDigest, storedJobs)) {
+  console.log('岗位目录内容未变化，跳过全量导入。');
+  refreshCatalog();
+} else if (fs.existsSync(sourcePath)) {
   const bundle = JSON.parse(fs.readFileSync(sourcePath, 'utf8'));
   const reviewsPath = path.join(ROOT, 'data', 'job-workflow-reviews.json');
   const reviews = !process.env.OFFERBIU_JOB_SOURCE && fs.existsSync(reviewsPath) ? JSON.parse(fs.readFileSync(reviewsPath, 'utf8')) : null;
@@ -152,9 +177,10 @@ if (fs.existsSync(sourcePath)) {
       update.run(activeIds.has(row.id) && acceptsJob(job) ? 1 : 0, row.id);
     }
   });
+  db.prepare('INSERT OR REPLACE INTO metadata(key,value) VALUES(?,?)').run('jobs_source_digest', catalogDigest);
+  refreshCatalog();
 }
 
-let checkedDay = '';
 export function refreshCatalog() {
   const day = catalogDate();
   if (day === checkedDay) return;

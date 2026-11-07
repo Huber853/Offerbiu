@@ -41,3 +41,24 @@ test('changing a password rejects the old password and signs out other sessions'
   assert.equal((await send('/api/auth/login', { method: 'POST', body: { email: 'owner@example.test', password: 'correct-horse' } })).status, 401);
   assert.equal((await send('/api/auth/login', { method: 'POST', body: { email: 'owner@example.test', password: 'new-password-1' } })).status, 200);
 });
+
+test('deleting an account removes only that account after an explicit confirmation', async () => {
+  const alpha = await send('/api/auth/register', { method: 'POST', body: { email: 'alpha@example.test', name: '甲', password: 'alpha-password' } });
+  const beta = await send('/api/auth/register', { method: 'POST', body: { email: 'beta@example.test', name: '乙', password: 'beta-password' } });
+  assert.equal(alpha.status, 201);
+  assert.equal(beta.status, 201);
+  const betaTask = await send('/api/tasks', { method: 'POST', cookie: beta.cookie, token: beta.body.csrf, body: { title: '乙的待办', kind: '跟进' } });
+  assert.equal(betaTask.status, 201);
+  const rejected = await send('/api/auth/account', { method: 'DELETE', cookie: alpha.cookie, token: alpha.body.csrf, body: { email: 'beta@example.test', password: 'alpha-password', confirm: true } });
+  assert.equal(rejected.status, 400);
+  assert.equal((await send('/api/session', { cookie: alpha.cookie })).body.user.email, 'alpha@example.test');
+  const deleted = await send('/api/auth/account', { method: 'DELETE', cookie: alpha.cookie, token: alpha.body.csrf, body: { email: 'alpha@example.test', password: 'alpha-password', confirm: true } });
+  assert.equal(deleted.status, 200);
+  assert.equal(deleted.body.deleted, true);
+  assert.equal((await send('/api/session', { cookie: alpha.cookie })).body.user, null);
+  const betaTasks = await send('/api/tasks', { cookie: beta.cookie });
+  assert.equal(betaTasks.status, 200);
+  assert.equal(betaTasks.body.some(task => task.title === '乙的待办'), true);
+  assert.equal(db.prepare('SELECT COUNT(*) AS n FROM users WHERE email=?').get('alpha@example.test').n, 0);
+  assert.equal(db.prepare('SELECT COUNT(*) AS n FROM users WHERE email=?').get('beta@example.test').n, 1);
+});
