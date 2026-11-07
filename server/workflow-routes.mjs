@@ -19,6 +19,10 @@ export async function workflowRoute({userId,pathname,method,query,body,signal}) 
       return reply(result,result.cached?200:201);
     }
   }
+  if(pathname==='/api/job-evaluations/latest'&&method==='GET') {
+    const ids=typeof query.getAll==='function'?query.getAll('jobId'):String(query.jobId||query.jobIds||'').split(',').filter(Boolean);
+    return reply(evaluations.latestEvaluationSummaries(userId,ids));
+  }
   let match=pathname.match(/^\/api\/job-evaluations\/([^/]+)$/);
   if(match) {
     if(method==='GET') return reply(evaluations.getEvaluation(userId,match[1]));

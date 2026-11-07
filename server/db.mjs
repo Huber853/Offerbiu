@@ -1,9 +1,10 @@
 import { DatabaseSync } from 'node:sqlite';
+import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { acceptsJob, catalogDate } from './job-policy.mjs';
-import { applyReviewedJob } from './catalog-reviews.mjs';
+import { applyReviewedJob, mergeCatalogJobs } from './catalog-reviews.mjs';
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const STORAGE = process.env.OFFERBIU_STORAGE ? path.resolve(process.env.OFFERBIU_STORAGE) : path.join(ROOT, 'storage');
@@ -99,14 +100,30 @@ if (workflowSchema < 1) transaction(() => {
   db.prepare('INSERT OR REPLACE INTO metadata(key,value) VALUES(?,?)').run('workflow_schema_version', '1');
 });
 
+function readSupplements() {
+  if (process.env.OFFERBIU_JOB_SOURCE) return { jobs: [], stamp: 'none' };
+  const dir = path.join(ROOT, 'data', 'job-supplements');
+  if (!fs.existsSync(dir)) return { jobs: [], stamp: 'none' };
+  const files = fs.readdirSync(dir).filter(name => name.endsWith('.json')).sort();
+  const hash = crypto.createHash('sha256');
+  const jobs = [];
+  for (const name of files) {
+    const text = fs.readFileSync(path.join(dir, name));
+    hash.update(text);
+    const doc = JSON.parse(text.toString('utf8'));
+    for (const job of doc.jobs || []) if (job && job.id) jobs.push(job);
+  }
+  return { jobs, stamp: files.length ? hash.digest('hex') : 'none' };
+}
 const sourcePath = process.env.OFFERBIU_JOB_SOURCE ? path.resolve(process.env.OFFERBIU_JOB_SOURCE) : path.join(ROOT, 'data', 'jobs-2027.json');
 if (fs.existsSync(sourcePath)) {
   const bundle = JSON.parse(fs.readFileSync(sourcePath, 'utf8'));
   const reviewsPath = path.join(ROOT, 'data', 'job-workflow-reviews.json');
   const reviews = !process.env.OFFERBIU_JOB_SOURCE && fs.existsSync(reviewsPath) ? JSON.parse(fs.readFileSync(reviewsPath, 'utf8')) : null;
+  const supplements = readSupplements();
   const reviewsById = new Map((reviews?.reviews || []).map(review => [review.job_id, review]));
-  bundle.jobs = bundle.jobs.map(job => applyReviewedJob(job, reviewsById.get(job.id)));
-  const importStamp = reviews ? `${bundle.collected_at}|${reviews.reviewed_at}` : bundle.collected_at;
+  bundle.jobs = mergeCatalogJobs(bundle.jobs, supplements.jobs).jobs.map(job => applyReviewedJob(job, reviewsById.get(job.id)));
+  const importStamp = `${bundle.collected_at}|${reviews?.reviewed_at || ''}|${supplements.stamp}`;
   const imported = db.prepare('SELECT value FROM metadata WHERE key=?').get('jobs_imported_at');
   if (imported?.value !== importStamp) {
     const upsert = db.prepare(`INSERT INTO jobs(id,company,title,cities,category,cohort,payload,collected_at) VALUES(?,?,?,?,?,?,?,?)

@@ -1,8 +1,9 @@
 import { workflowRoute, exportWorkflow } from './workflow-routes.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
-import { db, ROOT, transaction, unpackResume, catalogFacets, refreshCatalog } from './db.mjs';
-import { HttpError, demand, text, now, id, getSession, createSession, clearSession, passwordHash, passwordMatches, rateLimit, sanitizeResume, encrypt, resumeField } from './security.mjs';
+import { db, ROOT, STORAGE, transaction, unpackResume, catalogFacets, refreshCatalog } from './db.mjs';
+import { HttpError, demand, text, now, id, getSession, createSession, clearSession, replaceUserSessions, passwordHash, passwordMatches, rateLimit, sanitizeResume, encrypt, resumeField } from './security.mjs';
+import { serverKeyPolicy } from './ai-access.mjs';
 import { aiSettings, guardBaseUrl, polishResume, testAiConnection, PROVIDERS } from './ai.mjs';
 import { blankResume, templates, statuses } from '../shared/templates.mjs';
 import { RESUME_FILE_LIMIT } from '../shared/resume-media.mjs';
@@ -213,9 +214,31 @@ async function api(req, res, url) {
   }
   demand(session, 401, '请先登录，数据会保存到你的独立账号。', 'LOGIN_REQUIRED');
   const userId = session.user_id;
-  const workflow = await workflowRoute({userId,pathname,method,query:Object.fromEntries(url.searchParams),body,signal:req.aiSignal});
+  const workflow = await workflowRoute({userId,pathname,method,query:url.searchParams,body,signal:req.aiSignal});
   if (workflow) return json(res, workflow.data, workflow.status);
   if (pathname === '/api/auth/logout' && method === 'POST') { clearSession(session, res); return json(res, { ok: true }); }
+  if (pathname === '/api/auth/password' && method === 'POST') {
+    rateLimit('password:' + userId, 8, 3600000);
+    demand(typeof body.currentPassword === 'string' && body.currentPassword.length >= 1 && body.currentPassword.length <= 128, 400, '请输入当前密码。');
+    demand(typeof body.newPassword === 'string' && body.newPassword.length >= 8 && body.newPassword.length <= 128, 400, '新密码需要 8–128 个字符。');
+    const user = db.prepare('SELECT * FROM users WHERE id=?').get(userId);
+    demand(user && await passwordMatches(body.currentPassword, user.password_hash), 401, '当前密码不正确。');
+    const hash = await passwordHash(body.newPassword);
+    db.prepare('UPDATE users SET password_hash=? WHERE id=?').run(hash, userId);
+    return json(res, { ok: true, csrf: replaceUserSessions(userId, res) });
+  }
+  if (pathname === '/api/storage' && method === 'GET') {
+    const external = Boolean(process.env.OFFERBIU_STORAGE || process.env.OFFERBIU_DB);
+    const policy = serverKeyPolicy();
+    return json(res, {
+      external,
+      revealPath: policy !== 'personal-only',
+      directory: policy === 'personal-only' ? null : STORAGE,
+      databaseFile: 'offerbiu.sqlite',
+      keyFile: '.encryption-key',
+      copyCommand: 'node scripts/copy-storage.mjs --from <现有数据目录> --to <新目录>',
+    });
+  }
   if (pathname === '/api/dashboard' && method === 'GET') {
     const applications = applicationRows(userId);
     const tasks = db.prepare('SELECT * FROM tasks WHERE user_id=? ORDER BY completed,due_at LIMIT 100').all(userId);

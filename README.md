@@ -51,13 +51,14 @@ DEEPSEEK_API_KEY=你的密钥
 DEEPSEEK_MODEL=deepseek-flash
 ```
 
-填写服务端默认密钥后重启应用。个人密钥优先用于该账号；也可为账号配置 OpenAI 兼容的自定义服务。当前代码默认模型见 `.env.example` 和个人设置页面。
+填写服务端默认密钥后重启应用。个人密钥优先用于该账号。只在本机 `127.0.0.1` 监听、且未设置 `OFFERBIU_SERVER_KEY_EMAILS` 时，本机账号可以继续使用这把服务器密钥。一旦 `HOST` 不是本机地址，或 `APP_ORIGIN` 指向公网域名，服务器密钥不会自动套用，除非把邮箱写入 `OFFERBIU_SERVER_KEY_EMAILS`。也可为账号配置 OpenAI 兼容的自定义服务。当前代码默认模型见 `.env.example` 和个人设置页面。
 
 **不要将真实密钥写入 README、提交到 Git 或粘贴到公开 issue。** `.env` 和本机数据目录已加入忽略规则；`.env.example` 仅展示配置格式。
 
 ## 数据与部署边界
 
-- 登录账号数据默认保存在本机 `storage/` 的 SQLite 数据库中，不会自动同步到云端。备份数据库时，请同时妥善保存加密资料目录。
+- 登录账号数据默认保存在本机 `storage/` 的 SQLite 数据库中，不会自动同步到其他设备或云端。备份时请同时复制 `offerbiu.sqlite` 和 `storage/.encryption-key`。只复制数据库会导致已保存的个人 API 密钥无法解密。
+- 换数据目录时先停止服务，运行 `node scripts/copy-storage.mjs --from storage --to <新目录>`。该命令只复制、不删除。确认新目录可以登录后，再在 `.env` 设置 `OFFERBIU_STORAGE` 并重启。要还原，把 `OFFERBIU_STORAGE` 改回原目录。
 - AI 请求仅在用户主动执行并确认后发送给所选模型服务。访问该服务需遵守其数据处理政策；用户个人配置的服务商会自行处理收到的数据。
 - 工作台保存投递信息并提供官方申请链接，不会自动填写或提交企业网申。
 - PDF 由浏览器打印生成；项目不提供 Word 导出或 Word/PDF 简历自动解析。

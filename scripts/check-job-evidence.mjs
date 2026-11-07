@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL,fileURLToPath } from 'node:url';
 import { sourcePolicy,isDeadlineExpired } from '../server/job-policy.mjs';
+import { jobReviewHash } from '../server/catalog-reviews.mjs';
 
 export function classifyEvidence(job,{status,url,text=''}) {
   const source=new URL(job.source_url);
@@ -44,31 +45,44 @@ async function probe(job) {
       break;
     }
     const body=await response.text();
+    const clean=body.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,' ').replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi,' ').replace(/<[^>]*>/g,' ').replace(/&nbsp;|&#160;/g,' ').replace(/\s+/g,' ');
+    const description=(job.description||'').replace(/\s+/g,' ').trim();
+    const needle=description.length>=40?description.slice(0,80):'';
+    const matched=needle?clean.includes(needle):false;
     const result=classifyEvidence(job,{status:response.status,url,text:body});
-    return {job_id:job.id,company:job.company,title:job.title,source_url:job.source_url,
+    const content_quality=matched?{level:'complete',reason:'公开页面包含采集正文开头片段，且与当前目录哈希一致。',reviewed_at:checked_at,reference_urls:[url],matched_excerpt:needle}:{level:'unknown',reason:'公开页面未包含可核对的采集正文片段，完整度保持未知。',reviewed_at:checked_at,reference_urls:[]};
+    return {job_id:job.id,company:job.company,title:job.title,source_url:job.source_url,source_hash:jobReviewHash(job),checked_at,
+      review_basis:matched?'公开页面正文片段与目录哈希一致；招聘状态仅在同页出现明确申请或关闭用语时更新。':'公开页面核验；未见正文片段或明确在招用语，状态与完整度保持未知。',
       availability:{...result,checked_at,method:'public_page_text',http_status:response.status,evidence_url:url,
         last_available_at:result.state==='available'?checked_at:null},
-      content_quality:job.content_quality||{level:'unknown',reason:'完整度需按岗位正文及适用引用人工审核'}};
+      content_quality};
   } catch(error) {
-    return {job_id:job.id,company:job.company,title:job.title,source_url:job.source_url,
+    return {job_id:job.id,company:job.company,title:job.title,source_url:job.source_url,source_hash:jobReviewHash(job),checked_at,
+      review_basis:'公开页面请求未完成，不把失败写成关闭或在招。',
       availability:{state:'unknown',checked_at,method:'public_page_text',http_status:null,evidence_url:url,evidence_quote:null,last_available_at:null,reason:error.name==='TimeoutError'?'公开页面请求超时':String(error.message).slice(0,160)},
-      content_quality:job.content_quality||{level:'unknown',reason:'尚未人工审核正文完整度'}};
+      content_quality:{level:'unknown',reason:'页面未能取回，正文完整度保持未知。',reviewed_at:checked_at,reference_urls:[]}};
   }
 }
 async function main() {
   const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
   const args=process.argv.slice(2);
   const option=(name,fallback)=>{const i=args.indexOf(name);return i>=0?args[i+1]:fallback;};
-  const limit=Math.min(20,Math.max(1,Number(option('--limit',20))||20));
+  const limit=Math.min(30,Math.max(1,Number(option('--limit',30))||30));
+  const delay=Math.min(5000,Math.max(0,Number(option('--delay',1200))||1200));
   const input=path.resolve(option('--input',path.join(root,'data','jobs-2027.json')));
   const out=path.resolve(option('--out',path.join(root,'data','sources',new Date().toISOString().slice(0,10)+'-workflow','evidence-check.json')));
   const bundle=JSON.parse(fs.readFileSync(input,'utf8'));
-  const jobs=selectExamples(bundle.jobs,limit);
-  const results=new Array(jobs.length);
-  let next=0;
-  await Promise.all(Array.from({length:Math.min(4,jobs.length)},async()=>{
-    for(;;){const i=next++;if(i>=jobs.length)return;results[i]=await probe(jobs[i]);}
-  }));
+  const company=option('--company','');
+  let jobs=selectExamples(bundle.jobs,limit);
+  if(company){
+    const extra=bundle.jobs.find(job=>job.company===company&&job.source_url&&!isDeadlineExpired(job.deadline));
+    if(extra&&!jobs.some(job=>job.id===extra.id)) jobs=[extra,...jobs].slice(0,limit);
+  }
+  const results=[];
+  for(const job of jobs){
+    if(results.length&&delay) await new Promise(resolve=>setTimeout(resolve,delay));
+    results.push(await probe(job));
+  }
   fs.mkdirSync(path.dirname(out),{recursive:true});
   const report={checked_at:new Date().toISOString(),catalog_collected_at:bundle.collected_at,scope:'公开页面可访问性及同岗位证据；未自动发布；unknown 不等于关闭',results};
   fs.writeFileSync(out,JSON.stringify(report,null,2)+'\n');

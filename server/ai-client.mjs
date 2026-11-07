@@ -1,6 +1,7 @@
 import { db } from './db.mjs';
 import { demand, decrypt, HttpError, sha256 } from './security.mjs';
 import { PROVIDERS, resolveTarget } from './ai-provider.mjs';
+import { serverDeepSeekKeyFor } from './ai-access.mjs';
 
 const inflight = new Set();
 const budgets = new Map();
@@ -28,7 +29,7 @@ export async function callJson(userId,{ task,system,input,signal,maxTokens=6144,
   if(signal?.aborted) throw new HttpError(499,'操作已取消。','AI_CANCELLED');
   const config=configured(userId);
   const key=config.row?.key_encrypted ? decrypt(config.row.key_encrypted)
-    : config.provider==='deepseek' ? process.env.DEEPSEEK_API_KEY || process.env.AI_API_KEY || '' : '';
+    : config.provider==='deepseek' ? serverDeepSeekKeyFor(userId) : '';
   demand(key,503,'请先在个人设置为当前服务商配置 API 密钥。','AI_NOT_CONFIGURED');
   inflight.add(userId);
   try {
