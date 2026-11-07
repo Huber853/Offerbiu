@@ -29,6 +29,6 @@ server.listen(port, host, () => {
   else if (host !== '127.0.0.1' && host !== 'localhost') {
     console.warn('未设置 APP_ORIGIN。公网/HTTPS 部署请在 .env 填写浏览器访问地址，否则注册/登录可能报「跨来源请求被拒绝」。');
   }
-  console.log('持久化数据库：storage/offerbiu.sqlite。按 Ctrl+C 停止。');
+  console.log(`持久化目录：${process.env.OFFERBIU_STORAGE ? 'OFFERBIU_STORAGE' : 'storage/'}（数据库 offerbiu.sqlite 与 .encryption-key 需一起备份）。按 Ctrl+C 停止。`);
 });
 for (const signal of ['SIGINT', 'SIGTERM']) process.on(signal, () => server.close(() => process.exit(0)));

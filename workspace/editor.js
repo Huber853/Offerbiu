@@ -60,7 +60,7 @@ export function mountEditor(container, initial, onSaved = () => {}, options = {}
   }
   function status() {
     const label = container.querySelector('#save-state');
-    if (label) { label.textContent = saving ? '正在保存…' : local ? (draftStored ? '本机草稿已保存 · 登录后可换设备同步' : '本机草稿未写入 · 请导出或存入账号') : dirty ? '有未保存的修改' : `已保存 · V${resume.revision}`; label.classList.toggle('unsaved', dirty && !local); }
+    if (label) { label.textContent = saving ? '正在保存…' : local ? (draftStored ? '本机草稿已保存 · 登录后写入这台电脑的账号' : '本机草稿未写入 · 请导出或存入账号') : dirty ? '有未保存的修改' : `已保存 · V${resume.revision}`; label.classList.toggle('unsaved', dirty && !local); }
     const btn = container.querySelector('#save-resume'); if (btn) btn.disabled = saving;
     const undo = container.querySelector('#editor-undo'), redo = container.querySelector('#editor-redo');
     if (undo) undo.disabled = !undoStack.length || saving; if (redo) redo.disabled = !redoStack.length || saving;
