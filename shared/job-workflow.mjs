@@ -98,5 +98,10 @@ export function availabilityForJob(job = {}, time = new Date()) {
     result.method = 'deadline';
     result.evidence_quote = job.deadline;
   }
+  if (job.job_type === 'private' || job.jobType === 'private' || job.source_type === 'private' || job.sourceType === 'private') {
+    result.state = 'unknown';
+    result.reason = deadlineInfo(job.deadline, time).expired ? '私人记录截止时间已过，请本人核实。' : '私人来源未经官方核验，当前招聘状态需要本人核实。';
+    result.needs_recheck = true;
+  }
   return result;
 }

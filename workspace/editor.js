@@ -17,21 +17,45 @@ export function mountEditor(container, initial, onSaved = () => {}, options = {}
   resume.data.design = normalizeDesign(resume.data.design, resume.template);
   resume.data.media = normalizeMedia(resume.data.media);
   const local = !!options.local;
+  const draftKey = options.draftKey, accountDraft = !local && Boolean(draftKey);
   const undoStack = [], redoStack = [];
   const snapshot = () => structuredClone({ title: resume.title, template: resume.template, data: resume.data });
   let lastSnapshot = snapshot(), previewSequence = 0, zoom = 'fit', draftStored = false, storageWarned = false, imageBusy = false;
   let dirty = false;
   let saving = false;
+  let importBusy = false;
   let activeSection = 'basics';
   let generation = 0;
+  let polishRequest = 0;
   let previewFrame = 0;
   let observer;
   let alive = true;
-  function cacheDraft() {
-    if (!local || !options.draftKey) return;
+  let draftTimer = 0, draftRaw = null, recovery = null;
+  if (accountDraft) {
     try {
-      localStorage.setItem(options.draftKey, JSON.stringify({ ...snapshot(), savedAt: Date.now() }));
-      try { sessionStorage.removeItem(options.draftKey); } catch {}
+      draftRaw = localStorage.getItem(draftKey);
+      const draft = JSON.parse(draftRaw);
+      if (draft?.data?.basics && typeof draft.data.basics === 'object' && !Array.isArray(draft.data.basics)
+        && Object.keys(fields).every(key => Array.isArray(draft.data[key]) && draft.data[key].every(item => item && typeof item === 'object'))
+        && templates.some(template => template.id === draft.template) && typeof draft.title === 'string'
+        && Number.isInteger(draft.baseRevision)) recovery = draft;
+    } catch {}
+  }
+  function cacheDraft() {
+    clearTimeout(draftTimer); draftTimer = 0;
+    if (!draftKey || (!local && (!dirty || recovery))) return;
+    try {
+      const current = accountDraft && localStorage.getItem(draftKey);
+      if (current && current !== draftRaw) {
+        draftStored = false;
+        if (!storageWarned) toast('本机草稿已在另一标签页更新，请保存简历或导出 JSON。', true);
+        storageWarned = true;
+        return;
+      }
+      const raw = JSON.stringify({ ...snapshot(), ...(accountDraft ? { baseRevision: resume.revision } : {}), savedAt: Date.now() });
+      localStorage.setItem(draftKey, raw);
+      if (local) { try { sessionStorage.removeItem(draftKey); } catch {} }
+      else draftRaw = raw;
       draftStored = true;
     } catch {
       draftStored = false;
@@ -39,18 +63,39 @@ export function mountEditor(container, initial, onSaved = () => {}, options = {}
       storageWarned = true;
     }
   }
-  const setDirty = () => { undoStack.push(lastSnapshot); const cap = resume.data.media?.portrait?.src || resume.data.media?.gallery?.length ? 12 : 60; while (undoStack.length > cap) undoStack.shift(); redoStack.length = 0; lastSnapshot = snapshot(); generation++; dirty = true; cacheDraft(); status(); };
+  function queueDraft() {
+    if (local) return cacheDraft();
+    if (!accountDraft || recovery) return;
+    draftStored = false;
+    clearTimeout(draftTimer);
+    draftTimer = setTimeout(() => { cacheDraft(); status(); }, 300);
+  }
+  function flushDraft() {
+    if (accountDraft && dirty) cacheDraft();
+  }
+  function removeDraft() {
+    const current = localStorage.getItem(draftKey);
+    if (current && current !== draftRaw) return false;
+    if (current) localStorage.removeItem(draftKey);
+    draftRaw = null;
+    return true;
+  }
+  const setDirty = () => { undoStack.push(lastSnapshot); const cap = resume.data.media?.portrait?.src || resume.data.media?.gallery?.length ? 12 : 60; while (undoStack.length > cap) undoStack.shift(); redoStack.length = 0; lastSnapshot = snapshot(); generation++; dirty = true; queueDraft(); status(); };
   function historyStep(redo = false) {
     const from = redo ? redoStack : undoStack, to = redo ? undoStack : redoStack;
     if (!from.length || saving) return;
-    to.push(snapshot()); Object.assign(resume, from.pop()); lastSnapshot = snapshot(); generation++; dirty = true; cacheDraft(); render();
+    to.push(snapshot()); Object.assign(resume, from.pop()); lastSnapshot = snapshot(); generation++; dirty = true; queueDraft(); render();
   }
   const get = path => path.split('.').reduce((obj, key) => obj?.[key], resume.data);
   const set = (path, value) => { const parts = path.split('.'); let obj = resume.data; for (const part of parts.slice(0, -1)) obj = obj[part]; obj[parts.at(-1)] = value; };
 
   function input(path, label, placeholder = '', multiline = false) {
     const limit = path === 'basics.summary' ? 6000 : ['skills','awards'].includes(path) ? 8000 : 12000;
-    return `<label class="field ${multiline ? 'field-wide' : ''}"><span>${e(label)}</span>${multiline ? `<textarea data-field="${e(path)}" rows="6" maxlength="${limit}" placeholder="${e(placeholder)}">${e(get(path))}</textarea>` : `<input data-field="${e(path)}" maxlength="300" value="${e(get(path))}" placeholder="${e(placeholder)}">`}</label>`;
+    if (!multiline) return `<label class="field"><span>${e(label)}</span><input data-field="${e(path)}" maxlength="300" value="${e(get(path))}" placeholder="${e(placeholder)}"></label>`;
+    return `<div class="field-wide polish-field">
+      <label class="field"><span>${e(label)}</span><textarea data-field="${e(path)}" rows="6" maxlength="${limit}" placeholder="${e(placeholder)}">${e(get(path))}</textarea></label>
+      <button class="text-link" type="button" data-polish-field="${e(path)}">${icon('ai')} 润色此段</button>
+    </div>`;
   }
   function sectionForm() {
     if (activeSection === 'images') return imageForm();
@@ -60,8 +105,18 @@ export function mountEditor(container, initial, onSaved = () => {}, options = {}
   }
   function status() {
     const label = container.querySelector('#save-state');
-    if (label) { label.textContent = saving ? '正在保存…' : local ? (draftStored ? '本机草稿已保存 · 登录后可换设备同步' : '本机草稿未写入 · 请导出或存入账号') : dirty ? '有未保存的修改' : `已保存 · V${resume.revision}`; label.classList.toggle('unsaved', dirty && !local); }
+    const draftStatus = !accountDraft ? '' : recovery ? ' · 有待处理的草稿' : draftStored ? ' · 已写入本机草稿' : draftTimer ? ' · 正在写入本机草稿' : ' · 本机草稿未写入';
+    if (label) {
+      const message = saving ? '正在保存…' : local ? (draftStored ? '本机草稿已保存 · 可存入账号' : '本机草稿未写入 · 请导出或存入账号') : dirty ? '尚未存入账号' + draftStatus : `已保存 · V${resume.revision}`;
+      if (label.textContent !== message) label.textContent = message;
+      label.classList.toggle('unsaved', dirty && !local);
+    }
+    const recoveryNote = container.querySelector('#recovery-note');
+    if (recoveryNote && recovery) recoveryNote.textContent = recovery.baseRevision === resume.revision
+      ? `本机有一份未保存草稿（${time(recovery.savedAt)}）。`
+      : `本机草稿基于 V${recovery.baseRevision}，账号已更新到 V${resume.revision}。`;
     const btn = container.querySelector('#save-resume'); if (btn) btn.disabled = saving;
+    container.querySelectorAll('[data-recovery-action]').forEach(button => { button.disabled = saving; });
     const undo = container.querySelector('#editor-undo'), redo = container.querySelector('#editor-redo');
     if (undo) undo.disabled = !undoStack.length || saving; if (redo) redo.disabled = !redoStack.length || saving;
   }
@@ -112,6 +167,10 @@ export function mountEditor(container, initial, onSaved = () => {}, options = {}
   function renderForm() {
     const form = container.querySelector('#section-form'); form.innerHTML = sectionForm();
     if (activeSection === 'images') wireImages(form);
+    form.onclick = event => {
+      const trigger = event.target.closest('[data-polish-field]');
+      if (trigger) showPolish(trigger).catch(err => toast(err.message, true));
+    };
     form.oninput = event => {
       if (!event.target.dataset.field) return;
       set(event.target.dataset.field, event.target.value); setDirty(); queuePreview();
@@ -156,8 +215,14 @@ export function mountEditor(container, initial, onSaved = () => {}, options = {}
   }
   function acceptSaved(updated, startedGeneration) {
     const unchanged = startedGeneration === generation;
-    if (unchanged) { resume = updated; dirty = false; lastSnapshot = snapshot(); }
-    else { resume.revision = updated.revision; resume.updated_at = updated.updated_at; }
+    if (unchanged) {
+      resume = updated; dirty = false; lastSnapshot = snapshot();
+      clearTimeout(draftTimer); draftTimer = 0; draftStored = false;
+      if (accountDraft && !recovery && draftRaw) { try { removeDraft(); } catch {} }
+    } else {
+      resume.revision = updated.revision; resume.updated_at = updated.updated_at;
+      if (accountDraft) cacheDraft();
+    }
     onSaved(updated);
     return unchanged;
   }
@@ -174,7 +239,12 @@ export function mountEditor(container, initial, onSaved = () => {}, options = {}
       return updated;
     } finally { saving = false; if (alive) status(); }
   }
-  async function saveAction() { try { await save(); toast(local ? '草稿已保存在本机浏览器。换设备前请导出或登录存入账号。' : '简历已保存到数据库。'); } catch (err) { toast(err.message, true); } }
+  async function saveAction() {
+    try {
+      await save();
+      if (alive) toast(local ? '草稿已保存在本机浏览器。换设备前请导出或登录存入账号。' : dirty ? '已保存提交时的版本，后续修改仍在编辑区。' : '简历已保存到数据库。');
+    } catch (err) { if (alive) toast(err.message, true); }
+  }
 
   async function versionHistory() {
     const versions = await api('/resumes/' + resume.id + '/versions');
@@ -197,10 +267,15 @@ export function mountEditor(container, initial, onSaved = () => {}, options = {}
       }));
     });
   }
-  async function showPolish() {
+  async function showPolish(trigger) {
     if (local) { toast('先点击“存入我的简历”，再使用已连接的 AI 服务润色。'); return; }
+    const requestedPath = trigger?.dataset.polishField;
+    if (requestedPath && !String(get(requestedPath) ?? "").trim()) { toast('请先填写这段内容。', true); return; }
+    const requestedGeneration = generation;
+    const request = ++polishRequest;
     const [settings, applications] = await Promise.all([api('/settings/ai'), api('/applications')]);
-    if (!alive) return;
+    if (!alive || request !== polishRequest) return;
+    if (trigger && (!trigger.isConnected || requestedGeneration !== generation)) { toast('段落已变化，请重新选择。', true); return; }
     if (!settings.configured) {
       dialog('先连接 AI 服务', '<p class="modal-description">在设置中填写 API 密钥（DeepSeek 或 OpenAI 兼容接口），保存后点「测试连接」确认可用，再回来润色真实经历。</p><a class="button button-primary" href="#/settings" id="go-settings">前往设置并测试 →</a>', el => el.querySelector('#go-settings').addEventListener('click', () => el.close())); return;
     }
@@ -209,7 +284,7 @@ export function mountEditor(container, initial, onSaved = () => {}, options = {}
     for (const section of ['education', 'experience', 'projects']) resume.data[section].forEach((item, index) => { if (item.details) options.push([`${section}.${index}.details`, `${sectionLabels[section]} · ${item.school || item.company || item.name || index + 1}`]); });
     if (resume.data.skills) options.push(['skills', '专业技能']); if (resume.data.awards) options.push(['awards', '荣誉证书']);
     if (!options.length) { toast('先填写个人简介或一段真实经历，再使用 AI 润色。', true); return; }
-    const preferred = options.find(([path]) => path.startsWith(activeSection))?.[0] || options[0][0];
+    const preferred = requestedPath || options.find(([path]) => path.startsWith(activeSection))?.[0] || options[0][0];
     const uniqueJobs = [...new Map(applications.filter(a => a.job.catalog_active !== false).map(a => [a.job.id, a.job])).values()];
     dialog('AI 润色这一段', `<div id="polish-content"><p class="modal-description">围绕真实经历优化表达。不会自动发送姓名、手机、邮箱，也不会直接覆盖简历。</p><form id="polish-form"><label class="field"><span>选择模块</span><select name="field">${options.map(([value, label]) => `<option value="${e(value)}" ${value === preferred ? 'selected' : ''}>${e(label)}</option>`).join('')}</select></label><label class="field"><span>目标岗位（来自我的投递）</span><select name="jobId"><option value="">不指定岗位</option>${uniqueJobs.map(j => `<option value="${e(j.id)}">${e(j.company)} · ${e(j.title)}</option>`).join('')}</select></label><label class="field"><span>润色方向</span><select name="tone"><option value="professional">表达更专业、清晰</option><option value="concise">精简重复，突出重点</option><option value="star">围绕情境、行动、结果组织</option></select></label><div class="original-preview"><span>即将发送的原文</span><p id="polish-original">${e(get(preferred))}</p></div><label class="consent"><input type="checkbox" name="consent" required><span>同意将这段文字及所选岗位要求发送给所选 AI 服务商。若段落含个人敏感信息，请先删去。调用可能消耗你的 API 余额。</span></label><div class="modal-actions"><span class="muted">${e(settings.model)}</span><button class="button button-primary" type="submit">${icon('ai')} ${dirty ? '先保存，再润色' : '开始润色'}</button></div><p class="form-error" role="alert"></p></form></div>`, el => {
       const form = el.querySelector('form');
@@ -224,14 +299,31 @@ export function mountEditor(container, initial, onSaved = () => {}, options = {}
           if (dirty) throw new Error('保存期间有新修改，请确认原文后重新润色。');
           const report = await api('/ai/polish', { method: 'POST', data: { resumeId: resume.id, revision: resume.revision, field: values.field, jobId: values.jobId || null, tone: values.tone, consent: values.consent === 'on' } });
           if (!alive || !el.open || !form.isConnected) { toast('润色完成，可在 AI 记录中查看。'); return; }
-          el.querySelector('#polish-content').innerHTML = `<div class="polish-comparison"><section><h3>原文 · V${report.resume_revision}</h3><p>${e(report.original)}</p></section><section class="revised-text"><h3>润色建议</h3><p>${e(report.revised)}</p></section></div><div class="ai-reasons"><h3>为什么这样改</h3><ul>${report.changes.map(s => `<li>${e(s)}</li>`).join('')}</ul>${report.questions.length ? `<h3>建议你补充的事实</h3><ul>${report.questions.map(s => `<li>${e(s)}</li>`).join('')}</ul>` : ''}</div>${report.match ? `<div class="ai-reasons"><h3>岗位匹配分析 · ${report.match.score} 分</h3>${report.match.advice ? `<p>${e(report.match.advice)}</p>` : ''}${report.match.matched.length ? `<h3>简历已具备</h3><ul>${report.match.matched.map(s => `<li>${e(s)}</li>`).join('')}</ul>` : ''}${report.match.missing.length ? `<h3>岗位要求但尚未体现</h3><ul>${report.match.missing.map(s => `<li>${e(s)}</li>`).join('')}</ul>` : ''}</div>` : ''}<p class="modal-description">请核对数字、经历与职责。采纳后生成新版本，原版本仍可恢复。</p><div class="modal-actions"><button class="button button-soft" id="copy-revised">复制建议</button><button class="button button-primary" id="apply-revised">采纳到简历 ${icon('check')}</button></div>`;
-          el.querySelector('#copy-revised').addEventListener('click', async () => { try { await navigator.clipboard.writeText(report.revised); toast('已复制。'); } catch { toast('请选中润色文本后手动复制。', true); } });
-          el.querySelector('#apply-revised').addEventListener('click', async event => {
+          const paragraph = values.field === requestedPath && trigger?.isConnected ? trigger.closest('.polish-field') : null;
+          const output = paragraph ? document.createElement('section') : el.querySelector('#polish-content');
+          output.innerHTML = `<div class="polish-comparison"><section><h3>原文 · V${report.resume_revision}</h3><p>${e(report.original)}</p></section><section class="revised-text"><h3>润色建议</h3><p>${e(report.revised)}</p></section></div><div class="ai-reasons"><h3>为什么这样改</h3><ul>${report.changes.map(s => `<li>${e(s)}</li>`).join('')}</ul>${report.questions.length ? `<h3>建议你补充的事实</h3><ul>${report.questions.map(s => `<li>${e(s)}</li>`).join('')}</ul>` : ''}</div>${report.match ? `<div class="ai-reasons"><h3>岗位匹配分析 · ${report.match.score} 分</h3>${report.match.advice ? `<p>${e(report.match.advice)}</p>` : ''}${report.match.matched.length ? `<h3>简历已具备</h3><ul>${report.match.matched.map(s => `<li>${e(s)}</li>`).join('')}</ul>` : ''}${report.match.missing.length ? `<h3>岗位要求但尚未体现</h3><ul>${report.match.missing.map(s => `<li>${e(s)}</li>`).join('')}</ul>` : ''}</div>` : ''}<p class="modal-description">请核对数字、经历与职责。采纳后生成新版本，原版本仍可恢复。</p><div class="modal-actions"><button class="button button-soft" type="button" data-copy-revised>复制建议</button><button class="button button-primary" type="button" data-apply-revised>采纳到简历 ${icon('check')}</button></div>`;
+          if (paragraph) {
+            container.querySelector('.inline-polish')?.remove();
+            output.className = 'inline-polish';
+            output.tabIndex = -1;
+            output.setAttribute('aria-label', '本段润色建议');
+            output.querySelector('.modal-actions').insertAdjacentHTML('afterbegin', '<button class="text-link" type="button" data-dismiss-revised>收起建议</button>');
+            output.querySelector('[data-dismiss-revised]').addEventListener('click', () => { output.remove(); trigger.focus(); });
+            paragraph.append(output);
+            el.close();
+            output.focus();
+          }
+          output.querySelector('[data-copy-revised]').addEventListener('click', async () => { try { await navigator.clipboard.writeText(report.revised); toast('已复制。'); } catch { toast('请选中润色文本后手动复制。', true); } });
+          output.querySelector('[data-apply-revised]').addEventListener('click', async event => {
             const button = event.currentTarget;
+            if (imageBusy || importBusy) { toast('请等图片或简历导入处理完成后再采纳。', true); return; }
+            if (get(values.field) !== report.original) { toast('原段落已修改，请重新润色或复制建议后手动合并。', true); return; }
+            const editorView = paragraph ? paragraph.closest('.editor-page') : null;
+            if (editorView) editorView.inert = true;
             button.disabled = true;
             try {
               await save();
-              if (!alive || !el.open || !button.isConnected) return;
+              if (!alive || !button.isConnected || (!paragraph && !el.open)) return;
               if (dirty) throw new Error('保存期间有新修改，请先保存后再采纳。');
               const startedGeneration = generation;
               saving = true; status();
@@ -240,10 +332,18 @@ export function mountEditor(container, initial, onSaved = () => {}, options = {}
                 if (!alive) return;
                 const unchanged = acceptSaved(updated, startedGeneration);
                 if (unchanged) render();
-                if (button.isConnected) el.close();
+                if (paragraph) {
+                  output.remove();
+                  const field = [...container.querySelectorAll('[data-field]')].find(input => input.dataset.field === values.field);
+                  field?.focus({ preventScroll: true });
+                } else if (button.isConnected) el.close();
                 toast(unchanged ? '已采纳，保存为 V' + updated.revision : '建议已存入账号；编辑区的新修改已保留，请确认后保存。');
               } finally { saving = false; if (alive) status(); }
-            } catch (err) { toast(err.message, true); if (button.isConnected) button.disabled = false; }
+            } catch (err) { toast(err.message, true); }
+            finally {
+              if (editorView) editorView.inert = false;
+              if (button.isConnected) { button.disabled = false; if (editorView) button.focus({ preventScroll: true }); }
+            }
           });
         } catch (err) { if (el.open && form.isConnected) { form.querySelector('.form-error').textContent = err.message; btn.disabled = false; btn.textContent = '重新润色'; } else toast(err.message, true); }
       });
@@ -277,7 +377,29 @@ export function mountEditor(container, initial, onSaved = () => {}, options = {}
     resume.data.media = normalizeMedia(resume.data.media);
     lastSnapshot = snapshot();
     const selected = templates.find(t => t.id === resume.template) || templates[0];
-    container.innerHTML = `<div class="editor-page studio-page"><div class="studio-banner"><span>RESUME STUDIO / 简历工作室</span><p>写下经历，让每一页都更接近下一份机会。</p><a href="#/templates">浏览模板 ↗</a></div>${local ? '<div class="studio-persist-note" role="status">草稿保存在本机浏览器，关标签一般不会丢。清除站点数据或换设备前，请导出 JSON，或点击「存入我的简历」登录保存。</div>' : ''}<div class="editor-heading"><div><a class="back-link" href="#/resumes">← 简历中心</a><div class="editor-title-line"><input class="title-input" id="resume-title" aria-label="简历名称" value="${e(resume.title)}" maxlength="100"><span class="save-state" id="save-state"></span></div></div><div class="editor-actions"><button class="button button-soft button-small" id="starter">快速生成</button>${!local ? '<button class="button button-soft button-small" id="resume-history">版本记录</button>' : ''}<button class="button button-soft button-small" id="resume-ai">${icon('ai')} AI 润色</button><button class="button button-primary button-small" id="save-resume">${local ? '保存草稿' : '保存简历'} ${icon('check')}</button>${local ? '<button class="button button-primary button-small" id="save-account">存入我的简历 ↗</button>' : ''}</div></div><div class="studio-commandbar"><div><button class="button button-soft button-small" id="editor-undo">↶ 撤销</button><button class="button button-soft button-small" id="editor-redo">↷ 重做</button><span>直接点击纸面文字编辑</span></div><div><button class="text-link" id="import-draft">导入 JSON</button><button class="text-link" id="export-json">导出 JSON</button><button class="text-link" id="export-html">导出网页</button><button class="button button-primary button-small" id="print-resume">导出 PDF / 打印</button></div></div><div class="editor-layout"><section class="editor-form-panel"><div class="editor-form-top"><strong>内容与排版</strong><span>左侧填写，也可以直接编辑右侧文字</span></div><div class="editor-section-tabs" role="tablist" aria-label="简历模块">${Object.entries(sectionLabels).map(([key,label]) => `<button role="tab" aria-selected="${key === activeSection}" data-section="${key}">${label}</button>`).join('')}</div><div id="section-form"></div>${layoutPanel()}<div class="editor-help">空白模块不导出。隐藏模块保留内容，重新勾选即可恢复。</div></section><section class="editor-preview-panel"><div class="preview-toolbar"><label><span>模板</span><select id="template-select">${templates.map(t => `<option value="${t.id}" ${resume.template === t.id ? 'selected' : ''}>${e(t.name)}</option>`).join('')}</select></label><label><span>缩放</span><select id="preview-zoom">${[['fit','适应宽度'],['.75','75%'],['1','100%']].map(([v,label]) => `<option value="${v}" ${zoom === v ? 'selected' : ''}>${label}</option>`).join('')}</select></label></div><div class="paper-viewport studio-viewport"><div class="paper-stage"><iframe id="resume-preview" title="可编辑简历 A4 预览" sandbox="allow-same-origin" referrerpolicy="no-referrer"></iframe></div></div><div class="studio-preview-footer"><span id="paper-size">A4 · 正在排版</span><span>${selected.source ? `<a href="${selected.source}" target="_blank" rel="noopener noreferrer">${selected.collection ? 'ResumeCollection · '+selected.number : selected.license+' 开源模板'} · 网页适配 ↗</a>` : 'Offerbiu 原创排版'}</span></div></section></div><input id="studio-import-file" type="file" accept="application/json,.json" hidden></div>`;
+    container.innerHTML = `<div class="editor-page studio-page"><div class="studio-banner"><span>校招手册 / 简历工作室</span><a href="#/templates">浏览模板 ↗</a></div>${local ? '<div class="studio-persist-note" role="status">草稿保存在本机浏览器，关标签一般不会丢。清除站点数据或换设备前，请导出 JSON，或点击「存入我的简历」登录保存。</div>' : ''}<div class="editor-heading"><div><a class="back-link" href="#/resumes">← 简历中心</a><div class="editor-title-line"><input class="title-input" id="resume-title" aria-label="简历名称" value="${e(resume.title)}" maxlength="100"><span class="save-state" id="save-state" role="status"></span></div></div><div class="editor-actions"><button class="button button-soft button-small" id="starter">快速生成</button>${!local ? '<button class="button button-soft button-small" id="resume-history">版本记录</button>' : ''}<button class="button button-soft button-small" id="resume-ai">${icon('ai')} AI 润色</button><button class="button button-primary button-small" id="save-resume">${local ? '保存草稿' : '保存简历'} ${icon('check')}</button>${local ? '<button class="button button-soft button-small" id="save-account">存入我的简历 ↗</button>' : ''}</div></div><div class="studio-commandbar"><div><button class="button button-soft button-small" id="editor-undo">↶ 撤销</button><button class="button button-soft button-small" id="editor-redo">↷ 重做</button><span>直接点击纸面文字编辑</span></div><div><button class="text-link" id="import-draft">导入 JSON</button><button class="text-link" id="export-json">导出 JSON</button><button class="text-link" id="export-html">导出网页</button><button class="button button-soft button-small" id="print-resume">导出 PDF / 打印</button></div></div><div class="editor-layout"><section class="editor-form-panel"><div class="editor-form-top"><strong>内容与排版</strong><span>左侧填写，也可以直接编辑右侧文字</span></div><div class="editor-section-tabs" role="tablist" aria-label="简历模块">${Object.entries(sectionLabels).map(([key,label]) => `<button role="tab" aria-selected="${key === activeSection}" data-section="${key}">${label}</button>`).join('')}</div><div id="section-form"></div>${layoutPanel()}<div class="editor-help">空白模块不导出。隐藏模块保留内容，重新勾选即可恢复。</div></section><section class="editor-preview-panel"><div class="preview-toolbar"><label><span>模板</span><select id="template-select">${templates.map(t => `<option value="${t.id}" ${resume.template === t.id ? 'selected' : ''}>${e(t.name)}</option>`).join('')}</select></label><label><span>缩放</span><select id="preview-zoom">${[['fit','适应宽度'],['.75','75%'],['1','100%']].map(([v,label]) => `<option value="${v}" ${zoom === v ? 'selected' : ''}>${label}</option>`).join('')}</select></label></div><div class="paper-viewport studio-viewport"><div class="paper-stage"><iframe id="resume-preview" title="可编辑简历 A4 预览" sandbox="allow-same-origin" referrerpolicy="no-referrer"></iframe></div></div><div class="studio-preview-footer"><span id="paper-size">A4 · 正在排版</span><span>${selected.source ? `<a href="${selected.source}" target="_blank" rel="noopener noreferrer">${selected.collection ? 'ResumeCollection · '+selected.number : selected.license+' 开源模板'} · 网页适配 ↗</a>` : 'Offerbiu 原创排版'}</span></div></section></div><input id="studio-import-file" type="file" accept="application/json,.json" hidden></div>`;
+    if (recovery) {
+      container.querySelector('.studio-commandbar').insertAdjacentHTML('beforebegin', `<aside class="studio-recovery" aria-label="恢复本机简历草稿"><div><strong id="recovery-note"></strong><p>先恢复或放弃这份草稿，编辑区内容才会自动写入本机。点击「保存简历」才会写入账号。</p></div><div class="button-row"><button class="button button-soft button-small" type="button" data-recovery-action="restore">恢复草稿</button><button class="text-link" type="button" data-recovery-action="discard">放弃草稿</button></div></aside>`);
+      container.querySelector('[data-recovery-action="restore"]').addEventListener('click', () => {
+        if (saving) return;
+        const differentVersion = recovery.baseRevision !== resume.revision;
+        if ((differentVersion || dirty) && !confirm(differentVersion ? '草稿与账号版本不同。确定用草稿替换编辑区内容？保存前请核对。' : '恢复本机草稿会替换编辑区未保存的修改，确定继续？')) return;
+        const { title, template, data } = recovery;
+        recovery = null;
+        Object.assign(resume, { title, template, data });
+        setDirty(); render(); container.querySelector('#resume-title').focus({ preventScroll: true });
+      });
+      container.querySelector('[data-recovery-action="discard"]').addEventListener('click', () => {
+        if (saving || !confirm('确定放弃这份本机草稿？')) return;
+        try {
+          if (!removeDraft()) return toast('本机草稿已在另一标签页更新，请重新打开简历。', true);
+          recovery = null;
+          container.querySelector('.studio-recovery').remove();
+          if (dirty) cacheDraft();
+          status(); container.querySelector('#resume-title').focus({ preventScroll: true });
+        } catch { toast('无法清除本机草稿。', true); }
+      });
+    }
     container.querySelector('#resume-title').addEventListener('input', event => { resume.title = event.target.value; setDirty(); });
     container.querySelector('#template-select').addEventListener('change', event => { resume.template = event.target.value; resume.data.design.accent = ''; setDirty(); render(); });
     container.querySelectorAll('[data-section]').forEach(button => button.addEventListener('click', () => { activeSection = button.dataset.section; syncTabs(); renderForm(); }));
@@ -298,10 +420,12 @@ export function mountEditor(container, initial, onSaved = () => {}, options = {}
     container.querySelector('#print-resume').addEventListener('click', () => { try { if (!resumeText(resume.data)) return toast('先填写简历内容再导出。',true); printResume(resume.data,resume.template,resume.title); } catch(error) { toast(error.message,true); } });
     container.querySelector('#import-draft').addEventListener('click', () => container.querySelector('#studio-import-file').click());
     container.querySelector('#studio-import-file').addEventListener('change', async event => {
-      const file = event.target.files?.[0]; if (!file) return;
+      const file = event.target.files?.[0]; if (!file || importBusy) return;
+      importBusy = true;
       try {
         if (file.size > RESUME_FILE_LIMIT) throw new Error('含图片的简历 JSON 需小于 2 MB。');
         const draft = JSON.parse(await file.text());
+        if (!alive) return;
         if (draft.format !== 'offerbiu-resume-v1' || !draft.data?.basics || !['education','experience','projects'].every(k => Array.isArray(draft.data[k]))) throw new Error('请选择本工作台导出的 JSON 简历。');
         const text = value => typeof value === 'string' ? value : '';
         const data = { basics: Object.fromEntries(['name','headline','email','phone','city','website','summary'].map(k => [k,text(draft.data.basics[k]).slice(0,k==='summary'?6000:300)])), skills:text(draft.data.skills).slice(0,8000),awards:text(draft.data.awards).slice(0,8000) };
@@ -310,11 +434,20 @@ export function mountEditor(container, initial, onSaved = () => {}, options = {}
         if (draft.data.media?.gallery && (!Array.isArray(draft.data.media.gallery) || draft.data.media.gallery.length > GALLERY_LIMIT || draft.data.media.gallery.some(item=>!safeImageData(item?.src)))) throw new Error('导入作品图片无效，最多3张，每张300 KB以内。');
         data.media = normalizeMedia(draft.data.media);
         resume.template = templates.some(t => t.id === draft.template) ? draft.template : 'classic'; data.design = normalizeDesign(draft.data.design,resume.template); resume.title = text(draft.title).slice(0,100)||'导入的简历'; resume.data=data; setDirty(); render(); toast('已导入编辑区，可撤销本次替换。');
-      } catch(error) { toast(error.message,true); }
+      } catch(error) { if (alive) toast(error.message,true); }
+      finally { importBusy = false; }
     });
     renderForm(); updatePreview(); status();
     if ('ResizeObserver' in window) { observer = new ResizeObserver(fitPreview); observer.observe(container.querySelector('.editor-preview-panel')); }
   }
   render();
-  return { get dirty() { return dirty && (!local || !draftStored); }, get id() { return resume.id; }, get route() { return local ? '/studio/' + (initial.template || 'classic') : '/resume/' + resume.id; }, markSaved() { dirty = false; }, destroy() { alive = false; observer?.disconnect(); cancelAnimationFrame(previewFrame); } };
+  if (accountDraft) window.addEventListener('pagehide', flushDraft);
+  return {
+    get dirty() { return dirty && (!local || !draftStored); },
+    get id() { return resume.id; },
+    get editGeneration() { return generation; },
+    get route() { return local ? '/studio/' + (initial.template || 'classic') : '/resume/' + resume.id; },
+    markSaved() { dirty = false; },
+    destroy() { flushDraft(); window.removeEventListener('pagehide', flushDraft); alive = false; observer?.disconnect(); cancelAnimationFrame(previewFrame); },
+  };
 }

@@ -1,7 +1,15 @@
+const reactiveLayouts = 'https://github.com/reactive-resume/reactive-resume/tree/b811db6ff98cab3ac9477944149b4fff86a0807e/packages/pdf/src/templates';
+
 export const templates = [
   { id: 'classic', name: '经典蓝', tag: '通用 / 产品 / 运营', description: '蓝色章节线与清晰信息层级，适合大多数校招岗位。', accent: '#365cf5' },
   { id: 'minimal', name: '极简黑白', tag: '打印 / 职能 / 金融', description: '纯黑白、单栏排版，减少视觉干扰，突出经历本身。', accent: '#182238' },
   { id: 'technical', name: '技术清晰版', tag: '研发 / 算法 / 数据', description: '项目经历前置，以清晰的结构展示技术能力与贡献。', accent: '#157e78' },
+  ...[
+    { id: 'meowth', name: 'Meowth · 证件照单栏', tag: '应届生 / 研发 / 通用', description: '右侧留出证件照位置，章节用细线划分，教育与实习经历紧凑排列。', accent: '#315679', photoShape: 'square', photoPlaceholder: true, sectionOrder: ['education', 'experience', 'projects', 'skills', 'awards', 'summary', 'images'] },
+    { id: 'porygon', name: 'Porygon · 表格式履历', tag: '工程 / 运营 / 行政', description: '基本信息按格呈现，经历按带标题条的独立区块组织，方便逐项阅读。', accent: '#355b50', photoShape: 'square', photoPlaceholder: true, sectionOrder: ['education', 'experience', 'projects', 'skills', 'awards', 'summary', 'images'] },
+    { id: 'chikorita', name: 'Chikorita · 淡玫瑰双栏', tag: '市场 / 人力 / 商务', description: '浅色抬头与可选圆形头像，右栏集中展示技能和荣誉，左栏用于经历。', accent: '#9c5759', layout: 'chikorita', photoShape: 'circle', photoPlaceholder: true },
+    { id: 'smeargle', name: 'Smeargle · 杂志式履历', tag: '设计 / 内容 / 品牌', description: '用大字号衬线姓名和醒目的个人简介开篇，适合展示作品和项目。', accent: '#704b77', sectionOrder: ['summary', 'projects', 'experience', 'education', 'skills', 'awards', 'images'] },
+  ].map(template => ({ ...template, source: reactiveLayouts + '/' + template.id, author: 'Amruth Pillai / Reactive Resume', license: 'MIT', featured: true })),
   { id: 'even', name: 'Even · 留白叙事', tag: '产品 / 数据 / 通用', description: '浅灰抬头、侧边章节标题与宽松留白，中文 A4 适配版。', accent: '#0073aa', source: 'https://github.com/rbardini/jsonresume-theme-even', author: 'Rafael Bardini', license: 'MIT' },
   { id: 'class', name: 'Class · 蓝调名片', tag: '市场 / 运营 / 商务', description: '深蓝姓名区搭配清晰的经历层级，中文 A4 适配版。', accent: '#13509b', source: 'https://github.com/jsonresume/jsonresume-theme-class', author: 'James Spencer / JSON Resume Contributors', license: 'MIT' },
   { id: 'classy', name: 'Classy · 经典刊物', tag: '职能 / 咨询 / 金融', description: '居中姓名、克制的黑白章节与编辑式排版，中文 A4 适配版。', accent: '#333333', source: 'https://github.com/JaredCubilla/jsonresume-theme-classy', author: 'Jared Cubilla', license: 'MIT' },

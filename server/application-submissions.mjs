@@ -2,6 +2,7 @@ import { db, transaction } from './db.mjs';
 import { demand, id, now, sha256 } from './security.mjs';
 import { getEvaluation } from './job-evaluation.mjs';
 import { getMaterial } from './application-materials.mjs';
+import { targetId, resolveJob } from './job-targets.mjs';
 import { canonicalJson, countText, normalizeText, isCalendarDate } from '../shared/job-workflow.mjs';
 
 function keys(value, allowed) {
@@ -19,13 +20,11 @@ function timestamp(value) {
 }
 function ownApplication(userId, applicationId) {
   const row = db.prepare('SELECT * FROM applications WHERE id=? AND user_id=?').get(applicationId, userId);
-  demand(row, 404, '投递记录不存在或无权访问。'); return row;
+  demand(row, 404, '投递记录不存在或无权访问。'); return { ...row, job_id: targetId(row) };
 }
 export function getSubmissionJobPreview(userId, applicationId) {
   const application = ownApplication(userId, applicationId);
-  const row = db.prepare('SELECT id,company,title,payload FROM jobs WHERE id=?').get(application.job_id);
-  demand(row, 404, '应用对应的岗位记录不存在。');
-  const job = { ...JSON.parse(row.payload), id: row.id, company: row.company, title: row.title };
+  const job = resolveJob(userId, application.job_id, { historical: true });
   return { job, jobHash: sha256(canonicalJson(job)) };
 }
 function ownResume(userId, resumeId) {
@@ -51,9 +50,9 @@ function ownRow(userId, submissionId) {
   }
   const snapshot = JSON.parse(row.snapshot_json);
   if (snapshot.sources.evaluationId) {
-    const evaluation = db.prepare('SELECT user_id,job_id FROM job_evaluations WHERE id=?').get(snapshot.sources.evaluationId);
+    const evaluation = db.prepare('SELECT user_id,job_id,private_job_id FROM job_evaluations WHERE id=?').get(snapshot.sources.evaluationId);
     // Deleting an evaluation must not invalidate its independent archive.
-    if (evaluation) demand(evaluation.user_id === userId && evaluation.job_id === application.job_id, 404, '评估不属于该投递岗位。');
+    if (evaluation) demand(evaluation.user_id === userId && targetId(evaluation) === application.job_id, 404, '评估不属于该投递岗位。');
   }
   return row;
 }

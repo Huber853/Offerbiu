@@ -70,6 +70,20 @@ test('generation saves a safe immutable draft without creating a resume or chang
   assert.equal(material.content.form_fields[0].usedLength,Array.from(f.draft.form_fields[0].text).length);
 });
 
+test('unchanged legacy public evaluation hashes stay current and material generation remains usable', async () => {
+  const f=await fixture();
+  const row=db.prepare('SELECT inputs_json FROM job_evaluations WHERE id=?').get(f.evaluationId),inputs=JSON.parse(row.inputs_json);
+  const {availability,rawPayload,jobType,privateRevision,...legacyContent}=inputs.job;
+  const legacyHash=sha256(canonicalJson({...legacyContent,jdSupplement:inputs.jdSupplement||''}));
+  delete inputs.job.jobType;delete inputs.job.privateRevision;
+  db.prepare('UPDATE job_evaluations SET job_hash=?,inputs_json=? WHERE id=?').run(legacyHash,JSON.stringify(inputs),f.evaluationId);
+  const {getEvaluation}=await import('../server/job-evaluation.mjs');
+  assert.equal(getEvaluation(f.user,f.evaluationId).stale,false);
+  const material=await reviewed(f);assert.equal(material.reviewState,'passed');
+  const adopted=materials.createMaterialResume(f.user,material.id,{version:1,sourceResumeRevision:1,selectedPatchIds:['patch-1'],title:'保留旧评估'});
+  assert.ok(adopted.resume.id);
+});
+
 test('generation is idempotent by normalized payload and rejects request-key reuse', async () => {
   required(materials.generateMaterials); const f=await fixture(); const first=await generated(f);
   const again=await generated(f); assert.equal(again.id,first.id); assert.equal(again.replayed,true); assert.equal(requests.length,1);

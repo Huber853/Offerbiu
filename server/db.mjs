@@ -4,6 +4,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { acceptsJob, catalogDate } from './job-policy.mjs';
 import { applyReviewedJob } from './catalog-reviews.mjs';
+import { migratePrivateJobTargets } from './migrations/private-job-targets.mjs';
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const STORAGE = process.env.OFFERBIU_STORAGE ? path.resolve(process.env.OFFERBIU_STORAGE) : path.join(ROOT, 'storage');
@@ -98,6 +99,8 @@ if (workflowSchema < 1) transaction(() => {
   db.exec(fs.readFileSync(new URL('./migrations/001-job-workflow.sql', import.meta.url), 'utf8'));
   db.prepare('INSERT OR REPLACE INTO metadata(key,value) VALUES(?,?)').run('workflow_schema_version', '1');
 });
+
+migratePrivateJobTargets(db);
 
 const sourcePath = process.env.OFFERBIU_JOB_SOURCE ? path.resolve(process.env.OFFERBIU_JOB_SOURCE) : path.join(ROOT, 'data', 'jobs-2027.json');
 if (fs.existsSync(sourcePath)) {

@@ -1,4 +1,5 @@
 import { workflowRoute, exportWorkflow } from './workflow-routes.mjs';
+import { targetId, targetColumns, resolveJob } from './job-targets.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import { db, ROOT, transaction, unpackResume, catalogFacets, refreshCatalog } from './db.mjs';
@@ -82,20 +83,25 @@ function saveResume(current, data, title, template, reason, afterSave) {
   });
   return updated;
 }
-/** Progress log for one saved opportunity. Snapshots are never stored here, only field deltas. */
-function yesNo(value) { return value ? '是' : '否'; }
-/** A change log should only record actual deltas, never repeated identical values. */
-function changed(from, to, value) { return value !== undefined && value !== from ? value : ''; }
 function recordEvent(userId, applicationId, kind, payload = {}) {
-  const detail = Object.fromEntries(Object.entries(payload).filter(([, value]) => value !== undefined && value !== null && value !== '' && value !== false));
+  const detail = Object.fromEntries(Object.entries(payload).filter(([, value]) => value !== undefined));
   if (!Object.keys(detail).length) return;
   db.prepare('INSERT INTO application_events(id,user_id,application_id,kind,payload,created_at) VALUES(?,?,?,?,?,?)')
     .run(id(), userId, applicationId, kind, JSON.stringify(detail), now());
 }
 function applyStatus(current, status, extra = {}) {
-  if (status === current.status) return;
-  db.prepare('UPDATE applications SET status=?,updated_at=? WHERE id=? AND user_id=?').run(status, now(), current.id, current.user_id);
+  if (status === current.status) return current.updated_at;
+  const updatedAt = now();
+  db.prepare('UPDATE applications SET status=?,updated_at=? WHERE id=? AND user_id=?').run(status, updatedAt, current.id, current.user_id);
   recordEvent(current.user_id, current.id, 'status_changed', { from: current.status, to: status, ...extra });
+  return updatedAt;
+}
+function createTask(userId, applicationId, { title, kind, dueAt, notes, batch }) {
+  const taskId = id(), time = now();
+  db.prepare('INSERT INTO tasks(id,user_id,application_id,title,kind,due_at,notes,created_at,updated_at) VALUES(?,?,?,?,?,?,?,?,?)')
+    .run(taskId, userId, applicationId, title, kind, dueAt, notes, time, time);
+  if (applicationId) recordEvent(userId, applicationId, 'task_created', { task_id: taskId, title, task_kind: kind, due_at: dueAt || null, batch });
+  return taskId;
 }
 /** Batch bodies are user supplied, so the shape and the size are both bounded here. */
 function applicationIds(value) {
@@ -119,8 +125,9 @@ function unpackApplication(row) {
   return { ...rest, job: job_payload ? { ...JSON.parse(job_payload), catalog_active: Boolean(job_catalog_active) } : null, has_resume_snapshot: Boolean(resume_snapshot) };
 }
 function applicationRows(userId) {
-  return db.prepare(`SELECT a.*,j.payload AS job_payload,j.catalog_active AS job_catalog_active,r.title AS resume_title FROM applications a JOIN jobs j ON j.id=a.job_id
-    LEFT JOIN resumes r ON r.id=a.resume_id WHERE a.user_id=? ORDER BY a.updated_at DESC`).all(userId).map(unpackApplication);
+  return db.prepare(`SELECT a.*,j.payload AS job_payload,j.catalog_active AS job_catalog_active,r.title AS resume_title FROM applications a LEFT JOIN jobs j ON j.id=a.job_id
+    LEFT JOIN resumes r ON r.id=a.resume_id WHERE a.user_id=? ORDER BY a.updated_at DESC`).all(userId).map(row => ({ ...unpackApplication(row), job_id: targetId(row),
+      ...(row.private_job_id ? { job: resolveJob(userId, row.private_job_id) } : {}) }));
 }
 
 async function api(req, res, url) {
@@ -172,6 +179,8 @@ async function api(req, res, url) {
   if (pathname === '/api/jobs' && method === 'GET') {
     const clauses = ['cohort=?', 'catalog_active=1'];
     const values = [2027];
+    const sort = url.searchParams.get('sort');
+    if (sort === 'verified') clauses.push("julianday(json_extract(payload,'$.link_checked_at')) IS NOT NULL");
     if (url.searchParams.get('company')) { clauses.push('company=?'); values.push(text(url.searchParams.get('company'), 100)); }
     for (const key of ['industry', 'batch', 'base_scope', 'source_type', 'company_nature']) if (url.searchParams.get(key)) {
       clauses.push(`json_extract(payload,'$.${key}')=?`); values.push(text(url.searchParams.get(key), 100));
@@ -197,10 +206,10 @@ async function api(req, res, url) {
     const page = Math.max(1, Math.min(Math.max(1, Math.ceil(total / limit)), Number.parseInt(url.searchParams.get('page') || '1', 10) || 1));
     const orders = {
       recent: "COALESCE(json_extract(payload,'$.updated_at'),json_extract(payload,'$.published_at'),'') DESC,id",
+      verified: "julianday(json_extract(payload,'$.link_checked_at')) DESC,id",
       company: 'company,title,id',
       deadline: "CASE WHEN json_extract(payload,'$.deadline') IS NULL THEN 1 ELSE 0 END,json_extract(payload,'$.deadline'),id",
     };
-    const sort = url.searchParams.get('sort');
     const order = Object.hasOwn(orders, sort) ? orders[sort] : orders.recent;
     const rows = db.prepare(`SELECT payload FROM jobs WHERE ${where} ORDER BY ${order} LIMIT ? OFFSET ?`).all(...values, limit, (page - 1) * limit);
     const saved = session ? new Map(db.prepare('SELECT job_id,id,status FROM applications WHERE user_id=?').all(session.user_id).map(r => [r.job_id, r])) : new Map();
@@ -227,20 +236,22 @@ async function api(req, res, url) {
   if (pathname === '/api/applications' && method === 'GET') return json(res, applicationRows(userId));
   if (pathname === '/api/applications' && method === 'POST') {
     const jobId = text(body.jobId, 160);
-    demand(db.prepare('SELECT id FROM jobs WHERE id=? AND catalog_active=1').get(jobId), 404, '岗位已下架或不符合当前来源规则。');
-    const old = db.prepare('SELECT id FROM applications WHERE user_id=? AND job_id=?').get(userId, jobId);
+    resolveJob(userId, jobId, { active: true });
+    const old = db.prepare('SELECT id FROM applications WHERE user_id=? AND COALESCE(private_job_id,job_id)=?').get(userId, jobId);
     if (old) return json(res, { id: old.id, existing: true });
     const applicationId = id();
     try {
-      db.prepare('INSERT INTO applications(id,user_id,job_id,created_at,updated_at) VALUES(?,?,?,?,?)').run(applicationId, userId, jobId, now(), now());
+      transaction(() => {
+        db.prepare('INSERT INTO applications(id,user_id,job_id,private_job_id,created_at,updated_at) VALUES(?,?,?,?,?,?)').run(applicationId, userId, ...targetColumns(jobId), now(), now());
+        recordEvent(userId, applicationId, 'saved', { status: 'saved' });
+      });
     } catch (error) {
       if (String(error.code).includes('CONSTRAINT')) {
-        const existing = db.prepare('SELECT id FROM applications WHERE user_id=? AND job_id=?').get(userId, jobId);
+        const existing = db.prepare('SELECT id FROM applications WHERE user_id=? AND COALESCE(private_job_id,job_id)=?').get(userId, jobId);
         if (existing) return json(res, { id: existing.id, existing: true });
       }
       throw error;
     }
-    recordEvent(userId, applicationId, 'saved', { status: 'saved' });
     return json(res, { id: applicationId }, 201);
   }
   // Must stay ahead of appMatch: /api/applications/batch would otherwise be read as one id.
@@ -257,19 +268,15 @@ async function api(req, res, url) {
     if (op === 'task') {
       const kind = ['笔试', '面试', '截止', '跟进', '其他'].includes(body.kind) ? body.kind : '跟进';
       const dueAt = taskDueAt(body.dueAt);
-      let created = 0;
+      const notes = text(body.notes, 3000);
       transaction(() => {
         for (const row of rows) {
-          const job = db.prepare('SELECT payload FROM jobs WHERE id=?').get(row.job_id);
-          const title = text(body.title, 200) || (job ? `${JSON.parse(job.payload).company} · 跟进投递` : '跟进投递');
-          const taskId = id();
-          db.prepare('INSERT INTO tasks(id,user_id,application_id,title,kind,due_at,notes,created_at,updated_at) VALUES(?,?,?,?,?,?,?,?,?)')
-            .run(taskId, userId, row.id, title, kind, dueAt, text(body.notes, 3000), now(), now());
-          recordEvent(userId, row.id, 'task_created', { task_id: taskId, title, due_at: dueAt, batch: true });
-          created += 1;
+          const job = resolveJob(userId, targetId(row), { historical: true });
+          const title = text(body.title, 200) || `${job.company || '私人岗位'} · 跟进投递`;
+          createTask(userId, row.id, { title, kind, dueAt, notes, batch: true });
         }
       });
-      return json(res, { ok: true, created }, 201);
+      return json(res, { ok: true, created: rows.length }, 201);
     }
     if (op === 'remove') {
       transaction(() => {
@@ -299,8 +306,8 @@ async function api(req, res, url) {
     if (method === 'PATCH') {
       const status = text(body.status, 30);
       demand(statusIds.has(status), 400, '投递状态不正确。');
-      if (status !== current.status) applyStatus(current, status);
-      return json(res, { ok: true, id: current.id, status });
+      const updatedAt = status === current.status ? current.updated_at : transaction(() => applyStatus(current, status));
+      return json(res, { ok: true, id: current.id, status, updated_at: updatedAt });
     }
     if (method === 'PUT') {
       const status = text(body.status, 30);
@@ -313,13 +320,21 @@ async function api(req, res, url) {
         else { revision = resume.revision; snapshot = JSON.stringify(resume.data); }
       }
       const notes = text(body.notes, 10000), appliedAt = dateValue(body.appliedAt), nextDate = dateValue(body.nextDate);
-      db.prepare('UPDATE applications SET status=?,resume_id=?,resume_revision=?,resume_snapshot=?,notes=?,applied_at=?,next_date=?,updated_at=? WHERE id=? AND user_id=?')
-        .run(status, resumeId, revision, snapshot, notes, appliedAt, nextDate, now(), current.id, userId);
       const statusChanged = status !== current.status;
       const boundChanged = resumeId !== current.resume_id || revision !== current.resume_revision;
-      recordEvent(userId, current.id, 'updated', { status_from: statusChanged ? current.status : '', status_to: statusChanged ? status : '',
-        resume_bound: boundChanged ? yesNo(resumeId) : '', applied_at_set: appliedAt && !sameMinute(appliedAt, current.applied_at),
-        next_date: changed(current.next_date, nextDate, nextDate), notes_changed: notes !== current.notes });
+      const appliedChanged = !sameMinute(appliedAt, current.applied_at), nextChanged = !sameMinute(nextDate, current.next_date);
+      transaction(() => {
+        db.prepare('UPDATE applications SET status=?,resume_id=?,resume_revision=?,resume_snapshot=?,notes=?,applied_at=?,next_date=?,updated_at=? WHERE id=? AND user_id=?')
+          .run(status, resumeId, revision, snapshot, notes, appliedChanged ? appliedAt : current.applied_at,
+            nextChanged ? nextDate : current.next_date, now(), current.id, userId);
+        recordEvent(userId, current.id, 'updated', {
+          status_from: statusChanged ? current.status : undefined, status_to: statusChanged ? status : undefined,
+          resume_bound: boundChanged ? Boolean(resumeId) : undefined,
+          resume_revision: boundChanged && resumeId ? revision : undefined,
+          applied_at: appliedChanged ? appliedAt : undefined, next_date: nextChanged ? nextDate : undefined,
+          notes_changed: notes !== current.notes ? true : undefined,
+        });
+      });
       return json(res, { ok: true });
     }
   }
@@ -328,10 +343,9 @@ async function api(req, res, url) {
     const title = text(body.title, 200);
     demand(title, 400, '请填写待办标题。');
     const applicationId = body.applicationId ? ownApplication(userId, text(body.applicationId, 80)).id : null;
-    const taskId = id();
     const kind = ['笔试', '面试', '截止', '跟进', '其他'].includes(body.kind) ? body.kind : '其他';
-    db.prepare('INSERT INTO tasks(id,user_id,application_id,title,kind,due_at,notes,created_at,updated_at) VALUES(?,?,?,?,?,?,?,?,?)')
-      .run(taskId, userId, applicationId, title, kind, taskDueAt(body.dueAt), text(body.notes, 3000), now(), now());
+    const dueAt = taskDueAt(body.dueAt), notes = text(body.notes, 3000);
+    const taskId = transaction(() => createTask(userId, applicationId, { title, kind, dueAt, notes }));
     return json(res, { id: taskId }, 201);
   }
   const taskMatch = pathname.match(/^\/api\/tasks\/([^/]+)$/);
@@ -439,7 +453,7 @@ async function api(req, res, url) {
     return json(res, saved);
   }
   if (pathname === '/api/export' && method === 'GET') {
-    const data = { exported_at: now(), format: 'offerbiu-user-data-v2', user: publicUser(session),
+    const data = { exported_at: now(), format: 'offerbiu-user-data-v3', user: publicUser(session),
       applications: applicationRows(userId), tasks: db.prepare('SELECT * FROM tasks WHERE user_id=?').all(userId),
       resumes: db.prepare('SELECT * FROM resumes WHERE user_id=?').all(userId).map(unpackResume), ...exportWorkflow(userId) };
     res.setHeader('Content-Disposition', 'attachment; filename="offerbiu-backup.json"');

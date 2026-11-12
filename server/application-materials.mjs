@@ -3,6 +3,7 @@ import { db, transaction } from './db.mjs';
 import { demand, HttpError, id, now, resumeField, sanitizeResume, sha256 } from './security.mjs';
 import { getProfile, profileInput, createProfileRedactor } from './candidate-profile.mjs';
 import { getEvaluation } from './job-evaluation.mjs';
+import { targetId } from './job-targets.mjs';
 import { callJson, getAiTarget } from './ai-client.mjs';
 import { canonicalJson, countText, normalizeText, COUNT_MODES } from '../shared/job-workflow.mjs';
 
@@ -30,7 +31,7 @@ function requestId(value) { demand(typeof value === 'string' && /^[a-f\d]{8}-[a-
 function parsed(value) { return value == null ? null : JSON.parse(value); }
 function ownApplication(userId, applicationId) {
   const row = db.prepare('SELECT * FROM applications WHERE id=? AND user_id=?').get(applicationId, userId);
-  demand(row, 404, '投递记录不存在或无权访问。'); return row;
+  demand(row, 404, '投递记录不存在或无权访问。'); return { ...row, job_id: targetId(row) };
 }
 function ownResume(userId, resumeId) {
   const row = db.prepare('SELECT * FROM resumes WHERE id=? AND user_id=?').get(resumeId, userId);
@@ -43,8 +44,8 @@ function ownRow(userId, materialId) {
   const application = ownApplication(userId, row.application_id);
   for (const resumeId of [row.source_resume_id, row.created_resume_id]) if (resumeId) ownResume(userId, resumeId);
   if (row.evaluation_id) {
-    const evaluation = db.prepare('SELECT user_id,job_id FROM job_evaluations WHERE id=?').get(row.evaluation_id);
-    demand(evaluation?.user_id === userId && evaluation.job_id === application.job_id, 404, '评估不存在或不属于该岗位。');
+    const evaluation = db.prepare('SELECT user_id,job_id,private_job_id FROM job_evaluations WHERE id=?').get(row.evaluation_id);
+    demand(evaluation?.user_id === userId && targetId(evaluation) === application.job_id, 404, '评估不存在或不属于该岗位。');
   }
   return row;
 }

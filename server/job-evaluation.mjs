@@ -3,6 +3,7 @@ import { db, transaction } from './db.mjs';
 import { HttpError, demand, id, now, sha256 } from './security.mjs';
 import { profileInput, createProfileRedactor } from './candidate-profile.mjs';
 import { callJson, getAiTarget } from './ai-client.mjs';
+import { resolveJob, targetId, targetColumns } from './job-targets.mjs';
 import { EVALUATION_RULE_VERSION, EVALUATION_PROMPT_VERSION, availabilityForJob, canonicalJson, countText, deadlineInfo, isCalendarDate, isZonedTimestamp, normalizeText, qualityForJob } from '../shared/job-workflow.mjs';
 
 const SYSTEM = fs.readFileSync(new URL('./prompts/evaluate-job.txt', import.meta.url), 'utf8');
@@ -24,16 +25,15 @@ function cityKey(value) {
 }
 
 function storedJob(userId, jobId) {
-  const row = db.prepare('SELECT * FROM jobs WHERE id=?').get(jobId);
-  demand(row && (row.catalog_active === 1 || db.prepare('SELECT id FROM applications WHERE user_id=? AND job_id=?').get(userId, jobId)), 404, '岗位不存在或不在本人可访问范围。');
-  const job = JSON.parse(row.payload);
+  const job = resolveJob(userId, jobId);
+  if (job.job_type === 'private') { demand(!job.archived_at, 409, '私人岗位已归档，请恢复后再评估。', 'JOB_ARCHIVED'); return job; }
   demand(job.record_type === 'job' && job.cohort === 2027 && ['employer_official', 'nwu_official'].includes(job.source_type) && job.direct_apply_verified === true, 400, '首版仅评估现有官方具体岗位。', 'JOB_SOURCE_UNSUPPORTED');
   return job;
 }
 
 function snapshot(raw, supplement) {
   const job = {
-    id: safeString(raw.id), company: safeString(raw.company), title: safeString(raw.title),
+    id: safeString(raw.id), ...(raw.job_type === 'private' ? { jobType: 'private', privateRevision: raw.revision } : {}), company: safeString(raw.company), title: safeString(raw.title),
     description: safeString(raw.description), requirements: safeString(raw.requirements), degree: safeString(raw.education ?? raw.degree),
     cohort: raw.cohort ?? null, cohortEvidence: safeString(raw.cohort_evidence),
     cities: Array.isArray(raw.cities) ? raw.cities.map(safeString).filter(Boolean) : [], deadline: raw.deadline ?? null,
@@ -45,7 +45,7 @@ function snapshot(raw, supplement) {
   const total = [job.description, job.requirements, job.degree, job.cohortEvidence, supplement].join('\n');
   demand(countText(total) <= 24000, 400, 'JD 全部输入超过24000个码点，请明确整理适用的具体岗位正文。', 'JD_TOO_LARGE');
   const units = [];
-  for (const [field, text, sourceType] of [['description', job.description, 'official_job'], ['requirements', job.requirements, 'official_job'], ['jdSupplement', supplement, 'user_supplement']]) {
+  for (const [field, text, sourceType] of [['description', job.description, raw.job_type === 'private' ? 'private_job' : 'official_job'], ['requirements', job.requirements, raw.job_type === 'private' ? 'private_job' : 'official_job'], ['jdSupplement', supplement, 'user_supplement']]) {
     // Keep compound sentences intact unless the next semicolon clause has an
     // explicit list number. Never invent atomic hard rules by splitting prose.
     for (const part of text.split(/\n+|[；;](?=\s*(?:\d+[.、．)）]|[一二三四五六七八九十]+[、.．]))/u)) {
@@ -79,6 +79,7 @@ function dateInterval(value) {
 }
 
 function trustedConstraint(rule, job) {
+  if (job.jobType === 'private') return false;
   if (!object(rule) || !isZonedTimestamp(rule.reviewed_at) || typeof rule.id !== 'string' || !rule.id.trim()) return false;
   if (!['description', 'requirements', 'education', 'degree', 'cohort_evidence'].includes(rule.source_field)) return false;
   const quote = safeString(rule.source_quote);
@@ -127,7 +128,7 @@ function gatesFor(profile, job, candidates = [], liveAvailability = job.availabi
   const gates = [{ id: 'availability', kind: 'availability', state: liveAvailability.state === 'closed' ? 'fail' : liveAvailability.state === 'available' ? 'pass' : 'needs_review', reason: liveAvailability.reason,
     sourceQuote: liveAvailability.evidence_quote, sourceUrl: liveAvailability.evidence_url }];
   const deadline = deadlineInfo(job.deadline);
-  if (deadline.known) gates.push({ id: 'deadline', kind: 'deadline', state: deadline.expired ? 'fail' : 'pass', reason: deadline.expired ? '已过明确截止日期。' : '尚未到明确截止日期。', sourceQuote: job.deadline, sourceUrl: job.sourceUrl });
+  if (deadline.known) gates.push({ id: 'deadline', kind: 'deadline', state: job.jobType === 'private' ? 'needs_review' : deadline.expired ? 'fail' : 'pass', reason: job.jobType === 'private' ? '私人记录的截止日期与适用性需要本人核实。' : deadline.expired ? '已过明确截止日期。' : '尚未到明确截止日期。', sourceQuote: job.deadline, sourceUrl: job.sourceUrl });
   const rules = job.eligibilityConstraints;
   if (!rules.length) gates.push({ id: 'eligibility', kind: 'eligibility', state: 'needs_review', reason: '尚无经采集审核的结构化资格条件，请人工核对原文。' });
   for (const [index, rule] of rules.entries()) {
@@ -144,7 +145,7 @@ function gatesFor(profile, job, candidates = [], liveAvailability = job.availabi
     const actual = cities.map(cityKey), targets = preferred.map(cityKey);
     const uncertain = !actual.length || !targets.length || actual.includes(null) || targets.includes(null);
     const compatible = actual.some(city => city && targets.includes(city));
-    gates.push({ id: 'city', kind: 'city', state: compatible ? 'pass' : uncertain ? 'needs_review' : 'fail', reason: compatible ? '岗位明确城市符合本人城市硬偏好。' : uncertain ? '岗位地点或本人城市硬偏好尚不能确定比较。' : '岗位明确列出的城市与本人城市硬偏好不相容。', sourceQuote: cities.join(' / '), sourceUrl: job.sourceUrl });
+    gates.push({ id: 'city', kind: 'city', state: job.jobType === 'private' ? 'needs_review' : compatible ? 'pass' : uncertain ? 'needs_review' : 'fail', reason: job.jobType === 'private' ? '私人记录的工作地点需要本人核实，不能直接据此判断城市硬条件。' : compatible ? '岗位明确城市符合本人城市硬偏好。' : uncertain ? '岗位地点或本人城市硬偏好尚不能确定比较。' : '岗位明确列出的城市与本人城市硬偏好不相容。', sourceQuote: cities.join(' / '), sourceUrl: job.sourceUrl });
   }
   for (const [index, candidate] of candidates.entries()) gates.push({ id: `model_candidate_${index + 1}`, kind: 'model_candidate', state: 'needs_review', reason: candidate.reason, sourceQuote: candidate.source_quote, requirementId: candidate.requirement_id || null, sourceUrl: job.sourceUrl });
   return gates;
@@ -219,18 +220,18 @@ function presentEvaluation(userId, row, cached = false) {
     const profile = profileInput(userId, row.profile_revision);
     stale ||= profile.hash !== row.profile_hash;
   } catch { stale = true; }
-  const currentRow = db.prepare('SELECT payload FROM jobs WHERE id=?').get(row.job_id);
-  const currentRaw = currentRow ? JSON.parse(currentRow.payload) : null;
+  let currentRaw = null;
+  try { currentRaw = resolveJob(userId, targetId(row), { historical: true }); } catch { stale = true; }
   let current = null;
   try { current = currentRaw ? snapshot(currentRaw, inputs.jdSupplement || '') : null; } catch { stale = true; }
-  stale ||= !current || current.jobHash !== row.job_hash;
+  stale ||= !current || current.jobHash !== row.job_hash || Boolean(currentRaw?.archived_at);
   const availability = currentRaw ? availabilityForJob(currentRaw) : { state: 'unknown', reason: '岗位当前来源已不存在。', checked_at: null };
   const quality = currentRaw ? qualityForJob(currentRaw).level : 'unknown';
   const effectiveJob = { ...inputs.job, deadline: currentRaw?.deadline ?? inputs.job.deadline, contentQuality: { ...inputs.job.contentQuality, level: quality } };
   const result = calculateResult(relations, inputs.profile, effectiveJob, availability);
   const preferenceMatch = inputs.profile.preferences.preferredCities.some(city => (current?.job.cities || inputs.job.cities).includes(city));
   return {
-    id: row.id, jobId: row.job_id, profileRevision: row.profile_revision, profileHash: row.profile_hash, jobHash: row.job_hash,
+    id: row.id, jobId: targetId(row), jobType: currentRaw?.job_type || 'public', profileRevision: row.profile_revision, profileHash: row.profile_hash, jobHash: row.job_hash,
     ruleVersion: row.rule_version, promptVersion: row.prompt_version, provider: row.provider, model: row.model,
     gateState: result.gateState, totalScore: result.totalScore, coverage: result.coverage, scoreLabel: result.scoreLabel,
     contentQuality: quality, availability: availability.state, availabilityDetails: availability,
@@ -278,8 +279,8 @@ export async function evaluateJob(userId, body, { signal } = {}) {
     const existing = db.prepare('SELECT id FROM job_evaluations WHERE user_id=? AND cache_key=?').get(userId, cacheKey);
     if (existing) { evaluationId = existing.id; return; }
     evaluationId = id();
-    db.prepare(`INSERT INTO job_evaluations(id,user_id,job_id,profile_revision,profile_hash,job_hash,rule_version,prompt_version,provider,model,endpoint_fingerprint,cache_key,gate_state,total_score,coverage,inputs_json,result_json,usage_json,created_at)
-      VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`).run(evaluationId, userId, body.jobId, profile.revision, profile.hash, jobInput.jobHash, EVALUATION_RULE_VERSION, EVALUATION_PROMPT_VERSION,
+    db.prepare(`INSERT INTO job_evaluations(id,user_id,job_id,private_job_id,profile_revision,profile_hash,job_hash,rule_version,prompt_version,provider,model,endpoint_fingerprint,cache_key,gate_state,total_score,coverage,inputs_json,result_json,usage_json,created_at)
+      VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`).run(evaluationId, userId, ...targetColumns(body.jobId), profile.revision, profile.hash, jobInput.jobHash, EVALUATION_RULE_VERSION, EVALUATION_PROMPT_VERSION,
       response.provider, response.model, response.endpointFingerprint, cacheKey, result.gateState, result.totalScore, result.coverage, JSON.stringify(inputs), JSON.stringify(result), JSON.stringify(response.usage ?? null), now());
   });
   return getEvaluation(userId, evaluationId);
@@ -297,7 +298,7 @@ export function listEvaluations(userId, query = {}) {
   const limit = page(read('limit'), 20, 1, 50), offset = page(read('offset'), 0, 0, Number.MAX_SAFE_INTEGER);
   const jobId = read('jobId');
   demand(jobId === undefined || jobId === null || typeof jobId === 'string' && jobId.length > 0 && jobId.length <= 160, 400, '岗位ID格式不正确。');
-  const rows = jobId ? db.prepare('SELECT * FROM job_evaluations WHERE user_id=? AND job_id=? ORDER BY created_at DESC,id').all(userId, jobId)
+  const rows = jobId ? db.prepare('SELECT * FROM job_evaluations WHERE user_id=? AND COALESCE(private_job_id,job_id)=? ORDER BY created_at DESC,id').all(userId, jobId)
     : db.prepare('SELECT * FROM job_evaluations WHERE user_id=? ORDER BY created_at DESC,id').all(userId);
   const rankOrder = { comparable: 0, needs_review: 1, insufficient: 2, ineligible: 3 };
   const items = rows.map(row => presentEvaluation(userId, row)).filter(item => read('includeStale') === '1' || read('includeStale') === 1 || !item.stale);

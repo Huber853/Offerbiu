@@ -3,9 +3,27 @@ import * as profiles from './candidate-profile.mjs';
 import * as evaluations from './job-evaluation.mjs';
 import * as materials from './application-materials.mjs';
 import * as submissions from './application-submissions.mjs';
+import * as privateJobs from './private-jobs.mjs';
+import { resolveJob, targetId } from './job-targets.mjs';
 
 export async function workflowRoute({userId,pathname,method,query,body,signal}) {
   const reply=(data,status=200)=>({data,status});
+  if(pathname==='/api/private-jobs/preview'&&method==='POST') return reply(await privateJobs.previewPrivateJob(userId,body,{signal}));
+  if(pathname==='/api/private-jobs/duplicates'&&method==='POST') return reply({items:privateJobs.duplicateJobs(userId,body,body.id||'')});
+  if(pathname==='/api/private-jobs') {
+    if(method==='GET') return reply(privateJobs.listPrivateJobs(userId,query));
+    if(method==='POST') return reply(privateJobs.savePrivateJob(userId,body),201);
+  }
+  const privateMatch=pathname.match(/^\/api\/private-jobs\/([^/]+)(?:\/(history|archive))?$/);
+  if(privateMatch) {
+    const key=decodeURIComponent(privateMatch[1]);
+    if(privateMatch[2]==='history'&&method==='GET') return reply(privateJobs.privateJobHistory(userId,key));
+    if(privateMatch[2]==='archive'&&method==='POST') return reply(privateJobs.archivePrivateJob(userId,key,body));
+    if(!privateMatch[2]&&method==='GET') return reply(resolveJob(userId,key));
+    if(!privateMatch[2]&&method==='PUT') return reply(privateJobs.savePrivateJob(userId,body,key));
+  }
+  const targetMatch=pathname.match(/^\/api\/job-targets\/([^/]+)$/);
+  if(targetMatch&&method==='GET') return reply(resolveJob(userId,decodeURIComponent(targetMatch[1])));
   if(pathname==='/api/candidate-profile') {
     if(method==='GET') return reply(profiles.getProfile(userId));
     if(method==='PUT') return reply(profiles.saveProfile(userId,body),Number(body.revision)===0?201:200);
@@ -66,7 +84,9 @@ export function exportWorkflow(userId) {
   const profile=db.prepare('SELECT * FROM candidate_profiles WHERE user_id=?').get(userId);
   const owned=table=>db.prepare('SELECT * FROM '+table+' WHERE user_id=?').all(userId).map(unpackJson);
   return {candidate_profile:profile?unpackJson(profile):null,
-    job_evaluations:owned('job_evaluations'),
+    job_evaluations:owned('job_evaluations').map(row=>({...row,job_id:targetId(row)})),
+    private_jobs:db.prepare('SELECT * FROM private_jobs WHERE user_id=?').all(userId).map(row=>({...row,payload:JSON.parse(row.payload)})),
+    private_job_revisions:db.prepare('SELECT * FROM private_job_revisions WHERE user_id=?').all(userId).map(row=>({...row,payload:JSON.parse(row.payload)})),
     materials:owned('application_materials'),
     submissions:owned('application_submissions')};
 }

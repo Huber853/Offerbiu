@@ -46,7 +46,7 @@ export function companyLogo(name) {
 }
 export function emptyState(title, description, action = '') { return `<div class="empty-state"><span class="empty-icon">${icon('resumes')}</span><h3>${escape(title)}</h3><p>${escape(description)}</p>${action}</div>`; }
 export function toast(message, error = false) {
-  const region = document.getElementById('toast-region'); const el = document.createElement('div'); el.className = 'toast' + (error ? ' toast-error' : ''); el.textContent = message; region.append(el); window.dispatchEvent(new CustomEvent('offerbiu:feedback', { detail: { message, error } })); setTimeout(() => el.remove(), 4600);
+  const region = document.getElementById('toast-region'); const el = document.createElement('div'); el.className = 'toast' + (error ? ' toast-error' : ''); el.textContent = message; region.append(el); setTimeout(() => el.remove(), 4600);
 }
 export function loading() { return '<div class="loading-view"><span class="loader"></span><p>正在加载…</p></div>'; }
 export function downloadJson(data, name) { const url = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], { type: 'application/json;charset=utf-8' })); const a = document.createElement('a'); a.href = url; a.download = name; a.click(); setTimeout(() => URL.revokeObjectURL(url), 1000); }

@@ -49,10 +49,10 @@ test('manual submissions are idempotent archives independent of later source cha
   assert.equal(db.prepare('SELECT status FROM applications WHERE id=?').get('app-http-a').status,'applied');
   assert.equal((await request('/applications/app-http-b/submissions','POST',{...body,requestId:'00000000-0000-4000-8000-000000000055'})).status,404);
 });
-test('version two personal export includes workflow records but excludes credentials',async()=>{
+test('version three personal export includes workflow records but excludes credentials',async()=>{
   const out=await request('/export');
   assert.equal(out.status,200);
-  assert.equal(out.body.format,'offerbiu-user-data-v2');
+  assert.equal(out.body.format,'offerbiu-user-data-v3');
   const serialized=JSON.stringify(out.body);
   assert.ok(!serialized.includes(process.env.DEEPSEEK_API_KEY));
   assert.ok(!serialized.includes('key_encrypted'));

@@ -47,6 +47,7 @@
    Copyright (c) 2019-present Francesco Esposito (Stack Overflow)
    Copyright (c) 2014 M. Adam Kendall (Kendall)
    Copyright (c) 2019 Alessandro Biondi (Macchiato)
+   Copyright (c) 2026 Amruth Pillai (Reactive Resume)
 
    Permission is hereby granted, free of charge, to any person obtaining a copy
    of this software and associated documentation files (the "Software"), to deal
@@ -107,3 +108,266 @@
 .resume-template-macchiato .resume-sidebar .resume-body-copy{font-size:.93em}.resume-template-macchiato .resume-entry{margin-bottom:18px}.resume-template-macchiato .resume-entry-sub{color:#6d7777}
 @media print{.resume-template-billryan,.resume-template-stackoverflow,.resume-template-kendall,.resume-template-macchiato{padding:0}.resume-template-kendall,.resume-template-macchiato{padding-top:6mm}.resume-template-stackoverflow .resume-entry:before{print-color-adjust:exact}.resume-template-macchiato .resume-section-title:after{print-color-adjust:exact}}
 @media print{.resume-template-kendall .resume-section-content,.resume-template-macchiato .resume-section-content{display:contents}.resume-template-kendall .resume-section-title,.resume-template-macchiato .resume-section-title{break-inside:avoid;page-break-inside:avoid}}
+
+/* Meowth, Porygon, Chikorita and Smeargle are Chinese A4 adaptations of Reactive Resume.
+   https://github.com/AmruthPillai/Reactive-Resume/tree/b811db6ff98cab3ac9477944149b4fff86a0807e
+   Copyright (c) 2026 Amruth Pillai. See the MIT notice above. */
+.resume-template-meowth {
+  color: #263448;
+  padding: 15mm 17mm;
+}
+.resume-template-meowth .resume-header {
+  border-bottom: 2px solid var(--resume-accent);
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+}
+.resume-template-meowth .resume-name {
+  font-size: 2.55em;
+  line-height: 1.2;
+  letter-spacing: .02em;
+  color: #182738;
+}
+.resume-template-meowth .resume-portrait {
+  width: 23mm;
+  height: 28mm;
+  border-color: color-mix(in srgb, var(--resume-accent) 32%, white);
+}
+.resume-template-meowth .portrait-circle {
+  height: 23mm;
+}
+.resume-template-meowth .resume-section {
+  margin-top: calc(var(--resume-gap, 18px) * .85);
+}
+.resume-template-meowth .resume-section-title {
+  display: block;
+  color: #233449;
+  border-bottom: 1px solid color-mix(in srgb, var(--resume-accent) 33%, white);
+  padding-bottom: 4px;
+  margin-bottom: 8px;
+}
+.resume-template-meowth .resume-section-title::after {
+  display: none;
+}
+.resume-template-meowth .resume-entry {
+  margin-bottom: 10px;
+}
+
+.resume-template-porygon {
+  --porygon-rule: color-mix(in srgb, var(--resume-accent) 42%, #ccd4d1);
+  --porygon-bar: color-mix(in srgb, var(--resume-accent) 38%, #0d1d17);
+  padding: 14mm 16mm;
+  color: #273832;
+}
+.resume-template-porygon .resume-header {
+  gap: 0;
+  border: 1px solid var(--porygon-rule);
+  background: #f7f9f8;
+  padding: 0;
+  margin-bottom: 14px;
+}
+.resume-template-porygon .resume-header.has-portrait > div:first-child {
+  align-self: stretch;
+  border-right: 1px solid var(--porygon-rule);
+}
+.resume-template-porygon .resume-identity {
+  padding: 3mm 4mm;
+}
+.resume-template-porygon .resume-name {
+  font-size: 2.35em;
+  line-height: 1.25;
+  letter-spacing: .01em;
+}
+.resume-template-porygon .resume-headline {
+  margin-bottom: 0;
+  color: var(--porygon-bar);
+}
+.resume-template-porygon .resume-contact {
+  gap: 1px;
+  border-top: 1px solid var(--porygon-rule);
+  background: var(--porygon-rule);
+  color: #475952;
+}
+.resume-template-porygon .resume-contact:empty {
+  display: none;
+}
+.resume-template-porygon .resume-contact > span {
+  flex: 1 1 37mm;
+  min-width: 0;
+  padding: 4px 4mm;
+  background: white;
+}
+.resume-template-porygon .resume-portrait {
+  width: 23mm;
+  height: 28mm;
+  margin: 3mm;
+  border-color: var(--porygon-rule);
+}
+.resume-template-porygon .portrait-circle {
+  height: 23mm;
+}
+.resume-template-porygon .resume-section {
+  border: 1px solid var(--porygon-rule);
+}
+.resume-template-porygon .resume-section-title {
+  display: block;
+  margin: 0;
+  padding: 4px 4mm;
+  background: var(--porygon-bar);
+  color: white;
+}
+.resume-template-porygon .resume-section-title::after {
+  display: none;
+}
+.resume-template-porygon .resume-section-content {
+  padding: 7px 4mm;
+}
+.resume-template-porygon .resume-section-content > .resume-body-copy {
+  margin-top: 0;
+}
+.resume-template-porygon .resume-entry {
+  margin: 0;
+}
+.resume-template-porygon .resume-entry + .resume-entry {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--porygon-rule);
+}
+
+.resume-template-chikorita {
+  --chikorita-tint: color-mix(in srgb, var(--resume-accent) 9%, #fff9f3);
+  --chikorita-rule: color-mix(in srgb, var(--resume-accent) 25%, #f2e5dd);
+  padding: 14mm 16mm;
+  color: #3d3332;
+}
+.resume-template-chikorita .resume-header {
+  background: var(--chikorita-tint);
+  border: 0;
+  border-bottom: 1px solid var(--chikorita-rule);
+  padding: 5mm;
+  margin-bottom: 0;
+}
+.resume-template-chikorita .resume-header.has-portrait {
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 5mm;
+}
+.resume-template-chikorita .resume-portrait {
+  width: 25mm;
+  height: 30mm;
+  border: 2px solid white;
+}
+.resume-template-chikorita .portrait-circle {
+  height: 25mm;
+}
+.resume-template-chikorita .resume-name {
+  color: #3d3332;
+  font-size: 2.45em;
+  line-height: 1.25;
+  letter-spacing: .02em;
+}
+.resume-template-chikorita .resume-contact {
+  color: #655653;
+}
+.resume-template-chikorita .resume-columns.has-sidebar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 30%);
+  gap: 6mm;
+  align-items: start;
+}
+.resume-template-chikorita .resume-sidebar {
+  margin-top: var(--resume-gap, 18px);
+  padding: 4mm;
+  background: var(--chikorita-tint);
+  border-left: 1px solid var(--chikorita-rule);
+}
+.resume-template-chikorita .resume-sidebar .resume-section:first-child {
+  margin-top: 0;
+}
+.resume-template-chikorita .resume-sidebar .resume-body-copy {
+  font-size: .95em;
+}
+.resume-template-chikorita .resume-section-title::after {
+  background: var(--chikorita-rule);
+}
+.resume-template-chikorita .resume-entry-heading {
+  flex-wrap: wrap;
+  gap: 2px 10px;
+}
+.resume-template-chikorita .resume-entry-heading time {
+  max-width: 100%;
+}
+
+.resume-template-smeargle {
+  --smeargle-serif: Georgia, "Songti SC", SimSun, serif;
+  --smeargle-rule: color-mix(in srgb, var(--resume-accent) 38%, #ccc6c9);
+  padding: 17mm 19mm;
+  color: #302932;
+}
+.resume-template-smeargle .resume-header {
+  border-bottom: 1px solid var(--smeargle-rule);
+  margin-bottom: 16px;
+  padding-bottom: 4mm;
+}
+.resume-template-smeargle .resume-identity {
+  display: flex;
+  flex-direction: column;
+}
+.resume-template-smeargle .resume-name {
+  font-family: var(--smeargle-serif);
+  font-size: 3.1em;
+  font-weight: 700;
+  line-height: 1.16;
+  letter-spacing: .01em;
+}
+.resume-template-smeargle .resume-headline {
+  order: -1;
+  font-size: .8em;
+  font-weight: 700;
+  letter-spacing: .14em;
+  margin: 0 0 5px;
+  text-transform: uppercase;
+}
+.resume-template-smeargle .resume-contact:not(:empty) {
+  margin-top: 8px;
+}
+.resume-template-smeargle .resume-portrait {
+  width: 23mm;
+  height: 29mm;
+  border-color: var(--smeargle-rule);
+}
+.resume-template-smeargle .portrait-circle {
+  height: 23mm;
+}
+.resume-template-smeargle .resume-section-title {
+  font-size: .95em;
+  letter-spacing: .12em;
+}
+.resume-template-smeargle .resume-section-title::after {
+  flex: 0 0 14mm;
+  background: var(--smeargle-rule);
+}
+.resume-template-smeargle [data-resume-section="summary"] .resume-body-copy {
+  font-family: var(--smeargle-serif);
+  font-size: 1.35em;
+  padding-left: 4mm;
+  border-left: 1px solid var(--smeargle-rule);
+  margin: 0;
+}
+
+@media print {
+  .resume-template-meowth,
+  .resume-template-porygon,
+  .resume-template-chikorita,
+  .resume-template-smeargle {
+    padding: 0;
+  }
+  .resume-template-porygon .resume-entry {
+    break-inside: auto;
+  }
+  .resume-template-porygon .resume-entry-heading,
+  .resume-template-porygon .resume-entry-sub {
+    break-after: avoid;
+  }
+  .resume-template-chikorita .resume-section-content {
+    display: contents;
+  }
+}

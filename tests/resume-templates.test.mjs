@@ -4,11 +4,11 @@ import { readFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { templates, normalizeDesign, sampleResume, blankResume } from '../shared/templates.mjs';
 
-const additions = ['billryan', 'stackoverflow', 'kendall', 'macchiato'];
+const additions = ['billryan', 'stackoverflow', 'kendall', 'macchiato', 'meowth', 'porygon', 'chikorita', 'smeargle'];
 
-test('four new templates are selectable and retain traceable MIT source snapshots', async () => {
-  assert.equal(templates.length, 15);
-  assert.equal(new Set(templates.map(item => item.id)).size, 15);
+test('featured templates are selectable and retain traceable MIT source snapshots', async () => {
+  assert.equal(templates.length, 19);
+  assert.equal(new Set(templates.map(item => item.id)).size, 19);
   const manifest = JSON.parse(await readFile(new URL('../assets/resume-templates/sources.json', import.meta.url), 'utf8'));
   for (const id of additions) {
     const item = templates.find(item => item.id === id);

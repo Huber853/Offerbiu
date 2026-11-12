@@ -195,7 +195,63 @@
           "sha256": "6b155238eb2eb1a6ae999d24593383d361fe868b1d5adc0bfa5a137eaef8e96b"
         }
       ]
+    },
+    {
+      "id": "meowth",
+      "source": "https://github.com/reactive-resume/reactive-resume/tree/b811db6ff98cab3ac9477944149b4fff86a0807e/packages/pdf/src/templates/meowth",
+      "license": "MIT",
+      "retrieved_date": "2026-11-08",
+      "source_tree_sha": "b811db6ff98cab3ac9477944149b4fff86a0807e",
+      "adaptation": "证件照置右、中文单栏与章节细线；使用本站字段及本机字体。",
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "d7839f5fa862720b1501a54bcc0d6a2566b59cee221738640bf1508630f73cc1"
+        }
+      ]
+    },
+    {
+      "id": "porygon",
+      "source": "https://github.com/reactive-resume/reactive-resume/tree/b811db6ff98cab3ac9477944149b4fff86a0807e/packages/pdf/src/templates/porygon",
+      "license": "MIT",
+      "retrieved_date": "2026-11-08",
+      "source_tree_sha": "b811db6ff98cab3ac9477944149b4fff86a0807e",
+      "adaptation": "保留表格式抬头、分格联系方式与章节标题条；使用可跨页的 HTML 文本块。",
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "d7839f5fa862720b1501a54bcc0d6a2566b59cee221738640bf1508630f73cc1"
+        }
+      ]
+    },
+    {
+      "id": "chikorita",
+      "source": "https://github.com/reactive-resume/reactive-resume/tree/b811db6ff98cab3ac9477944149b4fff86a0807e/packages/pdf/src/templates/chikorita",
+      "license": "MIT",
+      "retrieved_date": "2026-11-08",
+      "source_tree_sha": "b811db6ff98cab3ac9477944149b4fff86a0807e",
+      "adaptation": "保留浅色抬头、可选左侧圆形头像与右栏；右栏用于技能及荣誉。",
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "d7839f5fa862720b1501a54bcc0d6a2566b59cee221738640bf1508630f73cc1"
+        }
+      ]
+    },
+    {
+      "id": "smeargle",
+      "source": "https://github.com/reactive-resume/reactive-resume/tree/b811db6ff98cab3ac9477944149b4fff86a0807e/packages/pdf/src/templates/smeargle",
+      "license": "MIT",
+      "retrieved_date": "2026-11-08",
+      "source_tree_sha": "b811db6ff98cab3ac9477944149b4fff86a0807e",
+      "adaptation": "保留刊物式大姓名、短引言与单栏结构；简介和作品由本人编辑。",
+      "files": [
+        {
+          "file": "LICENSE",
+          "sha256": "d7839f5fa862720b1501a54bcc0d6a2566b59cee221738640bf1508630f73cc1"
+        }
+      ]
     }
   ],
-  "updated_date": "2026-10-23"
+  "updated_date": "2026-11-08"
 }
