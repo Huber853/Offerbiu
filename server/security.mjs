@@ -46,6 +46,15 @@ export function clearSession(session, res) {
   if (session) db.prepare('DELETE FROM sessions WHERE token_hash=?').run(session.token_hash);
   res.setHeader('Set-Cookie', `offerbiu_session=; HttpOnly; SameSite=Strict; Path=/; Max-Age=0${process.env.COOKIE_SECURE === 'true' ? '; Secure' : ''}`);
 }
+export function replaceUserSessions(userId, res) {
+  db.prepare('DELETE FROM sessions WHERE user_id=?').run(userId);
+  return createSession(userId, res);
+}
+export function limitedText(value, max, label) {
+  const result = typeof value === 'string' ? value.trim() : '';
+  if (result.length > max) throw new HttpError(400, `${label}超过 ${max} 个字符，未保存。请缩短后再提交。`);
+  return result;
+}
 
 const keyFile = path.join(STORAGE, '.encryption-key');
 if (!fs.existsSync(keyFile)) fs.writeFileSync(keyFile, crypto.randomBytes(32), { flag: 'wx', mode: 0o600 });
@@ -77,22 +86,25 @@ setInterval(() => { const time = Date.now(); for (const [key, val] of rates) if 
 export function sanitizeResume(value) {
   demand(value && typeof value === 'object' && !Array.isArray(value), 400, '简历内容格式不正确。');
   const basics = {};
-  for (const key of ['name', 'headline', 'email', 'phone', 'city', 'website', 'summary']) basics[key] = text(value.basics?.[key], key === 'summary' ? 6000 : 300);
-  const result = { basics, skills: text(value.skills, 8000), awards: text(value.awards, 8000) };
+  for (const key of ['name', 'headline', 'email', 'phone', 'city', 'website', 'summary']) basics[key] = limitedText(value.basics?.[key], key === 'summary' ? 6000 : 300, key === 'summary' ? '个人简介' : '基本信息');
+  const result = { basics, skills: limitedText(value.skills, 8000, '专业技能'), awards: limitedText(value.awards, 8000, '荣誉证书') };
   if (value.design) result.design = normalizeDesign(value.design);
   if (value.media) {
     demand(typeof value.media === 'object' && !Array.isArray(value.media), 400, '图片内容格式不正确。');
     const media=value.media;
     demand(!media.portrait?.src || safeImageData(media.portrait.src,PORTRAIT_BYTES),400,'头像须为有效 JPG、PNG 或 WebP，压缩后不超过180 KB。');
     demand(!media.gallery || (Array.isArray(media.gallery) && media.gallery.length <= GALLERY_LIMIT),400,'最多添加3张作品图片。');
-    for (const item of media.gallery || []) demand(safeImageData(item?.src),400,'作品图格式无效或超过300 KB。');
+    for (const item of media.gallery || []) {
+      demand(safeImageData(item?.src),400,'作品图格式无效或超过300 KB。');
+      limitedText(item?.caption, 300, '图片说明');
+    }
     result.media=normalizeMedia(media);
   }
   for (const section of ['education', 'experience', 'projects']) {
     demand(!value[section] || Array.isArray(value[section]), 400, '简历经历必须是列表。');
     result[section] = (value[section] || []).slice(0, 20).map(item => {
       const keys = section === 'education' ? ['school', 'degree', 'major', 'start', 'end', 'details'] : section === 'experience' ? ['company', 'role', 'start', 'end', 'details'] : ['name', 'role', 'start', 'end', 'details'];
-      return Object.fromEntries(keys.map(key => [key, text(item?.[key], key === 'details' ? 12000 : 300)]));
+      return Object.fromEntries(keys.map(key => [key, limitedText(item?.[key], key === 'details' ? 12000 : 300, key === 'details' ? '经历详情' : '经历条目')]));
     });
   }
   const { media, ...writing } = result;

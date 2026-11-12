@@ -71,6 +71,26 @@ export function deadlineInfo(value, time = new Date()) {
   return { known: false, expired: false, urgent: false, value: null };
 }
 
+const provinces = new Set(['河北','山西','辽宁','吉林','黑龙江','江苏','浙江','安徽','福建','江西','山东','河南','湖北','湖南','广东','海南','四川','贵州','云南','陕西','甘肃','青海','台湾','内蒙古','广西','西藏','宁夏','新疆']);
+
+/** Compare city labels such as 北京, 北京市 and 广东省·深圳 as the same city. Provinces and districts stay unresolved. */
+export function cityKey(value) {
+  let city = normalizeText(value).trim();
+  if (!city || /全国|待分配|未公布|待定|不限|各地|另行|海外|远程|中国|国内|总部|一线|多地/u.test(city)) return null;
+  city = city.replace(/^.*?(?:省|自治区|特别行政区)[·\s-]*/u, '');
+  city = city.split(/[·/|｜>、，,\s]+/u).find(part => part && !provinces.has(part)) || '';
+  if (!city || provinces.has(city) || /省|自治区|地区|自治州|盟|县|镇|旗/u.test(city)) return null;
+  if (city.includes('市')) return city.slice(0, city.indexOf('市')) || null;
+  return /区/u.test(city) ? null : city;
+}
+
+export function sameCity(preferred, actual) {
+  const left = cityKey(preferred);
+  const right = cityKey(actual);
+  if (left && right) return left === right;
+  return normalizeText(preferred).trim() !== '' && normalizeText(preferred).trim() === normalizeText(actual).trim();
+}
+
 export function availabilityForJob(job = {}, time = new Date()) {
   const raw = job.availability && typeof job.availability === 'object' ? job.availability : {};
   const timestamp = value => isZonedTimestamp(value) ? new Date(value).toISOString() : null;

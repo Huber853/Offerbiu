@@ -436,6 +436,38 @@ test('profile deletion makes historical evaluations stale but leaves independent
   assert.ok(db.prepare('SELECT id FROM jobs WHERE id=?').get(job.id));
 });
 
+test('city preference ranking uses the same normalized city as the hard gate', async t => {
+  const userId = newUser();
+  const body = manualBody();
+  body.preferences = { ...body.preferences, cityConstraint: 'required', preferredCities: ['北京'] };
+  const profile = profiles.saveProfile(userId, body);
+  mockModel(t);
+  const job = jobFixture({ cities: ['北京市'] });
+  const result = await evaluations.evaluateJob(userId, { jobId: job.id, profileRevision: profile.revision, consent: true });
+  assert.equal(result.result.gates.find(gate => gate.kind === 'city').state, 'pass');
+  assert.equal(result.preferenceMatch, true);
+  const district = jobFixture({ cities: ['蕉城区'] });
+  const unresolved = await evaluations.evaluateJob(userId, { jobId: district.id, profileRevision: profile.revision, consent: true });
+  assert.equal(unresolved.result.gates.find(gate => gate.kind === 'city').state, 'needs_review');
+  assert.equal(unresolved.preferenceMatch, false);
+});
+
+test('latest evaluation summaries return one row per job within the server limit', async t => {
+  const userId = newUser();
+  profiles.saveProfile(userId, manualBody());
+  const first = jobFixture();
+  const second = jobFixture();
+  mockModel(t);
+  await evaluations.evaluateJob(userId, { jobId: first.id, profileRevision: 1, consent: true });
+  const newer = await evaluations.evaluateJob(userId, { jobId: first.id, profileRevision: 1, jdSupplement: '另一份补充', consent: true });
+  await evaluations.evaluateJob(userId, { jobId: second.id, profileRevision: 1, consent: true });
+  const summary = evaluations.latestEvaluationSummaries(userId, [first.id, second.id]);
+  assert.equal(summary.items.length, 2);
+  assert.equal(summary.items.find(item => item.jobId === first.id).id, newer.id);
+  assert.equal('inputs' in summary.items[0], false);
+  assert.throws(() => evaluations.latestEvaluationSummaries(userId, Array.from({ length: 16 }, (_, index) => 'job-' + index)), error => error.status === 400);
+});
+
 test('recent evaluation ordering retrieves the newest result rather than the best history', async t => {
   const userId = newUser(); profiles.saveProfile(userId, manualBody()); const job = jobFixture(); let lowered = false;
   mockModel(t, data => { if (lowered) for (const unit of data.units.filter(unit => unit.group !== 'other')) { unit.relation = 'not_shown'; unit.fact_ids = []; unit.evidence_quotes = []; } return data; });

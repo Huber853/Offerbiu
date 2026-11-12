@@ -4,7 +4,7 @@ import { HttpError, demand, id, now, sha256 } from './security.mjs';
 import { profileInput, createProfileRedactor } from './candidate-profile.mjs';
 import { callJson, getAiTarget } from './ai-client.mjs';
 import { resolveJob, targetId, targetColumns } from './job-targets.mjs';
-import { EVALUATION_RULE_VERSION, EVALUATION_PROMPT_VERSION, availabilityForJob, canonicalJson, countText, deadlineInfo, isCalendarDate, isZonedTimestamp, normalizeText, qualityForJob } from '../shared/job-workflow.mjs';
+import { EVALUATION_RULE_VERSION, EVALUATION_PROMPT_VERSION, availabilityForJob, canonicalJson, cityKey, countText, deadlineInfo, isCalendarDate, isZonedTimestamp, normalizeText, qualityForJob, sameCity } from '../shared/job-workflow.mjs';
 
 const SYSTEM = fs.readFileSync(new URL('./prompts/evaluate-job.txt', import.meta.url), 'utf8');
 const object = value => value !== null && typeof value === 'object' && !Array.isArray(value);
@@ -13,16 +13,6 @@ const safeString = value => typeof value === 'string' ? normalizeText(value) : '
 const degreeRanks = new Map([['小学', 1], ['初中', 2], ['高中', 3], ['中专', 3], ['大专', 4], ['专科', 4], ['本科', 5], ['学士', 5], ['硕士', 6], ['硕士研究生', 6], ['博士', 7], ['博士研究生', 7]]);
 const rank = value => degreeRanks.get(safeString(value).replace(/(?:及以上|以上|学历|学位|全日制)/g, '').trim());
 const round = value => Math.round(value * 10) / 10;
-const provinces = new Set(['河北','山西','辽宁','吉林','黑龙江','江苏','浙江','安徽','福建','江西','山东','河南','湖北','湖南','广东','海南','四川','贵州','云南','陕西','甘肃','青海','台湾','内蒙古','广西','西藏','宁夏','新疆']);
-function cityKey(value) {
-  let city = safeString(value).trim();
-  if (!city || /全国|待分配|未公布|待定|不限|各地|另行|海外|远程|中国|国内|总部|一线|多地/u.test(city)) return null;
-  city = city.replace(/^.*?(?:省|自治区|特别行政区)[·\s-]*/u, '');
-  city = city.split(/[·/|｜>、，,\s]+/u).find(part => part && !provinces.has(part)) || '';
-  if (!city || provinces.has(city) || /省|自治区|地区|自治州|盟|县|镇|旗/u.test(city)) return null;
-  if (city.includes('市')) return city.slice(0, city.indexOf('市')) || null;
-  return /区/u.test(city) ? null : city;
-}
 
 function storedJob(userId, jobId) {
   const job = resolveJob(userId, jobId);
@@ -142,7 +132,7 @@ function gatesFor(profile, job, candidates = [], liveAvailability = job.availabi
   if (profile.preferences.cityConstraint === 'required') {
     const cities = job.cities;
     const preferred = profile.preferences.preferredCities;
-    const actual = cities.map(cityKey), targets = preferred.map(cityKey);
+    const actual = cities.map(city => cityKey(city)), targets = preferred.map(city => cityKey(city));
     const uncertain = !actual.length || !targets.length || actual.includes(null) || targets.includes(null);
     const compatible = actual.some(city => city && targets.includes(city));
     gates.push({ id: 'city', kind: 'city', state: job.jobType === 'private' ? 'needs_review' : compatible ? 'pass' : uncertain ? 'needs_review' : 'fail', reason: job.jobType === 'private' ? '私人记录的工作地点需要本人核实，不能直接据此判断城市硬条件。' : compatible ? '岗位明确城市符合本人城市硬偏好。' : uncertain ? '岗位地点或本人城市硬偏好尚不能确定比较。' : '岗位明确列出的城市与本人城市硬偏好不相容。', sourceQuote: cities.join(' / '), sourceUrl: job.sourceUrl });
@@ -211,17 +201,35 @@ function calculateResult(relations, profile, job, liveAvailability) {
   return { units: relations.units, eligibilityCandidates: relations.eligibility_candidates, questions, gates, groups, gateState, totalScore, coverage, scoreLabel, rankingGroup };
 }
 
-function presentEvaluation(userId, row, cached = false) {
+function evaluationContext(userId) {
+  let profile = null;
+  try {
+    const current = profileInput(userId, db.prepare('SELECT revision FROM candidate_profiles WHERE user_id=?').get(userId)?.revision);
+    profile = current;
+  } catch { profile = null; }
+  return { profile, jobs: new Map() };
+}
+function jobPayload(context, jobId) {
+  if (context?.jobs?.has(jobId)) return context.jobs.get(jobId);
+  const row = db.prepare('SELECT payload FROM jobs WHERE id=?').get(jobId);
+  const payload = row ? JSON.parse(row.payload) : null;
+  context?.jobs?.set(jobId, payload);
+  return payload;
+}
+function presentEvaluation(userId, row, cached = false, context = null) {
   const inputs = JSON.parse(row.inputs_json);
   const stored = JSON.parse(row.result_json);
   const relations = { units: stored.units, eligibility_candidates: stored.eligibilityCandidates || [], questions: stored.modelQuestions || [] };
   let stale = row.rule_version !== EVALUATION_RULE_VERSION || row.prompt_version !== EVALUATION_PROMPT_VERSION;
   try {
-    const profile = profileInput(userId, row.profile_revision);
-    stale ||= profile.hash !== row.profile_hash;
+    const profile = context ? context.profile : profileInput(userId, row.profile_revision);
+    if (!profile || profile.revision !== row.profile_revision || profile.hash !== row.profile_hash) stale = true;
   } catch { stale = true; }
   let currentRaw = null;
-  try { currentRaw = resolveJob(userId, targetId(row), { historical: true }); } catch { stale = true; }
+  try {
+    const jobId = targetId(row);
+    currentRaw = jobId.startsWith('private:') ? resolveJob(userId, jobId, { historical: true }) : jobPayload(context, jobId);
+  } catch { stale = true; }
   let current = null;
   try { current = currentRaw ? snapshot(currentRaw, inputs.jdSupplement || '') : null; } catch { stale = true; }
   stale ||= !current || current.jobHash !== row.job_hash || Boolean(currentRaw?.archived_at);
@@ -229,7 +237,8 @@ function presentEvaluation(userId, row, cached = false) {
   const quality = currentRaw ? qualityForJob(currentRaw).level : 'unknown';
   const effectiveJob = { ...inputs.job, deadline: currentRaw?.deadline ?? inputs.job.deadline, contentQuality: { ...inputs.job.contentQuality, level: quality } };
   const result = calculateResult(relations, inputs.profile, effectiveJob, availability);
-  const preferenceMatch = inputs.profile.preferences.preferredCities.some(city => (current?.job.cities || inputs.job.cities).includes(city));
+  const preferenceCities = current?.job.cities || inputs.job.cities;
+  const preferenceMatch = inputs.profile.preferences.preferredCities.some(city => preferenceCities.some(actual => sameCity(city, actual)));
   return {
     id: row.id, jobId: targetId(row), jobType: currentRaw?.job_type || 'public', profileRevision: row.profile_revision, profileHash: row.profile_hash, jobHash: row.job_hash,
     ruleVersion: row.rule_version, promptVersion: row.prompt_version, provider: row.provider, model: row.model,
@@ -286,6 +295,20 @@ export async function evaluateJob(userId, body, { signal } = {}) {
   return getEvaluation(userId, evaluationId);
 }
 
+function summaryOf(item) {
+  const { inputs, result, ...summary } = item;
+  return summary;
+}
+export function latestEvaluationSummaries(userId, jobIds) {
+  const ids = [...new Set((Array.isArray(jobIds) ? jobIds : []).map(item => typeof item === 'string' ? item : ''))].filter(item => item.length > 0 && item.length <= 160);
+  demand(ids.length > 0 && ids.length <= 15, 400, '一次最多查询 15 个岗位的最新评估。');
+  const rows = db.prepare(`SELECT * FROM (
+      SELECT *, ROW_NUMBER() OVER (PARTITION BY job_id ORDER BY created_at DESC, id DESC) AS rn
+      FROM job_evaluations WHERE user_id=? AND job_id IN (${ids.map(() => '?').join(',')})
+    ) WHERE rn=1`).all(userId, ...ids);
+  const context = evaluationContext(userId);
+  return { items: rows.map(row => summaryOf(presentEvaluation(userId, row, false, context))) };
+}
 export function listEvaluations(userId, query = {}) {
   const read = key => typeof query.get === 'function' ? query.get(key) : query[key];
   const page = (value, fallback, min, max) => {
@@ -298,10 +321,22 @@ export function listEvaluations(userId, query = {}) {
   const limit = page(read('limit'), 20, 1, 50), offset = page(read('offset'), 0, 0, Number.MAX_SAFE_INTEGER);
   const jobId = read('jobId');
   demand(jobId === undefined || jobId === null || typeof jobId === 'string' && jobId.length > 0 && jobId.length <= 160, 400, '岗位ID格式不正确。');
+  const includeStale = read('includeStale') === '1' || read('includeStale') === 1;
+  const rankOrder = { comparable: 0, needs_review: 1, insufficient: 2, ineligible: 3 };
+  if (read('sort') === 'recent' && includeStale) {
+    const where = ['user_id=?'];
+    const args = [userId];
+    if (jobId) { where.push('COALESCE(private_job_id,job_id)=?'); args.push(jobId); }
+    const clause = where.join(' AND ');
+    const total = db.prepare(`SELECT COUNT(*) AS n FROM job_evaluations WHERE ${clause}`).get(...args).n;
+    const rows = db.prepare(`SELECT * FROM job_evaluations WHERE ${clause} ORDER BY created_at DESC, id DESC LIMIT ? OFFSET ?`).all(...args, limit, offset);
+    const context = evaluationContext(userId);
+    return { items: rows.map(row => summaryOf(presentEvaluation(userId, row, false, context))), total, limit, offset };
+  }
   const rows = jobId ? db.prepare('SELECT * FROM job_evaluations WHERE user_id=? AND COALESCE(private_job_id,job_id)=? ORDER BY created_at DESC,id').all(userId, jobId)
     : db.prepare('SELECT * FROM job_evaluations WHERE user_id=? ORDER BY created_at DESC,id').all(userId);
-  const rankOrder = { comparable: 0, needs_review: 1, insufficient: 2, ineligible: 3 };
-  const items = rows.map(row => presentEvaluation(userId, row)).filter(item => read('includeStale') === '1' || read('includeStale') === 1 || !item.stale);
+  const context = evaluationContext(userId);
+  const items = rows.map(row => presentEvaluation(userId, row, false, context)).filter(item => includeStale || !item.stale);
   items.sort((a, b) => rankOrder[a.rankingGroup] - rankOrder[b.rankingGroup] || (b.totalScore ?? -1) - (a.totalScore ?? -1)
     || Number(b.preferenceMatch) - Number(a.preferenceMatch) || (deadlineInfo(a.deadline).known ? a.deadline : '9999').localeCompare(deadlineInfo(b.deadline).known ? b.deadline : '9999') || a.jobId.localeCompare(b.jobId) || b.createdAt.localeCompare(a.createdAt) || a.id.localeCompare(b.id));
   if (read('sort') === 'recent') items.sort((a, b) => b.createdAt.localeCompare(a.createdAt) || b.id.localeCompare(a.id));

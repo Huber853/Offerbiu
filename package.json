@@ -5,5 +5,5 @@
   "type": "module",
   "description": "2027 校招岗位、投递管理、在线简历与 DeepSeek 润色工作台",
   "engines": { "node": ">=24.0.0" },
-  "scripts": { "start": "node server/index.mjs", "dev": "node --watch server/index.mjs", "collect:jobs": "python scripts/collect-jobs.py" }
+  "scripts": { "start": "node server/index.mjs", "dev": "node --watch server/index.mjs", "test": "node --test tests/*.test.mjs", "collect:jobs": "python scripts/collect-jobs.py" }
 }
