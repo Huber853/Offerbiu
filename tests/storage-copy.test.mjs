@@ -14,6 +14,8 @@ test('storage copy duplicates the database and key without deleting the source',
   assert.deepEqual(copied.copied.sort(), ['.encryption-key', 'offerbiu.sqlite']);
   assert.equal(fs.readFileSync(path.join(from, 'offerbiu.sqlite'), 'utf8'), 'db');
   assert.equal(fs.readFileSync(path.join(to, 'offerbiu.sqlite'), 'utf8'), 'db');
+  assert.equal(fs.statSync(path.join(to, '.encryption-key')).mode & 0o777, 0o600);
+  assert.equal(fs.statSync(path.join(to, 'offerbiu.sqlite')).mode & 0o777, 0o600);
   assert.throws(() => copyStorage(from, to), /已有数据库/);
   fs.rmSync(from, { recursive: true, force: true });
   fs.rmSync(to, { recursive: true, force: true });

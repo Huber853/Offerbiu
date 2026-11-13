@@ -38,7 +38,9 @@ test('public URL fixtures extract plain text and blocked/failed pages retain a m
   const user=owner(),seen=[];
   const request=async(url,address,_signal,maximum)=>{seen.push([url.href,address,maximum]);return {status:200,text:'<html><script>bad()</script><p>公司：网页公司</p><p>岗位：开发工程师</p><p>岗位职责：</p><p>负责 API &amp; 数据保存</p><p>任职要求：</p><p>熟悉 Python</p></html>'};};
   const result=await jobs.previewPrivateJob(user,{mode:'url',url:'https://example.com/job/1'},{lookup:publicLookup,request});
-  assert.equal(result.draft.company,'网页公司');assert.equal(result.draft.title,'开发工程师');assert.ok(!result.draft.original_text.includes('bad()'));assert.equal(seen[0][1].address,'93.184.216.34');
+  assert.equal(result.draft.company,'网页公司');assert.equal(result.draft.title,'开发工程师');assert.ok(!result.draft.original_text.includes('bad()'));assert.ok(result.draft.description.includes('API & 数据保存'));assert.equal(seen[0][1].address,'93.184.216.34');
+  const encoded=await jobs.previewPrivateJob(user,{mode:'url',url:'https://example.com/job/entities'},{lookup:publicLookup,request:async()=>({status:200,text:'<p>岗位职责：</p><p>负责 &amp;lt;b&amp;gt;API&#xD800;接口&amp;lt;/b&amp;gt;</p><p>任职要求：</p><p>熟悉 Python</p>'})});
+  assert.ok(encoded.draft.description.includes('&lt;b&gt;API'));assert.equal(encoded.draft.description.includes('<b>'),false);
   for(const options of [{lookup:async()=>[{address:'10.0.0.1',family:4}],request},{lookup:publicLookup,request:async()=>{throw new Error('blocked')}}]) {
     const fallback=await jobs.previewPrivateJob(user,{mode:'url',url:'https://example.com/nope'},options);assert.ok(fallback.warning);assert.equal(fallback.draft.source_url,'https://example.com/nope');assert.equal(fallback.provenance.method,'url_only');
   }
@@ -168,8 +170,31 @@ async function lifecycleFixture(t){
   return {user,other,resume,job,profile,evaluation,requests,setTask(value){task=value;}};
 }
 
+test('private job lists read URL query strings for search, archive and pages',()=>{
+  const user=owner();
+  const first=jobs.savePrivateJob(user,body({title:'搜索甲岗位',company:'甲公司',duplicateAction:'keep_separate',requestId:crypto.randomUUID()}));
+  jobs.savePrivateJob(user,body({title:'搜索乙岗位',company:'乙公司',duplicateAction:'keep_separate',requestId:crypto.randomUUID()}));
+  jobs.archivePrivateJob(user,first.id,{revision:first.revision,archived:true});
+  const params=query=>jobs.listPrivateJobs(user,new URLSearchParams(query));
+  assert.equal(params({archived:'archived'}).total,1);assert.equal(params({archived:'archived'}).items[0].id,first.id);
+  assert.equal(params({archived:'active',q:'乙公司'}).total,1);assert.equal(params({archived:'active',q:'乙公司'}).items[0].title,'搜索乙岗位');
+  assert.equal(params({archived:'all',q:'不存在'}).total,0);
+  assert.equal(params({archived:'all',limit:'1',offset:'1'}).total,2);assert.equal(params({archived:'all',limit:'1',offset:'1'}).items.length,1);
+  assert.equal(jobs.listPrivateJobs(user,{archived:'archived'}).total,1);
+});
+
 test('private evaluation → materials → independent review → resume adoption → immutable submission survives edits/archive',async t=>{
   const f=await lifecycleFixture(t),{user,job,resume,evaluation}=f;
+  assert.equal(evaluations.latestEvaluationSummaries(user,[job.id]).items[0]?.id,evaluation.id);
+  const other=jobs.savePrivateJob(user,body({title:'另一个私人岗位',company:'另一家公司',duplicateAction:'keep_separate',requestId:crypto.randomUUID()}));
+  const source=db.prepare('SELECT * FROM job_evaluations WHERE id=?').get(evaluation.id);
+  const copyId='eval-copy-'+sequence;
+  db.prepare(`INSERT INTO job_evaluations(id,user_id,job_id,private_job_id,profile_revision,profile_hash,job_hash,rule_version,prompt_version,provider,model,endpoint_fingerprint,cache_key,gate_state,total_score,coverage,inputs_json,result_json,usage_json,created_at)
+    VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`).run(copyId,source.user_id,null,other.id,source.profile_revision,source.profile_hash,source.job_hash,source.rule_version,source.prompt_version,source.provider,source.model,source.endpoint_fingerprint,source.cache_key+'-copy',source.gate_state,source.total_score,source.coverage,source.inputs_json,source.result_json,source.usage_json,source.created_at);
+  const both=evaluations.latestEvaluationSummaries(user,[job.id,other.id]);
+  assert.equal(both.items.length,2);assert.deepEqual(both.items.map(item=>item.jobId).sort(),[job.id,other.id].sort());
+  db.prepare('DELETE FROM job_evaluations WHERE id=?').run(copyId);
+  db.prepare('DELETE FROM private_jobs WHERE id=? AND user_id=?').run(other.id,user);
   assert.equal(evaluation.jobType,'private');assert.equal(evaluation.gateState,'needs_review');assert.ok(evaluation.inputs.units.every(u=>u.sourceType==='private_job'));assert.equal(evaluation.inputs.job.sourceType,'private');
   const again=await evaluations.evaluateJob(user,{jobId:job.id,profileRevision:1,consent:true});assert.equal(again.id,evaluation.id);assert.equal(again.cached,true);
   const app='lifecycle-'+sequence,time=new Date().toISOString();db.prepare('INSERT INTO applications(id,user_id,job_id,private_job_id,created_at,updated_at) VALUES(?,?,?,?,?,?)').run(app,user,...targetColumns(job.id),time,time);

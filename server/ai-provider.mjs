@@ -37,25 +37,28 @@ function normalizeIp(address) {
   return value;
 }
 
+const ipv6Global = new net.BlockList();
+ipv6Global.addSubnet('2000::', 3, 'ipv6');
+const ipv6Reserved = new net.BlockList();
+for (const [network, prefix] of [['2001::', 23], ['2001:db8::', 32], ['2002::', 16], ['3fff::', 20]]) ipv6Reserved.addSubnet(network, prefix, 'ipv6');
+
 export function isPrivateIp(address) {
   const ip = normalizeIp(address);
   if (net.isIPv4(ip)) {
-    const [a, b] = ip.split('.').map(Number);
+    const [a, b, c] = ip.split('.').map(Number);
     if (a === 0 || a === 10 || a === 127) return true;
     if (a === 169 && b === 254) return true;
     if (a === 172 && b >= 16 && b <= 31) return true;
-    if (a === 192 && b === 168) return true;
+    if (a === 192 && (b === 168 || b === 0 || b === 2 || (b === 88 && c === 99))) return true;
     if (a === 100 && b >= 64 && b <= 127) return true; // carrier-grade NAT
+    if (a === 198 && (b === 18 || b === 19 || (b === 51 && c === 100))) return true;
+    if (a === 203 && b === 0 && c === 113) return true;
     if (a >= 224) return true; // multicast / reserved
     return false;
   }
   if (net.isIPv6(ip)) {
-    if (ip === '::' || ip === '::1') return true;
-    // fe80::/10 link-local
-    if (/^fe[89ab]/.test(ip)) return true;
-    // fc00::/7 unique local
-    if (ip.startsWith('fc') || ip.startsWith('fd')) return true;
-    return false;
+    // Global unicast only. Link-local, unique-local, documentation, 6to4 and multicast stay blocked.
+    return !ipv6Global.check(ip, 'ipv6') || ipv6Reserved.check(ip, 'ipv6');
   }
   return true;
 }

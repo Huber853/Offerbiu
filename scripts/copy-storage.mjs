@@ -18,7 +18,9 @@ export function copyStorage(from, to) {
   for (const name of names) {
     const file = path.join(source, name);
     if (!fs.existsSync(file) || !fs.statSync(file).isFile()) continue;
-    fs.copyFileSync(file, path.join(target, name));
+    const dest = path.join(target, name);
+    fs.copyFileSync(file, dest);
+    fs.chmodSync(dest, 0o600);
     copied.push(name);
   }
   return { source, target, copied };
