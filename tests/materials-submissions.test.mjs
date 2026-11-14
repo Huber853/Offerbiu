@@ -17,7 +17,8 @@ const originalFetch = globalThis.fetch;
 globalThis.fetch = async (url, options) => {
   requests.push(JSON.parse(options.body));
   const output = await responseFactory(JSON.parse(options.body));
-  return Response.json({ choices: [{ finish_reason: 'stop', message: { content: JSON.stringify(output) } }], usage: { prompt_tokens: 10, completion_tokens: 20 } });
+  const content = typeof output === 'string' ? output : JSON.stringify(output);
+  return Response.json({ choices: [{ finish_reason: 'stop', message: { content } }], usage: { prompt_tokens: 10, completion_tokens: 20 } });
 };
 
 function required(fn) { assert.equal(typeof fn, 'function', 'workflow operation must be implemented'); }
@@ -105,12 +106,10 @@ test('confirmed calendar dates can change Chinese formatting without changing mo
 for(const [label,change] of [
   ['arbitrary object path', d=>d.patches[0].path='__proto__.polluted'],
   ['structural path', d=>d.patches[0].path='projects.0.name'],
-  ['mismatched original', d=>d.patches[0].original='not the saved text'],
-  ['unknown fact', d=>d.patches[0].fact_ids=['nonexistent-fact']],
+  ['unknown fact', d=>{ d.patches[0].fact_ids=['nonexistent-fact']; d.patches[0].fact_quotes=[{fact_id:'nonexistent-fact', quote:'并不存在的原句'}]; }],
   ['missing quote coverage', d=>d.patches[0].fact_quotes=[]],
   ['invented quote', d=>d.patches[0].fact_quotes[0].quote='并不存在的原句'],
   ['new numerical achievement', d=>d.patches[0].revised='负责 Python API 开发，性能提升 99%。'],
-  ['new named institution', d=>d.patches[0].revised='在未知大学负责 Python API 开发。'],
   ['new technology claim', d=>d.patches[0].revised='负责 Kubernetes 平台开发。'],
   ['unsubstantiated responsibility', d=>d.patches[0].revised='独立负责 Python API 开发。'],
   ['duplicate path', d=>d.patches.push({...d.patches[0],id:'patch-2'})],
@@ -280,6 +279,97 @@ test('lists paginate summaries and explicit deletion preserves independent recor
   const ml=materials.listMaterials(f.user,f.application,{limit:1,offset:0}), sl=submissions.listSubmissions(f.user,f.application,{limit:1,offset:0});
   assert.equal(ml.total,1);assert.equal(ml.items[0].inputs,undefined);assert.equal(sl.total,1);assert.equal(sl.items[0].snapshot,undefined);
   materials.deleteMaterial(f.user,a.material.id);assert.equal(submissions.getSubmission(f.user,s.id).snapshot.resume.id,a.resume.id);assert.ok(db.prepare('SELECT id FROM resumes WHERE id=?').get(a.resume.id));
+});
+
+test('deepseek-like draft noise is repaired without dropping confirmed facts', async () => {
+  const f = await fixture();
+  f.draft.schema_version = '1';
+  f.draft.note = 'MODEL_EXTRA_KEY';
+  f.draft.patches[0].comment = 'MODEL_EXTRA_KEY';
+  f.draft.patches[0].original = f.resume.data.projects[0].details + ' \n';
+  f.draft.patches[0].fact_quotes[0].quote = '负责Python API开发和SQLite数据保存';
+  f.draft.form_fields[0].helper = 'MODEL_EXTRA_KEY';
+  f.draft.form_fields[0].max_length = '150';
+  f.draft.form_fields[0].fact_ids = ['missing-fact'];
+  f.draft.form_fields[0].fact_quotes = [{ fact_id: 'missing-fact', note: 'MODEL_EXTRA_KEY', quote: '原文提到 Python API 开发和 SQLite 数据保存' }];
+  f.draft.questions = ['请本人核对语气'];
+  const saved = await generated(f);
+  assert.equal(saved.content.schema_version, 1);
+  assert.equal(saved.content.patches[0].original, f.resume.data.projects[0].details);
+  assert.ok(f.fact.text.includes(saved.content.patches[0].fact_quotes[0].quote));
+  assert.deepEqual(saved.content.form_fields[0].fact_ids, [f.fact.id]);
+  assert.ok(f.fact.text.includes(saved.content.form_fields[0].fact_quotes[0].quote));
+  assert.equal(saved.content.questions[0], '请本人核对语气');
+  assert.ok(saved.content.warnings.some(item => item.includes('引用')));
+  assert.equal(JSON.stringify(saved.content).includes('MODEL_EXTRA_KEY'), false);
+  assert.match(requests[0].messages[0].content, /逐字/);
+  assert.match(requests[0].messages[0].content, /max_length/);
+});
+
+test('over-long form text is trimmed to the user limit and ungrounded organizations are removed', async () => {
+  const f = await fixture();
+  const sentence = '我在课程项目中负责 Python API 开发和 SQLite 数据保存。';
+  f.draft.form_fields[0].max_length = 1000;
+  f.draft.form_fields[0].text = sentence.repeat(8);
+  const trimmed = await generated(f);
+  assert.ok(Array.from(trimmed.content.form_fields[0].text).length <= 150);
+  assert.equal(trimmed.content.form_fields[0].usedLength, Array.from(trimmed.content.form_fields[0].text).length);
+  assert.equal(trimmed.content.form_fields[0].max_length, 150);
+  assert.ok(trimmed.content.form_fields[0].text.includes('Python'));
+  assert.ok(trimmed.content.form_fields[0].text.endsWith('。'));
+  assert.ok(trimmed.content.warnings.some(item => item.includes('截断')));
+  f.draft.form_fields[0].text = '我希望加入示例公司，并在课程项目中负责 Python API 开发和 SQLite 数据保存。';
+  f.draft.patches[0].revised = '在未知大学负责 Python API 开发，使用 SQLite 数据保存。';
+  f.body.requestId = crypto.randomUUID();
+  const named = await materials.generateMaterials(f.user, f.application, f.body);
+  assert.equal(named.content.form_fields[0].text.includes('示例公司'), false);
+  assert.equal(named.content.patches[0].revised.includes('未知大学'), false);
+  assert.ok(named.content.patches[0].revised.includes('Python'));
+  assert.ok(named.content.warnings.some(item => item.includes('机构')));
+});
+
+test('a supported school stays when the model only adds surrounding words', async () => {
+  const f = await fixture(), fact = f.profile.facts[0];
+  f.draft.patches = [{ id: 'patch-education', path: 'education.0.details', original: f.resume.data.education[0].details, revised: '我在示例大学学习软件工程，本科学历，2027-06 毕业。', fact_ids: [fact.id], fact_quotes: [{ fact_id: fact.id, quote: '示例大学' }], reason: '保留已确认学校' }];
+  const saved = await generated(f);
+  assert.ok(saved.content.patches[0].revised.includes('示例大学'));
+});
+
+test('markdown wrapped material JSON is accepted', async () => {
+  const f = await fixture();
+  const payload = structuredClone(f.draft);
+  responseFactory = async () => '下面是草稿\n```json\n' + JSON.stringify(payload) + '\n```';
+  const saved = await generated(f);
+  assert.equal(saved.content.form_fields[0].text, payload.form_fields[0].text);
+  assert.equal(saved.reviewState, 'pending');
+});
+
+test('patches whose original is not the source field are dropped instead of failing the draft', async () => {
+  const f = await fixture();
+  f.draft.patches[0].original = 'not the saved text';
+  const saved = await generated(f);
+  assert.equal(saved.content.patches.length, 0);
+  assert.equal(saved.content.form_fields.length, 1);
+  assert.ok(saved.content.warnings.some(item => item.includes('补丁')));
+  assert.equal(db.prepare('SELECT data FROM resumes WHERE id=?').get(f.resume.id).data, JSON.stringify(f.resume.data));
+});
+
+test('imperfect drafts that still invent facts are rejected with a specific reason', async () => {
+  const reason = message => error => error?.status === 502 && error?.code === 'AI_OUTPUT_INVALID' && error.message === message;
+  const f = await fixture();
+  f.draft.form_fields[0].text = '开发'.repeat(100);
+  await assert.rejects(generated(f), reason('网申文字超过用户选定的长度上限。'));
+  f.draft.form_fields[0].text = '我就读于未知大学。';
+  f.body.requestId = crypto.randomUUID();
+  await assert.rejects(materials.generateMaterials(f.user, f.application, f.body), reason('正文包含没有确认事实依据的公司或学校名称。'));
+  f.draft.form_fields[0].text = '我有 Python API 开发和 SQLite 数据保存的课程项目实践。';
+  f.draft.patches[0].revised = '在未知大学负责 Python API 开发，性能提升 99%。';
+  f.body.requestId = crypto.randomUUID();
+  await assert.rejects(materials.generateMaterials(f.user, f.application, f.body), reason('正文包含没有确认事实依据的新数字或日期。'));
+  f.draft.patches[0].revised = '负责 Kubernetes 平台开发。';
+  f.body.requestId = crypto.randomUUID();
+  await assert.rejects(materials.generateMaterials(f.user, f.application, f.body), reason('正文包含没有确认事实依据的新技术或英文实体。'));
+  assert.equal(db.prepare('SELECT COUNT(*) AS n FROM application_materials WHERE user_id=?').get(f.user).n, 0);
 });
 
 test.after(()=>{globalThis.fetch=originalFetch;db.close();fs.rmSync(folder,{recursive:true,force:true});});
