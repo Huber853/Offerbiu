@@ -1,4 +1,14 @@
 export const escape = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
+export function polishDiagnosisMarkup(report) {
+  const diagnosis = report?.diagnosis;
+  if (!diagnosis || typeof diagnosis !== 'object') return '';
+  const lines = key => (Array.isArray(diagnosis[key]) ? diagnosis[key] : []).filter(item => typeof item === 'string' && item.trim());
+  const impression = typeof diagnosis.impression === 'string' ? diagnosis.impression.trim() : '';
+  const issues = lines('issues');
+  const risks = lines('risks');
+  if (!impression && !issues.length && !risks.length) return '';
+  return `<div class="ai-reasons"><h3>HR 初看</h3>${impression ? `<p>${escape(impression)}</p>` : ''}${issues.length ? `<h3>具体问题</h3><ul>${issues.map(item => `<li>${escape(item)}</li>`).join('')}</ul>` : ''}${risks.length ? `<h3>改完仍要核对</h3><ul>${risks.map(item => `<li>${escape(item)}</li>`).join('')}</ul>` : ''}</div>`;
+}
 function parsedDate(value) {
   if (value == null || value === '' || (typeof value !== 'string' && typeof value !== 'number' && !(value instanceof Date))) return null;
   const result = new Date(value);
