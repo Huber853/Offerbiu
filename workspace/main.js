@@ -12,7 +12,7 @@ import { availabilityForJob } from '/shared/job-workflow.mjs';
 import { templates, statuses, blankResume, resumeText, sampleResume } from '/shared/templates.mjs';
 
 const main = document.getElementById('workspace-content');
-const emptyJobFilters = () => ({ q: '', company: '', company_nature: '', city: '', category: '', industry: '', record_type: 'job', source_type: '', base_scope: '', batch: '', sort: 'recent', page: 1 });
+const emptyJobFilters = () => ({ q: '', company: '', company_nature: '', city: '', category: '', industry: '', record_type: 'job', source_type: '', base_scope: '', batch: '', recruit_type: '', sort: 'recent', page: 1 });
 const state = { user: null, meta: null, route: 'overview', editor: null, workflow: null, pageController: null, navigation: 0, jobs: emptyJobFilters(), displayedJobs: [], activeJobId: '', selectedJobs: new Map(), applications: [], resumes: [], tasks: [], calendarMonth: new Date(new Date().getFullYear(), new Date().getMonth(), 1), selectedDay: '', appFilter: 'all', selectedApplications: new Set() };
 const navigation = [['overview', '总览'], ['jobs', '校招岗位库'], ['private-jobs', '私人岗位'], ['applications', '我的投递'], ['profile', '真实经历底稿'], ['evaluations', '岗位评估记录'], ['resumes', '简历中心'], ['templates', '模板与工作室'], ['calendar', '日程与待办'], ['ai', 'AI 润色记录'], ['settings', '个人设置']];
 const pageHeaders = {
@@ -107,21 +107,23 @@ function jobEntry(job) {
   const closed = availabilityForJob(job).state === 'closed';
   return `<article class="job-index-entry${selected ? ' is-current' : ''}">
     <button type="button" class="job-index-title" data-action="job-detail" data-id="${e(job.id)}" aria-controls="job-reader app-dialog"${selected ? ' aria-current="true"' : ''}>${e(job.title)}</button>
-    <p class="job-index-company">${e(job.company)}<span>${sourceLabel(job)}</span>${closed ? '<span>已停止招聘</span>' : ''}</p>
+    <p class="job-index-company">${e(job.company)}<span>${sourceLabel(job)}</span>${job.recruit_type === '实习' ? '<span>实习</span>' : ''}${closed ? '<span>已停止招聘</span>' : ''}</p>
     <dl class="job-index-facts"><div><dt>${job.base_scope === 'campaign' ? '简章 Base' : 'Base'}</dt><dd>${e(location || '未公布')}</dd></div><div><dt>截止</dt><dd>${date(job.deadline)}</dd></div></dl>
     <div class="job-index-actions"><label class="job-index-pick"><input type="checkbox" data-action="pick-job" data-id="${e(job.id)}" aria-label="选择评估 ${e(job.title)}" ${state.selectedJobs.has(job.id) ? 'checked' : ''}>选择评估</label>${applyLink(job)}</div>
   </article>`;
 }
 function jobDetails(job, inline = false) {
   const source = safeUrl(job.source_url), evidence = safeUrl(job.cohort_evidence_url);
+  const recruitLabel = job.recruit_type === '实习' ? '实习' : '校招';
   const fields = [
+    ['招聘类型', recruitLabel],
     [job.base_scope === 'campaign' ? '简章 Base' : 'Base', job.cities?.join(' / ') || '未公布'], ['截止日期', date(job.deadline)],
     ['岗位方向', (job.directions?.length ? job.directions : [job.category]).filter(Boolean).join(' / ') || '未公布'],
     ['招聘批次', job.batch || job.program || '未公布'],
     ['学历', job.education || '详见岗位要求'], ['薪资', job.salary || '未公布']
   ];
   return `<div class="job-reader" data-job-reader>
-    <header class="job-reader-heading"><p class="job-reader-kicker">2027 届 / ${sourceLabel(job)}</p>
+    <header class="job-reader-heading"><p class="job-reader-kicker">${job.recruit_type === '实习' ? '实习' : '2027 届校招'} / ${sourceLabel(job)}</p>
       ${inline ? `<h2>${e(job.title)}</h2>` : ''}
       <p><strong>${e(job.company)}</strong>${job.employer_unit && job.employer_unit !== job.company ? ' · ' + e(job.employer_unit) : ''}${job.official_job_code ? ' · 岗位代码 ' + e(job.official_job_code) : ''}</p>
       <div class="button-row">${applyLink(job, true)}<button class="button button-soft button-small" data-action="${job.application ? 'edit-application' : 'save-job'}" data-id="${e(job.application?.id || job.id)}">${job.application ? '已在清单 · 查看' : '加入清单 +'}</button></div>
@@ -133,7 +135,7 @@ function jobDetails(job, inline = false) {
     <section class="job-reader-source"><h3>招聘来源</h3><p>${e(job.source_name || sourceLabel(job))}</p>
       <p class="job-reader-note">发布 ${date(job.published_at || job.published_at_raw)} · 采集 ${date(job.collected_at)}${job.link_checked_at ? ' · 链接核验 ' + date(job.link_checked_at) : ''}</p>
       ${jobQualityMarkup(job)}${job.cohort_evidence ? `<p>${e(job.cohort_evidence)}</p>` : ''}${job.notes ? `<p>${e(job.notes)}</p>` : ''}
-      <div class="button-row">${source ? `<a href="${e(source)}" target="_blank" rel="noopener noreferrer" class="text-link">查看原始来源 ↗</a>` : ''}${evidence && evidence !== source ? `<a href="${e(evidence)}" target="_blank" rel="noopener noreferrer" class="text-link">查看 2027 届依据 ↗</a>` : ''}</div>
+      <div class="button-row">${source ? `<a href="${e(source)}" target="_blank" rel="noopener noreferrer" class="text-link">查看原始来源 ↗</a>` : ''}${evidence && evidence !== source ? `<a href="${e(evidence)}" target="_blank" rel="noopener noreferrer" class="text-link">查看${job.recruit_type === '实习' ? '实习依据' : ' 2027 届依据'} ↗</a>` : ''}</div>
     </section>
   </div>`;
 }
@@ -198,6 +200,7 @@ async function jobsPage() {
   const select = (name, label, choices, primary = false) => `<label class="job-filter-field"><span>${label}</span><select name="${name}" ${primary ? 'data-primary-filter' : ''}><option value="">全部${label}</option>${choices.map(([value, text]) => `<option value="${e(value)}"${f[name] === value ? ' selected' : ''}>${e(text)}</option>`).join('')}</select></label>`;
   const active = [
     ['q', f.q && '关键词 ' + f.q], ['city', f.city && 'Base ' + f.city], ['category', f.category],
+    ['recruit_type', f.recruit_type && '招聘类型 ' + f.recruit_type],
     ['company', f.company], ['company_nature', f.company_nature], ['industry', f.industry], ['batch', f.batch],
     ['source_type', sourceOptions.find(([value]) => value === f.source_type)?.[1]],
     ['base_scope', scopeOptions.find(([value]) => value === f.base_scope)?.[1]],
@@ -209,6 +212,7 @@ async function jobsPage() {
         <label class="job-filter-field"><span>关键词</span><span class="job-search-input">${icon('search')}<input name="q" value="${e(f.q)}" maxlength="100" placeholder="搜索公司、岗位或技能"></span></label>
         ${select('city', 'Base', options(state.meta.cities), true)}
         ${select('category', '岗位方向', options(state.meta.categories), true)}
+        ${select('recruit_type', '招聘类型', [['校招', '校招'], ['实习', '实习']], true)}
         <button class="button button-primary" type="submit">搜索</button>
       </div>
       <details class="job-more-filters">

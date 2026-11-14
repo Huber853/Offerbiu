@@ -144,6 +144,13 @@
       "id_query": "id"
     },
     {
+      "host": "hr.163.com",
+      "source_type": "employer_official",
+      "company": "网易",
+      "path_pattern": "^/job-detail\\.html$",
+      "id_query": "id"
+    },
+    {
       "host": "campus.game.163.com",
       "source_type": "employer_official",
       "company": "网易",
@@ -195,6 +202,14 @@
       "path_pattern": "^/campus/position/[0-9]+/detail$",
       "id_query": null,
       "id_path_pattern": "^/campus/position/([0-9]+)/detail$"
+    },
+    {
+      "host": "xiaomi.jobs.f.mioffice.cn",
+      "source_type": "employer_official",
+      "company": "小米",
+      "path_pattern": "^/internship/position/[0-9]+/detail$",
+      "id_query": null,
+      "id_path_pattern": "^/internship/position/([0-9]+)/detail$"
     },
     {
       "host": "careers.pddglobalhr.com",

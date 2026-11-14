@@ -180,9 +180,279 @@ function numericClaims(value) {
     ...(normalized.match(/\d+(?:[.,]\d+)*(?:\s*[%％])?/g) || []).map(part => part.replace(/\s/g, '').replace('％', '%')),
     ...(value.match(/(?:第)?[零〇一二两三四五六七八九十百千万亿]+(?:年|月|日|天|人|个|项|次|倍|分|名|周|小时|分钟|元|条|家|所|套|份|万|亿)/g) || [])]);
 }
-function entityClaims(value) {
-  return (value.match(/[\p{Script=Han}A-Za-z0-9·]{2,40}(?:大学|学院|公司|集团|研究院|实验室|学校)/gu) || [])
-    .map(entity => entity.replace(/^(?:曾就读于|曾任职于|曾实习于|曾工作于|就读于|毕业于|任职于|实习于|工作于|就职于|服务于|来自|加入|负责|协助|曾在|在|于|为)/u, ''));
+const orgPrefix = /^(?:曾就读于|曾任职于|曾实习于|曾工作于|就读于|毕业于|任职于|实习于|工作于|就职于|服务于|来自|加入|负责|协助|曾在|在|于|为)/u;
+const orgSuffix = /(大学|学院|公司|集团|研究院|实验室|学校)$/u;
+function takeChars(value, maximum) { return Array.from(value).slice(0, maximum).join(''); }
+function clipText(value, maximum) {
+  const text = normalizeText(typeof value === 'string' ? value : '').trim();
+  const chars = Array.from(text);
+  return chars.length <= maximum ? text : chars.slice(0, maximum).join('').trim();
+}
+function organizationMentions(value) {
+  if (typeof value !== 'string' || !value) return [];
+  const mentions = [];
+  for (const match of value.matchAll(/[\p{Script=Han}A-Za-z0-9·]{2,40}(?:大学|学院|公司|集团|研究院|实验室|学校)/gu)) {
+    const raw = match[0];
+    const ending = raw.match(orgSuffix)?.[1] || '';
+    const names = new Set();
+    const chars = Array.from(raw);
+    for (let i = 0; i < chars.length; i++) {
+      const name = chars.slice(i).join('').replace(orgPrefix, '');
+      if (ending && name.endsWith(ending) && Array.from(name).length >= Array.from(ending).length + 2) names.add(name);
+    }
+    if (names.size) mentions.push({ names: [...names] });
+  }
+  return mentions;
+}
+function mentionSupported(mention, basis) { return mention.names.some(name => basis.includes(name)); }
+function longestFactSubstring(fact, quote) {
+  const source = Array.from(takeChars(typeof fact === 'string' ? fact : '', 2000));
+  const query = Array.from(takeChars(typeof quote === 'string' ? quote : '', 2000));
+  let bestStart = 0, bestLen = 0;
+  const lengths = new Array(query.length + 1).fill(0);
+  for (let i = 1; i <= source.length; i++) {
+    let diagonal = 0;
+    for (let j = 1; j <= query.length; j++) {
+      const next = source[i - 1] === query[j - 1] ? diagonal + 1 : 0;
+      diagonal = lengths[j];
+      lengths[j] = next;
+      if (next > bestLen) { bestLen = next; bestStart = i - next; }
+    }
+  }
+  return source.slice(bestStart, bestStart + bestLen).join('');
+}
+function compactSlice(fact, compactQuote) {
+  const chars = Array.from(fact);
+  const target = Array.from(compactQuote);
+  for (let start = 0; start < chars.length; start++) {
+    if (/\s/u.test(chars[start])) continue;
+    let index = start, matched = 0;
+    while (index < chars.length && matched < target.length) {
+      if (/\s/u.test(chars[index])) { index++; continue; }
+      if (chars[index] !== target[matched]) break;
+      index++; matched++;
+    }
+    if (matched === target.length) return chars.slice(start, index).join('');
+  }
+  return null;
+}
+function snapQuote(quote, fact, minimum = 1) {
+  const raw = normalizeText(typeof quote === 'string' ? quote : '').trim();
+  const basis = typeof fact === 'string' ? fact : '';
+  if (!raw || !basis) return null;
+  if (basis.includes(raw) && Array.from(raw).length >= minimum) return raw;
+  const compactQuote = raw.replace(/\s+/g, '');
+  if (compactQuote.length >= Math.max(4, minimum) && basis.replace(/\s+/g, '').includes(compactQuote)) {
+    const slice = compactSlice(basis, compactQuote);
+    if (slice && Array.from(slice.replace(/\s+/g, '')).length >= minimum) return slice;
+  }
+  const piece = longestFactSubstring(basis, raw);
+  if (Array.from(piece).length >= Math.max(8, minimum) && basis.includes(piece)) return piece;
+  return null;
+}
+function stillGrounded(text, basis) {
+  if (Array.from(longestFactSubstring(basis, text)).length >= 4) return true;
+  return ((basis.match(/[A-Za-z][A-Za-z\d]*/g) || []).some(token => token.length >= 2 && text.includes(token)));
+}
+function cleanupProse(value) {
+  return normalizeText(value).replace(/[ \t]{2,}/g, ' ').replace(/[（(]\s*[）)]/g, '').replace(/^[，。！？；、：:\s]+/u, '').replace(/([，、；：:]){2,}/gu, '$1').replace(/([。！？])[，、；：:]+/gu, '$1').trim();
+}
+function removeUngroundedNames(text, basis, names) {
+  const original = normalizeText(text).replace(/\u0000/g, '');
+  let current = original;
+  const strip = name => {
+    const label = normalizeText(typeof name === 'string' ? name : '').trim();
+    if (Array.from(label).length < 2 || !current.includes(label) || basis.includes(label)) return false;
+    if (organizationMentions(current).some(mention => mention.names.some(name => name !== label && name.includes(label) && basis.includes(name)))) return false;
+    const next = cleanupProse(current.split(label).join(''));
+    if (!next || !stillGrounded(next, basis)) return false;
+    current = next;
+    return true;
+  };
+  let removed = false;
+  for (const name of names) if (strip(name)) removed = true;
+  for (let pass = 0; pass < 6; pass++) {
+    const mention = organizationMentions(current).find(item => !mentionSupported(item, basis));
+    if (!mention) break;
+    const name = mention.names.slice().sort((a, b) => Array.from(a).length - Array.from(b).length)[0];
+    if (!strip(name)) break;
+    removed = true;
+  }
+  return { text: removed ? current : original, removed };
+}
+function trimToLimit(text, maximum, mode) {
+  const normalized = normalizeText(text).replace(/\u0000/g, '');
+  if (!Number.isInteger(maximum) || maximum < 1 || countText(normalized, mode) <= maximum) return { text: normalized, trimmed: false };
+  let used = '', best = '';
+  for (const ch of Array.from(normalized)) {
+    const next = used + ch;
+    if (countText(next, mode) > maximum) break;
+    used = next;
+    if (/[。！？；，、\n.!?;,]/.test(ch)) best = next;
+  }
+  const trimmed = best.trim();
+  if (!trimmed || countText(trimmed, mode) > maximum) return { text: normalized, trimmed: false };
+  return { text: trimmed, trimmed: true };
+}
+function repairNotes(items) {
+  const list = Array.isArray(items) ? items : typeof items === 'string' ? [items] : [];
+  return list.map(item => typeof item === 'string' ? clipText(item, 1000) : '').filter(Boolean).slice(0, 30);
+}
+function addWarning(draft, message) {
+  if (!Array.isArray(draft.warnings)) draft.warnings = [];
+  if (!draft.warnings.includes(message) && draft.warnings.length < 30) draft.warnings.push(message);
+}
+function asList(value) { return Array.isArray(value) ? value : typeof value === 'string' && value.trim() ? [value] : []; }
+function resolveFact(factId, facts) {
+  if (typeof factId !== 'string') return null;
+  const id = normalizeText(factId).trim();
+  const exact = facts.find(fact => fact.id === id);
+  if (exact) return exact;
+  const folded = facts.filter(fact => fact.id.toLowerCase() === id.toLowerCase());
+  return folded.length === 1 ? folded[0] : null;
+}
+function improveCitations(item, facts) {
+  const rawIds = asList(item.fact_ids ?? item.factIds);
+  const rawQuotes = asList(item.fact_quotes ?? item.factQuotes);
+  const quotes = [];
+  let changed = false;
+  for (const entry of rawQuotes) {
+    const parsed = typeof entry === 'string' ? { factId: '', quote: entry } : entry && typeof entry === 'object' && !Array.isArray(entry) ? { factId: entry.fact_id ?? entry.factId ?? '', quote: entry.quote ?? entry.text ?? entry.excerpt ?? '' } : null;
+    if (!parsed || typeof parsed.quote !== 'string') continue;
+    const labeled = resolveFact(parsed.factId, facts);
+    const snapped = labeled ? snapQuote(parsed.quote, labeled.text) : null;
+    const fact = snapped ? labeled : null;
+    const unique = fact ? null : facts.filter(candidate => snapQuote(parsed.quote, candidate.text, 4)).slice(0, 2);
+    const rebound = !fact && unique && unique.length === 1 ? unique[0] : null;
+    const quote = fact ? snapped : rebound ? snapQuote(parsed.quote, rebound.text, 4) : null;
+    const chosen = fact || (quote ? rebound : null);
+    if (!chosen || !quote) continue;
+    const bounded = Array.from(quote).length > 2000 ? takeChars(quote, 2000) : quote;
+    const rawQuote = normalizeText(parsed.quote).trim();
+    if (bounded !== rawQuote || chosen.id !== String(parsed.factId || '').trim()) changed = true;
+    if (!quotes.some(item => item.fact_id === chosen.id && item.quote === bounded)) quotes.push({ fact_id: chosen.id, quote: bounded });
+  }
+  const ids = [];
+  for (const raw of rawIds) {
+    const fact = resolveFact(raw, facts);
+    if (fact && !ids.includes(fact.id)) ids.push(fact.id);
+    else if (!fact) changed = true;
+  }
+  for (const quote of quotes) if (!ids.includes(quote.fact_id)) { ids.push(quote.fact_id); changed = true; }
+  if (!ids.length || ids.length > 80 || quotes.length > 160 || !ids.every(id => quotes.some(quote => quote.fact_id === id))) return null;
+  return { ids, quotes, changed };
+}
+function sameOriginal(original, source) {
+  if (typeof original !== 'string' || typeof source !== 'string') return false;
+  if (original === source) return true;
+  const norm = value => normalizeText(value).replace(/\s+/g, ' ').trim();
+  return norm(original) === norm(source);
+}
+function ensureId(value, prefix, used) {
+  const current = typeof value === 'string' ? value.trim() : '';
+  if (/^[A-Za-z0-9][A-Za-z0-9_.:-]{0,79}$/.test(current) && !used.has(current)) { used.add(current); return current; }
+  let n = 1, next = `${prefix}_${n}`;
+  while (used.has(next)) next = `${prefix}_${++n}`;
+  used.add(next);
+  return next;
+}
+function patchLimit(path) { return path === 'basics.summary' ? 6000 : path === 'skills' || path === 'awards' ? 8000 : 12000; }
+function contextualNames(inputs) {
+  return [...(inputs.sourceResume?.entities || []).map(entity => entity.name), inputs.job?.company].filter(name => typeof name === 'string' && name.trim());
+}
+function rewriteCitedText(item, inputs, draft, limit, mode, textKey) {
+  const facts = inputs.profile?.facts || [];
+  const improved = improveCitations(item, facts);
+  if (improved) {
+    if (improved.changed) addWarning(draft, '已将事实引用对齐到确认事实中的连续原文。');
+    item.fact_ids = improved.ids;
+    item.fact_quotes = improved.quotes;
+  } else if (Array.isArray(item.fact_quotes)) item.fact_quotes = item.fact_quotes.map(entry => entry && typeof entry === 'object' && !Array.isArray(entry) ? { fact_id: entry.fact_id ?? entry.factId, quote: entry.quote ?? entry.text ?? entry.excerpt } : entry);
+  const selected = (Array.isArray(item.fact_ids) ? item.fact_ids : []).map(id => facts.find(fact => fact.id === id)).filter(Boolean);
+  if (typeof item[textKey] !== 'string') return;
+  let text = normalizeText(item[textKey]).replace(/\u0000/g, '');
+  if (selected.length) {
+    const basis = selected.map(fact => fact.text).filter(part => typeof part === 'string').join('\n');
+    const removed = removeUngroundedNames(text, basis, contextualNames(inputs));
+    text = removed.text;
+    if (removed.removed) addWarning(draft, '已移除正文中缺少确认事实依据的机构或项目名称。');
+  }
+  const trimmed = trimToLimit(text, limit, mode);
+  item[textKey] = trimmed.text;
+  if (trimmed.trimmed) addWarning(draft, '已按字数上限截断过长正文，请核对是否保留完整句意。');
+}
+function repairPatches(patches, inputs, draft, ids) {
+  const kept = [];
+  let dropped = false;
+  for (const patch of patches) {
+    if (!patch || typeof patch !== 'object' || Array.isArray(patch)) { dropped = true; continue; }
+    const path = typeof patch.path === 'string' ? patch.path : '';
+    const source = (inputs.sourceResume?.fields || []).find(field => field.path === path);
+    if (!pathPattern.test(path) || !source) {
+      const preserved = { id: patch.id, path: patch.path, original: patch.original, revised: patch.revised, fact_ids: patch.fact_ids ?? patch.factIds, fact_quotes: patch.fact_quotes ?? patch.factQuotes, reason: patch.reason };
+      kept.push(preserved);
+      continue;
+    }
+    if (!sameOriginal(patch.original, source.text)) { dropped = true; continue; }
+    const clean = { id: ensureId(patch.id, 'patch', ids), path, original: source.text, revised: patch.revised, fact_ids: patch.fact_ids ?? patch.factIds, fact_quotes: patch.fact_quotes ?? patch.factQuotes, reason: typeof patch.reason === 'string' && patch.reason.trim() ? clipText(patch.reason, 1000) : '依据已确认事实整理表述。' };
+    rewriteCitedText(clean, inputs, draft, patchLimit(path), 'codepoints', 'revised');
+    kept.push(clean);
+  }
+  if (dropped) addWarning(draft, '已忽略原文与源简历不一致的补丁。');
+  return kept;
+}
+function alignFormFields(fields, requests) {
+  const pool = requests.map(item => ({ ...item }));
+  const matched = [];
+  for (const field of Array.isArray(fields) ? fields : []) {
+    if (!field || typeof field !== 'object' || Array.isArray(field)) continue;
+    const type = typeof field.type === 'string' ? field.type.trim() : '';
+    const mode = typeof (field.count_mode ?? field.countMode) === 'string' ? (field.count_mode ?? field.countMode).trim() : '';
+    const max = Number(field.max_length ?? field.maxLength);
+    let index = pool.findIndex(item => item.type === type && item.maxLength === max && item.countMode === mode);
+    if (index < 0) {
+      const typed = pool.flatMap((item, at) => item.type === type ? [at] : []);
+      if (typed.length === 1) index = typed[0];
+    }
+    if (index < 0) continue;
+    matched.push({ field, requirement: pool.splice(index, 1)[0] });
+  }
+  return matched.length === requests.length ? matched : null;
+}
+function unwrapDraft(value) {
+  if ('schema_version' in value || 'patches' in value || 'form_fields' in value || 'formFields' in value) return;
+  const names = Object.keys(value);
+  if (names.length !== 1) return;
+  const inner = value[names[0]];
+  if (!inner || typeof inner !== 'object' || Array.isArray(inner)) return;
+  if (!('patches' in inner || 'form_fields' in inner || 'formFields' in inner || 'schema_version' in inner)) return;
+  delete value[names[0]];
+  Object.assign(value, inner);
+}
+// Real models often add keys, miss the exact quote, overrun the selected limit, or mention an unconfirmed organization.
+// Repair only rewrites those mechanical mismatches. Invented numbers, technologies, and stronger experience claims still fail closed.
+function repairDraft(value, inputs) {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return;
+  unwrapDraft(value);
+  if (Array.isArray(value.formFields) && !Array.isArray(value.form_fields)) value.form_fields = value.formFields;
+  if (value.patches == null) value.patches = [];
+  if (value.questions == null) value.questions = [];
+  if (value.warnings == null) value.warnings = [];
+  if (value.schema_version == null || value.schema_version === '1') value.schema_version = 1;
+  value.questions = repairNotes(value.questions);
+  value.warnings = repairNotes(value.warnings).slice(0, 26);
+  const ids = new Set();
+  if (Array.isArray(value.patches)) value.patches = repairPatches(value.patches, inputs, value, ids);
+  const aligned = alignFormFields(value.form_fields, inputs?.fields || []);
+  if (aligned) value.form_fields = aligned.map(({ field, requirement }) => {
+    const clean = { id: ensureId(field.id, 'field', ids), type: requirement.type, max_length: requirement.maxLength, count_mode: requirement.countMode, text: field.text, fact_ids: field.fact_ids ?? field.factIds, fact_quotes: field.fact_quotes ?? field.factQuotes };
+    rewriteCitedText(clean, inputs, value, requirement.maxLength, requirement.countMode, 'text');
+    return clean;
+  });
+  const clean = {};
+  for (const key of ['schema_version', 'patches', 'form_fields', 'questions', 'warnings']) if (value[key] !== undefined) clean[key] = value[key];
+  for (const key of Object.keys(value)) delete value[key];
+  Object.assign(value, clean);
 }
 function checkClaims(value, selected, inputs, status, sourceField) {
   const basis = selected.map(fact => fact.text).join('\n'); const reject = message => demand(false, status, message, status === 502 ? 'AI_OUTPUT_INVALID' : '');
@@ -192,10 +462,7 @@ function checkClaims(value, selected, inputs, status, sourceField) {
   for (const token of value.match(/[A-Za-z][A-Za-z\d]*(?:[.+#/-][A-Za-z\d+#]+)*/g) || []) if (!technologies.has(token.toLowerCase())) reject('正文包含没有确认事实依据的新技术或英文实体。');
   const knownEntities = inputs.sourceResume.entities.map(entity => entity.name);
   for (const entity of knownEntities) if (entity && value.includes(entity) && !basis.includes(entity)) reject('正文包含未被引用事实支持的机构或项目名称。');
-  for (const claim of entityClaims(value)) {
-    const supported = entityClaims(basis).includes(claim);
-    if (!basis.includes(claim) && !supported) reject('正文包含没有确认事实依据的公司或学校名称。');
-  }
+  for (const mention of organizationMentions(value)) if (!mentionSupported(mention, basis)) reject('正文包含没有确认事实依据的公司或学校名称。');
   for (const phrase of ['精通', '专家', '主导', '独立负责', '全面负责', '领导', '带领', '从零到一', '架构设计', '显著', '大幅', '成功上线', '生产环境', '商业化', '百万', '千万', '亿级', '高并发', '高可用', '分布式', '熟练掌握']) if (value.includes(phrase) && !basis.includes(phrase)) reject('正文包含缺少确认依据的职责或成果表述。');
   if (sourceField && ['education', 'experience', 'project'].includes(sourceField.kind)) {
     for (const fact of selected.filter(fact => ['education', 'experience', 'project'].includes(fact.kind))) {
@@ -205,6 +472,7 @@ function checkClaims(value, selected, inputs, status, sourceField) {
   }
 }
 function validateContent(value, inputs, status = 502) {
+  if (status === 502) repairDraft(value, inputs);
   keys(value, ['schema_version', 'patches', 'form_fields', 'questions', 'warnings'], status);
   demand(value.schema_version === 1 && Array.isArray(value.patches) && value.patches.length <= inputs.sourceResume.fields.length && Array.isArray(value.form_fields) && value.form_fields.length === inputs.fields.length, status, '材料结构或字段数量不正确。', status === 502 ? 'AI_OUTPUT_INVALID' : '');
   const ids = new Set(), paths = new Set();

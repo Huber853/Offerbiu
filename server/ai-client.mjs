@@ -5,6 +5,48 @@ import { serverDeepSeekKeyFor } from './ai-access.mjs';
 
 const inflight = new Set();
 const budgets = new Map();
+function tryParse(value) {
+  try { return JSON.parse(value); } catch { return null; }
+}
+function stripTrailingCommas(input) {
+  let out = '';
+  let quote = false;
+  let escape = false;
+  for (let i = 0; i < input.length; i++) {
+    const ch = input[i];
+    if (quote) {
+      out += ch;
+      if (escape) escape = false;
+      else if (ch === '\\') escape = true;
+      else if (ch === '"') quote = false;
+      continue;
+    }
+    if (ch === '"') { quote = true; out += ch; continue; }
+    if (ch === ',') {
+      let j = i + 1;
+      while (j < input.length && /\s/.test(input[j])) j++;
+      if (input[j] === '}' || input[j] === ']') continue;
+    }
+    out += ch;
+  }
+  return out;
+}
+function parseModelJson(content) {
+  const stripped = String(content).replace(/^\uFEFF/, '').trim();
+  const candidates = [stripped];
+  const unfenced = stripped.replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/i, '').trim();
+  if (unfenced !== stripped) candidates.push(unfenced);
+  for (const candidate of [...candidates]) {
+    const start = candidate.indexOf('{');
+    const end = candidate.lastIndexOf('}');
+    if (start >= 0 && end > start) candidates.push(candidate.slice(start, end + 1));
+  }
+  for (const candidate of candidates) {
+    const parsed = tryParse(candidate) ?? tryParse(stripTrailingCommas(candidate));
+    if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) return parsed;
+  }
+  return null;
+}
 function configured(userId) {
   const row = db.prepare('SELECT * FROM ai_settings WHERE user_id=?').get(userId);
   const provider = PROVIDERS[row?.provider] ? row.provider : 'deepseek';
@@ -57,8 +99,8 @@ export async function callJson(userId,{ task,system,input,signal,maxTokens=6144,
       demand(result.choices?.[0]?.finish_reason==='stop',502,'AI 输出未完整结束，请精简内容后重试。','AI_OUTPUT_INVALID');
       const content=result.choices[0].message?.content;
       demand(typeof content==='string' && content.length>0 && Buffer.byteLength(content,'utf8')<=200000,502,'AI 输出为空或过长。','AI_OUTPUT_INVALID');
-      data=JSON.parse(content);
-      demand(data && typeof data==='object' && !Array.isArray(data),502,'AI 返回的 JSON 结构不正确。','AI_OUTPUT_INVALID');
+      data=parseModelJson(content);
+      demand(data,502,'AI 返回的 JSON 结构不正确。','AI_OUTPUT_INVALID');
       validate?.(data);
     } catch(error) {
       if(error instanceof HttpError) throw error;

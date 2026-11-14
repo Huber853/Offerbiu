@@ -43,6 +43,13 @@ test('custom provider never inherits the server DeepSeek key',async()=>{
   db.prepare('INSERT INTO ai_settings(user_id,provider,model,base_url,updated_at) VALUES(?,?,?,?,?)').run('custom','custom','test-model','https://example.com/v1',new Date().toISOString());
   await assert.rejects(callJson('custom',args),e=>e.code==='AI_NOT_CONFIGURED');
 });
+test('fenced or trailing-comma JSON still parses into the object',async()=>{
+  fixtureUser(db,'fenced');
+  globalThis.fetch=async()=>new Response(JSON.stringify({choices:[{finish_reason:'stop',message:{content:'```json\n{"ok":true,}\n```'}}],usage:{total_tokens:3}}),{status:200});
+  assert.deepEqual((await callJson('fenced',args)).data,{ok:true});
+  globalThis.fetch=async()=>new Response(JSON.stringify({choices:[{finish_reason:'stop',message:{content:'模型说明\n{"ok":true}'}}],usage:{total_tokens:3}}),{status:200});
+  assert.deepEqual((await callJson('fenced',{...args,task:'fenced-prose'})).data,{ok:true});
+});
 test('provider error details do not leak credential or upstream request body',async()=>{
   globalThis.fetch=async()=>new Response('secret detail '+process.env.DEEPSEEK_API_KEY,{status:401});
   await assert.rejects(callJson('transport',args),e=>e.code==='AI_UPSTREAM_ERROR'&&!e.message.includes(process.env.DEEPSEEK_API_KEY));

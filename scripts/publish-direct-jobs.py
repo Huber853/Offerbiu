@@ -32,11 +32,18 @@ def deadline_expired(value, today=None):
     end=dt.date(int(match.group(1)), int(match.group(2)), int(match.group(3)))
     return end < (today or dt.datetime.now(CST).date())
 
+def title_blocked(row):
+    title=row.get('title') or ''
+    if re.search(r'兼职|招聘公告|招募计划|校园大使', title):return True
+    # Keep this check aligned with server/job-policy.mjs acceptsJob.
+    if re.search(r'实习', title) and row.get('recruit_type')!='实习':return True
+    return False
+
 def accepted(row):
     if row.get('source_policy')!=POLICY['version'] or row.get('record_type')!='job' or row.get('cohort')!=2027 or not row.get('direct_apply_verified') or row.get('catalog_status')!='active':return False
     if deadline_expired(row.get('deadline')):return False
     if not all(row.get(k) for k in ['external_id','title','description','cohort_evidence']):return False
-    if re.search('实习生|实习岗位|招聘公告|招募计划',row['title']):return False
+    if title_blocked(row):return False
     urls=[urllib.parse.urlparse(row.get(k,'')) for k in ['source_url','apply_url','cohort_evidence_url']]
     # Reviewed employers also live on multi-tenant platforms (Moka, Beisen, Feishu)
     # where one host serves many companies, so the path pattern takes part in rule
@@ -57,6 +64,29 @@ def accepted(row):
             key=urllib.parse.parse_qs(u.query).get(rule['id_query'],[''])[0] if rule['id_query'] else urllib.parse.unquote(u.path.split('/')[-1])
         if not re.fullmatch(rule['path_pattern'],u.path) or key!=str(row['external_id']):return False
     return True
+
+def job_signature(row):
+    return (row['company'],row['title'],tuple(sorted(row.get('cities') or [])),row.get('description'),row.get('requirements'),row.get('employer_unit'),row.get('recruit_type') or '校招')
+
+def merge_new(existing, candidates):
+    """Append accepted rows without rewriting jobs already in the seed catalog."""
+    existing=list(existing)
+    ids={r['id'] for r in existing}
+    externals={(r.get('company'), str(r.get('external_id'))) for r in existing}
+    signatures={job_signature(r) for r in existing}
+    duplicates=[];added=[]
+    for row in candidates:
+        if not isinstance(row, dict):continue
+        if row.get('id') in ids or (row.get('company'), str(row.get('external_id'))) in externals:continue
+        if not accepted(row):continue
+        row=enrich(row)
+        signature=job_signature(row)
+        if signature in signatures:
+            duplicates.append({'id':row['id'],'reason':'同单位、标题、Base、职责、要求完全相同的重复广告'})
+            continue
+        signatures.add(signature);ids.add(row['id']);externals.add((row.get('company'), str(row.get('external_id'))))
+        added.append(row)
+    return existing+added, duplicates, 0
 
 def original_jobs(rows):
     proof=direct.read('https://talent.baidu.com/jobs/list?recruitType=GRADUATE','baidu-current-cohort.html').decode()
@@ -168,7 +198,7 @@ def main():
     # These NWU postings are group announcements or explicitly require an external
     # official-only submission route that the notice does not link at job level.
     excluded_companies={'杭州加多宝饮料有限公司','中信证券股份有限公司陕西分公司','中信证券股份有限公司上海分公司'}
-    fresh=[r for r in fresh if after_refresh(r) and r['company'] not in excluded_companies and not re.search('实习|招聘公告|招募计划',r['title'])]
+    fresh=[r for r in fresh if after_refresh(r) and r['company'] not in excluded_companies and not title_blocked(r)]
     # collect-jobs.py writes official-portal-candidates.json (posting candidates).
     # data/portal-candidates.json is discover-employer-portals.py probe output — not interchangeable.
     candidate_file=ROOT/'data/official-portal-candidates.json'
@@ -189,33 +219,37 @@ def main():
     # Preserve other reviewed employer channels when the original collector is
     # refreshed. Later evidence for the same official job ID replaces older fields.
     expansion={}
-    catalogs=list((ROOT/'data/sources').glob('*-employers/accepted.json'))+list((ROOT/'data/sources').glob('*-brands/accepted.json'))
+    catalogs=list((ROOT/'data/sources').glob('*-employers/accepted.json'))+list((ROOT/'data/sources').glob('*-brands/accepted.json'))+list((ROOT/'data/sources').glob('*-interns/accepted.json'))
     for filename in sorted(catalogs):
         for row in json.loads(filename.read_text(encoding='utf-8')):
             if after_refresh(row):expansion[row['id']]=row
-    if args.merge_only:
-        combined=old['jobs']+list(expansion.values())
+    if args.merge_only and not args.replace_company:
+        # Keep every current 校招 row intact, including posts whose deadline has since passed.
+        rows,duplicates,withdrawn_expired=merge_new(old['jobs'], expansion.values())
     else:
-        retained=[r for r in old['jobs'] if r['company'] not in ['百度','腾讯音乐']]
-        combined=retained+original_jobs(candidates)+fresh+list(expansion.values())
-    if args.replace_company:
-        combined=[r for r in combined if r['company'] not in args.replace_company]+replacements
-        refreshes.update({company:STAMP for company in args.replace_company})
-    withdrawn_expired=0
-    for row in combined:
-        if row.get('catalog_status')=='active' and deadline_expired(row.get('deadline')):
-            row['catalog_status']='withdrawn'
-            row['withdrawn_reason']='deadline_passed'
-            withdrawn_expired+=1
-    rows=[enrich(r) for r in combined if accepted(r)]
-    rows=list({r['id']:r for r in rows}.values())
-    unique={};duplicates=[]
-    for row in rows:
-        signature=(row['company'],row['title'],tuple(sorted(row['cities'])),row['description'],row['requirements'],row.get('employer_unit'))
-        if signature in unique:
-            duplicates.append({'id':row['id'],'kept_id':unique[signature]['id'],'reason':'同单位、标题、Base、职责、要求完全相同的重复广告'})
-        else: unique[signature]=row
-    rows=list(unique.values())
+        if args.merge_only:
+            combined=old['jobs']+list(expansion.values())
+        else:
+            retained=[r for r in old['jobs'] if r['company'] not in ['百度','腾讯音乐']]
+            combined=retained+original_jobs(candidates)+fresh+list(expansion.values())
+        if args.replace_company:
+            combined=[r for r in combined if r['company'] not in args.replace_company]+replacements
+            refreshes.update({company:STAMP for company in args.replace_company})
+        withdrawn_expired=0
+        for row in combined:
+            if row.get('catalog_status')=='active' and deadline_expired(row.get('deadline')):
+                row['catalog_status']='withdrawn'
+                row['withdrawn_reason']='deadline_passed'
+                withdrawn_expired+=1
+        rows=[enrich(r) for r in combined if accepted(r)]
+        rows=list({r['id']:r for r in rows}.values())
+        unique={};duplicates=[]
+        for row in rows:
+            signature=job_signature(row)
+            if signature in unique:
+                duplicates.append({'id':row['id'],'kept_id':unique[signature]['id'],'reason':'同单位、标题、Base、职责、要求完全相同的重复广告'})
+            else: unique[signature]=row
+        rows=list(unique.values())
     (RAW/'duplicate-ads.json').write_text(json.dumps(duplicates,ensure_ascii=False,indent=2),encoding='utf-8')
     archive=ROOT/'data/archive';archive.mkdir(exist_ok=True)
     backup=archive/'jobs-before-official-nwu-policy.json'
@@ -229,10 +263,15 @@ def main():
               employer_count=sources['employer_official'],nwu_count=sources['nwu_official'],
               company_natures=dict(Counter(r['company_nature'] for r in rows)),
               withdrawn_expired=withdrawn_expired,company_refreshed_at=refreshes,
-              scope='仅企业官方招聘网站和西北大学就业网的具体2027届岗位，链接直达单岗位投递页。',
-              limitations='来源仅限企业官方招聘渠道及西北大学就业网。均为具体岗位，保留岗位编号、届别依据和投递页；第三方招聘系统仅接入已核实的企业专属站点。可能需要登录来源网站，招聘状态以投递页为准。已过截止日期的岗位会自动下架，不承诺仍在招。')
+              scope='仅企业官方招聘网站和西北大学就业网的具体岗位，含2027届校招与官方实习岗位，链接直达单岗位投递页。',
+              limitations='来源仅限企业官方招聘渠道及西北大学就业网。均为具体岗位，保留岗位编号、招聘依据和投递页。校招岗位保留2027届依据；实习岗位按官网实习项目、实习类型或实习周期标注，不记作全职校招。第三方招聘系统仅接入已核实的企业专属站点。可能需要登录来源网站，招聘状态以投递页为准。已过截止日期的岗位会自动下架，不承诺仍在招。')
     draft=seed.with_suffix('.pending.json');draft.write_text(json.dumps({**meta,'jobs':rows},ensure_ascii=False,indent=2),encoding='utf-8');draft.replace(seed)
     with sqlite3.connect(ROOT/'storage/offerbiu.sqlite',timeout=15) as conn:
+        conn.execute('''CREATE TABLE IF NOT EXISTS jobs(
+            id TEXT PRIMARY KEY, company TEXT NOT NULL, title TEXT NOT NULL, cities TEXT NOT NULL,
+            category TEXT NOT NULL, cohort INTEGER NOT NULL, payload TEXT NOT NULL, collected_at TEXT NOT NULL,
+            catalog_active INTEGER NOT NULL DEFAULT 0)''')
+        conn.execute('CREATE TABLE IF NOT EXISTS metadata(key TEXT PRIMARY KEY, value TEXT)')
         if 'catalog_active' not in [x[1] for x in conn.execute('PRAGMA table_info(jobs)')]:conn.execute('ALTER TABLE jobs ADD COLUMN catalog_active INTEGER NOT NULL DEFAULT 0')
         conn.execute('UPDATE jobs SET catalog_active=0')
         conn.executemany('''INSERT INTO jobs(id,company,title,cities,category,cohort,payload,collected_at,catalog_active) VALUES(?,?,?,?,?,?,?,?,1)

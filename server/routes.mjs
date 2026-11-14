@@ -189,6 +189,9 @@ async function api(req, res, url) {
       clauses.push(`json_extract(payload,'$.${key}')=?`); values.push(text(url.searchParams.get(key), 100));
     }
     if (url.searchParams.get('record_type')) { clauses.push("COALESCE(json_extract(payload,'$.record_type'),'job')=?"); values.push(text(url.searchParams.get('record_type'), 30)); }
+    const recruitType = url.searchParams.get('recruit_type');
+    if (recruitType === '实习') { clauses.push("json_extract(payload,'$.recruit_type')=?"); values.push('实习'); }
+    else if (recruitType === '校招') { clauses.push("COALESCE(json_extract(payload,'$.recruit_type'),'校招')=?"); values.push('校招'); }
     if (url.searchParams.get('category')) {
       clauses.push("(category=? OR EXISTS (SELECT 1 FROM json_each(jobs.payload,'$.directions') d WHERE d.value=?))");
       const direction = text(url.searchParams.get('category'), 100); values.push(direction, direction);
