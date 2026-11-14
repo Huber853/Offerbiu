@@ -80,7 +80,10 @@ def kingdom():
         listed+=json.loads(read(origin+'/api/Jobad/GetJobAdPageList',f'kingdom-list-{n}.json',json.dumps(payload).encode(),headers))['Data']
     result=[]
     for item in listed:
-        if not re.search(r'2027|27届',item.get('JobAdName','')) or '实习' in item.get('JobAdName','') or item.get('Kind')!='全职':continue
+        title_text=item.get('JobAdName') or ''
+        intern='实习' in title_text or item.get('Kind')=='实习'
+        if '兼职' in title_text or item.get('Kind')=='兼职':continue
+        if not intern and (not re.search(r'2027|27届',title_text) or item.get('Kind')!='全职'):continue
         query=urllib.parse.urlencode({'jobAdId':item['Id'],'category':2,'displayFields':json.dumps(['JobAdName','LocId','Degree','Duty','Require'])})
         detail=json.loads(read(origin+'/api/JobAd/GetJobAdInfo?'+query,'kingdom-detail-'+item['Id']+'.json',headers={'Referer':origin+'/campus/jobs'}))
         d=detail.get('Data') or {}
@@ -94,7 +97,9 @@ def kingdom():
                    education=d.get('Degree') or item.get('Degree'),salary=d.get('Salary') or item.get('Salary'),
                    published_at=iso(item['PostDate']),updated_at=iso(item.get('ChangeDate')),external_id=item['Id'],
                    source_file=str((RAW/('kingdom-detail-'+item['Id']+'.json')).relative_to(ROOT)).replace('\\','/'),
-                   cohort_evidence='企业校园招聘栏目具体岗位标题明确标注2027届校招。',
+                   cohort_evidence='官网工作性质：实习。'+title_text if intern else '企业校园招聘栏目具体岗位标题明确标注2027届校招。',
+                   recruit_type='实习' if intern else '校招',employment_type='实习' if intern else '全职校招',
+                   batch='实习' if intern else '秋招',program=title_text if intern else '2027届校园招聘',
                    notes='使用官网前端生成的单岗位详情路由与真实GUID，详情页提供投递入口。登录后由用户本人提交。学历摘要与要求如有冲突，以任职要求为准。')
         if '硕士及以上' in row['requirements'] and row['education']=='本科':row['education']='硕士及以上（任职要求）；官网摘要另标本科'
         result.append(row)

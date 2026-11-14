@@ -79,8 +79,9 @@ def parse_detail(site, job):
         title_node = s.select_one('.boxSupertitle span, .xqtitle h2, h2.xqtitle')
         if not title_node: raise ValueError('没有识别到单岗位标题')
         title = title_node.get_text(' ', strip=True)
-        if not re.search(r'2027|27届', title) or re.search(r'实习|校园大使|招聘公告|招募计划', title):
-            raise ValueError('非明确2027届全职具体岗位')
+        intern=bool(re.search(r'实习', title))
+        if re.search(r'兼职|校园大使|招聘公告|招募计划', title) or (not intern and not re.search(r'2027|27届', title)):
+            raise ValueError('非明确2027届全职具体岗位，也不是官方实习岗位')
         detail = s.select_one('.xiangqingtext')
         if detail:
             text = detail.get_text('\n', strip=True)
@@ -96,7 +97,8 @@ def parse_detail(site, job):
         if not body or not requirements: raise ValueError('职责或要求为空')
         if not re.search('现在申请|立即申请|我要申请|立即投递', box.get_text(' ', strip=True)):
             raise ValueError('详情无投递入口')
-        if field(box, '工作性质') not in (None, '', '全职'): raise ValueError('非全职')
+        if field(box, '工作性质')=='实习': intern=True
+        if not intern and field(box, '工作性质') not in (None, '', '全职'): raise ValueError('非全职')
         loc = field(box, '工作地点')
         row = direct.base(company, f'{key}:{external_id}', title, cities(loc), url, 'employer_official')
         row.update(external_id=external_id, industry=industry, description=body, requirements=requirements,
@@ -105,7 +107,9 @@ def parse_detail(site, job):
             headcount=field(box, '招聘人数'), category_raw=field(box, '职位类别') or '',
             published_at=direct.iso(field(box, '发布时间')), updated_at=direct.iso((field(box, '更新时间') or '').replace('.', '-')),
             source_file=str((direct.RAW/name).relative_to(ROOT)).replace('\\', '/'),
-            cohort_evidence='企业校园招聘单岗位标题明确标注2027：'+title,
+            cohort_evidence='官网工作性质：实习。'+title if intern else '企业校园招聘单岗位标题明确标注2027：'+title,
+            recruit_type='实习' if intern else '校招', employment_type='实习' if intern else '全职校招',
+            batch='实习' if intern else '秋招',
             notes='企业专属招聘站的真实岗位编号；详情页含申请按钮，登录后由本人投递。')
         row['deadline'] = direct.iso(field(box, '截止时间'))
         if row['deadline'] and row['deadline'] < direct.STAMP[:10]: raise ValueError('已超过官网截止日期')
@@ -158,13 +162,17 @@ def cnnc():
     def detail(item):
         jid=item['Id'];name=f'cnnc-detail-{jid}.json'
         try:
-            if item.get('Kind')!='全职' or re.search(r'实习|校园大使|招聘公告|类(?:\(J\d+\))?$',item['JobAdName']):return None
+            intern=item.get('Kind')=='实习' or bool(re.search(r'实习', item.get('JobAdName') or ''))
+            if re.search(r'兼职|校园大使|招聘公告|类(?:\(J\d+\))?$',item.get('JobAdName') or ''):return None
+            if not intern and item.get('Kind')!='全职':return None
             query=urllib.parse.urlencode({'jobAdId':jid,'category':2,'displayFields':json.dumps(['JobAdName','LocId','Degree','Duty','Require'])})
             result=json.loads(read(origin+'/api/JobAd/GetJobAdInfo?'+query,name,headers=headers))
             d=result.get('Data') or {}
             if result.get('Code')!=200 or d.get('Status')!=1 or d.get('JobAdName')!=item['JobAdName']:raise ValueError('岗位详情不匹配或关闭')
-            evidence=re.search(r'.{0,35}2027.{0,50}',d['JobAdName']+' '+direct.clean(d.get('Require')))
-            if not evidence: raise ValueError('岗位缺少2027届依据')
+            if intern:evidence=None
+            else:
+                evidence=re.search(r'.{0,35}2027.{0,50}',d['JobAdName']+' '+direct.clean(d.get('Require')))
+                if not evidence: raise ValueError('岗位缺少2027届依据')
             url=origin+'/campus/detail?jobAdId='+jid
             row=direct.base('中核集团','cnnc:'+jid,d['JobAdName'],cities(','.join(d.get('LocNames') or item.get('LocNames') or [])),url,'employer_official')
             row.update(external_id=jid,industry='能源与电力',employer_unit=d.get('Org') or item.get('Org'),
@@ -174,7 +182,8 @@ def cnnc():
                 published_at=direct.iso(item.get('PostDate')),updated_at=direct.iso(item.get('ChangeDate')),
                 source_file=str((direct.RAW/name).relative_to(ROOT)).replace('\\','/'),
                 cities_raw=d.get('LocNames') or item.get('LocNames') or [],
-                cohort_evidence='中核集团单岗位标题或任职要求：'+evidence.group(0),
+                cohort_evidence='官网工作性质：实习。'+d['JobAdName'] if intern else '中核集团单岗位标题或任职要求：'+evidence.group(0),
+                recruit_type='实习' if intern else '校招',employment_type='实习' if intern else '全职校招',
                 company_nature='央企及所属企业',company_nature_source='https://www.cnnc.com.cn/',
                 notes='中核集团官方招聘门户，招聘单位以岗位所列成员单位为准；真实GUID直达官方岗位详情与投递入口。')
             if not row['description'] or not row['requirements']:raise ValueError('正文不完整')
@@ -201,7 +210,7 @@ def boc():
         try:
             text=direct.clean(item['jobDesc'])
             if '2027' not in text or item.get('isShow')!=1 or item.get('isStart')!=1 or item.get('experience')!='应届毕业生':return None
-            if re.search('实习|专项计划岗位',item['name']):return None
+            if re.search('兼职|专项计划岗位',item['name']):return None
             deadline=direct.iso(item.get('applyEndTime'))
             if deadline and deadline<direct.STAMP[:10]:return None
             # The campaign's public jobs component generates this exact URL.
