@@ -104,7 +104,7 @@ def tme():
     for n in range(2, int(first['_meta']['page_count']) + 1):
         time.sleep(.16)
         items.extend(json.loads(read(endpoint + f'?page={n}', f'tme-page-{n:02d}.json'))['data']['items'])
-    selected = {str(x['id']): x for x in items if int(x.get('job_type', 0)) in (10, 40)}
+    selected = {str(x['id']): x for x in items if int(x.get('job_type', 0)) in (10, 40) or (int(x.get('job_type', 0)) == 30 and '实习' in (x.get('name') or ''))}
     def detail(kv):
         external_id, listed = kv
         j = json.loads(read(f'https://join.tencentmusic.com/api/uc-job/info?id={external_id}', f'tme-detail-{external_id}.json'))
@@ -113,13 +113,16 @@ def tme():
         item = j['data']
         row = base('腾讯音乐', external_id, item['name'], [x['label'] for x in item.get('work_city', [])], item.get('jobf_descr'), f'https://join.tencentmusic.com/campus/post-details?id={external_id}')
         doctorate = int(item.get('job_type', 0)) == 40
+        intern = int(item.get('job_type', 0)) == 30 or '实习' in (item.get('name') or '')
         row.update(description=clean(item.get('duty')), requirements=clean(item.get('requirement')),
-                   program='2027 技术大咖' if doctorate else '2027 校园招聘', department=item.get('setid_descr') or '',
+                   program=(item.get('job_type_descr') or '实习') if intern else ('2027 技术大咖' if doctorate else '2027 校园招聘'),
+                   recruit_type='实习' if intern else '校招', employment_type='实习' if intern else '全职校招',
+                   batch='实习' if intern else row.get('batch'), department=item.get('setid_descr') or '',
                    education='博士' if doctorate else None, published_at=calendar_date(item.get('date')),
                    published_at_raw=clean(item.get('date')) or None,
-                   cohort_evidence_url='https://join.tencentmusic.com/master/' if doctorate else 'https://join.tencentmusic.com/campus/faq/',
-                   cohort_evidence='2027 官方招聘项目：毕业时间2026年1月—2027年12月；技术大咖限定博士，应届生项目按岗位要求。',
-                   notes='官网复用部分历年岗位编号；date 是接口原始日期，不冒充2026年新发布。岗位当前属于2027项目；官方说明招满即止。')
+                   cohort_evidence_url=row['source_url'] if intern else ('https://join.tencentmusic.com/master/' if doctorate else 'https://join.tencentmusic.com/campus/faq/'),
+                   cohort_evidence=('官网职位类型：'+(item.get('job_type_descr') or '实习')+'。') if intern else '2027 官方招聘项目：毕业时间2026年1月—2027年12月；技术大咖限定博士，应届生项目按岗位要求。',
+                   notes='腾讯音乐官网实习岗位，按职位编号去重。招聘类型为实习，不是全职校招。' if intern else '官网复用部分历年岗位编号；date 是接口原始日期，不冒充2026年新发布。岗位当前属于2027项目；官方说明招满即止。')
         return row
     with concurrent.futures.ThreadPoolExecutor(max_workers=3) as pool:
         return list(pool.map(detail, selected.items()))

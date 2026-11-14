@@ -21,13 +21,17 @@ def pinduoduo():
     first=page(1);jobs=first['list']
     for n in range(2,math.ceil(int(first['total'])/100)+1):jobs+=page(n)['list']
     def detail(j):
-        if str(j.get('graduationYear'))!='2027':return None
+        intern='实习' in (j.get('name') or '') or '实习' in str(j.get('recruitTypeName') or '')
+        if not intern and str(j.get('graduationYear'))!='2027':return None
         name=f'pdd-detail-{j["id"]}.json'
         d=f.api(origin+'/api/careers/api/recruit/position/detail',name,{'id':j['id']})['result']
-        if not d.get('normal') or d.get('voteArrange')!='inTime' or str(d.get('graduationYear'))!='2027':return None
+        intern='实习' in (d.get('name') or '') or '实习' in str(d.get('recruitTypeName') or '')
+        if not d.get('normal') or d.get('voteArrange')!='inTime':return None
+        if not intern and str(d.get('graduationYear'))!='2027':return None
         url=origin+'/campus/grad/detail?positionId='+d['id']
+        proof=('官网实习岗位；' if intern else '岗位详情 graduationYear=2027；')+(d.get('recruitTypeName') or '')
         return f.make('拼多多','pinduoduo',d['id'],d['name'],d.get('workLocationName') or '',url,d.get('jobDuty'),d.get('serveRequirement'),
-            '岗位详情 graduationYear=2027；'+d.get('recruitTypeName',''),url,name,category_raw=d.get('jobName'),published_at=f.direct.iso(d.get('releaseTime')))
+            proof,url,name,category_raw=d.get('jobName'),published_at=f.direct.iso(d.get('releaseTime')),intern=intern)
     return f.parallel(detail,jobs)
 
 def bilibili():
@@ -46,15 +50,18 @@ def bilibili():
     def detail(j):
         name=f'bili-detail-{j["id"]}.json'
         d=f.api(origin+'/api/campus/position/detail/'+str(j['id']),name,opener=op,headers=headers)['data']
-        if d.get('positionType')!='3' or d.get('positionStatus')!=1 or d.get('recruitType')!=1:return None
+        intern=d.get('recruitType') not in (1,'1') or bool(re.search(r'实习', d.get('positionName') or ''))
+        if d.get('positionStatus')!=1:return None
+        if not intern and (d.get('positionType')!='3' or d.get('recruitType')!=1):return None
         proof=d['positionName']+'；毕业时间：'+(d.get('graduationStartTime') or '')+' 至 '+(d.get('graduationEndTime') or '')
-        if '2027' not in proof:return None
+        if not intern and '2027' not in proof:return None
+        if intern:proof='官网实习岗位。'+proof
         text=f.direct.clean(d.get('positionDescription'))
         parts=re.split(r'工作要求[:：]?|任职要求[:：]?',text,maxsplit=1)
         if len(parts)!=2:return None
         url=origin+'/campus/positions/'+str(d['id'])
         return f.make('B站','bilibili',d['id'],d['positionName'],d.get('workLocation') or '',url,parts[0],parts[1],proof,url,name,
-            industry='游戏与文娱',category_raw=d.get('postCodeName'),published_at=f.direct.iso(d.get('pushTime')),deadline=f.direct.iso(d.get('webApplyEndTime')))
+            industry='游戏与文娱',category_raw=d.get('postCodeName'),published_at=f.direct.iso(d.get('pushTime')),deadline=f.direct.iso(d.get('webApplyEndTime')),intern=intern)
     return f.parallel(detail,jobs)
 
 def huawei():
@@ -63,23 +70,30 @@ def huawei():
     proof=f.read(origin+'/cn/campus-recruitment','huawei-cohort.html').decode()
     if '2027届应届生招聘对象' not in proof:raise ValueError('官网当前届别未确认')
     def request(method,name,body):return f.api(apiroot+method+'?X-HW-ID=app_000000035886',name,body,headers=headers)['data']
-    def page(n):return request('getJobPage',f'huawei-list-{n}.json',{'curPage':n,'pageSize':100,'jobType':'CR','recruitmentType':['FRESH_GRADUATE']})
-    first=page(1);jobs=first['result']
-    for n in range(2,first['pageVO']['totalPages']+1):jobs+=page(n)['result']
+    def page(n, recruitment):return request('getJobPage',f'huawei-{recruitment}-list-{n}.json',{'curPage':n,'pageSize':100,'jobType':'CR','recruitmentType':[recruitment]})
+    jobs=[]
+    for recruitment in ('FRESH_GRADUATE','INTERN'):
+        first=page(1, recruitment);jobs+=first.get('result') or []
+        pages=int((first.get('pageVO') or {}).get('totalPages') or 1)
+        for n in range(2, pages+1):jobs+=page(n, recruitment).get('result') or []
     def detail(j):
-        if j.get('scenarioName')!='应届生':return None
+        intern=j.get('scenarioName')=='实习生'
+        if j.get('scenarioName') not in ('应届生','实习生'):return None
         jid=j['advertisementId'];name=f'huawei-detail-{jid}.json'
         d=request('getRecruitmentPositionDetail',name,{'advertisementId':jid})
-        if d.get('recruitType')!='CR' or d.get('scenarioName')!='应届生':return None
+        if d.get('scenarioName') not in ('应届生','实习生'):return None
+        if not intern and (d.get('recruitType')!='CR' or d.get('scenarioName')!='应届生'):return None
         intentions=request('getPositionIntentionList',f'huawei-intentions-{jid}.json',{'jobId':d['jobId']}) or []
         description=d.get('mainBusiness') or '';requirements=d.get('jobRequire') or ''
         if '详见岗位意向' in description:
             description='\n\n'.join(x['positionIntention']+'\n'+x.get('jobResponsibilities','') for x in intentions if x.get('jobResponsibilities'))
             requirements='\n\n'.join(x['positionIntention']+'\n'+x.get('jobDemand','') for x in intentions if x.get('jobDemand'))
         url=origin+'/cn/job-details?advertisementId='+str(jid)
-        row=f.make('华为','huawei',jid,d['jobname'],d.get('jobCity') or '',url,description,requirements,
-            '华为官网2027届应届生招聘；国内本硕毕业时间2027-01-01至2027-12-31，国内博士与海外本硕博2026-01-01至2027-12-31。',origin+'/cn/campus-recruitment',name,
-            industry='通信与智能硬件',category_raw=d.get('categoryName'),updated_at=f.direct.iso(d.get('lastUpdateDate')),program='2027届应届生招聘')
+        title=d.get('jobname') or d.get('jobName') or j.get('jobName') or ''
+        proof='官网招聘场景：实习生。' if d.get('scenarioName')=='实习生' else '华为官网2027届应届生招聘；国内本硕毕业时间2027-01-01至2027-12-31，国内博士与海外本硕博2026-01-01至2027-12-31。'
+        row=f.make('华为','huawei',jid,title,d.get('jobCity') or j.get('workPlace') or '',url,description,requirements,
+            proof,origin+'/cn/campus-recruitment',name,
+            industry='通信与智能硬件',category_raw=d.get('categoryName'),updated_at=f.direct.iso(d.get('lastUpdateDate')),program='实习生招聘' if d.get('scenarioName')=='实习生' else '2027届应届生招聘',intern=d.get('scenarioName')=='实习生')
         if row:
             row['source_files']=[row['source_file'],str((f.RAW/f'huawei-intentions-{jid}.json').relative_to(f.ROOT)).replace('\\','/')]
             row['notes']+=' 华为同一职位的多个岗位意向合并展示，请在官网选择意向、部门与地点后申请。'
@@ -108,19 +122,25 @@ def didi():
     first=page(0);jobs=first['jobs']
     for n in range(1,math.ceil(first['jobStats']['total']/15)):jobs+=page(n)['jobs']
     def detail(j):
-        if j.get('commitment')!='全职' or j.get('status')!='open':return None
+        commitment=j.get('commitment') or ''
+        intern=commitment=='实习' or bool(re.search(r'实习', j.get('title') or ''))
+        if j.get('status')!='open' or commitment=='兼职' or (not intern and commitment!='全职'):return None
         name=f'didi-detail-{j["id"]}.json'
         d=request('job',name,{'orgId':'didiglobal','siteId':96064,'jobId':j['id'],'locale':'zh-CN'})
         project=(d.get('projectFolder') or {}).get('name','')
-        if '2027' not in project or d.get('commitment')!='全职' or d.get('status')!='open':return None
+        detail_commitment=d.get('commitment') or commitment
+        intern=detail_commitment=='实习' or bool(re.search(r'实习', d.get('title') or j.get('title') or ''))
+        if d.get('status')!='open' or detail_commitment=='兼职':return None
+        if not intern and ('2027' not in project or detail_commitment!='全职'):return None
         body=f.direct.clean(d.get('jobDescription'))
         parts=re.split(r'任职要求[:：]?|岗位要求[:：]?|Qualifications\s*[:：]?',body,maxsplit=1,flags=re.I)
         if len(parts)!=2:return None
         url=origin+site+'#/job/'+d['id']
+        proof=('官网工作性质：实习。'+(project+'。' if project else '')) if intern else project+'；官网项目面向2026年9月至2027年8月毕业生。'
         return f.make('滴滴','didi',d['id'],d['title'],[x.get('cityName') or x.get('address') for x in d.get('locations') or []],url,
-            parts[0],parts[1],project+'；官网项目面向2026年9月至2027年8月毕业生。',url,name.replace('.json','-decoded.json'),
-            category_raw=(d.get('zhineng') or {}).get('name'),program=project,employer_unit=(d.get('department') or {}).get('name'),
-            education=d.get('education'),published_at=f.direct.iso(d.get('publishedAt')),updated_at=f.direct.iso(d.get('updatedAt')))
+            parts[0],parts[1],proof,url,name.replace('.json','-decoded.json'),
+            category_raw=(d.get('zhineng') or {}).get('name'),program=project or ('实习' if intern else None),employer_unit=(d.get('department') or {}).get('name'),
+            education=d.get('education'),published_at=f.direct.iso(d.get('publishedAt')),updated_at=f.direct.iso(d.get('updatedAt')),intern=intern)
     return f.parallel(detail,jobs)
 
 # Moka and Beisen host many independent employer graduate portals behind a single
@@ -219,21 +239,27 @@ def moka_site(site,state):
         # while still publishing full time campus posts, so only an explicit other
         # commitment or an internship title is treated as out of scope.
         commitment=d.get('commitment') or j.get('commitment') or ''
-        if commitment and commitment!='全职':return None
-        if re.search(r'实习|校园大使|兼职',title):return None
+        if commitment=='兼职' or re.search(r'兼职|校园大使', title):return None
+        intern=commitment=='实习' or bool(re.search(r'实习', title))
+        if not intern and commitment and commitment!='全职':return None
         project=(d.get('projectFolder') or {}).get('name','')
         body=f.direct.clean(d.get('jobDescription'))
         parts=re.split(r'任职要求[:：]?|岗位要求[:：]?|职位要求[:：]?|任职资格[:：]?|Qualifications\s*[:：]?',body,maxsplit=1,flags=re.I)
         if len(parts)!=2:return None
         # Some tenants name their campaign without a year, so the per-job cohort
         # evidence is taken from the posting body as the other collectors do.
-        evidence=re.search(r'.{0,30}(?:2027|27届).{0,70}',project+' '+title+' '+parts[0]+' '+parts[1])
-        if not evidence:return None
+        # Internship rows keep the official intern program text instead of a 2027届 proof.
+        if intern:
+            evidence_text='官网工作性质：实习。'+(('项目：'+project+'。') if project else '')
+        else:
+            evidence=re.search(r'.{0,30}(?:2027|27届).{0,70}',project+' '+title+' '+parts[0]+' '+parts[1])
+            if not evidence:return None
+            evidence_text=evidence.group(0)
         url=origin+path+'#/job/'+str(d['id'])
         return f.make(company,prefix,d['id'],d['title'],[x.get('cityName') or x.get('address') for x in d.get('locations') or []],url,
-            parts[0],parts[1],evidence.group(0),url,name.replace('.json','-decoded.json'),industry=industry,
-            category_raw=(d.get('zhineng') or {}).get('name'),program=project or '2027届校园招聘',education=d.get('education'),
-            published_at=f.direct.iso(d.get('publishedAt')),updated_at=f.direct.iso(d.get('updatedAt')))
+            parts[0],parts[1],evidence_text,url,name.replace('.json','-decoded.json'),industry=industry,
+            category_raw=(d.get('zhineng') or {}).get('name'),program=project or ('实习' if intern else '2027届校园招聘'),education=d.get('education'),
+            published_at=f.direct.iso(d.get('publishedAt')),updated_at=f.direct.iso(d.get('updatedAt')),intern=intern)
     return f.parallel(detail,jobs)
 
 def moka():
@@ -435,18 +461,25 @@ def beisen_site(site):
     def detail(item):
         jid=item['Id'];name=f'{prefix}-detail-{jid}.json'
         try:
-            if item.get('Kind')!='全职' or re.search(r'实习|招聘公告|招募计划|校园大使',item.get('JobAdName','')):return None
+            title_text=item.get('JobAdName') or ''
+            intern=item.get('Kind')=='实习' or bool(re.search(r'实习', title_text))
+            if re.search(r'兼职|招聘公告|招募计划|校园大使', title_text):return None
+            if not intern and item.get('Kind')!='全职':return None
             query=urllib.parse.urlencode({'jobAdId':jid,'category':2,'displayFields':json.dumps(['JobAdName','LocId','Degree','Duty','Require'])})
             result=f.api(origin+'/api/JobAd/GetJobAdInfo?'+query,name,headers=headers)
             d=result.get('Data') or {}
             if result.get('Code')!=200 or d.get('Status')==2 or d.get('JobAdName')!=item['JobAdName']:return None
-            evidence=re.search(r'.{0,35}(?:2027|27届).{0,60}',item['JobAdName']+' '+f.direct.clean(d.get('Require')))
-            if not evidence:return None
+            blob=item['JobAdName']+' '+f.direct.clean(d.get('Require'))
+            if intern:evidence_text='官网工作性质：实习。'+item['JobAdName']
+            else:
+                evidence=re.search(r'.{0,35}(?:2027|27届).{0,60}',blob)
+                if not evidence:return None
+                evidence_text=evidence.group(0)
             url=origin+'/campus/detail?jobAdId='+jid
             return f.make(company,prefix,jid,d['JobAdName'],f.loc(d.get('LocNames') or item.get('LocNames') or []),url,
-                f.direct.clean(d.get('Duty') or item.get('Duty')),f.direct.clean(d.get('Require') or item.get('Require')),evidence.group(0),url,name,
+                f.direct.clean(d.get('Duty') or item.get('Duty')),f.direct.clean(d.get('Require') or item.get('Require')),evidence_text,url,name,
                 industry=industry,education=d.get('Degree') or item.get('Degree'),category_raw=str(item.get('Category') or ''),
-                published_at=f.direct.iso(item.get('PostDate')),updated_at=f.direct.iso(item.get('ChangeDate')),program='2027届校园招聘')
+                published_at=f.direct.iso(item.get('PostDate')),updated_at=f.direct.iso(item.get('ChangeDate')),program='实习' if intern else '2027届校园招聘',intern=intern)
         except Exception as error:
             f.FAILURES.append({'source':company,'id':jid,'reason':str(error)});return None
     rows=f.parallel(detail,listed)
@@ -510,7 +543,8 @@ def wecruit_site(site):
             payload=wecruit_request(site,'listPositionDetail',prefix,name,{'postId':jid,'recruitType':1}).get('data') or {}
             merged={**item,**payload}
             title=str(merged.get('postName') or '')
-            if re.search(r'实习|校园大使|兼职',title):return None
+            if re.search(r'校园大使|兼职',title):return None
+            intern=bool(re.search(r'实习', title))
             body=None
             for field in ('positionDetail','workContent','jobDescription','jobDetail','duty','postDetail'):
                 if merged.get(field):body=f.direct.clean(merged[field]);break
@@ -520,14 +554,17 @@ def wecruit_site(site):
             if not body or not requirements:return None
             places=[p for p in re.split(r'[、,，;；/]',str(merged.get('workPlaceStr') or '')) if p.strip()]
             url=origin+'/'+suite+'/mc/detail?postId='+str(jid)+'&recruitType=1'
-            proof=title+' '+body+' '+requirements
-            evidence=re.search(r'.{0,30}(?:2027|27届).{0,70}',proof) or re.search(r'.{0,30}(?:2027|27届).{0,70}',str(merged.get('projectName') or ''))
-            if not evidence:return None
-            return f.make(company,prefix,jid,title,places,url,body,requirements,evidence.group(0),url,name,
+            if intern:evidence_text='官网岗位名称标明实习。'+title
+            else:
+                proof=title+' '+body+' '+requirements
+                evidence=re.search(r'.{0,30}(?:2027|27届).{0,70}',proof) or re.search(r'.{0,30}(?:2027|27届).{0,70}',str(merged.get('projectName') or ''))
+                if not evidence:return None
+                evidence_text=evidence.group(0)
+            return f.make(company,prefix,jid,title,places,url,body,requirements,evidence_text,url,name,
                 industry=industry,education=merged.get('educationStr') or merged.get('education'),
                 headcount=merged.get('recruitNumStr'),category_raw=merged.get('postTypeName'),
                 employer_unit=merged.get('company'),published_at=f.direct.iso(merged.get('publishDate')),
-                program=merged.get('projectName') or '2027届校园招聘',deadline=f.direct.iso(merged.get('endDate')))
+                program=merged.get('projectName') or ('实习' if intern else '2027届校园招聘'),deadline=f.direct.iso(merged.get('endDate')),intern=intern)
         except Exception as error:
             f.FAILURES.append({'source':company,'id':jid,'reason':str(error)});return None
     rows=f.parallel(detail,listed)
@@ -594,18 +631,23 @@ def chnenergy():
             duty=re.search(r'岗位职责\s*(.*?)\s*岗位要求',text,re.S)
             requirement=re.search(r'岗位要求\s*(.*?)\s*(?:国家能源投资集团|$)',text,re.S)
             if not duty or not requirement:return None
-            if re.search(r'实习|校园大使|兼职|公告|招募计划',anchor.get_text(strip=True)):return None
+            title_text=anchor.get_text(strip=True)
+            if re.search(r'校园大使|兼职|公告|招募计划',title_text):return None
+            intern=bool(re.search(r'实习', title_text))
             unit=card.select_one('h5[title]')
             unit=unit['title'] if unit else company
             places=[li.get_text(strip=True) for li in card.select('ul.list-inline li')
                     if li.get_text(strip=True) and li.get_text(strip=True)!='|' and '招聘人数' not in li.get_text()]
             title=anchor.get('title') or anchor.get_text(strip=True)
-            evidence=re.search(r'.{0,30}(?:2027|27届).{0,70}',title+' '+duty.group(1)+' '+requirement.group(1))
-            if not evidence:return None
+            if intern:evidence_text='官网岗位名称标明实习。'+title
+            else:
+                evidence=re.search(r'.{0,30}(?:2027|27届).{0,70}',title+' '+duty.group(1)+' '+requirement.group(1))
+                if not evidence:return None
+                evidence_text=evidence.group(0)
             url=CHNENERGY_ORIGIN+'/annc/showgw?id='+jid
             return f.make(company,prefix,jid,title,places,url,duty.group(1),requirement.group(1),
-                evidence.group(0),url,name,industry='能源与电力',employer_unit=unit,
-                program='2027年度高校毕业生直招')
+                evidence_text,url,name,industry='能源与电力',employer_unit=unit,
+                program='实习' if intern else '2027年度高校毕业生直招',intern=intern)
         except Exception as error:
             f.FAILURES.append({'source':company,'id':jid,'reason':str(error)});return None
     rows=f.parallel(detail,cards)

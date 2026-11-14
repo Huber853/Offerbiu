@@ -21,7 +21,10 @@ export function isDeadlineExpired(deadline, now = new Date()) {
 export function acceptsJob(job) {
   if (job.source_policy !== sourcePolicy.version || job.record_type !== 'job' || Number(job.cohort) !== sourcePolicy.cohort || job.direct_apply_verified !== true || job.catalog_status !== 'active') return false;
   if (isDeadlineExpired(job.deadline)) return false;
-  if (!job.external_id || !job.title || !job.description || !job.cohort_evidence || /实习生|实习岗位|招聘公告|招募计划/.test(job.title)) return false;
+  if (!job.external_id || !job.title || !job.description || !job.cohort_evidence) return false;
+  // 兼职、公告和大使不是具体岗位。标题含「实习」时必须标明招聘类型，避免和全职校招混在一起。
+  if (/兼职|招聘公告|招募计划|校园大使/.test(job.title)) return false;
+  if (/实习/.test(job.title) && job.recruit_type !== '实习') return false;
   try {
     const source = new URL(job.source_url), apply = new URL(job.apply_url), evidence = new URL(job.cohort_evidence_url);
     const rule = rules.find(r => r.host === source.hostname && r.source_type === job.source_type && r.pattern.test(source.pathname));

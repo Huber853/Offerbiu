@@ -1,6 +1,6 @@
 /* Recruitment index and reading pane */
 .job-index-filters { padding-bottom: 12px; border-bottom: 1px solid var(--line); }
-.job-index-search { display: grid; grid-template-columns: minmax(200px, 2fr) repeat(2, minmax(120px, 1fr)) auto; gap: 12px; align-items: end; }
+.job-index-search { display: grid; grid-template-columns: minmax(160px, 1.7fr) repeat(3, minmax(96px, 1fr)) auto; gap: 12px; align-items: end; }
 .job-filter-field { display: grid; gap: 6px; min-width: 0; color: var(--body); font-size: 13px; }
 .job-filter-field select, .job-search-input {
   width: 100%; min-width: 0; min-height: 42px; padding: 0 10px; border: 1px solid var(--line);
