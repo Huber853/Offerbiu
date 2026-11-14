@@ -14,6 +14,18 @@ export const sha256 = value => crypto.createHash('sha256').update(value).digest(
 export class HttpError extends Error { constructor(status, message, code = '') { super(message); this.status = status; this.code = code; } }
 export function demand(condition, status, message, code) { if (!condition) throw new HttpError(status, message, code); }
 export function text(value, max = 2000) { return typeof value === 'string' ? value.trim().slice(0, max) : ''; }
+/** Reject over-long keys instead of storing a silent prefix that can never authenticate. */
+export function apiKey(value) {
+  if (value == null || value === '') return '';
+  demand(typeof value === 'string', 400, '密钥格式不正确。');
+  const key = value.trim();
+  demand(key.length >= 16 && key.length <= 500 && !/\s/.test(key), 400, '密钥格式不正确。');
+  return key;
+}
+export function decodePath(value) {
+  try { return decodeURIComponent(value); }
+  catch { throw new HttpError(400, '地址格式不正确。'); }
+}
 
 export async function passwordHash(password) {
   const salt = crypto.randomBytes(16).toString('hex');
@@ -57,7 +69,9 @@ export function limitedText(value, max, label) {
 }
 
 const keyFile = path.join(STORAGE, '.encryption-key');
-if (!fs.existsSync(keyFile)) fs.writeFileSync(keyFile, crypto.randomBytes(32), { flag: 'wx', mode: 0o600 });
+try { fs.writeFileSync(keyFile, crypto.randomBytes(32), { flag: 'wx', mode: 0o600 }); }
+catch (error) { if (error.code !== 'EEXIST') throw error; }
+try { fs.chmodSync(keyFile, 0o600); } catch { /* A read-only mount can still use an existing key. */ }
 const encryptionKey = fs.readFileSync(keyFile);
 demand(encryptionKey.length === 32, 500, '本机加密文件不完整，请从备份恢复。');
 export function encrypt(value) {
@@ -67,10 +81,18 @@ export function encrypt(value) {
   return [iv.toString('base64'), cipher.getAuthTag().toString('base64'), encrypted.toString('base64')].join('.');
 }
 export function decrypt(value) {
-  const [iv, tag, data] = value.split('.').map(s => Buffer.from(s, 'base64'));
-  const cipher = crypto.createDecipheriv('aes-256-gcm', encryptionKey, iv);
-  cipher.setAuthTag(tag);
-  return Buffer.concat([cipher.update(data), cipher.final()]).toString('utf8');
+  try {
+    const parts = String(value || '').split('.');
+    if (parts.length !== 3) throw new Error('format');
+    const [iv, tag, data] = parts.map(part => Buffer.from(part, 'base64'));
+    if (iv.length !== 12 || tag.length !== 16 || !data.length) throw new Error('format');
+    const cipher = crypto.createDecipheriv('aes-256-gcm', encryptionKey, iv);
+    cipher.setAuthTag(tag);
+    return Buffer.concat([cipher.update(data), cipher.final()]).toString('utf8');
+  } catch (error) {
+    if (error instanceof HttpError) throw error;
+    throw new HttpError(503, '已保存的 API 密钥无法解密。请确认 .encryption-key 与数据库来自同一次备份。', 'KEY_UNREADABLE');
+  }
 }
 
 const rates = new Map();

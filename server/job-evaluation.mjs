@@ -303,8 +303,8 @@ export function latestEvaluationSummaries(userId, jobIds) {
   const ids = [...new Set((Array.isArray(jobIds) ? jobIds : []).map(item => typeof item === 'string' ? item : ''))].filter(item => item.length > 0 && item.length <= 160);
   demand(ids.length > 0 && ids.length <= 15, 400, '一次最多查询 15 个岗位的最新评估。');
   const rows = db.prepare(`SELECT * FROM (
-      SELECT *, ROW_NUMBER() OVER (PARTITION BY job_id ORDER BY created_at DESC, id DESC) AS rn
-      FROM job_evaluations WHERE user_id=? AND job_id IN (${ids.map(() => '?').join(',')})
+      SELECT *, ROW_NUMBER() OVER (PARTITION BY COALESCE(private_job_id, job_id) ORDER BY created_at DESC, id DESC) AS rn
+      FROM job_evaluations WHERE user_id=? AND COALESCE(private_job_id, job_id) IN (${ids.map(() => '?').join(',')})
     ) WHERE rn=1`).all(userId, ...ids);
   const context = evaluationContext(userId);
   return { items: rows.map(row => summaryOf(presentEvaluation(userId, row, false, context))) };

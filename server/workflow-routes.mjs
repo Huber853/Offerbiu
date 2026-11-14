@@ -1,4 +1,5 @@
 import { db } from './db.mjs';
+import { decodePath } from './security.mjs';
 import * as profiles from './candidate-profile.mjs';
 import * as evaluations from './job-evaluation.mjs';
 import * as materials from './application-materials.mjs';
@@ -16,14 +17,14 @@ export async function workflowRoute({userId,pathname,method,query,body,signal}) 
   }
   const privateMatch=pathname.match(/^\/api\/private-jobs\/([^/]+)(?:\/(history|archive))?$/);
   if(privateMatch) {
-    const key=decodeURIComponent(privateMatch[1]);
+    const key=decodePath(privateMatch[1]);
     if(privateMatch[2]==='history'&&method==='GET') return reply(privateJobs.privateJobHistory(userId,key));
     if(privateMatch[2]==='archive'&&method==='POST') return reply(privateJobs.archivePrivateJob(userId,key,body));
     if(!privateMatch[2]&&method==='GET') return reply(resolveJob(userId,key));
     if(!privateMatch[2]&&method==='PUT') return reply(privateJobs.savePrivateJob(userId,body,key));
   }
   const targetMatch=pathname.match(/^\/api\/job-targets\/([^/]+)$/);
-  if(targetMatch&&method==='GET') return reply(resolveJob(userId,decodeURIComponent(targetMatch[1])));
+  if(targetMatch&&method==='GET') return reply(resolveJob(userId,decodePath(targetMatch[1])));
   if(pathname==='/api/candidate-profile') {
     if(method==='GET') return reply(profiles.getProfile(userId));
     if(method==='PUT') return reply(profiles.saveProfile(userId,body),Number(body.revision)===0?201:200);

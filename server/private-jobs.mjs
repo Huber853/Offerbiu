@@ -48,7 +48,15 @@ export function duplicateJobs(userId, body, excludeId='') {
     return strong||weak?[{id:job.id,company:job.company,title:job.title,cities:job.cities,job_type:job.job_type,archived_at:job.archived_at||null,strength:strong?'strong':'weak',reason:strong?'规范化链接或同来源岗位编号相同':'公司、职位和城市相近，请人工核对'}]:[];
   }).sort((a,b)=>Number(b.strength==='strong')-Number(a.strength==='strong')).slice(0,30);
 }
-const decode = value => value.replace(/&#(x[0-9a-f]+|\d+);/gi,(_,n)=>{const code=n[0].toLowerCase()==='x'?parseInt(n.slice(1),16):Number(n);return code>0&&code<=0x10ffff?String.fromCodePoint(code):'';}).replace(/&nbsp;/gi,' ').replace(/&amp;/gi,'&').replace(/&lt;/gi,'<').replace(/&gt;/gi,'>').replace(/&quot;/gi,'"').replace(/&#39;/g,"'");
+const namedEntities = { nbsp: ' ', amp: '&', lt: '<', gt: '>', quot: '"', apos: "'" };
+// One left-to-right pass. Decoding &amp; before &lt; would turn &amp;lt; into a real tag.
+const decode = value => value.replace(/&(#x[0-9a-f]+|#\d+|nbsp|amp|lt|gt|quot|apos);/gi, entity => {
+  const body = entity.slice(1, -1);
+  if (body[0] !== '#') return namedEntities[body.toLowerCase()];
+  const code = body[1].toLowerCase() === 'x' ? Number.parseInt(body.slice(2), 16) : Number(body.slice(1));
+  if (!Number.isInteger(code) || code < 1 || code > 0x10ffff || (code >= 0xD800 && code <= 0xDFFF)) return '';
+  return String.fromCodePoint(code);
+});
 export function extractText(original) {
   const result={original_text:original,company:'',title:'',cities:[],cohort:null,description:'',requirements:'',deadline:'',channel:'',source_url:'',apply_url:'',notes:'',source_id:''};
   let section=''; const body=[],requirements=[];
@@ -138,9 +146,10 @@ export function archivePrivateJob(userId,jobId,body) {
   });
 }
 export function listPrivateJobs(userId,query={}) {
-  const q=string(query.q,100).toLowerCase(),archive=query.archived||'active';demand(['active','archived','all'].includes(archive),400,'归档筛选不正确。');
-  const offset=Number(query.offset||0),limit=Number(query.limit||20);demand(Number.isInteger(offset)&&offset>=0&&Number.isInteger(limit)&&limit>=1&&limit<=100,400,'分页参数不正确。');
-  const items=db.prepare('SELECT * FROM private_jobs WHERE user_id=? ORDER BY updated_at DESC,id').all(userId).map(privatePayload).filter(j=>(archive==='all'||Boolean(j.archived_at)===(archive==='archived'))&&(!q||[j.company,j.title,j.cities.join(' '),j.description,j.requirements,j.notes].join(' ').toLowerCase().includes(q)));
+  const read=key=>typeof query.get==='function'?query.get(key):query[key];
+  const q=string(read('q'),100).toLowerCase(),archive=read('archived')||'active';demand(['active','archived','all'].includes(archive),400,'归档筛选不正确。');
+  const offset=Number(read('offset')||0),limit=Number(read('limit')||20);demand(Number.isInteger(offset)&&offset>=0&&Number.isInteger(limit)&&limit>=1&&limit<=100,400,'分页参数不正确。');
+  const items=db.prepare('SELECT * FROM private_jobs WHERE user_id=? ORDER BY updated_at DESC,id').all(userId).map(privatePayload).filter(j=>(archive==='all'||Boolean(j.archived_at)===(archive==='archived'))&&(!q||[j.company,j.title,(j.cities||[]).join(' '),j.description,j.requirements,j.notes].filter(Boolean).join('\n').toLowerCase().includes(q)));
   return {items:items.slice(offset,offset+limit),total:items.length,offset,limit};
 }
 export function privateJobHistory(userId,jobId) { resolveJob(userId,jobId);return db.prepare('SELECT revision,payload,reason,created_at FROM private_job_revisions WHERE user_id=? AND job_id=? ORDER BY revision DESC').all(userId,jobId).map(r=>({...r,payload:JSON.parse(r.payload)})); }

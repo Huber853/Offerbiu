@@ -3,7 +3,7 @@ import { targetId, targetColumns, resolveJob } from './job-targets.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import { db, ROOT, STORAGE, transaction, unpackResume, catalogFacets, refreshCatalog } from './db.mjs';
-import { HttpError, demand, text, now, id, getSession, createSession, clearSession, replaceUserSessions, passwordHash, passwordMatches, rateLimit, sanitizeResume, encrypt, resumeField } from './security.mjs';
+import { HttpError, demand, text, now, id, getSession, createSession, clearSession, replaceUserSessions, passwordHash, passwordMatches, rateLimit, sanitizeResume, encrypt, resumeField, apiKey, decodePath } from './security.mjs';
 import { serverKeyPolicy } from './ai-access.mjs';
 import { aiSettings, guardBaseUrl, polishResume, testAiConnection, PROVIDERS } from './ai.mjs';
 import { blankResume, templates, statuses } from '../shared/templates.mjs';
@@ -16,18 +16,20 @@ function json(res, data, status = 200) { if(res.destroyed) return; res.writeHead
 function headerList(value) {
   return String(value || '').split(',').map(part => part.trim()).filter(Boolean);
 }
-/** Public site origin for CSRF checks — prefer APP_ORIGIN; otherwise trust reverse-proxy headers. */
-function allowedOrigins(req) {
-  const configured = headerList(process.env.APP_ORIGIN).map(origin => origin.replace(/\/+$/, ''));
-  if (configured.length) return configured;
-  const proto = headerList(req.headers['x-forwarded-proto'])[0] || 'http';
-  const host = headerList(req.headers['x-forwarded-host'])[0] || req.headers.host || 'localhost';
-  return [`${proto}://${host}`.replace(/\/+$/, '')];
+function loopbackAddress(address) {
+  const host = String(address || '').toLowerCase().replace(/^\[|\]$/g, '');
+  return host === '127.0.0.1' || host === '::1' || host === '::ffff:127.0.0.1';
 }
-function sameOrigin(req) {
-  const origin = req.headers.origin;
+/** Public site origin for CSRF checks. APP_ORIGIN wins. Forwarded headers are only trusted from a loopback proxy. */
+export function originAllowed(req) {
+  const origin = String(req.headers.origin || '').replace(/\/+$/, '');
   if (!origin) return true;
-  return allowedOrigins(req).includes(String(origin).replace(/\/+$/, ''));
+  const configured = headerList(process.env.APP_ORIGIN).map(item => item.replace(/\/+$/, ''));
+  if (configured.length) return configured.includes(origin);
+  const trustedProxy = loopbackAddress(req.socket?.remoteAddress);
+  const proto = (trustedProxy && headerList(req.headers['x-forwarded-proto'])[0]) || 'http';
+  const host = (trustedProxy && headerList(req.headers['x-forwarded-host'])[0]) || req.headers.host || 'localhost';
+  return `${proto}://${host}`.replace(/\/+$/, '') === origin;
 }
 async function readBody(req, limit = 300000) {
   demand((req.headers['content-type'] || '').startsWith('application/json'), 415, '请使用 JSON 提交数据。');
@@ -137,7 +139,7 @@ async function api(req, res, url) {
   const pathname = url.pathname;
   const session = getSession(req);
   if (!['GET', 'HEAD'].includes(method)) {
-    demand(sameOrigin(req), 403, '跨来源请求被拒绝。请在服务器 .env 设置 APP_ORIGIN 为浏览器访问的完整地址（含 https）。');
+    demand(originAllowed(req), 403, '跨来源请求被拒绝。请在服务器 .env 设置 APP_ORIGIN 为浏览器访问的完整地址（含 https）。');
     demand(req.headers['sec-fetch-site'] !== 'cross-site', 403, '跨站请求被拒绝。');
     if (session) demand(req.headers['x-csrf-token'] === session.csrf, 403, '会话校验失败，请刷新页面。');
   }
@@ -218,7 +220,7 @@ async function api(req, res, url) {
   }
   const jobMatch = pathname.match(/^\/api\/jobs\/([^/]+)$/);
   if (jobMatch && method === 'GET') {
-    const row = db.prepare('SELECT payload FROM jobs WHERE id=? AND catalog_active=1').get(decodeURIComponent(jobMatch[1]));
+    const row = db.prepare('SELECT payload FROM jobs WHERE id=? AND catalog_active=1').get(decodePath(jobMatch[1]));
     demand(row, 404, '岗位不存在。'); return json(res, JSON.parse(row.payload));
   }
   demand(session, 401, '请先登录，数据会保存到你的独立账号。', 'LOGIN_REQUIRED');
@@ -457,11 +459,7 @@ async function api(req, res, url) {
     const sameTarget = provider === previous && (provider !== 'custom' || baseUrl === old?.base_url);
     let stored = sameTarget ? old?.key_encrypted || null : null;
     if (body.removeKey === true) stored = null;
-    else if (body.apiKey) {
-      const key = text(body.apiKey, 500);
-      demand(key.length >= 16 && !/\s/.test(key), 400, '密钥格式不正确。');
-      stored = encrypt(key);
-    }
+    else if (body.apiKey) stored = encrypt(apiKey(body.apiKey));
     db.prepare('INSERT INTO ai_settings(user_id,key_encrypted,model,provider,base_url,updated_at) VALUES(?,?,?,?,?,?) ON CONFLICT(user_id) DO UPDATE SET key_encrypted=excluded.key_encrypted,model=excluded.model,provider=excluded.provider,base_url=excluded.base_url,updated_at=excluded.updated_at').run(userId, stored, model, provider, baseUrl, now());
     return json(res, aiSettings(userId));
   }
@@ -510,7 +508,7 @@ export async function handleRequest(req, res) {
     const url = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
     if (url.pathname.startsWith('/api/')) return await api(req, res, url);
     demand(req.method === 'GET' || req.method === 'HEAD', 405, '该请求方法不支持。');
-    let name = decodeURIComponent(url.pathname).replace(/^\/+/, '');
+    let name = decodePath(url.pathname).replace(/^\/+/, '');
     if (!name) name = 'index.html';
     if (name === 'workspace' || name === 'workspace/') name = 'workspace/index.html';
     const rootFiles = ['index.html', 'styles.css', 'motion.css', 'app.js', 'favicon.svg'];

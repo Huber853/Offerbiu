@@ -67,7 +67,7 @@ export async function resumeDocument(data, template, title, preview = false) {
 export function printResume(data, template, title) {
   const popup = window.open('', '_blank');
   if (!popup) throw new Error('浏览器阻止了打印窗口，请允许此站点弹出窗口后重试。');
-  popup.document.write(`<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><title>${escape(title || '我的简历')}</title><link rel="stylesheet" href="${location.origin}/workspace/resume.css"></head><body>${resumeMarkup(data, template, false)}</body></html>`);
+  popup.document.write(`<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src data:; style-src 'self' 'unsafe-inline'; script-src 'none'; form-action 'none'; base-uri 'none'"><title>${escape(title || '我的简历')}</title><link rel="stylesheet" href="${location.origin}/workspace/resume.css"></head><body>${resumeMarkup(data, template, false)}</body></html>`);
   popup.document.close();
   popup.addEventListener('load', () => { popup.focus(); popup.print(); }, { once: true });
 }
