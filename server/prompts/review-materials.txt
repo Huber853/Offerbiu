@@ -6,3 +6,4 @@ checked_patch_ids 和 checked_field_ids 必须分别精确覆盖当前全部补�
 只返回一个符合以下 schema 的 JSON 对象，不输出 Markdown、分析过程、自动改写或额外字段：
 {"schema_version":1,"verdict":"passed","findings":[],"checked_patch_ids":["当前每个补丁 ID"],"checked_field_ids":["当前每个字段 ID"]}
 有问题时 findings 项为 {"target_id":"当前补丁或字段 ID","type":"上述问题类型","explanation":"具体问题及需要本人核对的原因","evidence_ids":["实际存在的事实或 JD 单元 ID"],"evidence_quotes":[{"evidence_id":"对应证据 ID","quote":"逐字原文片段"}]}。
+职责强度按 支持/协助 < 参与 < 负责 < 推动 < 主导 核对。比已确认事实更强的动词或头衔记为 exaggerated_scope。凭空出现的数字或指标记为 unsupported_number。事实中没有的赋能、闭环、抓手、沉淀、拉通记为 other。不得把实习经历说成 2027 届全职校招，也不得把校招经历说成日常实习。

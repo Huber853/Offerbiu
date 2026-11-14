@@ -58,7 +58,7 @@ db.exec(`
     id TEXT PRIMARY KEY, user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
     resume_id TEXT REFERENCES resumes(id) ON DELETE SET NULL, resume_revision INTEGER NOT NULL,
     field_path TEXT NOT NULL, original TEXT NOT NULL, revised TEXT NOT NULL, changes TEXT NOT NULL,
-    questions TEXT NOT NULL, match_analysis TEXT, target_job_id TEXT, snapshot TEXT NOT NULL, model TEXT NOT NULL,
+    questions TEXT NOT NULL, diagnosis TEXT, match_analysis TEXT, target_job_id TEXT, snapshot TEXT NOT NULL, model TEXT NOT NULL,
     usage TEXT, applied_at TEXT, created_at TEXT NOT NULL
   );
   CREATE TABLE IF NOT EXISTS application_events (
@@ -85,6 +85,7 @@ for (const [table, column, ddl] of [
   ['ai_settings', 'provider', 'ALTER TABLE ai_settings ADD COLUMN provider TEXT'],
   ['ai_settings', 'base_url', 'ALTER TABLE ai_settings ADD COLUMN base_url TEXT'],
   ['ai_reports', 'match_analysis', 'ALTER TABLE ai_reports ADD COLUMN match_analysis TEXT'],
+  ['ai_reports', 'diagnosis', 'ALTER TABLE ai_reports ADD COLUMN diagnosis TEXT'],
 ]) {
   if (!db.prepare(`PRAGMA table_info(${table})`).all().some(item => item.name === column)) db.exec(ddl);
 }

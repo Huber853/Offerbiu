@@ -468,8 +468,8 @@ async function api(req, res, url) {
   }
   if (pathname === '/api/ai/polish' && method === 'POST') return json(res, await polishResume(userId, body, {signal:req.aiSignal}), 201);
   if (pathname === '/api/ai/reports' && method === 'GET') {
-    const reportRows = db.prepare('SELECT id,resume_id,resume_revision,field_path,original,revised,changes,questions,match_analysis,model,created_at,applied_at FROM ai_reports WHERE user_id=? ORDER BY created_at DESC LIMIT 50').all(userId);
-    return json(res, reportRows.map(row => { const { match_analysis, ...rest } = row; return { ...rest, changes: JSON.parse(row.changes), questions: JSON.parse(row.questions), match: match_analysis ? JSON.parse(match_analysis) : null }; }));
+    const reportRows = db.prepare('SELECT id,resume_id,resume_revision,field_path,original,revised,changes,questions,diagnosis,match_analysis,model,created_at,applied_at FROM ai_reports WHERE user_id=? ORDER BY created_at DESC LIMIT 50').all(userId);
+    return json(res, reportRows.map(row => { const { match_analysis, diagnosis, ...rest } = row; return { ...rest, changes: JSON.parse(row.changes), questions: JSON.parse(row.questions), match: match_analysis ? JSON.parse(match_analysis) : null, diagnosis: diagnosis ? JSON.parse(diagnosis) : null }; }));
   }
   const applyReport = pathname.match(/^\/api\/ai\/reports\/([^/]+)\/apply$/);
   if (applyReport && method === 'POST') {
